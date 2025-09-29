@@ -7,13 +7,13 @@ from sklearn import preprocessing
 matplotlib.use("Agg")
 import datetime
 
-from rl.config import config
-from rl.marketdata.yahoodownloader import YahooDownloader
-from rl.preprocessing.preprocessors import FeatureEngineer
-from rl.preprocessing.data import data_split
-from rl.env.env_stocktrading import StockTradingEnv
-from rl.model.models import DRLAgent
-from rl.trade.backtest import backtest_stats, backtest_plot, get_daily_return, get_baseline
+from ..config import config
+from ..marketdata.yahoodownloader import YahooDownloader
+from ..preprocessing.preprocessors import FeatureEngineer
+from ..preprocessing.data import data_split
+from ..env.env_stocktrading import StockTradingEnv
+from ..model.models import DRLAgent
+from ..trade.backtest import backtest_stats, backtest_plot, get_daily_return, get_baseline
 
 
 

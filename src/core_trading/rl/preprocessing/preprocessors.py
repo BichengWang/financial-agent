@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from stockstats import StockDataFrame as Sdf
-from rl.config import config
+from ..config import config
 
 
 class FeatureEngineer:

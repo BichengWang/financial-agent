@@ -15,7 +15,24 @@ classifiers = [
 dependencies = [
     "numpy>=1.24.0",
     "matplotlib>=3.6.0",
-    "gymnasium>=0.29.0",
+    "gymnasium==1.2.1",
+    "black==25.9.0",
+    "click==8.3.0",
+    "mypy==1.18.2",
+    "pyparsing==3.2.5",
+    "pandas>=2.3.2",
+    "seaborn>=0.13.2",
+    "scikit-learn>=1.7.2",
+    "keras-nightly>=3.12.0.dev2025092903",
+    "tensorflow>=2.20.0",
+    "ipython>=9.5.0",
+    "notebook>=7.4.7",
+    "yfinance>=0.2.66",
+    "beautifulsoup4==4.14.2",
+    "stockstats>=0.6.5",
+    "stable-baselines3>=2.7.0",
+    "gym>=0.26.2",
+    "pyfolio-reloaded>=0.9.9",
 ]
 
 [project.optional-dependencies]
@@ -46,7 +63,6 @@ line-length = 88
 target-version = ['py312']
 
 [tool.mypy]
-python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
