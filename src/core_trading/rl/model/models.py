@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import time
-import gym
+import gymnasium as gym
 
 # RL models from stable-baselines
 # from stable_baselines import SAC

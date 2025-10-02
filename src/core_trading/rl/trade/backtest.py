@@ -10,6 +10,10 @@ from copy import deepcopy
 from ..marketdata.yahoodownloader import YahooDownloader
 from ..config import config
 
+# # silence pyfolio warnings
+# import warnings
+# warnings.filterwarnings('ignore')
+
 
 def get_daily_return(df, value_col_name="account_value"):
     df = deepcopy(df)
