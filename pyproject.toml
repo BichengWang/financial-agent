@@ -14,16 +14,31 @@ classifiers = [
 ]
 dependencies = [
     "numpy>=1.24.0",
-    "matplotlib>=3.6.0",
-    "gymnasium>=0.29.0",
+    "matplotlib",
+    "gymnasium",
+    "black",
+    "click",
+    "mypy",
+    "pyparsing",
+    "pandas",
+    "seaborn",
+    "scikit-learn",
+    "keras-nightly",
+    "tensorflow>=2.20.0",
+    "ipython",
+    "notebook",
+    "yfinance",
+    "beautifulsoup4",
+    "stockstats",
+    "stable-baselines3",
+    "pyfolio-reloaded",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "flake8>=6.0.0",
-    "mypy>=1.0.0",
+    "pytest",
+    "black",
+    "flake8",
 ]
 
 [build-system]
@@ -35,14 +50,14 @@ packages = ["src"]
 
 [tool.uv]
 dev-dependencies = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "flake8>=6.0.0",
-    "mypy>=1.0.0",
+    "pytest",
+    "black",
+    "flake8",
+    "mypy",
 ]
 
 [tool.black]
-line-length = 88
+line-length = 200
 target-version = ['py312']
 
 [tool.mypy]
