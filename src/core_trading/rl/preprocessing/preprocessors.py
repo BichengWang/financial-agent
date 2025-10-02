@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from stockstats import StockDataFrame as Sdf
-from rl.config import config
+from ..config import config
 
 
 class FeatureEngineer:
@@ -82,11 +82,10 @@ class FeatureEngineer:
                     temp_indicator = pd.DataFrame(temp_indicator)
                     temp_indicator['tic'] = unique_ticker[i]
                     temp_indicator['date'] = df[df.tic == unique_ticker[i]]['date'].to_list()
-                    indicator_df = indicator_df.append(
-                        temp_indicator, ignore_index=True
-                    )
+                    indicator_df = pd.concat([indicator_df, temp_indicator])
                 except Exception as e:
                     print(e)
+            indicator_df.reset_index(drop=True, inplace=True)
             df = df.merge(indicator_df[['tic','date',indicator]],on=['tic','date'],how='left')
         df = df.sort_values(by=['date','tic'])
         return df

@@ -7,8 +7,12 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from copy import deepcopy
 
-from rl.marketdata.yahoodownloader import YahooDownloader
-from rl.config import config
+from ..marketdata.yahoodownloader import YahooDownloader
+from ..config import config
+
+# # silence pyfolio warnings
+# import warnings
+# warnings.filterwarnings('ignore')
 
 
 def get_daily_return(df, value_col_name="account_value"):
