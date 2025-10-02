@@ -5,7 +5,7 @@ description = "A reinforcement learning framework for financial agents"
 authors = [{name = "Your Name", email = "your.email@example.com"}]
 readme = "README.md"
 license = {file = "LICENSE"}
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -14,35 +14,34 @@ classifiers = [
 ]
 dependencies = [
     "numpy>=1.24.0",
-    "matplotlib>=3.6.0",
-    "gymnasium==1.2.1",
-    "black==25.9.0",
-    "click==8.3.0",
-    "mypy==1.18.2",
-    "pyparsing==3.2.5",
-    "pandas==2.3.3",
-    "seaborn>=0.13.2",
-    "scikit-learn>=1.7.2",
-    "keras-nightly>=3.12.0.dev2025092903",
-    "tensorflow>=2.20.0",
-    "ipython==9.6.0",
-    "notebook>=7.4.7",
-    "yfinance>=0.2.66",
-    "beautifulsoup4==4.14.2",
-    "stockstats>=0.6.5",
-    "stable-baselines3>=2.7.0",
-    "pyfolio-reloaded>=0.9.9",
-    "pandas-stubs==2.3.2.250926",
-    "fonttools==4.60.1",
-    "peewee==3.18.2",
+    "matplotlib",
+    "gymnasium",
+    "black",
+    "click",
+    "mypy",
+    "pyparsing",
+    "pandas",
+    "seaborn",
+    "scikit-learn",
+    "keras-nightly",
+    "tensorflow",
+    "ipython",
+    "notebook",
+    "yfinance",
+    "beautifulsoup4",
+    "stockstats",
+    "stable-baselines3",
+    "pyfolio-reloaded",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "flake8>=6.0.0",
-    "mypy>=1.0.0",
+    "black",
+    "flake8",
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "pytest-custom-exit-code",
 ]
 
 [build-system]
