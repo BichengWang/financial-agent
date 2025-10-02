@@ -1,9 +1,8 @@
 import numpy as np
 import pandas as pd
 from copy import deepcopy
-from gym.utils import seeding
-import gym
-from gym import spaces
+import gymnasium as gym
+from gymnasium import spaces
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

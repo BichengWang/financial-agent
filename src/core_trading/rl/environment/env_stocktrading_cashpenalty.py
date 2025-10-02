@@ -2,10 +2,9 @@ import numpy as np
 import pandas as pd
 import random
 from copy import deepcopy
-import gym
+import gymnasium as gym
 import time
-from gym.utils import seeding
-from gym import spaces
+from gymnasium import spaces
 import matplotlib
 
 matplotlib.use("Agg")
