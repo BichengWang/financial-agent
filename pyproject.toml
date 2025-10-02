@@ -53,14 +53,14 @@ packages = ["src"]
 
 [tool.uv]
 dev-dependencies = [
-    "pytest",
-    "black",
-    "flake8",
-    "mypy",
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
 ]
 
 [tool.black]
-line-length = 200
+line-length = 88
 target-version = ['py312']
 
 [tool.mypy]

@@ -46,27 +46,31 @@ class YahooDownloader:
         # Download and save the data in a pandas DataFrame:
         data_df = pd.DataFrame()
         for tic in self.ticker_list:
-            temp_df = yf.download(tic, start=self.start_date, end=self.end_date)
+            temp_df = yf.download(tic, start=self.start_date, end=self.end_date, auto_adjust=False, multi_level_index=False)
             temp_df["tic"] = tic
-            data_df = data_df.append(temp_df)
+            data_df = pd.concat([data_df, temp_df])
+
         # reset the index, we want to use numbers as index instead of dates
         data_df = data_df.reset_index()
         try:
             # convert the column names to standardized names
-            data_df.columns = [
-                "date",
-                "open",
-                "high",
-                "low",
-                "close",
-                "adjcp",
-                "volume",
-                "tic",
-            ]
+
+            mapping = {
+                "Date": "date",
+                "Adj Close": "adjcp",
+                "Close": "close",
+                "High": "high",
+                "Low": "low",
+                "Open": "open",
+                "Volume": "volume",
+                "tic": "tic"
+            }
+            data_df = data_df.rename(columns=mapping)
+
             # use adjusted close price instead of close price
             data_df["close"] = data_df["adjcp"]
             # drop the adjusted close price column
-            data_df = data_df.drop("adjcp", 1)
+            data_df = data_df.drop(['adjcp'], axis=1)
         except NotImplementedError:
             print("the features are not supported currently")
         # create day of the week column (monday = 0)

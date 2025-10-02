@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 import time
-import gym
+import gymnasium as gym
 
 # RL models from stable-baselines
 # from stable_baselines import SAC
@@ -17,9 +17,9 @@ from stable_baselines3.common.noise import (
     OrnsteinUhlenbeckActionNoise,
 )
 
-from rl.config import config
-from rl.preprocessing.data import data_split
-from rl.env.env_stocktrading import StockTradingEnv
+from ..config import config
+from ..preprocessing.data import data_split
+from ..environment.env_stocktrading import StockTradingEnv
 
 from stable_baselines3 import A2C
 from stable_baselines3 import PPO
