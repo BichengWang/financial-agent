@@ -8,7 +8,6 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pickle
 from stable_baselines3.common.vec_env import DummyVecEnv
-from stable_baselines3.common import logger
 
 
 class StockTradingEnv(gym.Env):
@@ -205,14 +204,14 @@ class StockTradingEnv(gym.Env):
                 plt.savefig('results/account_value_{}_{}_{}.png'.format(self.mode,self.model_name, self.iteration),index=False)
                 plt.close()
 
-            # Add outputs to logger interface
-            logger.record("environment/portfolio_value", end_total_asset)
-            logger.record("environment/total_reward", tot_reward)
-            logger.record("environment/total_reward_pct", (tot_reward / (end_total_asset - tot_reward)) * 100)
-            logger.record("environment/total_cost", self.cost)
-            logger.record("environment/total_trades", self.trades)
+            # Print for logging purpose
+            print("environment/portfolio_value", end_total_asset)
+            print("environment/total_reward", tot_reward)
+            print("environment/total_reward_pct", (tot_reward / (end_total_asset - tot_reward)) * 100)
+            print("environment/total_cost", self.cost)
+            print("environment/total_trades", self.trades)
 
-            return self.state, self.reward, self.terminal, {}
+            return self.state, self.reward, self.terminal, False, {}
 
         else:
 
@@ -257,10 +256,12 @@ class StockTradingEnv(gym.Env):
             self.rewards_memory.append(self.reward)
             self.reward = self.reward*self.reward_scaling
 
-        return self.state, self.reward, self.terminal, {}
+        return self.state, self.reward, self.terminal, False, {}
 
-    def reset(self):  
+    def reset(self, seed=None, options=None):  
         #initiate state
+        if seed is not None:
+            self._seed(seed)
         self.state = self._initiate_state()
         
         if self.initial:
@@ -283,7 +284,7 @@ class StockTradingEnv(gym.Env):
         
         self.episode+=1
 
-        return self.state
+        return self.state, {}
     
     def render(self, mode='human',close=False):
         return self.state

@@ -151,7 +151,7 @@ class StockPortfolioEnv(gym.Env):
                 print("Sharpe: ", sharpe)
             print("=================================")
 
-            return self.state, self.reward, self.terminal, {}
+            return self.state, self.reward, self.terminal, False, {}
 
         else:
             # print("Model actions: ",actions)
@@ -195,9 +195,11 @@ class StockPortfolioEnv(gym.Env):
             # print("Step reward: ", self.reward)
             # self.reward = self.reward*self.reward_scaling
 
-        return self.state, self.reward, self.terminal, {}
+        return self.state, self.reward, self.terminal, False, {}
 
-    def reset(self):
+    def reset(self, seed=None, options=None):
+        if seed is not None:
+            self._seed(seed)
         self.asset_memory = [self.initial_amount]
         self.day = 0
         self.data = self.df.loc[self.day, :]
@@ -215,7 +217,7 @@ class StockPortfolioEnv(gym.Env):
         self.portfolio_return_memory = [0]
         self.actions_memory = [[1 / self.stock_dim] * self.stock_dim]
         self.date_memory = [self.data.date.unique()[0]]
-        return self.state
+        return self.state, {}
 
     def render(self, mode="human"):
         return self.state

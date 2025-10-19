@@ -19,13 +19,14 @@ class Trainer:
         episode_lengths = []
 
         for episode in range(num_episodes):
-            state = self.environment.reset()
+            state, info = self.environment.reset()
             episode_reward = 0
             episode_length = 0
 
             for step in range(max_steps_per_episode):
                 action = self.agent.select_action(state)
-                next_state, reward, done, info = self.environment.step(action)
+                next_state, reward, terminated, truncated, info = self.environment.step(action)
+                done = terminated or truncated
 
                 self.agent.update(state, action, reward, next_state, done)
 
@@ -60,7 +61,7 @@ class Trainer:
         episode_lengths = []
 
         for episode in range(num_episodes):
-            state = self.environment.reset()
+            state, info = self.environment.reset()
             episode_reward = 0
             episode_length = 0
 
@@ -70,7 +71,8 @@ class Trainer:
 
             while True:
                 action = self.agent.select_action(state)
-                next_state, reward, done, info = self.environment.step(action)
+                next_state, reward, terminated, truncated, info = self.environment.step(action)
+                done = terminated or truncated
 
                 if render and hasattr(self.environment, 'render'):
                     print(f"Action: {action}, Reward: {reward}")
