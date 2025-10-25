@@ -20,6 +20,9 @@ def get_daily_return(df, value_col_name="account_value"):
     df["daily_return"] = df[value_col_name].pct_change(1)
     df["date"] = pd.to_datetime(df["date"])
     df.set_index("date", inplace=True, drop=True)
+    # Remove timezone info if present, then localize to UTC
+    if df.index.tz is not None:
+        df.index = df.index.tz_localize(None)
     df.index = df.index.tz_localize("UTC")
     return pd.Series(df["daily_return"], index=df.index)
 
@@ -60,6 +63,22 @@ def backtest_plot(
     )
 
     baseline_returns = get_daily_return(baseline_df, value_col_name="close")
+    
+    # Ensure both returns have the same timezone and overlapping dates
+    # Align the date ranges
+    common_dates = test_returns.index.intersection(baseline_returns.index)
+    
+    if len(common_dates) == 0:
+        print(f"Warning: No overlapping dates between test data and baseline.")
+        print(f"Test data range: {test_returns.index.min()} to {test_returns.index.max()}")
+        print(f"Baseline range: {baseline_returns.index.min()} to {baseline_returns.index.max()}")
+        print("Proceeding without benchmark comparison...")
+        baseline_returns = None
+    else:
+        # Use only the common date range
+        test_returns = test_returns[common_dates]
+        baseline_returns = baseline_returns[common_dates]
+    
     with pyfolio.plotting.plotting_context(font_scale=1.1):
         pyfolio.create_full_tear_sheet(
             returns=test_returns, benchmark_rets=baseline_returns, set_context=False

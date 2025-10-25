@@ -12,12 +12,12 @@ class Environment(ABC):
         self.done = False
 
     @abstractmethod
-    def reset(self) -> np.ndarray:
+    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
         """Reset environment to initial state."""
         pass
 
     @abstractmethod
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, Dict[str, Any]]:
+    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
         """Take a step in the environment."""
         pass
 
@@ -44,19 +44,21 @@ class SimpleGridWorld(Environment):
         self.goal_pos = (grid_size - 1, grid_size - 1)
         self.agent_pos = None
 
-    def reset(self) -> np.ndarray:
+    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
         """Reset agent to starting position."""
+        if seed is not None:
+            np.random.seed(seed)
         self.agent_pos = (0, 0)
         self.done = False
-        return np.array(self.agent_pos, dtype=np.float32)
+        return np.array(self.agent_pos, dtype=np.float32), {}
 
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, Dict[str, Any]]:
+    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
         """
         Take a step in the grid world.
         Actions: 0=up, 1=right, 2=down, 3=left
         """
         if self.done:
-            return np.array(self.agent_pos, dtype=np.float32), 0, True, {}
+            return np.array(self.agent_pos, dtype=np.float32), 0, True, False, {}
 
         x, y = self.agent_pos
 
@@ -84,7 +86,7 @@ class SimpleGridWorld(Environment):
                               abs(self.agent_pos[1] - self.goal_pos[1])
         }
 
-        return np.array(self.agent_pos, dtype=np.float32), reward, self.done, info
+        return np.array(self.agent_pos, dtype=np.float32), reward, self.done, False, info
 
     def get_state_dim(self) -> int:
         return 2
@@ -109,36 +111,46 @@ class GymEnvironmentWrapper(Environment):
         self.env = gym.make(env_name, **kwargs)
         self.env_name = env_name
 
-    def reset(self) -> np.ndarray:
+    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
         """Reset the gym environment."""
+        kwargs = {}
+        if seed is not None:
+            kwargs['seed'] = seed
+        if options is not None:
+            kwargs['options'] = options
+            
         if hasattr(self.env, 'reset'):
             # Handle both old and new gym API
-            result = self.env.reset()
+            result = self.env.reset(**kwargs)
             if isinstance(result, tuple):
-                state, _ = result
+                state, info = result
             else:
                 state = result
+                info = {}
         else:
-            state = self.env.reset()
+            state = self.env.reset(**kwargs)
+            info = {}
 
         self.done = False
-        return np.array(state, dtype=np.float32)
+        return np.array(state, dtype=np.float32), info
 
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, Dict[str, Any]]:
+    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
         """Take a step in the gym environment."""
         if self.done:
-            return np.array(self.env.observation_space.sample(), dtype=np.float32), 0, True, {}
+            return np.array(self.env.observation_space.sample(), dtype=np.float32), 0, True, False, {}
 
         # Handle both old and new gym API
         result = self.env.step(action)
         if len(result) == 4:
             state, reward, done, info = result
+            terminated = done
+            truncated = False
         else:  # New gym API returns 5 values
             state, reward, terminated, truncated, info = result
             done = terminated or truncated
 
         self.done = done
-        return np.array(state, dtype=np.float32), float(reward), done, info
+        return np.array(state, dtype=np.float32), float(reward), terminated, truncated, info
 
     def get_state_dim(self) -> int:
         """Get the dimensionality of the state space."""

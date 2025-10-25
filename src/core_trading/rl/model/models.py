@@ -73,7 +73,7 @@ class DRLAgent:
         """make a prediction"""
         account_memory = []
         actions_memory = []
-        test_env.reset()
+        test_obs = test_env.reset()
         for i in range(len(environment.df.index.unique())):
             action, _states = model.predict(test_obs)
             #account_memory = test_env.env_method(method_name="save_asset_memory")

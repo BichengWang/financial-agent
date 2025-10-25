@@ -8,7 +8,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import random
 from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv
-from stable_baselines3.common import logger
 import time
 class StockTradingEnvStopLoss(gym.Env):
     """
@@ -120,8 +119,8 @@ class StockTradingEnvStopLoss(gym.Env):
     @property
     def current_step(self):
         return self.date_index - self.starting_point
-    def reset(self):
-        self.seed()
+    def reset(self, seed=None, options=None):
+        self.seed(seed)
         self.sum_trades = 0
         self.actual_num_trades = 0
         self.closing_diff_avg_buy = np.zeros(len(self.assets))
@@ -151,7 +150,7 @@ class StockTradingEnvStopLoss(gym.Env):
             + self.get_date_vector(self.date_index)
         )
         self.state_memory.append(init_state)
-        return init_state
+        return init_state, {}
     def get_date_vector(self, date, cols=None):
         if (cols is None) and (self.cached_data is not None):
             return self.cached_data[date]
@@ -169,38 +168,38 @@ class StockTradingEnvStopLoss(gym.Env):
     def return_terminal(self, reason="Last Date", reward=0):
         state = self.state_memory[-1]
         self.log_step(reason=reason, terminal_reward=reward)
-        # Add outputs to logger interface
+        # Print for logging purpose
         gl_pct = self.account_information["total_assets"][-1] / self.initial_amount
-        logger.record("environment/GainLoss_pct",(gl_pct - 1)*100)
-        logger.record(
+        print("environment/GainLoss_pct",(gl_pct - 1)*100)
+        print(
             "environment/total_assets",
             int(self.account_information["total_assets"][-1]),
         )
         reward_pct = self.account_information["total_assets"][-1] / self.initial_amount
-        logger.record("environment/total_reward_pct", (reward_pct - 1) * 100)
-        logger.record("environment/total_trades", self.sum_trades)
-        logger.record(
+        print("environment/total_reward_pct", (reward_pct - 1) * 100)
+        print("environment/total_trades", self.sum_trades)
+        print(
             "environment/actual_num_trades",
             self.actual_num_trades,
         )
-        logger.record(
+        print(
             "environment/avg_daily_trades",
             self.sum_trades / (self.current_step),
         )
-        logger.record(
+        print(
             "environment/avg_daily_trades_per_asset",
             self.sum_trades / (self.current_step) / len(self.assets),
         )
-        logger.record("environment/completed_steps", self.current_step)
-        logger.record(
+        print("environment/completed_steps", self.current_step)
+        print(
             "environment/sum_rewards", np.sum(self.account_information["reward"])
         )
-        logger.record(
+        print(
             "environment/cash_proportion",
             self.account_information["cash"][-1]
             / self.account_information["total_assets"][-1],
         )
-        return state, reward, True, {}
+        return state, reward, True, False, {}
     def log_step(self, reason, terminal_reward=None):
         if terminal_reward is None:
             terminal_reward = self.account_information["reward"][-1]
@@ -395,7 +394,7 @@ class StockTradingEnvStopLoss(gym.Env):
             )
             self.state_memory.append(state)
 
-            return state, reward, False, {}
+            return state, reward, False, False, {}
     def get_sb_env(self):
         def get_self():
             return deepcopy(self)
