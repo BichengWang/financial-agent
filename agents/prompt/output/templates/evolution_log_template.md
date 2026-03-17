@@ -1,6 +1,6 @@
 # Evolution Log Template
 
-Use this template for `output/<YYYY-MM-DD>/12_evolution_log.md`.
+Use this template for `output/{model-name}-{YYYY-MM-DD}/12_evolution_log.md`.
 
 ## Run Context
 

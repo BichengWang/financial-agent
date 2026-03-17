@@ -2,11 +2,11 @@
 
 Every run writes to a dated folder:
 
-`output/<YYYY-MM-DD>/`
+`output/{model-name}-{YYYY-MM-DD}/`
 
 Example:
 
-`output/2026-03-16/`
+`output/claude-opus-4-6-2026-03-16/`
 
 ## Required File Layout
 
@@ -73,7 +73,7 @@ Must include:
 
 1. Use two-digit numeric prefixes to keep files ordered.
 2. Do not overwrite previous dates.
-3. If a run halts early, still create the dated folder and publish all completed artifacts.
+3. If a run halts early, still create the model-date folder and publish all completed artifacts.
 4. If a file does not apply, create it with a short explanation instead of omitting it.
 
 ## Daily Schedule To Output Mapping

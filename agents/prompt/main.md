@@ -59,7 +59,7 @@ The system should improve itself without relaxing core safeguards.
 Daily cycle:
 
 1. Run the research pipeline.
-2. Publish the dated output package in `output/<YYYY-MM-DD>/`.
+2. Publish the dated output package in `output/{model-name}-{YYYY-MM-DD}/`.
 3. After the close, compare realized behavior versus forecast.
 4. Diagnose misses, false positives, missing data, and regime misclassification.
 5. Propose bounded prompt or parameter changes.
