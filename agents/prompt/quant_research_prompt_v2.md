@@ -15,6 +15,6 @@ The v3 version adds:
 2. A bounded self-evolution cycle.
 3. Explicit stop criteria.
 4. A concrete weekday schedule.
-5. A dated output package specification under `output/<YYYY-MM-DD>/`.
+5. A dated output package specification under `output/{model-name}-{YYYY-MM-DD}/`.
 
 Treat this file as a legacy pointer, not the active prompt entrypoint.

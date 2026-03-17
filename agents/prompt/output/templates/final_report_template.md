@@ -1,6 +1,6 @@
 # Final Report Template
 
-Use this template for `output/<YYYY-MM-DD>/08_final_report.md`.
+Use this template for `output/{model-name}-{YYYY-MM-DD}/08_final_report.md`.
 
 ```text
 ══════════════════════════════════════════════════════
