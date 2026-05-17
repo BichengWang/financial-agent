@@ -14,6 +14,10 @@ Classification: INTERNAL — INVESTMENT COMMITTEE USE
 
 State the portfolio stance in no more than 5 sentences.
 
+## MoM Reflection
+
+Summarize the prior same-model run, what actually worked or failed over the last month, and which names / themes / regime assumptions are being carried forward, downgraded, or removed before today's forecast.
+
 ## Market Regime Assessment
 
 | Metric | Observation | Implication |
