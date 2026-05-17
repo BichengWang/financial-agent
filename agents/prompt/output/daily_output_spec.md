@@ -12,7 +12,7 @@ Example:
 
 | File | Purpose |
 |---|---|
-| `00_run_manifest.md` | Start time, mode, data status, orchestrator state |
+| `00_run_manifest.md` | Start time, mode, data status, orchestrator state, and embedded prior-month reflection summary |
 | `01_preflight.md` | Data coverage, freshness, validation summary |
 | `02_regime_and_data.md` | Regime label, evidence, macro context |
 | `03_universe_summary.md` | Universe counts, exclusions, rejection reasons |
@@ -20,7 +20,7 @@ Example:
 | `05_top_candidates.md` | Investable candidates and near misses |
 | `06_portfolio_proposal.md` | Weights, sizing logic, portfolio analytics |
 | `07_risk_review.md` | Risk committee decision and concerns |
-| `08_final_report.md` | Final publishable report |
+| `08_final_report.md` | Final publishable report, including a fuller month-over-month reflection |
 | `09_midday_monitor.md` | Midday exception log |
 | `10_preclose_check.md` | Pre-close confirmation or escalation |
 | `11_close_log.md` | Close snapshot, realized notes, open questions |
@@ -45,6 +45,11 @@ Must include:
 - Data mode
 - Agents executed
 - Outstanding blockers
+- `Prior-Month Reflection` section with:
+  - baseline package path,
+  - prior run status,
+  - carry-forward decisions,
+  - downgrade / removal decisions
 
 ### `08_final_report.md`
 
@@ -52,11 +57,12 @@ Must include:
 
 1. Header with date and run status.
 2. Executive summary.
-3. Regime assessment.
-4. Candidate table.
-5. Portfolio analytics or no-trade rationale.
-6. Assumptions and limitations.
-7. Next scheduled review time.
+3. `MoM Reflection` section tying the prior-month run to the current thesis.
+4. Regime assessment.
+5. Candidate table.
+6. Portfolio analytics or no-trade rationale.
+7. Assumptions and limitations.
+8. Next scheduled review time.
 
 ### `12_evolution_log.md`
 
@@ -79,3 +85,5 @@ Must include:
 ## Daily Schedule To Output Mapping
 
 Each scheduled stage in `daily_schedule.md` must map to a concrete artifact in the dated output folder. This ensures the daily run is auditable even when the result is `NO_TRADE` or `HALTED`.
+
+The prior-month reflection is mandatory when a same-model package from roughly one month earlier exists, but it must be embedded inside existing artifacts rather than written to a standalone new file.
