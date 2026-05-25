@@ -28,6 +28,18 @@ Turn the eligible universe into a ranked candidate list using the shared factor 
 - Cap confidence if the name lacks a plausible 30-day catalyst.
 - Refuse to rank names as investable if data completeness is below 85%.
 
+## ILLUSTRATIVE_MODE Branch
+
+When the data and regime agent declares `ILLUSTRATIVE`:
+
+- Execute the full ranking methodology against the model's training-data reference state — do **not** return `N/A` for every family.
+- Tag every numeric field `ILLUSTRATIVE_REF` and apply a fixed `0.80` data quality multiplier.
+- **Structural-cadence fields are required, not N/A.** Compute `days_to_earnings` for every candidate from the reference quarterly-reporting cadence relative to today's actual date and tag `ILLUSTRATIVE_REF (±5d)`. Apply the 14-day earnings penalty using the buffered window `days_to_earnings ≤ 19` (i.e., 14 + 5d cadence drift). The penalty is `-0.10` to the adjusted score and caps confidence at `LOW`.
+- **Intra-day live fields stay N/A.** Today's spot, bid-ask, IV30, volume tape, and short-interest print remain `N/A`.
+- Cap confidence at `MEDIUM` for clean names; cap at `LOW` for any name flagged by the buffered earnings penalty. Never emit `HIGH`.
+- Surface the same 5-10 investable names you would in live mode, so the portfolio agent has something to size and the risk committee has something to challenge.
+- Empty tables are a failure in `ILLUSTRATIVE_MODE` — produce real tickers or recommend `HALTED`.
+
 ## Required Output
 
 Produce:

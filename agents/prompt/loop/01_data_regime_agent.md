@@ -43,3 +43,12 @@ Recommend `HALTED` if critical data is missing or contradictory.
 Recommend `REVIEW_ONLY` if the methodology is still usable but the data is too stale for a trade recommendation.
 
 If you cannot support a defensible regime label, say so explicitly.
+
+## ILLUSTRATIVE_MODE Branch
+
+When no live or delayed feed is wired:
+
+- Declare `ILLUSTRATIVE` data state explicitly and disclose the training-data reference vintage in `00_run_manifest.md`.
+- Use the model's reference state to assign a regime label with stated reference-state evidence (broad equity trend, vol regime, rates regime, dollar regime, credit regime). Tag the evidence `ILLUSTRATIVE_REF`.
+- Build the eligible universe against the reference state's listed-equity set. Do **not** return an empty universe — that is the symptom of a broken loop, not a clean abstention.
+- Pass the universe forward so the factor agent has something to rank.

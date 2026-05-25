@@ -29,6 +29,31 @@ Prioritize:
 - Derived metrics are allowed only when all source inputs are present and disclosed.
 - Do not backfill missing event dates or fundamentals with intuition.
 
+## ILLUSTRATIVE_MODE Operating Procedure
+
+`ILLUSTRATIVE_MODE` is **not** a silent-output mode. Empty artifacts are a failure mode, not a feature. The mode exists so the methodology can run end-to-end against the model's disclosed reference state when no live tape is wired, while preserving auditability.
+
+When the data state is `ILLUSTRATIVE`, every agent must execute its full methodology using the model's training-data reference state as the data source, and the output must be:
+
+1. **Concrete.** Produce real US-listed tickers, real GICS sectors, and methodology-derived scores. Empty tables are not allowed unless the universe filter genuinely excludes everything.
+2. **Banner-tagged.** Every structured table carries `ILLUSTRATIVE - NOT LIVE DATA` and every numeric field is tagged `ILLUSTRATIVE_REF` (training-data reference) rather than `LIVE` or `DELAYED`.
+3. **Auditable.** Disclose the reference vintage in `00_run_manifest.md` (e.g., "training-data state through 2026-01"). Distinguish two classes of calendar-dependent fields:
+
+   - **Structural cadence (allowed, must populate).** Fields whose state for any future date can be derived from a stable historical pattern: next earnings date (companies report on a quarterly cadence stable for years), next dividend date, index-rebalance windows, FOMC schedule, options-expiry calendar. Compute these from the reference cadence relative to today's actual date and tag `ILLUSTRATIVE_REF (±Nd)` with `N` set to the cadence drift band (typically `±5d` for earnings, `±2d` for FOMC). Apply all standard penalties (e.g., the 14-day earnings penalty in §Risk Controls) using the buffered window `≤ 14 + N` days.
+   - **Intra-day live (N/A).** Fields that require today's tape: today's spot price, today's bid-ask, today's IV30, today's volume, today's short-interest reading, today's analyst-revision tape. These remain `N/A`.
+
+   The earlier blanket rule of "calendar-dependent fields remain N/A" silently disabled the 14-day earnings penalty in `ILLUSTRATIVE_MODE`. The corrected rule keeps the penalty wired by allowing structural cadence in.
+4. **Down-rated.** No candidate may carry `HIGH` confidence in `ILLUSTRATIVE_MODE`. Cap at `MEDIUM`. The data quality multiplier is fixed at `0.80` (illustrative-but-internally-consistent reference state).
+5. **Published as `REVIEW_ONLY`.** The methodology runs and the artifacts are full, but the orchestrator publishes `REVIEW_ONLY` rather than `GO`. `NO_TRADE` is reserved for live-mode runs that fail to produce ≥5 investable names.
+
+What `ILLUSTRATIVE_MODE` does **not** allow:
+
+- Inventing live prices, today's bid-ask, today's option IV, today's short interest delta, or today's earnings date.
+- Citing a candidate in a way that a downstream reader could mistake for a live recommendation.
+- Suppressing risk constraints because "it's only illustrative." All hard caps (5% single-name, 30% sector, 0.90–1.10 beta band, 0.45 correlation, 8% drawdown) still bind on the illustrative portfolio.
+
+The non-fabrication contract is preserved by **disclosed reference state + banner tags**, not by emitting empty content.
+
 ## Required Data Discipline
 
 For every meaningful data field, preserve one of these tags:
