@@ -1,37 +1,46 @@
 # Daily Run Schedule
 
-Use Eastern Time and skip U.S. market holidays unless you are explicitly running a simulation.
+Use Eastern Time and skip nothing — U.S. market holidays still produce an `ILLUSTRATIVE_MODE` `REVIEW_ONLY` artifact set so the audit trail is unbroken.
 
-## Standard Weekday Cadence
+## Daily Cadence (Weekdays)
 
-| Time | Stage | Owner | Required Output |
-|---|---|---|---|
-| 06:30 | Run manifest and preflight start | Orchestrator | `00_run_manifest.md` |
-| 06:33 | Prior-month reflection checkpoint | Orchestrator | `00_run_manifest.md` (embedded reflection summary) |
-| 06:35 | Data freshness and regime assessment | Data and Regime Agent | `01_preflight.md`, `02_regime_and_data.md`, `03_universe_summary.md` |
-| 06:50 | Factor scoring and ranking | Factor Scoring Agent | `04_factor_scores.md`, `05_top_candidates.md` |
-| 07:10 | Portfolio construction | Portfolio Construction Agent | `06_portfolio_proposal.md` |
-| 07:20 | Risk committee review | Risk Committee Agent | `07_risk_review.md` |
-| 07:30 | Final publish decision | Orchestrator | `08_final_report.md` (must include `MoM Reflection`) |
-| 12:15 | Midday exception review | Orchestrator or Risk Committee Agent | `09_midday_monitor.md` |
-| 15:45 | Pre-close check | Orchestrator | `10_preclose_check.md` |
-| 16:20 | Close log and outcome capture | Orchestrator | `11_close_log.md` |
-| 17:00 | Daily evolution pass | Evolution Agent | `12_evolution_log.md` |
+| Time (ET) | Stage | Owner | Required Output | Scheduled? |
+|---|---|---|---|---|
+| 07:27 | Pre-open publish (full pipeline 00→08 + 12) | Orchestrator | `00_run_manifest.md` … `08_final_report.md`, `12_evolution_log.md` | Yes — `CronCreate` job `56841f5d` (durable, weekdays) |
+| 12:15 | Midday monitor | Orchestrator | `09_midday_monitor.md` | No (manual / future scheduler) |
+| 15:45 | Pre-close check | Orchestrator | `10_preclose_check.md` | No |
+| 16:20 | Close log | Orchestrator | `11_close_log.md` | No |
+| 17:00 | Daily evolution review | Evolution Agent | `12_evolution_log.md` (if not folded into 07:27 publish) | No |
 
 ## Weekly And Monthly Cadence
 
-| Time | Stage | Owner | Required Output |
-|---|---|---|---|
-| Friday 17:15 | Weekly parameter review | Evolution Agent | `13_weekly_review.md` |
-| Last trading day of month 17:30 | Structural review | Evolution Agent | `14_monthly_review.md` |
+| Time | Stage | Owner | Required Output | Scheduled? |
+|---|---|---|---|---|
+| Friday 17:15 | Weekly parameter review | Evolution Agent | `13_weekly_review.md` | No |
+| Last trading day of month 17:30 | Structural review | Evolution Agent | `14_monthly_review.md` | No |
+
+## Scheduling Mechanism
+
+- **Current:** Claude Code `CronCreate` job `56841f5d`, fires `27 7 * * 1-5` (07:27 ET, Mon–Fri), durable (`.claude/scheduled_tasks.json`).
+- **Renewal:** Recurring `CronCreate` jobs auto-expire **7 days after creation**. Recreate weekly with the same schema until a more permanent scheduler is wired.
+- **Idle gating:** Jobs only fire while the Claude Code REPL is idle (not mid-query). If the REPL is busy at 07:27, the run defers until idle.
+- **Catch-up:** Durable one-shot tasks missed while the REPL was closed are surfaced for catch-up. Recurring tasks do not catch up — they wait for the next scheduled fire.
+- **Off-minute:** 07:27 (not 07:30) avoids fleet-wide minute-zero pile-up per `CronCreate` guidance.
+
+## Path To A More Permanent Scheduler
+
+When weekly recreation becomes annoying, promote in this order:
+
+1. **macOS launchd** plist invoking `claude -p ".../prompt/main.md" --output-format json` — survives reboots, no 7-day expiry, runs even without an active Claude REPL.
+2. **GitHub Actions cron** workflow — runs in cloud, commits the dated output folder back to the repo, useful as a regression harness for the prompt stack itself. Best when you want a public commit history of every run.
 
 ## Scheduling Rules
 
-1. The 07:30 publish slot is the default final recommendation time.
-2. The prior-month reflection happens before new factor scoring and does not create a standalone file.
-3. If the run is `NO_TRADE` or `HALTED`, still publish the output package on schedule.
-4. Midday and pre-close reviews do not change the morning thesis unless a stop criterion is triggered.
-5. The evolution pass never edits protected rules automatically.
+1. The 07:27 publish slot is the default final recommendation time.
+2. If the run is `NO_TRADE`, `REVIEW_ONLY`, or `HALTED`, still publish the output package on schedule.
+3. Midday and pre-close reviews do not change the morning thesis unless a stop criterion is triggered.
+4. The evolution pass never edits protected rules autonomously.
+5. US market holidays still publish an `ILLUSTRATIVE_MODE` artifact set — no skipped days in the dated output folder.
 
 ## Minimum Daily Deliverables
 

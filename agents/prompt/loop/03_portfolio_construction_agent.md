@@ -45,3 +45,12 @@ Produce:
 ## Failure Rule
 
 If the portfolio cannot meet constraints without dropping below the minimum investable count, recommend `NO_TRADE` rather than forcing a portfolio.
+
+## ILLUSTRATIVE_MODE Branch
+
+In `ILLUSTRATIVE_MODE`:
+
+- Construct a real portfolio from the illustrative candidate list. All hard caps (5% single name, 30% sector, 0.90–1.10 beta, 0.45 avg pairwise correlation, 8% 95th-percentile 1M drawdown) still bind.
+- Tag every analytic value `ILLUSTRATIVE_REF`.
+- The orchestrator will publish `REVIEW_ONLY`, not `GO`. Do not size positions for live execution; produce a methodology demonstration that a human reader could audit.
+- An empty weights table in `ILLUSTRATIVE_MODE` is a failure. Either produce a portfolio or escalate `HALTED`.
