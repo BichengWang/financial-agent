@@ -11,7 +11,7 @@ import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from rl import QLearningAgent, GymEnvironmentWrapper, Trainer
+from financial_agent.rl import QLearningAgent, GymEnvironmentWrapper, Trainer
 
 
 def main():

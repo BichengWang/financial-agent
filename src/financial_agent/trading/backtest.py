@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from copy import deepcopy
 
-from ..marketdata.yahoodownloader import YahooDownloader
-from ..config import config
+from .marketdata.yahoodownloader import YahooDownloader
+from .config import config
 
 # # silence pyfolio warnings
 # import warnings
