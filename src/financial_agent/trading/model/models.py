@@ -19,7 +19,7 @@ from stable_baselines3.common.noise import (
 
 from ..config import config
 from ..preprocessing.data import data_split
-from ..environment.env_stocktrading import StockTradingEnv
+from ..env.env_stocktrading import StockTradingEnv
 
 from stable_baselines3 import A2C
 from stable_baselines3 import PPO

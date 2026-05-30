@@ -11,9 +11,9 @@ from ..config import config
 from ..marketdata.yahoodownloader import YahooDownloader
 from ..preprocessing.preprocessors import FeatureEngineer
 from ..preprocessing.data import data_split
-from ..environment.env_stocktrading import StockTradingEnv
+from ..env.env_stocktrading import StockTradingEnv
 from ..model.models import DRLAgent
-from ..trade.backtest import backtest_stats, backtest_plot, get_daily_return, get_baseline
+from ..backtest import backtest_stats, backtest_plot, get_daily_return, get_baseline
 
 
 
