@@ -8,7 +8,7 @@ from financial_agent.agents.grok.linear_client import LinearIssue
 from financial_agent.agents.grok.workflow import ProcessedIssue
 
 
-def _env() -> dict[str, str]:
+def _full_env() -> dict[str, str]:
     return {
         "LINEAR_API_KEY": "lin_api_test",
         "XAI_API_KEY": "xai_test",
@@ -42,7 +42,7 @@ def test_run_once_command(monkeypatch) -> None:
 
     monkeypatch.setattr(cli_module, "GrokWorkflow", _FakeWorkflow)
 
-    runner = CliRunner(env=_env())
+    runner = CliRunner(env=_full_env())
     result = runner.invoke(cli, ["run-once"])
 
     assert result.exit_code == 0, result.output
@@ -57,3 +57,73 @@ def test_missing_config_exits_nonzero() -> None:
     result = runner.invoke(cli, ["run-once"])
     assert result.exit_code == 2
     assert "Configuration error" in result.output
+
+
+def test_print_playbook_works_without_api_keys() -> None:
+    runner = CliRunner(env={"GROK_AGENT_USER_ID": "user-mcp"})
+    result = runner.invoke(cli, ["print-playbook"])
+
+    assert result.exit_code == 0, result.output
+    assert "user-mcp" in result.output
+    assert "<!-- grok-agent-response -->" in result.output
+
+
+def test_print_playbook_still_needs_trigger() -> None:
+    runner = CliRunner(env={})
+    result = runner.invoke(cli, ["print-playbook"])
+    assert result.exit_code == 2
+    assert "GROK_AGENT_USER_ID" in result.output
+
+
+def test_print_issue_uses_linear_only(monkeypatch) -> None:
+    issue = LinearIssue(
+        id="iss-1",
+        identifier="BIP-9",
+        title="Add lunar widget",
+        description="please add it",
+        state_name="Backlog",
+        url="https://linear.app/x/issue/BIP-9",
+    )
+
+    class _FakeLinear:
+        def __init__(self, api_key, base_url):
+            self.api_key = api_key
+            self.base_url = base_url
+
+        def fetch_assigned_issues(self, agent_user_id=None, agent_label=None):
+            return [issue]
+
+    monkeypatch.setattr(cli_module, "LinearClient", _FakeLinear)
+
+    runner = CliRunner(
+        env={
+            "LINEAR_API_KEY": "lin_api_test",
+            "GROK_AGENT_USER_ID": "user-123",
+        }
+    )
+    result = runner.invoke(cli, ["print-issue", "BIP-9"])
+
+    assert result.exit_code == 0, result.output
+    assert "BIP-9 — Add lunar widget" in result.output
+
+
+def test_print_issue_unknown_id_exits_nonzero(monkeypatch) -> None:
+    class _FakeLinear:
+        def __init__(self, api_key, base_url):
+            pass
+
+        def fetch_assigned_issues(self, agent_user_id=None, agent_label=None):
+            return []
+
+    monkeypatch.setattr(cli_module, "LinearClient", _FakeLinear)
+
+    runner = CliRunner(
+        env={
+            "LINEAR_API_KEY": "lin_api_test",
+            "GROK_AGENT_USER_ID": "user-123",
+        }
+    )
+    result = runner.invoke(cli, ["print-issue", "BIP-404"])
+
+    assert result.exit_code == 1
+    assert "BIP-404" in result.output

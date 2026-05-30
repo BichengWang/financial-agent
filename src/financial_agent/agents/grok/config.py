@@ -24,8 +24,13 @@ class GrokWorkflowConfig:
     """Runtime configuration for the Grok automation loop.
 
     Attributes:
-        linear_api_key: Linear personal API key (``lin_api_…``).
-        xai_api_key: xAI API key used to call Grok.
+        linear_api_key: Linear personal API key (``lin_api_…``). Optional;
+            only required when actually talking to Linear from this code
+            (``run-once`` / ``watch`` / ``print-issue``).
+        xai_api_key: xAI API key used to call Grok. Optional; only the
+            API-driven path (``run-once`` / ``watch``) needs it. If you
+            drive Grok from the iOS app via its Linear MCP connector
+            instead, leave this blank and use ``print-playbook``.
         agent_user_id: The Linear user ID that represents the Grok agent.
             Issues assigned to this user are picked up by the workflow.
             If unset, ``agent_label`` is used instead.
@@ -46,8 +51,8 @@ class GrokWorkflowConfig:
             not call Grok or write back to Linear.
     """
 
-    linear_api_key: str
-    xai_api_key: str
+    linear_api_key: str = ""
+    xai_api_key: str = ""
     agent_user_id: str | None = None
     agent_label: str | None = None
     in_progress_state_id: str | None = None
@@ -61,21 +66,30 @@ class GrokWorkflowConfig:
 
     @classmethod
     def from_env(
-        cls, env: Mapping[str, str] | None = None
+        cls,
+        env: Mapping[str, str] | None = None,
+        *,
+        require_linear: bool = True,
+        require_xai: bool = True,
     ) -> "GrokWorkflowConfig":
         """Build a config from environment variables.
 
-        Required: ``LINEAR_API_KEY``, ``XAI_API_KEY``.
         At least one of ``GROK_AGENT_USER_ID`` or ``GROK_AGENT_LABEL`` must
         be set so the workflow knows which issues to claim.
+
+        ``require_linear`` and ``require_xai`` control which API keys
+        must be present. The MCP-driven path (``print-playbook``) does
+        not need either, the linear-only path (``print-issue``) needs
+        only Linear, and the API-driven path (``run-once`` / ``watch``)
+        needs both.
         """
         source: Mapping[str, str] = env if env is not None else os.environ
 
         linear_key = source.get("LINEAR_API_KEY", "").strip()
         xai_key = source.get("XAI_API_KEY", "").strip()
-        if not linear_key:
+        if require_linear and not linear_key:
             raise ConfigError("LINEAR_API_KEY is not set")
-        if not xai_key:
+        if require_xai and not xai_key:
             raise ConfigError("XAI_API_KEY is not set")
 
         agent_user_id = source.get("GROK_AGENT_USER_ID", "").strip() or None
@@ -95,13 +109,8 @@ class GrokWorkflowConfig:
             done_state_id=source.get("GROK_DONE_STATE_ID") or None,
             grok_model=source.get("GROK_MODEL", _DEFAULT_GROK_MODEL),
             grok_base_url=source.get("GROK_BASE_URL", _DEFAULT_GROK_BASE_URL),
-            linear_base_url=source.get(
-                "LINEAR_BASE_URL", _DEFAULT_LINEAR_BASE_URL
-            ),
-            poll_interval_seconds=float(
-                source.get("GROK_POLL_INTERVAL_SECONDS", "60")
-            ),
+            linear_base_url=source.get("LINEAR_BASE_URL", _DEFAULT_LINEAR_BASE_URL),
+            poll_interval_seconds=float(source.get("GROK_POLL_INTERVAL_SECONDS", "60")),
             max_iterations=int(source.get("GROK_MAX_ITERATIONS", "0")),
-            dry_run=source.get("GROK_DRY_RUN", "").lower()
-            in {"1", "true", "yes"},
+            dry_run=source.get("GROK_DRY_RUN", "").lower() in {"1", "true", "yes"},
         )

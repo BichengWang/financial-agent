@@ -34,15 +34,39 @@ def test_from_env_label_alone_ok() -> None:
 
 def test_from_env_missing_keys() -> None:
     with pytest.raises(ConfigError, match="LINEAR_API_KEY"):
-        GrokWorkflowConfig.from_env({"XAI_API_KEY": "x"})
+        GrokWorkflowConfig.from_env({"XAI_API_KEY": "x", "GROK_AGENT_USER_ID": "u"})
     with pytest.raises(ConfigError, match="XAI_API_KEY"):
-        GrokWorkflowConfig.from_env({"LINEAR_API_KEY": "l"})
+        GrokWorkflowConfig.from_env({"LINEAR_API_KEY": "l", "GROK_AGENT_USER_ID": "u"})
 
 
 def test_from_env_requires_user_or_label() -> None:
     env = {"LINEAR_API_KEY": "l", "XAI_API_KEY": "x"}
     with pytest.raises(ConfigError, match="GROK_AGENT_USER_ID"):
         GrokWorkflowConfig.from_env(env)
+
+
+def test_from_env_mcp_mode_skips_api_key_checks() -> None:
+    # MCP mode: neither LINEAR_API_KEY nor XAI_API_KEY is set, only the
+    # agent trigger.
+    env = {"GROK_AGENT_USER_ID": "u-1"}
+    cfg = GrokWorkflowConfig.from_env(env, require_linear=False, require_xai=False)
+    assert cfg.linear_api_key == ""
+    assert cfg.xai_api_key == ""
+    assert cfg.agent_user_id == "u-1"
+
+
+def test_from_env_linear_only_mode() -> None:
+    env = {"LINEAR_API_KEY": "lin", "GROK_AGENT_LABEL": "grok"}
+    cfg = GrokWorkflowConfig.from_env(env, require_xai=False)
+    assert cfg.linear_api_key == "lin"
+    assert cfg.xai_api_key == ""
+    assert cfg.agent_label == "grok"
+
+
+def test_from_env_linear_only_still_needs_trigger() -> None:
+    env = {"LINEAR_API_KEY": "lin"}
+    with pytest.raises(ConfigError, match="GROK_AGENT_USER_ID"):
+        GrokWorkflowConfig.from_env(env, require_linear=True, require_xai=False)
 
 
 def test_from_env_optionals_parsed() -> None:

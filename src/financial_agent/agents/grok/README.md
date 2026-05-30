@@ -3,47 +3,100 @@
 This package implements the **"Linear assigns a task, Grok finishes it"**
 workflow that BIP-234 (and its parent BIP-41) calls for.
 
+Two modes are supported, picked by which credentials you have:
+
+| Mode | Trigger | Where Grok runs | What this package gives you |
+| --- | --- | --- | --- |
+| **MCP mode** *(recommended for users without an xAI API key)* | You ask Grok in the iOS app to "check Linear" | Inside the Grok iOS app, using its built-in **Linear MCP connector** | A version-controlled **playbook prompt** to paste into Grok, plus a CLI to print it |
+| **API mode** | A scheduled poll (cron / GitHub Actions / container) | This repo, calling the xAI chat-completions API | A full Linear ↔ Grok orchestration loop with idempotency |
+
 ```
-┌──────────┐    assign     ┌──────────────────┐    GraphQL    ┌────────┐
-│  Linear  │  ───────────▶ │ GrokWorkflow     │  ──────────▶  │ Linear │
-│  Issue   │               │ (this package)   │               │  API   │
-└──────────┘               │                  │  ──────────▶  └────────┘
-                           │  build prompt    │   chat        ┌────────┐
-                           │  call Grok       │  ──────────▶  │  xAI   │
-                           │  post comment    │  ◀──────────  │ Grok   │
-                           └──────────────────┘               └────────┘
+                      ┌──────────────┐
+       (no API key)   │  Grok iOS    │  MCP   ┌────────┐
+       ───────────▶   │  app +       │ ─────▶ │ Linear │   MCP mode
+                      │  playbook    │ ◀───── │  API   │
+                      └──────────────┘        └────────┘
+
+       (XAI_API_KEY)  ┌──────────────┐ GraphQL┌────────┐
+       ───────────▶   │ GrokWorkflow │ ─────▶ │ Linear │   API mode
+                      │ (this repo)  │ ◀───── │  API   │
+                      │              │  REST  ┌────────┐
+                      │              │ ─────▶ │  xAI   │
+                      └──────────────┘ ◀───── │  Grok  │
+                                              └────────┘
 ```
 
-## How it works
+Both modes use the same idempotency convention: every reply Grok posts
+back to Linear is prefixed with the hidden HTML marker
+`<!-- grok-agent-response -->`. Re-runs (yours or another agent's)
+detect that marker and skip the issue.
 
-1. **Trigger.** A human assigns a Linear issue to the dedicated *Grok
-   agent* user (or applies the configured trigger label such as
-   `grok`). The workflow polls Linear on an interval; no inbound
-   webhook is required.
-2. **Fetch.** `LinearClient.fetch_assigned_issues` runs a single
-   GraphQL query that filters by `assignee.id` and/or `labels.name` and
-   excludes already-`Done`/`Canceled` issues. It also pulls the
-   existing comment thread.
-3. **Idempotency.** Each agent reply is wrapped in a hidden HTML
-   marker (`<!-- grok-agent-response -->`). Before responding, the
-   workflow scans the comment thread for that marker and skips the
-   issue if it already replied — so re-runs and overlapping pollers
-   don't double-post.
-4. **(Optional) state transition.** If `GROK_IN_PROGRESS_STATE_ID` is
-   set the issue is moved into "In Progress" before the LLM call, and
-   into `GROK_DONE_STATE_ID` afterwards.
-5. **LLM call.** `GrokClient` calls
-   `POST {GROK_BASE_URL}/chat/completions` against the OpenAI-compatible
-   xAI API (default model `grok-4-latest`) with the system prompt in
-   [`prompts.py`](./prompts.py) and the issue context as the user
-   message.
-6. **Reply.** The model's text is posted back as a comment on the
-   issue via `commentCreate`.
+---
 
-## Configuration
+## MCP mode (no xAI API key needed)
 
-All configuration is read from environment variables. The minimum
-required set is:
+You already have this set up if you have:
+
+1. A Linear API key configured inside an MCP server (Linear ships an
+   official MCP, e.g. `https://mcp.linear.app/sse`, and there are
+   community servers as well).
+2. That MCP server registered inside the Grok iOS app's connector
+   settings.
+
+### One-time setup
+
+Set just enough config so the playbook knows which issues are yours:
+
+```shell
+export GROK_AGENT_USER_ID="…linear-user-id…"   # OR
+export GROK_AGENT_LABEL="grok"
+```
+
+Then print the playbook prompt and paste it into Grok in the iOS app.
+You can save it as a custom persona / system prompt, or just paste it
+at the top of a chat session:
+
+```shell
+python -m financial_agent.agents.grok print-playbook
+```
+
+The output is a Markdown prompt that tells Grok exactly how to:
+
+* filter Linear issues by your agent user ID / label,
+* skip anything already containing the idempotency marker,
+* compose a structured Markdown reply (`TL;DR` / `Plan` /
+  `Next actions`) that respects this repo's conventions,
+* post the reply via the Linear MCP `create_comment` tool.
+
+### Day-to-day use
+
+Once the playbook is loaded, simply tell Grok in the app:
+
+> Check Linear.
+
+Grok then uses its Linear MCP connector to list your eligible issues,
+process each one, and reply in the chat with a summary of what it did.
+
+If you want to nudge Grok about a specific issue without round-tripping
+through MCP, you can copy a single issue's context from the CLI (this
+needs `LINEAR_API_KEY` but **not** an xAI key):
+
+```shell
+export LINEAR_API_KEY=lin_api_…
+python -m financial_agent.agents.grok print-issue BIP-234
+```
+
+…and paste the output into Grok directly.
+
+---
+
+## API mode (when you do have an xAI API key)
+
+This is the fully-automated loop; no human needs to be in the chat.
+
+### Configuration
+
+Required:
 
 | Variable | Purpose |
 | --- | --- |
@@ -51,7 +104,7 @@ required set is:
 | `XAI_API_KEY` | xAI API key for Grok. |
 | `GROK_AGENT_USER_ID` *or* `GROK_AGENT_LABEL` | Picks which issues to claim. |
 
-Optional knobs (with defaults):
+Optional (with defaults):
 
 | Variable | Default | Notes |
 | --- | --- | --- |
@@ -64,17 +117,17 @@ Optional knobs (with defaults):
 | `GROK_DONE_STATE_ID` | unset | If set, move issue here on finish. |
 | `GROK_DRY_RUN` | unset | When truthy, skip Grok + Linear writes. |
 
-## Usage
+### Run
 
 ```shell
-# Run a single batch and exit (good for cron / Lambda):
-uv run python -m financial_agent.agents.grok run-once
+# Cron / Lambda style:
+python -m financial_agent.agents.grok run-once
 
 # Long-running watcher:
-uv run python -m financial_agent.agents.grok watch --interval 60
+python -m financial_agent.agents.grok watch --interval 60
 ```
 
-You can also drive it from Python:
+Or from Python:
 
 ```python
 from financial_agent.agents.grok import GrokWorkflow, GrokWorkflowConfig
@@ -84,35 +137,37 @@ workflow = GrokWorkflow(config)
 results = workflow.run_once()
 ```
 
-## Deployment options
+---
 
-The workflow is designed so the same code can run in any of these
-shapes:
+## Module map
 
-* **GitHub Actions cron** — schedule `python -m financial_agent.agents.grok run-once`
-  every few minutes; idempotency comes from the comment marker, so a
-  missed or duplicate run is harmless.
-* **Long-running container** — `watch` mode for low-latency response.
-* **Local dev** — set the env vars in a `.env` and run `run-once` to
-  smoke test end-to-end.
+| Module | Purpose |
+| --- | --- |
+| `playbook.py` | MCP-mode prompt rendered with your trigger filter. |
+| `prompts.py` | API-mode system prompt sent on every Grok call. |
+| `config.py` | Env-driven config; API keys are individually optional. |
+| `linear_client.py` | Minimal Linear GraphQL client (stdlib only). |
+| `grok_client.py` | Minimal xAI chat-completions client (stdlib only). |
+| `workflow.py` | API-mode orchestrator (`run_once`, `run_forever`). |
+| `cli.py`, `__main__.py` | `python -m financial_agent.agents.grok …` entry. |
 
 ## Testing
 
-Both clients accept a pluggable `http` callable that returns
+Both clients accept a pluggable `http` callable returning
 `(status_code, raw_bytes)`, so the entire workflow is unit-testable
 without network access. See [`tests/agents/grok/`](../../../../tests/agents/grok)
-for the included tests, which fake both APIs and assert the round-trip
-behavior (issue fetched → Grok called → comment posted).
+for the included tests; see also
+[`scripts/demo_grok_workflow.py`](../../../../scripts/demo_grok_workflow.py)
+for an end-to-end mocked roundtrip.
 
 ## Plan / next actions
 
-This module covers the connection plumbing requested in BIP-234. Likely
-follow-ups:
-
-* Hook the workflow into the existing trading code paths so Grok can
-  call into `financial_agent.trading.*` for repo-aware research tasks.
-* Add a webhook receiver as a faster alternative to polling.
-* Extend `prompts.py` with task-specific templates (e.g. backtest
-  request, dataset request).
-* Wire repo-write capability (PR creation) for issues tagged
-  `grok-can-code`.
+* **MCP mode** is ready for you to use today: just print the playbook
+  and paste it into Grok in the iOS app.
+* If/when an xAI API key becomes available, the same module switches
+  to **API mode** with no code changes — just set `XAI_API_KEY` and
+  schedule `run-once`.
+* Future extensions (out of scope for the initial PR): a Linear
+  webhook receiver, repo-write capability for issues tagged
+  `grok-can-code`, and task-specific prompt templates wired into
+  `financial_agent.trading.*`.

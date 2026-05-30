@@ -21,9 +21,9 @@ from typing import Callable, Iterator
 from .config import GrokWorkflowConfig
 from .grok_client import GrokClient, GrokMessage
 from .linear_client import LinearClient, LinearIssue
+from .playbook import AGENT_COMMENT_MARKER as _AGENT_COMMENT_MARKER
 from .prompts import SYSTEM_PROMPT, build_user_message
 
-_AGENT_COMMENT_MARKER = "<!-- grok-agent-response -->"
 _LOG = logging.getLogger("financial_agent.agents.grok")
 
 
