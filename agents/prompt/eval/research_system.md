@@ -28,6 +28,43 @@ Prioritize:
 - If live data is unavailable, switch to `ILLUSTRATIVE_MODE` and label every structured table `ILLUSTRATIVE - NOT LIVE DATA`.
 - Derived metrics are allowed only when all source inputs are present and disclosed.
 - Do not backfill missing event dates or fundamentals with intuition.
+- Every price cited for a named ticker must carry a **freshness tag** (`LIVE`, `DELAYED`, `OFFICIAL_FILING`, `HISTORICAL`, `ILLUSTRATIVE_REF`, or `UNAVAILABLE`) and an **observation date** in `YYYY-MM-DD` format, except `ILLUSTRATIVE_REF` reference-state values which must disclose the reference vintage. A bare numeric price without tag and date is a fabrication violation.
+- If a price cannot be tagged and dated, mark the field `N/A - unverified` and exclude that ticker from all target-price and sigma calculations. Do not use an unverified price to compute target price, CI bounds, or position size.
+- Use `APPROX - sourced` only when a concrete source, observation date, and estimation basis are disclosed. If no source exists, use `UNAVAILABLE`.
+- Do not use live-sounding language such as "current", "latest", "closed at", "reported today", or "validated by price" unless the claim cites a non-illustrative Source Ledger row.
+
+## Source Ledger Contract
+
+`01_preflight.md` must contain a Source Ledger before reflection, scoring, portfolio construction, or risk review uses facts downstream.
+
+Required schema:
+
+| artifact | field | ticker/entity | value | unit | observation_date | source | freshness_tag | claim_type | used_by |
+|---|---|---|---|---|---|---|---|---|---|
+
+Allowed `freshness_tag` values:
+
+- `LIVE`
+- `DELAYED`
+- `OFFICIAL_FILING`
+- `HISTORICAL`
+- `ILLUSTRATIVE_REF`
+- `UNAVAILABLE`
+
+Allowed `claim_type` values:
+
+- `OBSERVED`: directly read from a cited source.
+- `DERIVED`: computed from ledger rows; the `source` or `used_by` field must name the formula and input rows.
+- `INFERRED`: analyst judgment based on cited ledger rows.
+- `ILLUSTRATIVE`: model-reference or methodology-demo value, never live-executable.
+- `UNAVAILABLE`: required field with no support.
+
+Hard rules:
+
+1. Any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, or position-size input used downstream must appear in the Source Ledger.
+2. Derived values must cite their formula and input ledger rows. If any input row is missing or `UNAVAILABLE`, the derived value must also be `UNAVAILABLE`.
+3. Thesis validation claims must cite supporting ledger rows and be labeled `INFERRED` unless they are a direct source observation.
+4. A downstream artifact may summarize facts from the ledger, but it may not introduce new factual claims without adding or citing ledger rows.
 
 ## ILLUSTRATIVE_MODE Operating Procedure
 
@@ -50,18 +87,31 @@ What `ILLUSTRATIVE_MODE` does **not** allow:
 
 - Inventing live prices, today's bid-ask, today's option IV, today's short interest delta, or today's earnings date.
 - Citing a candidate in a way that a downstream reader could mistake for a live recommendation.
+- Using words such as "current", "latest", "closed at", "reported today", or "validated by price" unless a non-illustrative Source Ledger row supports the claim.
 - Suppressing risk constraints because "it's only illustrative." All hard caps (5% single-name, 30% sector, 0.90–1.10 beta band, 0.45 correlation, 8% drawdown) still bind on the illustrative portfolio.
 
 The non-fabrication contract is preserved by **disclosed reference state + banner tags**, not by emitting empty content.
 
 ## Required Data Discipline
 
-For every meaningful data field, preserve one of these tags:
+For every meaningful data field, preserve both a `freshness_tag` and a `claim_type`.
+
+Allowed `freshness_tag` values:
 
 - `LIVE`
 - `DELAYED`
+- `OFFICIAL_FILING`
+- `HISTORICAL`
+- `ILLUSTRATIVE_REF`
+- `UNAVAILABLE`
+
+Allowed `claim_type` values:
+
+- `OBSERVED`
+- `DERIVED`
+- `INFERRED`
 - `ILLUSTRATIVE`
-- `N/A`
+- `UNAVAILABLE`
 
 If the data tag mix materially weakens confidence, lower the recommendation quality or halt the run.
 
@@ -169,17 +219,50 @@ A stock is investable only if all of the following are true:
 
 ## Statistical Framing
 
-Every forecast must be probabilistic.
+Every forecast must be probabilistic. Numeric fields must be derivable and traceable — do not guess.
 
-Required:
+Required per forecast:
 
-- Expected return as `mu +/- sigma`.
-- At least a 70% confidence interval.
+- Expected return `mu` as a signed percentage (e.g., `+6.0%`).
+- `sigma` as 1 standard deviation of the 2-6 week return, stated as an unsigned percentage (e.g., `12.0%`). Sigma source must be one of: 30-day realized vol (`REALIZED_VOL_30D`), options IV30 (`IV30`), or sector-median realized vol (`SECTOR_MEDIAN_ILLUS`). Never state a sigma value without a stated source.
+- A 70% confidence interval expressed as price bounds: `[entry_price x (1 + mu - 1.04sigma), entry_price x (1 + mu + 1.04sigma)]` when entry_price is available, tagged, and present in the Source Ledger.
 - Percentile rank for the adjusted score.
 - Signal decay note for fast-decaying signals.
 - Historical or analog context only when clearly labeled as backtest, analog, or illustrative.
 
 If out-of-sample evidence is not available, say so plainly.
+
+## Price and Target Citation Standard
+
+Every ticker in the investable set or monitoring sleeve requires a **Recommendation Metrics Block** in the output artifact. This block is required whether the run is `GO`, `REVIEW_ONLY`, or `ILLUSTRATIVE`.
+
+### Required Fields
+
+| Field | Description | Allowed Values |
+|---|---|---|
+| `entry_price` | Last close or reference price used as basis | Numeric, or `N/A - unverified` |
+| `price_date` | Date of the entry price | `YYYY-MM-DD`, reference vintage, or `UNAVAILABLE` |
+| `price_tag` | Data freshness tag | `LIVE` / `DELAYED` / `OFFICIAL_FILING` / `HISTORICAL` / `ILLUSTRATIVE_REF` / `UNAVAILABLE` |
+| `target_price` | `entry_price x (1 + mu)` | Numeric or `N/A` |
+| `target_date` | `run_date + target horizon in days` | `YYYY-MM-DD` or `N/A` |
+| `mu` | Expected return over the target horizon | Signed %, e.g. `+6.0%` |
+| `sigma` | 1-standard-deviation return band | Unsigned %, e.g. `12.0%` |
+| `sigma_source` | Derivation basis for sigma | `REALIZED_VOL_30D` / `IV30` / `SECTOR_MEDIAN_ILLUS` |
+| `ci_70_lo` | Lower 70% CI price bound | `entry_price x (1 + mu - 1.04sigma)` or `N/A` |
+| `ci_70_hi` | Upper 70% CI price bound | `entry_price x (1 + mu + 1.04sigma)` or `N/A` |
+| `ledger_rows` | Source Ledger rows supporting the metric block | Row IDs or source references |
+
+### Derivation Rules
+
+- **target_date default**: `run_date + 28d` (midpoint of the 2-6 week horizon). Use `run_date + 21d` when the primary catalyst is imminent; `run_date + 42d` for slow-building theses.
+- **target_price**: compute only when `entry_price` is not `N/A - unverified` and the entry-price ledger row is available. Do not manufacture a target from a fabricated or untagged price.
+- **CI bounds**: compute only when both `entry_price` and `sigma` are available and tagged. The factor 1.04 gives the approximate ±70% interval for a normal distribution.
+- **Derived metrics**: target price, MoM return, confidence interval, beta, drawdown, and sizing calculations must cite their formula and input Source Ledger rows.
+- **ILLUSTRATIVE_MODE**: fields may use training-data reference prices only when tagged `ILLUSTRATIVE_REF` and paired with a disclosed reference vintage. They must carry that tag throughout and may not be used for live execution sizing. If no reference vintage can be disclosed, use `UNAVAILABLE`.
+
+### Enforcement
+
+Missing or untagged price fields are a fabrication violation reviewable by the risk committee agent. Any candidate with `entry_price = N/A - unverified` may not appear in the investable set or monitoring sleeve at `GO` status.
 
 ## Objective Function
 

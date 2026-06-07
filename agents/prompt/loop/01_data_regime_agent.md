@@ -11,6 +11,7 @@ Verify that the run has enough trustworthy data to proceed, classify the current
 - Latest available benchmark, sector, volatility, rates, and macro data.
 - Security-level liquidity, price, beta, event-calendar, and factor inputs.
 - Data freshness metadata.
+- Source Ledger rows from `01_preflight.md`.
 
 ## Tasks
 
@@ -25,6 +26,7 @@ Verify that the run has enough trustworthy data to proceed, classify the current
 4. Apply the universe inclusion and exclusion filters.
 5. List all rejected names with the rejection reason.
 6. Flag event concentration risks such as clustered earnings.
+7. Verify that every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a Source Ledger row or is marked `UNAVAILABLE`.
 
 ## Required Output
 
@@ -34,7 +36,8 @@ Produce:
 2. A regime table with evidence.
 3. A universe summary table.
 4. A rejection log.
-5. A clear handoff note for the factor scoring agent.
+5. Source Ledger coverage gaps that affect scoring eligibility.
+6. A clear handoff note for the factor scoring agent.
 
 ## Stop Rules
 
@@ -52,3 +55,4 @@ When no live or delayed feed is wired:
 - Use the model's reference state to assign a regime label with stated reference-state evidence (broad equity trend, vol regime, rates regime, dollar regime, credit regime). Tag the evidence `ILLUSTRATIVE_REF`.
 - Build the eligible universe against the reference state's listed-equity set. Do **not** return an empty universe — that is the symptom of a broken loop, not a clean abstention.
 - Pass the universe forward so the factor agent has something to rank.
+- Do not use live-sounding language such as "current", "latest", "closed at", "reported today", or "validated by price" unless a non-illustrative Source Ledger row supports it.
