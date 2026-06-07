@@ -6,7 +6,7 @@ The design replaces a single monolithic prompt with a controlled workflow:
 
 - `loop/` contains executable agent prompts.
 - `eval/` contains shared research rules, evaluation rubrics, stop criteria, and evolution governance.
-- `output/` contains the daily run schedule, artifact specification, and output templates.
+- `../output/` contains the daily run schedule, artifact specification, output templates, and dated run artifacts.
 
 ## Primary Goal
 
@@ -25,8 +25,8 @@ Use one orchestrator agent plus five specialist agents.
 1. Load `eval/research_system.md`.
 2. Load `eval/stop_criteria.md`.
 3. Load `eval/evolution_policy.md`.
-4. Load `output/daily_schedule.md`.
-5. Load `output/daily_output_spec.md`.
+4. Load `../output/daily_schedule.md`.
+5. Load `../output/daily_output_spec.md`.
 6. Execute a named `Reflection` stage before new forecasting work begins.
 7. Execute `loop/00_orchestrator.md`.
 8. The orchestrator invokes the remaining prompts in `loop/` in order.
@@ -41,13 +41,18 @@ The reflection uses:
 2. the current run's draft context and available market evidence, and
 3. realized outcome observations (prices, returns, regime changes) available as of the current run date.
 
-The baseline to use is always the most recent same-model run from approximately one month prior. For the April 16, 2026 claude-sonnet-4-6 run, the required baseline is:
+The baseline must be selected deterministically from `/Users/mac/my-code/diary/investments/equity/output/`:
 
-`/Users/mac/my-code/diary/investments/equity/output/claude-sonnet-4-6-2026-03-16/`
+1. Scan immediate child directories only.
+2. Ignore `templates/` and any directory whose name does not end in a parseable `YYYY-MM-DD` date.
+3. Treat the model name as the full directory prefix before the trailing date.
+4. Define the MoM candidate window as `run_date - 45d` through `run_date - 21d`, with target date `run_date - 28d`.
+5. Choose the same-model folder inside that window closest to the target date. If it is more than 7 calendar days from the target date, still use it but set `BASELINE_WINDOW_GAP`.
+6. If no same-model folder exists inside the window, choose the cross-model folder inside the window closest to the target date and set `CROSS_MODEL_BASELINE`.
+7. If no in-window folder exists, choose the closest older same-model folder only when one exists and set `BASELINE_WINDOW_GAP`.
+8. If no prior folder exists, set `NO_PRIOR_BASELINE`.
 
-If no same-model prior run exists, fall back to the most recent available run of any model:
-
-`/Users/mac/my-code/diary/investments/equity/output/claude-opus-4-6-2026-03-16/`
+Never use a folder less than 21 days old as the MoM baseline. Such folders may be named as short-window cross-checks, but their carry-forward decisions must be clearly separated from the MoM reflection.
 
 ### Required Sections in `02_reflection.md`
 
@@ -68,7 +73,7 @@ A mandatory table comparing prior entry prices against current prices for every 
 - **Hit**: name delivered positive return AND the research thesis was directionally correct.
 - **Miss**: name delivered negative return OR thesis was directionally wrong.
 - **Neutral**: name was flagged REVIEW_ONLY and no position was taken.
-- If exact prices are unavailable, state `APPROX` and use best available estimate with source note.
+- If exact prices are unavailable but a source-backed estimate exists, state `APPROX - sourced` and include the source note. If no source exists, state `UNAVAILABLE`.
 
 #### 3. Theme-Level Performance Summary
 Evaluate each research theme from the prior run (e.g., AI infrastructure, power/electrification, financials) and state whether the theme validated, partially validated, or failed over the one-month window. Include quantitative evidence where available.
@@ -85,16 +90,17 @@ A mandatory table with an explicit decision for every name and theme from the pr
 Valid decisions: `CARRY` / `DOWNGRADE` / `DROP` / `PROMOTE` (names added to today's watchlist due to MoM evidence).
 
 #### 6. Reflection Sign-Off
-- Data quality note (LIVE / APPROX / UNAVAILABLE for each price used)
+- Data quality note (`LIVE` / `DELAYED` / `OFFICIAL_FILING` / `HISTORICAL` / `ILLUSTRATIVE_REF` / `APPROX - sourced` / `UNAVAILABLE`) for each price used
 - Confidence in the reflection (HIGH / MEDIUM / LOW) with rationale
 - Any structural issues discovered (missing data, regime misclassification in prior run, etc.)
 
 ### Reflection Governance Rules
 
 - The reflection must be completed before any new factor scoring begins (state machine enforces REFLECTION before DATA_OK).
-- If prior output folder is missing or empty, document the gap in `02_reflection.md` and proceed with `NO_PRIOR_BASELINE` flag.
-- Never fabricate prior prices. If unavailable, mark as `APPROX` with a clear source note.
-- The carry-forward decisions in `02_reflection.md` are binding inputs to the `02_factor_scoring_agent.md` — names marked DROP are excluded from today's scored set unless new evidence overrides.
+- If the ideal prior output folder is missing or empty, document the exact baseline flag in `02_reflection.md` and proceed only with `NO_PRIOR_BASELINE`, `CROSS_MODEL_BASELINE`, or `BASELINE_WINDOW_GAP`.
+- Never fabricate prior or current prices. If a value is unavailable, mark it `UNAVAILABLE`; use `APPROX - sourced` only when a source-backed estimate and observation date are disclosed.
+- `02_reflection.md` must cite source-ledger rows from `01_preflight.md` for every price, return, regime, or thesis-validation claim. If the source ledger has no support, the claim must be marked `UNAVAILABLE` or explicitly labeled `INFERRED`.
+- The carry-forward decisions in `02_reflection.md` are binding inputs to the `02_factor_scoring_agent.md` only when they are supported by source-ledger rows or explicitly marked `UNAVAILABLE`. Names marked DROP are excluded from today's scored set unless new source-ledger evidence overrides.
 
 ## Agent Order
 
@@ -127,7 +133,7 @@ Daily cycle:
 
 1. Perform the prior-month reflection before new scoring begins.
 2. Run the research pipeline.
-3. Publish the dated output package in `output/{model-name}-{YYYY-MM-DD}/`.
+3. Publish the dated output package in `../output/{model-name}-{YYYY-MM-DD}/`.
 4. After the close, compare realized behavior versus forecast.
 5. Diagnose misses, false positives, missing data, and regime misclassification.
 6. Propose bounded prompt or parameter changes.
@@ -140,16 +146,16 @@ Daily cycle:
 - If live or delayed market data is unavailable, explicitly switch to `ILLUSTRATIVE_MODE`.
 - Never weaken risk limits in order to force a publishable portfolio.
 - Never mutate protected rules in `eval/evolution_policy.md` without human approval.
-- Always publish a clear `GO`, `NO_TRADE`, or `HALTED` run status.
+- Always publish a clear `GO`, `NO_TRADE`, `REVIEW_ONLY`, or `HALTED` run status.
 
 ## Deliverable Standard
 
-Every daily run must produce the following numbered artifacts in the dated output folder `output/{model-name}-{YYYY-MM-DD}/`:
+Every daily run must produce the following numbered artifacts in the dated output folder `../output/{model-name}-{YYYY-MM-DD}/`:
 
 | # | Artifact | Owner | Required |
 |---|---------|-------|---------|
 | 00 | `00_run_manifest.md` | Orchestrator | Always |
-| 01 | `01_preflight.md` | Orchestrator | Always |
+| 01 | `01_preflight.md` | Orchestrator | Always - includes mandatory Source Ledger |
 | **02** | **`02_reflection.md`** | **Orchestrator (Reflection Stage)** | **Always — MoM comparison table mandatory** |
 | 03 | `03_regime_and_data.md` | Data/Regime Agent | Always |
 | 04 | `04_universe_summary.md` | Factor Scoring Agent | Always |
@@ -163,6 +169,6 @@ Every daily run must produce the following numbered artifacts in the dated outpu
 | 12 | `12_close_log.md` | Orchestrator | Scheduled |
 | 13 | `13_evolution_log.md` | Evolution Agent | Always |
 
-The `02_reflection.md` artifact (MoM comparison) is the most critical new addition. It must be completed before any new factor scoring begins and its carry-forward decisions are binding inputs to the factor scoring agent.
+The `01_preflight.md` Source Ledger and `02_reflection.md` artifact are the critical grounding gates. Reflection must be completed before any new factor scoring begins, and its carry-forward decisions are binding inputs to the factor scoring agent only when backed by source-ledger evidence or explicitly marked `UNAVAILABLE`.
 
-All naming, timing, and file outputs are defined in `output/daily_schedule.md` and `output/daily_output_spec.md`.
+All naming, timing, and file outputs are defined in `../output/daily_schedule.md` and `../output/daily_output_spec.md`.

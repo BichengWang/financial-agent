@@ -12,6 +12,7 @@ Convert the approved candidate list into a portfolio proposal that maximizes exp
 - Expected return and risk estimates.
 - Beta, volatility, sector, and correlation inputs.
 - Current regime label.
+- Source Ledger rows supporting every per-position and portfolio metric.
 
 ## Tasks
 
@@ -40,7 +41,8 @@ Produce:
 5. Sector concentration table.
 6. Factor exposure summary.
 7. Correlation matrix or tabular equivalent.
-8. A note on why excluded names were left out.
+8. Per-position **Recommendation Metrics Table** with columns: `Ticker | Entry Price | Price Date | Price Tag | Target Price | Target Date | mu | sigma | Sigma Source | 70% CI Lo | 70% CI Hi | Source / Ledger Rows`. Inherit these values from the factor scoring agent output; do not recompute without a stated reason and ledger-backed formula.
+9. A note on why excluded names were left out.
 
 ## Failure Rule
 
@@ -54,3 +56,10 @@ In `ILLUSTRATIVE_MODE`:
 - Tag every analytic value `ILLUSTRATIVE_REF`.
 - The orchestrator will publish `REVIEW_ONLY`, not `GO`. Do not size positions for live execution; produce a methodology demonstration that a human reader could audit.
 - An empty weights table in `ILLUSTRATIVE_MODE` is a failure. Either produce a portfolio or escalate `HALTED`.
+- Do not use live-sounding language such as "current", "latest", "closed at", "reported today", or "validated by price" unless a non-illustrative Source Ledger row supports it.
+
+## Source Grounding Rules
+
+- Portfolio weights, beta, correlation, drawdown, Sharpe, Kelly sizing, and sector concentration must either inherit Source Ledger rows from factor scoring or create derived rows that cite formulas and input rows.
+- If any critical input is `UNAVAILABLE`, the affected derived metric must also be `UNAVAILABLE`; do not fill gaps with approximations.
+- If a candidate lacks ledger-backed price, sigma, beta, or earnings-distance inputs, remove it from any `GO` portfolio and require `REVIEW_ONLY`, `NO_TRADE`, or `HALTED` according to stop criteria.

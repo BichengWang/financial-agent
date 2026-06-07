@@ -12,6 +12,7 @@ Review the current run and recent realized outcomes, then propose bounded improv
 - Recent prior output packages.
 - Realized returns, hit rate, drawdown, turnover, and forecast-error logs.
 - Current prompt set and evaluation policy.
+- Source Ledger coverage and any grounding failures from `01_preflight.md`, `02_reflection.md`, and risk review.
 
 ## Tasks
 
@@ -23,11 +24,12 @@ Review the current run and recent realized outcomes, then propose bounded improv
    - Portfolio construction
    - Risk review
    - Output clarity
+   - Source grounding
 3. Propose exactly one high-value change at a time.
 4. State the hypothesis for that change.
 5. Test the proposed change against the required acceptance standard.
 6. Accept, reject, or defer the change.
-7. Log the result in the daily evolution artifact.
+7. Log the result in `13_evolution_log.md`.
 
 ## Mutation Boundaries
 

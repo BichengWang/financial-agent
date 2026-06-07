@@ -1,6 +1,6 @@
 # Evolution Log Template
 
-Use this template for `output/{model-name}-{YYYY-MM-DD}/12_evolution_log.md`.
+Use this template for `output/{model-name}-{YYYY-MM-DD}/13_evolution_log.md`.
 
 ## Run Context
 
@@ -10,6 +10,8 @@ Use this template for `output/{model-name}-{YYYY-MM-DD}/12_evolution_log.md`.
 | Run status | |
 | Regime | |
 | Evaluation window | |
+| Source Ledger status | |
+| Reflection baseline flag | |
 
 ## What Worked
 
@@ -29,6 +31,7 @@ Choose one:
 - Portfolio construction
 - Risk review
 - Output clarity
+- Source grounding
 
 ## Proposed Change
 
