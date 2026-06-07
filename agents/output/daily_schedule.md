@@ -6,18 +6,18 @@ Use Eastern Time and skip nothing — U.S. market holidays still produce an `ILL
 
 | Time (ET) | Stage | Owner | Required Output | Scheduled? |
 |---|---|---|---|---|
-| 07:27 | Pre-open publish (full pipeline 00→08 + 12) | Orchestrator | `00_run_manifest.md` … `08_final_report.md`, `12_evolution_log.md` | Yes — `CronCreate` job `56841f5d` (durable, weekdays) |
-| 12:15 | Midday monitor | Orchestrator | `09_midday_monitor.md` | No (manual / future scheduler) |
-| 15:45 | Pre-close check | Orchestrator | `10_preclose_check.md` | No |
-| 16:20 | Close log | Orchestrator | `11_close_log.md` | No |
-| 17:00 | Daily evolution review | Evolution Agent | `12_evolution_log.md` (if not folded into 07:27 publish) | No |
+| 07:27 | Pre-open publish (full pipeline 00->09 + 13) | Orchestrator | `00_run_manifest.md` ... `09_final_report.md`, `13_evolution_log.md` | Yes - `CronCreate` job `56841f5d` (durable, weekdays) |
+| 12:15 | Midday monitor | Orchestrator | `10_midday_monitor.md` | No (manual / future scheduler) |
+| 15:45 | Pre-close check | Orchestrator | `11_preclose_check.md` | No |
+| 16:20 | Close log | Orchestrator | `12_close_log.md` | No |
+| 17:00 | Daily evolution review | Evolution Agent | `13_evolution_log.md` (if not folded into 07:27 publish) | No |
 
 ## Weekly And Monthly Cadence
 
 | Time | Stage | Owner | Required Output | Scheduled? |
 |---|---|---|---|---|
-| Friday 17:15 | Weekly parameter review | Evolution Agent | `13_weekly_review.md` | No |
-| Last trading day of month 17:30 | Structural review | Evolution Agent | `14_monthly_review.md` | No |
+| Friday 17:15 | Weekly parameter review | Evolution Agent | `14_weekly_review.md` | No |
+| Last trading day of month 17:30 | Structural review | Evolution Agent | `15_monthly_review.md` | No |
 
 ## Scheduling Mechanism
 
@@ -47,11 +47,12 @@ When weekly recreation becomes annoying, promote in this order:
 Every weekday run must produce at least:
 
 1. Run manifest.
-2. Embedded prior-month reflection.
-3. Regime and preflight note.
-4. Top candidates or explicit no-trade logic.
-5. Portfolio proposal or no-trade decision.
-6. Risk review.
-7. Final report.
-8. Close log.
-9. Evolution log.
+2. Preflight note with Source Ledger.
+3. Standalone prior-month reflection.
+4. Regime and data note.
+5. Top candidates or explicit no-trade logic.
+6. Portfolio proposal or no-trade decision.
+7. Risk review.
+8. Final report.
+9. Close log.
+10. Evolution log.
