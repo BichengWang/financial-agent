@@ -50,11 +50,13 @@ If the run still fails after those retries, stop and publish `NO_TRADE` or `HALT
 
 ## Self-Evolution Stop Criteria
 
+Criteria 1 and 3 apply to **Track A (performance) changes only** — Track B process changes are governed by `evolution_policy.md § Two-Track Change Classification` and are not blocked by observation counts. "Closed observations" means settled prediction records in `15_predictions.json` files.
+
 Stop the evolution cycle for the day if any of the following is true:
 
-1. Fewer than 20 new closed observations are available for the evaluation window.
+1. (Track A) Fewer than 20 settled prediction records are available for the evaluation window.
 2. The proposed prompt or parameter change has no explicit hypothesis.
-3. The proposed change cannot be tested on a holdout slice.
+3. (Track A) The proposed change cannot be tested on a holdout slice.
 4. Out-of-sample Information Ratio improves by less than `0.05`.
 5. Maximum drawdown worsens by more than `0.50%`.
 6. Turnover rises by more than `25%` without a compensating improvement in hit rate or Information Ratio.

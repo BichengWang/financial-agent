@@ -40,6 +40,22 @@ These rules may not be weakened by autonomous mutation:
 
 Any proposal that touches a protected rule requires human approval before it can be adopted.
 
+## Two-Track Change Classification
+
+Every proposal must be classified before evaluation. The last three runs all ended `NO_CHANGE_ACCEPTED` because process-clarity fixes were judged against a statistical acceptance standard they can never meet — while the 20-observation evidence base they were waiting on could never accumulate. The tracks break that deadlock:
+
+**Track A — Performance changes** (factor weights, thresholds, mu Calibration Table, confidence calibration, sizing parameters):
+
+- Require ≥ 20 settled prediction records from `15_predictions.json` files and a holdout/rolling validation per the Acceptance Standard below.
+
+**Track B — Process changes** (prompt wording clarity, artifact naming/numbering, spec-consistency fixes, schema corrections, sequencing, missing-fetch procedure fixes):
+
+- Do NOT require closed observations or a statistical holdout — these changes have no scoring math to validate.
+- Acceptance standard: (1) explicit problem statement citing the artifact that exposed it, (2) the change cannot weaken a protected rule or any grounding gate, (3) the change is logged with a `HUMAN_REVIEW` flag in `13_evolution_log.md` and takes effect next run unless reverted.
+- Limit: at most one Track B change per run.
+
+A spec inconsistency flagged in two consecutive evolution logs (e.g., `main.md` vs `daily_output_spec.md` layout drift) is mandatory Track B work, not optional.
+
 ## Required Evolution Workflow
 
 Every evolution pass must follow this order:

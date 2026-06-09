@@ -10,7 +10,9 @@ Review the current run and recent realized outcomes, then propose bounded improv
 
 - Current daily output package.
 - Recent prior output packages.
-- Realized returns, hit rate, drawdown, turnover, and forecast-error logs.
+- **Settled predictions from `15_predictions.json` files** — the primary evidence base. "Closed observations" in `eval/stop_criteria.md` means settled prediction records.
+- Rolling calibration metrics from `02_reflection.md` §0 (hit rate, CI coverage, mean z, rank IC).
+- Realized returns, drawdown, turnover, and forecast-error logs.
 - Current prompt set and evaluation policy.
 - Source Ledger coverage and any grounding failures from `01_preflight.md`, `02_reflection.md`, and risk review.
 
@@ -25,7 +27,8 @@ Review the current run and recent realized outcomes, then propose bounded improv
    - Risk review
    - Output clarity
    - Source grounding
-3. Propose exactly one high-value change at a time.
+3. Propose exactly one high-value change at a time. **Priority override:** if CI coverage < 55% or rank IC <= 0 over >= 20 settled predictions, the proposed change must address calibration (sigma sourcing, mu table, or score weighting) before any other category.
+3a. You are the only agent permitted to modify the mu Calibration Table in `eval/research_system.md`, and only with settled-prediction evidence passing the acceptance standard.
 4. State the hypothesis for that change.
 5. Test the proposed change against the required acceptance standard.
 6. Accept, reject, or defer the change.

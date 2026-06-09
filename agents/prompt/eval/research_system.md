@@ -33,6 +33,97 @@ Prioritize:
 - Use `APPROX - sourced` only when a concrete source, observation date, and estimation basis are disclosed. If no source exists, use `UNAVAILABLE`.
 - Do not use live-sounding language such as "current", "latest", "closed at", "reported today", or "validated by price" unless the claim cites a non-illustrative Source Ledger row.
 
+## Price Sourcing Standard (Grounding Gate)
+
+A price is **grounded** only when it was retrieved by a tool during the current run and logged with a retrieval timestamp. Recalled, estimated, or single-page-scraped prices are not grounded.
+
+Requirements:
+
+1. Every `entry_price` and every settlement (`current_price`) used downstream must come from one of:
+   - a connected market-data tool (e.g., brokerage MCP `get_price_snapshot` / `get_price_history`), or
+   - **two independent web sources** whose values agree within `1%`; cite both URLs and observation dates.
+2. The Source Ledger row must record `retrieved_at` (timestamp of the fetch) in addition to `observation_date`.
+3. A price that fails this standard is `UNAVAILABLE` — not `APPROX - sourced`. `APPROX - sourced` is reserved for non-price fields.
+4. In `ILLUSTRATIVE_MODE`, `ILLUSTRATIVE_REF` prices are exempt from fetching but must disclose the reference vintage as before.
+
+## Prediction Ledger and Settlement Contract
+
+Grounding to the *right prediction* requires that every forecast be written down in machine-readable form and later scored against itself. Markdown prose is not a prediction record.
+
+### Prediction Ledger (`15_predictions.json`)
+
+Every run with a ranked investable or monitoring set must emit `15_predictions.json` in the dated output folder. One record per name:
+
+```json
+{
+  "run_date": "YYYY-MM-DD",
+  "model": "model-name",
+  "ticker": "XXXX",
+  "entry_price": 0.0,
+  "price_tag": "LIVE|DELAYED|HISTORICAL|ILLUSTRATIVE_REF",
+  "price_date": "YYYY-MM-DD",
+  "mu": 0.0,
+  "sigma": 0.0,
+  "sigma_source": "REALIZED_VOL_30D|IV30|SECTOR_MEDIAN_ILLUS",
+  "ci70_lo": 0.0,
+  "ci70_hi": 0.0,
+  "target_date": "YYYY-MM-DD",
+  "benchmark": "SPY",
+  "benchmark_price": 0.0,
+  "adj_score": 0.0,
+  "confidence": "HIGH|MEDIUM|LOW",
+  "status": "OPEN",
+  "thesis": "one-line thesis"
+}
+```
+
+`benchmark_price` (SPY at the same price_date) is mandatory so settlement can compute alpha.
+
+### Settlement Rules
+
+At each run, before new scoring, the Reflection stage must **settle every OPEN prediction whose `target_date <= run_date`** across all prior packages (all models). Settlement uses grounded current prices per the Price Sourcing Standard. For each settled prediction compute:
+
+1. `realized_return = current_price / entry_price - 1`
+2. `benchmark_return = current_SPY / benchmark_price - 1`
+3. `realized_alpha = realized_return - benchmark_return`
+4. **Direction score**: `HIT` if `sign(realized_alpha) == sign(mu)` and `realized_alpha > 0`; else `MISS`.
+5. **Calibration score**: `IN_CI` if `current_price` is within `[ci70_lo, ci70_hi]`; else `OUT_CI_HIGH` / `OUT_CI_LOW`.
+6. **Magnitude error**: `z = (realized_return - mu) / sigma`.
+
+A raw negative return in a falling tape is **not** automatically a Miss; a raw positive return in a melt-up is **not** automatically a Hit. Alpha versus the recorded benchmark is the grounding target, because the objective function is IR, not raw return.
+
+Predictions from `REVIEW_ONLY` and `ILLUSTRATIVE` runs are settled and scored identically to `GO` predictions (illustrative ones flagged `ILLUSTRATIVE_VINTAGE` in the settlement record). Run status governs execution, not evaluation — paper forecasts are exactly how the system earns the evidence needed to ever publish `GO`.
+
+### Rolling Calibration Metrics
+
+The Reflection artifact must report, over all settled predictions (minimum 10; otherwise state `INSUFFICIENT_SETTLED_N`):
+
+| Metric | Definition | Healthy Range |
+|---|---|---|
+| Hit rate | share of settled predictions with Direction = HIT | > 50% |
+| CI coverage | share with Calibration = IN_CI | 55% – 85% (target 70%) |
+| Mean z | average magnitude error | -0.5 to +0.5 |
+| Rank IC | Spearman correlation of `adj_score` vs `realized_alpha` per vintage | > 0 |
+
+Interpretation rules:
+
+- CI coverage **below 55%** → sigma is too small or mu too aggressive: the evolution agent must propose widening sigma sourcing or shrinking the mu prior before any other change.
+- CI coverage **above 85%** → intervals are uninformatively wide: tighten.
+- Rank IC ≤ 0 over ≥ 20 settled predictions → the composite score is not predictive; freeze confidence at `MEDIUM` cap until a corrective change passes evolution policy.
+
+### mu Calibration Table
+
+`mu` may not be free-handed per name. It is drawn from the calibration table below (prior), then adjusted by at most ±2 percentage points with a stated, ledger-backed reason:
+
+| Adjusted-score percentile | Prior mu (4-week) |
+|---|---|
+| >= 95 | +6.0% |
+| 90 – 95 | +5.0% |
+| 85 – 90 | +4.0% |
+| 80 – 85 | +3.0% |
+
+Only the evolution agent may modify this table, and only with settled-prediction evidence under `eval/evolution_policy.md`. This makes every mu reproducible and every table change testable against realized alpha.
+
 ## Source Ledger Contract
 
 `01_preflight.md` must contain a Source Ledger before reflection, scoring, portfolio construction, or risk review uses facts downstream.
@@ -114,6 +205,46 @@ Allowed `claim_type` values:
 - `UNAVAILABLE`
 
 If the data tag mix materially weakens confidence, lower the recommendation quality or halt the run.
+
+## Input Classification: Required vs Enhancing
+
+Recent runs blocked `GO` indefinitely on inputs that are never available in this environment (options IV/skew, complete short-interest feed, bid-ask tape, full-universe screen). That converts caution into a permanent dead state. Classify inputs explicitly:
+
+**Required for GO** (missing any → `REVIEW_ONLY` / `NO_TRADE`):
+
+1. Grounded entry price per the Price Sourcing Standard.
+2. ~60 trading days of fetched price history per name and for SPY (drives beta, correlation, drawdown, realized vol).
+3. `sigma` via the Sigma Fallback Chain.
+4. Next earnings date — confirmed, or cadence-estimated as `prior_report_date + ~91d` tagged `ESTIMATED (±5d)`; apply the 14-day penalty on the buffered window.
+5. A sampled universe meeting the Sampled Universe Protocol below.
+
+**Enhancing** (missing → lower the data-quality multiplier and cap confidence at `MEDIUM`; never block `GO` by themselves):
+
+- Options IV/skew, short interest/borrow, bid-ask spread tape, analyst revision tape, institutional ownership flow, full-universe percentile feed.
+
+A run with all Required inputs grounded and several Enhancing inputs missing is a valid `GO` candidate at reduced confidence and reduced gross exposure (cap 50%), not an automatic `REVIEW_ONLY`.
+
+## Sampled Universe Protocol
+
+A full U.S. equity screening feed is not wired; demanding one guarantees failure. When no full screen is available, build the universe deterministically:
+
+1. Start with all carry-forward names (`CARRY` / `PROMOTE`) from `02_reflection.md`.
+2. Add the 2-3 largest liquid names from each of the 11 GICS sectors (S&P 500 constituents).
+3. Add current theme-watchlist names with a stated catalyst.
+4. Minimum 30 names, all passing the inclusion filters below, all with grounded prices.
+
+Rank within this set and label every percentile `SAMPLED_PCTL (n=XX)`. A sampled percentile is valid for the evidence thresholds; it must simply be labeled. Disclose the sampling rule in `04_universe_summary.md`.
+
+## Data Mode Taxonomy
+
+Declare exactly one data mode in `00_run_manifest.md`:
+
+- `LIVE` — real-time feed wired.
+- `DELAYED` — quotes fetched this run with ≤ 1-day lag (tool or cross-checked web). Eligible for `GO` at reduced exposure if all Required inputs are grounded.
+- `DELAYED_PARTIAL` — delayed quotes fetched but one or more **Required** inputs missing → `REVIEW_ONLY`, and the manifest must name which Required input failed and what fetch was attempted.
+- `ILLUSTRATIVE` — no fetched data; training-reference state per the ILLUSTRATIVE_MODE procedure.
+
+Do not invent other mode labels.
 
 ## Universe Construction
 
@@ -225,6 +356,17 @@ Required per forecast:
 
 - Expected return `mu` as a signed percentage (e.g., `+6.0%`).
 - `sigma` as 1 standard deviation of the 2-6 week return, stated as an unsigned percentage (e.g., `12.0%`). Sigma source must be one of: 30-day realized vol (`REALIZED_VOL_30D`), options IV30 (`IV30`), or sector-median realized vol (`SECTOR_MEDIAN_ILLUS`). Never state a sigma value without a stated source.
+
+### Sigma Fallback Chain (mandatory)
+
+Missing one sigma source does not make sigma `UNAVAILABLE`. Work down this chain and stop at the first success:
+
+1. `IV30` — only if an options feed is wired.
+2. `REALIZED_VOL_30D` — **fetch ~30 trading days of closes** per the Price Sourcing Standard (market-data tool `get_price_history`, or web sources), compute daily-return stdev, scale by `sqrt(21)` for 1 month. A missing options feed is NOT an excuse to skip this step; price history is almost always fetchable.
+3. `SECTOR_MEDIAN` — realized vol of the name's sector ETF (fetched) scaled by the name's beta, labeled `SECTOR_MEDIAN` (or `SECTOR_MEDIAN_ILLUS` in illustrative mode).
+4. `UNAVAILABLE` — only after documenting that steps 2 and 3 were attempted and the fetches failed.
+
+A ranked or monitored name without `mu` and `sigma` cannot be settled later and is therefore unauditable. Emitting a monitor list with blanket `mu = N/A, sigma = UNAVAILABLE` is a publishing failure, not caution: in any non-halted run, every ranked name must carry `mu` (from the Calibration Table) and `sigma` (from this chain), tagged with their derivation. `REVIEW_ONLY` status changes what may be executed; it does not waive the forecast.
 - A 70% confidence interval expressed as price bounds: `[entry_price x (1 + mu - 1.04sigma), entry_price x (1 + mu + 1.04sigma)]` when entry_price is available, tagged, and present in the Source Ledger.
 - Percentile rank for the adjusted score.
 - Signal decay note for fast-decaying signals.
@@ -280,6 +422,17 @@ Secondary tie-breakers:
 1. Sortino ratio.
 2. Lower event risk.
 3. Lower portfolio crowding.
+
+## Computed Risk Analytics (No Permanent N/A)
+
+`N/A - no validated engine` is not an acceptable steady state for beta, correlation, or drawdown — it permanently blocks `GO` and prevents predictions from ever being tested. When grounded price history is fetchable (Price Sourcing Standard), these analytics are **computable and required**:
+
+1. **Beta**: regression slope of daily returns vs SPY over the trailing 60 trading days of fetched history. Tag `DERIVED`, cite the history ledger rows.
+2. **Pairwise correlation**: correlation matrix of daily returns over the same 60-day window for all proposed names.
+3. **Portfolio sigma**: `sqrt(w' Σ w)` from the fetched covariance matrix, scaled to 1 month.
+4. **95th-percentile 1-month drawdown**: parametric estimate `1.65 x portfolio_sigma_1m` (state the normality assumption), or empirical from the fetched window if ≥ 60 observations.
+
+If price history genuinely cannot be fetched for a name, exclude that name rather than emitting portfolio-level `N/A`. Only when history is unavailable for the benchmark itself may the run fall back to `REVIEW_ONLY` on these grounds.
 
 ## Risk Controls
 
