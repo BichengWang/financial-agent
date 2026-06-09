@@ -61,5 +61,7 @@ In `ILLUSTRATIVE_MODE`:
 ## Source Grounding Rules
 
 - Portfolio weights, beta, correlation, drawdown, Sharpe, Kelly sizing, and sector concentration must either inherit Source Ledger rows from factor scoring or create derived rows that cite formulas and input rows.
-- If any critical input is `UNAVAILABLE`, the affected derived metric must also be `UNAVAILABLE`; do not fill gaps with approximations.
+- **Beta, pairwise correlation, portfolio sigma, and 95th-percentile drawdown are computable and required** when grounded price history is fetchable — compute them per `../eval/research_system.md § Computed Risk Analytics` from 60-day fetched history. `N/A - no validated engine` is not an acceptable output when the history fetch succeeds; it permanently blocks `GO` and prevents predictions from being tested.
+- If price history cannot be fetched for a specific name, drop that name rather than emitting portfolio-level `N/A`.
+- If any critical input is `UNAVAILABLE` after the above, the affected derived metric must also be `UNAVAILABLE`; do not fill gaps with approximations.
 - If a candidate lacks ledger-backed price, sigma, beta, or earnings-distance inputs, remove it from any `GO` portfolio and require `REVIEW_ONLY`, `NO_TRADE`, or `HALTED` according to stop criteria.

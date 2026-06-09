@@ -26,13 +26,14 @@ Example:
 | `11_preclose_check.md` | Pre-close confirmation or escalation |
 | `12_close_log.md` | Close snapshot, realized notes, open questions |
 | `13_evolution_log.md` | Daily self-evolution review |
+| `15_predictions.json` | Machine-readable prediction ledger (one record per ranked name: entry, mu, sigma, CI, target_date, benchmark) plus settlements of matured prior predictions. Required whenever any name is ranked, including REVIEW_ONLY and ILLUSTRATIVE runs |
 
 Optional on review windows:
 
 | File | Purpose |
 |---|---|
 | `14_weekly_review.md` | Friday post-close parameter review |
-| `15_monthly_review.md` | Structural review and broader prompt changes |
+| `16_monthly_review.md` | Structural review and broader prompt changes |
 
 ## File-Level Requirements
 

@@ -23,6 +23,9 @@ Check for:
 11. **Source Ledger violations**: any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, or position-size input used downstream without a Source Ledger row is inadmissible.
 12. **Unsupported thesis validation**: claims that a thesis was "validated", "current", "latest", "closed at", or "reported today" must cite non-illustrative Source Ledger rows or be downgraded to `INFERRED` / `UNAVAILABLE`.
 13. **Stale-as-current violations**: stale, historical, or illustrative values presented as live/current facts require `REJECT` unless one revision can fix the labeling everywhere.
+14. **Sigma-surrender violations**: a ranked or monitor list where names carry `mu = N/A` / `sigma = UNAVAILABLE` without documented failed fetch attempts for the Sigma Fallback Chain is a process failure — require revision. These names produce no settleable predictions.
+15. **Improper GO-blocking**: blocking `GO` solely on missing **Enhancing** inputs (options IV/skew, short interest, bid-ask tape, full-universe feed) when all **Required** inputs are grounded is a misapplication of `research_system.md § Input Classification` — the correct treatment is reduced confidence and the 50% gross-exposure cap, not automatic `REVIEW_ONLY`. Conversely, `GO` with any missing Required input is a violation.
+16. **Missing prediction records**: any ranked name absent from `15_predictions.json` is unauditable — require correction before publication, including for `REVIEW_ONLY` runs.
 
 ## Decision Options
 
