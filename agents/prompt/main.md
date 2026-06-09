@@ -35,6 +35,18 @@ Use one orchestrator agent plus five specialist agents.
 
 Before scoring the current day, the orchestrator must perform a dedicated month-over-month (MoM) reflection and publish it as a **standalone artifact** named `02_reflection.md` in the dated output folder.
 
+### Prediction Settlement (runs first, inside Reflection)
+
+Before the folder-based MoM comparison, settle predictions per `eval/research_system.md § Prediction Ledger and Settlement Contract`:
+
+1. Scan all dated output folders for `15_predictions.json` files (all models).
+2. Settle every record with `status = OPEN` and `target_date <= run_date` using grounded current prices (Price Sourcing Standard).
+3. Record direction (alpha-based HIT/MISS), CI calibration, and magnitude error `z` per prediction.
+4. Report the rolling calibration metrics (hit rate, CI coverage, mean z, rank IC) in `02_reflection.md`.
+5. Write settled results back as a `settlements` block in the current run's `15_predictions.json`.
+
+Prediction settlement is keyed to each prediction's own `target_date`, **not** to folder-window proximity. The folder-window baseline below remains as narrative context and as fallback when no prediction ledger exists in prior packages.
+
 The reflection uses:
 
 1. the prior same-model dated output package from roughly one month earlier,
@@ -58,6 +70,11 @@ Never use a folder less than 21 days old as the MoM baseline. Such folders may b
 
 The artifact must contain the following sections in order:
 
+#### 0. Prediction Settlement
+- Settled-prediction table: `Ticker | Vintage | Entry | Target Date | mu | Realized Return | SPY Return | Alpha | Direction | CI Result | z`
+- Rolling calibration metrics: hit rate, CI coverage, mean z, rank IC (or `INSUFFICIENT_SETTLED_N`)
+- Statement of which prior `15_predictions.json` files were scanned
+
 #### 1. Prior Run Summary
 - Prior run date, model, and final status (GO / NO_TRADE / REVIEW_ONLY / HALTED)
 - Prior regime classification
@@ -70,9 +87,12 @@ A mandatory table comparing prior entry prices against current prices for every 
 | Ticker | Prior Date | Prior Price | Current Date | Current Price | MoM Return | Hit / Miss | Notes |
 |--------|-----------|-------------|--------------|---------------|-----------|-----------|-------|
 
-- **Hit**: name delivered positive return AND the research thesis was directionally correct.
-- **Miss**: name delivered negative return OR thesis was directionally wrong.
-- **Neutral**: name was flagged REVIEW_ONLY and no position was taken.
+Add two columns when benchmark data is available: `SPY Return` over the same window and `Alpha` (`MoM Return - SPY Return`).
+
+- **Hit**: realized **alpha vs SPY is positive** AND the thesis was directionally correct. A raw decline smaller than the benchmark's decline is a Hit, not a Miss.
+- **Miss**: realized alpha is negative OR the thesis was directionally wrong.
+- **Neutral**: applies to **position P&L accounting only** (no position was taken). It is NOT a substitute for forecast scoring: a name ranked in a `REVIEW_ONLY` run is still a forecast and must receive a Hit/Miss on alpha. Marking an entire prior top-5 "Neutral" because the run was `REVIEW_ONLY` is an evaluation dodge and a reflection failure — under that reading no forecast would ever be scored, since most runs publish `REVIEW_ONLY`.
+- When the prediction carried a 70% CI, also state whether the current price is `IN_CI` or `OUT_CI` — calibration is judged on the CI, not on the sign of the raw return.
 - If exact prices are unavailable but a source-backed estimate exists, state `APPROX - sourced` and include the source note. If no source exists, state `UNAVAILABLE`.
 
 #### 3. Theme-Level Performance Summary
@@ -143,6 +163,8 @@ Daily cycle:
 ## Non-Negotiable Rules
 
 - Never fabricate live market data.
+- Every price used for entry, settlement, or MoM comparison must satisfy the Price Sourcing Standard in `eval/research_system.md` (tool-fetched, or two independent sources within 1%, with retrieval timestamp). Otherwise it is `UNAVAILABLE`.
+- Never report a raw-return Hit/Miss where benchmark data exists — grounding is to predicted alpha and the stated CI.
 - If live or delayed market data is unavailable, explicitly switch to `ILLUSTRATIVE_MODE`.
 - Never weaken risk limits in order to force a publishable portfolio.
 - Never mutate protected rules in `eval/evolution_policy.md` without human approval.
@@ -168,6 +190,7 @@ Every daily run must produce the following numbered artifacts in the dated outpu
 | 11 | `11_preclose_check.md` | Orchestrator | Scheduled |
 | 12 | `12_close_log.md` | Orchestrator | Scheduled |
 | 13 | `13_evolution_log.md` | Evolution Agent | Always |
+| 15 | `15_predictions.json` | Orchestrator | Always when any name is ranked — machine-readable prediction ledger + settlements |
 
 The `01_preflight.md` Source Ledger and `02_reflection.md` artifact are the critical grounding gates. Reflection must be completed before any new factor scoring begins, and its carry-forward decisions are binding inputs to the factor scoring agent only when backed by source-ledger evidence or explicitly marked `UNAVAILABLE`.
 

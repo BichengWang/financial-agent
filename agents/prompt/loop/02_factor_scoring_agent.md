@@ -25,7 +25,10 @@ Turn the eligible universe into a ranked candidate list using the shared factor 
 ## Required Checks
 
 - Flag any signal with a half-life below 5 trading days.
-- Flag any name with earnings inside 14 calendar days.
+- Flag any name with earnings inside 14 calendar days. If no confirmed next earnings date is available, estimate it as `prior_report_date + ~91d`, tag `ESTIMATED (±5d)`, and apply the penalty on the buffered window — do not leave the field as a stale "prior field" date.
+- **Never emit blanket `sigma = UNAVAILABLE`.** Follow the Sigma Fallback Chain in `../eval/research_system.md`: no IV feed → fetch 30d price history and compute `REALIZED_VOL_30D` → sector-ETF fallback → only then `UNAVAILABLE` with the failed fetch attempts documented. A monitor list where every name has `mu = N/A, sigma = UNAVAILABLE` is a publishing failure: those names can never be settled, so the run produces zero evidence.
+- In `REVIEW_ONLY` runs, ranked monitor names still require full `mu` / `sigma` / CI / `target_date` blocks and prediction records — review-only status restricts execution, not forecasting.
+- When no full universe feed exists, build the universe per the Sampled Universe Protocol and label percentiles `SAMPLED_PCTL (n=XX)`. Do not refuse to rank because a full screen is missing.
 - Cap confidence if the name lacks a plausible 30-day catalyst.
 - Refuse to rank names as investable if data completeness is below 85%.
 - Refuse to emit numeric price, target, confidence interval, sigma, beta, drawdown, or earnings-distance fields unless the source inputs exist in the Source Ledger.
@@ -70,6 +73,8 @@ For each investable candidate, produce:
 - `target_price = entry_price x (1 + mu)` — derive only when `entry_price` is tagged `LIVE`, `DELAYED`, `OFFICIAL_FILING`, `HISTORICAL`, or `ILLUSTRATIVE_REF` and the input ledger rows are present.
 - `ci_70_lo = entry_price x (1 + mu - 1.04sigma)`, `ci_70_hi = entry_price x (1 + mu + 1.04sigma)` — derive only when both `entry_price` and `sigma` are available, tagged, and ledger-backed.
 - `sigma_source`: state `REALIZED_VOL_30D`, `IV30`, or `SECTOR_MEDIAN_ILLUS` for every row. A round sigma figure (e.g., exactly 10%) without a source is a fabrication violation.
+- `mu`: draw from the mu Calibration Table in `../eval/research_system.md` based on adjusted-score percentile. Per-name adjustment is capped at ±2pp and must state a ledger-backed reason. Free-handed mu values are a calibration violation.
+- `entry_price`: must satisfy the Price Sourcing Standard (tool-fetched or two independent sources within 1%, with retrieval timestamp). A single-source scraped price is `UNAVAILABLE`.
 - If `entry_price` is `N/A - unverified` or `UNAVAILABLE`, all of `target_price`, `target_date`, `ci_70_lo`, `ci_70_hi` must also be `N/A`.
 - Thesis and catalyst claims must cite Source Ledger rows. If the support is judgment-based rather than observed, label the claim `INFERRED`.
 
@@ -84,5 +89,16 @@ Before publishing the ranked table, verify:
 - [ ] No candidate in the investable set has `price_tag = UNAVAILABLE`.
 - [ ] `mu` and `sigma` are derived from the factor architecture, not asserted without evidence.
 - [ ] No live-sounding wording appears without non-illustrative source support.
+
+### Prediction Records
+
+For every name in the investable subset or monitoring sleeve, emit a prediction record for the orchestrator's `15_predictions.json` per `../eval/research_system.md § Prediction Ledger and Settlement Contract`, including `benchmark_price` (SPY at the same price_date, ledger-backed). A ranked name without a prediction record cannot be settled later and is therefore not auditable — treat the omission as a publishing failure.
+
+### Calibration Feedback Binding
+
+Read the rolling calibration metrics from `02_reflection.md` §0 before scoring:
+
+- CI coverage < 55%: use the wider of `REALIZED_VOL_30D` and `IV30` as sigma and apply the mu table without positive adjustments.
+- Rank IC <= 0 over >= 20 settled predictions: cap all confidence at `MEDIUM`.
 
 If fewer than 5 names pass, explicitly recommend `NO_TRADE`.

@@ -28,7 +28,19 @@ Execute the full research loop using specialist agents and publish a complete da
 
 ## Reflection Stage
 
-Before invoking the specialist prompts, load the prior same-model dated output package from roughly one month earlier when it exists.
+### Step 1 — Prediction Settlement (mandatory, runs first)
+
+1. Scan all dated output folders for `15_predictions.json` (all models).
+2. Settle every `OPEN` prediction with `target_date <= run_date` using grounded prices per the Price Sourcing Standard (tool fetch or two independent sources within 1%, retrieval timestamp logged in the Source Ledger).
+3. Score each settled prediction: alpha-based Direction (HIT/MISS vs SPY), CI calibration (IN_CI / OUT_CI), magnitude error `z = (realized - mu) / sigma`.
+4. Publish rolling calibration metrics (hit rate, CI coverage, mean z, rank IC) in `02_reflection.md` §0 and write settlements into the current run's `15_predictions.json`.
+5. Settlement is keyed to each prediction's own `target_date` — never to folder-window proximity.
+
+If no prior prediction ledger exists anywhere, state `NO_PREDICTION_LEDGER` and fall back to the folder-window baseline below.
+
+### Step 2 — Folder-Window MoM Baseline (narrative context / fallback)
+
+Load the prior same-model dated output package from roughly one month earlier when it exists.
 
 Select the reflection baseline deterministically from `/Users/mac/my-code/diary/investments/equity/output/`:
 
@@ -65,6 +77,8 @@ Every factual claim in the reflection must cite a source-ledger row from `01_pre
 
 - Always publish a clear run status.
 - Always publish `01_preflight.md` with a Source Ledger before invoking reflection or specialist scoring.
+- Always publish `15_predictions.json` whenever any name is ranked (investable or monitoring sleeve), including in `REVIEW_ONLY` and `ILLUSTRATIVE_MODE` runs — predictions made in any mode are settled later in every mode.
+- Never violate the >= 21-day rule for the MoM baseline. If only sub-21-day folders exist, run prediction settlement (Step 1) and mark the folder baseline `NO_VALID_MOM_BASELINE` instead of silently using a short window.
 - Always complete the `Reflection` stage before candidate ranking.
 - Never force a portfolio if the evidence is weak.
 - If an agent output conflicts with shared rules, reject it and request one revision at most.
