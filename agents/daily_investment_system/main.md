@@ -1,4 +1,4 @@
-# Quantitative Equity Research Prompt System — v3.1
+# Quantitative Equity Research Prompt System — v3.2
 
 Modular, multi-agent, self-evolving prompt system for short-horizon U.S. equity selection.
 
@@ -59,6 +59,7 @@ After close, review all models' output packages from the trailing 7 days, compar
 - Never mutate protected rules in `rules.md § Evolution Policy` without human approval.
 - Always publish exactly one status: `GO`, `NO_TRADE`, `REVIEW_ONLY`, or `HALTED`.
 - A run that ranks any name is not `PUBLISHED` until `15_predictions.json` exists — without it nothing the run forecast can ever be settled.
+- Every run that analyzes or ranks tickers also analyzes and forecasts the core ETFs — **SPY, QQQ, SOXX** — and includes their `MARKET_FORECAST` records in `15_predictions.json` (`rules.md § Core ETF Market Forecast`).
 - Never cite an **Enhancing** input (options IV/skew, short interest, bid-ask tape, full-universe feed) as a `GO` blocker; only the five **Required** inputs in `rules.md § Input Classification` may block `GO`.
 
 ## Deliverables

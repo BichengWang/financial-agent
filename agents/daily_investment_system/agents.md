@@ -17,7 +17,7 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 3. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
 4. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
 5. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
-6. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) and trigger the post-close evolution review.
+6. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) — always including the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX) per `rules.md § Core ETF Market Forecast` — and trigger the post-close evolution review.
 
 ## Reflection Stage
 
@@ -69,13 +69,14 @@ Verify the run has enough trustworthy data, classify the regime, and build the e
 1. Validate data freshness, coverage, and lineage against Source Ledger rows from `01_preflight.md`.
 2. Declare exactly one data mode from `rules.md § Data Mode Taxonomy` (`LIVE` / `DELAYED` / `DELAYED_PARTIAL` / `ILLUSTRATIVE`). Unusable data is not a mode — recommend `HALTED`.
 3. Classify the regime: `BULL` / `BEAR` / `HIGH_VOL` / `RATE_SHOCK` / `NEUTRAL`, with cited evidence. If no label is defensible, say so explicitly.
-4. Apply the universe inclusion/exclusion filters (or the Sampled Universe Protocol when no full feed exists); list every rejected name with its reason.
-5. Flag event concentration (clustered earnings, FOMC inside horizon).
-6. Verify every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a ledger row or is `UNAVAILABLE`.
+4. Produce the **Core ETF Market Forecast Block** (SPY, QQQ, SOXX): fetch ~60 trading days of history per ETF, run the analysis minimum, and derive mu / sigma / 70% CI per `rules.md § Core ETF Market Forecast`.
+5. Apply the universe inclusion/exclusion filters (or the Sampled Universe Protocol when no full feed exists); list every rejected name with its reason.
+6. Flag event concentration (clustered earnings, FOMC inside horizon).
+7. Verify every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a ledger row or is `UNAVAILABLE`.
 
 ## Required Output
 
-Preflight summary; regime table with evidence; universe summary; rejection log; ledger coverage gaps affecting scoring; handoff note for the factor scoring agent.
+Preflight summary; regime table with evidence; Core ETF Market Forecast Block; universe summary; rejection log; ledger coverage gaps affecting scoring; handoff note for the factor scoring agent.
 
 ## Stop Rules
 
@@ -83,7 +84,7 @@ Recommend `HALTED` if critical data is missing or contradictory; `REVIEW_ONLY` i
 
 ## ILLUSTRATIVE_MODE
 
-Follow `rules.md § ILLUSTRATIVE_MODE` in full: declare the mode and reference vintage in `00`, assign a regime from reference-state evidence tagged `ILLUSTRATIVE_REF`, and build a real universe — an empty universe is a broken loop, not a clean abstention.
+Follow `rules.md § ILLUSTRATIVE_MODE` in full: declare the mode and reference vintage in `00`, assign a regime from reference-state evidence tagged `ILLUSTRATIVE_REF`, and build a real universe — an empty universe is a broken loop, not a clean abstention. The Core ETF Market Forecast Block is still required, tagged `ILLUSTRATIVE_REF`.
 
 ---
 
@@ -197,7 +198,7 @@ You are the skeptical investment committee. Challenge the proposed portfolio bef
 10. **Source Ledger violations** — any price, return, vol, beta, earnings date, target, CI, drawdown, or sizing input used downstream without a ledger row.
 11. **Live-sounding or stale-as-current claims** — "validated", "current", "latest", "closed at", "reported today" without non-illustrative ledger rows: downgrade to `INFERRED`/`UNAVAILABLE`, or `REJECT` if one revision cannot fix the labeling everywhere.
 12. **Improper GO-blocking** — blocking `GO` on missing **Enhancing** inputs when all **Required** inputs are grounded (correct treatment: reduced confidence + 50% gross cap). Conversely, `GO` with any missing Required input is a violation.
-13. **Missing prediction records** — any ranked name absent from `15_predictions.json` (including `REVIEW_ONLY` runs) is unauditable; require correction before publication.
+13. **Missing prediction records** — any ranked name absent from `15_predictions.json` (including `REVIEW_ONLY` runs), or a missing/incomplete Core ETF Market Forecast Block or its three `MARKET_FORECAST` records (SPY, QQQ, SOXX), is unauditable; require correction before publication.
 
 ## Decision
 
@@ -236,7 +237,7 @@ Review **all dated output packages from the past 7 calendar days, across all mod
 
 ## Boundaries
 
-- You are the only agent permitted to modify the mu Calibration Table, and only with settled-prediction evidence passing the acceptance standard.
+- You are the only agent permitted to modify the mu Calibration Table and the Core ETF mu prior table, and only with settled-prediction evidence passing the acceptance standard.
 - You may refine wording, sequencing, thresholds, and family weights within policy limits; never weaken protected rules; never use recent winners alone as proof; never accept a change without a recorded test result.
 
 If there is not enough evidence to evolve, output `NO_CHANGE_ACCEPTED`.
