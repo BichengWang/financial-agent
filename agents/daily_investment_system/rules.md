@@ -63,6 +63,7 @@ Every run with a ranked investable or monitoring set must emit `15_predictions.j
   "run_date": "YYYY-MM-DD",
   "model": "model-name",
   "ticker": "XXXX",
+  "type": "EQUITY_ALPHA|MARKET_FORECAST",
   "entry_price": 0.0,
   "price_tag": "LIVE|DELAYED|HISTORICAL|ILLUSTRATIVE_REF",
   "price_date": "YYYY-MM-DD",
@@ -81,7 +82,7 @@ Every run with a ranked investable or monitoring set must emit `15_predictions.j
 }
 ```
 
-`benchmark_price` (SPY at the same price_date) is mandatory so settlement can compute alpha.
+`benchmark_price` (SPY at the same price_date) is mandatory on `EQUITY_ALPHA` records so settlement can compute alpha. Records without a `type` field (all pre-2026-06-11 ledgers) are `EQUITY_ALPHA`. Every run that ranks any name must also include the three core ETF `MARKET_FORECAST` records — SPY, QQQ, SOXX per `§ Core ETF Market Forecast` — with `"benchmark": "NONE"`, `"benchmark_price": null`, `"adj_score": null`.
 
 ### Settlement Rules
 
@@ -96,6 +97,8 @@ At each run, before new scoring, the Reflection stage must **settle every OPEN p
 
 A raw negative return in a falling tape is **not** automatically a Miss; a raw positive return in a melt-up is **not** automatically a Hit. Alpha versus the recorded benchmark is the grounding target, because the objective function is IR, not raw return.
 
+`MARKET_FORECAST` records (core ETFs) settle on **raw return, not alpha**: skip steps 2–3; Direction is `HIT` if `sign(realized_return) == sign(mu)`, else `MISS`. When `|mu| < 0.5%` the direction call is `N/A - FLAT_CALL` and only CI calibration and z are scored. CI calibration and magnitude error are computed unchanged.
+
 Predictions from `REVIEW_ONLY` and `ILLUSTRATIVE` runs are settled and scored identically to `GO` predictions (illustrative ones flagged `ILLUSTRATIVE_VINTAGE` in the settlement record). Run status governs execution, not evaluation — paper forecasts are exactly how the system earns the evidence needed to ever publish `GO`.
 
 ### Rolling Calibration Metrics
@@ -108,6 +111,8 @@ The Reflection artifact must report, over all settled predictions (minimum 10; o
 | CI coverage | share with Calibration = IN_CI | 55% – 85% (target 70%) |
 | Mean z | average magnitude error | -0.5 to +0.5 |
 | Rank IC | Spearman correlation of `adj_score` vs `realized_alpha` per vintage | > 0 |
+
+All four metrics are computed over `EQUITY_ALPHA` records only. Settled `MARKET_FORECAST` records are reported as a separate line — direction accuracy and CI coverage — under the same minimum-N rule, never pooled with the equity metrics.
 
 Interpretation rules:
 
@@ -131,7 +136,7 @@ Interpretation rules:
 
 The sub-80 bands exist so monitoring-sleeve names still carry a settleable `mu` (the investable threshold remains the 80th percentile). Names below the 60th percentile are not ranked in either sleeve — they appear only in the rejection log.
 
-Only the evolution agent may modify this table, and only with settled-prediction evidence under `§ Evolution Policy` (below). This makes every mu reproducible and every table change testable against realized alpha.
+Only the evolution agent may modify this table, and only with settled-prediction evidence under `§ Evolution Policy` (below). This makes every mu reproducible and every table change testable against realized alpha. Core ETF `MARKET_FORECAST` records do not use this table — their mu derivation is the regime-prior rule in `§ Core ETF Market Forecast`.
 
 ## Source Ledger Contract
 
@@ -368,6 +373,41 @@ Every ticker in the investable set or monitoring sleeve requires a **Recommendat
 
 Missing or untagged price fields are a fabrication violation reviewable by the risk committee agent. Any candidate with `entry_price = N/A - unverified` may not appear in the investable set or monitoring sleeve at `GO` status.
 
+## Core ETF Market Forecast (SPY · QQQ · SOXX)
+
+Every run that analyzes or ranks tickers must also analyze and forecast the three core ETFs — `SPY` (broad market / benchmark), `QQQ` (Nasdaq-100 growth), `SOXX` (semiconductors) — as the explicit top-down view framing the bottom-up book. (Human directive, 2026-06-11.)
+
+Ownership and placement:
+
+1. The Data and Regime Agent produces the **Core ETF Market Forecast Block** in `03_regime_and_data.md` — analysis plus forecast — from ~60 trading days of fetched history per ETF (Price Sourcing Standard applies).
+2. `09_final_report.md` carries a summary table (no new facts).
+3. The orchestrator writes one `MARKET_FORECAST` prediction record per ETF into `15_predictions.json` — every run status, including `REVIEW_ONLY` and `ILLUSTRATIVE`.
+
+**Analysis minimum** (per ETF, ledger-backed): trend vs 20d/50d moving averages; 30d realized vol and whether it is rising or falling vs the prior 30d; drawdown from the 60d high; relative-strength ratios `QQQ/SPY` and `SOXX/SPY` over 20d and 60d; a one-line consistency note against the declared regime.
+
+**Forecast**: full Recommendation Metrics Block per `§ Price and Target Citation Standard` (default `target_date = run_date + 28d`); sigma per the Sigma Fallback Chain (`REALIZED_VOL_30D` is the expected source). Confidence defaults to `MEDIUM`; `HIGH` only when trend, vol, and relative strength all align with the regime call and data quality ≥ 0.90.
+
+**mu derivation** (never free-handed):
+
+| Declared regime | SPY prior mu (4-week) |
+|---|---|
+| BULL | +2.0% |
+| NEUTRAL | +0.5% |
+| HIGH_VOL | 0.0% |
+| RATE_SHOCK | -1.5% |
+| BEAR | -2.5% |
+
+- `SPY`: mu = regime prior, adjustable ±1.0pp with a stated, ledger-backed reason.
+- `QQQ`, `SOXX`: mu = `beta_to_SPY × SPY mu`, beta from the 60d fetched daily returns (`DERIVED`, cite ledger rows), adjustable ±1.5pp with a stated, ledger-backed relative view.
+- Only the evolution agent may modify this table or the adjustment bands, under the same Track A standard as the mu Calibration Table.
+
+**Sleeve isolation** — the core ETFs are a market-forecast sleeve, not candidates:
+
+- They never count toward the 5–10 investable set, the 30-name universe minimum, percentile distributions, or portfolio caps, and are exempt from the single-name universe filters.
+- A failed ETF fetch (documented attempts) makes that ETF's forecast fields `UNAVAILABLE`; it never blocks `GO` (SPY history remains Required for GO via `§ Input Classification`, unchanged).
+- A missing block with no documented fetch attempt is a publishing failure — same class as a missing prediction record.
+- `ILLUSTRATIVE_MODE`: produce the same block from reference state, tagged `ILLUSTRATIVE_REF`, confidence capped `MEDIUM`.
+
 ## Objective Function
 
 Primary optimization target:
@@ -529,7 +569,7 @@ Any proposal that touches a protected rule requires human approval before it can
 
 Every proposal must be classified before evaluation. The tracks exist so process-clarity fixes are never judged against a statistical standard they cannot meet:
 
-**Track A — Performance changes** (factor weights, thresholds, mu Calibration Table, confidence calibration, sizing parameters):
+**Track A — Performance changes** (factor weights, thresholds, mu Calibration Table, Core ETF mu prior table, confidence calibration, sizing parameters):
 
 - Require ≥ 20 settled prediction records from `15_predictions.json` files and a holdout/rolling validation per the Acceptance Standard below.
 

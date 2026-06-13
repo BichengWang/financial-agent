@@ -55,7 +55,7 @@ Every run writes to `investments/equity/output/{model-name}-{YYYY-MM-DD}/` (repo
 ## Per-Artifact Requirements
 
 ### `00_run_manifest.md`
-Date, run mode, data mode, status target and final status, agents executed, outstanding blockers; reflection baseline path + flag (`NO_PRIOR_BASELINE` / `CROSS_MODEL_BASELINE` / `BASELINE_WINDOW_GAP` / `NO_VALID_MOM_BASELINE`); prediction-settlement summary (count settled, or `NO_PREDICTION_LEDGER`); Source Ledger coverage counts (observed/derived/inferred/illustrative/unavailable) and status eligibility; **GO-Gate Table** — one row per Required input from `rules.md § Input Classification`, each grounded or failed-with-attempt, with missing Enhancing inputs listed separately as confidence/exposure caps (never as GO blockers); artifact checklist including `15_predictions.json`.
+Date, run mode, data mode, status target and final status, agents executed, outstanding blockers; reflection baseline path + flag (`NO_PRIOR_BASELINE` / `CROSS_MODEL_BASELINE` / `BASELINE_WINDOW_GAP` / `NO_VALID_MOM_BASELINE`); prediction-settlement summary (count settled, or `NO_PREDICTION_LEDGER`); Source Ledger coverage counts (observed/derived/inferred/illustrative/unavailable) and status eligibility; **GO-Gate Table** — one row per Required input from `rules.md § Input Classification`, each grounded or failed-with-attempt, with missing Enhancing inputs listed separately as confidence/exposure caps (never as GO blockers); artifact checklist including `15_predictions.json` and the Core ETF Market Forecast Block status (present, or fields `UNAVAILABLE` with documented fetch attempts).
 
 ### `01_preflight.md`
 Source Ledger before any agent uses facts downstream. Schema:
@@ -68,13 +68,21 @@ Allowed `freshness_tag` / `claim_type` values: `rules.md § Source Ledger Contra
 ### `02_reflection.md`
 Standalone MoM reflection, sections in order. Every price, return, regime, and thesis-validation claim cites `01` ledger rows or is `UNAVAILABLE` / explicitly `INFERRED`.
 
-0. **Prediction Settlement** — settled table `Ticker | Vintage | Entry | Target Date | mu | Realized Return | SPY Return | Alpha | Direction | CI Result | z`; rolling calibration metrics (or `INSUFFICIENT_SETTLED_N`); which prior `15_predictions.json` files were scanned.
+0. **Prediction Settlement** — settled table `Ticker | Vintage | Entry | Target Date | mu | Realized Return | SPY Return | Alpha | Direction | CI Result | z`; `MARKET_FORECAST` settlements (core ETFs) sit in the same table with `SPY Return` / `Alpha` = `N/A` and direction scored on raw return per `rules.md § Settlement Rules`; rolling calibration metrics (or `INSUFFICIENT_SETTLED_N`) with the market-forecast line reported separately; which prior `15_predictions.json` files were scanned.
 1. **Prior Run Summary** — date, model, final status, regime, portfolio or basket, top-5 scores.
 2. **MoM Price & Return Table** — `| Ticker | Prior Date | Prior Price | Current Date | Current Price | MoM Return | SPY Return | Alpha | Hit/Miss | Notes |`. Hit/Miss is alpha-based per `rules.md § Settlement Rules`; `Neutral` applies to position-P&L accounting only and is never a substitute for forecast scoring — a name ranked in a `REVIEW_ONLY` run is still a forecast. State `IN_CI`/`OUT_CI` when a CI was recorded. `APPROX - sourced` only with source + observation date; otherwise `UNAVAILABLE`.
 3. **Theme-Level Performance** — validated / partial / failed per prior theme, with evidence.
 4. **Regime Shift Assessment** — prior vs current regime and factor-weight implications.
 5. **Carry-Forward Decisions** — `| Ticker/Theme | Prior Score | Prior Thesis | MoM Return | Decision | Rationale |`; decisions `CARRY` / `DOWNGRADE` / `DROP` / `PROMOTE`. Binding on factor scoring when ledger-backed; `DROP` names stay out of today's scored set absent new ledger evidence.
 6. **Sign-Off** — freshness tag per price used, reflection confidence (HIGH/MEDIUM/LOW) with rationale, structural issues found.
+
+### `03_regime_and_data.md`
+Data-mode declaration, regime classification with cited evidence, event-concentration flags, universe handoff — and the **Core ETF Market Forecast Block** (`rules.md § Core ETF Market Forecast`), one row each for SPY, QQQ, SOXX:
+
+| ETF | Entry Price | Price Date | Price Tag | Trend (20d/50d) | 30d RVol | Beta vs SPY | mu | sigma | Sigma Source | Target Price | Target Date | 70% CI Lo | 70% CI Hi | Confidence | Ledger Rows |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+
+Plus relative-strength notes (`QQQ/SPY`, `SOXX/SPY` over 20d/60d) and a one-line regime-consistency check. ETF rows are a market-forecast sleeve — never candidates, never universe members.
 
 ### `09_final_report.md`
 Header banner:
@@ -87,10 +95,10 @@ Classification: INTERNAL — INVESTMENT COMMITTEE USE
 ══════════════════════════════════════════════════════
 ```
 
-Then: executive summary (≤ 5 sentences); MoM Reflection Summary (summarizes `02`, introduces no new facts); regime table (regime, data quality, key macro risk — with ledger rows); ranked candidate table; portfolio analytics or no-trade rationale; assumptions and limitations; next scheduled review.
+Then: executive summary (≤ 5 sentences); MoM Reflection Summary (summarizes `02`, introduces no new facts); regime table (regime, data quality, key macro risk — with ledger rows); core ETF market forecast table (SPY / QQQ / SOXX, summarizing `03` — no new facts); ranked candidate table; portfolio analytics or no-trade rationale; assumptions and limitations; next scheduled review.
 
 ### `13_evolution_log.md`
 Run context (date, status, regime, evaluation window, ledger status, baseline flag); what worked / what failed; primary diagnosis (one of: data quality, regime classification, factor calibration, portfolio construction, risk review, output clarity, source grounding); exactly one proposed change with **Track A/B classification** per `rules.md § Evolution Policy`; hypothesis; validation (Track A: holdout/IR/hit-rate/drawdown/turnover deltas; Track B: the three-condition standard); decision `ACCEPT` / `REJECT` / `DEFER` / `NO_CHANGE_ACCEPTED`; effective next step.
 
 ### `15_predictions.json`
-Required whenever any name is ranked — investable or monitoring sleeve, **every** run status including `REVIEW_ONLY` and `ILLUSTRATIVE`. One record per ranked name per `rules.md § Prediction Ledger`; plus a `settlements` block with every prediction settled this run (or `"settlements": []` and a `NO_PREDICTION_LEDGER` note). Valid JSON, no markdown wrapper. A run that ranks names is not publishable without this file.
+Required whenever any name is ranked — investable or monitoring sleeve, **every** run status including `REVIEW_ONLY` and `ILLUSTRATIVE` — or whenever the Core ETF Market Forecast Block is produced. One record per ranked name per `rules.md § Prediction Ledger`, plus the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX); plus a `settlements` block with every prediction settled this run (or `"settlements": []` and a `NO_PREDICTION_LEDGER` note). Valid JSON, no markdown wrapper. A run that ranks names is not publishable without this file.
