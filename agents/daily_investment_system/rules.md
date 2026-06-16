@@ -63,7 +63,7 @@ Every run with a ranked investable or monitoring set must emit `15_predictions.j
   "run_date": "YYYY-MM-DD",
   "model": "model-name",
   "ticker": "XXXX",
-  "type": "EQUITY_ALPHA|MARKET_FORECAST",
+  "type": "EQUITY_ALPHA",
   "entry_price": 0.0,
   "price_tag": "LIVE|DELAYED|HISTORICAL|ILLUSTRATIVE_REF",
   "price_date": "YYYY-MM-DD",
@@ -78,11 +78,37 @@ Every run with a ranked investable or monitoring set must emit `15_predictions.j
   "adj_score": 0.0,
   "confidence": "HIGH|MEDIUM|LOW",
   "status": "OPEN",
-  "thesis": "one-line thesis"
+  "thesis": "one-line thesis",
+  "score_explainability": {
+    "fund_z": 0.0,
+    "tech_z": 0.0,
+    "sent_z": 0.0,
+    "macro_z": 0.0,
+    "composite_z": 0.0,
+    "data_quality_multiplier": 0.0,
+    "penalties": 0.0,
+    "formula": "Adj Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * DQ - Penalties",
+    "metrics": {
+      "sharpe": 0.0,
+      "sortino": 0.0,
+      "information_ratio": 0.0,
+      "treynor": 0.0,
+      "kelly_raw": 0.0,
+      "kelly_025": 0.0,
+      "var95": 0.0,
+      "cvar95": 0.0,
+      "max_drawdown_60d": 0.0,
+      "td9_daily": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE",
+      "td9_weekly": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE"
+    },
+    "positive_drivers": ["metric: reason"],
+    "negative_drivers": ["metric: reason"],
+    "ledger_rows": ["L001"]
+  }
 }
 ```
 
-`benchmark_price` (SPY at the same price_date) is mandatory on `EQUITY_ALPHA` records so settlement can compute alpha. Records without a `type` field (all pre-2026-06-11 ledgers) are `EQUITY_ALPHA`. Every run that ranks any name must also include the three core ETF `MARKET_FORECAST` records — SPY, QQQ, SOXX per `§ Core ETF Market Forecast` — with `"benchmark": "NONE"`, `"benchmark_price": null`, `"adj_score": null`.
+`score_explainability` is optional for backward compatibility, but required for new `EQUITY_ALPHA` records whenever a name is ranked or monitored. It may be omitted or set to `null` for `MARKET_FORECAST` records. `benchmark_price` (SPY at the same price_date) is mandatory on `EQUITY_ALPHA` records so settlement can compute alpha. Records without a `type` field (all pre-2026-06-11 ledgers) are `EQUITY_ALPHA`. Every run that ranks any name must also include the three core ETF `MARKET_FORECAST` records — SPY, QQQ, SOXX per `§ Core ETF Market Forecast` — with `"benchmark": "NONE"`, `"benchmark_price": null`, `"adj_score": null`.
 
 ### Settlement Rules
 
@@ -166,7 +192,7 @@ Allowed `claim_type` values:
 
 Hard rules:
 
-1. Any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, or position-size input used downstream must appear in the Source Ledger.
+1. Any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, score-attribution ratio, TD-9 state, or position-size input used downstream must appear in the Source Ledger.
 2. Derived values must cite their formula and input ledger rows. If any input row is missing or `UNAVAILABLE`, the derived value must also be `UNAVAILABLE`.
 3. Thesis validation claims must cite supporting ledger rows and be labeled `INFERRED` unless they are a direct source observation.
 4. A downstream artifact may summarize facts from the ledger, but it may not introduce new factual claims without adding or citing ledger rows.
@@ -294,11 +320,73 @@ Family signal menus:
 - **Sentiment / Positioning:** short-interest change, options-skew shifts, net analyst revisions, insider cluster buying, institutional ownership trend.
 - **Macro / Regime:** rolling 60-day beta, sector-rotation leadership, rate sensitivity, VIX regime, residual DXY / oil / credit-spread exposure.
 
+## Financial Metrics and Score Attribution
+
+Every ranked or monitored equity must explain `Adj Score` from source metrics to family z-scores to final score. The top-level family weights in `§ Factor Architecture` are fixed unless the evolution policy changes them.
+
+Required score trace:
+
+`Adj Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * Data_Quality_Multiplier - Penalties`
+
+The factor scoring artifact must disclose, per ticker: `Fund_Z`, `Tech_Z`, `Sent_Z`, `Macro_Z`, `Composite_Z`, `Data_Quality_Multiplier`, `Penalties`, final `Adj Score`, top positive metric drivers, top negative metric drivers, and Source Ledger rows.
+
+### Metric History and Grounding
+
+- Target lookback is 252 trading days when fetchable; 60 trading days remains the minimum required history for `GO`.
+- Use a sourced 3-month T-bill or equivalent short rate for excess-return ratios when available. If no rate is sourced, label Sharpe, Sortino, Treynor, and Calmar-style ratios `RAW_DIAGNOSTIC` and use `mu` without a risk-free adjustment.
+- Every metric that contributes to a family z-score, data-quality adjustment, penalty, confidence cap, or sizing decision must have a Source Ledger row. Derived metric rows must name the formula and input rows.
+- Missing metrics are `UNAVAILABLE`, never guessed and never counted as positive evidence. If a missing metric is Enhancing, reduce data quality or confidence where material, but do not treat it as a `GO` blocker unless a Required input from `§ Input Classification` is missing.
+- A metric may contribute to `Adj Score` only when it is sourceable for at least 70% of the eligible universe, or for every ranked/monitored name when the metric is portfolio-only. Otherwise it may appear only as a diagnostic.
+
+### Metric Pack
+
+| Group | Metrics | Scoring Use |
+|---|---|---|
+| Risk / return | Forecast Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, beta, tracking error | Mainly Technical / Price and Macro / Regime; positive only when return is attractive per unit of realized or residual risk |
+| Tail risk | 60d max drawdown, 95% VaR, 95% CVaR, portfolio drawdown contribution | Negative driver and penalty input when downside risk is high or portfolio contribution is concentration-heavy |
+| Sizing | Raw Kelly, `0.25 x Kelly`, cap-binding status, minimum Kelly threshold | Investability gate, sizing input, and confidence cap |
+| Technical | 20d/60d momentum, relative strength vs SPY, MA20/MA50 alignment, volume confirmation, TD-9 daily, TD-9 weekly | Technical / Price z-score and signal-decay warning |
+| Fundamental / quality | Revenue revision momentum, EPS revision momentum, margin trend, FCF yield, ROIC/ROE, leverage, valuation vs sector | Fundamental z-score |
+| Sentiment / positioning | Analyst revision breadth, short-interest change, borrow/availability, options IV/skew, put/call ratio if sourced | Sentiment / Positioning z-score |
+
+### Ratio Definitions
+
+- **Forecast Sharpe**: `(mu - rf_1m) / sigma`. If `rf_1m` is unavailable, use `mu / sigma` and label `RAW_DIAGNOSTIC`.
+- **Sortino**: `(mu - rf_1m) / downside_sigma_1m`, where downside sigma uses negative daily returns from the fetched lookback and is scaled to 1 month.
+- **Information Ratio**: expected residual return divided by tracking error, where residual return is alpha versus SPY after beta adjustment.
+- **Treynor**: `(mu - rf_1m) / beta`; mark `UNAVAILABLE` when beta is unavailable or not meaningful.
+- **Calmar-style return/drawdown**: `(mu - rf_1m) / abs(max_drawdown_60d)`; use as a diagnostic and negative-risk screen, not a standalone buy signal.
+- **VaR95 / CVaR95**: one-month return-space estimates from the same sigma used for the forecast. Parametric defaults are `var95 = mu - 1.65*sigma` and `cvar95 = mu - 2.06*sigma`; state the normality assumption. If reporting as loss, use the absolute loss value and label it.
+- **Raw Kelly**: expected edge divided by variance. Prefer beta-adjusted edge and tracking-error variance; if unavailable, use `mu / sigma^2` with `mu` and `sigma` as decimals and disclose the fallback.
+- **0.25 x Kelly**: `0.25 * raw_kelly`, then bounded by the 5% single-name NAV cap and liquidity limits.
+
+### TD-9 Definition
+
+Use TD Sequential setup only; do not compute Countdown. On daily and weekly bars:
+
+- Sell setup count: close is greater than the close four bars earlier.
+- Buy setup count: close is less than the close four bars earlier.
+- Count consecutive qualifying bars from 1 to 9; reset when the condition fails.
+- Output one of `NONE`, `BUY_SETUP_N`, `SELL_SETUP_N`, or `UNAVAILABLE` for each timeframe.
+- A daily or weekly `9` is an exhaustion or reversal flag. It is not an automatic trade signal; it affects the Technical / Price z-score, penalties, and confidence only when confirmed by ledger-backed price action.
+
+### Family Aggregation
+
+- Convert sourceable metrics into cross-sectional z-scores over the eligible universe after winsorizing extreme observations at the 5th and 95th percentiles.
+- Use explicit polarity: higher is better for return efficiency, quality, revisions, relative strength, and liquidity; lower is better for drawdown, VaR/CVaR loss, leverage, unstable volatility, crowded positioning, and event risk.
+- Within each family, equal-weight available sourceable metric z-scores unless a narrower weighting is documented in `13_evolution_log.md` under the evolution policy.
+- If fewer than two sourceable metrics support a family, mark that family `UNAVAILABLE`; for final arithmetic set its displayed contribution to `0.00 (UNAVAILABLE)`, lower the data-quality multiplier, and do not count it toward the "3 of 4 families supportive" threshold.
+- The score trace must name at least three positive drivers and three negative drivers when available. If fewer exist, state `INSUFFICIENT_SOURCEABLE_DRIVERS` rather than filling with weak claims.
+
 ## Data Quality Multiplier
 
-After computing the base composite score, multiply it by a data quality factor:
+After computing the base composite score per `§ Financial Metrics and Score Attribution`, multiply it by a data quality factor:
 
 `Adjusted_Score = Composite_Z * Data_Quality_Multiplier - Penalties`
+
+Equivalent required trace:
+
+`Adjusted_Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * Data_Quality_Multiplier - Penalties`
 
 Use these guideposts:
 
@@ -313,7 +401,7 @@ If the multiplier would fall below `0.70`, do not rank the candidate as investab
 
 A stock is investable only if all of the following are true:
 
-1. Composite percentile rank is at or above the 80th percentile of the eligible universe.
+1. Adjusted-score percentile rank is at or above the 80th percentile of the eligible universe.
 2. At least 3 of 4 factor families are non-negative.
 3. No single factor family contributes more than 50% of the total conviction.
 4. Data completeness is at least 85%.
@@ -366,7 +454,7 @@ Every ticker in the investable set or monitoring sleeve requires a **Recommendat
 - **target_date default**: `run_date + 28d` (midpoint of the 2-6 week horizon). Use `run_date + 21d` when the primary catalyst is imminent; `run_date + 42d` for slow-building theses.
 - **target_price**: compute only when `entry_price` is not `N/A - unverified` and the entry-price ledger row is available. Do not manufacture a target from a fabricated or untagged price.
 - **CI bounds**: compute only when both `entry_price` and `sigma` are available and tagged. The factor 1.04 gives the approximate ±70% interval for a normal distribution.
-- **Derived metrics**: target price, MoM return, confidence interval, beta, drawdown, and sizing calculations must cite their formula and input Source Ledger rows.
+- **Derived metrics**: target price, MoM return, confidence interval, beta, drawdown, score-attribution ratios, TD-9 states, and sizing calculations must cite their formula and input Source Ledger rows.
 - **ILLUSTRATIVE_MODE**: fields may use training-data reference prices only when tagged `ILLUSTRATIVE_REF` and paired with a disclosed reference vintage. They must carry that tag throughout and may not be used for live execution sizing. If no reference vintage can be disclosed, use `UNAVAILABLE`.
 
 ### Enforcement
@@ -433,6 +521,9 @@ Secondary tie-breakers:
 2. **Pairwise correlation**: correlation matrix of daily returns over the same 60-day window for all proposed names.
 3. **Portfolio sigma**: `sqrt(w' Σ w)` from the fetched covariance matrix, scaled to 1 month.
 4. **95th-percentile 1-month drawdown**: parametric estimate `1.65 x portfolio_sigma_1m` (state the normality assumption), or empirical from the fetched window if ≥ 60 observations.
+5. **Tracking error / residual sigma**: standard deviation of beta-adjusted residual returns vs SPY over the fetched window, scaled to 1 month.
+6. **VaR95 / CVaR95**: parametric or empirical one-month tail estimates per `§ Financial Metrics and Score Attribution`; cite the return-series and sigma rows.
+7. **60d max drawdown**: worst peak-to-trough move over the fetched 60-trading-day window.
 
 If price history genuinely cannot be fetched for a name, exclude that name rather than emitting portfolio-level `N/A`. Only when history is unavailable for the benchmark itself may the run fall back to `REVIEW_ONLY` on these grounds.
 
@@ -441,6 +532,7 @@ If price history genuinely cannot be fetched for a name, exclude that name rathe
 ### Position Level
 
 - Fractional Kelly sizing with a default cap of `0.25 x Kelly`.
+- `0.25 x Kelly <= 0` blocks investable status. `0.25 x Kelly < 2% NAV` applies an adjusted-score penalty and caps confidence at `MEDIUM`. `0.25 x Kelly >= 5% NAV` means the 5% single-name cap binds.
 - Maximum single-name weight of `5%`.
 - Earnings inside 14 calendar days (buffered by the band when the date is `ESTIMATED (±Nd)`): `-0.10` adjusted-score penalty and confidence capped `LOW`, unless the event setup is explicitly justified with real evidence.
 - Penalize 30-day realized volatility above `2x` sector median.
