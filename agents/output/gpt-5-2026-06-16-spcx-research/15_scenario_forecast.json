@@ -1,0 +1,69 @@
+{
+  "run_date": "2026-06-16",
+  "model": "gpt-5",
+  "mode": "single_name_research_review_only",
+  "ticker": "SPCX",
+  "company": "Space Exploration Technologies Corp. Class A Common Stock",
+  "formal_prediction_ledger_status": "NOT_EMITTED",
+  "formal_prediction_ledger_reason": "This is not a ranked daily portfolio run. SPCX lacks the required 60 trading days of history and a valid rule-compliant sigma source, so no EQUITY_ALPHA record is emitted.",
+  "anchor": {
+    "price": 192.5,
+    "price_tag": "DELAYED",
+    "price_date": "2026-06-15",
+    "retrieved_at": "2026-06-15T22:03:47-07:00",
+    "primary_source": "https://api.nasdaq.com/api/quote/SPCX/info?assetclass=stocks",
+    "cross_check_price": 192.45,
+    "cross_check_source": "https://nypost.com/2026/06/15/business/spacex-shares-jump-20-in-first-full-day-of-trading-after-historic-ipo/"
+  },
+  "target_date": "2026-07-15",
+  "scenario_weighted_expected_price": 187.18,
+  "scenario_weighted_expected_return": -0.0276,
+  "central_scenario_band": {
+    "lo": 135,
+    "hi": 240,
+    "basis": "approximate 15th-85th percentile from the scenario tree"
+  },
+  "scenarios": [
+    {
+      "name": "Extreme momentum / squeeze",
+      "probability": 0.12,
+      "price_lo": 250,
+      "price_hi": 290,
+      "midpoint": 270,
+      "return_midpoint": 0.4026
+    },
+    {
+      "name": "Bull continuation",
+      "probability": 0.18,
+      "price_lo": 215,
+      "price_hi": 245,
+      "midpoint": 230,
+      "return_midpoint": 0.1948
+    },
+    {
+      "name": "Base consolidation",
+      "probability": 0.35,
+      "price_lo": 175,
+      "price_hi": 205,
+      "midpoint": 190,
+      "return_midpoint": -0.013
+    },
+    {
+      "name": "Bear repricing",
+      "probability": 0.25,
+      "price_lo": 130,
+      "price_hi": 165,
+      "midpoint": 147.5,
+      "return_midpoint": -0.2338
+    },
+    {
+      "name": "Stress / fundamental reset",
+      "probability": 0.1,
+      "price_lo": 80,
+      "price_hi": 120,
+      "midpoint": 100,
+      "return_midpoint": -0.4805
+    }
+  ]
+}
+

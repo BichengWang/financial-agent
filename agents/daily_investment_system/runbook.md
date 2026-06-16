@@ -63,7 +63,7 @@ Source Ledger before any agent uses facts downstream. Schema:
 | artifact | field | ticker/entity | value | unit | observation_date | source | freshness_tag | claim_type | used_by |
 |---|---|---|---|---|---|---|---|---|---|
 
-Allowed `freshness_tag` / `claim_type` values: `rules.md § Source Ledger Contract` (single source). Derived rows cite formula + input rows; a critical field with no source is `UNAVAILABLE`, never estimated.
+Allowed `freshness_tag` / `claim_type` values: `rules.md § Source Ledger Contract` (single source). Derived rows cite formula + input rows; a critical field with no source is `UNAVAILABLE`, never estimated. Any score-attribution metric used in `Adj Score`, penalties, confidence, or sizing must have a ledger row; unavailable metrics must be recorded as `UNAVAILABLE` when material.
 
 ### `02_reflection.md`
 Standalone MoM reflection, sections in order. Every price, return, regime, and thesis-validation claim cites `01` ledger rows or is `UNAVAILABLE` / explicitly `INFERRED`.
@@ -84,6 +84,26 @@ Data-mode declaration, regime classification with cited evidence, event-concentr
 
 Plus relative-strength notes (`QQQ/SPY`, `SOXX/SPY` over 20d/60d) and a one-line regime-consistency check. ETF rows are a market-forecast sleeve — never candidates, never universe members.
 
+### `04_universe_summary.md`
+Universe construction, inclusion/exclusion log, sampled-universe disclosure when used, and metric coverage summary. The coverage summary must state which `rules.md § Financial Metrics and Score Attribution` inputs are sourceable across the eligible universe, which are `UNAVAILABLE`, and which missing inputs affect data quality rather than GO eligibility.
+
+### `05_factor_scores.md`
+Primary home for `Adj Score` explainability. Must include:
+
+- Ranked candidate table using the schema in `agents.md § Factor Scoring Agent Prompt`, including `Sharpe`, `Sortino`, `IR`, `Kelly 0.25`, `VaR95`, `CVaR95`, `Max DD60`, `TD9 D/W`, `Score Trace`, and `Metric Ledger Rows`.
+- Score attribution table: `Ticker | Fund_Z | Tech_Z | Sent_Z | Macro_Z | Composite_Z | DQ | Penalties | Adj Score | Top Positive Drivers | Top Negative Drivers | Metric Ledger Rows`.
+- Metric availability table: `Metric Group | Sourceable Count | UNAVAILABLE Count | DQ / Confidence Effect | Notes`.
+- No score may cite a metric not present in `01_preflight.md`; no missing metric may be described as neutral or supportive.
+
+### `06_top_candidates.md`
+Top candidates and monitoring sleeve summary inherited from `05`, with no new facts. It must carry a compact score trace per name and enough key financial metrics for a reader to understand why each candidate cleared or missed the investable threshold.
+
+### `07_portfolio_proposal.md`
+Portfolio construction output. Must inherit the per-position recommendation metrics and score traces from `05`; any recomputation requires a formula and Source Ledger row. Include portfolio-level Sharpe, Sortino, Information Ratio, tracking error, VaR95, CVaR95, 95th-pctl drawdown, Kelly cap-binding notes, correlation matrix, sector table, and excluded-name rationale.
+
+### `08_risk_review.md`
+Risk committee decision and checks. Must explicitly review price/target lineage, sigma lineage, score attribution, metric ledger coverage, Kelly threshold handling, TD-9 interpretation, Source Ledger completeness, GO-blocking discipline, and prediction-record completeness.
+
 ### `09_final_report.md`
 Header banner:
 
@@ -95,10 +115,10 @@ Classification: INTERNAL — INVESTMENT COMMITTEE USE
 ══════════════════════════════════════════════════════
 ```
 
-Then: executive summary (≤ 5 sentences); MoM Reflection Summary (summarizes `02`, introduces no new facts); regime table (regime, data quality, key macro risk — with ledger rows); core ETF market forecast table (SPY / QQQ / SOXX, summarizing `03` — no new facts); ranked candidate table; portfolio analytics or no-trade rationale; assumptions and limitations; next scheduled review.
+Then: executive summary (≤ 5 sentences); MoM Reflection Summary (summarizes `02`, introduces no new facts); regime table (regime, data quality, key macro risk — with ledger rows); core ETF market forecast table (SPY / QQQ / SOXX, summarizing `03` — no new facts); ranked candidate table with compact score traces and key financial metrics; portfolio analytics or no-trade rationale; assumptions and limitations; next scheduled review. The final report summarizes score attribution from `05` and may not introduce new metrics or facts.
 
 ### `13_evolution_log.md`
 Run context (date, status, regime, evaluation window, ledger status, baseline flag); what worked / what failed; primary diagnosis (one of: data quality, regime classification, factor calibration, portfolio construction, risk review, output clarity, source grounding); exactly one proposed change with **Track A/B classification** per `rules.md § Evolution Policy`; hypothesis; validation (Track A: holdout/IR/hit-rate/drawdown/turnover deltas; Track B: the three-condition standard); decision `ACCEPT` / `REJECT` / `DEFER` / `NO_CHANGE_ACCEPTED`; effective next step.
 
 ### `15_predictions.json`
-Required whenever any name is ranked — investable or monitoring sleeve, **every** run status including `REVIEW_ONLY` and `ILLUSTRATIVE` — or whenever the Core ETF Market Forecast Block is produced. One record per ranked name per `rules.md § Prediction Ledger`, plus the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX); plus a `settlements` block with every prediction settled this run (or `"settlements": []` and a `NO_PREDICTION_LEDGER` note). Valid JSON, no markdown wrapper. A run that ranks names is not publishable without this file.
+Required whenever any name is ranked — investable or monitoring sleeve, **every** run status including `REVIEW_ONLY` and `ILLUSTRATIVE` — or whenever the Core ETF Market Forecast Block is produced. One record per ranked name per `rules.md § Prediction Ledger`, plus the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX); plus a `settlements` block with every prediction settled this run (or `"settlements": []` and a `NO_PREDICTION_LEDGER` note). New equity records include the backward-compatible `score_explainability` object; market-forecast records may set it to `null`. Valid JSON, no markdown wrapper. A run that ranks names is not publishable without this file.

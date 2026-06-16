@@ -61,6 +61,7 @@ After close, review all models' output packages from the trailing 7 days, compar
 - A run that ranks any name is not `PUBLISHED` until `15_predictions.json` exists — without it nothing the run forecast can ever be settled.
 - Every run that analyzes or ranks tickers also analyzes and forecasts the core ETFs — **SPY, QQQ, SOXX** — and includes their `MARKET_FORECAST` records in `15_predictions.json` (`rules.md § Core ETF Market Forecast`).
 - Never cite an **Enhancing** input (options IV/skew, short interest, bid-ask tape, full-universe feed) as a `GO` blocker; only the five **Required** inputs in `rules.md § Input Classification` may block `GO`.
+- Every ranked equity `Adj Score` must include score attribution from source metrics to family z-scores to final score per `rules.md § Financial Metrics and Score Attribution`.
 
 ## Deliverables
 
