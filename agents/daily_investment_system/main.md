@@ -1,13 +1,14 @@
-# Quantitative Equity Research Prompt System — v3.2
+# Quantitative Equity Research Prompt System — v3.3
 
 Modular, multi-agent, self-evolving prompt system for short-horizon U.S. equity selection.
 
-Four files, no subdirectories:
+Core prompt files plus one deterministic compute helper:
 
 - `main.md` — entrypoint (this file).
 - `runbook.md` — schedule, scheduler, and dated-output specification.
 - `rules.md` — shared research system + stop criteria + evolution policy; every agent obeys all three parts.
 - `agents.md` — orchestrator + five specialist stage prompts, in execution order.
+- `technical_indicators.py` — deterministic support script for daily/weekly/monthly TD-9, RSI(14), MACD(12,26,9), MA alignment, momentum, volume confirmation, and benchmark relative strength.
 - `../output/` (repo path `investments/equity/output/`) — dated run artifacts only; prompts and specs live here.
 
 ## Primary Goal
@@ -22,22 +23,38 @@ If fewer than 10 names pass the thresholds, return fewer. Never fill the list to
 
 ## Execution
 
-Execute the **Orchestrator** (first section of `agents.md`). It loads `rules.md` + `runbook.md`, then drives the stages of `agents.md` in order:
+Execute the **Orchestrator** (first section of `agents.md`). It loads `rules.md` + `runbook.md`, then drives the stages of `agents.md` in order.
+
+### Technical Indicator Helper
+
+Whenever the run has fetched or selected price histories for core ETFs and the eligible universe, run the deterministic helper before factor scoring and before finalizing any technical-indicator Source Ledger rows:
+
+```bash
+python3 investments/equity/daily_investment_system/technical_indicators.py \
+  --tickers SPY QQQ SOXX <eligible-universe-tickers> \
+  --benchmark SPY \
+  --range 5y \
+  --output investments/equity/output/{model-name}-{YYYY-MM-DD}/technical_indicators.json \
+  --pretty
+```
+
+If the current run has already materialized daily history CSVs, add `--history-dir <csv-history-dir>` so the helper computes from the exact fetched bars rather than fetching again. Use enough history for monthly indicators: 5 years is the default and expected fetch range. Treat `technical_indicators.json` as the canonical computed source for daily/weekly/monthly TD-9, RSI, MACD, MA alignment, momentum, volume ratio, and relative strength; cite it through `01_preflight.md` before using those values downstream. If the helper cannot produce a value for a ticker/timeframe, record that indicator as `UNAVAILABLE` rather than hand-filling it.
 
 | Stage | Agent (`agents.md`) | Artifacts |
 |---|---|---|
 | 0. Reflection (orchestrator-owned) | § Orchestrator — Reflection Stage | `02_reflection.md` |
 | 1. Data & regime | § Data and Regime | `03` |
-| 2. Factor scoring | § Factor Scoring | `04`, `05` |
-| 3. Portfolio construction | § Portfolio Construction | `06`, `07` |
-| 4. Risk committee | § Risk Committee | `08` |
-| 5. Evolution | § Evolution | `13` |
+| 2. Technical indicator compute | `technical_indicators.py` | `technical_indicators.json`, Source Ledger rows in `01` |
+| 3. Factor scoring | § Factor Scoring | `04`, `05` |
+| 4. Portfolio construction | § Portfolio Construction | `06`, `07` |
+| 5. Risk committee | § Risk Committee | `08` |
+| 6. Evolution | § Evolution | `13` |
 
-The orchestrator also publishes `00`, `01` (Source Ledger), `09`, and `15_predictions.json` per `runbook.md`.
+The orchestrator also publishes `00`, `01` (Source Ledger), `09`, `technical_indicators.json`, and `15_predictions.json` per `runbook.md`.
 
 State machine — a run is a state machine, not an essay:
 
-`PRECHECK -> REFLECTION -> DATA_OK -> SCORED -> PORTFOLIO_DRAFT -> RISK_REVIEW -> PUBLISHED -> CLOSE_LOGGED -> EVOLUTION_REVIEW`
+`PRECHECK -> REFLECTION -> DATA_OK -> TECHNICALS_OK -> SCORED -> PORTFOLIO_DRAFT -> RISK_REVIEW -> PUBLISHED -> CLOSE_LOGGED -> EVOLUTION_REVIEW`
 
 Hard stop at any stage → `HALTED`. Valid inputs but no trade set meeting the quality bar → `NO_TRADE`.
 
@@ -62,6 +79,7 @@ After close, review all models' output packages from the trailing 7 days, compar
 - Every run that analyzes or ranks tickers also analyzes and forecasts the core ETFs — **SPY, QQQ, SOXX** — and includes their `MARKET_FORECAST` records in `15_predictions.json` (`rules.md § Core ETF Market Forecast`).
 - Never cite an **Enhancing** input (options IV/skew, short interest, bid-ask tape, full-universe feed) as a `GO` blocker; only the five **Required** inputs in `rules.md § Input Classification` may block `GO`.
 - Every ranked equity `Adj Score` must include score attribution from source metrics to family z-scores to final score per `rules.md § Financial Metrics and Score Attribution`.
+- Every run with fetched price history must compute the daily/weekly/monthly technical indicator pack through `technical_indicators.py`; downstream TD-9, RSI, MACD, MA, momentum, volume, and relative-strength fields come from that artifact or are `UNAVAILABLE`.
 
 ## Deliverables
 
