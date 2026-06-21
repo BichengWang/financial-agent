@@ -14,10 +14,11 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 
 1. Create the run manifest and publish `01_preflight.md` with a Source Ledger before reflection or any specialist scoring.
 2. Run the Reflection stage (below) before any forecasting.
-3. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
-4. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
-5. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
-6. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) — always including the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX) per `rules.md § Core ETF Market Forecast` — and trigger the post-close evolution review.
+3. After Data/Regime establishes the eligible universe and price-history coverage, run `technical_indicators.py` per `main.md § Technical Indicator Helper`, publish `technical_indicators.json`, and add/cite its derived rows in `01_preflight.md` before factor scoring uses any technical indicator.
+4. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
+5. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
+6. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
+7. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) — always including the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX) per `rules.md § Core ETF Market Forecast` — and trigger the post-close evolution review.
 
 ## Reflection Stage
 
@@ -72,11 +73,12 @@ Verify the run has enough trustworthy data, classify the regime, and build the e
 4. Produce the **Core ETF Market Forecast Block** (SPY, QQQ, SOXX): fetch ~60 trading days of history per ETF, run the analysis minimum, and derive mu / sigma / 70% CI per `rules.md § Core ETF Market Forecast`.
 5. Apply the universe inclusion/exclusion filters (or the Sampled Universe Protocol when no full feed exists); list every rejected name with its reason.
 6. Flag event concentration (clustered earnings, FOMC inside horizon).
-7. Verify every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a ledger row or is `UNAVAILABLE`.
+7. Handoff the exact core ETF + eligible-universe ticker list to the orchestrator for `technical_indicators.py`.
+8. Verify every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a ledger row or is `UNAVAILABLE`.
 
 ## Required Output
 
-Preflight summary; regime table with evidence; Core ETF Market Forecast Block; universe summary; rejection log; ledger coverage gaps affecting scoring; handoff note for the factor scoring agent.
+Preflight summary; regime table with evidence; Core ETF Market Forecast Block; universe summary; rejection log; ledger coverage gaps affecting scoring; technical-indicator helper ticker handoff; handoff note for the factor scoring agent.
 
 ## Stop Rules
 
@@ -103,9 +105,9 @@ Turn the eligible universe into a ranked candidate list: compute financial metri
 - Earnings dates: confirmed, or cadence-estimated per `rules.md § Input Classification` (tag `ESTIMATED (±5d)`, penalty on the buffered window). Never leave a stale prior-quarter date in the field.
 - Sigma: follow the Sigma Fallback Chain — **never emit blanket `sigma = UNAVAILABLE`**; a ranked name without `mu`/`sigma` can never be settled, which is a publishing failure, not caution. This applies in full to `REVIEW_ONLY` monitor lists.
 - Score attribution: follow `rules.md § Financial Metrics and Score Attribution`; every `Adj Score` must disclose family z-scores, DQ, penalties, positive/negative metric drivers, and metric Source Ledger rows.
-- Metrics: compute sourceable Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, VaR95, CVaR95, max drawdown, Kelly, and TD-9 daily/weekly states. If an input is missing, use `UNAVAILABLE`; do not impute a neutral value or a positive contribution.
+- Metrics: compute sourceable Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, VaR95, CVaR95, max drawdown, Kelly, and the daily/weekly/monthly technical indicator pack (TD-9, RSI(14), MACD(12,26,9), MA/momentum/relative-strength support). If an input is missing, use `UNAVAILABLE`; do not impute a neutral value or a positive contribution.
 - Kelly: `0.25 x Kelly <= 0` blocks investable status; `< 2% NAV` applies the required penalty and caps confidence at `MEDIUM`; `>= 5% NAV` is cap-binding.
-- TD-9: use setup counts only, daily and weekly, per `rules.md § TD-9 Definition`. Treat TD-9 as an exhaustion/reversal flag, not a standalone trade signal.
+- Technical indicator pack: use `technical_indicators.json` from `technical_indicators.py` for TD-9, RSI, MACD, MA alignment, momentum, volume ratio, and relative strength. Treat TD-9 setup `9` and overbought/oversold RSI as exhaustion/reversal flags, not standalone trade signals. Treat MACD as supportive only when aligned with momentum and relative strength.
 - No full universe feed → Sampled Universe Protocol; label every percentile `SAMPLED_PCTL (n=XX)`. Do not refuse to rank because a full screen is missing.
 - Refuse to mark investable below 85% data completeness; refuse to emit any numeric price/target/CI/sigma/beta/drawdown/earnings-distance field without ledger-backed inputs.
 
@@ -115,12 +117,12 @@ Produce: ranked candidate table (top 20), score attribution table, investable su
 
 ### Ranked Candidate Table Schema
 
-| Ticker | Company | Entry Price | Price Date | Price Tag | Adj Score | Score Trace | Pctl | Beta | 30d RVol | Sharpe | Sortino | IR | Kelly 0.25 | VaR95 | CVaR95 | Max DD60 | TD9 D/W | Days to Earnings | mu | sigma | Sigma Source | Target Price | Target Date | 70% CI Lo | 70% CI Hi | Ledger Rows | Metric Ledger Rows | Confidence | Primary Thesis | Key Risk |
+| Ticker | Company | Entry Price | Price Date | Price Tag | Adj Score | Score Trace | Pctl | Beta | 30d RVol | Sharpe | Sortino | IR | Kelly 0.25 | VaR95 | CVaR95 | Max DD60 | TD9 D/W/M | RSI14 D/W/M | MACD D/W/M | Days to Earnings | mu | sigma | Sigma Source | Target Price | Target Date | 70% CI Lo | 70% CI Hi | Ledger Rows | Metric Ledger Rows | Confidence | Primary Thesis | Key Risk |
 
 Field derivations (target, CI bounds, tags): `rules.md § Price and Target Citation Standard` — single source. Agent-level enforcement:
 
 - `Score Trace` must show `Adj Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * DQ - Penalties`, with actual values.
-- Financial metrics and TD-9 states must follow `rules.md § Financial Metrics and Score Attribution` and cite metric ledger rows.
+- Financial metrics and technical indicator states must follow `rules.md § Financial Metrics and Score Attribution` / `§ Technical Indicator Pack Definition` and cite metric ledger rows.
 - `mu` comes from the mu Calibration Table band for the name's percentile; per-name adjustment capped at ±2pp with a stated, ledger-backed reason. Free-handed mu is a calibration violation.
 - A round sigma (e.g. exactly 10%) without a stated `sigma_source` is a fabrication violation.
 - `entry_price` failing the Price Sourcing Standard is `UNAVAILABLE`, and then `target_price`, `target_date`, and both CI bounds must be `N/A`.
@@ -132,7 +134,7 @@ Field derivations (target, CI bounds, tags): `rules.md § Price and Target Citat
 - [ ] Every numeric metric cites Source Ledger rows.
 - [ ] Every `Adj Score` has a score trace with family z-scores, DQ, penalties, and metric drivers.
 - [ ] Missing metrics are `UNAVAILABLE`, not neutral or supportive.
-- [ ] Kelly and TD-9 fields follow `rules.md § Financial Metrics and Score Attribution`.
+- [ ] Kelly and technical indicator fields follow `rules.md § Financial Metrics and Score Attribution` and `§ Technical Indicator Pack Definition`.
 - [ ] `target_price = entry_price × (1 + mu)`, never guessed.
 - [ ] Every sigma has a stated source.
 - [ ] No investable name has `price_tag = UNAVAILABLE`.
@@ -170,7 +172,7 @@ Convert the investable list into a proposal that maximizes expected 1-month Info
 ## Required Output
 
 1. Weights; expected Sharpe, Sortino, Information Ratio, tracking error, expected beta, VaR95, CVaR95, 95th-pctl 1-month drawdown; sector concentration table; factor exposure summary; correlation matrix.
-2. Per-position Recommendation Metrics Table (`Ticker | Entry Price | Price Date | Price Tag | Target Price | Target Date | mu | sigma | Sigma Source | Sharpe | Sortino | IR | Kelly 0.25 | VaR95 | CVaR95 | Max DD60 | TD9 D/W | 70% CI Lo | 70% CI Hi | Score Trace | Ledger Rows`) — inherit values from factor scoring; recompute only with a stated reason and ledger-backed formula.
+2. Per-position Recommendation Metrics Table (`Ticker | Entry Price | Price Date | Price Tag | Target Price | Target Date | mu | sigma | Sigma Source | Sharpe | Sortino | IR | Kelly 0.25 | VaR95 | CVaR95 | Max DD60 | TD9 D/W/M | RSI14 D/W/M | MACD D/W/M | 70% CI Lo | 70% CI Hi | Score Trace | Ledger Rows`) — inherit values from factor scoring; recompute only with a stated reason and ledger-backed formula.
 3. A note on why excluded names were left out.
 
 ## Grounding Rules
@@ -206,10 +208,11 @@ You are the skeptical investment committee. Challenge the proposed portfolio bef
 8. **Price/derived-field citation violations** — a numeric `entry_price` without `price_date` + `price_tag`, or `target_price`/CI bounds populated while `entry_price` is `N/A - unverified` / `UNAVAILABLE`.
 9. **Sigma violations** — any sigma without a stated `sigma_source`; or a ranked/monitor list carrying `mu = N/A` / `sigma = UNAVAILABLE` without documented failed fetches for the full Sigma Fallback Chain (such names produce no settleable predictions — require revision).
 10. **Score-attribution violations** — any ranked name with `Adj Score` but no score trace, family z-scores, DQ multiplier, penalties, top metric drivers, or metric ledger rows; any missing metric presented as neutral or supportive.
-11. **Source Ledger violations** — any price, return, vol, beta, earnings date, target, CI, drawdown, ratio, TD-9 state, or sizing input used downstream without a ledger row.
+11. **Source Ledger violations** — any price, return, vol, beta, earnings date, target, CI, drawdown, ratio, technical indicator value/state, or sizing input used downstream without a ledger row.
 12. **Live-sounding or stale-as-current claims** — "validated", "current", "latest", "closed at", "reported today" without non-illustrative ledger rows: downgrade to `INFERRED`/`UNAVAILABLE`, or `REJECT` if one revision cannot fix the labeling everywhere.
 13. **Improper GO-blocking** — blocking `GO` on missing **Enhancing** inputs when all **Required** inputs are grounded (correct treatment: reduced confidence + 50% gross cap). Conversely, `GO` with any missing Required input is a violation.
 14. **Missing prediction records** — any ranked name absent from `15_predictions.json` (including `REVIEW_ONLY` runs), any new equity prediction missing `score_explainability`, or a missing/incomplete Core ETF Market Forecast Block or its three `MARKET_FORECAST` records (SPY, QQQ, SOXX), is unauditable; require correction before publication.
+15. **Technical indicator pack violations** — RSI, MACD, TD-9, MA, momentum, volume, or relative-strength fields shown without `technical_indicators.json` lineage; TD-9/RSI/MACD treated as standalone trade signals; or script failures hidden instead of marked `UNAVAILABLE`.
 
 ## Decision
 
