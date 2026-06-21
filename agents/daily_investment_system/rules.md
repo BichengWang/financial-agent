@@ -99,7 +99,14 @@ Every run with a ranked investable or monitoring set must emit `15_predictions.j
       "cvar95": 0.0,
       "max_drawdown_60d": 0.0,
       "td9_daily": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE",
-      "td9_weekly": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE"
+      "td9_weekly": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE",
+      "td9_monthly": "NONE|BUY_SETUP_N|SELL_SETUP_N|UNAVAILABLE",
+      "rsi_14_daily": 0.0,
+      "rsi_14_weekly": 0.0,
+      "rsi_14_monthly": 0.0,
+      "macd_state_daily": "BULLISH_CROSS|BEARISH_CROSS|ABOVE_SIGNAL|BELOW_SIGNAL|ON_SIGNAL|UNAVAILABLE",
+      "macd_state_weekly": "BULLISH_CROSS|BEARISH_CROSS|ABOVE_SIGNAL|BELOW_SIGNAL|ON_SIGNAL|UNAVAILABLE",
+      "macd_state_monthly": "BULLISH_CROSS|BEARISH_CROSS|ABOVE_SIGNAL|BELOW_SIGNAL|ON_SIGNAL|UNAVAILABLE"
     },
     "positive_drivers": ["metric: reason"],
     "negative_drivers": ["metric: reason"],
@@ -192,7 +199,7 @@ Allowed `claim_type` values:
 
 Hard rules:
 
-1. Any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, score-attribution ratio, TD-9 state, or position-size input used downstream must appear in the Source Ledger.
+1. Any price, date, return, volatility, beta, earnings date, target, confidence interval, drawdown, score-attribution ratio, technical indicator state/value (including TD-9, RSI, and MACD), or position-size input used downstream must appear in the Source Ledger.
 2. Derived values must cite their formula and input ledger rows. If any input row is missing or `UNAVAILABLE`, the derived value must also be `UNAVAILABLE`.
 3. Thesis validation claims must cite supporting ledger rows and be labeled `INFERRED` unless they are a direct source observation.
 4. A downstream artifact may summarize facts from the ledger, but it may not introduce new factual claims without adding or citing ledger rows.
@@ -345,7 +352,7 @@ The factor scoring artifact must disclose, per ticker: `Fund_Z`, `Tech_Z`, `Sent
 | Risk / return | Forecast Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, beta, tracking error | Mainly Technical / Price and Macro / Regime; positive only when return is attractive per unit of realized or residual risk |
 | Tail risk | 60d max drawdown, 95% VaR, 95% CVaR, portfolio drawdown contribution | Negative driver and penalty input when downside risk is high or portfolio contribution is concentration-heavy |
 | Sizing | Raw Kelly, `0.25 x Kelly`, cap-binding status, minimum Kelly threshold | Investability gate, sizing input, and confidence cap |
-| Technical | 20d/60d momentum, relative strength vs SPY, MA20/MA50 alignment, volume confirmation, TD-9 daily, TD-9 weekly | Technical / Price z-score and signal-decay warning |
+| Technical | 20/60-bar momentum, relative strength vs SPY, MA20/MA50 alignment, volume confirmation, TD-9, RSI(14), and MACD(12,26,9) line/signal/histogram/state across daily, weekly, and monthly bars | Technical / Price z-score and signal-decay warning |
 | Fundamental / quality | Revenue revision momentum, EPS revision momentum, margin trend, FCF yield, ROIC/ROE, leverage, valuation vs sector | Fundamental z-score |
 | Sentiment / positioning | Analyst revision breadth, short-interest change, borrow/availability, options IV/skew, put/call ratio if sourced | Sentiment / Positioning z-score |
 
@@ -362,13 +369,31 @@ The factor scoring artifact must disclose, per ticker: `Fund_Z`, `Tech_Z`, `Sent
 
 ### TD-9 Definition
 
-Use TD Sequential setup only; do not compute Countdown. On daily and weekly bars:
+Use TD Sequential setup only; do not compute Countdown. On daily, weekly, and monthly bars:
 
 - Sell setup count: close is greater than the close four bars earlier.
 - Buy setup count: close is less than the close four bars earlier.
 - Count consecutive qualifying bars from 1 to 9; reset when the condition fails.
 - Output one of `NONE`, `BUY_SETUP_N`, `SELL_SETUP_N`, or `UNAVAILABLE` for each timeframe.
-- A daily or weekly `9` is an exhaustion or reversal flag. It is not an automatic trade signal; it affects the Technical / Price z-score, penalties, and confidence only when confirmed by ledger-backed price action.
+- A daily, weekly, or monthly `9` is an exhaustion or reversal flag. It is not an automatic trade signal; it affects the Technical / Price z-score, penalties, and confidence only when confirmed by ledger-backed price action.
+
+### Technical Indicator Pack Definition
+
+`technical_indicators.py` is the canonical compute engine for dense technical indicators. Run it on the same fetched daily bars used for realized volatility, beta, drawdown, and momentum whenever those bars are available. If the script output and hand calculations differ, use the script output or mark the field `UNAVAILABLE` pending diagnosis; do not silently substitute an ad hoc value.
+
+Required fields from the helper for every ranked or monitored equity, plus core ETFs where used in the market forecast. Each field is computed on daily, weekly, and monthly bars:
+
+- **TD-9 daily / weekly / monthly**: setup count only per `§ TD-9 Definition`.
+- **RSI(14)**: Wilder RSI over 14 bars. Interpret `>= 70` as overbought/exhaustion risk, `<= 30` as oversold/rebound risk, and `30-70` as neutral; RSI is not a standalone buy/sell signal.
+- **MACD(12,26,9)**: EMA(12) minus EMA(26), signal EMA(9), histogram = MACD minus signal. Allowed states: `BULLISH_CROSS`, `BEARISH_CROSS`, `ABOVE_SIGNAL`, `BELOW_SIGNAL`, `ON_SIGNAL`, `UNAVAILABLE`.
+- **MA / momentum support**: MA20, MA50, MA alignment, 20/60-bar momentum, 20-bar volume ratio, and 20/60-bar relative strength versus SPY when SPY is available. Helper keys carry `d`, `w`, or `m` suffixes for daily, weekly, and monthly blocks.
+
+Scoring use:
+
+- RSI and MACD may contribute to `Tech_Z` only when sourceable for at least 70% of the eligible universe; otherwise they appear as diagnostics.
+- RSI overbought/oversold and TD-9 setup `9` are exhaustion flags that can reduce confidence or add penalties when confirmed by price action. They do not override the multi-factor score alone.
+- MACD crossovers can support momentum only when aligned with 20d/60d momentum and relative strength; a fresh bearish crossover is a negative technical driver.
+- Every displayed indicator value/state must cite the `technical_indicators.json` support artifact and the underlying price-history Source Ledger row.
 
 ### Family Aggregation
 
@@ -454,7 +479,7 @@ Every ticker in the investable set or monitoring sleeve requires a **Recommendat
 - **target_date default**: `run_date + 28d` (midpoint of the 2-6 week horizon). Use `run_date + 21d` when the primary catalyst is imminent; `run_date + 42d` for slow-building theses.
 - **target_price**: compute only when `entry_price` is not `N/A - unverified` and the entry-price ledger row is available. Do not manufacture a target from a fabricated or untagged price.
 - **CI bounds**: compute only when both `entry_price` and `sigma` are available and tagged. The factor 1.04 gives the approximate ±70% interval for a normal distribution.
-- **Derived metrics**: target price, MoM return, confidence interval, beta, drawdown, score-attribution ratios, TD-9 states, and sizing calculations must cite their formula and input Source Ledger rows.
+- **Derived metrics**: target price, MoM return, confidence interval, beta, drawdown, score-attribution ratios, technical indicator states/values, and sizing calculations must cite their formula and input Source Ledger rows.
 - **ILLUSTRATIVE_MODE**: fields may use training-data reference prices only when tagged `ILLUSTRATIVE_REF` and paired with a disclosed reference vintage. They must carry that tag throughout and may not be used for live execution sizing. If no reference vintage can be disclosed, use `UNAVAILABLE`.
 
 ### Enforcement
