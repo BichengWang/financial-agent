@@ -1,0 +1,6 @@
+# Turtle Trading System — runtime dependencies.
+# The compute core and the offline --history-dir CSV path run on the Python standard
+# library alone; these are only needed for live data and index-universe refresh.
+yfinance>=0.2.40   # bulk threaded price history download
+pandas>=2.0        # parsing Wikipedia constituent tables (read_html) + yfinance frames
+lxml>=4.9          # HTML table parser backend for pandas.read_html
