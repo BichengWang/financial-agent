@@ -1,0 +1,4 @@
+# Runtime price cache (refetched per day from yfinance)
+cache/
+__pycache__/
+*.pyc
