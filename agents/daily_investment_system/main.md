@@ -8,6 +8,7 @@ Core prompt files plus one deterministic compute helper:
 - `runbook.md` — schedule, scheduler, and dated-output specification.
 - `rules.md` — shared research system + stop criteria + evolution policy; every agent obeys all three parts.
 - `agents.md` — orchestrator + five specialist stage prompts, in execution order.
+- `build_index_universe.py` — deterministic helper that materializes the S&P 500 ∪ Nasdaq-100 universe from local constituent caches.
 - `technical_indicators.py` — deterministic support script for daily/weekly/monthly TD-9, RSI(14), MACD(12,26,9), MA alignment, momentum, volume confirmation, and benchmark relative strength.
 - `../output/` (repo path `investments/equity/output/`) — dated run artifacts only; prompts and specs live here.
 
@@ -27,11 +28,22 @@ Execute the **Orchestrator** (first section of `agents.md`). It loads `rules.md`
 
 ### Technical Indicator Helper
 
+Before fetching price histories or selecting/ranking candidates, materialize the full index-union universe:
+
+```bash
+python3 investments/equity/daily_investment_system/build_index_universe.py \
+  --output-tickers investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary investments/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+```
+
+Use `eligible_universe.txt` as the equity candidate universe. The normal daily path is the full S&P 500 ∪ Nasdaq-100 union from the local caches in `investments/equity/turtle-trader/universe/`; a 30-name sampled set is an emergency fallback only when the index-union helper fails, and that failure must be documented in `00`, `01`, `03`, `04`, `08`, and `13`.
+
 Whenever the run has fetched or selected price histories for core ETFs and the eligible universe, run the deterministic helper before factor scoring and before finalizing any technical-indicator Source Ledger rows:
 
 ```bash
 python3 investments/equity/daily_investment_system/technical_indicators.py \
-  --tickers SPY QQQ SOXX <eligible-universe-tickers> \
+  --tickers SPY QQQ SOXX \
+  --tickers-file investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
   --benchmark SPY \
   --range 5y \
   --output investments/equity/output/{model-name}-{YYYY-MM-DD}/technical_indicators.json \
@@ -43,7 +55,7 @@ If the current run has already materialized daily history CSVs, add `--history-d
 | Stage | Agent (`agents.md`) | Artifacts |
 |---|---|---|
 | 0. Reflection (orchestrator-owned) | § Orchestrator — Reflection Stage | `02_reflection.md` |
-| 1. Data & regime | § Data and Regime | `03` |
+| 1. Data & regime | § Data and Regime | `03`, `eligible_universe.txt`, `universe_summary.json` |
 | 2. Technical indicator compute | `technical_indicators.py` | `technical_indicators.json`, Source Ledger rows in `01` |
 | 3. Factor scoring | § Factor Scoring | `04`, `05` |
 | 4. Portfolio construction | § Portfolio Construction | `06`, `07` |
@@ -80,6 +92,7 @@ After close, review all models' output packages from the trailing 7 days, compar
 - Never cite an **Enhancing** input (options IV/skew, short interest, bid-ask tape, full-universe feed) as a `GO` blocker; only the five **Required** inputs in `rules.md § Input Classification` may block `GO`.
 - Every ranked equity `Adj Score` must include score attribution from source metrics to family z-scores to final score per `rules.md § Financial Metrics and Score Attribution`.
 - Every run with fetched price history must compute the daily/weekly/monthly technical indicator pack through `technical_indicators.py`; downstream TD-9, RSI, MACD, MA, momentum, volume, and relative-strength fields come from that artifact or are `UNAVAILABLE`.
+- The daily run must not reuse the fixed 30-40-name sector sample when `build_index_universe.py` succeeds; repeated recommendations from a sampled set are a process failure, not a market signal.
 
 ## Deliverables
 
