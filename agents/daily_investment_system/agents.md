@@ -14,11 +14,12 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 
 1. Create the run manifest and publish `01_preflight.md` with a Source Ledger before reflection or any specialist scoring.
 2. Run the Reflection stage (below) before any forecasting.
-3. After Data/Regime establishes the eligible universe and price-history coverage, run `technical_indicators.py` per `main.md § Technical Indicator Helper`, publish `technical_indicators.json`, and add/cite its derived rows in `01_preflight.md` before factor scoring uses any technical indicator.
-4. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
-5. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
-6. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
-7. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) — always including the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX) per `rules.md § Core ETF Market Forecast` — and trigger the post-close evolution review.
+3. Before Data/Regime ranks or samples equities, run `build_index_universe.py` per `main.md` and publish `eligible_universe.txt` plus `universe_summary.json`; use that S&P 500 ∪ Nasdaq-100 union as the candidate universe unless the helper fails and the fallback is explicitly documented.
+4. After Data/Regime establishes the eligible universe and price-history coverage, run `technical_indicators.py` per `main.md § Technical Indicator Helper`, publish `technical_indicators.json`, and add/cite its derived rows in `01_preflight.md` before factor scoring uses any technical indicator.
+5. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
+6. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
+7. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
+8. Publish `15_predictions.json` whenever any name is ranked (either sleeve, every run status) — always including the three core ETF `MARKET_FORECAST` records (SPY, QQQ, SOXX) per `rules.md § Core ETF Market Forecast` — and trigger the post-close evolution review.
 
 ## Reflection Stage
 
@@ -71,7 +72,7 @@ Verify the run has enough trustworthy data, classify the regime, and build the e
 2. Declare exactly one data mode from `rules.md § Data Mode Taxonomy` (`LIVE` / `DELAYED` / `DELAYED_PARTIAL` / `ILLUSTRATIVE`). Unusable data is not a mode — recommend `HALTED`.
 3. Classify the regime: `BULL` / `BEAR` / `HIGH_VOL` / `RATE_SHOCK` / `NEUTRAL`, with cited evidence. If no label is defensible, say so explicitly.
 4. Produce the **Core ETF Market Forecast Block** (SPY, QQQ, SOXX): fetch ~60 trading days of history per ETF, run the analysis minimum, and derive mu / sigma / 70% CI per `rules.md § Core ETF Market Forecast`.
-5. Apply the universe inclusion/exclusion filters (or the Sampled Universe Protocol when no full feed exists); list every rejected name with its reason.
+5. Run `build_index_universe.py`, cite `universe_summary.json`, and apply the universe inclusion/exclusion filters to the full S&P 500 ∪ Nasdaq-100 union. Use the Sampled Universe Protocol only as a documented emergency fallback when the helper fails; list every rejected name with its reason.
 6. Flag event concentration (clustered earnings, FOMC inside horizon).
 7. Handoff the exact core ETF + eligible-universe ticker list to the orchestrator for `technical_indicators.py`.
 8. Verify every regime, universe, price, liquidity, beta, volatility, and event-calendar fact used downstream has a ledger row or is `UNAVAILABLE`.
@@ -108,7 +109,7 @@ Turn the eligible universe into a ranked candidate list: compute financial metri
 - Metrics: compute sourceable Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, VaR95, CVaR95, max drawdown, Kelly, and the daily/weekly/monthly technical indicator pack (TD-9, RSI(14), MACD(12,26,9), MA/momentum/relative-strength support). If an input is missing, use `UNAVAILABLE`; do not impute a neutral value or a positive contribution.
 - Kelly: `0.25 x Kelly <= 0` blocks investable status; `< 2% NAV` applies the required penalty and caps confidence at `MEDIUM`; `>= 5% NAV` is cap-binding.
 - Technical indicator pack: use `technical_indicators.json` from `technical_indicators.py` for TD-9, RSI, MACD, MA alignment, momentum, volume ratio, and relative strength. Treat TD-9 setup `9` and overbought/oversold RSI as exhaustion/reversal flags, not standalone trade signals. Treat MACD as supportive only when aligned with momentum and relative strength.
-- No full universe feed → Sampled Universe Protocol; label every percentile `SAMPLED_PCTL (n=XX)`. Do not refuse to rank because a full screen is missing.
+- Normal path → S&P 500 ∪ Nasdaq-100 from `eligible_universe.txt`; label every percentile `INDEX_UNION_PCTL (n=XX)`. Emergency fallback only → Sampled Universe Protocol; label every percentile `SAMPLED_PCTL (n=XX)` and cap final status at `REVIEW_ONLY` unless the fallback was caused by a transient fetch failure after the index-union file was materialized.
 - Refuse to mark investable below 85% data completeness; refuse to emit any numeric price/target/CI/sigma/beta/drawdown/earnings-distance field without ledger-backed inputs.
 
 ## Output Standard

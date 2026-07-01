@@ -245,7 +245,7 @@ Blocking `GO` on inputs that are never available in this environment converts ca
 2. ~60 trading days of fetched price history per name and for SPY (drives beta, correlation, drawdown, realized vol).
 3. `sigma` via the Sigma Fallback Chain.
 4. Next earnings date — confirmed, or cadence-estimated as `prior_report_date + ~91d` tagged `ESTIMATED (±5d)`; apply the 14-day penalty on the buffered window.
-5. A sampled universe meeting the Sampled Universe Protocol below.
+5. The S&P 500 ∪ Nasdaq-100 index-union universe from `build_index_universe.py`, or a documented emergency fallback to the Sampled Universe Protocol below when that helper fails.
 
 **Enhancing** (missing → lower the data-quality multiplier and cap confidence at `MEDIUM`; never block `GO` by themselves):
 
@@ -253,9 +253,28 @@ Blocking `GO` on inputs that are never available in this environment converts ca
 
 A run with all Required inputs grounded and several Enhancing inputs missing is a valid `GO` candidate at reduced confidence and reduced gross exposure (cap 50%), not an automatic `REVIEW_ONLY`.
 
+## Index-Union Universe Protocol
+
+The normal daily run scans the full S&P 500 ∪ Nasdaq-100 constituent union, not a hand-picked sector sample. Build it before any price fetch, factor scoring, or candidate ranking:
+
+```bash
+python3 investments/equity/daily_investment_system/build_index_universe.py \
+  --output-tickers investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary investments/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+```
+
+Rules:
+
+1. `eligible_universe.txt` is the candidate universe for scoring and percentile ranks.
+2. `universe_summary.json` is cited in `00_run_manifest.md`, `01_preflight.md`, `03_regime_and_data.md`, and `04_universe_summary.md`; it must report the S&P 500 count, Nasdaq-100 count, overlap count, and union count.
+3. Core ETFs (`SPY`, `QQQ`, `SOXX`) are analyzed separately and do not count as universe members.
+4. Percentiles from this path are labeled `INDEX_UNION_PCTL (n=XX)`.
+5. If local constituent caches are stale, still use them for the run and log the cache `fetched_at` values; refresh is a maintenance task, not a reason to fall back to 30 names.
+6. A run that uses the same fixed 30-40 large-cap sample while `build_index_universe.py` succeeds is not publishable as `GO`; publish `REVIEW_ONLY` or `HALTED` depending on whether the mistake is caught before ranking propagates.
+
 ## Sampled Universe Protocol
 
-A full U.S. equity screening feed is not wired; demanding one guarantees failure. When no full screen is available, build the universe deterministically:
+Emergency fallback only. Use this when the index-union helper fails because constituent caches are missing/corrupt or the run cannot fetch enough history for the index-union universe. Do not use it merely to reduce runtime or because the same tickers have worked before.
 
 1. Start with all carry-forward names (`CARRY` / `PROMOTE`) from `02_reflection.md`.
 2. Add the 2-3 largest liquid names from each of the 11 GICS sectors (S&P 500 constituents).
@@ -615,7 +634,7 @@ Set `HALTED` immediately if any is true:
 1. Live or delayed benchmark data is missing and the system is not explicitly in `ILLUSTRATIVE_MODE`.
 2. Data lineage is unclear for core fields (price, volume, beta, earnings date).
 3. More than 20% of top-ranked candidates have unresolved missing critical inputs.
-4. The universe filter cannot meet the Sampled Universe Protocol minimum of 30 grounded names (`§ Sampled Universe Protocol` above).
+4. The index-union universe cannot be materialized from `build_index_universe.py`, and the emergency sampled fallback cannot meet the Sampled Universe Protocol minimum of 30 grounded names.
 5. The portfolio cannot be brought inside beta, sector, or drawdown limits after one revision pass **and** the cause is process/data integrity rather than the composition of the investable set (composition → `NO_TRADE` #6).
 6. The risk committee identifies fabricated, inconsistent, or contradictory evidence.
 
