@@ -1,0 +1,3115 @@
+{
+  "failure_count": 1,
+  "failures": {
+    "FDXF": "only 28 rows"
+  },
+  "generated_at": "2026-07-07T16:00:02Z",
+  "history_dir": "investments/equity/output/gpt-5-2026-07-07/history",
+  "history_dir_note": "Temporary CSV history directory was removed after technical_indicators.py computed the canonical JSON; source URLs and row counts are retained here.",
+  "ok_count": 517,
+  "requested": 518,
+  "sources": {
+    "A": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/A?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AAPL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ABBV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ABBV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ABNB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ABNB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ABT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ABT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ACGL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ACGL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ACN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ACN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ADBE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ADBE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ADI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ADI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ADM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ADM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ADP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ADP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ADSK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ADSK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AEE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AEE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AEP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AEP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AES": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AES?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AFL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AFL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AIG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AIG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AIZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AIZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AJG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AJG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AKAM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AKAM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ALB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ALB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ALGN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ALGN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ALL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ALL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ALLE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ALLE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ALNY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ALNY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMAT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMCR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMCR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AME": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AME?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMGN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMGN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AMZN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AMZN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ANET": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ANET?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AON": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AON?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AOS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AOS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "APTV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/APTV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ARE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ARE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ARES": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ARES?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ARM": {
+      "first_date": "2023-09-14",
+      "last_date": "2026-07-07",
+      "rows": 704,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ARM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ASML": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ASML?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ATO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ATO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AVB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AVB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AVGO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AVY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AVY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AWK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AWK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AXON": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AXON?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AXP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AXP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "AZO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/AZO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BAC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BAC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BALL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BALL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BAX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BAX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BBY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BBY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BDX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BDX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BEN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BEN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BF-B": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BF-B?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BIIB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BIIB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BKNG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BKNG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BKR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BKR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BLDR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BLDR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BLK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BLK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BMY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BMY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BNY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BNY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BRK-B": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BRK-B?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BRO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BRO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BSX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BSX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "BXP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/BXP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "C": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/C?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CAG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CAG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CAH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CAH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CARR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CARR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CASY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CASY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CAT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CAT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CBOE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CBOE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CBRE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CBRE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CCEP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CCEP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CCI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CCI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CCL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CCL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CDNS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CDNS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CDW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CDW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CEG": {
+      "first_date": "2022-01-19",
+      "last_date": "2026-07-07",
+      "rows": 1119,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CEG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CFG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CFG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CHD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CHD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CHRW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CHRW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CHTR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CHTR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CIEN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CIEN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CINF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CINF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CLX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CLX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CMCSA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CMCSA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CME": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CME?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CMG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CMG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CMI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CMI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CMS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CMS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CNC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CNC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CNP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CNP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COHR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COHR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COIN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COIN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "COST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/COST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CPAY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CPAY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CPRT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CPRT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CPT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CPT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CRH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CRH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CRL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CRL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CRM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CRM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CRWD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CRWD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CSCO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CSCO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CSGP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CSGP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CSX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CSX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CTAS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CTAS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CTSH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CTSH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CTVA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CTVA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CVNA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CVNA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CVS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CVS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "CVX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/CVX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "D": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/D?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DAL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DAL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DASH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DASH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DDOG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DDOG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DECK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DECK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DELL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DELL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DGX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DGX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DHI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DHI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DHR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DHR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DIS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DIS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DLR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DLR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DLTR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DLTR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DOC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DOC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DOV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DOV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DOW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DOW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DPZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DPZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DRI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DRI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DTE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DTE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DUK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DUK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DVA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DVA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DVN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DVN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "DXCM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/DXCM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EBAY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EBAY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ECL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ECL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ED": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ED?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EFX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EFX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EIX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EIX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ELV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ELV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EME": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EME?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EMR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EMR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EOG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EOG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EQIX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EQIX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EQR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EQR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EQT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EQT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ERIE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ERIE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ES": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ES?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ESS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ESS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ETN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ETN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ETR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ETR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EVRG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EVRG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EXC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EXE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EXPD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXPD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EXPE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXPE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "EXR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "F": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/F?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FANG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FANG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FAST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FAST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FCX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FCX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FDS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FDS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FDX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FDX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FER": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FER?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FFIV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FFIV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FICO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FICO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FIS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FIS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FISV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1254,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FISV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FITB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FITB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FIX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FIX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FLEX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FLEX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FOX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FOX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FOXA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FOXA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FRT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FRT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FSLR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FSLR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FTNT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FTNT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "FTV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/FTV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GDDY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GDDY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GEHC": {
+      "first_date": "2022-12-15",
+      "last_date": "2026-07-07",
+      "rows": 890,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GEHC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GEN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GEN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GEV": {
+      "first_date": "2024-03-27",
+      "last_date": "2026-07-07",
+      "rows": 570,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GEV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GILD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GILD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GIS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GIS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GLW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GLW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GNRC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GNRC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GOOG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOOG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GOOGL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOOGL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GPC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GPC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GPN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GPN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GRMN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GRMN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "GWW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/GWW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HAL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HAL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HAS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HAS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HBAN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HBAN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HCA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HCA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HIG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HIG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HII": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HII?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HLT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HLT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HON": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HON?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HOOD": {
+      "first_date": "2021-07-29",
+      "last_date": "2026-07-07",
+      "rows": 1239,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HOOD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HPE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HPE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HPQ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HPQ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HRL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HRL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HSIC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HSIC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HSY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HSY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HUBB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HUBB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HUM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HUM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "HWM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/HWM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IBKR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IBKR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IBM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IBM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ICE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ICE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IDXX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IDXX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IEX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IEX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IFF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IFF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "INCY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/INCY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "INSM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/INSM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "INTC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/INTC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "INTU": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/INTU?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "INVH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/INVH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IQV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IQV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IRM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IRM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ISRG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ISRG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ITW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ITW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "IVZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/IVZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "J": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/J?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JBHT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JBHT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JBL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JBL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JCI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JCI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JKHY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JKHY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JNJ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JNJ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "JPM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/JPM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KDP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KDP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KEY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KEY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KEYS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KEYS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KHC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KHC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KIM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KIM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KKR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KKR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KLAC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KLAC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KMB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KMB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KMI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KMI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "KVUE": {
+      "first_date": "2023-05-04",
+      "last_date": "2026-07-07",
+      "rows": 795,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/KVUE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "L": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/L?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LDOS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LDOS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LEN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LEN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LHX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LHX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LII": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LII?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LIN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LIN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LITE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LITE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LLY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LLY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LMT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LMT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LNT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LNT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LOW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LOW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LRCX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LRCX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LULU": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LULU?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LUV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LUV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LVS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LVS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LYB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LYB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "LYV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/LYV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MAA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MAA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MAR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MAR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MAS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MAS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MCD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MCD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MCHP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MCHP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MCK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MCK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MCO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MCO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MDLZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MDLZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MDT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MDT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MELI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MELI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MET": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MET?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "META": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/META?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MGM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MGM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MKC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MKC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MLM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MLM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MMM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MMM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MNST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MNST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MOS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MOS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MPC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MPC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MPWR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MPWR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MRK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MRK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MRNA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MRNA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MRSH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MRSH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MRVL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MRVL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MSCI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MSCI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MSFT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MSFT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MSI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MSI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MSTR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MSTR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MTB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MTB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MTD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MTD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "MU": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/MU?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NCLH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NCLH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NDAQ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NDAQ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NDSN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NDSN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NEE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NEE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NEM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NEM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NFLX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NFLX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NKE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NKE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NOC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NOC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NOW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NOW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NRG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NRG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NSC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NSC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NTAP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NTAP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NTRS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NTRS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NUE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NUE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NVDA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NVR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NVR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NWS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NWS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NWSA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NWSA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "NXPI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/NXPI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "O": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/O?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ODFL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ODFL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "OKE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/OKE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "OMC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/OMC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ON": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ON?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ORCL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ORCL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ORLY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ORLY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "OTIS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/OTIS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "OXY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/OXY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PANW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PANW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PAYX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PAYX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PCAR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PCAR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PCG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PCG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PDD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PDD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PEG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PEG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PEP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PEP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PFE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PFE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PFG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PFG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PGR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PGR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PHM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PHM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PKG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PKG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PLD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PLD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PLTR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PLTR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PNC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PNC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PNR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PNR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PNW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PNW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PODD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PODD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PPG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PPG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PPL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PRU": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PRU?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PSA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PSA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PSKY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PSKY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PSX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PSX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PTC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PTC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PWR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PWR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "PYPL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/PYPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "Q": {
+      "first_date": "2025-10-27",
+      "last_date": "2026-07-07",
+      "rows": 173,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/Q?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "QCOM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/QCOM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "QQQ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RCL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RCL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "REG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/REG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "REGN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/REGN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RJF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RJF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RMD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RMD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ROK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ROK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ROL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ROL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ROP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ROP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ROST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ROST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RSG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RSG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RTX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RTX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "RVTY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/RVTY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SATS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-02",
+      "rows": 1253,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SATS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SBAC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SBAC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SBUX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SBUX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SCHW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SCHW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SHOP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SHOP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SHW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SHW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SJM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SJM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SLB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SLB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SMCI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SMCI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SNA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SNA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SNDK": {
+      "first_date": "2025-02-13",
+      "last_date": "2026-07-07",
+      "rows": 349,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SNDK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SNPS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SNPS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SOLV": {
+      "first_date": "2024-03-26",
+      "last_date": "2026-07-07",
+      "rows": 571,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SOLV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SOXX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SOXX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SPG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SPGI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPGI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SPY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SRE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SRE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "STE": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/STE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "STLD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/STLD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "STT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/STT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "STX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/STX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "STZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/STZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SWK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SWK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SWKS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SWKS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SYF": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SYF?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SYK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SYK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "SYY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/SYY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "T": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/T?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TAP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TAP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TDG": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TDG?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TDY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TDY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TECH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TECH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TEL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TEL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TER": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TER?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TFC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TFC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TGT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TGT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TJX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TJX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TKO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TKO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TMO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TMO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TMUS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TMUS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TPL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TPR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TPR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TRGP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TRGP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TRI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TRI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TRMB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TRMB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TROW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TROW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TRV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TRV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TSCO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TSCO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TSLA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TSN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TSN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TTD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TTD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TTWO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TXN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TXN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TXT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TXT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "TYL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/TYL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UAL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UAL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UBER": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UBER?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UDR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UDR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UHS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UHS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ULTA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ULTA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UNH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UNH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UNP": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UNP?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "UPS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/UPS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "URI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/URI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "USB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/USB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "V": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/V?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VEEV": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VEEV?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VICI": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VICI?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VLO": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VLO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VLTO": {
+      "first_date": "2023-10-04",
+      "last_date": "2026-07-07",
+      "rows": 690,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VLTO?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VMC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VMC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VRSK": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VRSK?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VRSN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VRSN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VRT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VRT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VRTX": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VRTX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VTR": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VTR?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VTRS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VTRS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "VZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/VZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WAB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WAB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WAT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WAT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WBD": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WBD?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WDAY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WDAY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WDC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WDC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WEC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WEC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WELL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WELL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WFC": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WMB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WMB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WMT": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WMT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WRB": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WRB?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WSM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WSM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WST": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WST?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WTW": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WTW?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WY": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "WYNN": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/WYNN?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "XEL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/XEL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "XOM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "XYL": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/XYL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "XYZ": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/XYZ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "YUM": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/YUM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ZBH": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZBH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ZBRA": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZBRA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ZS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    },
+    "ZTS": {
+      "first_date": "2021-07-07",
+      "last_date": "2026-07-07",
+      "rows": 1255,
+      "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZTS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+    }
+  }
+}
