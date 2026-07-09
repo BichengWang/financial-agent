@@ -1,0 +1,94 @@
+# 01 Preflight
+
+Data mode: `DELAYED_PARTIAL`. Source Ledger rows below are the only facts used downstream; unavailable non-price feeds are explicit blockers/caps.
+
+| row_id | artifact | field | ticker/entity | value | unit | observation_date | source | freshness_tag | claim_type | used_by |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| L001 | 01_preflight.md | index_union_universe | S&P500_UNION_NDX100 | 515 | count | 2026-07-09 | build_index_universe.py; universe_summary.json | HISTORICAL | OBSERVED | 03,04,05 |
+| L002 | 01_preflight.md | price_history_coverage | ALL_REQUESTED | 517/518 | tickers | 2026-07-09 | Yahoo chart via technical_indicators.py; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 01,03,05,07 |
+| L003 | 01_preflight.md | technical_indicator_pack | ALL_SOURCEABLE | 517 | tickers | 2026-07-09 | technical_indicators.py output | DELAYED | DERIVED | 03,05 |
+| L004 | 01_preflight.md | next_earnings_date | ALL_RANKED | UNAVAILABLE | date | 2026-07-09 | No connected feed in this run | UNAVAILABLE | UNAVAILABLE | 00,04,05,08 |
+| L005 | 01_preflight.md | fundamental_revision_metrics | ALL_RANKED | UNAVAILABLE | mixed | 2026-07-09 | No connected feed in this run | UNAVAILABLE | UNAVAILABLE | 04,05,08 |
+| L006 | 01_preflight.md | sentiment_positioning_metrics | ALL_RANKED | UNAVAILABLE | mixed | 2026-07-09 | No connected feed in this run | UNAVAILABLE | UNAVAILABLE | 04,05,08 |
+| L007 | 01_preflight.md | bid_ask_execution_tape | ALL_RANKED | UNAVAILABLE | mixed | 2026-07-09 | No connected feed in this run | UNAVAILABLE | UNAVAILABLE | 00,08 |
+| L008 | 01_preflight.md | entry_price | SPY | 751.13 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/SPY?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 03,09,15 |
+| L009 | 01_preflight.md | etf_forecast_metrics | SPY | mu=0.0050; sigma=0.0442; beta=1.00 | decimal | 2026-07-09 | Derived from 60d/30d fetched returns plus technical_indicators.json | DELAYED | DERIVED | 03,09,15 |
+| L010 | 01_preflight.md | entry_price | QQQ | 723.12 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/QQQ?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 03,09,15 |
+| L011 | 01_preflight.md | etf_forecast_metrics | QQQ | mu=0.0104; sigma=0.0857; beta=1.68 | decimal | 2026-07-09 | Derived from 60d/30d fetched returns plus technical_indicators.json | DELAYED | DERIVED | 03,09,15 |
+| L012 | 01_preflight.md | entry_price | SOXX | 586.84 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/SOXX?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 03,09,15 |
+| L013 | 01_preflight.md | etf_forecast_metrics | SOXX | mu=0.0274; sigma=0.2193; beta=3.48 | decimal | 2026-07-09 | Derived from 60d/30d fetched returns plus technical_indicators.json | DELAYED | DERIVED | 03,09,15 |
+| L014 | 01_preflight.md | settlement_current_price | MCK | 789.78 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L015 | 01_preflight.md | settlement_current_price | COST | 911.16 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L016 | 01_preflight.md | settlement_current_price | WMT | 111.74 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L017 | 01_preflight.md | settlement_current_price | CVX | 174.22 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L018 | 01_preflight.md | settlement_current_price | UNH | 430.98 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L019 | 01_preflight.md | settlement_current_price | MU | 1013.99 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L020 | 01_preflight.md | settlement_current_price | XOM | 137.70 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L021 | 01_preflight.md | settlement_current_price | LIN | 524.08 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L022 | 01_preflight.md | settlement_current_price | LLY | 1211.80 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L023 | 01_preflight.md | settlement_current_price | NVDA | 203.77 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L024 | 01_preflight.md | settlement_current_price | GOOGL | 356.65 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L025 | 01_preflight.md | settlement_current_price | ABBV | 248.34 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L026 | 01_preflight.md | settlement_current_price | LLY | 1211.80 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L027 | 01_preflight.md | settlement_current_price | CVX | 174.22 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L028 | 01_preflight.md | settlement_current_price | UNH | 430.98 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L029 | 01_preflight.md | settlement_current_price | ABBV | 248.34 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L030 | 01_preflight.md | settlement_current_price | BAC | 59.35 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L031 | 01_preflight.md | settlement_current_price | JNJ | 258.89 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L032 | 01_preflight.md | settlement_current_price | ANET | 184.79 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L033 | 01_preflight.md | settlement_current_price | AMT | 164.88 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L034 | 01_preflight.md | settlement_current_price | GOOGL | 356.65 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L035 | 01_preflight.md | settlement_current_price | MCK | 789.78 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L036 | 01_preflight.md | settlement_current_price | GS | 1060.04 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L037 | 01_preflight.md | settlement_current_price | KO | 82.38 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L038 | 01_preflight.md | settlement_current_price | GE | 359.14 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L039 | 01_preflight.md | settlement_current_price | JPM | 335.17 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L040 | 01_preflight.md | settlement_current_price | ORCL | 144.47 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L041 | 01_preflight.md | settlement_current_price | PG | 146.24 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L042 | 01_preflight.md | settlement_current_price | COP | 108.21 | USD | 2026-07-09 | Yahoo chart fetch for settlement; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 02,15 |
+| L043 | 01_preflight.md | entry_price | CRWD | 198.21 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/CRWD?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L044 | 01_preflight.md | ranking_and_risk_metrics | CRWD | Adj=0.55; Tech_Z=2.71; sigma=0.1638; beta=1.37 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L045 | 01_preflight.md | entry_price | HOOD | 116.20 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/HOOD?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L046 | 01_preflight.md | ranking_and_risk_metrics | HOOD | Adj=0.55; Tech_Z=2.60; sigma=0.2311; beta=2.44 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L047 | 01_preflight.md | entry_price | DELL | 456.69 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/DELL?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L048 | 01_preflight.md | ranking_and_risk_metrics | DELL | Adj=0.55; Tech_Z=2.68; sigma=0.3328; beta=2.34 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L049 | 01_preflight.md | entry_price | AMD | 545.36 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/AMD?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L050 | 01_preflight.md | ranking_and_risk_metrics | AMD | Adj=0.54; Tech_Z=2.68; sigma=0.2325; beta=4.59 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L051 | 01_preflight.md | entry_price | AMAT | 593.19 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L052 | 01_preflight.md | ranking_and_risk_metrics | AMAT | Adj=0.51; Tech_Z=2.60; sigma=0.2749; beta=3.22 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L053 | 01_preflight.md | entry_price | WDC | 586.13 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/WDC?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L054 | 01_preflight.md | ranking_and_risk_metrics | WDC | Adj=0.51; Tech_Z=2.55; sigma=0.3136; beta=3.92 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L055 | 01_preflight.md | entry_price | DDOG | 268.41 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/DDOG?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L056 | 01_preflight.md | ranking_and_risk_metrics | DDOG | Adj=0.49; Tech_Z=2.43; sigma=0.1844; beta=0.53 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L057 | 01_preflight.md | entry_price | MRNA | 75.76 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/MRNA?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L058 | 01_preflight.md | ranking_and_risk_metrics | MRNA | Adj=0.48; Tech_Z=2.35; sigma=0.2362; beta=1.24 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L059 | 01_preflight.md | entry_price | PANW | 336.33 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/PANW?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L060 | 01_preflight.md | ranking_and_risk_metrics | PANW | Adj=0.48; Tech_Z=2.42; sigma=0.1794; beta=1.47 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L061 | 01_preflight.md | entry_price | STX | 908.55 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/STX?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L062 | 01_preflight.md | ranking_and_risk_metrics | STX | Adj=0.47; Tech_Z=2.34; sigma=0.2471; beta=3.00 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L063 | 01_preflight.md | entry_price | MU | 1013.99 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/MU?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L064 | 01_preflight.md | ranking_and_risk_metrics | MU | Adj=0.47; Tech_Z=2.37; sigma=0.3339; beta=4.60 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L065 | 01_preflight.md | entry_price | FTNT | 163.38 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/FTNT?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L066 | 01_preflight.md | ranking_and_risk_metrics | FTNT | Adj=0.45; Tech_Z=2.29; sigma=0.1312; beta=0.86 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L067 | 01_preflight.md | entry_price | INTC | 112.65 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/INTC?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L068 | 01_preflight.md | ranking_and_risk_metrics | INTC | Adj=0.44; Tech_Z=2.22; sigma=0.2680; beta=3.47 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L069 | 01_preflight.md | entry_price | DVA | 227.30 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/DVA?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L070 | 01_preflight.md | ranking_and_risk_metrics | DVA | Adj=0.43; Tech_Z=2.20; sigma=0.0724; beta=0.45 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L071 | 01_preflight.md | entry_price | KLAC | 230.69 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/KLAC?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L072 | 01_preflight.md | ranking_and_risk_metrics | KLAC | Adj=0.43; Tech_Z=2.15; sigma=0.3050; beta=3.64 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L073 | 01_preflight.md | entry_price | FFIV | 429.29 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/FFIV?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L074 | 01_preflight.md | ranking_and_risk_metrics | FFIV | Adj=0.43; Tech_Z=2.18; sigma=0.0884; beta=0.72 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L075 | 01_preflight.md | entry_price | LRCX | 353.18 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/LRCX?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L076 | 01_preflight.md | ranking_and_risk_metrics | LRCX | Adj=0.42; Tech_Z=2.15; sigma=0.2708; beta=3.92 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L077 | 01_preflight.md | entry_price | HPE | 49.04 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/HPE?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L078 | 01_preflight.md | ranking_and_risk_metrics | HPE | Adj=0.42; Tech_Z=2.12; sigma=0.2685; beta=2.26 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L079 | 01_preflight.md | entry_price | ARM | 333.17 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/ARM?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L080 | 01_preflight.md | ranking_and_risk_metrics | ARM | Adj=0.41; Tech_Z=2.07; sigma=0.3315; beta=5.25 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+| L081 | 01_preflight.md | entry_price | ANET | 184.79 | USD | 2026-07-09 | https://query2.finance.yahoo.com/v8/finance/chart/ANET?range=5y&interval=1d&events=history&includeAdjustedClose=true; retrieved_at 2026-07-09T18:30:57Z | DELAYED | OBSERVED | 05,06,09,15 |
+| L082 | 01_preflight.md | ranking_and_risk_metrics | ANET | Adj=0.41; Tech_Z=2.00; sigma=0.1895; beta=1.76 | decimal | 2026-07-09 | Derived from fetched 60d/30d returns and technical_indicators.json | DELAYED | DERIVED | 05,06,07,08,15 |
+
+## Coverage Summary
+
+OBSERVED 54; DERIVED 24; INFERRED 0; ILLUSTRATIVE 0; UNAVAILABLE 4.
+
+Technical indicator rows cite both fetched Yahoo history and `technical_indicators.json`. Missing earnings/fundamental/sentiment rows are recorded as `UNAVAILABLE`, not treated as neutral evidence.
