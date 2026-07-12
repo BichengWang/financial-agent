@@ -105,7 +105,8 @@
         "L022",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -127,7 +128,8 @@
           "L022",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -157,6 +159,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -196,7 +199,8 @@
         "L029",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -218,7 +222,8 @@
           "L029",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -248,6 +253,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -287,7 +293,8 @@
         "L036",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -309,7 +316,8 @@
           "L036",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -341,6 +349,7 @@
           "weekly RSI exhaustion"
         ],
         "penalties": 0.05,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -380,7 +389,8 @@
         "L043",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -402,7 +412,8 @@
           "L043",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -432,6 +443,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -471,7 +483,8 @@
         "L148",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -493,7 +506,8 @@
           "L148",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -523,6 +537,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -562,7 +577,8 @@
         "L050",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -584,7 +600,8 @@
           "L050",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -614,6 +631,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -653,7 +671,8 @@
         "L057",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -675,7 +694,8 @@
           "L057",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -706,6 +726,7 @@
           "daily RSI exhaustion"
         ],
         "penalties": 0.03,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -745,7 +766,8 @@
         "L064",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -767,7 +789,8 @@
           "L064",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -799,6 +822,7 @@
           "monthly RSI exhaustion"
         ],
         "penalties": 0.04,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -838,7 +862,8 @@
         "L071",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -860,7 +885,8 @@
           "L071",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -892,6 +918,7 @@
           "monthly TD-9 sell-setup exhaustion"
         ],
         "penalties": 0.04,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -931,7 +958,8 @@
         "L078",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -953,7 +981,8 @@
           "L078",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -983,6 +1012,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1022,7 +1052,8 @@
         "L085",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1044,7 +1075,8 @@
           "L085",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1074,6 +1106,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1113,7 +1146,8 @@
         "L092",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1135,7 +1169,8 @@
           "L092",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1168,6 +1203,7 @@
           "weekly TD-9 sell-setup exhaustion"
         ],
         "penalties": 0.06,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1207,7 +1243,8 @@
         "L099",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1229,7 +1266,8 @@
           "L099",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1261,6 +1299,7 @@
           "daily bearish MACD cross"
         ],
         "penalties": 0.05,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1300,7 +1339,8 @@
         "L106",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1322,7 +1362,8 @@
           "L106",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1352,6 +1393,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1391,7 +1433,8 @@
         "L113",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1413,7 +1456,8 @@
           "L113",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1444,6 +1488,7 @@
           "daily RSI exhaustion"
         ],
         "penalties": 0.03,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1483,7 +1528,8 @@
         "L120",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1505,7 +1551,8 @@
           "L120",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1537,6 +1584,7 @@
           "monthly TD-9 sell-setup exhaustion"
         ],
         "penalties": 0.04,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1576,7 +1624,8 @@
         "L127",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1598,7 +1647,8 @@
           "L127",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1628,6 +1678,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1667,7 +1718,8 @@
         "L134",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1689,7 +1741,8 @@
           "L134",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1720,6 +1773,7 @@
           "monthly RSI exhaustion"
         ],
         "penalties": 0.02,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1759,7 +1813,8 @@
         "L141",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1781,7 +1836,8 @@
           "L141",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1813,6 +1869,7 @@
           "weekly TD-9 sell-setup exhaustion"
         ],
         "penalties": 0.05,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
@@ -1852,7 +1909,8 @@
         "L155",
         "L156",
         "L157",
-        "L158"
+        "L158",
+        "L207"
       ],
       "model": "gpt-5",
       "mu": 0.06,
@@ -1874,7 +1932,8 @@
           "L155",
           "L156",
           "L157",
-          "L158"
+          "L158",
+          "L207"
         ],
         "macro_z": 0.0,
         "metrics": {
@@ -1904,6 +1963,7 @@
           "per-name macro family unavailable"
         ],
         "penalties": 0.0,
+        "penalty_formula": "Penalty = 0.03*I(RSI_D>=70) + 0.02*I(RSI_W>=75) + 0.02*I(RSI_M>=75) + 0.02*I(TD9_W=SELL_SETUP_9) + 0.02*I(TD9_M=SELL_SETUP_9) + 0.03*I(MACD_D=BEARISH_CROSS)",
         "positive_drivers": [
           "daily 20d/60d momentum",
           "SPY-relative strength",
