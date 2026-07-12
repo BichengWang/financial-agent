@@ -21,6 +21,8 @@
 - Score attribution: PASS. `05` shows all seven winsorized metric z-scores feeding each `Tech_Z`, then family weights, DQ, penalties, and final Adj Score; missing families are explicit `UNAVAILABLE`.
 - Kelly/tail metrics: PASS as diagnostics. Treynor, Calmar, raw/quarter Kelly, VaR, CVaR, and drawdown values/formulas are present in the per-name metric ledger rows; no size is approved.
 - Technical lineage: PASS. Displayed TD9/RSI/MACD/MA/momentum/volume/RS values trace to full per-name L020-style rows, `technical_indicators.json`, and history rows.
+- Universe filters: INCOMPLETE / PROPERLY DOWNGRADED. Price and listing-age checks pass for 513 names; six full-universe reference/liquidity field groups are `UNAVAILABLE` in L206. No `GO` claim or silent inclusion-filter pass is made.
+- Penalty lineage: PASS. Every technical penalty is reproduced by the additive threshold formula in `05`/L207 from the per-name technical rows.
 - GO-blocking discipline: PASS. Enhancing feeds are not misclassified as Required failures; the independent evidence thresholds produce `NO_TRADE`.
 - Prediction records: PASS. Twenty equity monitors plus SPY/QQQ/SOXX are present, with 20 newly matured settlement records.
 - Evolution: PASS. The accepted Track B repo-path correction changes invocation paths only and leaves every protected scoring, grounding, and risk rule intact.

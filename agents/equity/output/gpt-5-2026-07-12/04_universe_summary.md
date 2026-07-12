@@ -11,11 +11,27 @@ Normal daily path succeeded: S&P 500 union Nasdaq-100 = **503 + 101 - 89 = 515**
 - 513 names received `INDEX_UNION_PCTL (n=513)` scores.
 - The top 20 adjusted-score records were retained as fully settleable monitoring forecasts.
 
+### Mandatory Filter Coverage
+
+The union was checked only where the current-run artifacts contain the required field. Missing full-universe reference/liquidity fields are `UNAVAILABLE`, not silently treated as passes. This incomplete filter coverage independently prohibits `GO`; it does not change the technical monitoring ranks or the final `NO_TRADE` status. Ledger: L205-L206.
+
+| Filter | Threshold | Current-Run Coverage | Result / Treatment |
+| --- | --- | ---: | --- |
+| Listing | U.S. primary exchange | 515/515 index-cache members | PASS at constituent-cache level; no non-U.S. ticker admitted. |
+| Market cap | > $2B | 0/515 | `UNAVAILABLE` full-universe feed; no inferred pass. |
+| 20d average dollar volume | > $20M | 0/515 | `UNAVAILABLE`; helper output retains volume ratios, not absolute 20d ADV. |
+| Price | > $5 | 513/515 grounded helper records | PASS for all 513 scored names; SATS/FDXF already rejected before a usable price/history test. |
+| Listing age | > 6 months | 513/515 grounded helper records | PASS: every scored name has >=126 daily bars; SATS/FDXF rejected. |
+| Bid-ask spread | <= 50 bps | 0/515 | `UNAVAILABLE` full-universe tape. |
+| Trading sessions | >=80% of trailing 60 | 0/515 exact session-calendar checks | `UNAVAILABLE`; total bar count is not substituted for the required calendar-completeness test. |
+| Halt/delisting/corporate action | No unresolved ambiguity | 0/515 | `UNAVAILABLE` full-universe reference feed; no inferred pass. |
+
 ## Metric Coverage
 
 | Metric Group | Sourceable Count | UNAVAILABLE Count | DQ / Confidence Effect | Notes |
 | --- | ---: | ---: | --- | --- |
 | Technical/price helper | 513 | 2 | Primary ranking input | Cross-sectional technical metrics only. |
+| Mandatory universe filters | 2 field groups | 6 field groups | Incomplete; independently prohibits `GO` | Price and listing-age sourceable; L205-L206 document the remaining gaps. |
 | Raw 60d risk history | 20 | 0 | Complete for published sleeve | Published names have 352-1,255 current-run daily bars; the last 60/30 drive risk metrics. |
 | Fundamental/revision | 0 | 515 | Family unavailable; DQ below investable gate | L156. |
 | Sentiment/positioning | 0 | 515 | Family unavailable; confidence LOW | L157. |
