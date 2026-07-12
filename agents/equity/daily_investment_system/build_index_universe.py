@@ -17,8 +17,8 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_SP500 = Path("investments/equity/turtle-trader/universe/sp500.json")
-DEFAULT_NASDAQ100 = Path("investments/equity/turtle-trader/universe/nasdaq100.json")
+DEFAULT_SP500 = Path("agents/equity/turtle-trader/universe/sp500.json")
+DEFAULT_NASDAQ100 = Path("agents/equity/turtle-trader/universe/nasdaq100.json")
 
 
 def parse_args() -> argparse.Namespace:

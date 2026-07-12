@@ -33,7 +33,7 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 
 ### Step 2 — Folder-Window MoM Baseline
 
-Canonical baseline-selection algorithm. Select deterministically from the dated-run root `investments/equity/output/` (repo-relative — never a machine-specific absolute path):
+Canonical baseline-selection algorithm. Select deterministically from the dated-run root `agents/equity/output/` (repo-relative — never a machine-specific absolute path):
 
 1. Scan immediate child directories only; ignore names not ending in a parseable `YYYY-MM-DD`; the model name is the prefix before the date.
 2. MoM window: `run_date - 45d` through `run_date - 21d`; target `run_date - 28d`.
@@ -238,7 +238,7 @@ Review **all dated output packages from the past 7 calendar days, across all mod
 
 ## Inputs
 
-1. All packages in `investments/equity/output/` dated within the trailing 7 days (every model), plus the current run.
+1. All packages in `agents/equity/output/` dated within the trailing 7 days (every model), plus the current run.
 2. **Settled predictions from `15_predictions.json` files** — the primary evidence base; "settled observations" always means these records.
 3. Rolling calibration metrics from `02_reflection.md § 0` (hit rate, CI coverage, mean z, rank IC).
 4. Source Ledger coverage and grounding failures from `01`, `02`, and `08` across the window.
