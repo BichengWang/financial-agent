@@ -12,12 +12,12 @@
 | Precheck timing | Universe and technical support files were materialized at 12:52Z as raw PRECHECK inputs. Two-source settlement grounding completed at 13:19Z; REFLECTION then closed before any factor score, rank, or portfolio decision was published. State transitions record gate acceptance, not support-file write time. |
 | Market-session note | Sunday run using Friday 2026-07-10 closes; Yahoo values were independently cross-checked against Nasdaq for every published name, core ETF, and newly settled name. |
 | Agents executed | Orchestrator, Data/Regime, Factor Scoring, Portfolio Construction, Risk Committee, Evolution |
-| Outstanding blockers | Current cross-sectional fundamental/revision, sentiment/positioning, and per-name macro exposure feeds are unavailable. |
+| Outstanding blockers | Current cross-sectional fundamental/revision, sentiment/positioning, and per-name macro exposure feeds are unavailable; full-universe market-cap, ADV, spread, halt/session-completeness, and corporate-action filter feeds are also unavailable. |
 | Reflection baseline | `agents/equity/output/gpt-5-2026-06-14` |
 | Baseline flag | `NONE` — valid same-model folder exactly at the 28-day target; no exception flag applies. |
 | Prediction settlement summary | 20 newly due: 17 equities and 3 market forecasts; rolling canonical set now 46 equities and 3 market forecasts. |
-| Source Ledger coverage | 89 OBSERVED, 109 DERIVED, 3 INFERRED, 3 UNAVAILABLE. |
-| Status eligibility | Required operational inputs pass for the monitoring sleeve, but factor breadth and 78% completeness fail investability. |
+| Source Ledger coverage | 89 OBSERVED, 111 DERIVED, 3 INFERRED, 4 UNAVAILABLE. |
+| Status eligibility | Required operational inputs pass for the monitoring sleeve, but factor breadth, 78% completeness, and incomplete full-universe reference/liquidity filters fail investability. |
 | Core ETF Market Forecast Block | Present for SPY, QQQ, SOXX. |
 
 ## State Transition Log
@@ -39,6 +39,10 @@ Raw fetches may occur during `PRECHECK`; neither `DATA_OK` nor `TECHNICALS_OK` w
 ## Enhancing Inputs Missing
 
 Options IV/skew, short interest/borrow, bid-ask tape, analyst-revision breadth, institutional ownership flow, and broad fundamental data are unavailable. These lower DQ and confidence; the independent three-family evidence rule is the binding reason for `NO_TRADE`.
+
+## Universe Filter Limitations
+
+Price and listing-age checks pass for the 513 scoreable names. Full-universe market-cap, absolute 20d ADV, bid-ask spread, exact trailing-session completeness, halt/delisting, and corporate-action ambiguity fields are `UNAVAILABLE` (L205-L206). They are not silently counted as passes; this is a secondary prohibition on `GO`, while factor breadth remains the binding `NO_TRADE` reason.
 
 ## Artifact Checklist
 

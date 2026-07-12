@@ -14,7 +14,7 @@ SPY drawdown from its 60d high is -0.61%; QQQ -2.77%; SOXX -11.25%. Daily relati
 
 Mu derivation: SPY uses the `BULL` +2.00% prior. QQQ uses `1.684 x 2.00% + 0.50pp = 3.87%`. SOXX uses `3.518 x 2.00% + 1.00pp = 8.04%`. Adjustments are within the allowed bands and supported by relative strength.
 
-Universe handoff: 515 index-union names; 513 scoreable equities after excluding SATS and FDXF for insufficient bars. Core ETFs remain isolated from candidate ranks. The nearest published earnings date is HOOD on 2026-07-29, 17 days away, outside the confirmed-date 14-day penalty window.
+Universe handoff: 515 index-union names; 513 scoreable equities after excluding SATS and FDXF for insufficient bars. Price and listing-age filters pass for all scored names; full-universe market-cap, ADV, spread, session-calendar, halt/delisting, and corporate-action fields are `UNAVAILABLE` (L205-L206), so these are monitoring ranks and cannot support `GO`. Core ETFs remain isolated from candidate ranks. The nearest published earnings date is HOOD on 2026-07-29, 17 days away, outside the confirmed-date 14-day penalty window.
 
 ## Event Concentration
 

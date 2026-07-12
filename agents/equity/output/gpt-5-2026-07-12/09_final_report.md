@@ -54,6 +54,7 @@ No portfolio is proposed. Zero names satisfy the factor breadth and completeness
 - Friday July 10 closes were fetched Sunday and tagged `DELAYED`, not brokerage-executable.
 - Nasdaq's quote display timestamps lag one session while values match Yahoo within 1%; this is disclosed in `01_preflight.md`.
 - Current earnings-endpoint retries failed during DNS resolution; one-day-old July 11 schedule observations are retained and tagged `HISTORICAL`.
+- Full-universe market-cap, ADV, spread, exact session-completeness, halt/delisting, and corporate-action filters are unavailable; no `GO` portfolio is permitted from these monitoring ranks.
 - Broad fundamentals/revisions, options, short interest, borrow, and institutional-flow feeds are unavailable.
 - Relative-strength and raw-momentum z-scores are collinear within the technical family; the resulting concentration is not treated as multi-family support.
 - The existing confidence cap is not automatically lifted by one positive holdout; any calibration change still requires the Track A acceptance standard.
