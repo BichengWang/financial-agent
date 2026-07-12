@@ -10,7 +10,7 @@ Core prompt files plus one deterministic compute helper:
 - `agents.md` — orchestrator + five specialist stage prompts, in execution order.
 - `build_index_universe.py` — deterministic helper that materializes the S&P 500 ∪ Nasdaq-100 universe from local constituent caches.
 - `technical_indicators.py` — deterministic support script for daily/weekly/monthly TD-9, RSI(14), MACD(12,26,9), MA alignment, momentum, volume confirmation, and benchmark relative strength.
-- `../output/` (repo path `investments/equity/output/`) — dated run artifacts only; prompts and specs live here.
+- `../output/` (repo path `agents/equity/output/`) — dated run artifacts only; prompts and specs live here.
 
 ## Primary Goal
 
@@ -31,22 +31,22 @@ Execute the **Orchestrator** (first section of `agents.md`). It loads `rules.md`
 Before fetching price histories or selecting/ranking candidates, materialize the full index-union universe:
 
 ```bash
-python3 investments/equity/daily_investment_system/build_index_universe.py \
-  --output-tickers investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
-  --output-summary investments/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+python3 agents/equity/daily_investment_system/build_index_universe.py \
+  --output-tickers agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary agents/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
 ```
 
-Use `eligible_universe.txt` as the equity candidate universe. The normal daily path is the full S&P 500 ∪ Nasdaq-100 union from the local caches in `investments/equity/turtle-trader/universe/`; a 30-name sampled set is an emergency fallback only when the index-union helper fails, and that failure must be documented in `00`, `01`, `03`, `04`, `08`, and `13`.
+Use `eligible_universe.txt` as the equity candidate universe. The normal daily path is the full S&P 500 ∪ Nasdaq-100 union from the local caches in `agents/equity/turtle-trader/universe/`; a 30-name sampled set is an emergency fallback only when the index-union helper fails, and that failure must be documented in `00`, `01`, `03`, `04`, `08`, and `13`.
 
 Whenever the run has fetched or selected price histories for core ETFs and the eligible universe, run the deterministic helper before factor scoring and before finalizing any technical-indicator Source Ledger rows:
 
 ```bash
-python3 investments/equity/daily_investment_system/technical_indicators.py \
+python3 agents/equity/daily_investment_system/technical_indicators.py \
   --tickers SPY QQQ SOXX \
-  --tickers-file investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --tickers-file agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
   --benchmark SPY \
   --range 5y \
-  --output investments/equity/output/{model-name}-{YYYY-MM-DD}/technical_indicators.json \
+  --output agents/equity/output/{model-name}-{YYYY-MM-DD}/technical_indicators.json \
   --pretty
 ```
 

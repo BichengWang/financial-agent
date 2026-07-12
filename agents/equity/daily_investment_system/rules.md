@@ -258,9 +258,9 @@ A run with all Required inputs grounded and several Enhancing inputs missing is 
 The normal daily run scans the full S&P 500 ∪ Nasdaq-100 constituent union, not a hand-picked sector sample. Build it before any price fetch, factor scoring, or candidate ranking:
 
 ```bash
-python3 investments/equity/daily_investment_system/build_index_universe.py \
-  --output-tickers investments/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
-  --output-summary investments/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+python3 agents/equity/daily_investment_system/build_index_universe.py \
+  --output-tickers agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary agents/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
 ```
 
 Rules:
