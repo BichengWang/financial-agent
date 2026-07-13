@@ -1,0 +1,191 @@
+{
+ "DVA": {
+  "nasdaq_close_0710": 232.8,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 232.88,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.034
+ },
+ "CRL": {
+  "nasdaq_close_0710": 233.41,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 232.6,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -0.347
+ },
+ "CRWD": {
+  "nasdaq_close_0710": 187.18,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 187.14,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -0.021
+ },
+ "HUM": {
+  "nasdaq_close_0710": 392.22,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 399.01,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 1.731
+ },
+ "DDOG": {
+  "nasdaq_close_0710": 257.54,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 259.0,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.567
+ },
+ "FTNT": {
+  "nasdaq_close_0710": 157.51,
+  "ibkr_prior_close": 157.51,
+  "ibkr_last_premkt": 158.01,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": 0.317
+ },
+ "DOC": {
+  "nasdaq_close_0710": 21.65,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 21.65,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.0
+ },
+ "CSCO": {
+  "nasdaq_close_0710": 121.31,
+  "ibkr_prior_close": 121.31,
+  "ibkr_last_premkt": 120.91,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": -0.33
+ },
+ "BEN": {
+  "nasdaq_close_0710": 33.5,
+  "ibkr_prior_close": 33.5,
+  "ibkr_last_premkt": 33.5,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": 0.0
+ },
+ "AXON": {
+  "nasdaq_close_0710": 565.8,
+  "ibkr_prior_close": 565.8,
+  "ibkr_last_premkt": 564.78,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": -0.18
+ },
+ "TROW": {
+  "nasdaq_close_0710": 118.55,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 118.55,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.0
+ },
+ "FFIV": {
+  "nasdaq_close_0710": 430.39,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 430.39,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.0
+ },
+ "AIZ": {
+  "nasdaq_close_0710": 278.89,
+  "ibkr_prior_close": 278.89,
+  "ibkr_last_premkt": 278.89,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": 0.0
+ },
+ "TTWO": {
+  "nasdaq_close_0710": 243.2,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 243.47,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.111
+ },
+ "CVS": {
+  "nasdaq_close_0710": 104.15,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 104.58,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.413
+ },
+ "BBY": {
+  "nasdaq_close_0710": 82.8,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 82.36,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -0.531
+ },
+ "MRNA": {
+  "nasdaq_close_0710": 68.27,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 67.25,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -1.494
+ },
+ "DAL": {
+  "nasdaq_close_0710": 87.39,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 86.89,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -0.572
+ },
+ "ABNB": {
+  "nasdaq_close_0710": 148.62,
+  "ibkr_prior_close": 148.62,
+  "ibkr_last_premkt": 148.3,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": -0.215
+ },
+ "PANW": {
+  "nasdaq_close_0710": 325.91,
+  "ibkr_prior_close": 325.91,
+  "ibkr_last_premkt": 325.95,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": 0.012
+ },
+ "LLY": {
+  "nasdaq_close_0710": 1188.58,
+  "ibkr_prior_close": 1188.58,
+  "ibkr_last_premkt": 1186.67,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": -0.161
+ },
+ "ABBV": {
+  "nasdaq_close_0710": 248.08,
+  "ibkr_prior_close": 248.08,
+  "ibkr_last_premkt": 249.52,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": 0.58
+ },
+ "LIN": {
+  "nasdaq_close_0710": 529.79,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 530.82,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.194
+ },
+ "ANET": {
+  "nasdaq_close_0710": 186.96,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 187.44,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": 0.257
+ },
+ "SPY": {
+  "nasdaq_close_0710": 754.95,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 751.65,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -0.437
+ },
+ "QQQ": {
+  "nasdaq_close_0710": 725.51,
+  "ibkr_prior_close": null,
+  "ibkr_last_premkt": 716.74,
+  "prior_close_diff_pct": null,
+  "last_diff_pct": -1.209
+ },
+ "SOXX": {
+  "nasdaq_close_0710": 581.34,
+  "ibkr_prior_close": 581.34,
+  "ibkr_last_premkt": 562.01,
+  "prior_close_diff_pct": 0.0,
+  "last_diff_pct": -3.325
+ }
+}
