@@ -1,0 +1,4195 @@
+{
+ "run_date": "2026-07-10",
+ "source": "api.nasdaq.com /api/quote/{sym}/chart daily official closes 2026-07-06..2026-07-10",
+ "repaired": 517,
+ "exceptions": {},
+ "overlap_verification": {
+  "desc": "Yahoo (2026-07-09 refetch) vs Nasdaq chart official closes on 07-06..07-08 completed sessions",
+  "max_divergence_pct": 0.005,
+  "worst5": [
+   [
+    "WYNN",
+    0.005
+   ],
+   [
+    "CINF",
+    0.003
+   ],
+   [
+    "AMD",
+    0.001
+   ],
+   [
+    "AJG",
+    0.0
+   ],
+   [
+    "A",
+    0.0
+   ]
+  ]
+ },
+ "intraday_0709_correction": {
+  "desc": "size of the 07-09 close correction (inherited 14:36 ET print -> official close)",
+  "worst5_pct": [
+   [
+    "SNDK",
+    4.053
+   ],
+   [
+    "ALNY",
+    3.406
+   ],
+   [
+    "META",
+    2.506
+   ],
+   [
+    "TPL",
+    2.339
+   ],
+   [
+    "ON",
+    2.325
+   ]
+  ]
+ },
+ "results": {
+  "A": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:04:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.914,
+   "close_0710": 134.29
+  },
+  "AAPL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:04:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.537,
+   "close_0710": 315.32
+  },
+  "ABBV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:04:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.62,
+   "close_0710": 248.08
+  },
+  "ABNB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:04:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.321,
+   "close_0710": 148.62
+  },
+  "ABT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.345,
+   "close_0710": 93.93
+  },
+  "ACGL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.454,
+   "close_0710": 101.06
+  },
+  "ACN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.419,
+   "close_0710": 135.23
+  },
+  "ADBE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.81,
+   "close_0710": 223.64
+  },
+  "ADI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.301,
+   "close_0710": 395.65
+  },
+  "ADM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.341,
+   "close_0710": 80.41
+  },
+  "ADP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.962,
+   "close_0710": 241.92
+  },
+  "ADSK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.269,
+   "close_0710": 208.45
+  },
+  "AEE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.205,
+   "close_0710": 112.94
+  },
+  "AEP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.004,
+   "close_0710": 135.43
+  },
+  "AES": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.169,
+   "close_0710": 14.78
+  },
+  "AFL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.181,
+   "close_0710": 121.91
+  },
+  "AIG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.302,
+   "close_0710": 79.17
+  },
+  "AIZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.385,
+   "close_0710": 278.89
+  },
+  "AJG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.469,
+   "close_0710": 253.09
+  },
+  "AKAM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.193,
+   "close_0710": 126.19
+  },
+  "ALB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.016,
+   "close_0710": 126.05
+  },
+  "ALGN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.105,
+   "close_0710": 179.45
+  },
+  "ALL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.201,
+   "close_0710": 251.61
+  },
+  "ALLE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.052,
+   "close_0710": 136.63
+  },
+  "ALNY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 3.406,
+   "close_0710": 298.76
+  },
+  "AMAT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.046,
+   "close_0710": 602.5
+  },
+  "AMCR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.698,
+   "close_0710": 43.18
+  },
+  "AMD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:14Z",
+   "overlap_div_pct": 0.001,
+   "corr_0709_pct": 0.224,
+   "close_0710": 557.89
+  },
+  "AME": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.44,
+   "close_0710": 233.98
+  },
+  "AMGN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.345,
+   "close_0710": 363.39
+  },
+  "AMP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.561,
+   "close_0710": 506.76
+  },
+  "AMT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.073,
+   "close_0710": 168.59
+  },
+  "AMZN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.847,
+   "close_0710": 245.34
+  },
+  "ANET": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.157,
+   "close_0710": 186.96
+  },
+  "AON": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.407,
+   "close_0710": 356.94
+  },
+  "AOS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.397,
+   "close_0710": 60.44
+  },
+  "APA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.026,
+   "close_0710": 33.44
+  },
+  "APD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.207,
+   "close_0710": 299.53
+  },
+  "APH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.946,
+   "close_0710": 159.06
+  },
+  "APO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.291,
+   "close_0710": 120.34
+  },
+  "APP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.98,
+   "close_0710": 506.98
+  },
+  "APTV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.647,
+   "close_0710": 60.57
+  },
+  "ARE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.523,
+   "close_0710": 47.88
+  },
+  "ARES": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.404,
+   "close_0710": 121.81
+  },
+  "ARM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.413,
+   "close_0710": 323.39
+  },
+  "ASML": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:25Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.825,
+   "close_0710": 1797.32
+  },
+  "ATO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.422,
+   "close_0710": 176.2
+  },
+  "AVB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.082,
+   "close_0710": 191.84
+  },
+  "AVGO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.042,
+   "close_0710": 399.97
+  },
+  "AVY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.045,
+   "close_0710": 160.71
+  },
+  "AWK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.242,
+   "close_0710": 130.69
+  },
+  "AXON": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.902,
+   "close_0710": 565.8
+  },
+  "AXP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.191,
+   "close_0710": 350.58
+  },
+  "AZO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.079,
+   "close_0710": 3072.64
+  },
+  "BA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.382,
+   "close_0710": 222.28
+  },
+  "BAC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.143,
+   "close_0710": 59.67
+  },
+  "BALL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.579,
+   "close_0710": 61.69
+  },
+  "BAX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.134,
+   "close_0710": 22.62
+  },
+  "BBY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.276,
+   "close_0710": 82.8
+  },
+  "BDX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.383,
+   "close_0710": 151.94
+  },
+  "BEN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.781,
+   "close_0710": 33.5
+  },
+  "BG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:36Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.717,
+   "close_0710": 114.32
+  },
+  "BIIB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:37Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.301,
+   "close_0710": 199.15
+  },
+  "BKNG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:37Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.926,
+   "close_0710": 178.39
+  },
+  "BKR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.58,
+   "close_0710": 57.56
+  },
+  "BLDR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.52,
+   "close_0710": 75.69
+  },
+  "BLK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.119,
+   "close_0710": 1036.11
+  },
+  "BMY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.809,
+   "close_0710": 57.58
+  },
+  "BNY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.291,
+   "close_0710": 151.92
+  },
+  "BR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.536,
+   "close_0710": 147.47
+  },
+  "BRK-B": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.043,
+   "close_0710": 493.71
+  },
+  "BRO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.229,
+   "close_0710": 67.66
+  },
+  "BSX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.112,
+   "close_0710": 44.77
+  },
+  "BX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.217,
+   "close_0710": 123.09
+  },
+  "BXP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.601,
+   "close_0710": 66.82
+  },
+  "C": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.014,
+   "close_0710": 140.79
+  },
+  "CAG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.853,
+   "close_0710": 13.83
+  },
+  "CAH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.425,
+   "close_0710": 235.8
+  },
+  "CARR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.44,
+   "close_0710": 69.34
+  },
+  "CASY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.075,
+   "close_0710": 819.83
+  },
+  "CAT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.027,
+   "close_0710": 952.41
+  },
+  "CB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.341,
+   "close_0710": 347.83
+  },
+  "CBOE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.79,
+   "close_0710": 268.07
+  },
+  "CBRE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.156,
+   "close_0710": 139.53
+  },
+  "CCEP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.382,
+   "close_0710": 105.84
+  },
+  "CCI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:56Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.104,
+   "close_0710": 79.66
+  },
+  "CCL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:56Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.595,
+   "close_0710": 26.83
+  },
+  "CDNS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.265,
+   "close_0710": 384.17
+  },
+  "CDW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.189,
+   "close_0710": 144.39
+  },
+  "CEG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.288,
+   "close_0710": 251.38
+  },
+  "CF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:05:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.354,
+   "close_0710": 116.92
+  },
+  "CFG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.357,
+   "close_0710": 70.34
+  },
+  "CHD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.241,
+   "close_0710": 96.36
+  },
+  "CHRW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.243,
+   "close_0710": 193.5
+  },
+  "CHTR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.291,
+   "close_0710": 130.73
+  },
+  "CI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.174,
+   "close_0710": 293.46
+  },
+  "CIEN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.392,
+   "close_0710": 460.72
+  },
+  "CINF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:04Z",
+   "overlap_div_pct": 0.003,
+   "corr_0709_pct": 0.505,
+   "close_0710": 179.28
+  },
+  "CL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.121,
+   "close_0710": 92.24
+  },
+  "CLX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.385,
+   "close_0710": 96.56
+  },
+  "CMCSA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.037,
+   "close_0710": 23.57
+  },
+  "CME": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.245,
+   "close_0710": 240.27
+  },
+  "CMG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.786,
+   "close_0710": 35.25
+  },
+  "CMI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.825,
+   "close_0710": 675.95
+  },
+  "CMS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.214,
+   "close_0710": 75.4
+  },
+  "CNC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.476,
+   "close_0710": 67.35
+  },
+  "CNP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.733,
+   "close_0710": 43.54
+  },
+  "COF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.271,
+   "close_0710": 201.52
+  },
+  "COHR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.818,
+   "close_0710": 324.5
+  },
+  "COIN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.068,
+   "close_0710": 159.07
+  },
+  "COO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.524,
+   "close_0710": 70.7
+  },
+  "COP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.097,
+   "close_0710": 109.04
+  },
+  "COR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.433,
+   "close_0710": 303.44
+  },
+  "COST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.275,
+   "close_0710": 916.25
+  },
+  "CPAY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.171,
+   "close_0710": 353.64
+  },
+  "CPRT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.962,
+   "close_0710": 27.515
+  },
+  "CPT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.317,
+   "close_0710": 112.96
+  },
+  "CRH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.149,
+   "close_0710": 104.71
+  },
+  "CRL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.128,
+   "close_0710": 233.41
+  },
+  "CRM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.101,
+   "close_0710": 163.32
+  },
+  "CRWD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.217,
+   "close_0710": 187.18
+  },
+  "CSCO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.404,
+   "close_0710": 121.31
+  },
+  "CSGP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.499,
+   "close_0710": 28.39
+  },
+  "CSX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.122,
+   "close_0710": 49.41
+  },
+  "CTAS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.183,
+   "close_0710": 179.64
+  },
+  "CTSH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.367,
+   "close_0710": 42.57
+  },
+  "CTVA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.214,
+   "close_0710": 85.68
+  },
+  "CVNA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.378,
+   "close_0710": 65.83
+  },
+  "CVS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:25Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.078,
+   "close_0710": 104.15
+  },
+  "CVX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:25Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.142,
+   "close_0710": 176.4
+  },
+  "D": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:26Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.072,
+   "close_0710": 70.08
+  },
+  "DAL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:26Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.463,
+   "close_0710": 87.39
+  },
+  "DASH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.412,
+   "close_0710": 191.82
+  },
+  "DD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.671,
+   "close_0710": 134.68
+  },
+  "DDOG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.422,
+   "close_0710": 257.54
+  },
+  "DE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.666,
+   "close_0710": 586.86
+  },
+  "DECK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.191,
+   "close_0710": 105.99
+  },
+  "DELL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.501,
+   "close_0710": 434.97
+  },
+  "DG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.164,
+   "close_0710": 118.92
+  },
+  "DGX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.427,
+   "close_0710": 207.44
+  },
+  "DHI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.664,
+   "close_0710": 151.58
+  },
+  "DHR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.875,
+   "close_0710": 199.05
+  },
+  "DIS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.397,
+   "close_0710": 95.62
+  },
+  "DLR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:34Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.047,
+   "close_0710": 180.41
+  },
+  "DLTR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:34Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.625,
+   "close_0710": 124.91
+  },
+  "DOC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.254,
+   "close_0710": 21.65
+  },
+  "DOV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.226,
+   "close_0710": 215.33
+  },
+  "DOW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.07,
+   "close_0710": 29.03
+  },
+  "DPZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.323,
+   "close_0710": 299.46
+  },
+  "DRI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.905,
+   "close_0710": 204.25
+  },
+  "DTE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:48Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.296,
+   "close_0710": 150.27
+  },
+  "DUK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.292,
+   "close_0710": 125.48
+  },
+  "DVA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.184,
+   "close_0710": 232.8
+  },
+  "DVN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.202,
+   "close_0710": 42.23
+  },
+  "DXCM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.94,
+   "close_0710": 74.96
+  },
+  "EA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.345,
+   "close_0710": 206.41
+  },
+  "EBAY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.238,
+   "close_0710": 117.2
+  },
+  "ECL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.376,
+   "close_0710": 274.31
+  },
+  "ED": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.451,
+   "close_0710": 111.12
+  },
+  "EFX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.394,
+   "close_0710": 166.44
+  },
+  "EG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.204,
+   "close_0710": 370.58
+  },
+  "EIX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.407,
+   "close_0710": 75.2
+  },
+  "EL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.948,
+   "close_0710": 82.66
+  },
+  "ELV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:56Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.191,
+   "close_0710": 416.23
+  },
+  "EME": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.051,
+   "close_0710": 781.78
+  },
+  "EMR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.899,
+   "close_0710": 138.88
+  },
+  "EOG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.332,
+   "close_0710": 134.1
+  },
+  "EQIX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.141,
+   "close_0710": 1051.21
+  },
+  "EQR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.103,
+   "close_0710": 68.69
+  },
+  "EQT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.435,
+   "close_0710": 48.85
+  },
+  "ERIE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:06:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.531,
+   "close_0710": 251.81
+  },
+  "ES": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.02,
+   "close_0710": 74.82
+  },
+  "ESS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.17,
+   "close_0710": 293.55
+  },
+  "ETN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.26,
+   "close_0710": 407.28
+  },
+  "ETR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.289,
+   "close_0710": 115.05
+  },
+  "EVRG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.153,
+   "close_0710": 85.71
+  },
+  "EW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.044,
+   "close_0710": 92.21
+  },
+  "EXC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.14,
+   "close_0710": 46.8
+  },
+  "EXE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.603,
+   "close_0710": 87.25
+  },
+  "EXPD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.613,
+   "close_0710": 172.02
+  },
+  "EXPE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.129,
+   "close_0710": 270.83
+  },
+  "EXR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.648,
+   "close_0710": 143.96
+  },
+  "F": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.475,
+   "close_0710": 14.0
+  },
+  "FANG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.307,
+   "close_0710": 183.39
+  },
+  "FAST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.422,
+   "close_0710": 46.49
+  },
+  "FCX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.542,
+   "close_0710": 61.52
+  },
+  "FDS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.276,
+   "close_0710": 247.11
+  },
+  "FDX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.417,
+   "close_0710": 314.69
+  },
+  "FDXF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.24,
+   "close_0710": 149.53
+  },
+  "FE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.042,
+   "close_0710": 47.92
+  },
+  "FER": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.039,
+   "close_0710": 64.28
+  },
+  "FFIV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.079,
+   "close_0710": 430.39
+  },
+  "FICO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.685,
+   "close_0710": 1250.9
+  },
+  "FIS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.277,
+   "close_0710": 41.98
+  },
+  "FISV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.653,
+   "close_0710": 50.45
+  },
+  "FITB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.165,
+   "close_0710": 57.07
+  },
+  "FIX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.024,
+   "close_0710": 1756.09
+  },
+  "FLEX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.089,
+   "close_0710": 135.8
+  },
+  "FOX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.945,
+   "close_0710": 48.75
+  },
+  "FOXA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:16Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.458,
+   "close_0710": 54.12
+  },
+  "FRT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:16Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.045,
+   "close_0710": 120.94
+  },
+  "FSLR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.155,
+   "close_0710": 227.83
+  },
+  "FTNT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.282,
+   "close_0710": 157.51
+  },
+  "FTV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.098,
+   "close_0710": 62.2
+  },
+  "GD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.355,
+   "close_0710": 375.06
+  },
+  "GDDY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.011,
+   "close_0710": 88.92
+  },
+  "GE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.039,
+   "close_0710": 359.27
+  },
+  "GEHC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.295,
+   "close_0710": 64.7
+  },
+  "GEN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.536,
+   "close_0710": 25.91
+  },
+  "GEV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.9,
+   "close_0710": 1091.57
+  },
+  "GILD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.74,
+   "close_0710": 129.83
+  },
+  "GIS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.513,
+   "close_0710": 36.22
+  },
+  "GL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.181,
+   "close_0710": 179.13
+  },
+  "GLW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.699,
+   "close_0710": 190.89
+  },
+  "GM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.091,
+   "close_0710": 77.85
+  },
+  "GNRC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:25Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.426,
+   "close_0710": 233.94
+  },
+  "GOOG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:25Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.715,
+   "close_0710": 355.03
+  },
+  "GOOGL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:26Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.608,
+   "close_0710": 357.18
+  },
+  "GPC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.862,
+   "close_0710": 125.62
+  },
+  "GPN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.677,
+   "close_0710": 76.04
+  },
+  "GRMN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.239,
+   "close_0710": 243.11
+  },
+  "GS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.335,
+   "close_0710": 1055.18
+  },
+  "GWW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.49,
+   "close_0710": 1375.76
+  },
+  "HAL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.029,
+   "close_0710": 34.39
+  },
+  "HAS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.032,
+   "close_0710": 78.96
+  },
+  "HBAN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.476,
+   "close_0710": 17.87
+  },
+  "HCA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.357,
+   "close_0710": 406.59
+  },
+  "HD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.103,
+   "close_0710": 343.3
+  },
+  "HIG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.058,
+   "close_0710": 138.78
+  },
+  "HII": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.175,
+   "close_0710": 286.09
+  },
+  "HLT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.515,
+   "close_0710": 335.48
+  },
+  "HON": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.531,
+   "close_0710": 226.42
+  },
+  "HOOD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.117,
+   "close_0710": 111.97
+  },
+  "HPE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.071,
+   "close_0710": 48.54
+  },
+  "HPQ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.227,
+   "close_0710": 24.22
+  },
+  "HRL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.227,
+   "close_0710": 24.73
+  },
+  "HSIC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.303,
+   "close_0710": 84.4
+  },
+  "HST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.173,
+   "close_0710": 23.18
+  },
+  "HSY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.087,
+   "close_0710": 173.66
+  },
+  "HUBB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:48Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.991,
+   "close_0710": 490.94
+  },
+  "HUM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.779,
+   "close_0710": 392.22
+  },
+  "HWM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.324,
+   "close_0710": 270.85
+  },
+  "IBKR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.724,
+   "close_0710": 94.09
+  },
+  "IBM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.234,
+   "close_0710": 287.56
+  },
+  "ICE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.953,
+   "close_0710": 135.26
+  },
+  "IDXX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.041,
+   "close_0710": 563.57
+  },
+  "IEX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.533,
+   "close_0710": 222.16
+  },
+  "IFF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.355,
+   "close_0710": 77.53
+  },
+  "INCY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.305,
+   "close_0710": 116.71
+  },
+  "INSM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.826,
+   "close_0710": 115.61
+  },
+  "INTC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.018,
+   "close_0710": 109.84
+  },
+  "INTU": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.445,
+   "close_0710": 274.96
+  },
+  "INVH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.051,
+   "close_0710": 29.6
+  },
+  "IP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.602,
+   "close_0710": 37.93
+  },
+  "IQV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.752,
+   "close_0710": 207.85
+  },
+  "IR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.053,
+   "close_0710": 78.85
+  },
+  "IRM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:07:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.695,
+   "close_0710": 121.51
+  },
+  "ISRG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.118,
+   "close_0710": 406.78
+  },
+  "IT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.951,
+   "close_0710": 133.24
+  },
+  "ITW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.13,
+   "close_0710": 268.81
+  },
+  "IVZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.225,
+   "close_0710": 28.98
+  },
+  "J": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.159,
+   "close_0710": 125.83
+  },
+  "JBHT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.074,
+   "close_0710": 279.96
+  },
+  "JBL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.052,
+   "close_0710": 330.29
+  },
+  "JCI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.379,
+   "close_0710": 142.81
+  },
+  "JKHY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.65,
+   "close_0710": 150.32
+  },
+  "JNJ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.129,
+   "close_0710": 256.98
+  },
+  "JPM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.012,
+   "close_0710": 336.47
+  },
+  "KDP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.147,
+   "close_0710": 31.67
+  },
+  "KEY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.281,
+   "close_0710": 23.3
+  },
+  "KEYS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.093,
+   "close_0710": 322.05
+  },
+  "KHC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.444,
+   "close_0710": 24.85
+  },
+  "KIM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.34,
+   "close_0710": 24.88
+  },
+  "KKR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.386,
+   "close_0710": 96.94
+  },
+  "KLAC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.727,
+   "close_0710": 231.52
+  },
+  "KMB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.365,
+   "close_0710": 112.41
+  },
+  "KMI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.354,
+   "close_0710": 32.12
+  },
+  "KO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.34,
+   "close_0710": 83.49
+  },
+  "KR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.403,
+   "close_0710": 60.54
+  },
+  "KVUE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.42,
+   "close_0710": 19.48
+  },
+  "L": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.309,
+   "close_0710": 114.99
+  },
+  "LDOS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.206,
+   "close_0710": 107.02
+  },
+  "LEN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.484,
+   "close_0710": 84.27
+  },
+  "LH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.287,
+   "close_0710": 276.81
+  },
+  "LHX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.138,
+   "close_0710": 290.77
+  },
+  "LII": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.053,
+   "close_0710": 552.03
+  },
+  "LIN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.256,
+   "close_0710": 529.79
+  },
+  "LITE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.066,
+   "close_0710": 802.01
+  },
+  "LLY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.684,
+   "close_0710": 1188.58
+  },
+  "LMT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.157,
+   "close_0710": 523.22
+  },
+  "LNT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.099,
+   "close_0710": 76.4
+  },
+  "LOW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.232,
+   "close_0710": 211.63
+  },
+  "LRCX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:19Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.062,
+   "close_0710": 350.33
+  },
+  "LULU": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.31,
+   "close_0710": 119.26
+  },
+  "LUV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.445,
+   "close_0710": 48.43
+  },
+  "LVS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.541,
+   "close_0710": 46.69
+  },
+  "LYB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.608,
+   "close_0710": 56.35
+  },
+  "LYV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.033,
+   "close_0710": 179.79
+  },
+  "MA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.612,
+   "close_0710": 526.74
+  },
+  "MAA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.403,
+   "close_0710": 135.25
+  },
+  "MAR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.246,
+   "close_0710": 376.11
+  },
+  "MAS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.145,
+   "close_0710": 77.84
+  },
+  "MCD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:34Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.192,
+   "close_0710": 274.6
+  },
+  "MCHP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:36Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.677,
+   "close_0710": 88.59
+  },
+  "MCK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:36Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.52,
+   "close_0710": 805.96
+  },
+  "MCO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.169,
+   "close_0710": 487.28
+  },
+  "MDLZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.435,
+   "close_0710": 58.83
+  },
+  "MDT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.17,
+   "close_0710": 83.87
+  },
+  "MELI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.342,
+   "close_0710": 1852.22
+  },
+  "MET": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.284,
+   "close_0710": 91.65
+  },
+  "META": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.506,
+   "close_0710": 669.21
+  },
+  "MGM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.108,
+   "close_0710": 46.88
+  },
+  "MKC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.684,
+   "close_0710": 52.45
+  },
+  "MLM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.441,
+   "close_0710": 577.72
+  },
+  "MMM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.741,
+   "close_0710": 157.52
+  },
+  "MNST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.736,
+   "close_0710": 97.39
+  },
+  "MO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.673,
+   "close_0710": 71.79
+  },
+  "MOS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.836,
+   "close_0710": 21.51
+  },
+  "MPC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.161,
+   "close_0710": 283.74
+  },
+  "MPWR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.982,
+   "close_0710": 1352.74
+  },
+  "MRK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.393,
+   "close_0710": 123.54
+  },
+  "MRNA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.009,
+   "close_0710": 68.27
+  },
+  "MRSH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.246,
+   "close_0710": 178.31
+  },
+  "MRVL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:48Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.154,
+   "close_0710": 235.81
+  },
+  "MS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.374,
+   "close_0710": 222.28
+  },
+  "MSCI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.488,
+   "close_0710": 604.71
+  },
+  "MSFT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.938,
+   "close_0710": 385.1
+  },
+  "MSI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.626,
+   "close_0710": 422.88
+  },
+  "MSTR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.943,
+   "close_0710": 94.64
+  },
+  "MTB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.151,
+   "close_0710": 242.34
+  },
+  "MTD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.943,
+   "close_0710": 1296.17
+  },
+  "MU": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.222,
+   "close_0710": 979.3
+  },
+  "NCLH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.227,
+   "close_0710": 19.61
+  },
+  "NDAQ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.126,
+   "close_0710": 88.08
+  },
+  "NDSN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.39,
+   "close_0710": 286.6
+  },
+  "NEE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.196,
+   "close_0710": 87.96
+  },
+  "NEM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:56Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.032,
+   "close_0710": 95.29
+  },
+  "NFLX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.017,
+   "close_0710": 73.37
+  },
+  "NI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.096,
+   "close_0710": 46.9
+  },
+  "NKE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.482,
+   "close_0710": 44.37
+  },
+  "NOC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:08:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.276,
+   "close_0710": 539.63
+  },
+  "NOW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.726,
+   "close_0710": 107.71
+  },
+  "NRG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.401,
+   "close_0710": 140.42
+  },
+  "NSC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.056,
+   "close_0710": 327.47
+  },
+  "NTAP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.692,
+   "close_0710": 168.87
+  },
+  "NTRS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.701,
+   "close_0710": 183.55
+  },
+  "NUE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.24,
+   "close_0710": 227.37
+  },
+  "NVDA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.497,
+   "close_0710": 210.96
+  },
+  "NVR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.472,
+   "close_0710": 6479.39
+  },
+  "NWS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.113,
+   "close_0710": 30.93
+  },
+  "NWSA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.292,
+   "close_0710": 27.37
+  },
+  "NXPI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.264,
+   "close_0710": 292.26
+  },
+  "O": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.355,
+   "close_0710": 63.31
+  },
+  "ODFL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.106,
+   "close_0710": 227.625
+  },
+  "OKE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.82,
+   "close_0710": 89.92
+  },
+  "OMC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.062,
+   "close_0710": 81.93
+  },
+  "ON": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.325,
+   "close_0710": 95.96
+  },
+  "ORCL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.083,
+   "close_0710": 140.64
+  },
+  "ORLY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.793,
+   "close_0710": 86.28
+  },
+  "OTIS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.056,
+   "close_0710": 73.09
+  },
+  "OXY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.267,
+   "close_0710": 52.89
+  },
+  "PANW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.554,
+   "close_0710": 325.91
+  },
+  "PAYX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.459,
+   "close_0710": 107.54
+  },
+  "PCAR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.383,
+   "close_0710": 124.57
+  },
+  "PCG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:13Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.263,
+   "close_0710": 17.17
+  },
+  "PDD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:14Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.14,
+   "close_0710": 85.13
+  },
+  "PEG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.305,
+   "close_0710": 80.55
+  },
+  "PEP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:15Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.43,
+   "close_0710": 137.38
+  },
+  "PFE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:16Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.31,
+   "close_0710": 24.17
+  },
+  "PFG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.844,
+   "close_0710": 112.23
+  },
+  "PG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:17Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.451,
+   "close_0710": 147.04
+  },
+  "PGR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:18Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.07,
+   "close_0710": 230.72
+  },
+  "PH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:26Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.374,
+   "close_0710": 961.27
+  },
+  "PHM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.451,
+   "close_0710": 124.75
+  },
+  "PKG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.854,
+   "close_0710": 228.77
+  },
+  "PLD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.395,
+   "close_0710": 140.87
+  },
+  "PLTR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.408,
+   "close_0710": 126.79
+  },
+  "PM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.483,
+   "close_0710": 181.62
+  },
+  "PNC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.088,
+   "close_0710": 251.91
+  },
+  "PNR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.361,
+   "close_0710": 76.19
+  },
+  "PNW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.028,
+   "close_0710": 108.12
+  },
+  "PODD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.867,
+   "close_0710": 161.28
+  },
+  "PPG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:34Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.017,
+   "close_0710": 116.76
+  },
+  "PPL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.014,
+   "close_0710": 35.78
+  },
+  "PRU": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.614,
+   "close_0710": 115.37
+  },
+  "PSA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:36Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.689,
+   "close_0710": 320.56
+  },
+  "PSKY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:37Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.374,
+   "close_0710": 9.41
+  },
+  "PSX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.257,
+   "close_0710": 188.36
+  },
+  "PTC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.398,
+   "close_0710": 124.74
+  },
+  "PWR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:38Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.506,
+   "close_0710": 658.56
+  },
+  "PYPL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.544,
+   "close_0710": 46.32
+  },
+  "Q": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.28,
+   "close_0710": 143.8
+  },
+  "QCOM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.144,
+   "close_0710": 189.16
+  },
+  "QQQ": {
+   "status": "REPAIRED",
+   "asset_class": "etf",
+   "retrieved_at": "2026-07-11T02:09:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.004,
+   "close_0710": 725.51
+  },
+  "RCL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.387,
+   "close_0710": 285.37
+  },
+  "REG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.214,
+   "close_0710": 79.62
+  },
+  "REGN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.288,
+   "close_0710": 664.52
+  },
+  "RF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.212,
+   "close_0710": 31.02
+  },
+  "RJF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.501,
+   "close_0710": 168.12
+  },
+  "RL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.169,
+   "close_0710": 394.9
+  },
+  "RMD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:44Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.074,
+   "close_0710": 203.87
+  },
+  "ROK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.002,
+   "close_0710": 472.12
+  },
+  "ROL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.599,
+   "close_0710": 44.47
+  },
+  "ROP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.051,
+   "close_0710": 355.9
+  },
+  "ROST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.0,
+   "close_0710": 222.88
+  },
+  "RSG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.037,
+   "close_0710": 219.2
+  },
+  "RTX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.123,
+   "close_0710": 195.93
+  },
+  "RVTY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.866,
+   "close_0710": 112.29
+  },
+  "SBAC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.182,
+   "close_0710": 190.03
+  },
+  "SBUX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.579,
+   "close_0710": 106.01
+  },
+  "SCHW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.454,
+   "close_0710": 103.12
+  },
+  "SHOP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.794,
+   "close_0710": 122.54
+  },
+  "SHW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.144,
+   "close_0710": 333.99
+  },
+  "SJM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.364,
+   "close_0710": 111.6
+  },
+  "SLB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.169,
+   "close_0710": 47.76
+  },
+  "SMCI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.859,
+   "close_0710": 28.31
+  },
+  "SNA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.349,
+   "close_0710": 401.94
+  },
+  "SNDK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 4.053,
+   "close_0710": 1915.92
+  },
+  "SNPS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.604,
+   "close_0710": 445.5
+  },
+  "SO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.058,
+   "close_0710": 95.61
+  },
+  "SOLV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:09:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.287,
+   "close_0710": 76.7
+  },
+  "SOXX": {
+   "status": "REPAIRED",
+   "asset_class": "etf",
+   "retrieved_at": "2026-07-11T02:10:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.854,
+   "close_0710": 581.34
+  },
+  "SPG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.644,
+   "close_0710": 218.77
+  },
+  "SPGI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:01Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.539,
+   "close_0710": 430.5
+  },
+  "SPY": {
+   "status": "REPAIRED",
+   "asset_class": "etf",
+   "retrieved_at": "2026-07-11T02:10:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.072,
+   "close_0710": 754.95
+  },
+  "SRE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.074,
+   "close_0710": 94.2
+  },
+  "STE": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.76,
+   "close_0710": 216.0
+  },
+  "STLD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:04Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.948,
+   "close_0710": 228.42
+  },
+  "STT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:05Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.475,
+   "close_0710": 180.22
+  },
+  "STX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:06Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.119,
+   "close_0710": 910.34
+  },
+  "STZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.868,
+   "close_0710": 134.06
+  },
+  "SW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:07Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.186,
+   "close_0710": 44.23
+  },
+  "SWK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.947,
+   "close_0710": 88.22
+  },
+  "SWKS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:08Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.712,
+   "close_0710": 60.38
+  },
+  "SYF": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.01,
+   "close_0710": 72.44
+  },
+  "SYK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.261,
+   "close_0710": 329.78
+  },
+  "SYY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:09Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.352,
+   "close_0710": 83.83
+  },
+  "T": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.55,
+   "close_0710": 21.13
+  },
+  "TAP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:10Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.424,
+   "close_0710": 39.17
+  },
+  "TDG": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.165,
+   "close_0710": 1291.35
+  },
+  "TDY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:11Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.428,
+   "close_0710": 634.6
+  },
+  "TECH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.098,
+   "close_0710": 71.3
+  },
+  "TEL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:12Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.109,
+   "close_0710": 200.36
+  },
+  "TER": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:20Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.72,
+   "close_0710": 359.6
+  },
+  "TFC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.078,
+   "close_0710": 51.67
+  },
+  "TGT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:21Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.773,
+   "close_0710": 135.14
+  },
+  "TJX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:22Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.159,
+   "close_0710": 151.34
+  },
+  "TKO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:23Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.666,
+   "close_0710": 184.4
+  },
+  "TLT": {
+   "status": "REPAIRED",
+   "asset_class": "etf",
+   "retrieved_at": "2026-07-11T02:10:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.089,
+   "close_0710": 84.47
+  },
+  "TMO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.785,
+   "close_0710": 527.05
+  },
+  "TMUS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:24Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.549,
+   "close_0710": 187.61
+  },
+  "TPL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:26Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 2.339,
+   "close_0710": 397.82
+  },
+  "TPR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.072,
+   "close_0710": 140.73
+  },
+  "TRGP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:27Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.476,
+   "close_0710": 273.35
+  },
+  "TRI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:28Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.023,
+   "close_0710": 89.65
+  },
+  "TRMB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:29Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.076,
+   "close_0710": 52.82
+  },
+  "TROW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.914,
+   "close_0710": 118.55
+  },
+  "TRV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:30Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.199,
+   "close_0710": 338.92
+  },
+  "TSCO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.417,
+   "close_0710": 30.43
+  },
+  "TSLA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.035,
+   "close_0710": 407.76
+  },
+  "TSN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.139,
+   "close_0710": 57.83
+  },
+  "TT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:31Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.048,
+   "close_0710": 479.7
+  },
+  "TTD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:32Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.971,
+   "close_0710": 19.53
+  },
+  "TTWO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:33Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.677,
+   "close_0710": 243.2
+  },
+  "TXN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:34Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.788,
+   "close_0710": 311.46
+  },
+  "TXT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.298,
+   "close_0710": 90.91
+  },
+  "TYL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.239,
+   "close_0710": 309.48
+  },
+  "UAL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.151,
+   "close_0710": 126.0
+  },
+  "UBER": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:35Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.243,
+   "close_0710": 74.54
+  },
+  "UDR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:36Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.329,
+   "close_0710": 39.73
+  },
+  "UHS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:37Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.019,
+   "close_0710": 155.57
+  },
+  "ULTA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:37Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.244,
+   "close_0710": 469.2
+  },
+  "UNH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.287,
+   "close_0710": 424.62
+  },
+  "UNP": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:39Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.107,
+   "close_0710": 286.96
+  },
+  "UPS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.431,
+   "close_0710": 112.47
+  },
+  "URI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:40Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.158,
+   "close_0710": 1095.55
+  },
+  "USB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.154,
+   "close_0710": 62.41
+  },
+  "V": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:41Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.462,
+   "close_0710": 348.97
+  },
+  "VEEV": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.629,
+   "close_0710": 190.12
+  },
+  "VICI": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:42Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.078,
+   "close_0710": 26.01
+  },
+  "VLO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.455,
+   "close_0710": 280.69
+  },
+  "VLTO": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.016,
+   "close_0710": 92.7
+  },
+  "VMC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.187,
+   "close_0710": 295.25
+  },
+  "VRSK": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:43Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.241,
+   "close_0710": 185.39
+  },
+  "VRSN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:45Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.566,
+   "close_0710": 270.11
+  },
+  "VRT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.78,
+   "close_0710": 318.86
+  },
+  "VRTX": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:46Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.991,
+   "close_0710": 485.39
+  },
+  "VST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.19,
+   "close_0710": 158.86
+  },
+  "VTR": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:47Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.434,
+   "close_0710": 90.66
+  },
+  "VTRS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:48Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.09,
+   "close_0710": 16.27
+  },
+  "VZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.524,
+   "close_0710": 42.12
+  },
+  "WAB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:49Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.665,
+   "close_0710": 261.21
+  },
+  "WAT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.67,
+   "close_0710": 376.43
+  },
+  "WBD": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.005,
+   "close_0710": 26.59
+  },
+  "WDAY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:50Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.802,
+   "close_0710": 138.95
+  },
+  "WDC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 1.306,
+   "close_0710": 582.585
+  },
+  "WEC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:51Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.295,
+   "close_0710": 114.96
+  },
+  "WELL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:52Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.376,
+   "close_0710": 231.59
+  },
+  "WFC": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:53Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.252,
+   "close_0710": 87.16
+  },
+  "WM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.545,
+   "close_0710": 233.33
+  },
+  "WMB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.54,
+   "close_0710": 75.02
+  },
+  "WMT": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:54Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.502,
+   "close_0710": 113.9
+  },
+  "WRB": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:55Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.028,
+   "close_0710": 72.19
+  },
+  "WSM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:56Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.705,
+   "close_0710": 221.75
+  },
+  "WST": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.551,
+   "close_0710": 353.71
+  },
+  "WTW": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:57Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.197,
+   "close_0710": 289.65
+  },
+  "WY": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.178,
+   "close_0710": 23.45
+  },
+  "WYNN": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:58Z",
+   "overlap_div_pct": 0.005,
+   "corr_0709_pct": 0.274,
+   "close_0710": 99.77
+  },
+  "XEL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:58Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.305,
+   "close_0710": 80.06
+  },
+  "XOM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:10:59Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.113,
+   "close_0710": 138.88
+  },
+  "XYL": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.331,
+   "close_0710": 121.22
+  },
+  "XYZ": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.026,
+   "close_0710": 77.3
+  },
+  "YUM": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:00Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.241,
+   "close_0710": 163.54
+  },
+  "ZBH": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.335,
+   "close_0710": 91.34
+  },
+  "ZBRA": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:02Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.396,
+   "close_0710": 272.52
+  },
+  "ZS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.02,
+   "close_0710": 139.27
+  },
+  "ZTS": {
+   "status": "REPAIRED",
+   "asset_class": "stocks",
+   "retrieved_at": "2026-07-11T02:11:03Z",
+   "overlap_div_pct": 0.0,
+   "corr_0709_pct": 0.053,
+   "close_0710": 75.56
+  }
+ }
+}

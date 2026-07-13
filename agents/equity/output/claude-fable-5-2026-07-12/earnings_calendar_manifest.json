@@ -1,0 +1,1208 @@
+{
+ "DVA": {
+  "symbol": "DVA",
+  "ok": true,
+  "announcement": "Earnings announcement* for DVA: Aug 4, 2026",
+  "raw": {
+   "reportText": "DaVita Inc. Common Stock is estimated to report earnings on  08/04/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  2 analysts' forecasts, the consensus EPS forecast for the quarter is $4.01.  The reported EPS for the same quarter last year was $2.95.",
+   "heading": "DVA Earnings Date",
+   "announcement": "Earnings announcement* for DVA: Aug 4, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "FFIV": {
+  "symbol": "FFIV",
+  "ok": true,
+  "announcement": "Earnings announcement* for FFIV: Jul 27, 2026",
+  "raw": {
+   "reportText": "F5, Inc. Common Stock is expected* to report earnings on  07/27/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.04.  The reported EPS for the same quarter last year was $3.42.",
+   "heading": "FFIV Earnings Date",
+   "announcement": "Earnings announcement* for FFIV: Jul 27, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "FFIV has a \"high\" Earnings Quality Ranking (EQR) for the 10th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "CRL": {
+  "symbol": "CRL",
+  "ok": true,
+  "announcement": "Earnings announcement* for CRL: Aug 5, 2026",
+  "raw": {
+   "reportText": "Charles River Laboratories International, Inc. Common Stock is estimated to report earnings on  08/05/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  6 analysts' forecasts, the consensus EPS forecast for the quarter is $2.72.  The reported EPS for the same quarter last year was $3.12.",
+   "heading": "CRL Earnings Date",
+   "announcement": "Earnings announcement* for CRL: Aug 5, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:26Z"
+ },
+ "CRWD": {
+  "symbol": "CRWD",
+  "ok": true,
+  "announcement": "Earnings announcement* for CRWD: Aug 26, 2026",
+  "raw": {
+   "reportText": "CrowdStrike Holdings, Inc. Class A Common Stock is estimated to report earnings on  08/26/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  11 analysts' forecasts, the consensus EPS forecast for the quarter is $0.05.  The reported EPS for the same quarter last year was $0.",
+   "heading": "CRWD Earnings Date",
+   "announcement": "Earnings announcement* for CRWD: Aug 26, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:26Z"
+ },
+ "HUM": {
+  "symbol": "HUM",
+  "ok": true,
+  "announcement": "Earnings announcement* for HUM: Jul 29, 2026",
+  "raw": {
+   "reportText": "Humana Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $6.17.  The reported EPS for the same quarter last year was $6.27.",
+   "heading": "HUM Earnings Date",
+   "announcement": "Earnings announcement* for HUM: Jul 29, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "HUM has a \"high\" Earnings Quality Ranking (EQR) for the 10th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "DDOG": {
+  "symbol": "DDOG",
+  "ok": true,
+  "announcement": "Earnings announcement* for DDOG: Aug 6, 2026",
+  "raw": {
+   "reportText": "Datadog, Inc. Class A Common Stock is estimated to report earnings on  08/06/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  9 analysts' forecasts, the consensus EPS forecast for the quarter is $0.13.  The reported EPS for the same quarter last year was $0.06.",
+   "heading": "DDOG Earnings Date",
+   "announcement": "Earnings announcement* for DDOG: Aug 6, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "DDOG has a \"high\" Earnings Quality Ranking (EQR) for the 4th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "FTNT": {
+  "symbol": "FTNT",
+  "ok": true,
+  "announcement": "Earnings announcement* for FTNT: Jul 29, 2026",
+  "raw": {
+   "reportText": "Fortinet, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  11 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.66.  The reported EPS for the same quarter last year was $0.58.",
+   "heading": "FTNT Earnings Date",
+   "announcement": "Earnings announcement* for FTNT: Jul 29, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "FTNT has a \"high\" Earnings Quality Ranking (EQR) for the 33rd consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "DAL": {
+  "symbol": "DAL",
+  "ok": true,
+  "announcement": "Earnings announcement* for DAL: ",
+  "raw": {
+   "reportText": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "heading": "DAL Earnings Date",
+   "announcement": "Earnings announcement* for DAL: ",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "DOC": {
+  "symbol": "DOC",
+  "ok": true,
+  "announcement": "Earnings announcement* for DOC: Aug 04, 2026",
+  "raw": {
+   "reportText": "Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.44.  The reported EPS for the same quarter last year was $0.46.",
+   "heading": "DOC Earnings Date",
+   "announcement": "Earnings announcement* for DOC: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "DOC has a \"high\" Earnings Quality Ranking (EQR) for the 19th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "STT": {
+  "symbol": "STT",
+  "ok": true,
+  "announcement": "Earnings announcement* for STT: Jul 16, 2026",
+  "raw": {
+   "reportText": "State Street Corporation Common Stock is expected* to report earnings on  07/16/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.3.  The reported EPS for the same quarter last year was $2.53.",
+   "heading": "STT Earnings Date",
+   "announcement": "Earnings announcement* for STT: Jul 16, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "BEN": {
+  "symbol": "BEN",
+  "ok": true,
+  "announcement": "Earnings announcement* for BEN: Jul 31, 2026",
+  "raw": {
+   "reportText": "Franklin Resources, Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.65.  The reported EPS for the same quarter last year was $0.49.",
+   "heading": "BEN Earnings Date",
+   "announcement": "Earnings announcement* for BEN: Jul 31, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "TROW": {
+  "symbol": "TROW",
+  "ok": true,
+  "announcement": "Earnings announcement* for TROW: Jul 31, 2026",
+  "raw": {
+   "reportText": "T. Rowe Price Group, Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.37.  The reported EPS for the same quarter last year was $2.24.",
+   "heading": "TROW Earnings Date",
+   "announcement": "Earnings announcement* for TROW: Jul 31, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "CVS": {
+  "symbol": "CVS",
+  "ok": true,
+  "announcement": "Earnings announcement* for CVS: Aug 05, 2026",
+  "raw": {
+   "reportText": "CVS Health Corporation Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.86.  The reported EPS for the same quarter last year was $1.81.",
+   "heading": "CVS Earnings Date",
+   "announcement": "Earnings announcement* for CVS: Aug 05, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "CVS has a \"high\" Earnings Quality Ranking (EQR) for the 247th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "AIZ": {
+  "symbol": "AIZ",
+  "ok": true,
+  "announcement": "Earnings announcement* for AIZ: Aug 04, 2026",
+  "raw": {
+   "reportText": "Assurant, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $5.16.  The reported EPS for the same quarter last year was $5.56.",
+   "heading": "AIZ Earnings Date",
+   "announcement": "Earnings announcement* for AIZ: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "TTWO": {
+  "symbol": "TTWO",
+  "ok": true,
+  "announcement": "Earnings announcement* for TTWO: Aug 07, 2026",
+  "raw": {
+   "reportText": "Take-Two Interactive Software, Inc. Common Stock is expected* to report earnings on  08/07/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.08.  The reported EPS for the same quarter last year was $0.43.",
+   "heading": "TTWO Earnings Date",
+   "announcement": "Earnings announcement* for TTWO: Aug 07, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "TTWO has a \"high\" Earnings Quality Ranking (EQR) for the 7th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "URI": {
+  "symbol": "URI",
+  "ok": true,
+  "announcement": "Earnings announcement* for URI: Jul 22, 2026",
+  "raw": {
+   "reportText": "United Rentals, Inc. Common Stock is expected* to report earnings on  07/22/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $11.68.  The reported EPS for the same quarter last year was $10.47.",
+   "heading": "URI Earnings Date",
+   "announcement": "Earnings announcement* for URI: Jul 22, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "URI has a \"high\" Earnings Quality Ranking (EQR) for the 11th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "GPC": {
+  "symbol": "GPC",
+  "ok": true,
+  "announcement": "Earnings announcement* for GPC: Jul 21, 2026",
+  "raw": {
+   "reportText": "Genuine Parts Company Common Stock is expected* to report earnings on  07/21/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.1.  The reported EPS for the same quarter last year was $2.1.",
+   "heading": "GPC Earnings Date",
+   "announcement": "Earnings announcement* for GPC: Jul 21, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "BBY": {
+  "symbol": "BBY",
+  "ok": true,
+  "announcement": "Earnings announcement* for BBY: Aug 27, 2026",
+  "raw": {
+   "reportText": "Best Buy Co., Inc. Common Stock is estimated to report earnings on  08/27/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  11 analysts' forecasts, the consensus EPS forecast for the quarter is $1.34.  The reported EPS for the same quarter last year was $1.28.",
+   "heading": "BBY Earnings Date",
+   "announcement": "Earnings announcement* for BBY: Aug 27, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "BBY has a \"high\" Earnings Quality Ranking (EQR) for the 5th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "RF": {
+  "symbol": "RF",
+  "ok": true,
+  "announcement": "Earnings announcement* for RF: Jul 17, 2026",
+  "raw": {
+   "reportText": "Regions Financial Corporation Common Stock is expected* to report earnings on  07/17/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.64.  The reported EPS for the same quarter last year was $0.6.",
+   "heading": "RF Earnings Date",
+   "announcement": "Earnings announcement* for RF: Jul 17, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "PANW": {
+  "symbol": "PANW",
+  "ok": true,
+  "announcement": "Earnings announcement* for PANW: Aug 17, 2026",
+  "raw": {
+   "reportText": "Palo Alto Networks, Inc. Common Stock is estimated to report earnings on  08/17/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  15 analysts' forecasts, the consensus EPS forecast for the quarter is $0.51.  The reported EPS for the same quarter last year was $0.42.",
+   "heading": "PANW Earnings Date",
+   "announcement": "Earnings announcement* for PANW: Aug 17, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "ABNB": {
+  "symbol": "ABNB",
+  "ok": true,
+  "announcement": "Earnings announcement* for ABNB: Aug 5, 2026",
+  "raw": {
+   "reportText": "Airbnb, Inc. Class A Common Stock is estimated to report earnings on  08/05/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  9 analysts' forecasts, the consensus EPS forecast for the quarter is $1.19.  The reported EPS for the same quarter last year was $1.03.",
+   "heading": "ABNB Earnings Date",
+   "announcement": "Earnings announcement* for ABNB: Aug 5, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "ABNB has a \"high\" Earnings Quality Ranking (EQR) for the 235th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "PNC": {
+  "symbol": "PNC",
+  "ok": true,
+  "announcement": "Earnings announcement* for PNC: Jul 15, 2026",
+  "raw": {
+   "reportText": "PNC Financial Services Group, Inc. (The) Common Stock is expected* to report earnings on  07/15/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.51.  The reported EPS for the same quarter last year was $3.85.",
+   "heading": "PNC Earnings Date",
+   "announcement": "Earnings announcement* for PNC: Jul 15, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "MTB": {
+  "symbol": "MTB",
+  "ok": true,
+  "announcement": "Earnings announcement* for MTB: Jul 15, 2026",
+  "raw": {
+   "reportText": "M&T Bank Corporation Common Stock is expected* to report earnings on  07/15/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.66.  The reported EPS for the same quarter last year was $4.28.",
+   "heading": "MTB Earnings Date",
+   "announcement": "Earnings announcement* for MTB: Jul 15, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "CSCO": {
+  "symbol": "CSCO",
+  "ok": true,
+  "announcement": "Earnings announcement* for CSCO: Aug 12, 2026",
+  "raw": {
+   "reportText": "Cisco Systems, Inc. Common Stock (DE) is estimated to report earnings on  08/12/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  6 analysts' forecasts, the consensus EPS forecast for the quarter is $0.99.  The reported EPS for the same quarter last year was $0.81.",
+   "heading": "CSCO Earnings Date",
+   "announcement": "Earnings announcement* for CSCO: Aug 12, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "CSCO has a \"high\" Earnings Quality Ranking (EQR) for the 7th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "SWK": {
+  "symbol": "SWK",
+  "ok": true,
+  "announcement": "Earnings announcement* for SWK: Jul 29, 2026",
+  "raw": {
+   "reportText": "Stanley Black & Decker, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.21.  The reported EPS for the same quarter last year was $1.08.",
+   "heading": "SWK Earnings Date",
+   "announcement": "Earnings announcement* for SWK: Jul 29, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "AXP": {
+  "symbol": "AXP",
+  "ok": true,
+  "announcement": "Earnings announcement* for AXP: Jul 24, 2026",
+  "raw": {
+   "reportText": "American Express Company Common Stock is expected* to report earnings on  07/24/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.41.  The reported EPS for the same quarter last year was $4.08.",
+   "heading": "AXP Earnings Date",
+   "announcement": "Earnings announcement* for AXP: Jul 24, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "ZBRA": {
+  "symbol": "ZBRA",
+  "ok": true,
+  "announcement": "Earnings announcement* for ZBRA: Aug 04, 2026",
+  "raw": {
+   "reportText": "Zebra Technologies Corporation Class A Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  3 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.49.  The reported EPS for the same quarter last year was $3.09.",
+   "heading": "ZBRA Earnings Date",
+   "announcement": "Earnings announcement* for ZBRA: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "ZBRA has a \"high\" Earnings Quality Ranking (EQR) for the 109th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "WST": {
+  "symbol": "WST",
+  "ok": true,
+  "announcement": "Earnings announcement* for WST: Jul 23, 2026",
+  "raw": {
+   "reportText": "West Pharmaceutical Services, Inc. Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.08.  The reported EPS for the same quarter last year was $1.84.",
+   "heading": "WST Earnings Date",
+   "announcement": "Earnings announcement* for WST: Jul 23, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "NTRS": {
+  "symbol": "NTRS",
+  "ok": true,
+  "announcement": "Earnings announcement* for NTRS: Jul 22, 2026",
+  "raw": {
+   "reportText": "Northern Trust Corporation Common Stock is expected* to report earnings on  07/22/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.68.  The reported EPS for the same quarter last year was $2.13.",
+   "heading": "NTRS Earnings Date",
+   "announcement": "Earnings announcement* for NTRS: Jul 22, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "AXON": {
+  "symbol": "AXON",
+  "ok": true,
+  "announcement": "Earnings announcement* for AXON: Aug 3, 2026",
+  "raw": {
+   "reportText": "Axon Enterprise, Inc. Common Stock is estimated to report earnings on  08/03/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  7 analysts' forecasts, the consensus EPS forecast for the quarter is $0.3.  The reported EPS for the same quarter last year was $0.85.",
+   "heading": "AXON Earnings Date",
+   "announcement": "Earnings announcement* for AXON: Aug 3, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "MNST": {
+  "symbol": "MNST",
+  "ok": true,
+  "announcement": "Earnings announcement* for MNST: Aug 6, 2026",
+  "raw": {
+   "reportText": "Monster Beverage Corporation is estimated to report earnings on  08/06/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  8 analysts' forecasts, the consensus EPS forecast for the quarter is $0.59.  The reported EPS for the same quarter last year was $0.52.",
+   "heading": "MNST Earnings Date",
+   "announcement": "Earnings announcement* for MNST: Aug 6, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "MNST has a \"high\" Earnings Quality Ranking (EQR) for the 32nd consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "LUV": {
+  "symbol": "LUV",
+  "ok": true,
+  "announcement": "Earnings announcement* for LUV: Jul 22, 2026",
+  "raw": {
+   "reportText": "Southwest Airlines Company Common Stock is expected* to report earnings on  07/22/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.52.  The reported EPS for the same quarter last year was $0.43.",
+   "heading": "LUV Earnings Date",
+   "announcement": "Earnings announcement* for LUV: Jul 22, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "LUV has a \"high\" Earnings Quality Ranking (EQR) for the 11th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "UAL": {
+  "symbol": "UAL",
+  "ok": true,
+  "announcement": "Earnings announcement* for UAL: Jul 15, 2026",
+  "raw": {
+   "reportText": "United Airlines Holdings, Inc. Common Stock is expected* to report earnings on  07/15/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.89.  The reported EPS for the same quarter last year was $3.87.",
+   "heading": "UAL Earnings Date",
+   "announcement": "Earnings announcement* for UAL: Jul 15, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "UAL has a \"high\" Earnings Quality Ranking (EQR) for the 11th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "BAX": {
+  "symbol": "BAX",
+  "ok": true,
+  "announcement": "Earnings announcement* for BAX: Jul 30, 2026",
+  "raw": {
+   "reportText": "Baxter International Inc. Common Stock is estimated to report earnings on  07/30/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  7 analysts' forecasts, the consensus EPS forecast for the quarter is $0.37.  The reported EPS for the same quarter last year was $0.59.",
+   "heading": "BAX Earnings Date",
+   "announcement": "Earnings announcement* for BAX: Jul 30, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "MRNA": {
+  "symbol": "MRNA",
+  "ok": true,
+  "announcement": "Earnings announcement* for MRNA: Jul 31, 2026",
+  "raw": {
+   "reportText": "Moderna, Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $-1.97.  The reported EPS for the same quarter last year was $-2.13.",
+   "heading": "MRNA Earnings Date",
+   "announcement": "Earnings announcement* for MRNA: Jul 31, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "MAS": {
+  "symbol": "MAS",
+  "ok": true,
+  "announcement": "Earnings announcement* for MAS: Jul 29, 2026",
+  "raw": {
+   "reportText": "Masco Corporation Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.29.  The reported EPS for the same quarter last year was $1.3.",
+   "heading": "MAS Earnings Date",
+   "announcement": "Earnings announcement* for MAS: Jul 29, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "MAS has a \"high\" Earnings Quality Ranking (EQR) for the 8th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:27Z"
+ },
+ "KEY": {
+  "symbol": "KEY",
+  "ok": true,
+  "announcement": "Earnings announcement* for KEY: Jul 21, 2026",
+  "raw": {
+   "reportText": "KeyCorp Common Stock is expected* to report earnings on  07/21/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.42.  The reported EPS for the same quarter last year was $0.35.",
+   "heading": "KEY Earnings Date",
+   "announcement": "Earnings announcement* for KEY: Jul 21, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "KEY has a \"high\" Earnings Quality Ranking (EQR) for the 9th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "ESS": {
+  "symbol": "ESS",
+  "ok": true,
+  "announcement": "Earnings announcement* for ESS: Jul 29, 2026",
+  "raw": {
+   "reportText": "Essex Property Trust, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.02.  The reported EPS for the same quarter last year was $4.03.",
+   "heading": "ESS Earnings Date",
+   "announcement": "Earnings announcement* for ESS: Jul 29, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "ESS has a \"high\" Earnings Quality Ranking (EQR) for the 19th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "XYZ": {
+  "symbol": "XYZ",
+  "ok": true,
+  "announcement": "Earnings announcement* for XYZ: Aug 05, 2026",
+  "raw": {
+   "reportText": "Block, Inc. Class A Common Stock, is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.48.  The reported EPS for the same quarter last year was $0.62.",
+   "heading": "XYZ Earnings Date",
+   "announcement": "Earnings announcement* for XYZ: Aug 05, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "EXPD": {
+  "symbol": "EXPD",
+  "ok": true,
+  "announcement": "Earnings announcement* for EXPD: Aug 4, 2026",
+  "raw": {
+   "reportText": "Expeditors International of Washington, Inc. Common Stock is estimated to report earnings on  08/04/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  4 analysts' forecasts, the consensus EPS forecast for the quarter is $1.61.  The reported EPS for the same quarter last year was $1.34.",
+   "heading": "EXPD Earnings Date",
+   "announcement": "Earnings announcement* for EXPD: Aug 4, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "EXPD has a \"high\" Earnings Quality Ranking (EQR) for the 10th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "NTAP": {
+  "symbol": "NTAP",
+  "ok": true,
+  "announcement": "Earnings announcement* for NTAP: Aug 26, 2026",
+  "raw": {
+   "reportText": "NetApp, Inc. Common Stock is estimated to report earnings on  08/26/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  7 analysts' forecasts, the consensus EPS forecast for the quarter is $1.7.  The reported EPS for the same quarter last year was $1.19.",
+   "heading": "NTAP Earnings Date",
+   "announcement": "Earnings announcement* for NTAP: Aug 26, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "NTAP has a \"high\" Earnings Quality Ranking (EQR) for the 7th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "RVTY": {
+  "symbol": "RVTY",
+  "ok": true,
+  "announcement": "Earnings announcement* for RVTY: Aug 04, 2026",
+  "raw": {
+   "reportText": "Revvity, Inc. Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  3 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.23.  The reported EPS for the same quarter last year was $1.18.",
+   "heading": "RVTY Earnings Date",
+   "announcement": "Earnings announcement* for RVTY: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "AMCR": {
+  "symbol": "AMCR",
+  "ok": true,
+  "announcement": "Earnings announcement* for AMCR: Aug 13, 2026",
+  "raw": {
+   "reportText": "Amcor plc Ordinary Shares is estimated to report earnings on  08/13/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  6 analysts' forecasts, the consensus EPS forecast for the quarter is $1.2.  The reported EPS for the same quarter last year was $1.",
+   "heading": "AMCR Earnings Date",
+   "announcement": "Earnings announcement* for AMCR: Aug 13, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "KMB": {
+  "symbol": "KMB",
+  "ok": true,
+  "announcement": "Earnings announcement* for KMB: Aug 04, 2026",
+  "raw": {
+   "reportText": "Kimberly-Clark Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.99.  The reported EPS for the same quarter last year was $1.92.",
+   "heading": "KMB Earnings Date",
+   "announcement": "Earnings announcement* for KMB: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "IBKR": {
+  "symbol": "IBKR",
+  "ok": true,
+  "announcement": "Earnings announcement* for IBKR: Jul 21, 2026",
+  "raw": {
+   "reportText": "Interactive Brokers Group, Inc. Class A Common Stock is expected* to report earnings on  07/21/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  2 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.58.  The reported EPS for the same quarter last year was $0.51.",
+   "heading": "IBKR Earnings Date",
+   "announcement": "Earnings announcement* for IBKR: Jul 21, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "PRU": {
+  "symbol": "PRU",
+  "ok": true,
+  "announcement": "Earnings announcement* for PRU: Aug 04, 2026",
+  "raw": {
+   "reportText": "Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.4.  The reported EPS for the same quarter last year was $3.58.",
+   "heading": "PRU Earnings Date",
+   "announcement": "Earnings announcement* for PRU: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "IP": {
+  "symbol": "IP",
+  "ok": true,
+  "announcement": "Earnings announcement* for IP: Jul 30, 2026",
+  "raw": {
+   "reportText": "International Paper Company Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $-0.01.  The reported EPS for the same quarter last year was $0.2.",
+   "heading": "IP Earnings Date",
+   "announcement": "Earnings announcement* for IP: Jul 30, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "AMP": {
+  "symbol": "AMP",
+  "ok": true,
+  "announcement": "Earnings announcement* for AMP: Jul 23, 2026",
+  "raw": {
+   "reportText": "Ameriprise Financial, Inc. Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $10.71.  The reported EPS for the same quarter last year was $9.11.",
+   "heading": "AMP Earnings Date",
+   "announcement": "Earnings announcement* for AMP: Jul 23, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "GPN": {
+  "symbol": "GPN",
+  "ok": true,
+  "announcement": "Earnings announcement* for GPN: Aug 5, 2026",
+  "raw": {
+   "reportText": "Global Payments Inc. Common Stock is estimated to report earnings on  08/05/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  10 analysts' forecasts, the consensus EPS forecast for the quarter is $3.47.  The reported EPS for the same quarter last year was $3.1.",
+   "heading": "GPN Earnings Date",
+   "announcement": "Earnings announcement* for GPN: Aug 5, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "MS": {
+  "symbol": "MS",
+  "ok": true,
+  "announcement": "Earnings announcement* for MS: Jul 15, 2026",
+  "raw": {
+   "reportText": "Morgan Stanley Common Stock is expected* to report earnings on  07/15/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.89.  The reported EPS for the same quarter last year was $2.13.",
+   "heading": "MS Earnings Date",
+   "announcement": "Earnings announcement* for MS: Jul 15, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "BAC": {
+  "symbol": "BAC",
+  "ok": true,
+  "announcement": "Earnings announcement* for BAC: Jul 14, 2026",
+  "raw": {
+   "reportText": "Bank of America Corporation Common Stock is expected* to report earnings on  07/14/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.13.  The reported EPS for the same quarter last year was $0.89.",
+   "heading": "BAC Earnings Date",
+   "announcement": "Earnings announcement* for BAC: Jul 14, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "BAC has a \"high\" Earnings Quality Ranking (EQR) for the 13th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "USB": {
+  "symbol": "USB",
+  "ok": true,
+  "announcement": "Earnings announcement* for USB: Jul 16, 2026",
+  "raw": {
+   "reportText": "U.S. Bancorp Common Stock is expected* to report earnings on  07/16/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.28.  The reported EPS for the same quarter last year was $1.11.",
+   "heading": "USB Earnings Date",
+   "announcement": "Earnings announcement* for USB: Jul 16, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "USB has a \"high\" Earnings Quality Ranking (EQR) for the 85th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "GD": {
+  "symbol": "GD",
+  "ok": true,
+  "announcement": "Earnings announcement* for GD: Jul 22, 2026",
+  "raw": {
+   "reportText": "General Dynamics Corporation Common Stock is estimated to report earnings on  07/22/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  6 analysts' forecasts, the consensus EPS forecast for the quarter is $3.92.  The reported EPS for the same quarter last year was $3.74.",
+   "heading": "GD Earnings Date",
+   "announcement": "Earnings announcement* for GD: Jul 22, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "GD has a \"high\" Earnings Quality Ranking (EQR) for the 8th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "EW": {
+  "symbol": "EW",
+  "ok": true,
+  "announcement": "Earnings announcement* for EW: Jul 23, 2026",
+  "raw": {
+   "reportText": "Edwards Lifesciences Corporation Common Stock is estimated to report earnings on  07/23/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  9 analysts' forecasts, the consensus EPS forecast for the quarter is $0.73.  The reported EPS for the same quarter last year was $0.67.",
+   "heading": "EW Earnings Date",
+   "announcement": "Earnings announcement* for EW: Jul 23, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "TDY": {
+  "symbol": "TDY",
+  "ok": true,
+  "announcement": "Earnings announcement* for TDY: Jul 22, 2026",
+  "raw": {
+   "reportText": "Teledyne Technologies Incorporated Common Stock is estimated to report earnings on  07/22/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  3 analysts' forecasts, the consensus EPS forecast for the quarter is $5.77.  The reported EPS for the same quarter last year was $5.2.",
+   "heading": "TDY Earnings Date",
+   "announcement": "Earnings announcement* for TDY: Jul 22, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "AAPL": {
+  "symbol": "AAPL",
+  "ok": true,
+  "announcement": "Earnings announcement* for AAPL: Jul 30, 2026",
+  "raw": {
+   "reportText": "Apple Inc. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  11 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.88.  The reported EPS for the same quarter last year was $1.57.",
+   "heading": "AAPL Earnings Date",
+   "announcement": "Earnings announcement* for AAPL: Jul 30, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "AAPL has a \"high\" Earnings Quality Ranking (EQR) for the 7th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "MELI": {
+  "symbol": "MELI",
+  "ok": true,
+  "announcement": "Earnings announcement* for MELI: Aug 3, 2026",
+  "raw": {
+   "reportText": "MercadoLibre, Inc. Common Stock is estimated to report earnings on  08/03/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  3 analysts' forecasts, the consensus EPS forecast for the quarter is $8.69.  The reported EPS for the same quarter last year was $10.31.",
+   "heading": "MELI Earnings Date",
+   "announcement": "Earnings announcement* for MELI: Aug 3, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "CAH": {
+  "symbol": "CAH",
+  "ok": true,
+  "announcement": "Earnings announcement* for CAH: Aug 11, 2026",
+  "raw": {
+   "reportText": "Cardinal Health, Inc. Common Stock is expected* to report earnings on  08/11/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.41.  The reported EPS for the same quarter last year was $2.08.",
+   "heading": "CAH Earnings Date",
+   "announcement": "Earnings announcement* for CAH: Aug 11, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "CAH has a \"high\" Earnings Quality Ranking (EQR) for the 67th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "VRTX": {
+  "symbol": "VRTX",
+  "ok": true,
+  "announcement": "Earnings announcement* for VRTX: Aug 03, 2026",
+  "raw": {
+   "reportText": "Vertex Pharmaceuticals Incorporated Common Stock is expected* to report earnings on  08/03/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.25.  The reported EPS for the same quarter last year was $4.",
+   "heading": "VRTX Earnings Date",
+   "announcement": "Earnings announcement* for VRTX: Aug 03, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "VRTX has a \"high\" Earnings Quality Ranking (EQR) for the 9th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "SYY": {
+  "symbol": "SYY",
+  "ok": true,
+  "announcement": "Earnings announcement* for SYY: Aug 4, 2026",
+  "raw": {
+   "reportText": "Sysco Corporation Common Stock is estimated to report earnings on  08/04/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  5 analysts' forecasts, the consensus EPS forecast for the quarter is $1.51.  The reported EPS for the same quarter last year was $1.48.",
+   "heading": "SYY Earnings Date",
+   "announcement": "Earnings announcement* for SYY: Aug 4, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "SYY has a \"high\" Earnings Quality Ranking (EQR) for the 10th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "LLY": {
+  "symbol": "LLY",
+  "ok": true,
+  "announcement": "Earnings announcement* for LLY: Aug 05, 2026",
+  "raw": {
+   "reportText": "Eli Lilly and Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $8.98.  The reported EPS for the same quarter last year was $6.31.",
+   "heading": "LLY Earnings Date",
+   "announcement": "Earnings announcement* for LLY: Aug 05, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:28Z"
+ },
+ "ABBV": {
+  "symbol": "ABBV",
+  "ok": true,
+  "announcement": "Earnings announcement* for ABBV: Jul 31, 2026",
+  "raw": {
+   "reportText": "AbbVie Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  1 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.71.  The reported EPS for the same quarter last year was $2.97.",
+   "heading": "ABBV Earnings Date",
+   "announcement": "Earnings announcement* for ABBV: Jul 31, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "ABBV has a \"high\" Earnings Quality Ranking (EQR) for the 19th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:29Z"
+ },
+ "LIN": {
+  "symbol": "LIN",
+  "ok": true,
+  "announcement": "Earnings announcement* for LIN: Jul 31, 2026",
+  "raw": {
+   "reportText": "Linde plc Ordinary Shares is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.48.  The reported EPS for the same quarter last year was $4.09.",
+   "heading": "LIN Earnings Date",
+   "announcement": "Earnings announcement* for LIN: Jul 31, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:29Z"
+ },
+ "ANET": {
+  "symbol": "ANET",
+  "ok": true,
+  "announcement": "Earnings announcement* for ANET: Aug 04, 2026",
+  "raw": {
+   "reportText": "Arista Networks, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.79.  The reported EPS for the same quarter last year was $0.67.",
+   "heading": "ANET Earnings Date",
+   "announcement": "Earnings announcement* for ANET: Aug 04, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "ANET has a \"high\" Earnings Quality Ranking (EQR) for the 45th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:29Z"
+ },
+ "UNH": {
+  "symbol": "UNH",
+  "ok": true,
+  "announcement": "Earnings announcement* for UNH: Jul 16, 2026",
+  "raw": {
+   "reportText": "UnitedHealth Group Incorporated Common Stock (DE) is expected* to report earnings on  07/16/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  10 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.84.  The reported EPS for the same quarter last year was $4.08.",
+   "heading": "UNH Earnings Date",
+   "announcement": "Earnings announcement* for UNH: Jul 16, 2026",
+   "eQRResposeModel": {
+    "text": [
+     "UNH has a \"high\" Earnings Quality Ranking (EQR) for the 10th consecutive week. Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. EQR is a weekly ranking of relative earnings quality for a large universe of publicly traded US equities. Companies are compared to peers in their industry. Find out more about EQR data."
+    ],
+    "boldText": null,
+    "dataLinkUrl": {
+     "label": "Find out more about EQR data",
+     "value": "https://data.nasdaq.com/databases/EQR"
+    }
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:29Z"
+ },
+ "GE": {
+  "symbol": "GE",
+  "ok": true,
+  "announcement": "Earnings announcement* for GE: Jul 16, 2026",
+  "raw": {
+   "reportText": "GE Aerospace Common Stock is expected* to report earnings on  07/16/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.86.  The reported EPS for the same quarter last year was $1.66.",
+   "heading": "GE Earnings Date",
+   "announcement": "Earnings announcement* for GE: Jul 16, 2026",
+   "eQRResposeModel": {
+    "text": null,
+    "boldText": null,
+    "dataLinkUrl": null
+   }
+  },
+  "retrieved_at": "2026-07-12T12:52:29Z"
+ }
+}
