@@ -1,0 +1,173 @@
+{
+  "DDOG": {
+    "ticker": "DDOG",
+    "ok": true,
+    "earnings_date": "2026-08-06",
+    "estimated": true,
+    "announcement": "Earnings announcement* for DDOG: Aug 6, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/DDOG/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:40Z"
+  },
+  "CRWD": {
+    "ticker": "CRWD",
+    "ok": true,
+    "earnings_date": "2026-08-26",
+    "estimated": true,
+    "announcement": "Earnings announcement* for CRWD: Aug 26, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/CRWD/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:40Z"
+  },
+  "DVA": {
+    "ticker": "DVA",
+    "ok": true,
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "announcement": "Earnings announcement* for DVA: Aug 4, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/DVA/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:41Z"
+  },
+  "MRNA": {
+    "ticker": "MRNA",
+    "ok": true,
+    "earnings_date": "2026-07-31",
+    "estimated": false,
+    "announcement": "Earnings announcement* for MRNA: Jul 31, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/MRNA/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:41Z"
+  },
+  "NTAP": {
+    "ticker": "NTAP",
+    "ok": true,
+    "earnings_date": "2026-08-26",
+    "estimated": true,
+    "announcement": "Earnings announcement* for NTAP: Aug 26, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/NTAP/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:41Z"
+  },
+  "CRL": {
+    "ticker": "CRL",
+    "ok": true,
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "announcement": "Earnings announcement* for CRL: Aug 5, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/CRL/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:42Z"
+  },
+  "DELL": {
+    "ticker": "DELL",
+    "ok": true,
+    "earnings_date": "2026-08-27",
+    "estimated": true,
+    "announcement": "Earnings announcement* for DELL: Aug 27, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/DELL/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:42Z"
+  },
+  "SNDK": {
+    "ticker": "SNDK",
+    "ok": true,
+    "earnings_date": "2026-08-05",
+    "estimated": false,
+    "announcement": "Earnings announcement* for SNDK: Aug 05, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/SNDK/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:42Z"
+  },
+  "AXON": {
+    "ticker": "AXON",
+    "ok": true,
+    "earnings_date": "2026-08-03",
+    "estimated": true,
+    "announcement": "Earnings announcement* for AXON: Aug 3, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/AXON/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:42Z"
+  },
+  "ANET": {
+    "ticker": "ANET",
+    "ok": true,
+    "earnings_date": "2026-08-04",
+    "estimated": false,
+    "announcement": "Earnings announcement* for ANET: Aug 04, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/ANET/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:43Z"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "ok": true,
+    "earnings_date": "2026-08-04",
+    "estimated": false,
+    "announcement": "Earnings announcement* for AMD: Aug 04, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/AMD/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:43Z"
+  },
+  "PANW": {
+    "ticker": "PANW",
+    "ok": true,
+    "earnings_date": "2026-08-17",
+    "estimated": true,
+    "announcement": "Earnings announcement* for PANW: Aug 17, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/PANW/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:43Z"
+  },
+  "BBY": {
+    "ticker": "BBY",
+    "ok": true,
+    "earnings_date": "2026-08-27",
+    "estimated": true,
+    "announcement": "Earnings announcement* for BBY: Aug 27, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/BBY/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:44Z"
+  },
+  "STX": {
+    "ticker": "STX",
+    "ok": true,
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "announcement": "Earnings announcement* for STX: Aug 4, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/STX/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:44Z"
+  },
+  "XYZ": {
+    "ticker": "XYZ",
+    "ok": true,
+    "earnings_date": "2026-08-05",
+    "estimated": false,
+    "announcement": "Earnings announcement* for XYZ: Aug 05, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/XYZ/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:44Z"
+  },
+  "HPE": {
+    "ticker": "HPE",
+    "ok": true,
+    "earnings_date": "2026-09-02",
+    "estimated": true,
+    "announcement": "Earnings announcement* for HPE: Sep 2, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/HPE/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:44Z"
+  },
+  "AIZ": {
+    "ticker": "AIZ",
+    "ok": true,
+    "earnings_date": "2026-08-04",
+    "estimated": false,
+    "announcement": "Earnings announcement* for AIZ: Aug 04, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/AIZ/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:45Z"
+  },
+  "HOOD": {
+    "ticker": "HOOD",
+    "ok": true,
+    "earnings_date": "2026-07-29",
+    "estimated": false,
+    "announcement": "Earnings announcement* for HOOD: Jul 29, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/HOOD/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:45Z"
+  },
+  "ABNB": {
+    "ticker": "ABNB",
+    "ok": true,
+    "earnings_date": "2026-08-06",
+    "estimated": false,
+    "announcement": "Earnings announcement* for ABNB: Aug 06, 2026",
+    "source": "https://api.nasdaq.com/api/analyst/ABNB/earnings-date",
+    "retrieved_at": "2026-07-13T12:38:45Z"
+  }
+}
