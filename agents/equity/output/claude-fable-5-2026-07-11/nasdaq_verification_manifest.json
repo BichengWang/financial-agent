@@ -1,0 +1,25 @@
+{
+ "run_date": "2026-07-11",
+ "purpose": "current-run grounding verification of inherited official-close bars (07-06..07-10 window)",
+ "source": "api.nasdaq.com /api/quote/{sym}/chart official daily closes",
+ "inherited_base": "2026-07-10 run repaired 5y series (Yahoo 07-09 refetch + Nasdaq official-close tail repair)",
+ "started_at": "2026-07-11T15:57:16+00:00",
+ "finished_at": "2026-07-11T16:18:22+00:00",
+ "requested": 519,
+ "verified": 517,
+ "failed": 2,
+ "max_divergence_pct": 0.0,
+ "max_divergence_symbol": null,
+ "max_divergence_date": null,
+ "divergences_gt_0.1pct": [],
+ "failures": [
+  {
+   "symbol": "BF-B",
+   "error": "empty chart"
+  },
+  {
+   "symbol": "SATS",
+   "error": "empty chart"
+  }
+ ]
+}
