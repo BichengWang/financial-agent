@@ -134,6 +134,11 @@ A raw negative return in a falling tape is **not** automatically a Miss; a raw p
 
 Predictions from `REVIEW_ONLY` and `ILLUSTRATIVE` runs are settled and scored identically to `GO` predictions (illustrative ones flagged `ILLUSTRATIVE_VINTAGE` in the settlement record). Run status governs execution, not evaluation — paper forecasts are exactly how the system earns the evidence needed to ever publish `GO`.
 
+**Settlement-timing conventions** (codified 2026-07-14, Track B; previously applied by convention since 2026-07-12): the settlement price is the close of the prediction's `target_date` when that close exists at run time. Two standing exceptions, each flagged in the settlement record:
+
+- `WEEKEND_TARGET` — `target_date` falls on a weekend or market holiday: settle at the last trading close **at or before** the target date.
+- `TARGET_EQ_RUN_DATE` — `target_date` equals the run date and the run executes before that session's close (pre-open or intraday): settle at the latest completed close (the prior trading day's). A prediction is never held open past its target date waiting for a same-day close, and never settled on an intraday print.
+
 ### Rolling Calibration Metrics
 
 The Reflection artifact must report, over all settled predictions (minimum 10; otherwise state `INSUFFICIENT_SETTLED_N`):

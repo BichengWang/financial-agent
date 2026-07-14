@@ -1,0 +1,254 @@
+{
+ "fetched_at": "2026-07-14T17:16:12Z",
+ "symbols": {
+  "DVA": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for DVA: Aug 4, 2026"
+  },
+  "BAX": {
+   "date": "2026-07-30",
+   "note": "Earnings announcement* for BAX: Jul 30, 2026"
+  },
+  "CRL": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for CRL: Aug 5, 2026"
+  },
+  "FFIV": {
+   "date": "2026-07-27",
+   "note": "Earnings announcement* for FFIV: Jul 27, 2026"
+  },
+  "FTNT": {
+   "date": "2026-07-29",
+   "note": "Earnings announcement* for FTNT: Jul 29, 2026"
+  },
+  "HUM": {
+   "date": "2026-07-29",
+   "note": "Earnings announcement* for HUM: Jul 29, 2026"
+  },
+  "EXPD": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for EXPD: Aug 4, 2026"
+  },
+  "WST": {
+   "date": "2026-07-23",
+   "note": "Earnings announcement* for WST: Jul 23, 2026"
+  },
+  "CVS": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for CVS: Aug 05, 2026"
+  },
+  "TROW": {
+   "date": "2026-07-31",
+   "note": "Earnings announcement* for TROW: Jul 31, 2026"
+  },
+  "BBY": {
+   "date": "2026-08-27",
+   "note": "Earnings announcement* for BBY: Aug 27, 2026"
+  },
+  "PANW": {
+   "date": "2026-08-17",
+   "note": "Earnings announcement* for PANW: Aug 17, 2026"
+  },
+  "MPC": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for MPC: Aug 04, 2026"
+  },
+  "STT": {
+   "date": "2026-07-16",
+   "note": "Earnings announcement* for STT: Jul 16, 2026"
+  },
+  "AXON": {
+   "date": "2026-08-03",
+   "note": "Earnings announcement* for AXON: Aug 3, 2026"
+  },
+  "PRU": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for PRU: Aug 04, 2026"
+  },
+  "ABNB": {
+   "date": "2026-08-06",
+   "note": "Earnings announcement* for ABNB: Aug 06, 2026"
+  },
+  "AMP": {
+   "date": "2026-07-23",
+   "note": "Earnings announcement* for AMP: Jul 23, 2026"
+  },
+  "DOC": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for DOC: Aug 04, 2026"
+  },
+  "V": {
+   "date": "2026-07-28",
+   "note": "Earnings announcement* for V: Jul 28, 2026"
+  },
+  "MNST": {
+   "date": "2026-08-06",
+   "note": "Earnings announcement* for MNST: Aug 6, 2026"
+  },
+  "AIZ": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for AIZ: Aug 04, 2026"
+  },
+  "KMB": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for KMB: Aug 04, 2026"
+  },
+  "IQV": {
+   "date": "2026-07-28",
+   "note": "Earnings announcement* for IQV: Jul 28, 2026"
+  },
+  "BEN": {
+   "date": "2026-07-31",
+   "note": "Earnings announcement* for BEN: Jul 31, 2026"
+  },
+  "ADP": {
+   "date": "2026-07-29",
+   "note": "Earnings announcement* for ADP: Jul 29, 2026"
+  },
+  "UNH": {
+   "date": "2026-07-16",
+   "note": "Earnings announcement* for UNH: Jul 16, 2026"
+  },
+  "ESS": {
+   "date": "2026-07-29",
+   "note": "Earnings announcement* for ESS: Jul 29, 2026"
+  },
+  "VLO": {
+   "date": "2026-07-30",
+   "note": "Earnings announcement* for VLO: Jul 30, 2026"
+  },
+  "NTRS": {
+   "date": "2026-07-22",
+   "note": "Earnings announcement* for NTRS: Jul 22, 2026"
+  },
+  "DDOG": {
+   "date": "2026-08-06",
+   "note": "Earnings announcement* for DDOG: Aug 6, 2026"
+  },
+  "LYV": {
+   "date": "2026-08-06",
+   "note": "Earnings announcement* for LYV: Aug 6, 2026"
+  },
+  "ELV": {
+   "date": "2026-07-15",
+   "note": "Earnings announcement* for ELV: Jul 15, 2026"
+  },
+  "KVUE": {
+   "date": "2026-08-06",
+   "note": "Earnings announcement* for KVUE: Aug 6, 2026"
+  },
+  "ZBRA": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for ZBRA: Aug 04, 2026"
+  },
+  "MELI": {
+   "date": "2026-08-03",
+   "note": "Earnings announcement* for MELI: Aug 3, 2026"
+  },
+  "JBHT": {
+   "date": "2026-07-15",
+   "note": "Earnings announcement* for JBHT: Jul 15, 2026"
+  },
+  "MTB": {
+   "date": "2026-07-15",
+   "note": "Earnings announcement* for MTB: Jul 15, 2026"
+  },
+  "GPN": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for GPN: Aug 5, 2026"
+  },
+  "UNP": {
+   "date": "2026-07-23",
+   "note": "Earnings announcement* for UNP: Jul 23, 2026"
+  },
+  "AXP": {
+   "date": "2026-07-24",
+   "note": "Earnings announcement* for AXP: Jul 24, 2026"
+  },
+  "EW": {
+   "date": "2026-07-23",
+   "note": "Earnings announcement* for EW: Jul 23, 2026"
+  },
+  "PNC": {
+   "date": "2026-07-15",
+   "note": "Earnings announcement* for PNC: Jul 15, 2026"
+  },
+  "BNY": {
+   "date": "2026-07-15",
+   "note": "Earnings announcement* for BNY: Jul 15, 2026"
+  },
+  "GWW": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for GWW: Aug 04, 2026"
+  },
+  "RVTY": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for RVTY: Aug 04, 2026"
+  },
+  "ES": {
+   "date": "2026-07-30",
+   "note": "Earnings announcement* for ES: Jul 30, 2026"
+  },
+  "MET": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for MET: Aug 05, 2026"
+  },
+  "CRWD": {
+   "date": "2026-08-26",
+   "note": "Earnings announcement* for CRWD: Aug 26, 2026"
+  },
+  "RF": {
+   "date": "2026-07-17",
+   "note": "Earnings announcement* for RF: Jul 17, 2026"
+  },
+  "ALL": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for ALL: Aug 05, 2026"
+  },
+  "CSX": {
+   "date": "2026-07-22",
+   "note": "Earnings announcement* for CSX: Jul 22, 2026"
+  },
+  "WRB": {
+   "date": "2026-07-20",
+   "note": "Earnings announcement* for WRB: Jul 20, 2026"
+  },
+  "MRNA": {
+   "date": "2026-07-31",
+   "note": "Earnings announcement* for MRNA: Jul 31, 2026"
+  },
+  "FAST": {
+   "date": null,
+   "note": "Earnings announcement* for FAST:"
+  },
+  "LLY": {
+   "date": "2026-08-05",
+   "note": "Earnings announcement* for LLY: Aug 05, 2026"
+  },
+  "ABBV": {
+   "date": "2026-07-31",
+   "note": "Earnings announcement* for ABBV: Jul 31, 2026"
+  },
+  "LIN": {
+   "date": "2026-07-31",
+   "note": "Earnings announcement* for LIN: Jul 31, 2026"
+  },
+  "ANET": {
+   "date": "2026-08-04",
+   "note": "Earnings announcement* for ANET: Aug 04, 2026"
+  },
+  "GE": {
+   "date": "2026-07-16",
+   "note": "Earnings announcement* for GE: Jul 16, 2026"
+  },
+  "NVDA": {
+   "date": "2026-08-26",
+   "note": "Earnings announcement* for NVDA: Aug 26, 2026"
+  },
+  "MU": {
+   "date": null,
+   "note": "Earnings announcement* for MU:"
+  }
+ },
+ "note": "Confirmed-dates preflight (standard per Track B accepted 2026-07-12). 63 symbols fetched, 61 confirmed. Vendor-empty: FAST (cadence-estimated 2026-07-13 +/-5d from prior print +91d -> inside buffered penalty window, -0.10 applied), MU (reported ~2026-06-26, next ~2026-09-25, outside horizon)."
+}

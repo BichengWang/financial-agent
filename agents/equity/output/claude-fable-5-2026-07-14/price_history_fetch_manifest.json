@@ -1,0 +1,33 @@
+{
+ "fetched_at": "2026-07-14T17:07:39Z",
+ "elapsed_sec": 176.8,
+ "requested": 519,
+ "ok": 517,
+ "failed": 2,
+ "by_source": {
+  "nasdaq_historical": 517
+ },
+ "last_bar_date_distribution": {
+  "2026-07-13": 517
+ },
+ "failures": [
+  {
+   "symbol": "BF-B",
+   "error": "nasdaq_fetch: ValueError too few rows 0"
+  },
+  {
+   "symbol": "FDXF",
+   "error": "nasdaq_fetch: ValueError too few rows 32"
+  }
+ ],
+ "renames": {
+  "SATS": "fetched as ECHO (EchoStar rename)"
+ },
+ "source_chain_note": "Codified chain (Track B accepted 2026-07-13): (1) Yahoo v8 bulk primary -> HTTP 429 for entire session (probe documented below); (2) Nasdaq historical API bulk fallback -> 517/519; (3) IBKR MCP per-name stragglers -> BF-B conid 4931 (1253 bars, partial 07-14 intraday bar trimmed); FDXF 32 bars (recent listing, excluded from eligible universe). SATS fetched as ECHO (EchoStar rename). VIX: CBOE official CSV (9227 rows, last 2026-07-13 close 17.16). rf: FRED DTB3 timed out (3 attempts) -> fallback Treasury.gov daily bill rates CSV 2026-07-13: 13-week bank discount 3.76% / coupon equivalent 3.85%.",
+ "yahoo_probe": {
+  "url": "query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d",
+  "result": "HTTP 429 Too Many Requests",
+  "probed_at": "2026-07-14T17:0x:xxZ",
+  "note": "second consecutive full-session Yahoo outage (first: 2026-07-13)"
+ }
+}
