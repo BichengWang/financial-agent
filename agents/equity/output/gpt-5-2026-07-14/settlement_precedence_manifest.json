@@ -1,0 +1,1383 @@
+{
+  "duplicate_key_count": 69,
+  "normalized_key_count": 86,
+  "policy": "Normalize by model,vintage_date,ticker,type,target_date; among complete duplicates choose the settlement package/run dated exactly on target, otherwise the earliest settlement package/run after target, then earliest available fallback. Price observation date is tracked separately because non-trading-day settlements may properly use the latest prior-session close.",
+  "records": [
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "ABBV",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "COST",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "CVX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "GOOGL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "LIN",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "LLY",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "MCK",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "MU",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "NVDA",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "UNH",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "WMT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 3,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "claude-fable-5",
+        "target_date": "2026-07-08",
+        "ticker": "XOM",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-10"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-08",
+      "selected_price_observation_date": "2026-07-08",
+      "selected_settlement_run_date": "2026-07-08",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "ABBV",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "AMT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "ANET",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "BAC",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "COP",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "CVX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "GE",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "GOOGL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "GS",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "JNJ",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "JPM",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "KO",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "LLY",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "MCK",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "ORCL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "PG",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-09",
+        "ticker": "UNH",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-11"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-09",
+      "selected_price_observation_date": "2026-07-09",
+      "selected_settlement_run_date": "2026-07-09",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "ABBV",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "AMD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "AMT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "ANET",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "BAC",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "CAT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "FCX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "GE",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "GS",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "HD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "JNJ",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "JPM",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "LIN",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "LLY",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "PG",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "PLD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "QQQ",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "SOXX",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "SPY",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 2,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-12",
+        "ticker": "UNH",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-14"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "claude-fable-5-2026-07-12",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-12",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "ABBV",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "AMD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "ANET",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "BAC",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "CAT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "CVX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "ETN",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "FCX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "GE",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "GOOGL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "GS",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "JPM",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "LIN",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "LLY",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "PLD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "QQQ",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "SHW",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "SOXX",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "SPY",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 2,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-13",
+        "ticker": "UNH",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-15"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-13",
+      "selected_price_observation_date": "2026-07-10",
+      "selected_settlement_run_date": "2026-07-13",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "AAPL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "AVGO",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "BAC",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "CAT",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "CVX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "FCX",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "GE",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "GOOGL",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "GS",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "JPM",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "LLY",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "NVDA",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "PLD",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "QQQ",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "SOXX",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "SPY",
+        "type": "MARKET_FORECAST",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    },
+    {
+      "candidate_count": 1,
+      "complete_candidate_count": 1,
+      "key": {
+        "model": "gpt-5",
+        "target_date": "2026-07-14",
+        "ticker": "UNH",
+        "type": "EQUITY_ALPHA",
+        "vintage_date": "2026-06-16"
+      },
+      "selected_lag_days": 0,
+      "selected_package": "gpt-5-2026-07-14",
+      "selected_price_observation_date": "2026-07-14",
+      "selected_settlement_run_date": "2026-07-14",
+      "selection_reason": "EXACT_TARGET_DATE"
+    }
+  ]
+}
