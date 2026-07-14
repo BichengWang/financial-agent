@@ -1,0 +1,73 @@
+{
+ "verified_at": "2026-07-14T17:23:37Z",
+ "method": "IBKR MCP get_price_snapshot during RTH (Tue 2026-07-14 ~13:1x ET): priorClose field, or last minus change where priorClose empty. Single-web-source run (Nasdaq bulk only; Yahoo 429) -> IBKR verification per playbook/single-web-source protocol.",
+ "matches": {
+  "SPY": {
+   "conid": 756733,
+   "ibkr": 749.17,
+   "csv": 749.17
+  },
+  "QQQ": {
+   "conid": 320227571,
+   "ibkr": 711.74,
+   "csv": 711.74
+  },
+  "SOXX": {
+   "conid": 12658194,
+   "ibkr": 553.61,
+   "csv": 553.61
+  },
+  "DVA": {
+   "conid": 1035459,
+   "ibkr": 235.58,
+   "csv": 235.58
+  },
+  "BAX": {
+   "conid": 8111188,
+   "ibkr": 22.57,
+   "csv": 22.57
+  },
+  "CRL": {
+   "conid": 2730877,
+   "ibkr": 229.75,
+   "csv": 229.75
+  },
+  "FFIV": {
+   "conid": 6248713,
+   "ibkr": 420.95,
+   "csv": 420.95
+  },
+  "FTNT": {
+   "conid": 70236214,
+   "ibkr": 160.62,
+   "csv": 160.62
+  },
+  "HUM": {
+   "conid": 8251,
+   "ibkr": 406.0,
+   "csv": 406.0
+  },
+  "EXPD": {
+   "conid": 269082,
+   "ibkr": 175.5,
+   "csv": 175.5
+  },
+  "WST": {
+   "conid": 13909,
+   "ibkr": 359.7,
+   "csv": 359.7
+  },
+  "CVS": {
+   "conid": 2585769,
+   "ibkr": 105.9,
+   "csv": 105.9
+  },
+  "TROW": {
+   "conid": 275321,
+   "ibkr": 113.65,
+   "csv": 113.65
+  }
+ },
+ "result": "13/13 exact matches to the cent (3 core ETFs + 10 top-ranked equities)",
+ "intraday_color": "At snapshot time (~13:1x ET): SPY +0.35%, QQQ +1.23%, SOXX +3.05% intraday - semis bouncing after Monday's -4.77% SOXX close; not used in any scored field (RTH last prices are today's tape, published fields are 07-13 closes)"
+}
