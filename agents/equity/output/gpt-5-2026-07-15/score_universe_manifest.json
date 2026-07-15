@@ -1,0 +1,1133 @@
+{
+  "dq": 0.78,
+  "formula": "Adj Score = (0.30*Tech_Z)*0.78 - technical_penalty - earnings_penalty; other families unavailable",
+  "generated_at": "2026-07-15T19:56:03Z",
+  "metric_statistics": {
+    "ma_breadth_dwm": {
+      "cross_section_mean": 0.26348278102664063,
+      "cross_section_std": 0.5247240468033812,
+      "winsor_05": -0.6666666666666666,
+      "winsor_95": 1.0
+    },
+    "macd_breadth_dwm": {
+      "cross_section_mean": 0.096816114359974,
+      "cross_section_std": 0.5156681325131102,
+      "winsor_05": -1.0,
+      "winsor_95": 1.0
+    },
+    "momentum_20d_daily": {
+      "cross_section_mean": 0.5348343079922027,
+      "cross_section_std": 7.154514326587744,
+      "winsor_05": -13.904,
+      "winsor_95": 13.323999999999998
+    },
+    "momentum_60d_daily": {
+      "cross_section_mean": 2.7620116959064327,
+      "cross_section_std": 13.452036123766055,
+      "winsor_05": -20.055999999999997,
+      "winsor_95": 31.148
+    },
+    "relative_strength_20d_daily": {
+      "cross_section_mean": 0.6548538011695906,
+      "cross_section_std": 7.154528685631129,
+      "winsor_05": -13.783999999999999,
+      "winsor_95": 13.443999999999997
+    },
+    "relative_strength_60d_daily": {
+      "cross_section_mean": -3.4079688109161794,
+      "cross_section_std": 13.452043750280332,
+      "winsor_05": -26.226,
+      "winsor_95": 24.978
+    },
+    "volume_ratio_20d_daily": {
+      "cross_section_mean": 0.5325536062378168,
+      "cross_section_std": 0.18952775401910207,
+      "winsor_05": 0.29,
+      "winsor_95": 1.03
+    }
+  },
+  "penalty_formula": "RSI_D>=70:0.03; each RSI_W/M>=75:0.02; each TD9_W/M SELL_SETUP_9:0.02; MACD_D BEARISH_CROSS:0.03; buffered earnings window:0.10",
+  "ranked_top_120": [
+    {
+      "adj_score": 0.40441436484888843,
+      "earnings_penalty": 0.0,
+      "percentile": 100.0,
+      "rank": 1,
+      "tech_z": 1.728266516448241,
+      "technical_penalty": 0.0,
+      "ticker": "CRWD"
+    },
+    {
+      "adj_score": 0.35326467564131914,
+      "earnings_penalty": 0.0,
+      "percentile": 99.8046875,
+      "rank": 2,
+      "tech_z": 1.5096781010312783,
+      "technical_penalty": 0.0,
+      "ticker": "DDOG"
+    },
+    {
+      "adj_score": 0.3471146933871171,
+      "earnings_penalty": 0.0,
+      "percentile": 99.609375,
+      "rank": 3,
+      "tech_z": 1.4833961255859704,
+      "technical_penalty": 0.0,
+      "ticker": "XYZ"
+    },
+    {
+      "adj_score": 0.34383167053008096,
+      "earnings_penalty": 0.0,
+      "percentile": 99.4140625,
+      "rank": 4,
+      "tech_z": 1.683041327051628,
+      "technical_penalty": 0.05,
+      "ticker": "MPC"
+    },
+    {
+      "adj_score": 0.3346956998599948,
+      "earnings_penalty": 0.0,
+      "percentile": 99.21875,
+      "rank": 5,
+      "tech_z": 1.4303235036751916,
+      "technical_penalty": 0.0,
+      "ticker": "PSX"
+    },
+    {
+      "adj_score": 0.3265747016471817,
+      "earnings_penalty": 0.0,
+      "percentile": 99.0234375,
+      "rank": 6,
+      "tech_z": 1.5238235113127423,
+      "technical_penalty": 0.03,
+      "ticker": "BBY"
+    },
+    {
+      "adj_score": 0.30742616251675725,
+      "earnings_penalty": 0.0,
+      "percentile": 98.828125,
+      "rank": 7,
+      "tech_z": 1.4847271902425523,
+      "technical_penalty": 0.04,
+      "ticker": "GS"
+    },
+    {
+      "adj_score": 0.3016094478897383,
+      "earnings_penalty": 0.0,
+      "percentile": 98.6328125,
+      "rank": 8,
+      "tech_z": 1.4171343926911895,
+      "technical_penalty": 0.03,
+      "ticker": "MTB"
+    },
+    {
+      "adj_score": 0.2876984884382569,
+      "earnings_penalty": 0.0,
+      "percentile": 98.4375,
+      "rank": 9,
+      "tech_z": 1.6995661899070806,
+      "technical_penalty": 0.11,
+      "ticker": "BNY"
+    },
+    {
+      "adj_score": 0.283803215347101,
+      "earnings_penalty": 0.0,
+      "percentile": 98.2421875,
+      "rank": 10,
+      "tech_z": 1.3837744245602608,
+      "technical_penalty": 0.04,
+      "ticker": "MS"
+    },
+    {
+      "adj_score": 0.28179559453312336,
+      "earnings_penalty": 0.0,
+      "percentile": 98.046875,
+      "rank": 11,
+      "tech_z": 1.4606649339022366,
+      "technical_penalty": 0.06,
+      "ticker": "PANW"
+    },
+    {
+      "adj_score": 0.2803396785003247,
+      "earnings_penalty": 0.0,
+      "percentile": 97.8515625,
+      "rank": 12,
+      "tech_z": 1.3262379423090798,
+      "technical_penalty": 0.03,
+      "ticker": "BAC"
+    },
+    {
+      "adj_score": 0.2732332767812279,
+      "earnings_penalty": 0.1,
+      "percentile": 97.65625,
+      "rank": 13,
+      "tech_z": 1.765954174278752,
+      "technical_penalty": 0.04,
+      "ticker": "VLO"
+    },
+    {
+      "adj_score": 0.25428977096174377,
+      "earnings_penalty": 0.0,
+      "percentile": 97.4609375,
+      "rank": 14,
+      "tech_z": 1.214913551118563,
+      "technical_penalty": 0.03,
+      "ticker": "CRL"
+    },
+    {
+      "adj_score": 0.25268772242797094,
+      "earnings_penalty": 0.0,
+      "percentile": 97.265625,
+      "rank": 15,
+      "tech_z": 1.1653321471280809,
+      "technical_penalty": 0.02,
+      "ticker": "DELL"
+    },
+    {
+      "adj_score": 0.24867253624370245,
+      "earnings_penalty": 0.0,
+      "percentile": 97.0703125,
+      "rank": 16,
+      "tech_z": 1.0627031463406087,
+      "technical_penalty": 0.0,
+      "ticker": "PNC"
+    },
+    {
+      "adj_score": 0.22272500137422258,
+      "earnings_penalty": 0.0,
+      "percentile": 96.875,
+      "rank": 17,
+      "tech_z": 1.0372863306590707,
+      "technical_penalty": 0.02,
+      "ticker": "HPE"
+    },
+    {
+      "adj_score": 0.22261086910367722,
+      "earnings_penalty": 0.0,
+      "percentile": 96.6796875,
+      "rank": 18,
+      "tech_z": 1.0367985859131505,
+      "technical_penalty": 0.02,
+      "ticker": "CVS"
+    },
+    {
+      "adj_score": 0.2217848188331843,
+      "earnings_penalty": 0.0,
+      "percentile": 96.484375,
+      "rank": 19,
+      "tech_z": 0.9477983710819842,
+      "technical_penalty": 0.0,
+      "ticker": "GEN"
+    },
+    {
+      "adj_score": 0.21880586171919475,
+      "earnings_penalty": 0.0,
+      "percentile": 96.2890625,
+      "rank": 20,
+      "tech_z": 1.1487429987999775,
+      "technical_penalty": 0.05,
+      "ticker": "EXPD"
+    },
+    {
+      "adj_score": 0.2181342793901105,
+      "earnings_penalty": 0.0,
+      "percentile": 96.09375,
+      "rank": 21,
+      "tech_z": 0.9321977751714124,
+      "technical_penalty": 0.0,
+      "ticker": "GPN"
+    },
+    {
+      "adj_score": 0.21036139747045832,
+      "earnings_penalty": 0.1,
+      "percentile": 95.8984375,
+      "rank": 22,
+      "tech_z": 1.326330758420762,
+      "technical_penalty": 0.0,
+      "ticker": "AAPL"
+    },
+    {
+      "adj_score": 0.2077883512441306,
+      "earnings_penalty": 0.0,
+      "percentile": 95.703125,
+      "rank": 23,
+      "tech_z": 0.8879844070261991,
+      "technical_penalty": 0.0,
+      "ticker": "CTAS"
+    },
+    {
+      "adj_score": 0.20673103498604697,
+      "earnings_penalty": 0.0,
+      "percentile": 95.5078125,
+      "rank": 24,
+      "tech_z": 0.8834659614788333,
+      "technical_penalty": 0.0,
+      "ticker": "TRI"
+    },
+    {
+      "adj_score": 0.2033019783230887,
+      "earnings_penalty": 0.0,
+      "percentile": 95.3125,
+      "rank": 25,
+      "tech_z": 0.8688118731755926,
+      "technical_penalty": 0.0,
+      "ticker": "JPM"
+    },
+    {
+      "adj_score": 0.20150119689206183,
+      "earnings_penalty": 0.0,
+      "percentile": 95.1171875,
+      "rank": 26,
+      "tech_z": 0.9893213542395805,
+      "technical_penalty": 0.03,
+      "ticker": "ALL"
+    },
+    {
+      "adj_score": 0.19965542724768076,
+      "earnings_penalty": 0.0,
+      "percentile": 94.921875,
+      "rank": 27,
+      "tech_z": 1.066903535246499,
+      "technical_penalty": 0.05,
+      "ticker": "DVA"
+    },
+    {
+      "adj_score": 0.19732998945077126,
+      "earnings_penalty": 0.0,
+      "percentile": 94.7265625,
+      "rank": 28,
+      "tech_z": 0.8432905532084242,
+      "technical_penalty": 0.0,
+      "ticker": "DOC"
+    },
+    {
+      "adj_score": 0.1972519105541436,
+      "earnings_penalty": 0.1,
+      "percentile": 94.53125,
+      "rank": 29,
+      "tech_z": 1.740392780145913,
+      "technical_penalty": 0.11,
+      "ticker": "STT"
+    },
+    {
+      "adj_score": 0.19714355234586037,
+      "earnings_penalty": 0.0,
+      "percentile": 94.3359375,
+      "rank": 30,
+      "tech_z": 0.8424938134438478,
+      "technical_penalty": 0.0,
+      "ticker": "DLTR"
+    },
+    {
+      "adj_score": 0.1899333730650976,
+      "earnings_penalty": 0.0,
+      "percentile": 94.140625,
+      "rank": 31,
+      "tech_z": 0.8971511669448616,
+      "technical_penalty": 0.02,
+      "ticker": "MET"
+    },
+    {
+      "adj_score": 0.1873668896958631,
+      "earnings_penalty": 0.0,
+      "percentile": 93.9453125,
+      "rank": 32,
+      "tech_z": 0.8861832892985602,
+      "technical_penalty": 0.02,
+      "ticker": "MNST"
+    },
+    {
+      "adj_score": 0.18194781260915777,
+      "earnings_penalty": 0.1,
+      "percentile": 93.75,
+      "rank": 33,
+      "tech_z": 1.2903752675605034,
+      "technical_penalty": 0.02,
+      "ticker": "FFIV"
+    },
+    {
+      "adj_score": 0.18149959652857692,
+      "earnings_penalty": 0.1,
+      "percentile": 93.5546875,
+      "rank": 34,
+      "tech_z": 1.202989728754602,
+      "technical_penalty": 0.0,
+      "ticker": "IVZ"
+    },
+    {
+      "adj_score": 0.1796439770672711,
+      "earnings_penalty": 0.0,
+      "percentile": 93.359375,
+      "rank": 35,
+      "tech_z": 0.7677093037062866,
+      "technical_penalty": 0.0,
+      "ticker": "RVTY"
+    },
+    {
+      "adj_score": 0.1758184722164838,
+      "earnings_penalty": 0.0,
+      "percentile": 93.1640625,
+      "rank": 36,
+      "tech_z": 0.7513609923781359,
+      "technical_penalty": 0.0,
+      "ticker": "VEEV"
+    },
+    {
+      "adj_score": 0.1731372062984908,
+      "earnings_penalty": 0.0,
+      "percentile": 92.96875,
+      "rank": 37,
+      "tech_z": 0.7399025910191914,
+      "technical_penalty": 0.0,
+      "ticker": "TGT"
+    },
+    {
+      "adj_score": 0.17185661660715068,
+      "earnings_penalty": 0.0,
+      "percentile": 92.7734375,
+      "rank": 38,
+      "tech_z": 0.8199000709707294,
+      "technical_penalty": 0.02,
+      "ticker": "AMD"
+    },
+    {
+      "adj_score": 0.17128338395799808,
+      "earnings_penalty": 0.0,
+      "percentile": 92.578125,
+      "rank": 39,
+      "tech_z": 0.8601854015299063,
+      "technical_penalty": 0.03,
+      "ticker": "NTAP"
+    },
+    {
+      "adj_score": 0.16790364997583235,
+      "earnings_penalty": 0.0,
+      "percentile": 92.3828125,
+      "rank": 40,
+      "tech_z": 0.8030070511787707,
+      "technical_penalty": 0.02,
+      "ticker": "PRU"
+    },
+    {
+      "adj_score": 0.1633483664402777,
+      "earnings_penalty": 0.0,
+      "percentile": 92.1875,
+      "rank": 41,
+      "tech_z": 0.7835400275225542,
+      "technical_penalty": 0.02,
+      "ticker": "ASML"
+    },
+    {
+      "adj_score": 0.1612897771364585,
+      "earnings_penalty": 0.0,
+      "percentile": 91.9921875,
+      "rank": 42,
+      "tech_z": 0.6892725518652073,
+      "technical_penalty": 0.0,
+      "ticker": "HSIC"
+    },
+    {
+      "adj_score": 0.1585639428640007,
+      "earnings_penalty": 0.0,
+      "percentile": 91.796875,
+      "rank": 43,
+      "tech_z": 0.6776236874529944,
+      "technical_penalty": 0.0,
+      "ticker": "ABNB"
+    },
+    {
+      "adj_score": 0.15652494999417088,
+      "earnings_penalty": 0.0,
+      "percentile": 91.6015625,
+      "rank": 44,
+      "tech_z": 0.668910042710132,
+      "technical_penalty": 0.0,
+      "ticker": "ADM"
+    },
+    {
+      "adj_score": 0.15486974969432826,
+      "earnings_penalty": 0.0,
+      "percentile": 91.40625,
+      "rank": 45,
+      "tech_z": 0.7900416653603771,
+      "technical_penalty": 0.03,
+      "ticker": "TECH"
+    },
+    {
+      "adj_score": 0.15300280516193496,
+      "earnings_penalty": 0.0,
+      "percentile": 91.2109375,
+      "rank": 46,
+      "tech_z": 0.6538581417176708,
+      "technical_penalty": 0.0,
+      "ticker": "ANET"
+    },
+    {
+      "adj_score": 0.15209083059459952,
+      "earnings_penalty": 0.0,
+      "percentile": 91.015625,
+      "rank": 47,
+      "tech_z": 0.6499608145068356,
+      "technical_penalty": 0.0,
+      "ticker": "ZS"
+    },
+    {
+      "adj_score": 0.14935556405201453,
+      "earnings_penalty": 0.0,
+      "percentile": 90.8203125,
+      "rank": 48,
+      "tech_z": 0.6382716412479253,
+      "technical_penalty": 0.0,
+      "ticker": "BLK"
+    },
+    {
+      "adj_score": 0.148480286458655,
+      "earnings_penalty": 0.1,
+      "percentile": 90.625,
+      "rank": 49,
+      "tech_z": 1.0618815660626282,
+      "technical_penalty": 0.0,
+      "ticker": "HOOD"
+    },
+    {
+      "adj_score": 0.1463124063646353,
+      "earnings_penalty": 0.1,
+      "percentile": 90.4296875,
+      "rank": 50,
+      "tech_z": 1.0526171212163902,
+      "technical_penalty": 0.0,
+      "ticker": "UNP"
+    },
+    {
+      "adj_score": 0.1448445818532152,
+      "earnings_penalty": 0.0,
+      "percentile": 90.234375,
+      "rank": 51,
+      "tech_z": 0.6189939395436547,
+      "technical_penalty": 0.0,
+      "ticker": "WFC"
+    },
+    {
+      "adj_score": 0.1422196542559042,
+      "earnings_penalty": 0.0,
+      "percentile": 90.0390625,
+      "rank": 52,
+      "tech_z": 0.6932463857089922,
+      "technical_penalty": 0.02,
+      "ticker": "LLY"
+    },
+    {
+      "adj_score": 0.1412979187106971,
+      "earnings_penalty": 0.1,
+      "percentile": 89.84375,
+      "rank": 53,
+      "tech_z": 1.0311876867978509,
+      "technical_penalty": 0.0,
+      "ticker": "IQV"
+    },
+    {
+      "adj_score": 0.14024003205621668,
+      "earnings_penalty": 0.0,
+      "percentile": 89.6484375,
+      "rank": 54,
+      "tech_z": 0.7275215045137465,
+      "technical_penalty": 0.03,
+      "ticker": "EXPE"
+    },
+    {
+      "adj_score": 0.14013004725737946,
+      "earnings_penalty": 0.0,
+      "percentile": 89.453125,
+      "rank": 55,
+      "tech_z": 0.598846355800767,
+      "technical_penalty": 0.0,
+      "ticker": "JNJ"
+    },
+    {
+      "adj_score": 0.13756543958594492,
+      "earnings_penalty": 0.1,
+      "percentile": 89.2578125,
+      "rank": 56,
+      "tech_z": 1.015236921307457,
+      "technical_penalty": 0.0,
+      "ticker": "INCY"
+    },
+    {
+      "adj_score": 0.13616090290309288,
+      "earnings_penalty": 0.0,
+      "percentile": 89.0625,
+      "rank": 57,
+      "tech_z": 0.6673542859106533,
+      "technical_penalty": 0.02,
+      "ticker": "AMAT"
+    },
+    {
+      "adj_score": 0.13605853122560366,
+      "earnings_penalty": 0.1,
+      "percentile": 88.8671875,
+      "rank": 58,
+      "tech_z": 1.0087971419897592,
+      "technical_penalty": 0.0,
+      "ticker": "RF"
+    },
+    {
+      "adj_score": 0.12961531980748467,
+      "earnings_penalty": 0.0,
+      "percentile": 88.671875,
+      "rank": 59,
+      "tech_z": 0.682116751314037,
+      "technical_penalty": 0.03,
+      "ticker": "ELV"
+    },
+    {
+      "adj_score": 0.12923000888161948,
+      "earnings_penalty": 0.0,
+      "percentile": 88.4765625,
+      "rank": 60,
+      "tech_z": 0.552264995220596,
+      "technical_penalty": 0.0,
+      "ticker": "A"
+    },
+    {
+      "adj_score": 0.12840624889909005,
+      "earnings_penalty": 0.0,
+      "percentile": 88.28125,
+      "rank": 61,
+      "tech_z": 0.6342147388850001,
+      "technical_penalty": 0.02,
+      "ticker": "PAYX"
+    },
+    {
+      "adj_score": 0.12832273919594012,
+      "earnings_penalty": 0.0,
+      "percentile": 88.0859375,
+      "rank": 62,
+      "tech_z": 0.762062988016838,
+      "technical_penalty": 0.05,
+      "ticker": "AIZ"
+    },
+    {
+      "adj_score": 0.127734039490918,
+      "earnings_penalty": 0.0,
+      "percentile": 87.890625,
+      "rank": 63,
+      "tech_z": 0.6313420491064872,
+      "technical_penalty": 0.02,
+      "ticker": "UAL"
+    },
+    {
+      "adj_score": 0.12658248103048203,
+      "earnings_penalty": 0.0,
+      "percentile": 87.6953125,
+      "rank": 64,
+      "tech_z": 0.6691559018396668,
+      "technical_penalty": 0.03,
+      "ticker": "EA"
+    },
+    {
+      "adj_score": 0.12468331796624453,
+      "earnings_penalty": 0.0,
+      "percentile": 87.5,
+      "rank": 65,
+      "tech_z": 0.5328346921634382,
+      "technical_penalty": 0.0,
+      "ticker": "WDAY"
+    },
+    {
+      "adj_score": 0.1242076607664746,
+      "earnings_penalty": 0.0,
+      "percentile": 87.3046875,
+      "rank": 66,
+      "tech_z": 0.5308019690874983,
+      "technical_penalty": 0.0,
+      "ticker": "KHC"
+    },
+    {
+      "adj_score": 0.12367872706421595,
+      "earnings_penalty": 0.1,
+      "percentile": 87.109375,
+      "rank": 67,
+      "tech_z": 0.9558919960009229,
+      "technical_penalty": 0.0,
+      "ticker": "CTVA"
+    },
+    {
+      "adj_score": 0.12354627034616436,
+      "earnings_penalty": 0.0,
+      "percentile": 86.9140625,
+      "rank": 68,
+      "tech_z": 0.6989156852400187,
+      "technical_penalty": 0.04,
+      "ticker": "TRGP"
+    },
+    {
+      "adj_score": 0.121859028999216,
+      "earnings_penalty": 0.1,
+      "percentile": 86.71875,
+      "rank": 69,
+      "tech_z": 1.2045257649539145,
+      "technical_penalty": 0.06,
+      "ticker": "FTNT"
+    },
+    {
+      "adj_score": 0.12180248780439115,
+      "earnings_penalty": 0.0,
+      "percentile": 86.5234375,
+      "rank": 70,
+      "tech_z": 0.648728580360646,
+      "technical_penalty": 0.03,
+      "ticker": "TRV"
+    },
+    {
+      "adj_score": 0.12003456537894659,
+      "earnings_penalty": 0.0,
+      "percentile": 86.328125,
+      "rank": 71,
+      "tech_z": 0.5984383135852419,
+      "technical_penalty": 0.02,
+      "ticker": "GWW"
+    },
+    {
+      "adj_score": 0.11947286129605049,
+      "earnings_penalty": 0.0,
+      "percentile": 86.1328125,
+      "rank": 72,
+      "tech_z": 0.5960378687865406,
+      "technical_penalty": 0.02,
+      "ticker": "LUV"
+    },
+    {
+      "adj_score": 0.11913343767180436,
+      "earnings_penalty": 0.0,
+      "percentile": 85.9375,
+      "rank": 73,
+      "tech_z": 0.5945873404777965,
+      "technical_penalty": 0.02,
+      "ticker": "DAL"
+    },
+    {
+      "adj_score": 0.1190868692059063,
+      "earnings_penalty": 0.0,
+      "percentile": 85.7421875,
+      "rank": 74,
+      "tech_z": 0.508918244469685,
+      "technical_penalty": 0.0,
+      "ticker": "SWK"
+    },
+    {
+      "adj_score": 0.11900511532633136,
+      "earnings_penalty": 0.0,
+      "percentile": 85.546875,
+      "rank": 75,
+      "tech_z": 0.508568868915946,
+      "technical_penalty": 0.0,
+      "ticker": "F"
+    },
+    {
+      "adj_score": 0.11820962725627615,
+      "earnings_penalty": 0.1,
+      "percentile": 85.3515625,
+      "rank": 76,
+      "tech_z": 0.9325197745994707,
+      "technical_penalty": 0.0,
+      "ticker": "WST"
+    },
+    {
+      "adj_score": 0.11779033551903409,
+      "earnings_penalty": 0.0,
+      "percentile": 85.15625,
+      "rank": 77,
+      "tech_z": 0.5033775022180944,
+      "technical_penalty": 0.0,
+      "ticker": "TXN"
+    },
+    {
+      "adj_score": 0.11759580310021216,
+      "earnings_penalty": 0.0,
+      "percentile": 84.9609375,
+      "rank": 78,
+      "tech_z": 0.5025461670949237,
+      "technical_penalty": 0.0,
+      "ticker": "CPAY"
+    },
+    {
+      "adj_score": 0.11684038029290443,
+      "earnings_penalty": 0.1,
+      "percentile": 84.765625,
+      "rank": 79,
+      "tech_z": 1.0121383773201045,
+      "technical_penalty": 0.02,
+      "ticker": "IBKR"
+    },
+    {
+      "adj_score": 0.11593248403152975,
+      "earnings_penalty": 0.1,
+      "percentile": 84.5703125,
+      "rank": 80,
+      "tech_z": 0.9227883932971358,
+      "technical_penalty": 0.0,
+      "ticker": "MRNA"
+    },
+    {
+      "adj_score": 0.11567142984200654,
+      "earnings_penalty": 0.0,
+      "percentile": 84.375,
+      "rank": 81,
+      "tech_z": 0.6225274779572929,
+      "technical_penalty": 0.03,
+      "ticker": "ESS"
+    },
+    {
+      "adj_score": 0.11542986168663355,
+      "earnings_penalty": 0.0,
+      "percentile": 84.1796875,
+      "rank": 82,
+      "tech_z": 0.49329000720783567,
+      "technical_penalty": 0.0,
+      "ticker": "WAT"
+    },
+    {
+      "adj_score": 0.11539110011941975,
+      "earnings_penalty": 0.0,
+      "percentile": 83.984375,
+      "rank": 83,
+      "tech_z": 0.49312435948469974,
+      "technical_penalty": 0.0,
+      "ticker": "CF"
+    },
+    {
+      "adj_score": 0.11528874882893803,
+      "earnings_penalty": 0.0,
+      "percentile": 83.7890625,
+      "rank": 84,
+      "tech_z": 0.49268696080742747,
+      "technical_penalty": 0.0,
+      "ticker": "WM"
+    },
+    {
+      "adj_score": 0.11486648575461318,
+      "earnings_penalty": 0.0,
+      "percentile": 83.59375,
+      "rank": 85,
+      "tech_z": 0.4908824177547572,
+      "technical_penalty": 0.0,
+      "ticker": "BRO"
+    },
+    {
+      "adj_score": 0.11449666112703676,
+      "earnings_penalty": 0.0,
+      "percentile": 83.3984375,
+      "rank": 86,
+      "tech_z": 0.4893019706283622,
+      "technical_penalty": 0.0,
+      "ticker": "LYV"
+    },
+    {
+      "adj_score": 0.11300639786451912,
+      "earnings_penalty": 0.0,
+      "percentile": 83.203125,
+      "rank": 87,
+      "tech_z": 0.4829333242073467,
+      "technical_penalty": 0.0,
+      "ticker": "HRL"
+    },
+    {
+      "adj_score": 0.11187458566082864,
+      "earnings_penalty": 0.0,
+      "percentile": 83.0078125,
+      "rank": 88,
+      "tech_z": 0.4780965199180711,
+      "technical_penalty": 0.0,
+      "ticker": "SHOP"
+    },
+    {
+      "adj_score": 0.11179847748080189,
+      "earnings_penalty": 0.0,
+      "percentile": 82.8125,
+      "rank": 89,
+      "tech_z": 0.47777127128547814,
+      "technical_penalty": 0.0,
+      "ticker": "ACGL"
+    },
+    {
+      "adj_score": 0.1107073724651847,
+      "earnings_penalty": 0.0,
+      "percentile": 82.6171875,
+      "rank": 90,
+      "tech_z": 0.47310842933839614,
+      "technical_penalty": 0.0,
+      "ticker": "LII"
+    },
+    {
+      "adj_score": 0.11047758956998269,
+      "earnings_penalty": 0.1,
+      "percentile": 82.421875,
+      "rank": 91,
+      "tech_z": 1.0276820067093277,
+      "technical_penalty": 0.03,
+      "ticker": "PYPL"
+    },
+    {
+      "adj_score": 0.10993850591716726,
+      "earnings_penalty": 0.0,
+      "percentile": 82.2265625,
+      "rank": 92,
+      "tech_z": 0.4698226748596892,
+      "technical_penalty": 0.0,
+      "ticker": "TTWO"
+    },
+    {
+      "adj_score": 0.10558554177310983,
+      "earnings_penalty": 0.1,
+      "percentile": 82.03125,
+      "rank": 93,
+      "tech_z": 0.8785706913380762,
+      "technical_penalty": 0.0,
+      "ticker": "TMO"
+    },
+    {
+      "adj_score": 0.1053931256806704,
+      "earnings_penalty": 0.1,
+      "percentile": 81.8359375,
+      "rank": 94,
+      "tech_z": 0.9632184858148308,
+      "technical_penalty": 0.02,
+      "ticker": "UNH"
+    },
+    {
+      "adj_score": 0.1049817743567598,
+      "earnings_penalty": 0.0,
+      "percentile": 81.640625,
+      "rank": 95,
+      "tech_z": 0.44864006135367435,
+      "technical_penalty": 0.0,
+      "ticker": "OKE"
+    },
+    {
+      "adj_score": 0.10482450936510086,
+      "earnings_penalty": 0.0,
+      "percentile": 81.4453125,
+      "rank": 96,
+      "tech_z": 0.4479679887397473,
+      "technical_penalty": 0.0,
+      "ticker": "DGX"
+    },
+    {
+      "adj_score": 0.10365306344584353,
+      "earnings_penalty": 0.1,
+      "percentile": 81.25,
+      "rank": 97,
+      "tech_z": 0.9557823224181348,
+      "technical_penalty": 0.02,
+      "ticker": "CNC"
+    },
+    {
+      "adj_score": 0.1036015445344674,
+      "earnings_penalty": 0.1,
+      "percentile": 81.0546875,
+      "rank": 98,
+      "tech_z": 0.8700920706601172,
+      "technical_penalty": 0.0,
+      "ticker": "FITB"
+    },
+    {
+      "adj_score": 0.10303303953032507,
+      "earnings_penalty": 0.0,
+      "percentile": 80.859375,
+      "rank": 99,
+      "tech_z": 0.44031213474497893,
+      "technical_penalty": 0.0,
+      "ticker": "FE"
+    },
+    {
+      "adj_score": 0.10253230799461582,
+      "earnings_penalty": 0.0,
+      "percentile": 80.6640625,
+      "rank": 100,
+      "tech_z": 0.4381722563872471,
+      "technical_penalty": 0.0,
+      "ticker": "LNT"
+    },
+    {
+      "adj_score": 0.10061803520167546,
+      "earnings_penalty": 0.0,
+      "percentile": 80.46875,
+      "rank": 101,
+      "tech_z": 0.42999160342596354,
+      "technical_penalty": 0.0,
+      "ticker": "SBUX"
+    },
+    {
+      "adj_score": 0.10034884200485444,
+      "earnings_penalty": 0.0,
+      "percentile": 80.2734375,
+      "rank": 102,
+      "tech_z": 0.42884120514895063,
+      "technical_penalty": 0.0,
+      "ticker": "MSCI"
+    },
+    {
+      "adj_score": 0.09790230813849138,
+      "earnings_penalty": 0.1,
+      "percentile": 80.078125,
+      "rank": 103,
+      "tech_z": 0.8457363595662025,
+      "technical_penalty": 0.0,
+      "ticker": "AXON"
+    },
+    {
+      "adj_score": 0.09773422183029355,
+      "earnings_penalty": 0.0,
+      "percentile": 79.8828125,
+      "rank": 104,
+      "tech_z": 0.4176676146593742,
+      "technical_penalty": 0.0,
+      "ticker": "AON"
+    },
+    {
+      "adj_score": 0.09764842575304569,
+      "earnings_penalty": 0.1,
+      "percentile": 79.6875,
+      "rank": 105,
+      "tech_z": 0.8446513921070329,
+      "technical_penalty": 0.0,
+      "ticker": "AJG"
+    },
+    {
+      "adj_score": 0.09701118113186016,
+      "earnings_penalty": 0.0,
+      "percentile": 79.4921875,
+      "rank": 106,
+      "tech_z": 0.41457769714470155,
+      "technical_penalty": 0.0,
+      "ticker": "AFL"
+    },
+    {
+      "adj_score": 0.09679084534004886,
+      "earnings_penalty": 0.0,
+      "percentile": 79.296875,
+      "rank": 107,
+      "tech_z": 0.41363609119679007,
+      "technical_penalty": 0.0,
+      "ticker": "XYL"
+    },
+    {
+      "adj_score": 0.09496351917221886,
+      "earnings_penalty": 0.0,
+      "percentile": 79.1015625,
+      "rank": 108,
+      "tech_z": 0.40582700500948227,
+      "technical_penalty": 0.0,
+      "ticker": "SPGI"
+    },
+    {
+      "adj_score": 0.0945770244095346,
+      "earnings_penalty": 0.0,
+      "percentile": 78.90625,
+      "rank": 109,
+      "tech_z": 0.4041753179894641,
+      "technical_penalty": 0.0,
+      "ticker": "MA"
+    },
+    {
+      "adj_score": 0.09373564038324622,
+      "earnings_penalty": 0.1,
+      "percentile": 78.7109375,
+      "rank": 110,
+      "tech_z": 0.8279300871078898,
+      "technical_penalty": 0.0,
+      "ticker": "WELL"
+    },
+    {
+      "adj_score": 0.09282206343076814,
+      "earnings_penalty": 0.0,
+      "percentile": 78.515625,
+      "rank": 111,
+      "tech_z": 0.48214557021695786,
+      "technical_penalty": 0.02,
+      "ticker": "BAX"
+    },
+    {
+      "adj_score": 0.09107155049433904,
+      "earnings_penalty": 0.0,
+      "percentile": 78.3203125,
+      "rank": 112,
+      "tech_z": 0.38919466023221816,
+      "technical_penalty": 0.0,
+      "ticker": "GDDY"
+    },
+    {
+      "adj_score": 0.09085931021396199,
+      "earnings_penalty": 0.1,
+      "percentile": 78.125,
+      "rank": 113,
+      "tech_z": 1.2857235479229145,
+      "technical_penalty": 0.11,
+      "ticker": "NTRS"
+    },
+    {
+      "adj_score": 0.09060925398306141,
+      "earnings_penalty": 0.0,
+      "percentile": 77.9296875,
+      "rank": 114,
+      "tech_z": 0.38721903411564706,
+      "technical_penalty": 0.0,
+      "ticker": "CI"
+    },
+    {
+      "adj_score": 0.08941042728170062,
+      "earnings_penalty": 0.1,
+      "percentile": 77.734375,
+      "rank": 115,
+      "tech_z": 1.1940616550500027,
+      "technical_penalty": 0.09,
+      "ticker": "GL"
+    },
+    {
+      "adj_score": 0.089240739791891,
+      "earnings_penalty": 0.0,
+      "percentile": 77.5390625,
+      "rank": 116,
+      "tech_z": 0.3813706828713291,
+      "technical_penalty": 0.0,
+      "ticker": "MGM"
+    },
+    {
+      "adj_score": 0.08806783824402137,
+      "earnings_penalty": 0.1,
+      "percentile": 77.34375,
+      "rank": 117,
+      "tech_z": 0.8037087104445357,
+      "technical_penalty": 0.0,
+      "ticker": "USB"
+    },
+    {
+      "adj_score": 0.08718702929732627,
+      "earnings_penalty": 0.0,
+      "percentile": 77.1484375,
+      "rank": 118,
+      "tech_z": 0.37259414229626614,
+      "technical_penalty": 0.0,
+      "ticker": "APD"
+    },
+    {
+      "adj_score": 0.08718364835969784,
+      "earnings_penalty": 0.1,
+      "percentile": 76.953125,
+      "rank": 119,
+      "tech_z": 0.8854002066653754,
+      "technical_penalty": 0.02,
+      "ticker": "VTR"
+    },
+    {
+      "adj_score": 0.08685982854467213,
+      "earnings_penalty": 0.0,
+      "percentile": 76.7578125,
+      "rank": 120,
+      "tech_z": 0.37119584848150483,
+      "technical_penalty": 0.0,
+      "ticker": "NWS"
+    }
+  ],
+  "scoreable_count": 513
+}
