@@ -1,0 +1,33 @@
+{
+ "run_date": "2026-07-15",
+ "fetched_at": "2026-07-15T19:40:55.003361Z",
+ "primary": "api.nasdaq.com historical (Yahoo v8 bulk 429-blocked; single-quote probe OK 19:37Z)",
+ "summary": {
+  "ok": 519,
+  "fail": 0,
+  "by_source": {
+   "nasdaq_historical": 518,
+   "ibkr": 1
+  }
+ },
+ "macro": {
+  "VIX": {
+   "source": "cdn.cboe.com VIX_History.csv",
+   "last_date": "2026-07-14",
+   "last_close": 16.5
+  },
+  "rf_13wk_tbill": {
+   "source": "home.treasury.gov daily_treasury_bill_rates",
+   "date": "2026-07-14",
+   "bank_discount_pct": 3.71
+  }
+ },
+ "stragglers": {
+  "BF-B": {
+   "source": "ibkr_conid_4931",
+   "rows": 1252,
+   "last_date": "2026-07-14"
+  }
+ },
+ "note": "all 519 fetched symbols ended 2026-07-14; SATS fetched as ECHO (rename)"
+}

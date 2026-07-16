@@ -1,0 +1,288 @@
+{
+ "run_date": "2026-07-15",
+ "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date",
+ "symbols": {
+  "ABBV": {
+   "date": "2026-07-31",
+   "days": 16,
+   "raw": "Earnings announcement* for ABBV: Jul 31, 2026"
+  },
+  "AMP": {
+   "date": "2026-07-23",
+   "days": 8,
+   "raw": "Earnings announcement* for AMP: Jul 23, 2026"
+  },
+  "ANET": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for ANET: Aug 04, 2026"
+  },
+  "AXON": {
+   "date": "2026-08-03",
+   "days": 19,
+   "raw": "Earnings announcement* for AXON: Aug 3, 2026"
+  },
+  "AXP": {
+   "date": "2026-07-24",
+   "days": 9,
+   "raw": "Earnings announcement* for AXP: Jul 24, 2026"
+  },
+  "BAC": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for BAC:"
+  },
+  "BBY": {
+   "date": "2026-08-27",
+   "days": 43,
+   "raw": "Earnings announcement* for BBY: Aug 27, 2026"
+  },
+  "BEN": {
+   "date": "2026-07-31",
+   "days": 16,
+   "raw": "Earnings announcement* for BEN: Jul 31, 2026"
+  },
+  "BNY": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for BNY:"
+  },
+  "CRL": {
+   "date": "2026-08-05",
+   "days": 21,
+   "raw": "Earnings announcement* for CRL: Aug 5, 2026"
+  },
+  "CRWD": {
+   "date": "2026-08-26",
+   "days": 42,
+   "raw": "Earnings announcement* for CRWD: Aug 26, 2026"
+  },
+  "CSX": {
+   "date": "2026-07-22",
+   "days": 7,
+   "raw": "Earnings announcement* for CSX: Jul 22, 2026"
+  },
+  "CVS": {
+   "date": "2026-08-05",
+   "days": 21,
+   "raw": "Earnings announcement* for CVS: Aug 05, 2026"
+  },
+  "DDOG": {
+   "date": "2026-08-06",
+   "days": 22,
+   "raw": "Earnings announcement* for DDOG: Aug 6, 2026"
+  },
+  "DOC": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for DOC: Aug 04, 2026"
+  },
+  "DVA": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for DVA: Aug 4, 2026"
+  },
+  "EBAY": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for EBAY: Jul 29, 2026"
+  },
+  "ELV": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for ELV:"
+  },
+  "ESS": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for ESS: Jul 29, 2026"
+  },
+  "EXPD": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for EXPD: Aug 04, 2026"
+  },
+  "FAST": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for FAST:"
+  },
+  "FFIV": {
+   "date": "2026-07-27",
+   "days": 12,
+   "raw": "Earnings announcement* for FFIV: Jul 27, 2026"
+  },
+  "FTNT": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for FTNT: Jul 29, 2026"
+  },
+  "GE": {
+   "date": "2026-07-16",
+   "days": 1,
+   "raw": "Earnings announcement* for GE: Jul 16, 2026"
+  },
+  "GEN": {
+   "date": "2026-08-06",
+   "days": 22,
+   "raw": "Earnings announcement* for GEN: Aug 6, 2026"
+  },
+  "GS": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for GS:"
+  },
+  "GWW": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for GWW: Aug 04, 2026"
+  },
+  "HUM": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for HUM: Jul 29, 2026"
+  },
+  "IQV": {
+   "date": "2026-07-28",
+   "days": 13,
+   "raw": "Earnings announcement* for IQV: Jul 28, 2026"
+  },
+  "JPM": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for JPM:"
+  },
+  "LII": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for LII: Jul 29, 2026"
+  },
+  "LIN": {
+   "date": "2026-07-31",
+   "days": 16,
+   "raw": "Earnings announcement* for LIN: Jul 31, 2026"
+  },
+  "LLY": {
+   "date": "2026-08-05",
+   "days": 21,
+   "raw": "Earnings announcement* for LLY: Aug 05, 2026"
+  },
+  "MAS": {
+   "date": "2026-07-29",
+   "days": 14,
+   "raw": "Earnings announcement* for MAS: Jul 29, 2026"
+  },
+  "MET": {
+   "date": "2026-08-05",
+   "days": 21,
+   "raw": "Earnings announcement* for MET: Aug 05, 2026"
+  },
+  "MNST": {
+   "date": "2026-08-06",
+   "days": 22,
+   "raw": "Earnings announcement* for MNST: Aug 6, 2026"
+  },
+  "MPC": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for MPC: Aug 04, 2026"
+  },
+  "MRNA": {
+   "date": "2026-07-31",
+   "days": 16,
+   "raw": "Earnings announcement* for MRNA: Jul 31, 2026"
+  },
+  "MS": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for MS:"
+  },
+  "MTB": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for MTB:"
+  },
+  "NTAP": {
+   "date": "2026-08-26",
+   "days": 42,
+   "raw": "Earnings announcement* for NTAP: Aug 26, 2026"
+  },
+  "NTRS": {
+   "date": "2026-07-22",
+   "days": 7,
+   "raw": "Earnings announcement* for NTRS: Jul 22, 2026"
+  },
+  "PANW": {
+   "date": "2026-08-17",
+   "days": 33,
+   "raw": "Earnings announcement* for PANW: Aug 17, 2026"
+  },
+  "PNC": {
+   "date": null,
+   "days": null,
+   "raw": "Earnings announcement* for PNC:"
+  },
+  "RVTY": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for RVTY: Aug 04, 2026"
+  },
+  "STT": {
+   "date": "2026-07-16",
+   "days": 1,
+   "raw": "Earnings announcement* for STT: Jul 16, 2026"
+  },
+  "TROW": {
+   "date": "2026-07-31",
+   "days": 16,
+   "raw": "Earnings announcement* for TROW: Jul 31, 2026"
+  },
+  "UNH": {
+   "date": "2026-07-16",
+   "days": 1,
+   "raw": "Earnings announcement* for UNH: Jul 16, 2026"
+  },
+  "UNP": {
+   "date": "2026-07-23",
+   "days": 8,
+   "raw": "Earnings announcement* for UNP: Jul 23, 2026"
+  },
+  "V": {
+   "date": "2026-07-28",
+   "days": 13,
+   "raw": "Earnings announcement* for V: Jul 28, 2026"
+  },
+  "VLO": {
+   "date": "2026-07-30",
+   "days": 15,
+   "raw": "Earnings announcement* for VLO: Jul 30, 2026"
+  },
+  "WAT": {
+   "date": "2026-08-04",
+   "days": 20,
+   "raw": "Earnings announcement* for WAT: Aug 04, 2026"
+  },
+  "WST": {
+   "date": "2026-07-23",
+   "days": 8,
+   "raw": "Earnings announcement* for WST: Jul 23, 2026"
+  },
+  "XYZ": {
+   "date": "2026-08-05",
+   "days": 21,
+   "raw": "Earnings announcement* for XYZ: Aug 05, 2026"
+  }
+ },
+ "vendor_empty_treated_as_print_week": [
+  "BAC",
+  "BNY",
+  "ELV",
+  "FAST",
+  "GS",
+  "JPM",
+  "MS",
+  "MTB",
+  "PNC"
+ ],
+ "note": "vendor-empty announcement = at/just-printed this week; tagged ESTIMATED (+-5d) and penalized on the buffered window"
+}
