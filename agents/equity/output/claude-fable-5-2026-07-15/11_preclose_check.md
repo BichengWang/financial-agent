@@ -1,0 +1,3 @@
+# 11 Preclose Check — 2026-07-15
+
+Run executed inside the 15:45–16:00 ET window; this file records the pre-close state from the same IBKR observations (L016 lineage, ~15:48 ET): SPY +0.23% intraday holding above both MAs; the growth complex soft (QQQ −0.44%, SOXX −2.35% intraday — watch whether the MA50 reclaim survives the close); banks trading post-print (GS +1.13%, BAC +1.32%, MS −0.76% at observation). NO_TRADE run, no positions, no stop criteria to evaluate. Tomorrow's pre-open run settles nothing (next due vintage: claude-fable-5 07-01, target 07-29) and executes the STT/UNH/GE post-print re-evaluation binding.
