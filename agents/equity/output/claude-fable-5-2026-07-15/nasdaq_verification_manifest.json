@@ -1,0 +1,110 @@
+{
+ "run_date": "2026-07-15",
+ "retrieved_at": "~2026-07-15T19:48Z (intraday, is_close=false)",
+ "tool": "IBKR MCP get_price_snapshot",
+ "method": "priorClose where returned; last minus change during RTH otherwise (both equal the 07-14 close)",
+ "results": {
+  "GS": {
+   "conid": 4627828,
+   "ibkr": 1140.0,
+   "nasdaq": 1140.0,
+   "match": "exact"
+  },
+  "FCX": {
+   "conid": 7089,
+   "ibkr": 61.8,
+   "nasdaq": 61.95,
+   "match": "0.24% gap = $0.15 ex-dividend adjustment; settled at unadjusted 61.95"
+  },
+  "JPM": {
+   "conid": 1520593,
+   "ibkr": 342.89,
+   "nasdaq": 342.89,
+   "match": "exact"
+  },
+  "CAT": {
+   "conid": 5437,
+   "ibkr": 933.34,
+   "nasdaq": 933.34,
+   "match": "exact (last-change)"
+  },
+  "BAC": {
+   "conid": 10098,
+   "ibkr": 60.62,
+   "nasdaq": 60.62,
+   "match": "exact"
+  },
+  "GE": {
+   "conid": 498843743,
+   "ibkr": 353.73,
+   "nasdaq": 353.73,
+   "match": "exact"
+  },
+  "GOOGL": {
+   "conid": 208813719,
+   "ibkr": 359.51,
+   "nasdaq": 359.51,
+   "match": "exact (last-change)"
+  },
+  "LLY": {
+   "conid": 9160,
+   "ibkr": 1152.54,
+   "nasdaq": 1152.54,
+   "match": "exact"
+  },
+  "UNH": {
+   "conid": 13272,
+   "ibkr": 425.19,
+   "nasdaq": 425.19,
+   "match": "exact (last-change)"
+  },
+  "ETN": {
+   "conid": 118017869,
+   "ibkr": 415.52,
+   "nasdaq": 415.52,
+   "match": "exact"
+  },
+  "HD": {
+   "conid": 7930,
+   "ibkr": 337.74,
+   "nasdaq": 337.74,
+   "match": "exact (last-change)"
+  },
+  "SO": {
+   "conid": 12300,
+   "ibkr": 95.96,
+   "nasdaq": 95.96,
+   "match": "exact"
+  },
+  "AAPL": {
+   "conid": 265598,
+   "ibkr": 314.86,
+   "nasdaq": 314.86,
+   "match": "exact (last-change)"
+  },
+  "CVX": {
+   "conid": 5684,
+   "ibkr": 181.76,
+   "nasdaq": 181.76,
+   "match": "exact (last-change)"
+  },
+  "SPY": {
+   "conid": 756733,
+   "ibkr": 751.83,
+   "nasdaq": 751.83,
+   "match": "exact (last-change)"
+  },
+  "QQQ": {
+   "conid": 320227571,
+   "ibkr": 719.69,
+   "nasdaq": 719.69,
+   "match": "exact (last-change)"
+  },
+  "SOXX": {
+   "conid": 12658194,
+   "ibkr": 567.92,
+   "nasdaq": 567.92,
+   "match": "exact"
+  }
+ }
+}
