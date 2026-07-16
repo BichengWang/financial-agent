@@ -1,0 +1,22 @@
+{
+ "fetched_at": "2026-07-13T12:15:02.957150+00:00",
+ "source": "Nasdaq historical API (api.nasdaq.com/api/quote/{sym}/historical), 5y daily",
+ "requested": 519,
+ "succeeded": 516,
+ "failed": 3,
+ "elapsed_sec": 49.8,
+ "failures": [
+  [
+   "BRK-B",
+   "empty rows"
+  ],
+  [
+   "BF-B",
+   "empty rows"
+  ],
+  [
+   "SATS",
+   "empty rows"
+  ]
+ ]
+}
