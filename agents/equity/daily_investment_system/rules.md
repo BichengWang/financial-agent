@@ -451,6 +451,16 @@ Scoring use:
 - If fewer than two sourceable metrics support a family, mark that family `UNAVAILABLE`; for final arithmetic set its displayed contribution to `0.00 (UNAVAILABLE)`, lower the data-quality multiplier, and do not count it toward the "3 of 4 families supportive" threshold.
 - The score trace must name at least three positive drivers and three negative drivers when available. If fewer exist, state `INSUFFICIENT_SOURCEABLE_DRIVERS` rather than filling with weak claims.
 
+### SHADOW Diagnostic Tooling — Fundamental and Sentiment Families
+
+`Fund_Z` and `Sent_Z` are `UNAVAILABLE` universe-wide today because no fetch path is wired for them, which structurally blocks evidence threshold #2 (≥3 of 4 families non-negative) — see `agents/equity/plan/2026-07-15-claude-fable-5-top-priority.md`. Phase 1 of that plan (fetch/parse/z-score tooling, published as diagnostics only) is implemented:
+
+- `agents/equity/daily_investment_system/fundamental_diagnostics.py` — free SEC EDGAR XBRL `companyfacts` (revenue growth/acceleration, margin trend, ROE, leverage, accrual ratio; FCF yield vs EV only when `--prices-json` is supplied).
+- `agents/equity/daily_investment_system/sentiment_diagnostics.py` — free Nasdaq analyst consensus/target-price and short-interest endpoints (analyst tilt, target-price momentum, short-interest change).
+- `agents/equity/daily_investment_system/factor_scoring.py` — the shared winsorize/z-score/composite helper both tools use, per `§ Family Aggregation` above.
+
+Both emit `"gating_status": "SHADOW"` on every record. **A run may cite these outputs as diagnostics in `01_preflight.md` / `05_factor_scores.md` but must not fold `fund_z`/`sent_z` into `Adj Score`, the evidence-threshold count, or the confidence label** until a run explicitly promotes the family: log the promotion as a Track B change with a `HUMAN_REVIEW` flag in `13_evolution_log.md`, per `§ Evolution Policy`, after at least one full shadow run. Promotion does not change the 0.30/0.25 family weights or any other protected rule — it only makes an already-reserved slot start counting.
+
 ## Data Quality Multiplier
 
 After computing the base composite score per `§ Financial Metrics and Score Attribution`, multiply it by a data quality factor:
