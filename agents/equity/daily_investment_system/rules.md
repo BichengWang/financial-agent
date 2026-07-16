@@ -158,6 +158,30 @@ Interpretation rules:
 - CI coverage **above 85%** → intervals are uninformatively wide: tighten.
 - Rank IC ≤ 0 over ≥ 20 settled predictions → the composite score is not predictive; freeze confidence at `MEDIUM` cap until a corrective change passes evolution policy.
 
+### Canonical Settlement Ledger
+
+Prediction source ledgers are immutable and every model's daily run independently re-scans prior packages for due predictions, so the same logical settlement accumulates duplicate, sometimes conflicting rows across packages. `agents/equity/daily_investment_system/settlement_ledger.py` is the single normalizer, timing validator, and precedence resolver for this data. Reflection, the Rolling Calibration Metrics above, and due inventory ("what is still OPEN") must be computed from its output, not re-derived by hand from raw `15_predictions.json` files.
+
+Run it before Reflection on any run that settles predictions:
+
+```bash
+python3 agents/equity/daily_investment_system/settlement_ledger.py \
+  --output-dir agents/equity/output \
+  --manifest-out agents/equity/output/{model-name}-{YYYY-MM-DD}/settlement_manifest.json
+```
+
+Contract:
+
+1. Canonical key: `(model, vintage, ticker, type, target_date)`, where `vintage` is the settled prediction's own `run_date` and a missing `type` normalizes to `EQUITY_ALPHA`.
+2. A settlement candidate is timing-valid only when its price is the close of `target_date` itself, or one of the two documented exceptions above applies (`WEEKEND_TARGET`, `TARGET_EQ_RUN_DATE`). Intraday or same-day-as-target prints are never valid, and this is re-validated for every historical candidate, not only new ones.
+3. Among timing-valid, complete candidates for a key, the earliest one (by the settlement's own run date, i.e. settled the moment it became due) is canonical. Later, lower-priority re-settlements are kept only as audit-only lineage and never override an earlier valid settlement. Same-tier candidates that materially disagree on price or direction make the key an unresolved conflict: excluded from calibration and reported separately, not silently picked.
+4. Due inventory is `source prediction keys - canonical keys - conflicted keys`, filtered to `target_date <= as_of`. It is never read from a prediction's `status` field, which this system never mutates. A conflicted key needs manual reconciliation, not another automated settlement attempt, so treat it as neither due nor settled until resolved.
+5. A key can have zero valid candidates — most commonly pre-2026-07-12 settlements that used the settlement day's "current price" instead of the target date's own close, a violation distinct from (and stricter than) the two named exceptions. Report these as due, not settled; do not loosen the validator to make old data fit without a Track A/B change logged in `13_evolution_log.md`.
+6. The manifest's `rolling_metrics` block is the source for the `§ Rolling Calibration Metrics` table above — `EQUITY_ALPHA` and `MARKET_FORECAST` stay separate, exactly as required there.
+7. New `settlements` rows should be written with the canonical field names the module documents as primary (`settle_price`, `settle_price_date`; see the source for the full list) rather than inventing another spelling. The normalizer's alias fallbacks exist to reconcile pre-existing packages, not as a standing license for schema drift going forward.
+
+This is a Track B process fix: it changes how settlement rows are counted and deduplicated, not any scoring formula, factor weight, forecast prior, or protected risk limit.
+
 ### mu Calibration Table
 
 `mu` may not be free-handed per name. It is drawn from the calibration table below (prior), then adjusted by at most ±2 percentage points with a stated, ledger-backed reason:
