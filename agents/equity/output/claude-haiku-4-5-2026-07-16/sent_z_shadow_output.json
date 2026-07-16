@@ -1,0 +1,915 @@
+{
+  "fetch_failures": {},
+  "gating_status": "SHADOW",
+  "generated_at": "2026-07-16T22:25:19.746096+00:00",
+  "note": "Diagnostic only per agents/equity/plan/2026-07-15-claude-fable-5-top-priority.md Phase 1 -- Sent_Z is NOT wired into the 3-of-4 evidence-threshold gate or Adj Score until a future run explicitly promotes it per the Evolution Policy (HUMAN_REVIEW + logged shadow run).",
+  "records": {
+    "ABBV": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 18.0,
+          "hold": 4.0,
+          "sell": 0.0,
+          "total": 22.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 273.25,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 214.98,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.8181818181818182,
+        "short_interest_change": null,
+        "target_price_momentum": 0.27104846962508145
+      },
+      "sent_z": -0.04349306425562627,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.7580899963364431,
+        "short_interest_change": null,
+        "target_price_momentum": -0.8450761248476957
+      }
+    },
+    "ANET": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 18.0,
+          "hold": 0.0,
+          "sell": 0.0,
+          "total": 18.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 191.88,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 124.85,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 1.0,
+        "short_interest_change": null,
+        "target_price_momentum": 0.536884261113336
+      },
+      "sent_z": 0.7085321995212571,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.1979096147055461,
+        "short_interest_change": null,
+        "target_price_momentum": 0.21915478433696803
+      }
+    },
+    "CRL": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 11.0,
+          "hold": 1.0,
+          "sell": 0.0,
+          "total": 12.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 230.2,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 174.9,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.9166666666666666,
+        "short_interest_change": null,
+        "target_price_momentum": 0.31618067467124056
+      },
+      "sent_z": 0.2229339063111419,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.1102644009001088,
+        "short_interest_change": null,
+        "target_price_momentum": -0.664396588277825
+      }
+    },
+    "CRWD": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 29.0,
+          "hold": 6.0,
+          "sell": 1.0,
+          "total": 36.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 7135732.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 7723613.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 185.87,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 98.3275,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.7777777777777778,
+        "short_interest_change": -0.07611476649593918,
+        "target_price_momentum": 0.8903155271922911
+      },
+      "sent_z": 0.8524004048042017,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.6136081893359646,
+        "short_interest_change": 0.3095329131772927,
+        "target_price_momentum": 1.6340601118993476
+      }
+    },
+    "CVS": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 16.0,
+          "hold": 1.0,
+          "sell": 0.0,
+          "total": 17.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 110.13,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 72.49,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.9411764705882353,
+        "short_interest_change": null,
+        "target_price_momentum": 0.5192440336598152
+      },
+      "sent_z": 0.6732222903551806,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.1979096147055461,
+        "short_interest_change": null,
+        "target_price_momentum": 0.14853496600481486
+      }
+    },
+    "DDOG": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 34.0,
+          "hold": 1.0,
+          "sell": 1.0,
+          "total": 36.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 14725487.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 14614591.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 250.12,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 118.67,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.9166666666666666,
+        "short_interest_change": 0.007588033082827961,
+        "target_price_momentum": 1.107693604112244
+      },
+      "sent_z": 1.0390896867189257,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.1102644009001088,
+        "short_interest_change": -0.4792757547283776,
+        "target_price_momentum": 2.4862804139850456
+      }
+    },
+    "DOC": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 4.0,
+          "hold": 9.0,
+          "sell": 0.0,
+          "total": 13.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 21.96,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 16.38,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.3076923076923077,
+        "short_interest_change": null,
+        "target_price_momentum": 0.3406593406593408
+      },
+      "sent_z": -0.8168911222133501,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -1.067382065188832,
+        "short_interest_change": null,
+        "target_price_momentum": -0.5664001792378685
+      }
+    },
+    "DVA": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 2.0,
+          "hold": 3.0,
+          "sell": 0.0,
+          "total": 5.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 231.8,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 150.34,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.4,
+        "short_interest_change": null,
+        "target_price_momentum": 0.541838499401357
+      },
+      "sent_z": -0.24915421211879177,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.7372967061185082,
+        "short_interest_change": null,
+        "target_price_momentum": 0.23898828188092464
+      }
+    },
+    "ELV": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 13.0,
+          "hold": 6.0,
+          "sell": 0.0,
+          "total": 19.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 447.28,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 298.5,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.6842105263157895,
+        "short_interest_change": null,
+        "target_price_momentum": 0.4984254606365157
+      },
+      "sent_z": 0.17210494651897573,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.2790187415453831,
+        "short_interest_change": null,
+        "target_price_momentum": 0.06519115149256838
+      }
+    },
+    "EXPD": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 4.0,
+          "hold": 1.0,
+          "sell": 3.0,
+          "total": 8.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 168.38,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 144.31,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.125,
+        "short_interest_change": null,
+        "target_price_momentum": 0.16679370798974436
+      },
+      "sent_z": -1.4915596645719251,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -1.720676005015514,
+        "short_interest_change": null,
+        "target_price_momentum": -1.2624433241283364
+      }
+    },
+    "FFIV": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 4.0,
+          "hold": 4.0,
+          "sell": 1.0,
+          "total": 9.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 1564617.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 1384552.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 409.25,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 295.65,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.3333333333333333,
+        "short_interest_change": 0.1300528979771074,
+        "target_price_momentum": 0.38423811939793695
+      },
+      "sent_z": -1.000335444039974,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.9756916876692976,
+        "short_interest_change": -1.6333751089751771,
+        "target_price_momentum": -0.39193953547544785
+      }
+    },
+    "FTNT": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 7.0,
+          "hold": 20.0,
+          "sell": 5.0,
+          "total": 32.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 15056605.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 18802691.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 120.38,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 81.15,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.0625,
+        "short_interest_change": -0.19923137597698115,
+        "target_price_momentum": 0.48342575477510774
+      },
+      "sent_z": -0.08191983664632184,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -1.720676005015514,
+        "short_interest_change": 1.4697742576787327,
+        "target_price_momentum": 0.005142237397815861
+      }
+    },
+    "GEN": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 2.0,
+          "hold": 4.0,
+          "sell": 0.0,
+          "total": 6.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 30137249.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 30200183.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 30.33,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 18.71,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.3333333333333333,
+        "short_interest_change": -0.002083894657194607,
+        "target_price_momentum": 0.6210582576162478
+      },
+      "sent_z": -0.2692293612304228,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.9756916876692976,
+        "short_interest_change": -0.3881282605575563,
+        "target_price_momentum": 0.5561318645355856
+      }
+    },
+    "GS": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 6.0,
+          "hold": 7.0,
+          "sell": 1.0,
+          "total": 14.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 1158.77,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 860.21,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.35714285714285715,
+        "short_interest_change": null,
+        "target_price_momentum": 0.34707803908347956
+      },
+      "sent_z": -0.7156272867496751,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.89055062282973,
+        "short_interest_change": null,
+        "target_price_momentum": -0.5407039506696202
+      }
+    },
+    "LIN": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 16.0,
+          "hold": 1.0,
+          "sell": 0.0,
+          "total": 17.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 6565651.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 7601128.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 563.81,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 493.83,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.9411764705882353,
+        "short_interest_change": -0.13622675476587154,
+        "target_price_momentum": 0.1417086851750602
+      },
+      "sent_z": 0.27049663405530633,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.1979096147055461,
+        "short_interest_change": 0.8760236115887092,
+        "target_price_momentum": -1.2624433241283364
+      }
+    },
+    "LLY": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 19.0,
+          "hold": 2.0,
+          "sell": 0.0,
+          "total": 21.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 1344.95,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 954.52,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.9047619047619048,
+        "short_interest_change": null,
+        "target_price_momentum": 0.40903281230356625
+      },
+      "sent_z": 0.3875079525342704,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.0676938684803252,
+        "short_interest_change": null,
+        "target_price_momentum": -0.29267796341178437
+      }
+    },
+    "MNST": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 11.0,
+          "hold": 6.0,
+          "sell": 0.0,
+          "total": 17.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 20118217.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 22338822.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 96.94,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 72.77,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.6470588235294118,
+        "short_interest_change": -0.0994056445769611,
+        "target_price_momentum": 0.3321423663597636
+      },
+      "sent_z": 0.024898288646909173,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.14616704904029934,
+        "short_interest_change": 0.5290243352790776,
+        "target_price_momentum": -0.6004965183786494
+      }
+    },
+    "MPC": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 9.0,
+          "hold": 4.0,
+          "sell": 1.0,
+          "total": 14.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 288.43,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 238.16,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.5714285714285714,
+        "short_interest_change": null,
+        "target_price_momentum": 0.21107658716829025
+      },
+      "sent_z": -0.6047224832885462,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.12428103927362155,
+        "short_interest_change": null,
+        "target_price_momentum": -1.0851639273034708
+      }
+    },
+    "MS": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 8.0,
+          "hold": 5.0,
+          "sell": 1.0,
+          "total": 14.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 234.92,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 166.17,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.5,
+        "short_interest_change": null,
+        "target_price_momentum": 0.4137329241138594
+      },
+      "sent_z": -0.3267830271058598,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -0.37970423379232426,
+        "short_interest_change": null,
+        "target_price_momentum": -0.27386182041939544
+      }
+    },
+    "NTAP": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 5.0,
+          "hold": 8.0,
+          "sell": 1.0,
+          "total": 14.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 15037225.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 17157931.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 171.31,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 102.04,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.2857142857142857,
+        "short_interest_change": -0.12359916822138983,
+        "target_price_momentum": 0.6788514308114464
+      },
+      "sent_z": 0.13284865194423767,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -1.1459738173484328,
+        "short_interest_change": 0.7570222189095698,
+        "target_price_momentum": 0.7874975542715761
+      }
+    },
+    "PANW": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 36.0,
+          "hold": 5.0,
+          "sell": 0.0,
+          "total": 41.0
+        },
+        "short_interest_change": {
+          "latest": {
+            "date": "2026-06-30",
+            "interest": 25002502.0
+          },
+          "prior": {
+            "date": "2026-06-15",
+            "interest": 22532962.0
+          }
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 337.92,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 160.67,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "analyst_tilt": 0.8780487804878049,
+        "short_interest_change": 0.10959677649125754,
+        "target_price_momentum": 1.1031928798157717
+      },
+      "sent_z": 0.6726173161885934,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.9721697469530054,
+        "short_interest_change": -1.4405982123722707,
+        "target_price_momentum": 2.4862804139850456
+      }
+    },
+    "RVTY": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 3.0,
+          "hold": 7.0,
+          "sell": 0.0,
+          "total": 10.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 110.25,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 87.92,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.3,
+        "short_interest_change": null,
+        "target_price_momentum": 0.25398089171974525
+      },
+      "sent_z": -1.0041463055508988,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": -1.0948891784446924,
+        "short_interest_change": null,
+        "target_price_momentum": -0.9134034326571053
+      }
+    },
+    "STT": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 9.0,
+          "hold": 5.0,
+          "sell": 0.0,
+          "total": 14.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 179.68,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 128.25,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.6428571428571429,
+        "short_interest_change": null,
+        "target_price_momentum": 0.4010136452241715
+      },
+      "sent_z": -0.0968196280141846,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 0.13114215524508158,
+        "short_interest_change": null,
+        "target_price_momentum": -0.3247814112734508
+      }
+    },
+    "WST": {
+      "gating_status": "SHADOW",
+      "lineage": {
+        "analyst_tilt": {
+          "buy": 9.0,
+          "hold": 1.0,
+          "sell": 0.0,
+          "total": 10.0
+        },
+        "target_price_momentum": {
+          "latest": {
+            "target": 399.63,
+            "ts": 1782864000
+          },
+          "prior": {
+            "target": 252.74,
+            "ts": 1775001600
+          }
+        }
+      },
+      "n_signals_available": 2,
+      "raw_signals": {
+        "analyst_tilt": 0.9,
+        "short_interest_change": null,
+        "target_price_momentum": 0.5811901558914299
+      },
+      "sent_z": 0.7235959879658496,
+      "sourceable": true,
+      "z_signals": {
+        "analyst_tilt": 1.0506656555124116,
+        "short_interest_change": null,
+        "target_price_momentum": 0.3965263204192875
+      }
+    }
+  },
+  "universe_sourceable_pct": 100.0
+}
