@@ -461,6 +461,8 @@ Scoring use:
 
 Both emit `"gating_status": "SHADOW"` on every record. **A run may cite these outputs as diagnostics in `01_preflight.md` / `05_factor_scores.md` but must not fold `fund_z`/`sent_z` into `Adj Score`, the evidence-threshold count, or the confidence label** until a run explicitly promotes the family: log the promotion as a Track B change with a `HUMAN_REVIEW` flag in `13_evolution_log.md`, per `§ Evolution Policy`, after at least one full shadow run. Promotion does not change the 0.30/0.25 family weights or any other protected rule — it only makes an already-reserved slot start counting.
 
+**Shadow-run status (`agents/equity/output/claude-haiku-4-5-2026-07-16/13_evolution_log.md`, logged 2026-07-16):** the required shadow run has executed — 24 real names, 100% sourceable for both families, zero fabrication/lineage violations, the plan's "at least one name satisfies 3-of-4 non-negative families" condition cleared (15 of 24). A stale-XBRL-tag bug was found and fixed during that run (see `fundamental_diagnostics.py`'s module docstring and `_MAX_TAG_STALENESS_DAYS`). **Fund_Z/Sent_Z are still not promoted**: this run covered ~4.7% of the eligible universe, far short of the 70%-of-universe threshold `§ Financial Metrics and Score Attribution` already requires before any metric may contribute to `Adj Score` — that is unaffected by this shadow run and is not a bar this plan can waive. Promotion needs the plan's Phase 2 (bulk `companyfacts.zip` + threaded Nasdaq fetch across the full ~514-name universe), not yet attempted.
+
 ## Data Quality Multiplier
 
 After computing the base composite score per `§ Financial Metrics and Score Attribution`, multiply it by a data quality factor:
