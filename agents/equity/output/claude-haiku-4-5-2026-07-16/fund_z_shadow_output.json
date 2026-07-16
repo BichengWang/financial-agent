@@ -1,0 +1,1842 @@
+{
+  "fetch_failures": {},
+  "gating_status": "SHADOW",
+  "generated_at": "2026-07-16T22:34:53.953895+00:00",
+  "note": "Diagnostic only per agents/equity/plan/2026-07-15-claude-fable-5-top-priority.md Phase 1 -- Fund_Z is NOT wired into the 3-of-4 evidence-threshold gate or Adj Score until a future run explicitly promotes it per the Evolution Policy (HUMAN_REVIEW + logged shadow run).",
+  "records": {
+    "ABBV": {
+      "fund_z": 0.08180203451329252,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "Revenues",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "derived:Assets-StockholdersEquity"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "Revenues",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001551152-26-000017",
+            "end": "2026-03-31",
+            "filed": "2026-05-08",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 15002000000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0001551152-25-000029",
+            "end": "2025-03-31",
+            "filed": "2025-05-09",
+            "form": "10-Q",
+            "fp": "Q1",
+            "fy": 2025,
+            "start": "2025-01-01",
+            "val": 13343000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-12-31",
+            "2025-09-30",
+            "2025-06-30"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": -0.054989264489275484,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.016285716323102384,
+        "leverage": -21.50225360576923,
+        "operating_margin_trend": 0.0010267787254922278,
+        "revenue_accel": -0.12111219365959691,
+        "revenue_yoy_growth": 0.12433485722850923,
+        "roe": -1.0630209094896914
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.43760861988091426,
+        "fcf_yield": null,
+        "gross_margin_trend": 1.2812804806743758,
+        "leverage": 2.8587815913644623,
+        "operating_margin_trend": 0.2749947025909126,
+        "revenue_accel": -1.3304520041970624,
+        "revenue_yoy_growth": -0.3510326313293997,
+        "roe": -2.598566517391155
+      }
+    },
+    "ANET": {
+      "fund_z": 0.222530020015178,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001596532-26-000078",
+            "end": "2026-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 2709000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001596532-26-000078",
+            "end": "2025-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 2004800000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": 0.004053979174843581,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.022530433351983015,
+        "leverage": 0.6057195394117342,
+        "operating_margin_trend": -0.006261594481765109,
+        "revenue_accel": 0.07661226912553354,
+        "revenue_yoy_growth": 0.3512569832402235,
+        "roe": 0.29345557573794423
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.4483692774140081,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.5744815699729073,
+        "leverage": 0.12454223350553059,
+        "operating_margin_trend": 0.12473840655777266,
+        "revenue_accel": 0.4342254143457734,
+        "revenue_yoy_growth": 1.56569892414525,
+        "roe": 0.33135600893883477
+      }
+    },
+    "CRL": {
+      "fund_z": -0.24773870068212234,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-28",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001100682-26-000038",
+            "end": "2026-03-28",
+            "filed": "2026-05-07",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2025-12-28",
+            "val": 995830000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001100682-26-000038",
+            "end": "2025-03-29",
+            "filed": "2026-05-07",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2024-12-29",
+            "val": 984168000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-28",
+            "2025-09-27",
+            "2025-06-28",
+            "2025-03-29"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.05135435742017006,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.6125976588403568,
+        "operating_margin_trend": 0.004129206714909808,
+        "revenue_accel": 0.01671312039217765,
+        "revenue_yoy_growth": 0.011849602913323709,
+        "roe": 0.03729761205863123
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.38306474454322587,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.4952572550681692e-05,
+        "operating_margin_trend": 0.33895401492898725,
+        "revenue_accel": -0.703733641170388,
+        "revenue_yoy_growth": -1.282799674588924,
+        "roe": -0.22193260037818588
+      }
+    },
+    "CRWD": {
+      "fund_z": 0.6039364165079654,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-04-30",
+          "liabilities_tag": "Liabilities"
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-04-30",
+            "2025-10-31",
+            "2025-07-31",
+            "2025-04-30"
+          ]
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "accrual_ratio": -0.1718249172589418,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.4231642315926816,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": -0.04626748855886445
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 2.1907949210741635,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.023443438262909087,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": -0.4024291098131764
+      }
+    },
+    "CVS": {
+      "fund_z": -0.15304642928308565,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "Revenues",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000064803-26-000052",
+            "end": "2026-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 100426000000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0000064803-26-000052",
+            "end": "2025-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 94588000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.06520828227406769,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 2.2636980995662053,
+        "operating_margin_trend": 0.037882862623449365,
+        "revenue_accel": -0.016275673236985533,
+        "revenue_yoy_growth": 0.061720302786822945,
+        "roe": 0.02283721380824749
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.590950870874006,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -0.08051094816294793,
+        "operating_margin_trend": 1.0348156523852248,
+        "revenue_accel": -1.3304520041970624,
+        "revenue_yoy_growth": -0.8799157968439429,
+        "roe": -0.2531663497537913
+      }
+    },
+    "DDOG": {
+      "fund_z": 0.35930890418822975,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001628280-26-032328",
+            "end": "2026-03-31",
+            "filed": "2026-05-07",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 1006426000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001628280-26-032328",
+            "end": "2025-03-31",
+            "filed": "2026-05-07",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 761553000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": -0.1404235205577896,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.008250338021100978,
+        "leverage": 0.7431356629595844,
+        "operating_margin_trend": -0.02210750701914462,
+        "revenue_accel": 0.03802185439353756,
+        "revenue_yoy_growth": 0.32154426546806336,
+        "roe": 0.03166713043008617
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 1.7195988672178353,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.1082357839249207,
+        "leverage": 0.10754707203407578,
+        "operating_margin_trend": -0.20193917394276062,
+        "revenue_accel": -0.2989120814120695,
+        "revenue_yoy_growth": 1.3147260254078577,
+        "roe": -0.23409416391225107
+      }
+    },
+    "DOC": {
+      "fund_z": 0.7002371598996457,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001628280-26-031287",
+            "end": "2026-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 200345000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001628280-26-031287",
+            "end": "2025-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 148927000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 5,
+      "raw_signals": {
+        "accrual_ratio": -0.03799419186282526,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.6043636523470641,
+        "operating_margin_trend": null,
+        "revenue_accel": 0.29196087066690257,
+        "revenue_yoy_growth": 0.34525640078696274,
+        "roe": 0.01917078594230382
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.18258776100646779,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.0010333066513701704,
+        "operating_margin_trend": null,
+        "revenue_accel": 2.063636275360815,
+        "revenue_yoy_growth": 1.5150141101893,
+        "roe": -0.26108565370972364
+      }
+    },
+    "DVA": {
+      "fund_z": -0.3639734866163238,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "Revenues",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000927066-26-000062",
+            "end": "2026-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 3415548000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0000927066-26-000062",
+            "end": "2025-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 3223529000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": 0.009377654560608342,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -21.7753621461927,
+        "operating_margin_trend": -0.022804768092906352,
+        "revenue_accel": 0.011572639782353011,
+        "revenue_yoy_growth": 0.05956794556524847,
+        "roe": -1.2622837025798819
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.5282540945658636,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 2.8587815913644623,
+        "operating_margin_trend": -0.21631383113062339,
+        "revenue_accel": -0.8013920650938268,
+        "revenue_yoy_growth": -0.8980960028809363,
+        "roe": -2.598566517391155
+      }
+    },
+    "ELV": {
+      "fund_z": -0.5095922146303976,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-06-30",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "Revenues",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001156039-26-000060",
+            "end": "2026-06-30",
+            "filed": "2026-07-15",
+            "form": "10-Q",
+            "fp": "Q2",
+            "frame": "CY2026Q2",
+            "fy": 2026,
+            "start": "2026-04-01",
+            "val": 50474000000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0001156039-26-000060",
+            "end": "2025-06-30",
+            "filed": "2026-07-15",
+            "form": "10-Q",
+            "fp": "Q2",
+            "frame": "CY2025Q2",
+            "fy": 2026,
+            "start": "2025-04-01",
+            "val": 49776000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-06-30",
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.01728119710846423,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.8139607423746185,
+        "operating_margin_trend": -0.02990923499156125,
+        "revenue_accel": -0.012362402030754671,
+        "revenue_yoy_growth": 0.01402282224365159,
+        "roe": 0.13877091195854221
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.1282226620039081,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -0.02488895266578307,
+        "operating_margin_trend": -0.362778735043473,
+        "revenue_accel": -1.2561080026546623,
+        "revenue_yoy_growth": -1.282799674588924,
+        "roe": -0.0027552608256352523
+      }
+    },
+    "EXPD": {
+      "fund_z": 0.10001073144052064,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "derived:Assets-StockholdersEquity"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001193125-26-208834",
+            "end": "2026-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 2782962000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001193125-26-208834",
+            "end": "2025-03-31",
+            "filed": "2026-05-06",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 2666419000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.0404044185307256,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.0932160727027582,
+        "operating_margin_trend": 0.005436750042435712,
+        "revenue_accel": 0.07883281722038216,
+        "revenue_yoy_growth": 0.043707684351184106,
+        "roe": 0.3746815652035706
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.21875460115126477,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.06425031079552615,
+        "operating_margin_trend": 0.3659101835704694,
+        "revenue_accel": 0.47641120272802134,
+        "revenue_yoy_growth": -1.0320620628741277,
+        "roe": 0.5068001532719699
+      }
+    },
+    "FFIV": {
+      "fund_z": -0.16554572555570232,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "derived:Assets-StockholdersEquity"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001048695-26-000051",
+            "end": "2026-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q2",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 811700000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001048695-26-000051",
+            "end": "2025-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q2",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 731123000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-12-31",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": -0.010287385617052294,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.002589728326466312,
+        "leverage": 0.7803366145373092,
+        "operating_margin_trend": -0.04701326492952923,
+        "revenue_accel": 0.03718081234781012,
+        "revenue_yoy_growth": 0.11020990996043079,
+        "roe": 0.18317868463403122
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.23316883390610965,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.378863982310391,
+        "leverage": 0.10294618414237906,
+        "operating_margin_trend": -0.7153935247416681,
+        "revenue_accel": -0.3148901283834184,
+        "revenue_yoy_growth": -0.47034110346465463,
+        "roe": 0.09316334515316443
+      }
+    },
+    "FTNT": {
+      "fund_z": 0.46198689270146304,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001262039-26-000013",
+            "end": "2026-03-31",
+            "filed": "2026-05-08",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 1849600000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001262039-26-000013",
+            "end": "2025-03-31",
+            "filed": "2026-05-08",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 1539700000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": -0.17728537461425609,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.022412783684367388,
+        "leverage": 8.98635950287966,
+        "operating_margin_trend": 0.0013341164172522846,
+        "revenue_accel": 0.05751592996614585,
+        "revenue_yoy_growth": 0.20127297525491983,
+        "roe": 1.2339923281203895
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 2.1907949210741635,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.568856854738143,
+        "leverage": -0.9119469770467412,
+        "operating_margin_trend": 0.2813307424563325,
+        "revenue_accel": 0.0714347481483439,
+        "revenue_yoy_growth": 0.2988366486386605,
+        "roe": 1.8723150203776249
+      }
+    },
+    "GEN": {
+      "fund_z": -0.28235318069307386,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-04-03",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000849399-26-000004",
+            "end": "2026-01-02",
+            "filed": "2026-02-06",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2025Q4",
+            "fy": 2026,
+            "start": "2025-10-04",
+            "val": 1240000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0000849399-26-000004",
+            "end": "2024-12-27",
+            "filed": "2026-02-06",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2024Q4",
+            "fy": 2026,
+            "start": "2024-09-28",
+            "val": 986000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-01-02",
+            "2025-10-03",
+            "2025-07-04",
+            "2024-12-27"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.01695038749420419,
+        "leverage": 4.970509383378016,
+        "operating_margin_trend": -0.06353745777306752,
+        "revenue_accel": 0.005039755759274511,
+        "revenue_yoy_growth": 0.2576064908722109,
+        "roe": 0.2491961414790997
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.30770504962204565,
+        "leverage": -0.41528021434093687,
+        "operating_margin_trend": -1.0560544570242094,
+        "revenue_accel": -0.9255032534813704,
+        "revenue_yoy_growth": 0.7746660836621617,
+        "roe": 0.2357578066479573
+      }
+    },
+    "GS": {
+      "fund_z": -0.9693630594215752,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "accrual_ratio": 0.07404935491073596,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 15.77916958511834,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": 0.14735213344242906
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -1.4986902280656482,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -1.4251787059423786,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": 0.015779755743301222
+      }
+    },
+    "LIN": {
+      "fund_z": 0.012677157063220285,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001628280-26-029165",
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 8781000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001628280-26-029165",
+            "end": "2025-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 8112000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.014956844117476685,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 1.1985427578696262,
+        "operating_margin_trend": 0.02811782085968395,
+        "revenue_accel": 0.05147472248265772,
+        "revenue_yoy_growth": 0.0824704142011834,
+        "roe": 0.1874651340797343
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.16310091813836525,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.05122386254878392,
+        "operating_margin_trend": 0.8335006312812974,
+        "revenue_accel": -0.04333561015324332,
+        "revenue_yoy_growth": -0.7046468884014658,
+        "roe": 0.10242186524231481
+      }
+    },
+    "LLY": {
+      "fund_z": 0.15828839713254866,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "derived:Assets-StockholdersEquity"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000059478-26-000045",
+            "end": "2026-03-31",
+            "filed": "2026-04-30",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 19799000000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0000059478-26-000045",
+            "end": "2025-03-31",
+            "filed": "2026-04-30",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 12729000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 5,
+      "raw_signals": {
+        "accrual_ratio": 0.09922882926159758,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 2.7366497852426437,
+        "operating_margin_trend": null,
+        "revenue_accel": 0.016772104575005553,
+        "revenue_yoy_growth": 0.5554246209443003,
+        "roe": 0.8650863436889161
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -1.4986902280656482,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -0.1390040133051102,
+        "operating_margin_trend": null,
+        "revenue_accel": -0.7026130645611939,
+        "revenue_yoy_growth": 1.56569892414525,
+        "roe": 1.5660503674494457
+      }
+    },
+    "MNST": {
+      "fund_z": 0.6438121998193118,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "ProfitLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "derived:Assets-StockholdersEquity"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001104659-26-057398",
+            "end": "2026-03-31",
+            "filed": "2026-05-08",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 2353291000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001104659-26-057398",
+            "end": "2025-03-31",
+            "filed": "2026-05-08",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 1854558000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "ProfitLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-06-30"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": 0.0036150579336089077,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.018058732282870693,
+        "leverage": 0.24252200203161783,
+        "operating_margin_trend": 0.05504361477930558,
+        "revenue_accel": 0.10083642708177432,
+        "revenue_yoy_growth": 0.26892283767884306,
+        "roe": 0.2602693660437813
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.4417830112427359,
+        "fcf_yield": null,
+        "gross_margin_trend": 1.3660466349908589,
+        "leverage": 0.1694612767330922,
+        "operating_margin_trend": 1.388599821054599,
+        "revenue_accel": 0.8944339563948426,
+        "revenue_yoy_growth": 0.8702512934351698,
+        "roe": 0.25967542736935656
+      }
+    },
+    "MPC": {
+      "fund_z": -0.04650982932668237,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001510295-26-000042",
+            "end": "2026-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 34200000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001510295-26-000042",
+            "end": "2025-03-31",
+            "filed": "2026-05-05",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 31517000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": 0.00564709084105367,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 3.8655763146899065,
+        "operating_margin_trend": 0.0026272463281426864,
+        "revenue_accel": 0.09361699638233967,
+        "revenue_yoy_growth": 0.08512866072278458,
+        "roe": 0.18114270305899272
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.47227483606207715,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -0.27862582886800086,
+        "operating_margin_trend": 0.30798976569441017,
+        "revenue_accel": 0.7572798112388842,
+        "revenue_yoy_growth": -0.6821936129993101,
+        "roe": 0.08876572503599957
+      }
+    },
+    "MS": {
+      "fund_z": -0.7930057568230372,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-03-31"
+          ]
+        }
+      },
+      "n_signals_available": 3,
+      "raw_signals": {
+        "accrual_ratio": 0.04345530403726276,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 12.827765430586423,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": 0.16209826043960984
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -1.0396088636201184,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -1.3870390720151087,
+        "operating_margin_trend": null,
+        "revenue_accel": null,
+        "revenue_yoy_growth": null,
+        "roe": 0.04763066516611542
+      }
+    },
+    "NTAP": {
+      "fund_z": 0.15804864392917398,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-04-24",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001193125-26-076622",
+            "end": "2026-01-23",
+            "filed": "2026-02-26",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2025Q4",
+            "fy": 2026,
+            "start": "2025-10-25",
+            "val": 1713000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001193125-26-076622",
+            "end": "2025-01-24",
+            "filed": "2026-02-26",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2024Q4",
+            "fy": 2026,
+            "start": "2024-10-26",
+            "val": 1641000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-01-23",
+            "2025-10-24",
+            "2025-07-25",
+            "2025-01-24"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.0041121009635392,
+        "leverage": 6.9526276831976315,
+        "operating_margin_trend": 0.04527465764180391,
+        "revenue_accel": 0.015528279043714566,
+        "revenue_yoy_growth": 0.04387568555758681,
+        "roe": 1.0068787618228718
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.3060808394569137,
+        "leverage": -0.6604219028941712,
+        "operating_margin_trend": 1.1872040810387186,
+        "revenue_accel": -0.7262431587569496,
+        "revenue_yoy_growth": -1.0306430156470925,
+        "roe": 1.8723150203776249
+      }
+    },
+    "PANW": {
+      "fund_z": -0.38606976165926454,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-04-30",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0001327567-26-000015",
+            "end": "2026-04-30",
+            "filed": "2026-06-03",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-02-01",
+            "val": 3002000000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0001327567-26-000015",
+            "end": "2025-04-30",
+            "filed": "2026-06-03",
+            "form": "10-Q",
+            "fp": "Q3",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-02-01",
+            "val": 2289000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-04-30",
+            "2026-01-31",
+            "2025-10-31",
+            "2025-04-30"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.059053822337316486,
+        "leverage": 0.672184473037444,
+        "operating_margin_trend": -0.167738270483981,
+        "revenue_accel": 0.16238013839866428,
+        "revenue_yoy_growth": 0.3114897335080822,
+        "roe": 0.046849971100652296
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": null,
+        "fcf_yield": null,
+        "gross_margin_trend": -2.3206289804543596,
+        "leverage": 0.1163220752737702,
+        "operating_margin_trend": -3.2042468884977544,
+        "revenue_accel": 2.063636275360815,
+        "revenue_yoy_growth": 1.229798922784866,
+        "roe": -0.20129997442292447
+      }
+    },
+    "RVTY": {
+      "fund_z": -0.2563221484176328,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-04-05",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000031791-26-000019",
+            "end": "2026-04-05",
+            "filed": "2026-05-12",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2025-12-29",
+            "val": 711118000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0000031791-26-000019",
+            "end": "2025-03-30",
+            "filed": "2026-05-12",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2024-12-30",
+            "val": 664762000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-04-05",
+            "2025-09-28",
+            "2025-06-29",
+            "2025-06-29"
+          ]
+        }
+      },
+      "n_signals_available": 6,
+      "raw_signals": {
+        "accrual_ratio": -0.026994087486527422,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.6701971211817664,
+        "operating_margin_trend": -0.03677168140340245,
+        "revenue_accel": 0.047951162512033685,
+        "revenue_yoy_growth": 0.06973322783191582,
+        "roe": 0.02649667305723552
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": 0.01752485557433207,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 0.11656786423081406,
+        "operating_margin_trend": -0.5042541713647684,
+        "revenue_accel": -0.11027590999081056,
+        "revenue_yoy_growth": -0.8122334312874445,
+        "roe": -0.24526209766791945
+      }
+    },
+    "STT": {
+      "fund_z": -0.42371729982316503,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "Revenues"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000093751-26-000196",
+            "end": "2026-03-31",
+            "filed": "2026-04-29",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 3796000000
+          },
+          "tag": "Revenues",
+          "year_ago": {
+            "accn": "0000093751-26-000196",
+            "end": "2025-03-31",
+            "filed": "2026-04-29",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 3284000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-06-30"
+          ]
+        }
+      },
+      "n_signals_available": 5,
+      "raw_signals": {
+        "accrual_ratio": 0.028574707074828197,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": 13.136147357796842,
+        "operating_margin_trend": null,
+        "revenue_accel": 0.06815044929454239,
+        "revenue_yoy_growth": 0.1559074299634593,
+        "roe": 0.10939344947228832
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.8163169306384128,
+        "fcf_yield": null,
+        "gross_margin_trend": null,
+        "leverage": -1.4251787059423786,
+        "operating_margin_trend": null,
+        "revenue_accel": 0.27346846359698224,
+        "revenue_yoy_growth": -0.08435019047533612,
+        "roe": -0.06620913565667971
+      }
+    },
+    "WST": {
+      "fund_z": 0.2747444209494846,
+      "gating_status": "SHADOW",
+      "lineage": {
+        "accrual_ratio": {
+          "assets_tag": "Assets",
+          "ni_tag": "NetIncomeLoss",
+          "ocf_tag": "NetCashProvidedByUsedInOperatingActivities"
+        },
+        "gross_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "GrossProfit"
+        },
+        "leverage": {
+          "as_of": "2026-03-31",
+          "liabilities_tag": "Liabilities"
+        },
+        "operating_margin_trend": {
+          "revenue_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "OperatingIncomeLoss"
+        },
+        "revenue_accel": {
+          "derived_from": "revenue_yoy_growth",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+        },
+        "revenue_yoy_growth": {
+          "latest": {
+            "accn": "0000105770-26-000049",
+            "end": "2026-03-31",
+            "filed": "2026-04-23",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "fy": 2026,
+            "start": "2026-01-01",
+            "val": 844900000
+          },
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "year_ago": {
+            "accn": "0000105770-26-000049",
+            "end": "2025-03-31",
+            "filed": "2026-04-23",
+            "form": "10-Q",
+            "fp": "Q1",
+            "frame": "CY2025Q1",
+            "fy": 2026,
+            "start": "2025-01-01",
+            "val": 698000000
+          }
+        },
+        "roe": {
+          "equity_tag": "StockholdersEquity",
+          "ni_tag": "NetIncomeLoss",
+          "ttm_quarters": [
+            "2026-03-31",
+            "2025-09-30",
+            "2025-06-30",
+            "2025-06-30"
+          ]
+        }
+      },
+      "n_signals_available": 7,
+      "raw_signals": {
+        "accrual_ratio": 0.018370723636186675,
+        "fcf_yield": null,
+        "gross_margin_trend": -0.003587432306502325,
+        "leverage": 0.3743311931514179,
+        "operating_margin_trend": -0.0063486936282228235,
+        "revenue_accel": 0.13320580845910945,
+        "revenue_yoy_growth": 0.21045845272206298,
+        "roe": 0.183258721175775
+      },
+      "sourceable": true,
+      "z_signals": {
+        "accrual_ratio": -0.6632002786734769,
+        "fcf_yield": null,
+        "gross_margin_trend": 0.3311647334299953,
+        "leverage": 0.15315956170383066,
+        "operating_margin_trend": 0.12294278018653351,
+        "revenue_accel": 1.5093847768775797,
+        "revenue_yoy_growth": 0.3764231529730407,
+        "roe": 0.0933362201488893
+      }
+    }
+  },
+  "universe_sourceable_pct": 100.0
+}

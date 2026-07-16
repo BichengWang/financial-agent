@@ -18,9 +18,10 @@ from free, unauthenticated companyfacts data):
   - gross_margin_trend, operating_margin_trend: margin now vs 4 quarters ago.
   - roe: trailing-twelve-month net income / average stockholders' equity.
   - leverage: total liabilities / stockholders' equity (a leverage proxy;
-    used in place of a debt/equity tag because reporting of "debt" alone is
-    not consistently tagged across filers, while Liabilities and
-    StockholdersEquity are close to universal).
+    liabilities prefers the raw `Liabilities` tag but derives it from
+    `Assets - StockholdersEquity` when that tag is absent or stale, since
+    some filers stop reporting it as a discrete concept -- see FFIV in the
+    regression tests).
   - accrual_ratio: (net income - operating cash flow) / total assets, lower
     is higher quality (per rules.md's "accrual quality" signal).
 
@@ -32,8 +33,16 @@ computed, it is an *approximation*: TTM operating cash flow stands in for
 free cash flow (capex is not uniformly tagged across filers) and EV does
 not net out cash -- both disclosed in that signal's lineage.
 
-A signal is UNAVAILABLE for a name when SEC has no matching tag or fewer
-than 6 quarters of history -- never guessed, never interpolated.
+A signal is UNAVAILABLE for a name when SEC has no matching tag, fewer than
+6 quarters of history, or the only history available for every tag synonym
+is stale (see `_MAX_TAG_STALENESS_DAYS`) -- never guessed, never
+interpolated, and never silently computed from a dated filing. XBRL tag
+usage drifts over a company's filing history (e.g. CVS's
+RevenueFromContractWithCustomerExcludingAssessedTax tag has no rows after
+2019-09-30, even though the company obviously keeps reporting revenue under
+a different tag) -- picking "the first tag with any matching-shape data" and
+trusting its most recent row without checking recency would silently
+compute today's diagnostic from a 2019 filing.
 """
 
 from __future__ import annotations
@@ -51,6 +60,13 @@ import factor_scoring
 SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 SEC_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
 SEC_CONTACT_USER_AGENT = "financial-agent-daily-research contact@example.com"
+
+# A tag's most recent row must be within this many days of `as_of` to be
+# trusted -- normal cadence is a new quarter every ~90 days with up to ~90
+# days of filing lag for a 10-K, so anything beyond this means the filer has
+# very likely stopped using this specific tag, not that a filing is merely
+# late.
+_MAX_TAG_STALENESS_DAYS = 200
 
 _REVENUE_TAGS = (
     "RevenueFromContractWithCustomerExcludingAssessedTax",
@@ -114,12 +130,12 @@ def fetch_companyfacts(cik: int) -> dict[str, Any]:
 
 
 def _quarterly_series(
-    facts: dict[str, Any], tags: tuple[str, ...]
+    facts: dict[str, Any], tags: tuple[str, ...], as_of: dt.date
 ) -> tuple[str, list[dict[str, Any]]]:
-    """Duration (flow) rows covering ~one fiscal quarter, newest first.
-    Returns (tag_used, rows); tag_used is "" when no tag had any quarterly
-    (80-100 day duration) row -- distinguishing "no data" from "only
-    year-to-date data available", both of which leave the series empty.
+    """Duration (flow) rows covering ~one fiscal quarter, newest first, for
+    the first tag (in priority order) whose most recent quarterly row is not
+    stale relative to `as_of`. Returns (tag_used, rows); tag_used is "" when
+    no tag has any quarterly (80-100 day duration) row that is fresh enough.
     """
     usgaap = facts.get("facts", {}).get("us-gaap", {})
     for tag in tags:
@@ -135,16 +151,23 @@ def _quarterly_series(
             days = (dt.date.fromisoformat(end) - dt.date.fromisoformat(start)).days
             if 80 <= days <= 100:
                 quarterly.append(r)
-        if quarterly:
-            quarterly.sort(key=lambda r: r["end"], reverse=True)
+        if not quarterly:
+            continue
+        quarterly.sort(key=lambda r: r["end"], reverse=True)
+        most_recent = dt.date.fromisoformat(quarterly[0]["end"])
+        if (as_of - most_recent).days <= _MAX_TAG_STALENESS_DAYS:
             return tag, quarterly
+        # This tag's newest row is too old to trust -- the filer has very
+        # likely moved to a different tag. Fall through to the next synonym
+        # instead of silently returning a dated figure.
     return "", []
 
 
 def _instant_series(
-    facts: dict[str, Any], tags: tuple[str, ...]
+    facts: dict[str, Any], tags: tuple[str, ...], as_of: dt.date
 ) -> tuple[str, list[dict[str, Any]]]:
-    """Point-in-time (balance sheet) rows, newest first."""
+    """Point-in-time (balance sheet) rows, newest first, for the first tag
+    (in priority order) whose most recent reading is not stale."""
     usgaap = facts.get("facts", {}).get("us-gaap", {})
     for tag in tags:
         entry = usgaap.get(tag)
@@ -155,14 +178,46 @@ def _instant_series(
             for r in entry.get("units", {}).get("USD", [])
             if r.get("end") and "start" not in r
         ]
-        if rows:
-            rows.sort(key=lambda r: r["end"], reverse=True)
+        if not rows:
+            continue
+        rows.sort(key=lambda r: r["end"], reverse=True)
+        most_recent = dt.date.fromisoformat(rows[0]["end"])
+        if (as_of - most_recent).days <= _MAX_TAG_STALENESS_DAYS:
             return tag, rows
     return "", []
 
 
 def _align_by_end(series: list[dict[str, Any]]) -> dict[str, float]:
     return {r["end"]: r["val"] for r in series}
+
+
+def _derive_liabilities(
+    facts: dict[str, Any], as_of: dt.date
+) -> tuple[str, list[dict[str, Any]]]:
+    """Prefer the raw Liabilities tag; if it is absent or stale (some filers
+    stop reporting it as a discrete concept -- see FFIV in the regression
+    tests, whose Liabilities tag has no rows after 2019), derive it from the
+    accounting identity Liabilities = Assets - StockholdersEquity using
+    whichever fresh, same-end-date Assets/Equity readings are available.
+    """
+    tag, rows = _instant_series(facts, _LIABILITIES_TAGS, as_of)
+    if rows:
+        return tag, rows
+
+    _, assets_rows = _instant_series(facts, _ASSETS_TAGS, as_of)
+    _, equity_rows = _instant_series(facts, _EQUITY_TAGS, as_of)
+    if not assets_rows or not equity_rows:
+        return "", []
+    assets_by_end = _align_by_end(assets_rows)
+    equity_by_end = _align_by_end(equity_rows)
+    common_ends = sorted(set(assets_by_end) & set(equity_by_end), reverse=True)
+    if not common_ends:
+        return "", []
+    derived = [
+        {"end": end, "val": assets_by_end[end] - equity_by_end[end]}
+        for end in common_ends
+    ]
+    return "derived:Assets-StockholdersEquity", derived
 
 
 def _margin_trend(
@@ -191,19 +246,24 @@ def _margin_trend(
 
 
 def compute_fundamental_signals(
-    facts: dict[str, Any], price: float | None = None
+    facts: dict[str, Any],
+    price: float | None = None,
+    as_of: dt.date | None = None,
 ) -> dict[str, Any]:
     """Returns {"values": {signal: float|None}, "lineage": {...}}. A signal
     absent from "values" (or None) is UNAVAILABLE -- never guessed.
     """
-    rev_tag, revenue_q = _quarterly_series(facts, _REVENUE_TAGS)
-    gp_tag, gp_q = _quarterly_series(facts, _GROSS_PROFIT_TAGS)
-    oi_tag, oi_q = _quarterly_series(facts, _OPERATING_INCOME_TAGS)
-    ni_tag, ni_q = _quarterly_series(facts, _NET_INCOME_TAGS)
-    ocf_tag, ocf_q = _quarterly_series(facts, _OCF_TAGS)
-    assets_tag, assets_i = _instant_series(facts, _ASSETS_TAGS)
-    _, liab_i = _instant_series(facts, _LIABILITIES_TAGS)
-    equity_tag, equity_i = _instant_series(facts, _EQUITY_TAGS)
+    if as_of is None:
+        as_of = dt.date.today()
+
+    rev_tag, revenue_q = _quarterly_series(facts, _REVENUE_TAGS, as_of)
+    gp_tag, gp_q = _quarterly_series(facts, _GROSS_PROFIT_TAGS, as_of)
+    oi_tag, oi_q = _quarterly_series(facts, _OPERATING_INCOME_TAGS, as_of)
+    ni_tag, ni_q = _quarterly_series(facts, _NET_INCOME_TAGS, as_of)
+    ocf_tag, ocf_q = _quarterly_series(facts, _OCF_TAGS, as_of)
+    assets_tag, assets_i = _instant_series(facts, _ASSETS_TAGS, as_of)
+    liab_tag, liab_i = _derive_liabilities(facts, as_of)
+    equity_tag, equity_i = _instant_series(facts, _EQUITY_TAGS, as_of)
 
     values: dict[str, float | None] = {}
     lineage: dict[str, Any] = {}
@@ -250,7 +310,7 @@ def compute_fundamental_signals(
     # -- Leverage: total liabilities / stockholders' equity --
     if liab_i and equity_i and equity_i[0]["val"]:
         values["leverage"] = liab_i[0]["val"] / equity_i[0]["val"]
-        lineage["leverage"] = {"as_of": liab_i[0]["end"]}
+        lineage["leverage"] = {"as_of": liab_i[0]["end"], "liabilities_tag": liab_tag}
 
     # -- Accrual ratio: (net income - operating cash flow) / total assets --
     if len(ni_q) >= 4 and len(ocf_q) >= 4 and assets_i and assets_i[0]["val"]:
@@ -266,7 +326,7 @@ def compute_fundamental_signals(
     # -- FCF yield vs EV: requires a live price, not fetched by this script --
     if price is not None and len(ocf_q) >= 4 and liab_i:
         ttm_ocf = sum(r["val"] for r in ocf_q[:4])
-        shares_tag, shares = _instant_series(facts, _SHARES_TAGS)
+        shares_tag, shares = _instant_series(facts, _SHARES_TAGS, as_of)
         dei_shares = (
             facts.get("facts", {})
             .get("dei", {})
@@ -293,6 +353,7 @@ def compute_fundamental_signals(
                     "price": price,
                     "share_count": share_count,
                     "share_count_source": share_source,
+                    "liabilities_tag": liab_tag,
                 }
 
     return {"values": values, "lineage": lineage}
@@ -317,6 +378,12 @@ def parse_args() -> argparse.Namespace:
         help="Optional {ticker: price} JSON for the FCF-yield-vs-EV signal.",
     )
     parser.add_argument(
+        "--as-of",
+        type=str,
+        default=None,
+        help="Reference date (YYYY-MM-DD) for tag-staleness checks. Default: today.",
+    )
+    parser.add_argument(
         "--output", type=Path, help="Output JSON path. Defaults to stdout."
     )
     return parser.parse_args()
@@ -328,6 +395,8 @@ def main() -> None:
     if not tickers:
         print("No tickers given (use --tickers or --tickers-file).", file=sys.stderr)
         sys.exit(1)
+
+    as_of = dt.date.fromisoformat(args.as_of) if args.as_of else dt.date.today()
 
     prices: dict[str, float] = {}
     if args.prices_json:
@@ -374,7 +443,9 @@ def main() -> None:
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as exc:
             fetch_failures[ticker] = f"companyfacts fetch failed: {exc}"
             continue
-        result = compute_fundamental_signals(facts, price=prices.get(ticker))
+        result = compute_fundamental_signals(
+            facts, price=prices.get(ticker), as_of=as_of
+        )
         per_ticker_values[ticker] = {s: result["values"].get(s) for s in SIGNAL_NAMES}
         per_ticker_lineage[ticker] = result["lineage"]
         print(
