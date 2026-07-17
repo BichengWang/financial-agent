@@ -1,0 +1,767 @@
+{
+  "errors": [],
+  "generated_at": "2026-07-17T18:47:41Z",
+  "records": {
+    "AAPL": {
+      "company_name": "Apple Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 334.2,
+        "bid": 334.18,
+        "divergence_pct": 0.01047436194459284,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 334.19,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/AAPL/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 334.2250061035156,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "AAPL"
+    },
+    "ADP": {
+      "company_name": "Automatic Data Processing, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 254.7,
+        "bid": 254.6,
+        "divergence_pct": 2.3972959770324723e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 254.6,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/ADP/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 254.60000610351562,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/ADP?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "ADP"
+    },
+    "AFL": {
+      "company_name": "AFLAC Incorporated Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 124.5,
+        "bid": 124.48,
+        "divergence_pct": 1.7157099392083632e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 124.51,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/AFL/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 124.51000213623047,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/AFL?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "AFL"
+    },
+    "BAC": {
+      "company_name": "Bank of America Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 61.18,
+        "bid": 61.17,
+        "divergence_pct": 1.2471425501271766e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 61.175,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/BAC/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 61.17499923706055,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/BAC?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "BAC"
+    },
+    "BBY": {
+      "company_name": "Best Buy Co., Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 84.96,
+        "bid": 84.95,
+        "divergence_pct": 3.5924165628700386e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 84.95,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/BBY/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 84.94999694824219,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/BBY?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "BBY"
+    },
+    "CHRW": {
+      "company_name": "C.H. Robinson Worldwide, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 207.32,
+        "bid": 207.06,
+        "divergence_pct": 5.890855721172547e-07,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 207.22,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/CHRW/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 207.22000122070312,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/CHRW?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "CHRW"
+    },
+    "CRWD": {
+      "company_name": "CrowdStrike Holdings, Inc. Class A Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 203.98,
+        "bid": 203.9,
+        "divergence_pct": 5.506613665101726e-07,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 203.9451,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/CRWD/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 203.94509887695312,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/CRWD?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "CRWD"
+    },
+    "DDOG": {
+      "company_name": "Datadog, Inc. Class A Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 258.35,
+        "bid": 258.19,
+        "divergence_pct": 3.3082665659498906e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 258.29,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/DDOG/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 258.2900085449219,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/DDOG?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "DDOG"
+    },
+    "DELL": {
+      "company_name": "Dell Technologies Inc. Class C Common Stock ",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 401.61,
+        "bid": 401.08,
+        "divergence_pct": 6.081621773739244e-07,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 401.44,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/DELL/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 401.44000244140625,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/DELL?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "DELL"
+    },
+    "DG": {
+      "company_name": "Dollar General Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 125.54,
+        "bid": 125.38,
+        "divergence_pct": 7.297364425615274e-07,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 125.46,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/DG/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 125.45999908447266,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/DG?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "DG"
+    },
+    "DLTR": {
+      "company_name": "Dollar Tree Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 126.71,
+        "bid": 126.65,
+        "divergence_pct": 2.1691533698576353e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 126.62,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/DLTR/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 126.62000274658203,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/DLTR?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "DLTR"
+    },
+    "DOC": {
+      "company_name": "Healthpeak Properties, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 22.34,
+        "bid": 22.33,
+        "divergence_pct": 0.022390491434922062,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 22.33,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/DOC/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 22.325000762939453,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/DOC?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "DOC"
+    },
+    "EXPD": {
+      "company_name": "Expeditors International of Washington, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 182.62,
+        "bid": 182.52,
+        "divergence_pct": 4.011731724767052e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 182.57,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/EXPD/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 182.57000732421875,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/EXPD?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "EXPD"
+    },
+    "FRT": {
+      "company_name": "Federal Realty Investment Trust Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 125.68,
+        "bid": 125.59,
+        "divergence_pct": 1.7003465956719315e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 125.635,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/FRT/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 125.63500213623047,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/FRT?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "FRT"
+    },
+    "GEN": {
+      "company_name": "Gen Digital Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 26.75,
+        "bid": 26.74,
+        "divergence_pct": 3.1379075874950676e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 26.745,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/GEN/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 26.7450008392334,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/GEN?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "GEN"
+    },
+    "HPQ": {
+      "company_name": "HP Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 24.99,
+        "bid": 24.98,
+        "divergence_pct": 1.5274062952076807e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 24.975,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/HPQ/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 24.975000381469727,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/HPQ?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "HPQ"
+    },
+    "INCY": {
+      "company_name": "Incyte Corp. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 117.19,
+        "bid": 117.11,
+        "divergence_pct": 2.604444442587158e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 117.175,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/INCY/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 117.17500305175781,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/INCY?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "INCY"
+    },
+    "IQV": {
+      "company_name": "IQVIA Holdings, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 206.69,
+        "bid": 206.48,
+        "divergence_pct": 2.0675365400086326e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 206.645,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/IQV/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 206.64500427246094,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/IQV?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "IQV"
+    },
+    "MNST": {
+      "company_name": "Monster Beverage Corporation",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 97.33,
+        "bid": 97.31,
+        "divergence_pct": 3.349372165814295e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 97.3101,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:39Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/MNST/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 97.31009674072266,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/MNST?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "MNST"
+    },
+    "MO": {
+      "company_name": "Altria Group, Inc.",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 74.14,
+        "bid": 74.12,
+        "divergence_pct": 3.705088462949108e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 74.13,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/MO/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 74.12999725341797,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/MO?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "MO"
+    },
+    "MPC": {
+      "company_name": "Marathon Petroleum Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 311.63,
+        "bid": 311.44,
+        "divergence_pct": 2.743901782927681e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 311.415,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/MPC/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 311.4150085449219,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/MPC?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "MPC"
+    },
+    "NTAP": {
+      "company_name": "NetApp, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 163.55,
+        "bid": 163.37,
+        "divergence_pct": 1.86594788912211e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 163.55,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/NTAP/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 163.5500030517578,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/NTAP?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "NTAP"
+    },
+    "PANW": {
+      "company_name": "Palo Alto Networks, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 356.98,
+        "bid": 356.72,
+        "divergence_pct": 2.3949442955837637e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 356.79,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/PANW/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 356.7900085449219,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/PANW?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "PANW"
+    },
+    "PM": {
+      "company_name": "Philip Morris International Inc Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 191.7,
+        "bid": 191.59,
+        "divergence_pct": 3.185550904733321e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 191.6,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/PM/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 191.60000610351562,
+        "yahoo_retrieved_at": "2026-07-17T18:47:38Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/PM?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "PM"
+    },
+    "PSX": {
+      "company_name": "Phillips 66 Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 206.47,
+        "bid": 206.37,
+        "divergence_pct": 2.3660476630868388e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 206.37,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/PSX/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 206.3699951171875,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/PSX?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "PSX"
+    },
+    "QQQ": {
+      "company_name": "Invesco QQQ Trust, Series 1",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 696.74,
+        "bid": 696.7,
+        "divergence_pct": 0.0559749581853985,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 696.7499,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/QQQ/info?assetclass=etf",
+        "nasdaq_timestamp": "Jul 17, 2026 2:46 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 697.1400146484375,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "QQQ"
+    },
+    "SOXX": {
+      "company_name": "iShares PHLX SOX Semiconductor Sector Index Fund",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 523.05,
+        "bid": 522.88,
+        "divergence_pct": 0.10320519846608898,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 522.95,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/SOXX/info?assetclass=etf",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 523.489990234375,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/SOXX?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "SOXX"
+    },
+    "SPY": {
+      "company_name": "State Street SPDR S&P 500 ETF Trust",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 743.62,
+        "bid": 743.59,
+        "divergence_pct": 0.02485829683407965,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 743.625,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/SPY/info?assetclass=etf",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 743.8098754882812,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "SPY"
+    },
+    "TGT": {
+      "company_name": "Target Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 138.92,
+        "bid": 138.81,
+        "divergence_pct": 3.955758430675046e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 138.865,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/TGT/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 138.86500549316406,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/TGT?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "TGT"
+    },
+    "TRGP": {
+      "company_name": "Targa Resources, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 282.21,
+        "bid": 281.98,
+        "divergence_pct": 2.163216611121306e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 282.15,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/TRGP/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 282.1499938964844,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/TRGP?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "TRGP"
+    },
+    "UNP": {
+      "company_name": "Union Pacific Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 299.94,
+        "bid": 299.81,
+        "divergence_pct": 1.6282554571145602e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 299.88,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/UNP/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 299.8800048828125,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/UNP?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "UNP"
+    },
+    "UPS": {
+      "company_name": "United Parcel Service, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 117.92,
+        "bid": 117.9,
+        "divergence_pct": 3.105851345552344e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 117.91,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/UPS/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 117.91000366210938,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/UPS?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "UPS"
+    },
+    "VEEV": {
+      "company_name": "Veeva Systems Inc. Class A Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 195.81,
+        "bid": 195.68,
+        "divergence_pct": 0.0,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 195.75,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/VEEV/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 195.75,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/VEEV?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "VEEV"
+    },
+    "VLO": {
+      "company_name": "Valero Energy Corporation Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 306.74,
+        "bid": 306.57,
+        "divergence_pct": 3.980120971125327e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 306.7,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/VLO/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 306.70001220703125,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/VLO?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "VLO"
+    },
+    "VTR": {
+      "company_name": "Ventas, Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 95.83,
+        "bid": 95.8,
+        "divergence_pct": 2.5481748078273523e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 95.81,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/VTR/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 95.80999755859375,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/VTR?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "VTR"
+    },
+    "VTRS": {
+      "company_name": "Viatris Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 17.29,
+        "bid": 17.28,
+        "divergence_pct": 8.827763461996729e-07,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 17.285,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/VTRS/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 17.28499984741211,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/VTRS?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "VTRS"
+    },
+    "WDAY": {
+      "company_name": "Workday, Inc. Class A Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 145.11,
+        "bid": 144.99,
+        "divergence_pct": 4.208595593256671e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 145.025,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/WDAY/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 145.02499389648438,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/WDAY?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "WDAY"
+    },
+    "WELL": {
+      "company_name": "Welltower Inc. Common Stock",
+      "current": {
+        "agree_within_1pct": true,
+        "ask": 243.27,
+        "bid": 243.16,
+        "divergence_pct": 1.5060492477521056e-06,
+        "market_status": "Open",
+        "nasdaq_is_real_time": true,
+        "nasdaq_price": 243.16,
+        "nasdaq_retrieved_at": "2026-07-17T18:47:40Z",
+        "nasdaq_source": "https://api.nasdaq.com/api/quote/WELL/info?assetclass=stocks",
+        "nasdaq_timestamp": "Jul 17, 2026 2:47 PM ET",
+        "observation_date": "2026-07-17",
+        "yahoo_price": 243.16000366210938,
+        "yahoo_retrieved_at": "2026-07-17T18:47:39Z",
+        "yahoo_source": "https://query2.finance.yahoo.com/v8/finance/chart/WELL?range=5d&interval=1d&events=history&includeAdjustedClose=true"
+      },
+      "ticker": "WELL"
+    }
+  },
+  "snapshot_note": "Current-run intraday Yahoo/Nasdaq cross-check; histories end at the completed 2026-07-16 close."
+}
