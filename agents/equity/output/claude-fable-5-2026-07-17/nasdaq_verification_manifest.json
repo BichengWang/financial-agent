@@ -1,0 +1,200 @@
+{
+ "generated_at": "2026-07-17T21:08:32+00:00",
+ "method": "IBKR get_price_history TWO_DAYS/ONE_DAY RTH bar for 2026-07-17 vs Nasdaq quote-info secondaryData official close",
+ "note": "IBKR bars are 'Last'-source aggregated prints; sub-0.05% differences vs the primary-exchange official close are expected on a few names and disclosed per name",
+ "n": 27,
+ "exact": 13,
+ "within_tolerance": 14,
+ "mismatches": 0,
+ "results": {
+  "DOC": {
+   "conid": 389700396,
+   "nasdaq_close": 22.505,
+   "ibkr_close": 22.51,
+   "diff_pct": 0.0222,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "MNST": {
+   "conid": 196986496,
+   "nasdaq_close": 97.5,
+   "ibkr_close": 97.5,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "EXPD": {
+   "conid": 269082,
+   "nasdaq_close": 182.74,
+   "ibkr_close": 182.8,
+   "diff_pct": 0.0328,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "TRV": {
+   "conid": 43150617,
+   "nasdaq_close": 369.08,
+   "ibkr_close": 368.98,
+   "diff_pct": 0.0271,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "JBHT": {
+   "conid": 270825,
+   "nasdaq_close": 291.41,
+   "ibkr_close": 291.41,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "BBY": {
+   "conid": 4817,
+   "nasdaq_close": 85.43,
+   "ibkr_close": 85.41,
+   "diff_pct": 0.0234,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "DVA": {
+   "conid": 1035459,
+   "nasdaq_close": 237.01,
+   "ibkr_close": 236.97,
+   "diff_pct": 0.0169,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "AMCR": {
+   "conid": 845305949,
+   "nasdaq_close": 43.94,
+   "ibkr_close": 43.94,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "USB": {
+   "conid": 11669769,
+   "nasdaq_close": 63.16,
+   "ibkr_close": 63.14,
+   "diff_pct": 0.0317,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "UNH": {
+   "conid": 13272,
+   "nasdaq_close": 426.055,
+   "ibkr_close": 426.09,
+   "diff_pct": 0.0082,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "GEN": {
+   "conid": 390332324,
+   "nasdaq_close": 26.74,
+   "ibkr_close": 26.74,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "PAYX": {
+   "conid": 272942,
+   "nasdaq_close": 114.39,
+   "ibkr_close": 114.39,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "PANW": {
+   "conid": 110619459,
+   "nasdaq_close": 358.68,
+   "ibkr_close": 358.68,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "MPC": {
+   "conid": 89495776,
+   "nasdaq_close": 312.615,
+   "ibkr_close": 312.6,
+   "diff_pct": 0.0048,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "PRU": {
+   "conid": 13865082,
+   "nasdaq_close": 119.055,
+   "ibkr_close": 119.07,
+   "diff_pct": 0.0126,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "STT": {
+   "conid": 2730980,
+   "nasdaq_close": 182.56,
+   "ibkr_close": 182.5,
+   "diff_pct": 0.0329,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "CRWD": {
+   "conid": 370757467,
+   "nasdaq_close": 203.08,
+   "ibkr_close": 203.08,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "CTAS": {
+   "conid": 268149,
+   "nasdaq_close": 204.45,
+   "ibkr_close": 204.45,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "MET": {
+   "conid": 8093509,
+   "nasdaq_close": 93.995,
+   "ibkr_close": 94.0,
+   "diff_pct": 0.0053,
+   "status": "EXACT"
+  },
+  "DDOG": {
+   "conid": 383858515,
+   "nasdaq_close": 258.69,
+   "ibkr_close": 258.69,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "LLY": {
+   "conid": 9160,
+   "nasdaq_close": 1178.86,
+   "ibkr_close": 1179.11,
+   "diff_pct": 0.0212,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "ABBV": {
+   "conid": 118089500,
+   "nasdaq_close": 254.59,
+   "ibkr_close": 254.49,
+   "diff_pct": 0.0393,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "GE": {
+   "conid": 498843743,
+   "nasdaq_close": 348.66,
+   "ibkr_close": 348.83,
+   "diff_pct": 0.0488,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "TLT": {
+   "conid": 15547841,
+   "nasdaq_close": 84.52,
+   "ibkr_close": 84.52,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "SPY": {
+   "conid": 756733,
+   "nasdaq_close": 743.15,
+   "ibkr_close": 743.29,
+   "diff_pct": 0.0188,
+   "status": "WITHIN_TOLERANCE"
+  },
+  "QQQ": {
+   "conid": 320227571,
+   "nasdaq_close": 695.33,
+   "ibkr_close": 695.33,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  },
+  "SOXX": {
+   "conid": 12658194,
+   "nasdaq_close": 521.81,
+   "ibkr_close": 521.81,
+   "diff_pct": 0.0,
+   "status": "EXACT"
+  }
+ }
+}

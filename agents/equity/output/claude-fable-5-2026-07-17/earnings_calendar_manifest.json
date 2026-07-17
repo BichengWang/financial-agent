@@ -1,0 +1,478 @@
+{
+ "generated_at": "2026-07-17T21:10:27+00:00",
+ "run_date": "2026-07-17",
+ "method": "api.nasdaq.com analyst earnings-date (confirmed) + company earnings-surprise last-report+91d (ESTIMATED_CADENCE \u00b15d, 07-12 Track B); estimates landing in the past rolled +91d (TRV)",
+ "n": 65,
+ "earnings": {
+  "DOC": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "MNST": {
+   "date": "2026-08-06",
+   "days_to_earnings": 20,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "STT": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "BNY": {
+   "date": "2026-10-14",
+   "days_to_earnings": 89,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-15",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "JBHT": {
+   "date": "2026-10-14",
+   "days_to_earnings": 89,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-15",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "CVS": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "DVA": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "WST": {
+   "date": "2026-07-23",
+   "days_to_earnings": 6,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "DLTR": {
+   "date": "2026-09-02",
+   "days_to_earnings": 47,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "MTB": {
+   "date": "2026-10-14",
+   "days_to_earnings": 89,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-15",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "RF": {
+   "date": "2026-07-17",
+   "days_to_earnings": 0,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-04-17",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "UNH": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "UNP": {
+   "date": "2026-07-23",
+   "days_to_earnings": 6,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "CFG": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "IEX": {
+   "date": "2026-07-29",
+   "days_to_earnings": 12,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "CSX": {
+   "date": "2026-07-22",
+   "days_to_earnings": 5,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "BBY": {
+   "date": "2026-08-27",
+   "days_to_earnings": 41,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "BAX": {
+   "date": "2026-07-30",
+   "days_to_earnings": 13,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "USB": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "CTAS": {
+   "date": "2026-10-14",
+   "days_to_earnings": 89,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-15",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "CRL": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "FTNT": {
+   "date": "2026-07-29",
+   "days_to_earnings": 12,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "EXPD": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "HBAN": {
+   "date": "2026-07-23",
+   "days_to_earnings": 6,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "IQV": {
+   "date": "2026-07-28",
+   "days_to_earnings": 11,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "KHC": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "FITB": {
+   "date": "2026-07-17",
+   "days_to_earnings": 0,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-04-17",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "GPN": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "HUM": {
+   "date": "2026-07-29",
+   "days_to_earnings": 12,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "SOLV": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "NTRS": {
+   "date": "2026-07-22",
+   "days_to_earnings": 5,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "CRWD": {
+   "date": "2026-08-26",
+   "days_to_earnings": 40,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "MPC": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "ADP": {
+   "date": "2026-07-29",
+   "days_to_earnings": 12,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "GEN": {
+   "date": "2026-08-06",
+   "days_to_earnings": 20,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "CCEP": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "BXP": {
+   "date": "2026-07-28",
+   "days_to_earnings": 11,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "AAPL": {
+   "date": "2026-07-30",
+   "days_to_earnings": 13,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "GL": {
+   "date": "2026-07-22",
+   "days_to_earnings": 5,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "RVTY": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "LLY": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "ABBV": {
+   "date": "2026-07-31",
+   "days_to_earnings": 14,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "LIN": {
+   "date": "2026-07-31",
+   "days_to_earnings": 14,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "ANET": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "GE": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "TRV": {
+   "date": "2026-10-15",
+   "days_to_earnings": 90,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-04-16",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)",
+   "note": "estimate rolled +91d (vendor surprise-table lag; prior estimate landed in the past)"
+  },
+  "INCY": {
+   "date": "2026-07-28",
+   "days_to_earnings": 11,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "AMCR": {
+   "date": "2026-08-13",
+   "days_to_earnings": 27,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "FRT": {
+   "date": "2026-07-31",
+   "days_to_earnings": 14,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "UPS": {
+   "date": "2026-07-28",
+   "days_to_earnings": 11,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "CHRW": {
+   "date": "2026-07-29",
+   "days_to_earnings": 12,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "MCO": {
+   "date": "2026-07-22",
+   "days_to_earnings": 5,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "PAYX": {
+   "date": "2026-09-23",
+   "days_to_earnings": 68,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-06-24",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "PANW": {
+   "date": "2026-08-17",
+   "days_to_earnings": 31,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "PRU": {
+   "date": "2026-08-04",
+   "days_to_earnings": 18,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "SNA": {
+   "date": "2026-07-23",
+   "days_to_earnings": 6,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "MET": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "DDOG": {
+   "date": "2026-08-06",
+   "days_to_earnings": 20,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "BAC": {
+   "date": "2026-10-13",
+   "days_to_earnings": 88,
+   "status": "ESTIMATED_CADENCE",
+   "band_days": 5,
+   "last_reported": "2026-07-14",
+   "source": "vendor-empty; earnings-surprise last report + 91d (07-12 Track B convention)"
+  },
+  "FFIV": {
+   "date": "2026-07-27",
+   "days_to_earnings": 10,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "NSC": {
+   "date": "2026-07-23",
+   "days_to_earnings": 6,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "WSM": {
+   "date": "2026-08-26",
+   "days_to_earnings": 40,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "PSX": {
+   "date": "2026-08-05",
+   "days_to_earnings": 19,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "AFL": {
+   "date": "2026-08-06",
+   "days_to_earnings": 20,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  },
+  "TROW": {
+   "date": "2026-07-31",
+   "days_to_earnings": 14,
+   "status": "CONFIRMED",
+   "band_days": 0,
+   "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date"
+  }
+ }
+}

@@ -1,0 +1,4173 @@
+{
+ "generated_at": "2026-07-17T21:02:12+00:00",
+ "target_date": "2026-07-17",
+ "requested": 518,
+ "updated": 518,
+ "failed": 13,
+ "failures": {},
+ "prev_close_mismatches": {
+  "EOG": {
+   "csv_last": 138.46,
+   "vendor_prev": 137.44
+  },
+  "UDR": {
+   "csv_last": 40.57,
+   "vendor_prev": 40.425
+  },
+  "WSM": {
+   "csv_last": 228.38,
+   "vendor_prev": 227.62
+  }
+ },
+ "source_histogram": {
+  "info_secondary+summary": 505
+ },
+ "elapsed_sec": 2560.9,
+ "results": {
+  "SPY": {
+   "close": 743.15,
+   "volume": 61482299,
+   "prev_close_vendor": 750.72,
+   "market_cap": "640,840,539,500",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "QQQ": {
+   "close": 695.33,
+   "volume": 52861457,
+   "prev_close_vendor": 705.94,
+   "market_cap": "461,108,089,500",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SOXX": {
+   "close": 521.81,
+   "volume": 15509290,
+   "prev_close_vendor": 530.5,
+   "market_cap": "42,736,239,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TLT": {
+   "close": 84.52,
+   "volume": 21711297,
+   "prev_close_vendor": 84.21,
+   "market_cap": "42,217,740,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MMM": {
+   "close": 159.84,
+   "volume": 2910684,
+   "prev_close_vendor": 161.77,
+   "market_cap": "83,367,310,998",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AOS": {
+   "close": 58.87,
+   "volume": 2002619,
+   "prev_close_vendor": 60.53,
+   "market_cap": "8,113,971,095",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ABT": {
+   "close": 100.67,
+   "volume": 19763923,
+   "prev_close_vendor": 98.83,
+   "market_cap": "175,348,257,227",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ABBV": {
+   "close": 254.59,
+   "volume": 6799730,
+   "prev_close_vendor": 254.39,
+   "market_cap": "449,807,784,298",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ACN": {
+   "close": 143.55,
+   "volume": 10482468,
+   "prev_close_vendor": 144.61,
+   "market_cap": "95,821,090,646",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ADBE": {
+   "close": 237.25,
+   "volume": 7203632,
+   "prev_close_vendor": 235.31,
+   "market_cap": "94,306,875,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMD": {
+   "close": 495.76,
+   "volume": 31347659,
+   "prev_close_vendor": 500.94,
+   "market_cap": "808,386,572,791",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AES": {
+   "close": 14.775,
+   "volume": 6651464,
+   "prev_close_vendor": 14.8,
+   "market_cap": "10,536,905,210",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AFL": {
+   "close": 124.74,
+   "volume": 3974701,
+   "prev_close_vendor": 123.02,
+   "market_cap": "63,490,776,925",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "A": {
+   "close": 131.44,
+   "volume": 4247137,
+   "prev_close_vendor": 136.1,
+   "market_cap": "37,122,854,719",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APD": {
+   "close": 295.56,
+   "volume": 900244,
+   "prev_close_vendor": 297.29,
+   "market_cap": "65,815,503,554",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ABNB": {
+   "close": 145.98,
+   "volume": 5482722,
+   "prev_close_vendor": 147.8,
+   "market_cap": "87,982,864,660",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AKAM": {
+   "close": 120.19,
+   "volume": 3491681,
+   "prev_close_vendor": 118.81,
+   "market_cap": "17,473,877,356",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ALB": {
+   "close": 120.72,
+   "volume": 2206199,
+   "prev_close_vendor": 119.46,
+   "market_cap": "14,237,071,069",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ARE": {
+   "close": 50.23,
+   "volume": 1158193,
+   "prev_close_vendor": 50.14,
+   "market_cap": "8,753,555,980",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ALGN": {
+   "close": 176.76,
+   "volume": 823423,
+   "prev_close_vendor": 178.41,
+   "market_cap": "12,659,220,129",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ALLE": {
+   "close": 137.24,
+   "volume": 1564836,
+   "prev_close_vendor": 139.48,
+   "market_cap": "11,793,837,564",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LNT": {
+   "close": 74.82,
+   "volume": 2019645,
+   "prev_close_vendor": 75.75,
+   "market_cap": "19,324,287,908",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ALL": {
+   "close": 249.89,
+   "volume": 1849562,
+   "prev_close_vendor": 241.86,
+   "market_cap": "64,326,916,198",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GOOGL": {
+   "close": 346.77,
+   "volume": 29296239,
+   "prev_close_vendor": 354.46,
+   "market_cap": "4,201,465,320,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GOOG": {
+   "close": 346.12,
+   "volume": 21704016,
+   "prev_close_vendor": 353.81,
+   "market_cap": "4,193,589,920,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MO": {
+   "close": 74.21,
+   "volume": 8211349,
+   "prev_close_vendor": 73.03,
+   "market_cap": "123,922,628,549",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMZN": {
+   "close": 247.23,
+   "volume": 42054089,
+   "prev_close_vendor": 249.89,
+   "market_cap": "2,659,480,165,862",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMCR": {
+   "close": 43.94,
+   "volume": 6167765,
+   "prev_close_vendor": 44.84,
+   "market_cap": "20,315,469,619",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AEE": {
+   "close": 111.54,
+   "volume": 2018120,
+   "prev_close_vendor": 113.1,
+   "market_cap": "30,868,875,249",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AEP": {
+   "close": 132.14,
+   "volume": 4304503,
+   "prev_close_vendor": 133.13,
+   "market_cap": "71,898,038,928",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AXP": {
+   "close": 355.32,
+   "volume": 2615352,
+   "prev_close_vendor": 361.57,
+   "market_cap": "242,444,231,727",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AIG": {
+   "close": 80.51,
+   "volume": 6805179,
+   "prev_close_vendor": 78.03,
+   "market_cap": "42,686,902,853",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMT": {
+   "close": 169.96,
+   "volume": 2833566,
+   "prev_close_vendor": 168.92,
+   "market_cap": "79,183,186,007",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AWK": {
+   "close": 135.13,
+   "volume": 1342269,
+   "prev_close_vendor": 134.33,
+   "market_cap": "26,315,026,607",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMP": {
+   "close": 527.885,
+   "volume": 661461,
+   "prev_close_vendor": 533.21,
+   "market_cap": "47,455,322,187",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AME": {
+   "close": 236.97,
+   "volume": 1162625,
+   "prev_close_vendor": 237.3,
+   "market_cap": "54,314,235,384",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMGN": {
+   "close": 366.29,
+   "volume": 2779121,
+   "prev_close_vendor": 371.58,
+   "market_cap": "197,689,743,683",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APH": {
+   "close": 151.23,
+   "volume": 6674723,
+   "prev_close_vendor": 153.14,
+   "market_cap": "186,048,355,117",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ADI": {
+   "close": 375.36,
+   "volume": 3668527,
+   "prev_close_vendor": 380.53,
+   "market_cap": "182,832,991,334",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AON": {
+   "close": 367.17,
+   "volume": 376153,
+   "prev_close_vendor": 368.63,
+   "market_cap": "78,744,753,212",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APA": {
+   "close": 35.22,
+   "volume": 1886881,
+   "prev_close_vendor": 34.28,
+   "market_cap": "12,277,788,335",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APO": {
+   "close": 120.46,
+   "volume": 4688108,
+   "prev_close_vendor": 123.34,
+   "market_cap": "69,447,299,616",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AAPL": {
+   "close": 333.74,
+   "volume": 63238849,
+   "prev_close_vendor": 333.26,
+   "market_cap": "4,901,758,191,440",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AMAT": {
+   "close": 529.66,
+   "volume": 10252658,
+   "prev_close_vendor": 560.93,
+   "market_cap": "420,528,551,694",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APP": {
+   "close": 424.54,
+   "volume": 5623672,
+   "prev_close_vendor": 434.48,
+   "market_cap": "142,619,967,600",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "APTV": {
+   "close": 57.44,
+   "volume": 1968689,
+   "prev_close_vendor": 59.26,
+   "market_cap": "12,155,483,071",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ACGL": {
+   "close": 101.35,
+   "volume": 1375996,
+   "prev_close_vendor": 100.04,
+   "market_cap": "35,375,695,785",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ADM": {
+   "close": 85.91,
+   "volume": 4154493,
+   "prev_close_vendor": 83.0,
+   "market_cap": "41,404,885,235",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ARES": {
+   "close": 125.67,
+   "volume": 803991,
+   "prev_close_vendor": 125.43,
+   "market_cap": "41,435,458,778",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ANET": {
+   "close": 168.62,
+   "volume": 7540175,
+   "prev_close_vendor": 168.56,
+   "market_cap": "212,326,741,232",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AJG": {
+   "close": 253.87,
+   "volume": 973268,
+   "prev_close_vendor": 255.93,
+   "market_cap": "65,395,179,500",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AIZ": {
+   "close": 276.8,
+   "volume": 294510,
+   "prev_close_vendor": 275.44,
+   "market_cap": "13,714,785,922",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "T": {
+   "close": 21.7961,
+   "volume": 64737160,
+   "prev_close_vendor": 21.98,
+   "market_cap": "151,680,152,266",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ATO": {
+   "close": 177.62,
+   "volume": 605711,
+   "prev_close_vendor": 178.04,
+   "market_cap": "29,632,441,401",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ADSK": {
+   "close": 218.35,
+   "volume": 1673265,
+   "prev_close_vendor": 217.06,
+   "market_cap": "45,979,010,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ADP": {
+   "close": 255.265,
+   "volume": 2549888,
+   "prev_close_vendor": 256.56,
+   "market_cap": "102,781,013,576",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AZO": {
+   "close": 3045.56,
+   "volume": 160848,
+   "prev_close_vendor": 3062.16,
+   "market_cap": "49,719,848,174",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AVB": {
+   "close": 192.5,
+   "volume": 1014089,
+   "prev_close_vendor": 195.5,
+   "market_cap": "26,779,073,283",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AVY": {
+   "close": 160.47,
+   "volume": 694599,
+   "prev_close_vendor": 163.06,
+   "market_cap": "12,274,412,081",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AXON": {
+   "close": 510.28,
+   "volume": 843582,
+   "prev_close_vendor": 541.75,
+   "market_cap": "41,129,627,852",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BKR": {
+   "close": 55.95,
+   "volume": 11565468,
+   "prev_close_vendor": 56.54,
+   "market_cap": "55,506,243,597",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BALL": {
+   "close": 62.7,
+   "volume": 1783160,
+   "prev_close_vendor": 63.15,
+   "market_cap": "16,693,656,240",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BAC": {
+   "close": 61.285,
+   "volume": 45004410,
+   "prev_close_vendor": 61.49,
+   "market_cap": "434,914,558,047",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BAX": {
+   "close": 22.61,
+   "volume": 6425912,
+   "prev_close_vendor": 23.35,
+   "market_cap": "11,677,364,271",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BDX": {
+   "close": 158.175,
+   "volume": 2086611,
+   "prev_close_vendor": 159.93,
+   "market_cap": "43,583,607,041",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BRK-B": {
+   "close": 490.89,
+   "volume": 5521156,
+   "prev_close_vendor": 493.12,
+   "market_cap": "1,083,056,188,910",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BBY": {
+   "close": 85.43,
+   "volume": 3181657,
+   "prev_close_vendor": 85.29,
+   "market_cap": "18,005,835,574",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TECH": {
+   "close": 72.12,
+   "volume": 3076476,
+   "prev_close_vendor": 71.77,
+   "market_cap": "11,291,738,322",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BIIB": {
+   "close": 205.99,
+   "volume": 1150215,
+   "prev_close_vendor": 208.92,
+   "market_cap": "30,411,769,731",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BLK": {
+   "close": 1072.37,
+   "volume": 760585,
+   "prev_close_vendor": 1087.05,
+   "market_cap": "166,468,272,784",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BX": {
+   "close": 126.92,
+   "volume": 4483690,
+   "prev_close_vendor": 128.97,
+   "market_cap": "94,286,305,104",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "XYZ": {
+   "close": 79.95,
+   "volume": 4893613,
+   "prev_close_vendor": 81.52,
+   "market_cap": "47,599,169,194",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BNY": {
+   "close": 157.15,
+   "volume": 4855525,
+   "prev_close_vendor": 160.86,
+   "market_cap": "107,864,466,922",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BA": {
+   "close": 214.03,
+   "volume": 4209453,
+   "prev_close_vendor": 214.34,
+   "market_cap": "168,720,347,904",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BKNG": {
+   "close": 181.68,
+   "volume": 7194279,
+   "prev_close_vendor": 184.61,
+   "market_cap": "140,779,914,252",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BSX": {
+   "close": 44.03,
+   "volume": 15512252,
+   "prev_close_vendor": 44.62,
+   "market_cap": "65,444,218,531",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BMY": {
+   "close": 60.745,
+   "volume": 12258339,
+   "prev_close_vendor": 60.51,
+   "market_cap": "124,045,617,899",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "AVGO": {
+   "close": 370.825,
+   "volume": 22876473,
+   "prev_close_vendor": 374.45,
+   "market_cap": "1,764,229,676,923",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BR": {
+   "close": 149.97,
+   "volume": 956723,
+   "prev_close_vendor": 153.06,
+   "market_cap": "17,345,274,801",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BRO": {
+   "close": 69.35,
+   "volume": 2812512,
+   "prev_close_vendor": 69.44,
+   "market_cap": "23,506,032,773",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BLDR": {
+   "close": 74.33,
+   "volume": 2282311,
+   "prev_close_vendor": 78.2,
+   "market_cap": "7,994,925,583",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BG": {
+   "close": 119.15,
+   "volume": 1041826,
+   "prev_close_vendor": 115.83,
+   "market_cap": "23,117,258,402",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BXP": {
+   "close": 69.84,
+   "volume": 1128310,
+   "prev_close_vendor": 70.65,
+   "market_cap": "11,137,900,987",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CHRW": {
+   "close": 208.5,
+   "volume": 3722194,
+   "prev_close_vendor": 205.75,
+   "market_cap": "24,576,529,257",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CDNS": {
+   "close": 330.11,
+   "volume": 5185096,
+   "prev_close_vendor": 364.65,
+   "market_cap": "91,049,619,760",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CPT": {
+   "close": 113.01,
+   "volume": 975434,
+   "prev_close_vendor": 114.57,
+   "market_cap": "11,359,734,913",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COF": {
+   "close": 208.04,
+   "volume": 3783538,
+   "prev_close_vendor": 211.93,
+   "market_cap": "128,156,692,827",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CAH": {
+   "close": 228.53,
+   "volume": 2050431,
+   "prev_close_vendor": 228.72,
+   "market_cap": "53,523,064,043",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CCL": {
+   "close": 26.405,
+   "volume": 16835677,
+   "prev_close_vendor": 26.86,
+   "market_cap": "36,165,584,987",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CARR": {
+   "close": 68.69,
+   "volume": 5172229,
+   "prev_close_vendor": 69.34,
+   "market_cap": "57,414,116,255",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CVNA": {
+   "close": 67.34,
+   "volume": 8026452,
+   "prev_close_vendor": 70.66,
+   "market_cap": "73,860,918,732",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CASY": {
+   "close": 859.12,
+   "volume": 331773,
+   "prev_close_vendor": 827.04,
+   "market_cap": "31,791,661,716",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CAT": {
+   "close": 881.07,
+   "volume": 3333530,
+   "prev_close_vendor": 877.17,
+   "market_cap": "405,853,464,498",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CBOE": {
+   "close": 273.41,
+   "volume": 1716556,
+   "prev_close_vendor": 277.89,
+   "market_cap": "30,572,364,438",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CBRE": {
+   "close": 140.99,
+   "volume": 1495229,
+   "prev_close_vendor": 143.69,
+   "market_cap": "41,284,209,473",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CDW": {
+   "close": 133.24,
+   "volume": 2092141,
+   "prev_close_vendor": 134.34,
+   "market_cap": "17,021,869,811",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COR": {
+   "close": 307.95,
+   "volume": 2495868,
+   "prev_close_vendor": 307.99,
+   "market_cap": "59,915,078,427",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CNC": {
+   "close": 66.41,
+   "volume": 4780874,
+   "prev_close_vendor": 63.89,
+   "market_cap": "32,793,058,770",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CSCO": {
+   "close": 111.94,
+   "volume": 28308004,
+   "prev_close_vendor": 109.66,
+   "market_cap": "441,204,196,400",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "C": {
+   "close": 129.37,
+   "volume": 15381093,
+   "prev_close_vendor": 131.71,
+   "market_cap": "220,650,490,668",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CFG": {
+   "close": 72.4,
+   "volume": 6262928,
+   "prev_close_vendor": 74.4,
+   "market_cap": "30,616,652,601",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CLX": {
+   "close": 96.27,
+   "volume": 2333258,
+   "prev_close_vendor": 98.71,
+   "market_cap": "11,641,098,461",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CME": {
+   "close": 245.05,
+   "volume": 3315130,
+   "prev_close_vendor": 246.27,
+   "market_cap": "88,796,157,982",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CMS": {
+   "close": 73.66,
+   "volume": 3712726,
+   "prev_close_vendor": 74.39,
+   "market_cap": "22,755,017,883",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KO": {
+   "close": 81.56,
+   "volume": 32453245,
+   "prev_close_vendor": 84.92,
+   "market_cap": "351,046,708,648",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CTSH": {
+   "close": 44.77,
+   "volume": 9457652,
+   "prev_close_vendor": 44.56,
+   "market_cap": "21,215,136,127",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COHR": {
+   "close": 277.88,
+   "volume": 5948758,
+   "prev_close_vendor": 276.96,
+   "market_cap": "54,364,254,519",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COIN": {
+   "close": 157.12,
+   "volume": 6459862,
+   "prev_close_vendor": 160.49,
+   "market_cap": "41,387,154,232",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CL": {
+   "close": 92.97,
+   "volume": 4157874,
+   "prev_close_vendor": 94.07,
+   "market_cap": "74,393,600,151",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CMCSA": {
+   "close": 23.79,
+   "volume": 40117724,
+   "prev_close_vendor": 24.1,
+   "market_cap": "85,021,212,771",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FIX": {
+   "close": 1670.43,
+   "volume": 1198246,
+   "prev_close_vendor": 1680.6,
+   "market_cap": "58,803,185,122",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CAG": {
+   "close": 14.275,
+   "volume": 14006168,
+   "prev_close_vendor": 14.47,
+   "market_cap": "6,831,524,540",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COP": {
+   "close": 114.705,
+   "volume": 5587936,
+   "prev_close_vendor": 112.84,
+   "market_cap": "139,744,414,073",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ED": {
+   "close": 112.36,
+   "volume": 2442400,
+   "prev_close_vendor": 112.39,
+   "market_cap": "41,407,997,654",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "STZ": {
+   "close": 132.82,
+   "volume": 1607897,
+   "prev_close_vendor": 135.72,
+   "market_cap": "22,682,791,604",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CEG": {
+   "close": 252.39,
+   "volume": 2314628,
+   "prev_close_vendor": 251.77,
+   "market_cap": "91,160,760,001",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COO": {
+   "close": 71.71,
+   "volume": 1666902,
+   "prev_close_vendor": 73.1,
+   "market_cap": "13,985,646,477",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CPRT": {
+   "close": 27.61,
+   "volume": 12757757,
+   "prev_close_vendor": 28.29,
+   "market_cap": "25,561,655,018",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GLW": {
+   "close": 154.62,
+   "volume": 14196733,
+   "prev_close_vendor": 158.39,
+   "market_cap": "133,071,820,502",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CPAY": {
+   "close": 365.88,
+   "volume": 347646,
+   "prev_close_vendor": 371.81,
+   "market_cap": "23,914,618,924",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CTVA": {
+   "close": 87.34,
+   "volume": 3776613,
+   "prev_close_vendor": 86.65,
+   "market_cap": "58,414,738,800",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CSGP": {
+   "close": 29.78,
+   "volume": 5898191,
+   "prev_close_vendor": 30.37,
+   "market_cap": "12,160,833,193",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "COST": {
+   "close": 940.87,
+   "volume": 2324613,
+   "prev_close_vendor": 945.57,
+   "market_cap": "417,255,902,319",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CRH": {
+   "close": 102.92,
+   "volume": 3049315,
+   "prev_close_vendor": 105.59,
+   "market_cap": "68,888,414,341",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CRWD": {
+   "close": 203.08,
+   "volume": 8865954,
+   "prev_close_vendor": 203.76,
+   "market_cap": "206,788,094,582",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CCI": {
+   "close": 79.18,
+   "volume": 2934105,
+   "prev_close_vendor": 78.73,
+   "market_cap": "34,558,268,014",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CSX": {
+   "close": 50.75,
+   "volume": 17452057,
+   "prev_close_vendor": 50.89,
+   "market_cap": "94,300,546,942",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CMI": {
+   "close": 648.51,
+   "volume": 1089010,
+   "prev_close_vendor": 647.83,
+   "market_cap": "89,487,289,840",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CVS": {
+   "close": 107.5,
+   "volume": 6606358,
+   "prev_close_vendor": 106.5,
+   "market_cap": "137,162,185,503",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DHR": {
+   "close": 203.74,
+   "volume": 4869125,
+   "prev_close_vendor": 205.01,
+   "market_cap": "144,201,187,545",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DRI": {
+   "close": 198.535,
+   "volume": 1049380,
+   "prev_close_vendor": 201.21,
+   "market_cap": "22,739,206,821",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DDOG": {
+   "close": 258.69,
+   "volume": 3390590,
+   "prev_close_vendor": 262.32,
+   "market_cap": "92,083,341,292",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DVA": {
+   "close": 237.01,
+   "volume": 545691,
+   "prev_close_vendor": 234.01,
+   "market_cap": "15,216,042,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DECK": {
+   "close": 106.47,
+   "volume": 1717524,
+   "prev_close_vendor": 109.03,
+   "market_cap": "14,786,655,492",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DE": {
+   "close": 597.21,
+   "volume": 937548,
+   "prev_close_vendor": 598.97,
+   "market_cap": "161,209,329,584",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DELL": {
+   "close": 396.7,
+   "volume": 7279193,
+   "prev_close_vendor": 391.38,
+   "market_cap": "257,104,440,030",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DAL": {
+   "close": 84.165,
+   "volume": 6458292,
+   "prev_close_vendor": 86.7,
+   "market_cap": "55,348,842,320",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DVN": {
+   "close": 43.825,
+   "volume": 10054770,
+   "prev_close_vendor": 43.03,
+   "market_cap": "50,547,891,164",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DXCM": {
+   "close": 76.65,
+   "volume": 4973621,
+   "prev_close_vendor": 77.98,
+   "market_cap": "29,577,163,687",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FANG": {
+   "close": 195.54,
+   "volume": 2015645,
+   "prev_close_vendor": 190.13,
+   "market_cap": "55,008,002,095",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DLR": {
+   "close": 173.88,
+   "volume": 2591346,
+   "prev_close_vendor": 173.6,
+   "market_cap": "65,496,250,217",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DG": {
+   "close": 125.79,
+   "volume": 2943266,
+   "prev_close_vendor": 127.16,
+   "market_cap": "27,747,594,326",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DLTR": {
+   "close": 125.94,
+   "volume": 2450850,
+   "prev_close_vendor": 128.45,
+   "market_cap": "24,202,467,613",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "D": {
+   "close": 71.05,
+   "volume": 4426929,
+   "prev_close_vendor": 71.69,
+   "market_cap": "62,485,306,383",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DPZ": {
+   "close": 322.18,
+   "volume": 1584266,
+   "prev_close_vendor": 329.67,
+   "market_cap": "10,716,309,277",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DASH": {
+   "close": 184.14,
+   "volume": 2560232,
+   "prev_close_vendor": 186.36,
+   "market_cap": "80,233,245,469",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DOV": {
+   "close": 214.16,
+   "volume": 851183,
+   "prev_close_vendor": 217.51,
+   "market_cap": "28,839,088,422",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DOW": {
+   "close": 29.925,
+   "volume": 8536324,
+   "prev_close_vendor": 29.3,
+   "market_cap": "21,568,187,532",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DHI": {
+   "close": 149.37,
+   "volume": 2922339,
+   "prev_close_vendor": 154.42,
+   "market_cap": "42,358,286,794",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DTE": {
+   "close": 148.14,
+   "volume": 1162592,
+   "prev_close_vendor": 148.91,
+   "market_cap": "30,817,314,288",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DUK": {
+   "close": 125.01,
+   "volume": 4713133,
+   "prev_close_vendor": 126.11,
+   "market_cap": "97,457,323,087",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DD": {
+   "close": 135.26,
+   "volume": 1308516,
+   "prev_close_vendor": 134.29,
+   "market_cap": "18,479,555,698",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ETN": {
+   "close": 400.11,
+   "volume": 2564310,
+   "prev_close_vendor": 396.27,
+   "market_cap": "155,362,713,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EBAY": {
+   "close": 112.06,
+   "volume": 5044555,
+   "prev_close_vendor": 110.91,
+   "market_cap": "49,867,952,943",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SATS": {
+   "close": 92.0,
+   "volume": 5871331,
+   "prev_close_vendor": 91.54,
+   "market_cap": "26,662,840,896",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ECL": {
+   "close": 272.99,
+   "volume": 1155509,
+   "prev_close_vendor": 275.71,
+   "market_cap": "76,829,623,671",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EIX": {
+   "close": 77.63,
+   "volume": 2479554,
+   "prev_close_vendor": 78.05,
+   "market_cap": "29,871,553,640",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EW": {
+   "close": 85.74,
+   "volume": 5224822,
+   "prev_close_vendor": 87.84,
+   "market_cap": "49,369,092,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EA": {
+   "close": 208.9,
+   "volume": 3883788,
+   "prev_close_vendor": 207.84,
+   "market_cap": "52,381,985,008",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ELV": {
+   "close": 373.03,
+   "volume": 1924656,
+   "prev_close_vendor": 372.85,
+   "market_cap": "80,898,751,249",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EME": {
+   "close": 743.66,
+   "volume": 1526449,
+   "prev_close_vendor": 750.04,
+   "market_cap": "33,048,457,137",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EMR": {
+   "close": 139.56,
+   "volume": 3235154,
+   "prev_close_vendor": 139.08,
+   "market_cap": "78,167,556,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ETR": {
+   "close": 113.24,
+   "volume": 4596188,
+   "prev_close_vendor": 114.87,
+   "market_cap": "51,851,106,554",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EOG": {
+   "close": 139.9,
+   "volume": 3826501,
+   "prev_close_vendor": 137.44,
+   "market_cap": "74,514,731,347",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EQT": {
+   "close": 49.565,
+   "volume": 5481212,
+   "prev_close_vendor": 49.4,
+   "market_cap": "31,001,817,070",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EFX": {
+   "close": 177.23,
+   "volume": 1163013,
+   "prev_close_vendor": 179.62,
+   "market_cap": "21,103,203,047",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EQIX": {
+   "close": 1020.0,
+   "volume": 567913,
+   "prev_close_vendor": 1009.14,
+   "market_cap": "100,596,732,960",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EQR": {
+   "close": 69.01,
+   "volume": 2313477,
+   "prev_close_vendor": 70.0,
+   "market_cap": "25,873,277,231",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ERIE": {
+   "close": 227.31,
+   "volume": 263250,
+   "prev_close_vendor": 225.94,
+   "market_cap": "10,499,814,869",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ESS": {
+   "close": 292.93,
+   "volume": 418058,
+   "prev_close_vendor": 297.42,
+   "market_cap": "18,824,521,337",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EL": {
+   "close": 82.13,
+   "volume": 2447884,
+   "prev_close_vendor": 82.84,
+   "market_cap": "29,714,216,369",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EG": {
+   "close": 382.57,
+   "volume": 475022,
+   "prev_close_vendor": 373.22,
+   "market_cap": "15,138,907,777",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EVRG": {
+   "close": 85.59,
+   "volume": 1860364,
+   "prev_close_vendor": 86.56,
+   "market_cap": "19,729,609,810",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ES": {
+   "close": 74.63,
+   "volume": 2763978,
+   "prev_close_vendor": 75.04,
+   "market_cap": "28,066,852,266",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EXC": {
+   "close": 46.26,
+   "volume": 6035428,
+   "prev_close_vendor": 46.79,
+   "market_cap": "47,333,608,649",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EXE": {
+   "close": 88.13,
+   "volume": 5746497,
+   "prev_close_vendor": 88.18,
+   "market_cap": "21,083,238,462",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EXPE": {
+   "close": 268.77,
+   "volume": 1587765,
+   "prev_close_vendor": 270.95,
+   "market_cap": "32,258,333,635",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EXPD": {
+   "close": 182.74,
+   "volume": 2731193,
+   "prev_close_vendor": 181.96,
+   "market_cap": "23,900,771,644",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "EXR": {
+   "close": 148.17,
+   "volume": 843523,
+   "prev_close_vendor": 150.33,
+   "market_cap": "31,302,532,887",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "XOM": {
+   "close": 147.39,
+   "volume": 19008995,
+   "prev_close_vendor": 145.95,
+   "market_cap": "610,923,762,207",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FFIV": {
+   "close": 409.095,
+   "volume": 461640,
+   "prev_close_vendor": 403.41,
+   "market_cap": "23,080,831,851",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FDS": {
+   "close": 258.025,
+   "volume": 896314,
+   "prev_close_vendor": 262.46,
+   "market_cap": "9,176,799,233",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FICO": {
+   "close": 1255.98,
+   "volume": 251432,
+   "prev_close_vendor": 1241.22,
+   "market_cap": "29,127,314,118",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FAST": {
+   "close": 45.49,
+   "volume": 10289405,
+   "prev_close_vendor": 46.67,
+   "market_cap": "52,224,114,925",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FRT": {
+   "close": 126.07,
+   "volume": 1662547,
+   "prev_close_vendor": 125.36,
+   "market_cap": "10,891,086,066",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FDX": {
+   "close": 312.99,
+   "volume": 1464319,
+   "prev_close_vendor": 318.2,
+   "market_cap": "74,681,528,560",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FDXF": {
+   "close": 152.24,
+   "volume": 1318119,
+   "prev_close_vendor": 152.43,
+   "market_cap": "18,158,248,336",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FIS": {
+   "close": 41.915,
+   "volume": 5195026,
+   "prev_close_vendor": 42.62,
+   "market_cap": "21,664,989,614",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FITB": {
+   "close": 58.01,
+   "volume": 11586853,
+   "prev_close_vendor": 59.37,
+   "market_cap": "52,575,132,899",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FSLR": {
+   "close": 211.99,
+   "volume": 2318174,
+   "prev_close_vendor": 211.93,
+   "market_cap": "22,779,038,422",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FE": {
+   "close": 48.535,
+   "volume": 3370885,
+   "prev_close_vendor": 49.11,
+   "market_cap": "28,074,157,079",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FISV": {
+   "close": 50.63,
+   "volume": 5992378,
+   "prev_close_vendor": 51.72,
+   "market_cap": "26,998,649,311",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FLEX": {
+   "close": 119.25,
+   "volume": 5218391,
+   "prev_close_vendor": 121.12,
+   "market_cap": "43,691,954,315",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "F": {
+   "close": 14.215,
+   "volume": 45368376,
+   "prev_close_vendor": 14.19,
+   "market_cap": "56,642,405,735",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FTNT": {
+   "close": 161.61,
+   "volume": 4716427,
+   "prev_close_vendor": 160.78,
+   "market_cap": "118,403,306,470",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FTV": {
+   "close": 61.76,
+   "volume": 2441443,
+   "prev_close_vendor": 62.45,
+   "market_cap": "18,828,216,657",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FOXA": {
+   "close": 57.62,
+   "volume": 6975125,
+   "prev_close_vendor": 56.81,
+   "market_cap": "24,211,135,470",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FOX": {
+   "close": 51.63,
+   "volume": 1025570,
+   "prev_close_vendor": 51.08,
+   "market_cap": "21,694,219,443",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "BEN": {
+   "close": 32.635,
+   "volume": 4428811,
+   "prev_close_vendor": 33.33,
+   "market_cap": "16,958,358,782",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FCX": {
+   "close": 58.4,
+   "volume": 17121743,
+   "prev_close_vendor": 58.56,
+   "market_cap": "83,953,496,116",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GRMN": {
+   "close": 249.67,
+   "volume": 1899709,
+   "prev_close_vendor": 250.99,
+   "market_cap": "48,150,408,952",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IT": {
+   "close": 140.04,
+   "volume": 1233550,
+   "prev_close_vendor": 142.89,
+   "market_cap": "9,375,942,536",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GE": {
+   "close": 348.66,
+   "volume": 5593458,
+   "prev_close_vendor": 345.73,
+   "market_cap": "363,769,960,355",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GEHC": {
+   "close": 63.07,
+   "volume": 6384622,
+   "prev_close_vendor": 65.7,
+   "market_cap": "28,690,024,943",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GEV": {
+   "close": 1057.44,
+   "volume": 3280739,
+   "prev_close_vendor": 1036.22,
+   "market_cap": "284,155,271,513",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GEN": {
+   "close": 26.74,
+   "volume": 5027470,
+   "prev_close_vendor": 27.01,
+   "market_cap": "16,109,081,256",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GNRC": {
+   "close": 214.83,
+   "volume": 958642,
+   "prev_close_vendor": 215.38,
+   "market_cap": "12,646,758,739",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GD": {
+   "close": 368.58,
+   "volume": 1279039,
+   "prev_close_vendor": 368.82,
+   "market_cap": "99,675,158,324",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GIS": {
+   "close": 37.97,
+   "volume": 8628809,
+   "prev_close_vendor": 38.7,
+   "market_cap": "20,264,907,796",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GM": {
+   "close": 76.065,
+   "volume": 5827098,
+   "prev_close_vendor": 77.72,
+   "market_cap": "68,585,163,058",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GPC": {
+   "close": 124.82,
+   "volume": 1633727,
+   "prev_close_vendor": 125.66,
+   "market_cap": "17,178,295,707",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GILD": {
+   "close": 134.28,
+   "volume": 6901167,
+   "prev_close_vendor": 136.3,
+   "market_cap": "166,718,002,681",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GPN": {
+   "close": 77.815,
+   "volume": 2806972,
+   "prev_close_vendor": 80.49,
+   "market_cap": "21,285,787,997",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GL": {
+   "close": 184.75,
+   "volume": 555342,
+   "prev_close_vendor": 184.56,
+   "market_cap": "14,344,869,595",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GDDY": {
+   "close": 94.38,
+   "volume": 2292039,
+   "prev_close_vendor": 96.21,
+   "market_cap": "12,496,841,360",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GS": {
+   "close": 1065.93,
+   "volume": 2153664,
+   "prev_close_vendor": 1095.46,
+   "market_cap": "314,457,260,267",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HAL": {
+   "close": 35.215,
+   "volume": 8615941,
+   "prev_close_vendor": 35.04,
+   "market_cap": "29,418,531,238",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HIG": {
+   "close": 140.28,
+   "volume": 1896270,
+   "prev_close_vendor": 136.65,
+   "market_cap": "38,455,071,430",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HAS": {
+   "close": 81.55,
+   "volume": 1660009,
+   "prev_close_vendor": 82.09,
+   "market_cap": "11,538,565,933",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HCA": {
+   "close": 371.225,
+   "volume": 1544186,
+   "prev_close_vendor": 385.74,
+   "market_cap": "82,352,479,755",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DOC": {
+   "close": 22.505,
+   "volume": 7021388,
+   "prev_close_vendor": 22.33,
+   "market_cap": "15,515,390,394",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HSIC": {
+   "close": 87.82,
+   "volume": 1167025,
+   "prev_close_vendor": 88.26,
+   "market_cap": "10,004,169,600",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HSY": {
+   "close": 171.4,
+   "volume": 1096273,
+   "prev_close_vendor": 174.72,
+   "market_cap": "34,767,353,961",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HPE": {
+   "close": 45.82,
+   "volume": 14877627,
+   "prev_close_vendor": 45.13,
+   "market_cap": "60,675,005,332",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HLT": {
+   "close": 321.47,
+   "volume": 1999058,
+   "prev_close_vendor": 323.2,
+   "market_cap": "73,182,122,147",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HD": {
+   "close": 338.95,
+   "volume": 4432918,
+   "prev_close_vendor": 348.02,
+   "market_cap": "337,972,699,364",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HON": {
+   "close": 225.02,
+   "volume": 3900086,
+   "prev_close_vendor": 226.33,
+   "market_cap": "71,292,312,531",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HRL": {
+   "close": 25.395,
+   "volume": 2789853,
+   "prev_close_vendor": 25.71,
+   "market_cap": "13,975,248,384",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HST": {
+   "close": 23.94,
+   "volume": 8006870,
+   "prev_close_vendor": 23.67,
+   "market_cap": "16,396,009,987",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HWM": {
+   "close": 272.37,
+   "volume": 2061794,
+   "prev_close_vendor": 271.19,
+   "market_cap": "108,977,275,145",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HPQ": {
+   "close": 24.83,
+   "volume": 18533791,
+   "prev_close_vendor": 24.14,
+   "market_cap": "22,707,598,393",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HUBB": {
+   "close": 488.66,
+   "volume": 601282,
+   "prev_close_vendor": 482.04,
+   "market_cap": "25,821,662,749",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HUM": {
+   "close": 399.67,
+   "volume": 2007988,
+   "prev_close_vendor": 386.48,
+   "market_cap": "47,984,979,705",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HBAN": {
+   "close": 18.25,
+   "volume": 20510982,
+   "prev_close_vendor": 18.56,
+   "market_cap": "36,995,133,213",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HII": {
+   "close": 269.14,
+   "volume": 946795,
+   "prev_close_vendor": 271.05,
+   "market_cap": "10,605,200,365",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IBM": {
+   "close": 212.67,
+   "volume": 13078282,
+   "prev_close_vendor": 219.05,
+   "market_cap": "199,885,402,498",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IEX": {
+   "close": 224.95,
+   "volume": 454092,
+   "prev_close_vendor": 228.96,
+   "market_cap": "16,649,685,947",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IDXX": {
+   "close": 567.44,
+   "volume": 512626,
+   "prev_close_vendor": 576.07,
+   "market_cap": "44,761,367,818",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ITW": {
+   "close": 275.97,
+   "volume": 1795760,
+   "prev_close_vendor": 282.97,
+   "market_cap": "79,396,569,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "INCY": {
+   "close": 117.25,
+   "volume": 2227576,
+   "prev_close_vendor": 116.65,
+   "market_cap": "23,421,595,953",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IR": {
+   "close": 82.24,
+   "volume": 4279018,
+   "prev_close_vendor": 84.78,
+   "market_cap": "32,183,541,228",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PODD": {
+   "close": 164.06,
+   "volume": 1396050,
+   "prev_close_vendor": 164.43,
+   "market_cap": "11,363,562,416",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "INTC": {
+   "close": 95.04,
+   "volume": 124575639,
+   "prev_close_vendor": 96.98,
+   "market_cap": "477,671,040,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IBKR": {
+   "close": 90.53,
+   "volume": 4446247,
+   "prev_close_vendor": 92.21,
+   "market_cap": "153,570,904,263",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ICE": {
+   "close": 139.635,
+   "volume": 3152322,
+   "prev_close_vendor": 141.76,
+   "market_cap": "78,965,337,239",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IFF": {
+   "close": 78.22,
+   "volume": 1677116,
+   "prev_close_vendor": 77.6,
+   "market_cap": "19,969,837,658",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IP": {
+   "close": 37.56,
+   "volume": 3726446,
+   "prev_close_vendor": 37.87,
+   "market_cap": "19,888,657,543",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "INTU": {
+   "close": 291.09,
+   "volume": 3626682,
+   "prev_close_vendor": 294.79,
+   "market_cap": "79,623,885,330",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ISRG": {
+   "close": 345.42,
+   "volume": 11547120,
+   "prev_close_vendor": 402.33,
+   "market_cap": "122,334,928,884",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IVZ": {
+   "close": 29.635,
+   "volume": 5798581,
+   "prev_close_vendor": 30.3,
+   "market_cap": "13,137,095,600",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "INVH": {
+   "close": 30.12,
+   "volume": 3428608,
+   "prev_close_vendor": 30.42,
+   "market_cap": "17,892,543,715",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IQV": {
+   "close": 206.28,
+   "volume": 1262029,
+   "prev_close_vendor": 210.49,
+   "market_cap": "34,428,132,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "IRM": {
+   "close": 123.79,
+   "volume": 2105146,
+   "prev_close_vendor": 121.66,
+   "market_cap": "36,830,580,261",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JBHT": {
+   "close": 291.41,
+   "volume": 1550089,
+   "prev_close_vendor": 298.41,
+   "market_cap": "27,479,730,746",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JBL": {
+   "close": 300.93,
+   "volume": 1691837,
+   "prev_close_vendor": 307.06,
+   "market_cap": "31,533,578,693",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JKHY": {
+   "close": 151.67,
+   "volume": 1059167,
+   "prev_close_vendor": 153.84,
+   "market_cap": "10,776,271,803",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "J": {
+   "close": 131.76,
+   "volume": 1063273,
+   "prev_close_vendor": 132.31,
+   "market_cap": "15,558,336,617",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JNJ": {
+   "close": 253.015,
+   "volume": 10164684,
+   "prev_close_vendor": 249.97,
+   "market_cap": "609,062,001,918",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JCI": {
+   "close": 140.46,
+   "volume": 3398694,
+   "prev_close_vendor": 141.26,
+   "market_cap": "85,696,837,597",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "JPM": {
+   "close": 341.2,
+   "volume": 9246168,
+   "prev_close_vendor": 343.15,
+   "market_cap": "914,249,295,822",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KVUE": {
+   "close": 18.98,
+   "volume": 29311100,
+   "prev_close_vendor": 19.02,
+   "market_cap": "36,441,764,519",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KDP": {
+   "close": 30.91,
+   "volume": 10863945,
+   "prev_close_vendor": 31.38,
+   "market_cap": "42,054,893,249",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KEY": {
+   "close": 23.54,
+   "volume": 11328455,
+   "prev_close_vendor": 23.99,
+   "market_cap": "25,522,672,696",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KEYS": {
+   "close": 315.8,
+   "volume": 1743913,
+   "prev_close_vendor": 312.76,
+   "market_cap": "53,968,757,214",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KMB": {
+   "close": 108.35,
+   "volume": 3436638,
+   "prev_close_vendor": 108.99,
+   "market_cap": "35,965,737,681",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KIM": {
+   "close": 26.11,
+   "volume": 3740734,
+   "prev_close_vendor": 26.03,
+   "market_cap": "17,608,317,469",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KMI": {
+   "close": 32.3,
+   "volume": 8397723,
+   "prev_close_vendor": 32.54,
+   "market_cap": "71,861,871,951",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KKR": {
+   "close": 100.94,
+   "volume": 3574907,
+   "prev_close_vendor": 102.75,
+   "market_cap": "90,631,294,665",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KLAC": {
+   "close": 212.75,
+   "volume": 13052327,
+   "prev_close_vendor": 219.37,
+   "market_cap": "277,910,050,928",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KHC": {
+   "close": 25.88,
+   "volume": 14344815,
+   "prev_close_vendor": 26.23,
+   "market_cap": "30,687,925,271",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "KR": {
+   "close": 58.82,
+   "volume": 6006863,
+   "prev_close_vendor": 58.61,
+   "market_cap": "36,035,913,127",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LHX": {
+   "close": 282.0,
+   "volume": 1138337,
+   "prev_close_vendor": 284.43,
+   "market_cap": "52,535,176,182",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LH": {
+   "close": 283.415,
+   "volume": 627522,
+   "prev_close_vendor": 281.94,
+   "market_cap": "23,240,030,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LRCX": {
+   "close": 313.3,
+   "volume": 12789087,
+   "prev_close_vendor": 320.96,
+   "market_cap": "391,803,894,300",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LVS": {
+   "close": 45.34,
+   "volume": 4294757,
+   "prev_close_vendor": 45.7,
+   "market_cap": "30,043,976,316",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LDOS": {
+   "close": 106.43,
+   "volume": 2094401,
+   "prev_close_vendor": 108.29,
+   "market_cap": "13,387,347,146",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LEN": {
+   "close": 83.91,
+   "volume": 2143838,
+   "prev_close_vendor": 86.4,
+   "market_cap": "20,213,511,365",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LII": {
+   "close": 543.93,
+   "volume": 407197,
+   "prev_close_vendor": 558.57,
+   "market_cap": "18,928,746,594",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LLY": {
+   "close": 1178.86,
+   "volume": 2753725,
+   "prev_close_vendor": 1169.17,
+   "market_cap": "1,110,181,273,877",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LIN": {
+   "close": 513.22,
+   "volume": 2780708,
+   "prev_close_vendor": 520.74,
+   "market_cap": "237,415,335,406",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LYV": {
+   "close": 180.19,
+   "volume": 1256436,
+   "prev_close_vendor": 179.85,
+   "market_cap": "42,443,225,642",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LMT": {
+   "close": 508.64,
+   "volume": 1273501,
+   "prev_close_vendor": 513.52,
+   "market_cap": "117,273,873,573",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "L": {
+   "close": 114.44,
+   "volume": 902171,
+   "prev_close_vendor": 113.89,
+   "market_cap": "23,548,189,826",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LOW": {
+   "close": 208.705,
+   "volume": 3446202,
+   "prev_close_vendor": 216.16,
+   "market_cap": "117,022,362,992",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LULU": {
+   "close": 116.33,
+   "volume": 2698312,
+   "prev_close_vendor": 118.79,
+   "market_cap": "12,614,587,538",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LITE": {
+   "close": 732.82,
+   "volume": 4925281,
+   "prev_close_vendor": 706.23,
+   "market_cap": "57,013,396,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LYB": {
+   "close": 59.18,
+   "volume": 3973020,
+   "prev_close_vendor": 57.8,
+   "market_cap": "19,102,402,866",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MTB": {
+   "close": 249.2,
+   "volume": 1097497,
+   "prev_close_vendor": 254.04,
+   "market_cap": "36,494,108,952",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MPC": {
+   "close": 312.615,
+   "volume": 2127063,
+   "prev_close_vendor": 305.85,
+   "market_cap": "91,263,771,151",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MAR": {
+   "close": 366.24,
+   "volume": 1811244,
+   "prev_close_vendor": 371.14,
+   "market_cap": "96,573,321,288",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MRSH": {
+   "close": 182.18,
+   "volume": 1906286,
+   "prev_close_vendor": 182.15,
+   "market_cap": "87,773,322,192",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MLM": {
+   "close": 562.85,
+   "volume": 440235,
+   "prev_close_vendor": 576.93,
+   "market_cap": "33,915,206,673",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MRVL": {
+   "close": 188.68,
+   "volume": 29542674,
+   "prev_close_vendor": 188.3,
+   "market_cap": "165,239,608,692",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MAS": {
+   "close": 78.65,
+   "volume": 2305132,
+   "prev_close_vendor": 80.14,
+   "market_cap": "15,866,413,470",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MA": {
+   "close": 543.51,
+   "volume": 3221085,
+   "prev_close_vendor": 551.54,
+   "market_cap": "480,236,661,031",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MKC": {
+   "close": 51.71,
+   "volume": 3927849,
+   "prev_close_vendor": 52.9,
+   "market_cap": "13,902,313,754",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MCD": {
+   "close": 267.705,
+   "volume": 3570774,
+   "prev_close_vendor": 273.46,
+   "market_cap": "190,205,970,984",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MCK": {
+   "close": 841.47,
+   "volume": 1118565,
+   "prev_close_vendor": 841.31,
+   "market_cap": "101,148,102,795",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MDT": {
+   "close": 83.175,
+   "volume": 7681504,
+   "prev_close_vendor": 83.56,
+   "market_cap": "106,467,758,678",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MRK": {
+   "close": 127.495,
+   "volume": 12847225,
+   "prev_close_vendor": 127.63,
+   "market_cap": "314,890,263,790",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "META": {
+   "close": 646.01,
+   "volume": 22204320,
+   "prev_close_vendor": 664.54,
+   "market_cap": "1,639,846,838,617",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MET": {
+   "close": 93.995,
+   "volume": 4014239,
+   "prev_close_vendor": 93.7,
+   "market_cap": "60,479,840,042",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MTD": {
+   "close": 1310.12,
+   "volume": 131364,
+   "prev_close_vendor": 1335.09,
+   "market_cap": "26,474,382,222",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MGM": {
+   "close": 46.125,
+   "volume": 2227956,
+   "prev_close_vendor": 46.9,
+   "market_cap": "11,801,138,214",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MCHP": {
+   "close": 80.96,
+   "volume": 12351472,
+   "prev_close_vendor": 81.68,
+   "market_cap": "43,961,957,635",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MU": {
+   "close": 848.95,
+   "volume": 62803750,
+   "prev_close_vendor": 853.2,
+   "market_cap": "958,798,315,541",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MSFT": {
+   "close": 393.82,
+   "volume": 32987615,
+   "prev_close_vendor": 401.1,
+   "market_cap": "2,925,466,155,129",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MAA": {
+   "close": 132.97,
+   "volume": 850804,
+   "prev_close_vendor": 134.86,
+   "market_cap": "15,475,687,122",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MRNA": {
+   "close": 61.82,
+   "volume": 4544548,
+   "prev_close_vendor": 63.15,
+   "market_cap": "24,529,326,531",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TAP": {
+   "close": 40.92,
+   "volume": 3127367,
+   "prev_close_vendor": 41.78,
+   "market_cap": "7,674,601,651",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MDLZ": {
+   "close": 61.0,
+   "volume": 7431741,
+   "prev_close_vendor": 61.42,
+   "market_cap": "78,302,635,726",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MPWR": {
+   "close": 1312.0,
+   "volume": 1017991,
+   "prev_close_vendor": 1305.65,
+   "market_cap": "64,458,560,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MNST": {
+   "close": 97.5,
+   "volume": 10644238,
+   "prev_close_vendor": 99.94,
+   "market_cap": "95,355,790,725",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MCO": {
+   "close": 510.83,
+   "volume": 1326102,
+   "prev_close_vendor": 519.02,
+   "market_cap": "89,242,001,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MS": {
+   "close": 215.44,
+   "volume": 7850581,
+   "prev_close_vendor": 218.37,
+   "market_cap": "339,810,240,974",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MOS": {
+   "close": 22.12,
+   "volume": 6509580,
+   "prev_close_vendor": 22.53,
+   "market_cap": "7,030,767,765",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MSI": {
+   "close": 413.35,
+   "volume": 1829015,
+   "prev_close_vendor": 414.19,
+   "market_cap": "68,614,273,820",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MSCI": {
+   "close": 628.83,
+   "volume": 680879,
+   "prev_close_vendor": 637.24,
+   "market_cap": "45,778,824,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NDAQ": {
+   "close": 91.64,
+   "volume": 3024507,
+   "prev_close_vendor": 94.25,
+   "market_cap": "51,826,158,729",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NTAP": {
+   "close": 163.88,
+   "volume": 2502904,
+   "prev_close_vendor": 159.69,
+   "market_cap": "32,107,357,637",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NFLX": {
+   "close": 68.95,
+   "volume": 141803044,
+   "prev_close_vendor": 74.35,
+   "market_cap": "290,334,558,506",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NEM": {
+   "close": 89.7,
+   "volume": 10606644,
+   "prev_close_vendor": 90.83,
+   "market_cap": "95,759,482,931",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NWSA": {
+   "close": 28.43,
+   "volume": 2689447,
+   "prev_close_vendor": 28.685,
+   "market_cap": "15,563,911,387",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NWS": {
+   "close": 32.42,
+   "volume": 1012949,
+   "prev_close_vendor": 32.54,
+   "market_cap": "17,748,223,959",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NEE": {
+   "close": 88.79,
+   "volume": 9445167,
+   "prev_close_vendor": 89.35,
+   "market_cap": "185,157,467,878",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NKE": {
+   "close": 43.755,
+   "volume": 15794585,
+   "prev_close_vendor": 44.57,
+   "market_cap": "64,910,485,750",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NI": {
+   "close": 45.975,
+   "volume": 5771742,
+   "prev_close_vendor": 46.27,
+   "market_cap": "21,939,064,446",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NDSN": {
+   "close": 288.98,
+   "volume": 438144,
+   "prev_close_vendor": 293.36,
+   "market_cap": "16,101,372,613",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NSC": {
+   "close": 340.25,
+   "volume": 1160390,
+   "prev_close_vendor": 338.06,
+   "market_cap": "76,418,108,840",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NTRS": {
+   "close": 184.68,
+   "volume": 1230240,
+   "prev_close_vendor": 188.52,
+   "market_cap": "34,174,527,607",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NOC": {
+   "close": 521.602,
+   "volume": 1047436,
+   "prev_close_vendor": 518.65,
+   "market_cap": "74,084,945,149",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NCLH": {
+   "close": 19.455,
+   "volume": 9936434,
+   "prev_close_vendor": 19.61,
+   "market_cap": "8,931,987,774",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NRG": {
+   "close": 129.13,
+   "volume": 2957796,
+   "prev_close_vendor": 132.75,
+   "market_cap": "27,244,682,871",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NUE": {
+   "close": 236.595,
+   "volume": 1494116,
+   "prev_close_vendor": 235.67,
+   "market_cap": "53,882,370,065",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NVDA": {
+   "close": 202.81,
+   "volume": 143854373,
+   "prev_close_vendor": 207.4,
+   "market_cap": "4,908,002,000,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NVR": {
+   "close": 6490.57,
+   "volume": 76161,
+   "prev_close_vendor": 6701.1,
+   "market_cap": "17,519,943,676",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NXPI": {
+   "close": 266.53,
+   "volume": 3287461,
+   "prev_close_vendor": 270.66,
+   "market_cap": "67,291,116,686",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ORLY": {
+   "close": 86.05,
+   "volume": 6264497,
+   "prev_close_vendor": 86.25,
+   "market_cap": "71,310,932,548",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "OXY": {
+   "close": 54.855,
+   "volume": 7897524,
+   "prev_close_vendor": 53.65,
+   "market_cap": "54,560,686,523",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ODFL": {
+   "close": 233.84,
+   "volume": 1300749,
+   "prev_close_vendor": 237.15,
+   "market_cap": "48,631,303,297",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "OMC": {
+   "close": 81.72,
+   "volume": 3208139,
+   "prev_close_vendor": 84.17,
+   "market_cap": "23,290,706,337",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ON": {
+   "close": 87.37,
+   "volume": 9938582,
+   "prev_close_vendor": 88.12,
+   "market_cap": "34,240,581,798",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "OKE": {
+   "close": 93.52,
+   "volume": 3328507,
+   "prev_close_vendor": 93.0,
+   "market_cap": "58,931,388,776",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ORCL": {
+   "close": 126.48,
+   "volume": 39781711,
+   "prev_close_vendor": 124.21,
+   "market_cap": "364,321,972,080",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "OTIS": {
+   "close": 73.46,
+   "volume": 4005403,
+   "prev_close_vendor": 75.0,
+   "market_cap": "28,187,782,943",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PCAR": {
+   "close": 126.2,
+   "volume": 3585611,
+   "prev_close_vendor": 126.67,
+   "market_cap": "66,417,322,100",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PKG": {
+   "close": 233.09,
+   "volume": 642940,
+   "prev_close_vendor": 234.04,
+   "market_cap": "20,768,003,629",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PLTR": {
+   "close": 132.38,
+   "volume": 31806318,
+   "prev_close_vendor": 134.44,
+   "market_cap": "317,356,159,515",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PANW": {
+   "close": 358.68,
+   "volume": 7660108,
+   "prev_close_vendor": 353.99,
+   "market_cap": "292,324,200,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PSKY": {
+   "close": 8.75,
+   "volume": 12400654,
+   "prev_close_vendor": 9.14,
+   "market_cap": "9,792,764,258",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PH": {
+   "close": 952.67,
+   "volume": 511447,
+   "prev_close_vendor": 958.34,
+   "market_cap": "120,118,720,209",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PAYX": {
+   "close": 114.39,
+   "volume": 4268977,
+   "prev_close_vendor": 114.7,
+   "market_cap": "40,984,893,878",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PYPL": {
+   "close": 56.56,
+   "volume": 19444919,
+   "prev_close_vendor": 56.73,
+   "market_cap": "49,891,886,684",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PNR": {
+   "close": 62.44,
+   "volume": 5020904,
+   "prev_close_vendor": 65.69,
+   "market_cap": "10,090,649,980",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PEP": {
+   "close": 137.12,
+   "volume": 8569612,
+   "prev_close_vendor": 139.43,
+   "market_cap": "187,153,930,433",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PFE": {
+   "close": 25.05,
+   "volume": 40127321,
+   "prev_close_vendor": 25.14,
+   "market_cap": "142,771,076,433",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PCG": {
+   "close": 17.31,
+   "volume": 13962497,
+   "prev_close_vendor": 17.53,
+   "market_cap": "46,390,251,585",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PM": {
+   "close": 192.8,
+   "volume": 5190093,
+   "prev_close_vendor": 189.84,
+   "market_cap": "300,490,145,509",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PSX": {
+   "close": 206.86,
+   "volume": 2361656,
+   "prev_close_vendor": 201.32,
+   "market_cap": "82,937,418,237",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PNW": {
+   "close": 107.74,
+   "volume": 1377594,
+   "prev_close_vendor": 109.29,
+   "market_cap": "13,056,705,265",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PNC": {
+   "close": 252.9,
+   "volume": 2191688,
+   "prev_close_vendor": 255.2,
+   "market_cap": "101,555,695,433",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PPG": {
+   "close": 117.39,
+   "volume": 1380208,
+   "prev_close_vendor": 118.68,
+   "market_cap": "26,166,231,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PPL": {
+   "close": 35.855,
+   "volume": 5208856,
+   "prev_close_vendor": 36.38,
+   "market_cap": "26,975,522,230",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PFG": {
+   "close": 113.95,
+   "volume": 1598045,
+   "prev_close_vendor": 113.12,
+   "market_cap": "24,614,611,157",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PG": {
+   "close": 149.975,
+   "volume": 8906876,
+   "prev_close_vendor": 151.5,
+   "market_cap": "349,231,631,726",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PGR": {
+   "close": 207.96,
+   "volume": 3826910,
+   "prev_close_vendor": 205.8,
+   "market_cap": "121,518,611,053",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PLD": {
+   "close": 149.73,
+   "volume": 4817854,
+   "prev_close_vendor": 150.06,
+   "market_cap": "142,539,366,480",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PRU": {
+   "close": 119.055,
+   "volume": 1560964,
+   "prev_close_vendor": 118.25,
+   "market_cap": "41,312,085,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PEG": {
+   "close": 78.64,
+   "volume": 2956165,
+   "prev_close_vendor": 79.53,
+   "market_cap": "39,187,995,053",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PTC": {
+   "close": 124.37,
+   "volume": 1509811,
+   "prev_close_vendor": 127.36,
+   "market_cap": "14,365,455,227",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PSA": {
+   "close": 318.13,
+   "volume": 1072217,
+   "prev_close_vendor": 324.5,
+   "market_cap": "55,846,368,811",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PHM": {
+   "close": 126.09,
+   "volume": 1670096,
+   "prev_close_vendor": 129.02,
+   "market_cap": "24,018,424,250",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PWR": {
+   "close": 628.49,
+   "volume": 1214865,
+   "prev_close_vendor": 631.02,
+   "market_cap": "94,311,303,045",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "QCOM": {
+   "close": 171.78,
+   "volume": 16264099,
+   "prev_close_vendor": 170.61,
+   "market_cap": "181,056,120,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DGX": {
+   "close": 210.55,
+   "volume": 955453,
+   "prev_close_vendor": 209.41,
+   "market_cap": "23,307,133,126",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "Q": {
+   "close": 136.43,
+   "volume": 2233826,
+   "prev_close_vendor": 135.47,
+   "market_cap": "28,560,148,011",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RL": {
+   "close": 380.31,
+   "volume": 549503,
+   "prev_close_vendor": 388.11,
+   "market_cap": "22,634,661,547",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RJF": {
+   "close": 168.42,
+   "volume": 1270267,
+   "prev_close_vendor": 169.7,
+   "market_cap": "32,822,200,586",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RTX": {
+   "close": 193.52,
+   "volume": 4199612,
+   "prev_close_vendor": 194.36,
+   "market_cap": "260,610,176,987",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "O": {
+   "close": 65.69,
+   "volume": 6543388,
+   "prev_close_vendor": 65.75,
+   "market_cap": "61,255,434,296",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "REG": {
+   "close": 82.68,
+   "volume": 1441930,
+   "prev_close_vendor": 82.38,
+   "market_cap": "15,138,442,597",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "REGN": {
+   "close": 676.69,
+   "volume": 648274,
+   "prev_close_vendor": 678.94,
+   "market_cap": "70,943,524,564",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RF": {
+   "close": 31.665,
+   "volume": 20147914,
+   "prev_close_vendor": 32.4,
+   "market_cap": "27,022,263,071",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RSG": {
+   "close": 222.3,
+   "volume": 1772746,
+   "prev_close_vendor": 224.51,
+   "market_cap": "68,393,726,540",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RMD": {
+   "close": 198.92,
+   "volume": 1284196,
+   "prev_close_vendor": 202.76,
+   "market_cap": "28,854,615,905",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RVTY": {
+   "close": 110.15,
+   "volume": 1248951,
+   "prev_close_vendor": 111.63,
+   "market_cap": "12,288,308,996",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "HOOD": {
+   "close": 99.96,
+   "volume": 27462156,
+   "prev_close_vendor": 106.02,
+   "market_cap": "90,014,485,498",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ROK": {
+   "close": 461.8,
+   "volume": 784437,
+   "prev_close_vendor": 468.67,
+   "market_cap": "51,386,311,495",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ROL": {
+   "close": 45.12,
+   "volume": 5527504,
+   "prev_close_vendor": 45.46,
+   "market_cap": "21,723,640,475",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ROP": {
+   "close": 363.14,
+   "volume": 967025,
+   "prev_close_vendor": 364.21,
+   "market_cap": "36,647,129,747",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ROST": {
+   "close": 233.46,
+   "volume": 2027842,
+   "prev_close_vendor": 232.72,
+   "market_cap": "74,889,550,003",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "RCL": {
+   "close": 287.06,
+   "volume": 2357206,
+   "prev_close_vendor": 293.95,
+   "market_cap": "76,988,050,385",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SPGI": {
+   "close": 450.85,
+   "volume": 1754219,
+   "prev_close_vendor": 457.38,
+   "market_cap": "133,451,600,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CRM": {
+   "close": 170.86,
+   "volume": 9963120,
+   "prev_close_vendor": 172.68,
+   "market_cap": "139,934,340,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SNDK": {
+   "close": 1354.82,
+   "volume": 19626421,
+   "prev_close_vendor": 1411.08,
+   "market_cap": "200,634,965,934",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SBAC": {
+   "close": 185.69,
+   "volume": 617723,
+   "prev_close_vendor": 185.04,
+   "market_cap": "19,694,841,627",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SLB": {
+   "close": 46.99,
+   "volume": 12748324,
+   "prev_close_vendor": 47.08,
+   "market_cap": "70,252,759,490",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "STX": {
+   "close": 787.66,
+   "volume": 7006397,
+   "prev_close_vendor": 745.49,
+   "market_cap": "176,616,207,839",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SRE": {
+   "close": 92.26,
+   "volume": 3297298,
+   "prev_close_vendor": 93.15,
+   "market_cap": "60,311,044,816",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "NOW": {
+   "close": 103.25,
+   "volume": 16174396,
+   "prev_close_vendor": 104.01,
+   "market_cap": "106,450,750,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SHW": {
+   "close": 331.36,
+   "volume": 1665689,
+   "prev_close_vendor": 338.14,
+   "market_cap": "81,725,179,375",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SPG": {
+   "close": 228.7,
+   "volume": 1375014,
+   "prev_close_vendor": 228.49,
+   "market_cap": "74,165,102,874",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SWKS": {
+   "close": 59.35,
+   "volume": 5815677,
+   "prev_close_vendor": 57.63,
+   "market_cap": "8,926,593,904",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SJM": {
+   "close": 112.01,
+   "volume": 1288243,
+   "prev_close_vendor": 113.97,
+   "market_cap": "11,971,706,087",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SW": {
+   "close": 44.3,
+   "volume": 4743667,
+   "prev_close_vendor": 44.77,
+   "market_cap": "23,233,758,655",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SNA": {
+   "close": 411.07,
+   "volume": 453064,
+   "prev_close_vendor": 414.97,
+   "market_cap": "21,294,213,610",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SOLV": {
+   "close": 81.31,
+   "volume": 1115194,
+   "prev_close_vendor": 81.7,
+   "market_cap": "14,080,835,833",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SO": {
+   "close": 95.31,
+   "volume": 4926236,
+   "prev_close_vendor": 96.07,
+   "market_cap": "107,540,162,521",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "LUV": {
+   "close": 48.08,
+   "volume": 3861333,
+   "prev_close_vendor": 49.43,
+   "market_cap": "23,500,240,121",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SWK": {
+   "close": 90.19,
+   "volume": 1271857,
+   "prev_close_vendor": 91.31,
+   "market_cap": "14,020,537,317",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SBUX": {
+   "close": 105.49,
+   "volume": 7631518,
+   "prev_close_vendor": 108.37,
+   "market_cap": "120,226,953,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "STT": {
+   "close": 182.56,
+   "volume": 3190532,
+   "prev_close_vendor": 185.66,
+   "market_cap": "50,526,589,544",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "STLD": {
+   "close": 235.51,
+   "volume": 779622,
+   "prev_close_vendor": 234.98,
+   "market_cap": "33,963,552,053",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "STE": {
+   "close": 217.87,
+   "volume": 622483,
+   "prev_close_vendor": 221.13,
+   "market_cap": "21,264,653,407",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SYK": {
+   "close": 319.87,
+   "volume": 2435768,
+   "prev_close_vendor": 331.2,
+   "market_cap": "122,625,606,941",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SMCI": {
+   "close": 24.18,
+   "volume": 31794709,
+   "prev_close_vendor": 24.68,
+   "market_cap": "14,542,298,895",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SYF": {
+   "close": 73.64,
+   "volume": 2929414,
+   "prev_close_vendor": 74.28,
+   "market_cap": "24,770,304,621",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SNPS": {
+   "close": 384.275,
+   "volume": 5034982,
+   "prev_close_vendor": 417.03,
+   "market_cap": "73,580,717,614",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SYY": {
+   "close": 81.68,
+   "volume": 3495322,
+   "prev_close_vendor": 82.25,
+   "market_cap": "39,057,955,421",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TMUS": {
+   "close": 192.43,
+   "volume": 4579845,
+   "prev_close_vendor": 192.85,
+   "market_cap": "208,248,653,692",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TROW": {
+   "close": 117.35,
+   "volume": 2144531,
+   "prev_close_vendor": 118.87,
+   "market_cap": "25,144,186,214",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TTWO": {
+   "close": 236.68,
+   "volume": 2360008,
+   "prev_close_vendor": 239.57,
+   "market_cap": "43,943,585,799",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TPR": {
+   "close": 141.435,
+   "volume": 2144763,
+   "prev_close_vendor": 144.19,
+   "market_cap": "28,576,194,125",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TRGP": {
+   "close": 283.04,
+   "volume": 1129505,
+   "prev_close_vendor": 280.27,
+   "market_cap": "60,752,810,305",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TGT": {
+   "close": 139.61,
+   "volume": 5187651,
+   "prev_close_vendor": 140.21,
+   "market_cap": "63,409,621,146",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TEL": {
+   "close": 203.305,
+   "volume": 2417383,
+   "prev_close_vendor": 202.57,
+   "market_cap": "59,343,875,416",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TDY": {
+   "close": 635.42,
+   "volume": 310057,
+   "prev_close_vendor": 630.86,
+   "market_cap": "29,438,460,868",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TER": {
+   "close": 322.355,
+   "volume": 3516682,
+   "prev_close_vendor": 322.3,
+   "market_cap": "50,462,148,632",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TSLA": {
+   "close": 380.84,
+   "volume": 30648605,
+   "prev_close_vendor": 391.06,
+   "market_cap": "1,430,329,879,032",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TXN": {
+   "close": 284.02,
+   "volume": 7653750,
+   "prev_close_vendor": 291.22,
+   "market_cap": "258,484,554,500",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TPL": {
+   "close": 415.53,
+   "volume": 319005,
+   "prev_close_vendor": 416.05,
+   "market_cap": "28,660,944,482",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TXT": {
+   "close": 91.44,
+   "volume": 1626221,
+   "prev_close_vendor": 90.64,
+   "market_cap": "15,900,408,423",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TMO": {
+   "close": 532.55,
+   "volume": 1455910,
+   "prev_close_vendor": 543.19,
+   "market_cap": "197,907,011,186",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TJX": {
+   "close": 154.42,
+   "volume": 6184755,
+   "prev_close_vendor": 154.79,
+   "market_cap": "170,588,460,551",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TKO": {
+   "close": 185.17,
+   "volume": 1047808,
+   "prev_close_vendor": 184.78,
+   "market_cap": "35,390,854,749",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TTD": {
+   "close": 18.59,
+   "volume": 13565880,
+   "prev_close_vendor": 19.12,
+   "market_cap": "8,739,314,431",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TSCO": {
+   "close": 30.51,
+   "volume": 9728419,
+   "prev_close_vendor": 31.01,
+   "market_cap": "16,000,957,784",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TT": {
+   "close": 469.84,
+   "volume": 1930431,
+   "prev_close_vendor": 475.0,
+   "market_cap": "103,860,705,314",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TDG": {
+   "close": 1214.42,
+   "volume": 300861,
+   "prev_close_vendor": 1231.11,
+   "market_cap": "67,926,861,867",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TRV": {
+   "close": 369.08,
+   "volume": 4281349,
+   "prev_close_vendor": 337.82,
+   "market_cap": "78,482,903,292",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TRMB": {
+   "close": 52.72,
+   "volume": 3007559,
+   "prev_close_vendor": 53.75,
+   "market_cap": "12,289,639,282",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TFC": {
+   "close": 52.51,
+   "volume": 13823003,
+   "prev_close_vendor": 53.25,
+   "market_cap": "65,421,120,730",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TYL": {
+   "close": 319.64,
+   "volume": 778437,
+   "prev_close_vendor": 316.23,
+   "market_cap": "13,478,405,316",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TSN": {
+   "close": 57.77,
+   "volume": 2918018,
+   "prev_close_vendor": 57.83,
+   "market_cap": "20,342,515,554",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "USB": {
+   "close": 63.16,
+   "volume": 13160627,
+   "prev_close_vendor": 64.01,
+   "market_cap": "97,969,446,150",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UBER": {
+   "close": 72.48,
+   "volume": 18050772,
+   "prev_close_vendor": 74.04,
+   "market_cap": "147,540,216,462",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UDR": {
+   "close": 39.76,
+   "volume": 3224635,
+   "prev_close_vendor": 40.425,
+   "market_cap": "12,918,646,363",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ULTA": {
+   "close": 479.57,
+   "volume": 766743,
+   "prev_close_vendor": 478.86,
+   "market_cap": "20,616,383,876",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UNP": {
+   "close": 301.63,
+   "volume": 3519664,
+   "prev_close_vendor": 299.42,
+   "market_cap": "179,081,716,437",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UAL": {
+   "close": 115.41,
+   "volume": 6026339,
+   "prev_close_vendor": 118.81,
+   "market_cap": "37,458,707,718",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UPS": {
+   "close": 117.67,
+   "volume": 7151280,
+   "prev_close_vendor": 117.18,
+   "market_cap": "100,020,238,850",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "URI": {
+   "close": 1044.97,
+   "volume": 489548,
+   "prev_close_vendor": 1071.82,
+   "market_cap": "65,463,772,668",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UNH": {
+   "close": 426.055,
+   "volume": 9936142,
+   "prev_close_vendor": 423.38,
+   "market_cap": "386,919,464,046",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "UHS": {
+   "close": 151.14,
+   "volume": 524369,
+   "prev_close_vendor": 153.54,
+   "market_cap": "9,149,464,090",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VLO": {
+   "close": 309.61,
+   "volume": 2636912,
+   "prev_close_vendor": 300.26,
+   "market_cap": "91,933,358,635",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VEEV": {
+   "close": 195.4,
+   "volume": 1252040,
+   "prev_close_vendor": 197.37,
+   "market_cap": "31,889,025,589",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VTR": {
+   "close": 96.1,
+   "volume": 3516781,
+   "prev_close_vendor": 95.04,
+   "market_cap": "46,720,910,380",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VLTO": {
+   "close": 93.81,
+   "volume": 3043064,
+   "prev_close_vendor": 94.21,
+   "market_cap": "23,039,667,143",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VRSN": {
+   "close": 277.66,
+   "volume": 648085,
+   "prev_close_vendor": 275.22,
+   "market_cap": "25,267,060,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VRSK": {
+   "close": 200.68,
+   "volume": 1740726,
+   "prev_close_vendor": 201.49,
+   "market_cap": "26,293,462,851",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VZ": {
+   "close": 43.59,
+   "volume": 31008545,
+   "prev_close_vendor": 43.88,
+   "market_cap": "182,012,612,887",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VRTX": {
+   "close": 485.65,
+   "volume": 1568068,
+   "prev_close_vendor": 486.03,
+   "market_cap": "123,260,600,766",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VRT": {
+   "close": 289.58,
+   "volume": 5964131,
+   "prev_close_vendor": 294.11,
+   "market_cap": "111,230,230,937",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VTRS": {
+   "close": 17.29,
+   "volume": 9520720,
+   "prev_close_vendor": 17.33,
+   "market_cap": "20,135,115,388",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VICI": {
+   "close": 26.86,
+   "volume": 8205497,
+   "prev_close_vendor": 27.15,
+   "market_cap": "28,714,150,823",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "V": {
+   "close": 358.605,
+   "volume": 7396918,
+   "prev_close_vendor": 365.14,
+   "market_cap": "679,365,681,720",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VST": {
+   "close": 155.38,
+   "volume": 4433491,
+   "prev_close_vendor": 152.56,
+   "market_cap": "52,391,411,878",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "VMC": {
+   "close": 288.34,
+   "volume": 689828,
+   "prev_close_vendor": 293.47,
+   "market_cap": "37,413,523,541",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WRB": {
+   "close": 71.65,
+   "volume": 3765710,
+   "prev_close_vendor": 69.9,
+   "market_cap": "26,673,627,848",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "GWW": {
+   "close": 1394.916,
+   "volume": 320832,
+   "prev_close_vendor": 1402.03,
+   "market_cap": "65,858,335,103",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WAB": {
+   "close": 261.97,
+   "volume": 833644,
+   "prev_close_vendor": 263.89,
+   "market_cap": "44,450,374,332",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WMT": {
+   "close": 114.24,
+   "volume": 28270249,
+   "prev_close_vendor": 114.95,
+   "market_cap": "909,130,962,667",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "DIS": {
+   "close": 97.665,
+   "volume": 9879509,
+   "prev_close_vendor": 99.71,
+   "market_cap": "169,596,388,225",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WBD": {
+   "close": 26.87,
+   "volume": 27767570,
+   "prev_close_vendor": 27.29,
+   "market_cap": "67,366,763,183",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WM": {
+   "close": 239.355,
+   "volume": 2158958,
+   "prev_close_vendor": 242.25,
+   "market_cap": "96,119,164,120",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WAT": {
+   "close": 368.75,
+   "volume": 571886,
+   "prev_close_vendor": 378.19,
+   "market_cap": "36,206,034,031",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WEC": {
+   "close": 113.345,
+   "volume": 2024633,
+   "prev_close_vendor": 114.49,
+   "market_cap": "36,919,376,973",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WFC": {
+   "close": 87.525,
+   "volume": 22759791,
+   "prev_close_vendor": 88.07,
+   "market_cap": "267,843,085,462",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WELL": {
+   "close": 243.305,
+   "volume": 2792334,
+   "prev_close_vendor": 241.49,
+   "market_cap": "171,752,515,257",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WST": {
+   "close": 358.365,
+   "volume": 669164,
+   "prev_close_vendor": 362.44,
+   "market_cap": "25,317,625,382",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WDC": {
+   "close": 477.22,
+   "volume": 11755424,
+   "prev_close_vendor": 466.81,
+   "market_cap": "164,489,206,556",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WY": {
+   "close": 24.48,
+   "volume": 6162754,
+   "prev_close_vendor": 24.45,
+   "market_cap": "17,651,132,640",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WSM": {
+   "close": 228.385,
+   "volume": 1746102,
+   "prev_close_vendor": 227.62,
+   "market_cap": "26,891,559,753",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WMB": {
+   "close": 73.38,
+   "volume": 8904641,
+   "prev_close_vendor": 74.73,
+   "market_cap": "89,743,612,686",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WTW": {
+   "close": 293.43,
+   "volume": 653637,
+   "prev_close_vendor": 294.33,
+   "market_cap": "27,713,869,598",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WDAY": {
+   "close": 144.78,
+   "volume": 5052354,
+   "prev_close_vendor": 145.43,
+   "market_cap": "35,760,660,000",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "WYNN": {
+   "close": 96.64,
+   "volume": 984707,
+   "prev_close_vendor": 98.11,
+   "market_cap": "10,029,949,491",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "XEL": {
+   "close": 78.77,
+   "volume": 5592556,
+   "prev_close_vendor": 79.98,
+   "market_cap": "49,173,713,241",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "XYL": {
+   "close": 122.8,
+   "volume": 2735888,
+   "prev_close_vendor": 125.3,
+   "market_cap": "29,188,760,940",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "YUM": {
+   "close": 147.9,
+   "volume": 3952673,
+   "prev_close_vendor": 152.1,
+   "market_cap": "40,764,375,776",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ZBRA": {
+   "close": 267.4,
+   "volume": 673630,
+   "prev_close_vendor": 265.04,
+   "market_cap": "12,737,169,021",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ZBH": {
+   "close": 91.13,
+   "volume": 2632268,
+   "prev_close_vendor": 93.75,
+   "market_cap": "17,630,235,985",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ZTS": {
+   "close": 76.53,
+   "volume": 7544328,
+   "prev_close_vendor": 76.91,
+   "market_cap": "32,083,527,871",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ALNY": {
+   "close": 267.47,
+   "volume": 1377946,
+   "prev_close_vendor": 283.15,
+   "market_cap": "35,710,607,900",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ARM": {
+   "close": 267.19,
+   "volume": 8221002,
+   "prev_close_vendor": 262.01,
+   "market_cap": "284,304,922,782",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ASML": {
+   "close": 1747.58,
+   "volume": 2205557,
+   "prev_close_vendor": 1784.87,
+   "market_cap": "673,548,203,001",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CCEP": {
+   "close": 105.18,
+   "volume": 1730846,
+   "prev_close_vendor": 106.05,
+   "market_cap": "47,749,872,303",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "FER": {
+   "close": 63.59,
+   "volume": 1276374,
+   "prev_close_vendor": 63.66,
+   "market_cap": "45,750,318,450",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "INSM": {
+   "close": 108.32,
+   "volume": 2002554,
+   "prev_close_vendor": 107.46,
+   "market_cap": "23,478,625,492",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MELI": {
+   "close": 1813.91,
+   "volume": 313531,
+   "prev_close_vendor": 1857.42,
+   "market_cap": "91,960,125,402",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "MSTR": {
+   "close": 94.85,
+   "volume": 12997577,
+   "prev_close_vendor": 94.03,
+   "market_cap": "33,239,980,659",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "PDD": {
+   "close": 84.14,
+   "volume": 10479041,
+   "prev_close_vendor": 86.68,
+   "market_cap": "119,764,578,313",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SHOP": {
+   "close": 123.56,
+   "volume": 6315664,
+   "prev_close_vendor": 125.06,
+   "market_cap": "160,110,410,249",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "TRI": {
+   "close": 96.2,
+   "volume": 2576849,
+   "prev_close_vendor": 98.82,
+   "market_cap": "41,962,965,348",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "ZS": {
+   "close": 149.94,
+   "volume": 2513163,
+   "prev_close_vendor": 146.43,
+   "market_cap": "24,246,726,179",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CNP": {
+   "close": 43.14,
+   "volume": 5389375,
+   "prev_close_vendor": 43.34,
+   "market_cap": "28,220,871,367",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CF": {
+   "close": 121.45,
+   "volume": 3024198,
+   "prev_close_vendor": 118.66,
+   "market_cap": "18,658,275,327",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CRL": {
+   "close": 224.37,
+   "volume": 708410,
+   "prev_close_vendor": 229.16,
+   "market_cap": "10,807,393,580",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "SCHW": {
+   "close": 101.6,
+   "volume": 8311801,
+   "prev_close_vendor": 102.8,
+   "market_cap": "176,696,167,511",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CHTR": {
+   "close": 131.37,
+   "volume": 1972161,
+   "prev_close_vendor": 133.33,
+   "market_cap": "18,258,398,626",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CVX": {
+   "close": 187.36,
+   "volume": 7048921,
+   "prev_close_vendor": 183.86,
+   "market_cap": "373,145,751,068",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CMG": {
+   "close": 34.43,
+   "volume": 19837960,
+   "prev_close_vendor": 34.2,
+   "market_cap": "44,164,531,620",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CB": {
+   "close": 352.18,
+   "volume": 2985196,
+   "prev_close_vendor": 343.7,
+   "market_cap": "136,596,572,131",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CHD": {
+   "close": 98.06,
+   "volume": 1704692,
+   "prev_close_vendor": 99.12,
+   "market_cap": "23,234,689,612",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CIEN": {
+   "close": 374.41,
+   "volume": 3363362,
+   "prev_close_vendor": 388.81,
+   "market_cap": "52,998,829,526",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CI": {
+   "close": 281.54,
+   "volume": 3033572,
+   "prev_close_vendor": 283.82,
+   "market_cap": "74,476,453,022",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CINF": {
+   "close": 180.79,
+   "volume": 1326924,
+   "prev_close_vendor": 176.29,
+   "market_cap": "27,965,816,086",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  },
+  "CTAS": {
+   "close": 204.45,
+   "volume": 3066871,
+   "prev_close_vendor": 206.25,
+   "market_cap": "81,807,985,320",
+   "close_marker": "Closed at Jul 17, 2026 4:00 PM ET",
+   "source": "info_secondary+summary"
+  }
+ },
+ "retry_note": "13 transient DNS failures mid-run retried successfully (today_manifest_retry pass); 518/518 complete + BF-B via IBKR"
+}
