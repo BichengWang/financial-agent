@@ -1,0 +1,4683 @@
+{
+ "generated_at": "2026-07-20T16:26:55.977124+00:00",
+ "mode": "nasdaq_primary",
+ "range": "5y daily",
+ "fromdate": "2021-07-20",
+ "todate": "2026-07-20",
+ "symbol_count": 519,
+ "success_count": 518,
+ "failures": {
+  "BF-B": "NO_SOURCE (NASDAQ_SKIP; needs IBKR straggler pass)"
+ },
+ "symbols": {
+  "AOS": {
+   "symbol": "AOS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:16.577999+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MMM": {
+   "symbol": "MMM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:16.738066+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMD": {
+   "symbol": "AMD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:16.880745+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AES": {
+   "symbol": "AES",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:16.897269+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ADBE": {
+   "symbol": "ADBE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:18.769306+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ABBV": {
+   "symbol": "ABBV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:18.770458+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ACN": {
+   "symbol": "ACN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:18.789891+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ABT": {
+   "symbol": "ABT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:18.827048+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APD": {
+   "symbol": "APD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:18.830607+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ABNB": {
+   "symbol": "ABNB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:19.493751+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AFL": {
+   "symbol": "AFL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:20.320873+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ARE": {
+   "symbol": "ARE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:20.414864+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "A": {
+   "symbol": "A",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:20.424144+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ALGN": {
+   "symbol": "ALGN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:20.433478+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ALB": {
+   "symbol": "ALB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:21.301735+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ALLE": {
+   "symbol": "ALLE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:21.332872+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LNT": {
+   "symbol": "LNT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:21.948093+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ALL": {
+   "symbol": "ALL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:21.964478+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AKAM": {
+   "symbol": "AKAM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:22.419946+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GOOGL": {
+   "symbol": "GOOGL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:22.939208+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AEE": {
+   "symbol": "AEE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:23.330614+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMCR": {
+   "symbol": "AMCR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:23.880675+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MO": {
+   "symbol": "MO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:23.902668+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMZN": {
+   "symbol": "AMZN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:23.913211+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GOOG": {
+   "symbol": "GOOG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:23.916370+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AIG": {
+   "symbol": "AIG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:24.398808+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AEP": {
+   "symbol": "AEP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:24.409678+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AXP": {
+   "symbol": "AXP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:24.934543+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AWK": {
+   "symbol": "AWK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:25.281593+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMGN": {
+   "symbol": "AMGN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:25.392952+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMT": {
+   "symbol": "AMT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:25.716833+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ADI": {
+   "symbol": "ADI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:26.781847+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMP": {
+   "symbol": "AMP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:27.269665+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AME": {
+   "symbol": "AME",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:27.294088+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AON": {
+   "symbol": "AON",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:27.309725+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APA": {
+   "symbol": "APA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:27.776227+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APH": {
+   "symbol": "APH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:27.825872+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APP": {
+   "symbol": "APP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:28.759304+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APO": {
+   "symbol": "APO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:28.776458+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "APTV": {
+   "symbol": "APTV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:28.791389+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AAPL": {
+   "symbol": "AAPL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:29.105399+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ACGL": {
+   "symbol": "ACGL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:29.825911+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AMAT": {
+   "symbol": "AMAT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:30.169700+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AIZ": {
+   "symbol": "AIZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:30.182175+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ARES": {
+   "symbol": "ARES",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.193972+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AJG": {
+   "symbol": "AJG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.204857+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ADM": {
+   "symbol": "ADM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.232220+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "T": {
+   "symbol": "T",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.573054+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ADP": {
+   "symbol": "ADP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.734379+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ADSK": {
+   "symbol": "ADSK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:31.751422+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ANET": {
+   "symbol": "ANET",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:32.811496+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AVB": {
+   "symbol": "AVB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:32.818892+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AZO": {
+   "symbol": "AZO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:32.832231+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AXON": {
+   "symbol": "AXON",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:33.038464+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ATO": {
+   "symbol": "ATO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:33.321151+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BKR": {
+   "symbol": "BKR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:33.330384+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AVY": {
+   "symbol": "AVY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:33.831066+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BALL": {
+   "symbol": "BALL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:34.371115+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BRK-B": {
+   "symbol": "BRK-B",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:34.589813+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BDX": {
+   "symbol": "BDX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:35.368590+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BIIB": {
+   "symbol": "BIIB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:35.383879+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BBY": {
+   "symbol": "BBY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:35.732423+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BAC": {
+   "symbol": "BAC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:36.201027+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BAX": {
+   "symbol": "BAX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:36.216799+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "XYZ": {
+   "symbol": "XYZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:36.721057+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TECH": {
+   "symbol": "TECH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:36.736077+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BKNG": {
+   "symbol": "BKNG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:37.547462+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BSX": {
+   "symbol": "BSX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:37.575669+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BLK": {
+   "symbol": "BLK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:37.761666+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BF-B": {
+   "symbol": "BF-B",
+   "source": null,
+   "rows": 0,
+   "error": "NO_SOURCE (NASDAQ_SKIP; needs IBKR straggler pass)",
+   "retrieved_at": null
+  },
+  "BNY": {
+   "symbol": "BNY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:37.769862+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BX": {
+   "symbol": "BX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:38.148853+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BR": {
+   "symbol": "BR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:38.920502+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BRO": {
+   "symbol": "BRO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.011110+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BMY": {
+   "symbol": "BMY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.061752+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "AVGO": {
+   "symbol": "AVGO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.117147+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BG": {
+   "symbol": "BG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.147729+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BLDR": {
+   "symbol": "BLDR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.176876+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BA": {
+   "symbol": "BA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.189746+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BXP": {
+   "symbol": "BXP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:39.587100+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CAH": {
+   "symbol": "CAH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:40.501472+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CVNA": {
+   "symbol": "CVNA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:40.943859+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CDNS": {
+   "symbol": "CDNS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:41.378071+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CASY": {
+   "symbol": "CASY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:41.932194+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CHRW": {
+   "symbol": "CHRW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:42.332691+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CPT": {
+   "symbol": "CPT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:42.485332+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "COF": {
+   "symbol": "COF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:42.502054+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CARR": {
+   "symbol": "CARR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:42.738749+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CCL": {
+   "symbol": "CCL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:42.751801+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CDW": {
+   "symbol": "CDW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:43.813254+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "COR": {
+   "symbol": "COR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:44.020756+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CAT": {
+   "symbol": "CAT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:44.299587+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CF": {
+   "symbol": "CF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:44.312220+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CNP": {
+   "symbol": "CNP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:44.324251+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CBOE": {
+   "symbol": "CBOE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:44.853597+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CNC": {
+   "symbol": "CNC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:45.013725+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CBRE": {
+   "symbol": "CBRE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:45.396097+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CRL": {
+   "symbol": "CRL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:45.399547+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CMG": {
+   "symbol": "CMG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:45.847595+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CVX": {
+   "symbol": "CVX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:45.864114+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SCHW": {
+   "symbol": "SCHW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:46.602149+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CTAS": {
+   "symbol": "CTAS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:47.234109+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CB": {
+   "symbol": "CB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:47.251085+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CHD": {
+   "symbol": "CHD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:47.634520+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CHTR": {
+   "symbol": "CHTR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:47.715581+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "C": {
+   "symbol": "C",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:48.611736+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CI": {
+   "symbol": "CI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:48.777710+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CIEN": {
+   "symbol": "CIEN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:48.794666+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CLX": {
+   "symbol": "CLX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:49.030124+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CSCO": {
+   "symbol": "CSCO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:49.043954+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CINF": {
+   "symbol": "CINF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:49.269682+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CFG": {
+   "symbol": "CFG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:50.621454+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CMS": {
+   "symbol": "CMS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:50.969882+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CME": {
+   "symbol": "CME",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:51.130597+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KO": {
+   "symbol": "KO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:51.147889+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "COHR": {
+   "symbol": "COHR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 967,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:51.349980+00:00",
+   "first_date": "2022-09-08",
+   "last_date": "2026-07-17"
+  },
+  "COIN": {
+   "symbol": "COIN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:51.403475+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CTSH": {
+   "symbol": "CTSH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:52.172414+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CL": {
+   "symbol": "CL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:52.728755+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CAG": {
+   "symbol": "CAG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:52.744320+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "STZ": {
+   "symbol": "STZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:52.776217+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CMCSA": {
+   "symbol": "CMCSA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:52.992368+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FIX": {
+   "symbol": "FIX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:53.419080+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ED": {
+   "symbol": "ED",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:53.772091+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GLW": {
+   "symbol": "GLW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:54.149923+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "COP": {
+   "symbol": "COP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:54.596531+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CEG": {
+   "symbol": "CEG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1127,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:54.611940+00:00",
+   "first_date": "2022-01-19",
+   "last_date": "2026-07-17"
+  },
+  "COO": {
+   "symbol": "COO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:55.156382+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "COST": {
+   "symbol": "COST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:55.531364+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CRWD": {
+   "symbol": "CRWD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.002802+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CTVA": {
+   "symbol": "CTVA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.119936+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CPRT": {
+   "symbol": "CPRT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.135371+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CSGP": {
+   "symbol": "CSGP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.388746+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CPAY": {
+   "symbol": "CPAY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.496715+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CRH": {
+   "symbol": "CRH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:56.945305+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CMI": {
+   "symbol": "CMI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:57.366298+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DHR": {
+   "symbol": "DHR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:57.499822+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CCI": {
+   "symbol": "CCI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:57.540241+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CSX": {
+   "symbol": "CSX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:57.887918+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DVA": {
+   "symbol": "DVA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:58.313185+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CVS": {
+   "symbol": "CVS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:58.489796+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DECK": {
+   "symbol": "DECK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:58.710992+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DELL": {
+   "symbol": "DELL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:58.927503+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DDOG": {
+   "symbol": "DDOG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:58.944287+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DAL": {
+   "symbol": "DAL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:59.311090+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DRI": {
+   "symbol": "DRI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:59.769462+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DXCM": {
+   "symbol": "DXCM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:24:59.836588+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DVN": {
+   "symbol": "DVN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:00.662960+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DE": {
+   "symbol": "DE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:00.868771+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "D": {
+   "symbol": "D",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:01.116358+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DPZ": {
+   "symbol": "DPZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:01.183568+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DLR": {
+   "symbol": "DLR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:01.275501+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DLTR": {
+   "symbol": "DLTR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:01.682347+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DASH": {
+   "symbol": "DASH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:02.002657+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FANG": {
+   "symbol": "FANG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:02.084712+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DG": {
+   "symbol": "DG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:02.282714+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DTE": {
+   "symbol": "DTE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:02.695903+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DD": {
+   "symbol": "DD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:03.415875+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ETN": {
+   "symbol": "ETN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:03.441646+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DHI": {
+   "symbol": "DHI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:03.545675+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SATS": {
+   "symbol": "SATS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:04.112335+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DOV": {
+   "symbol": "DOV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:04.347013+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DOW": {
+   "symbol": "DOW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:04.539520+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ECL": {
+   "symbol": "ECL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:04.797441+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EW": {
+   "symbol": "EW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:04.926222+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DUK": {
+   "symbol": "DUK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:05.040135+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EBAY": {
+   "symbol": "EBAY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:05.641665+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ELV": {
+   "symbol": "ELV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:05.721654+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EIX": {
+   "symbol": "EIX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:05.825112+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EMR": {
+   "symbol": "EMR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:07.170571+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EA": {
+   "symbol": "EA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:07.474520+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EME": {
+   "symbol": "EME",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:07.887551+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EFX": {
+   "symbol": "EFX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.112326+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ETR": {
+   "symbol": "ETR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.303195+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EQT": {
+   "symbol": "EQT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.316963+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EQR": {
+   "symbol": "EQR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.560517+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EQIX": {
+   "symbol": "EQIX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.570059+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EOG": {
+   "symbol": "EOG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:08.577499+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ERIE": {
+   "symbol": "ERIE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:09.855248+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EL": {
+   "symbol": "EL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:10.537865+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EVRG": {
+   "symbol": "EVRG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:10.705784+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ES": {
+   "symbol": "ES",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:10.972067+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EXE": {
+   "symbol": "EXE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:10.968991+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EXPE": {
+   "symbol": "EXPE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:11.248274+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ESS": {
+   "symbol": "ESS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:11.260314+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EG": {
+   "symbol": "EG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:11.652785+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EXC": {
+   "symbol": "EXC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:12.010621+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EXPD": {
+   "symbol": "EXPD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:12.922888+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "EXR": {
+   "symbol": "EXR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:13.084634+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "XOM": {
+   "symbol": "XOM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:13.329786+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FRT": {
+   "symbol": "FRT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:13.388963+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FDS": {
+   "symbol": "FDS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:13.614849+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FAST": {
+   "symbol": "FAST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:14.120366+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FFIV": {
+   "symbol": "FFIV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:14.323417+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FDXF": {
+   "symbol": "FDXF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 36,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:14.365036+00:00",
+   "first_date": "2026-05-27",
+   "last_date": "2026-07-17"
+  },
+  "FICO": {
+   "symbol": "FICO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:14.598603+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FIS": {
+   "symbol": "FIS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:14.684384+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FITB": {
+   "symbol": "FITB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:15.911465+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FSLR": {
+   "symbol": "FSLR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:15.955124+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FTNT": {
+   "symbol": "FTNT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:16.025535+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FDX": {
+   "symbol": "FDX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:16.314610+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FE": {
+   "symbol": "FE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:16.449958+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "F": {
+   "symbol": "F",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:16.988501+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FOXA": {
+   "symbol": "FOXA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:17.303447+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FISV": {
+   "symbol": "FISV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:17.693760+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FLEX": {
+   "symbol": "FLEX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:17.745467+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FTV": {
+   "symbol": "FTV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:18.315327+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GRMN": {
+   "symbol": "GRMN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:18.435140+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "BEN": {
+   "symbol": "BEN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:18.713871+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FCX": {
+   "symbol": "FCX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:18.787929+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FOX": {
+   "symbol": "FOX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:19.437297+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GD": {
+   "symbol": "GD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:20.159886+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GEV": {
+   "symbol": "GEV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 578,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:20.604032+00:00",
+   "first_date": "2024-03-27",
+   "last_date": "2026-07-17"
+  },
+  "IT": {
+   "symbol": "IT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:20.654646+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GE": {
+   "symbol": "GE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:21.034444+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GEHC": {
+   "symbol": "GEHC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 898,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:21.048687+00:00",
+   "first_date": "2022-12-15",
+   "last_date": "2026-07-17"
+  },
+  "GEN": {
+   "symbol": "GEN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:21.781840+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GNRC": {
+   "symbol": "GNRC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:22.086898+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GPN": {
+   "symbol": "GPN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:22.813364+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GM": {
+   "symbol": "GM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:22.870503+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GIS": {
+   "symbol": "GIS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:22.973549+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GDDY": {
+   "symbol": "GDDY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:23.166136+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GPC": {
+   "symbol": "GPC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:23.242403+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GL": {
+   "symbol": "GL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:23.437473+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GILD": {
+   "symbol": "GILD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:23.514929+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GS": {
+   "symbol": "GS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:23.530653+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HIG": {
+   "symbol": "HIG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:24.222048+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HSIC": {
+   "symbol": "HSIC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:24.801936+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HAL": {
+   "symbol": "HAL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:25.193378+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HAS": {
+   "symbol": "HAS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:25.349676+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HCA": {
+   "symbol": "HCA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:25.570846+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DOC": {
+   "symbol": "DOC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:25.640346+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HRL": {
+   "symbol": "HRL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:26.741833+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HSY": {
+   "symbol": "HSY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:26.895564+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HPE": {
+   "symbol": "HPE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:26.910624+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HST": {
+   "symbol": "HST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:26.920274+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HD": {
+   "symbol": "HD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:27.172221+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HLT": {
+   "symbol": "HLT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:27.646861+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HUBB": {
+   "symbol": "HUBB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:28.263156+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HBAN": {
+   "symbol": "HBAN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:28.326275+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HON": {
+   "symbol": "HON",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:28.559497+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HII": {
+   "symbol": "HII",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:28.568592+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HWM": {
+   "symbol": "HWM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:29.065165+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IBM": {
+   "symbol": "IBM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.031298+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HPQ": {
+   "symbol": "HPQ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.165012+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HUM": {
+   "symbol": "HUM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.315617+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IEX": {
+   "symbol": "IEX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.616521+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IDXX": {
+   "symbol": "IDXX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.729181+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "INCY": {
+   "symbol": "INCY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:30.965929+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ITW": {
+   "symbol": "ITW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:31.938338+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IR": {
+   "symbol": "IR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:32.432117+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IBKR": {
+   "symbol": "IBKR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:32.712911+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IFF": {
+   "symbol": "IFF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:33.090057+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "INTU": {
+   "symbol": "INTU",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:33.300011+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IP": {
+   "symbol": "IP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:33.361223+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PODD": {
+   "symbol": "PODD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:33.409175+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "INTC": {
+   "symbol": "INTC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:33.553445+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ICE": {
+   "symbol": "ICE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:34.078594+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IVZ": {
+   "symbol": "IVZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:34.170260+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IRM": {
+   "symbol": "IRM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:34.775279+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "JBL": {
+   "symbol": "JBL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:34.967266+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "INVH": {
+   "symbol": "INVH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:35.411784+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "J": {
+   "symbol": "J",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:35.548208+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ISRG": {
+   "symbol": "ISRG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:35.756733+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "IQV": {
+   "symbol": "IQV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:36.641948+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "JPM": {
+   "symbol": "JPM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:36.847356+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "JBHT": {
+   "symbol": "JBHT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:36.885589+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KDP": {
+   "symbol": "KDP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:37.130551+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "JCI": {
+   "symbol": "JCI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:37.334651+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "JKHY": {
+   "symbol": "JKHY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:37.622388+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KVUE": {
+   "symbol": "KVUE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 803,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:37.901080+00:00",
+   "first_date": "2023-05-04",
+   "last_date": "2026-07-17"
+  },
+  "JNJ": {
+   "symbol": "JNJ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:38.136844+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KIM": {
+   "symbol": "KIM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:38.567391+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KEY": {
+   "symbol": "KEY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:38.981747+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KMB": {
+   "symbol": "KMB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:39.256370+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KHC": {
+   "symbol": "KHC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:39.499225+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KMI": {
+   "symbol": "KMI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:39.817795+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KR": {
+   "symbol": "KR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:39.923566+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KEYS": {
+   "symbol": "KEYS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:40.228527+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KLAC": {
+   "symbol": "KLAC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:40.338717+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LHX": {
+   "symbol": "LHX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:40.347939+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LRCX": {
+   "symbol": "LRCX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:40.947364+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "KKR": {
+   "symbol": "KKR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:40.974974+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LDOS": {
+   "symbol": "LDOS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:41.279707+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LH": {
+   "symbol": "LH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:41.598660+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LVS": {
+   "symbol": "LVS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:42.188322+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LYV": {
+   "symbol": "LYV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:42.383887+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LMT": {
+   "symbol": "LMT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:42.785153+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LEN": {
+   "symbol": "LEN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:43.605617+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LII": {
+   "symbol": "LII",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:43.742361+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LLY": {
+   "symbol": "LLY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:43.815341+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "L": {
+   "symbol": "L",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:43.974197+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LIN": {
+   "symbol": "LIN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 847,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:44.288439+00:00",
+   "first_date": "2023-03-02",
+   "last_date": "2026-07-17"
+  },
+  "MPC": {
+   "symbol": "MPC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:45.185290+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LITE": {
+   "symbol": "LITE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:45.201941+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LOW": {
+   "symbol": "LOW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:45.687080+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LULU": {
+   "symbol": "LULU",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:45.746544+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LYB": {
+   "symbol": "LYB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:46.098048+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MTB": {
+   "symbol": "MTB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:46.220232+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MAR": {
+   "symbol": "MAR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:46.405820+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MLM": {
+   "symbol": "MLM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:46.601588+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MAS": {
+   "symbol": "MAS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:47.035441+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MRVL": {
+   "symbol": "MRVL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:47.557661+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MCK": {
+   "symbol": "MCK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:47.808388+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MRSH": {
+   "symbol": "MRSH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:47.838746+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MCD": {
+   "symbol": "MCD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:48.726967+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MA": {
+   "symbol": "MA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.113822+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MET": {
+   "symbol": "MET",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.147555+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MRK": {
+   "symbol": "MRK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.409670+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MKC": {
+   "symbol": "MKC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.500947+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "META": {
+   "symbol": "META",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.932022+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MDT": {
+   "symbol": "MDT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:49.944362+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MCHP": {
+   "symbol": "MCHP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:50.537456+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MSFT": {
+   "symbol": "MSFT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:50.803963+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MTD": {
+   "symbol": "MTD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:51.200040+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MGM": {
+   "symbol": "MGM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:52.175505+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TAP": {
+   "symbol": "TAP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:52.384760+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MU": {
+   "symbol": "MU",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:52.541733+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MDLZ": {
+   "symbol": "MDLZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:52.911123+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MAA": {
+   "symbol": "MAA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:52.927690+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MRNA": {
+   "symbol": "MRNA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:53.333893+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MNST": {
+   "symbol": "MNST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:53.562139+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MOS": {
+   "symbol": "MOS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:53.915544+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MPWR": {
+   "symbol": "MPWR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:54.242785+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MCO": {
+   "symbol": "MCO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:54.555476+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NEM": {
+   "symbol": "NEM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:55.582217+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MS": {
+   "symbol": "MS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:55.742305+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NTAP": {
+   "symbol": "NTAP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:55.956944+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NFLX": {
+   "symbol": "NFLX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.308302+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MSI": {
+   "symbol": "MSI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.318364+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MSCI": {
+   "symbol": "MSCI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.467210+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NDAQ": {
+   "symbol": "NDAQ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.691266+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NWSA": {
+   "symbol": "NWSA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.873144+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NWS": {
+   "symbol": "NWS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:56.953077+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NEE": {
+   "symbol": "NEE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:58.081134+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NOC": {
+   "symbol": "NOC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:58.212839+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NCLH": {
+   "symbol": "NCLH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:58.308189+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NI": {
+   "symbol": "NI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:58.639772+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NTRS": {
+   "symbol": "NTRS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:59.079647+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NKE": {
+   "symbol": "NKE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:59.473213+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NVDA": {
+   "symbol": "NVDA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:59.810896+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NDSN": {
+   "symbol": "NDSN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:59.828533+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NSC": {
+   "symbol": "NSC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:25:59.842495+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NUE": {
+   "symbol": "NUE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:00.593537+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NXPI": {
+   "symbol": "NXPI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:01.408320+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NRG": {
+   "symbol": "NRG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:01.425951+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ON": {
+   "symbol": "ON",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:02.090232+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NVR": {
+   "symbol": "NVR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:02.099237+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "OXY": {
+   "symbol": "OXY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:02.409990+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ORLY": {
+   "symbol": "ORLY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:02.959985+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "OMC": {
+   "symbol": "OMC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:03.282613+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ODFL": {
+   "symbol": "ODFL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:03.315369+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "OKE": {
+   "symbol": "OKE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:03.849487+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ORCL": {
+   "symbol": "ORCL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:03.992133+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PSKY": {
+   "symbol": "PSKY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 237,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:04.666423+00:00",
+   "first_date": "2025-08-07",
+   "last_date": "2026-07-17"
+  },
+  "PCAR": {
+   "symbol": "PCAR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:05.535242+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "OTIS": {
+   "symbol": "OTIS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:05.583379+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PANW": {
+   "symbol": "PANW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:05.772663+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PKG": {
+   "symbol": "PKG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:05.922166+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PAYX": {
+   "symbol": "PAYX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:06.331177+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PLTR": {
+   "symbol": "PLTR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:06.395308+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PNR": {
+   "symbol": "PNR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:06.889308+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PFE": {
+   "symbol": "PFE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:07.133041+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PH": {
+   "symbol": "PH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:07.339127+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PSX": {
+   "symbol": "PSX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:07.807844+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PYPL": {
+   "symbol": "PYPL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:08.023554+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PEP": {
+   "symbol": "PEP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:08.042365+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PCG": {
+   "symbol": "PCG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:08.403161+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PM": {
+   "symbol": "PM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:08.712722+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PNW": {
+   "symbol": "PNW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:09.263106+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PNC": {
+   "symbol": "PNC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:09.462974+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PG": {
+   "symbol": "PG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:09.497538+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PFG": {
+   "symbol": "PFG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:09.509364+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PRU": {
+   "symbol": "PRU",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:10.775647+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PPG": {
+   "symbol": "PPG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:10.791557+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PPL": {
+   "symbol": "PPL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:11.183855+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PGR": {
+   "symbol": "PGR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:11.842046+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PTC": {
+   "symbol": "PTC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:11.853373+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PSA": {
+   "symbol": "PSA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:11.866443+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PLD": {
+   "symbol": "PLD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:12.063651+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PWR": {
+   "symbol": "PWR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:12.215309+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "QCOM": {
+   "symbol": "QCOM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:12.630673+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PEG": {
+   "symbol": "PEG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:12.919083+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PHM": {
+   "symbol": "PHM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:13.137356+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RL": {
+   "symbol": "RL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:13.212612+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RJF": {
+   "symbol": "RJF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:13.424985+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "Q": {
+   "symbol": "Q",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 181,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:14.093479+00:00",
+   "first_date": "2025-10-27",
+   "last_date": "2026-07-17"
+  },
+  "DGX": {
+   "symbol": "DGX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:14.199145+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "O": {
+   "symbol": "O",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:15.105769+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RTX": {
+   "symbol": "RTX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:15.645607+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RSG": {
+   "symbol": "RSG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:15.770711+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "REG": {
+   "symbol": "REG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:16.349261+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RMD": {
+   "symbol": "RMD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:16.482475+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "REGN": {
+   "symbol": "REGN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:16.498201+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RVTY": {
+   "symbol": "RVTY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:16.573263+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RF": {
+   "symbol": "RF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:16.625132+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ROP": {
+   "symbol": "ROP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:17.862206+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "RCL": {
+   "symbol": "RCL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:17.878339+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ROST": {
+   "symbol": "ROST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:17.896686+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ROL": {
+   "symbol": "ROL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:18.362086+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CRM": {
+   "symbol": "CRM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:18.374695+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ROK": {
+   "symbol": "ROK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:18.385545+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "HOOD": {
+   "symbol": "HOOD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1247,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:18.909999+00:00",
+   "first_date": "2021-07-29",
+   "last_date": "2026-07-17"
+  },
+  "SPGI": {
+   "symbol": "SPGI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:19.389572+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SNDK": {
+   "symbol": "SNDK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 357,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:20.412127+00:00",
+   "first_date": "2025-02-13",
+   "last_date": "2026-07-17"
+  },
+  "SLB": {
+   "symbol": "SLB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:21.025177+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SRE": {
+   "symbol": "SRE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:21.501948+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SHW": {
+   "symbol": "SHW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:21.509740+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SBAC": {
+   "symbol": "SBAC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:21.520044+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "STX": {
+   "symbol": "STX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:21.531368+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "NOW": {
+   "symbol": "NOW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:22.387862+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SPG": {
+   "symbol": "SPG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:22.401584+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SWKS": {
+   "symbol": "SWKS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:23.081097+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SOLV": {
+   "symbol": "SOLV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 579,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:23.568313+00:00",
+   "first_date": "2024-03-26",
+   "last_date": "2026-07-17"
+  },
+  "SW": {
+   "symbol": "SW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 509,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:24.205558+00:00",
+   "first_date": "2024-07-08",
+   "last_date": "2026-07-17"
+  },
+  "SJM": {
+   "symbol": "SJM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:24.456124+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SBUX": {
+   "symbol": "SBUX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:24.470424+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "LUV": {
+   "symbol": "LUV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:24.997439+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SNA": {
+   "symbol": "SNA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:25.463502+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SO": {
+   "symbol": "SO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:25.544438+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SWK": {
+   "symbol": "SWK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:26.055396+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "STT": {
+   "symbol": "STT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:26.169283+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SMCI": {
+   "symbol": "SMCI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:26.610856+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "STLD": {
+   "symbol": "STLD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:26.795952+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "STE": {
+   "symbol": "STE",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:26.875639+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SYF": {
+   "symbol": "SYF",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:27.027076+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SNPS": {
+   "symbol": "SNPS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:27.041778+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TMUS": {
+   "symbol": "TMUS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:27.613498+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SYK": {
+   "symbol": "SYK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:27.918747+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TRGP": {
+   "symbol": "TRGP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:28.432248+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SYY": {
+   "symbol": "SYY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:28.616426+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TEL": {
+   "symbol": "TEL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:29.131137+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TROW": {
+   "symbol": "TROW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:29.203689+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TTWO": {
+   "symbol": "TTWO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:29.255075+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TSLA": {
+   "symbol": "TSLA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:30.057010+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TGT": {
+   "symbol": "TGT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:30.458017+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TPR": {
+   "symbol": "TPR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:30.467507+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TPL": {
+   "symbol": "TPL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:30.687861+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TDY": {
+   "symbol": "TDY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:31.395695+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TXN": {
+   "symbol": "TXN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:31.836497+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TXT": {
+   "symbol": "TXT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:31.941823+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TER": {
+   "symbol": "TER",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:31.951909+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TTD": {
+   "symbol": "TTD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:32.113056+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TKO": {
+   "symbol": "TKO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:32.876975+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TSCO": {
+   "symbol": "TSCO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:32.890592+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TT": {
+   "symbol": "TT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:33.362252+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TMO": {
+   "symbol": "TMO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:33.550203+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TJX": {
+   "symbol": "TJX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:33.911242+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TYL": {
+   "symbol": "TYL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:34.436981+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TFC": {
+   "symbol": "TFC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:35.415965+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TRV": {
+   "symbol": "TRV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:35.512182+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TDG": {
+   "symbol": "TDG",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:35.526289+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TRMB": {
+   "symbol": "TRMB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:35.636471+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UBER": {
+   "symbol": "UBER",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:36.275233+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TSN": {
+   "symbol": "TSN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:36.769692+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UDR": {
+   "symbol": "UDR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:36.850729+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UNP": {
+   "symbol": "UNP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:37.041674+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UPS": {
+   "symbol": "UPS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:37.056688+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "USB": {
+   "symbol": "USB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:37.066562+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UAL": {
+   "symbol": "UAL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:37.072645+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "URI": {
+   "symbol": "URI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:37.688410+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VEEV": {
+   "symbol": "VEEV",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:38.574316+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ULTA": {
+   "symbol": "ULTA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:38.827125+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UNH": {
+   "symbol": "UNH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:39.151490+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VLO": {
+   "symbol": "VLO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:39.442615+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VLTO": {
+   "symbol": "VLTO",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 703,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:39.447038+00:00",
+   "first_date": "2023-09-27",
+   "last_date": "2026-07-17"
+  },
+  "VTR": {
+   "symbol": "VTR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:39.512277+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "UHS": {
+   "symbol": "UHS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:40.318591+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VRTX": {
+   "symbol": "VRTX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:40.528323+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VRT": {
+   "symbol": "VRT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:40.908955+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VRSN": {
+   "symbol": "VRSN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:41.049104+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VZ": {
+   "symbol": "VZ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:41.223986+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VRSK": {
+   "symbol": "VRSK",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:41.948026+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VST": {
+   "symbol": "VST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:41.964905+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "V": {
+   "symbol": "V",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:42.782705+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VTRS": {
+   "symbol": "VTRS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:42.920100+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VICI": {
+   "symbol": "VICI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:42.944932+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WMT": {
+   "symbol": "WMT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:43.374801+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "VMC": {
+   "symbol": "VMC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:44.357592+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WM": {
+   "symbol": "WM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:44.374792+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WRB": {
+   "symbol": "WRB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:44.499045+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "GWW": {
+   "symbol": "GWW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:44.585933+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "DIS": {
+   "symbol": "DIS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:45.154658+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WAB": {
+   "symbol": "WAB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:45.405339+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WEC": {
+   "symbol": "WEC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:45.711824+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WAT": {
+   "symbol": "WAT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:45.762618+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WST": {
+   "symbol": "WST",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:45.996386+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WBD": {
+   "symbol": "WBD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:46.274542+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WDC": {
+   "symbol": "WDC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:46.533288+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WFC": {
+   "symbol": "WFC",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:46.737045+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WTW": {
+   "symbol": "WTW",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:47.471237+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WMB": {
+   "symbol": "WMB",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:47.530467+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WDAY": {
+   "symbol": "WDAY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:47.705735+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WY": {
+   "symbol": "WY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:47.780949+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WELL": {
+   "symbol": "WELL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:47.861714+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WYNN": {
+   "symbol": "WYNN",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:48.062759+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "WSM": {
+   "symbol": "WSM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:49.087649+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ZTS": {
+   "symbol": "ZTS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:49.302724+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ALNY": {
+   "symbol": "ALNY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:49.402795+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "XYL": {
+   "symbol": "XYL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:49.850751+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "YUM": {
+   "symbol": "YUM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:49.902410+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ZBRA": {
+   "symbol": "ZBRA",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:50.148847+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "XEL": {
+   "symbol": "XEL",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:50.161670+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ZBH": {
+   "symbol": "ZBH",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:51.185135+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "FER": {
+   "symbol": "FER",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 748,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.217569+00:00",
+   "first_date": "2023-07-25",
+   "last_date": "2026-07-17"
+  },
+  "ARM": {
+   "symbol": "ARM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 712,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.426748+00:00",
+   "first_date": "2023-09-14",
+   "last_date": "2026-07-17"
+  },
+  "MSTR": {
+   "symbol": "MSTR",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.500388+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "MELI": {
+   "symbol": "MELI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.560443+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "CCEP": {
+   "symbol": "CCEP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.765794+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ASML": {
+   "symbol": "ASML",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:52.778746+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "INSM": {
+   "symbol": "INSM",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:53.338897+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SHOP": {
+   "symbol": "SHOP",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:53.568065+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "PDD": {
+   "symbol": "PDD",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:54.614697+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "TRI": {
+   "symbol": "TRI",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 769,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:54.820218+00:00",
+   "first_date": "2023-06-23",
+   "last_date": "2026-07-17"
+  },
+  "TLT": {
+   "symbol": "TLT",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:54.848315+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "ZS": {
+   "symbol": "ZS",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:54.867886+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "QQQ": {
+   "symbol": "QQQ",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:55.149559+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SOXX": {
+   "symbol": "SOXX",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:55.165785+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  },
+  "SPY": {
+   "symbol": "SPY",
+   "source": "NASDAQ_HISTORICAL",
+   "rows": 1254,
+   "error": null,
+   "retrieved_at": "2026-07-20T16:26:55.972622+00:00",
+   "first_date": "2021-07-20",
+   "last_date": "2026-07-17"
+  }
+ }
+}
