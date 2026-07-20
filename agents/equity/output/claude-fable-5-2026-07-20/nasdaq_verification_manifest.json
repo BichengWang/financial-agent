@@ -1,0 +1,427 @@
+{
+ "vix": {
+  "source": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+  "rows": 1298,
+  "last_date": "2026-07-17",
+  "last_close": 18.77,
+  "retrieved_at": "2026-07-20T16:24:39.962725+00:00"
+ },
+ "rf": {
+  "source": "treasury.gov 13-week bank discount",
+  "date": "07/17/2026",
+  "value_pct": 3.71,
+  "retrieved_at": "2026-07-20T16:25:11.356395+00:00"
+ },
+ "ibkr_verification": [
+  {
+   "ticker": "AVGO",
+   "nasdaq": 370.825,
+   "ibkr": 370.83,
+   "divergence_pct": 0.0013
+  },
+  {
+   "ticker": "BAC",
+   "nasdaq": 61.27,
+   "ibkr": 61.27,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "CAT",
+   "nasdaq": 880.28,
+   "ibkr": 878.65,
+   "divergence_pct": 0.1855
+  },
+  {
+   "ticker": "CVX",
+   "nasdaq": 187.38,
+   "ibkr": 187.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "EQIX",
+   "nasdaq": 1020.0,
+   "ibkr": 1020.0,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "ETN",
+   "nasdaq": 399.99,
+   "ibkr": 399.99,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "FCX",
+   "nasdaq": 58.38,
+   "ibkr": 58.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GE",
+   "nasdaq": 348.83,
+   "ibkr": 348.83,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GOOGL",
+   "nasdaq": 346.77,
+   "ibkr": 346.77,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GS",
+   "nasdaq": 1065.22,
+   "ibkr": 1065.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "JPM",
+   "nasdaq": 341.1,
+   "ibkr": 341.1,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LIN",
+   "nasdaq": 513.22,
+   "ibkr": 513.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LLY",
+   "nasdaq": 1179.11,
+   "ibkr": 1179.11,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "QQQ",
+   "nasdaq": 695.33,
+   "ibkr": 695.33,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SOXX",
+   "nasdaq": 521.81,
+   "ibkr": 521.81,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SPY",
+   "nasdaq": 743.29,
+   "ibkr": 743.29,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "UNH",
+   "nasdaq": 426.09,
+   "ibkr": 426.09,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "AVGO",
+   "nasdaq": 370.825,
+   "ibkr": 370.83,
+   "divergence_pct": 0.0013
+  },
+  {
+   "ticker": "BAC",
+   "nasdaq": 61.27,
+   "ibkr": 61.27,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "CAT",
+   "nasdaq": 880.28,
+   "ibkr": 878.65,
+   "divergence_pct": 0.1855
+  },
+  {
+   "ticker": "CVX",
+   "nasdaq": 187.38,
+   "ibkr": 187.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "EQIX",
+   "nasdaq": 1020.0,
+   "ibkr": 1020.0,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "ETN",
+   "nasdaq": 399.99,
+   "ibkr": 399.99,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "FCX",
+   "nasdaq": 58.38,
+   "ibkr": 58.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GE",
+   "nasdaq": 348.83,
+   "ibkr": 348.83,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GOOGL",
+   "nasdaq": 346.77,
+   "ibkr": 346.77,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GS",
+   "nasdaq": 1065.22,
+   "ibkr": 1065.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "JPM",
+   "nasdaq": 341.1,
+   "ibkr": 341.1,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LIN",
+   "nasdaq": 513.22,
+   "ibkr": 513.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LLY",
+   "nasdaq": 1179.11,
+   "ibkr": 1179.11,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "QQQ",
+   "nasdaq": 695.33,
+   "ibkr": 695.33,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SOXX",
+   "nasdaq": 521.81,
+   "ibkr": 521.81,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SPY",
+   "nasdaq": 743.29,
+   "ibkr": 743.29,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "UNH",
+   "nasdaq": 426.09,
+   "ibkr": 426.09,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "AVGO",
+   "nasdaq": 370.825,
+   "ibkr": 370.83,
+   "divergence_pct": 0.0013
+  },
+  {
+   "ticker": "BAC",
+   "nasdaq": 61.27,
+   "ibkr": 61.27,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "CAT",
+   "nasdaq": 880.28,
+   "ibkr": 878.65,
+   "divergence_pct": 0.1855
+  },
+  {
+   "ticker": "CVX",
+   "nasdaq": 187.38,
+   "ibkr": 187.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "EQIX",
+   "nasdaq": 1020.0,
+   "ibkr": 1020.0,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "ETN",
+   "nasdaq": 399.99,
+   "ibkr": 399.99,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "FCX",
+   "nasdaq": 58.38,
+   "ibkr": 58.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GE",
+   "nasdaq": 348.83,
+   "ibkr": 348.83,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GOOGL",
+   "nasdaq": 346.77,
+   "ibkr": 346.77,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GS",
+   "nasdaq": 1065.22,
+   "ibkr": 1065.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "JPM",
+   "nasdaq": 341.1,
+   "ibkr": 341.1,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LIN",
+   "nasdaq": 513.22,
+   "ibkr": 513.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LLY",
+   "nasdaq": 1179.11,
+   "ibkr": 1179.11,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "QQQ",
+   "nasdaq": 695.33,
+   "ibkr": 695.33,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SOXX",
+   "nasdaq": 521.81,
+   "ibkr": 521.81,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SPY",
+   "nasdaq": 743.29,
+   "ibkr": 743.29,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "UNH",
+   "nasdaq": 426.09,
+   "ibkr": 426.09,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "AVGO",
+   "nasdaq": 370.825,
+   "ibkr": 370.83,
+   "divergence_pct": 0.0013
+  },
+  {
+   "ticker": "BAC",
+   "nasdaq": 61.27,
+   "ibkr": 61.27,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "CAT",
+   "nasdaq": 880.28,
+   "ibkr": 878.65,
+   "divergence_pct": 0.1855
+  },
+  {
+   "ticker": "CVX",
+   "nasdaq": 187.38,
+   "ibkr": 187.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "EQIX",
+   "nasdaq": 1020.0,
+   "ibkr": 1020.0,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "ETN",
+   "nasdaq": 399.99,
+   "ibkr": 399.99,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "FCX",
+   "nasdaq": 58.38,
+   "ibkr": 58.38,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GE",
+   "nasdaq": 348.83,
+   "ibkr": 348.83,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GOOGL",
+   "nasdaq": 346.77,
+   "ibkr": 346.77,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "GS",
+   "nasdaq": 1065.22,
+   "ibkr": 1065.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "JPM",
+   "nasdaq": 341.1,
+   "ibkr": 341.1,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LIN",
+   "nasdaq": 513.22,
+   "ibkr": 513.22,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "LLY",
+   "nasdaq": 1179.11,
+   "ibkr": 1179.11,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "QQQ",
+   "nasdaq": 695.33,
+   "ibkr": 695.33,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SOXX",
+   "nasdaq": 521.81,
+   "ibkr": 521.81,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "SPY",
+   "nasdaq": 743.29,
+   "ibkr": 743.29,
+   "divergence_pct": 0.0
+  },
+  {
+   "ticker": "UNH",
+   "nasdaq": 426.09,
+   "ibkr": 426.09,
+   "divergence_pct": 0.0
+  }
+ ],
+ "ibkr_retrieved_at": "2026-07-20T16:29:00Z",
+ "method": "Nasdaq bulk primary; IBKR snapshot last-change (RTH) or priorClose cross-check on 17 settlement names; max divergence 0.186%"
+}
