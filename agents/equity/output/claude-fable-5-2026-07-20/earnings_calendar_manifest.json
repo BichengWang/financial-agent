@@ -1,0 +1,143 @@
+{
+ "retrieved_at": "2026-07-20T16:36:22Z",
+ "source": "api.nasdaq.com/api/analyst/{sym}/earnings-date",
+ "symbols": {
+  "DOC": {
+   "announcement": "Earnings announcement* for DOC: Aug 04, 2026",
+   "report_text": "Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.44.  The reported EPS for the same quarter last year was $0.46."
+  },
+  "EXPD": {
+   "announcement": "Earnings announcement* for EXPD: Aug 04, 2026",
+   "report_text": "Expeditors International of Washington, Inc. Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.64.  The reported EPS for the same quarter last year was $1.34."
+  },
+  "RF": {
+   "announcement": "Earnings announcement* for RF: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "CSX": {
+   "announcement": "Earnings announcement* for CSX: Jul 22, 2026",
+   "report_text": "CSX Corporation Common Stock is expected* to report earnings on  07/22/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.5.  The reported EPS for the same quarter last year was $0.44."
+  },
+  "JBHT": {
+   "announcement": "Earnings announcement* for JBHT: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "UNP": {
+   "announcement": "Earnings announcement* for UNP: Jul 23, 2026",
+   "report_text": "Union Pacific Corporation Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.2.  The reported EPS for the same quarter last year was $3.03."
+  },
+  "MNST": {
+   "announcement": "Earnings announcement* for MNST: Aug 6, 2026",
+   "report_text": "Monster Beverage Corporation is estimated to report earnings on  08/06/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  8 analysts' forecasts, the consensus EPS forecast for the quarter is $0.59.  The reported EPS for the same quarter last year was $0.52."
+  },
+  "BBY": {
+   "announcement": "Earnings announcement* for BBY: Aug 27, 2026",
+   "report_text": "Best Buy Co., Inc. Common Stock is estimated to report earnings on  08/27/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  11 analysts' forecasts, the consensus EPS forecast for the quarter is $1.34.  The reported EPS for the same quarter last year was $1.28."
+  },
+  "TRV": {
+   "announcement": "Earnings announcement* for TRV: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "FRT": {
+   "announcement": "Earnings announcement* for FRT: Jul 31, 2026",
+   "report_text": "Federal Realty Investment Trust Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.85.  The reported EPS for the same quarter last year was $1.91."
+  },
+  "PRU": {
+   "announcement": "Earnings announcement* for PRU: Aug 04, 2026",
+   "report_text": "Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.38.  The reported EPS for the same quarter last year was $3.58."
+  },
+  "GEN": {
+   "announcement": "Earnings announcement* for GEN: Aug 06, 2026",
+   "report_text": "Gen Digital Inc. Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.62.  The reported EPS for the same quarter last year was $0.54."
+  },
+  "ADP": {
+   "announcement": "Earnings announcement* for ADP: Jul 29, 2026",
+   "report_text": "Automatic Data Processing, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.59.  The reported EPS for the same quarter last year was $2.26."
+  },
+  "IQV": {
+   "announcement": "Earnings announcement* for IQV: Jul 28, 2026",
+   "report_text": "IQVIA Holdings, Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.72.  The reported EPS for the same quarter last year was $2.53."
+  },
+  "MCO": {
+   "announcement": "Earnings announcement* for MCO: Jul 22, 2026",
+   "report_text": "Moody's Corporation Common Stock is expected* to report earnings on  07/22/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.23.  The reported EPS for the same quarter last year was $3.56."
+  },
+  "CHRW": {
+   "announcement": "Earnings announcement* for CHRW: Jul 29, 2026",
+   "report_text": "C.H. Robinson Worldwide, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.51.  The reported EPS for the same quarter last year was $1.29."
+  },
+  "SNA": {
+   "announcement": "Earnings announcement* for SNA: Jul 23, 2026",
+   "report_text": "Snap-On Incorporated Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.9.  The reported EPS for the same quarter last year was $4.72."
+  },
+  "UPS": {
+   "announcement": "Earnings announcement* for UPS: Jul 28, 2026",
+   "report_text": "United Parcel Service, Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.65.  The reported EPS for the same quarter last year was $1.55."
+  },
+  "FITB": {
+   "announcement": "Earnings announcement* for FITB: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "STT": {
+   "announcement": "Earnings announcement* for STT: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "LLY": {
+   "announcement": "Earnings announcement* for LLY: Aug 05, 2026",
+   "report_text": "Eli Lilly and Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $7.47.  The reported EPS for the same quarter last year was $6.31."
+  },
+  "ABBV": {
+   "announcement": "Earnings announcement* for ABBV: Jul 31, 2026",
+   "report_text": "AbbVie Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.66.  The reported EPS for the same quarter last year was $2.97."
+  },
+  "GE": {
+   "announcement": "Earnings announcement* for GE: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "UNH": {
+   "announcement": "Earnings announcement* for UNH: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "CFG": {
+   "announcement": "Earnings announcement* for CFG: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "PAYX": {
+   "announcement": "Earnings announcement* for PAYX: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "MTB": {
+   "announcement": "Earnings announcement* for MTB: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "MPC": {
+   "announcement": "Earnings announcement* for MPC: Aug 04, 2026",
+   "report_text": "Marathon Petroleum Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  3 analysts'  forecasts, the consensus EPS forecast for the quarter is $14.67.  The reported EPS for the same quarter last year was $3.96."
+  },
+  "KHC": {
+   "announcement": "Earnings announcement* for KHC: Aug 05, 2026",
+   "report_text": "The Kraft Heinz Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.53.  The reported EPS for the same quarter last year was $0.69."
+  },
+  "AAPL": {
+   "announcement": "Earnings announcement* for AAPL: Jul 30, 2026",
+   "report_text": "Apple Inc. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  11 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.88.  The reported EPS for the same quarter last year was $1.57."
+  },
+  "MET": {
+   "announcement": "Earnings announcement* for MET: Aug 05, 2026",
+   "report_text": "MetLife, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.36.  The reported EPS for the same quarter last year was $2.02."
+  },
+  "WST": {
+   "announcement": "Earnings announcement* for WST: Jul 23, 2026",
+   "report_text": "West Pharmaceutical Services, Inc. Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.08.  The reported EPS for the same quarter last year was $1.84."
+  },
+  "BAC": {
+   "announcement": "Earnings announcement* for BAC: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "CTAS": {
+   "announcement": "Earnings announcement* for CTAS: ",
+   "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  }
+ },
+ "second_pass_at": "2026-07-20T16:38:45Z"
+}
