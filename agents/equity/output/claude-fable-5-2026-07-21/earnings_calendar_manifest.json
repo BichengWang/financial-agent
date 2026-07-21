@@ -1,0 +1,334 @@
+{
+  "ADP": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for ADP: Jul 29, 2026 Automatic Data Processing, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter "
+  },
+  "TRV": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for TRV:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "DOC": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for DOC: Aug 04, 2026 Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter endi"
+  },
+  "SCHW": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for SCHW:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "UNP": {
+    "status": "OK",
+    "earnings_date": "2026-07-23",
+    "estimated": true,
+    "raw": "Earnings announcement* for UNP: Jul 23, 2026 Union Pacific Corporation Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter ending"
+  },
+  "MTB": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for MTB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "PAYX": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for PAYX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "EG": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for EG: Jul 29, 2026 Everest Group, Ltd. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 20"
+  },
+  "PSX": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for PSX: Aug 05, 2026 Phillips 66 Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  Ac"
+  },
+  "FRT": {
+    "status": "OK",
+    "earnings_date": "2026-07-31",
+    "estimated": true,
+    "raw": "Earnings announcement* for FRT: Jul 31, 2026 Federal Realty Investment Trust Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter "
+  },
+  "VLO": {
+    "status": "OK",
+    "earnings_date": "2026-07-30",
+    "estimated": true,
+    "raw": "Earnings announcement* for VLO: Jul 30, 2026 Valero Energy Corporation Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending"
+  },
+  "MRSH": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for MRSH:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "MPC": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for MPC: Aug 04, 2026 Marathon Petroleum Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter e"
+  },
+  "PRU": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for PRU: Aug 04, 2026 Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter endin"
+  },
+  "RF": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for RF:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "WELL": {
+    "status": "OK",
+    "earnings_date": "2026-07-27",
+    "estimated": true,
+    "raw": "Earnings announcement* for WELL: Jul 27, 2026 Welltower Inc. Common Stock is expected* to report earnings on  07/27/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026."
+  },
+  "EXPD": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for EXPD: Aug 04, 2026 Expeditors International of Washington, Inc. Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the f"
+  },
+  "MET": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for MET: Aug 05, 2026 MetLife, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  "
+  },
+  "V": {
+    "status": "OK",
+    "earnings_date": "2026-07-28",
+    "estimated": true,
+    "raw": "Earnings announcement* for V: Jul 28, 2026 Visa Inc. is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks "
+  },
+  "FICO": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for FICO: Jul 29, 2026 Fair Isaac Corporation Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending J"
+  },
+  "CSX": {
+    "status": "OK",
+    "earnings_date": "2026-07-22",
+    "estimated": true,
+    "raw": "Earnings announcement* for CSX: Jul 22, 2026 CSX Corporation Common Stock is expected* to report earnings on  07/22/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026."
+  },
+  "PM": {
+    "status": "OK",
+    "earnings_date": "2026-07-22",
+    "estimated": true,
+    "raw": "Earnings announcement* for PM: Jul 22, 2026 Philip Morris International Inc Common Stock is expected* to report earnings on  07/22/2026 before market open.  The report will be for the fiscal Quarter e"
+  },
+  "MO": {
+    "status": "OK",
+    "earnings_date": "2026-07-30",
+    "estimated": true,
+    "raw": "Earnings announcement* for MO: Jul 30, 2026 Altria Group, Inc. is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According"
+  },
+  "CTAS": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for CTAS:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "KIM": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for KIM: Aug 04, 2026 Kimco Realty Corporation (HC) Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter en"
+  },
+  "ABT": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for ABT:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "KHC": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for KHC: Aug 05, 2026 The Kraft Heinz Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending J"
+  },
+  "AON": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for AON: Jul 29, 2026 Aon plc Class A Ordinary Shares (Ireland) is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter end"
+  },
+  "VTR": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for VTR: Jul 29, 2026 Ventas, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  A"
+  },
+  "DHR": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for DHR:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "DVA": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for DVA: Aug 4, 2026 DaVita Inc. Common Stock is estimated to report earnings on  08/04/2026. The upcoming earnings date is derived from an algorithm based on a company's histor"
+  },
+  "RSG": {
+    "status": "OK",
+    "earnings_date": "2026-08-06",
+    "estimated": true,
+    "raw": "Earnings announcement* for RSG: Aug 06, 2026 Republic Services, Inc. Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending J"
+  },
+  "NSC": {
+    "status": "OK",
+    "earnings_date": "2026-07-23",
+    "estimated": true,
+    "raw": "Earnings announcement* for NSC: Jul 23, 2026 Norfolk Southern Corporation Common Stock is expected* to report earnings on  07/23/2026 before market open.  The report will be for the fiscal Quarter end"
+  },
+  "BAC": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for BAC:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "STT": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for STT:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "ADM": {
+    "status": "OK",
+    "earnings_date": "2026-08-04",
+    "estimated": true,
+    "raw": "Earnings announcement* for ADM: Aug 04, 2026 Archer-Daniels-Midland Company Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter e"
+  },
+  "ESS": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for ESS: Jul 29, 2026 Essex Property Trust, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter endin"
+  },
+  "AFL": {
+    "status": "OK",
+    "earnings_date": "2026-08-06",
+    "estimated": true,
+    "raw": "Earnings announcement* for AFL: Aug 06, 2026 AFLAC Incorporated Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 20"
+  },
+  "REG": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for REG: Jul 29, 2026 Regency Centers Corporation Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter endi"
+  },
+  "GPN": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for GPN: Aug 5, 2026 Global Payments Inc. Common Stock is estimated to report earnings on  08/05/2026. The upcoming earnings date is derived from an algorithm based on a company"
+  },
+  "VRSK": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for VRSK: Jul 29, 2026 Verisk Analytics, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending J"
+  },
+  "USB": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for USB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "HIG": {
+    "status": "OK",
+    "earnings_date": "2026-07-23",
+    "estimated": true,
+    "raw": "Earnings announcement* for HIG: Jul 23, 2026 The Hartford Insurance Group, Inc. Common Stock is expected* to report earnings on  07/23/2026 after market close.  The report will be for the fiscal Quart"
+  },
+  "CTVA": {
+    "status": "OK",
+    "earnings_date": "2026-07-30",
+    "estimated": true,
+    "raw": "Earnings announcement* for CTVA: Jul 30, 2026 Corteva, Inc. Common Stock  is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026."
+  },
+  "BBY": {
+    "status": "OK",
+    "earnings_date": "2026-08-27",
+    "estimated": true,
+    "raw": "Earnings announcement* for BBY: Aug 27, 2026 Best Buy Co., Inc. Common Stock is estimated to report earnings on  08/27/2026. The upcoming earnings date is derived from an algorithm based on a company'"
+  },
+  "CVS": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for CVS: Aug 05, 2026 CVS Health Corporation Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Ju"
+  },
+  "WRB": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for WRB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "ALL": {
+    "status": "OK",
+    "earnings_date": "2026-08-05",
+    "estimated": true,
+    "raw": "Earnings announcement* for ALL: Aug 05, 2026 Allstate Corporation (The) Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter endin"
+  },
+  "TRGP": {
+    "status": "OK",
+    "earnings_date": "2026-08-06",
+    "estimated": true,
+    "raw": "Earnings announcement* for TRGP: Aug 6, 2026 Targa Resources, Inc. Common Stock is estimated to report earnings on  08/06/2026. The upcoming earnings date is derived from an algorithm based on a compa"
+  },
+  "BRO": {
+    "status": "OK",
+    "earnings_date": "2026-07-27",
+    "estimated": true,
+    "raw": "Earnings announcement* for BRO: Jul 27, 2026 Brown & Brown, Inc. Common Stock is expected* to report earnings on  07/27/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2"
+  },
+  "EFX": {
+    "status": "VENDOR_EMPTY",
+    "raw": "Earnings announcement* for EFX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+  },
+  "GEN": {
+    "status": "OK",
+    "earnings_date": "2026-08-06",
+    "estimated": true,
+    "raw": "Earnings announcement* for GEN: Aug 06, 2026 Gen Digital Inc. Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026"
+  },
+  "MCO": {
+    "status": "OK",
+    "earnings_date": "2026-07-22",
+    "estimated": true,
+    "raw": "Earnings announcement* for MCO: Jul 22, 2026 Moody's Corporation Common Stock is expected* to report earnings on  07/22/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2"
+  },
+  "INCY": {
+    "status": "OK",
+    "earnings_date": "2026-07-28",
+    "estimated": true,
+    "raw": "Earnings announcement* for INCY: Jul 28, 2026 Incyte Corp. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  "
+  },
+  "WM": {
+    "status": "OK",
+    "earnings_date": "2026-07-28",
+    "estimated": true,
+    "raw": "Earnings announcement* for WM: Jul 28, 2026 Waste Management, Inc. Common Stock is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun"
+  },
+  "NTRS": {
+    "status": "OK",
+    "earnings_date": "2026-07-22",
+    "estimated": true,
+    "raw": "Earnings announcement* for NTRS: Jul 22, 2026 Northern Trust Corporation Common Stock is expected* to report earnings on  07/22/2026 before market open.  The report will be for the fiscal Quarter endi"
+  },
+  "MA": {
+    "status": "OK",
+    "earnings_date": "2026-07-30",
+    "estimated": true,
+    "raw": "Earnings announcement* for MA: Jul 30, 2026 Mastercard Incorporated Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Ju"
+  },
+  "ABBV": {
+    "status": "OK",
+    "earnings_date": "2026-07-31",
+    "estimated": true,
+    "raw": "Earnings announcement* for ABBV: Jul 31, 2026 AbbVie Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  A"
+  },
+  "CHRW": {
+    "status": "OK",
+    "earnings_date": "2026-07-29",
+    "estimated": true,
+    "raw": "Earnings announcement* for CHRW: Jul 29, 2026 C.H. Robinson Worldwide, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter e"
+  },
+  "LH": {
+    "status": "OK",
+    "earnings_date": "2026-07-30",
+    "estimated": true,
+    "raw": "Earnings announcement* for LH: Jul 30, 2026 Labcorp Holdings Inc. Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun "
+  }
+}
