@@ -1,0 +1,659 @@
+{
+  "elapsed_seconds": 1.152,
+  "failures": {},
+  "format_version": "1.0",
+  "gate_definition": "PASS when abs(Nasdaq close - Yahoo close) / abs(Yahoo close) * 100 <= 1.0",
+  "generated_at": "2026-07-22T20:49:58Z",
+  "request_completed_at": "2026-07-22T20:49:58Z",
+  "request_started_at": "2026-07-22T20:49:57Z",
+  "requested_symbols": [
+    "AAPL",
+    "BAC",
+    "CAT",
+    "CVX",
+    "EQIX",
+    "FCX",
+    "GE",
+    "GOOGL",
+    "GS",
+    "JPM",
+    "LLY",
+    "NVDA",
+    "UNH",
+    "V",
+    "SPY",
+    "QQQ",
+    "SOXX"
+  ],
+  "source": {
+    "nasdaq_close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+    "nasdaq_endpoint_template": "https://api.nasdaq.com/api/quote/{symbol}/info",
+    "primary_comparison_input": "current-run Yahoo query2 chart daily close",
+    "second_source": "Nasdaq official at-close secondary quote snapshot"
+  },
+  "summary": {
+    "all_within_1_percent_gate": true,
+    "compared": 17,
+    "gate_failures": 0,
+    "maximum_divergence_pct": 0.05680147,
+    "maximum_divergence_symbol": "BAC",
+    "requested": 17,
+    "source_failures": 0,
+    "within_1_percent_gate": 17
+  },
+  "symbols": {
+    "AAPL": {
+      "comparison": {
+        "absolute_price_divergence": 1.465e-05,
+        "divergence_pct_of_yahoo_close": 4.49e-06,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 325.89,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$325.89",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/AAPL/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "AAPL",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 325.8900146484375,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:42Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "BAC": {
+      "comparison": {
+        "absolute_price_divergence": 0.03500107,
+        "divergence_pct_of_yahoo_close": 0.05680147,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 61.655,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$61.655",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/BAC/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "BAC",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 61.619998931884766,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:42Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/BAC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "CAT": {
+      "comparison": {
+        "absolute_price_divergence": 0.07000244,
+        "divergence_pct_of_yahoo_close": 0.00787155,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 889.38,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$889.38",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/CAT/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "CAT",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 889.3099975585938,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:44Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/CAT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "CVX": {
+      "comparison": {
+        "absolute_price_divergence": 0.01999573,
+        "divergence_pct_of_yahoo_close": 0.01036155,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 192.96,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$192.96",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/CVX/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "CVX",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 192.97999572753906,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:44Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/CVX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "EQIX": {
+      "comparison": {
+        "absolute_price_divergence": 9.77e-06,
+        "divergence_pct_of_yahoo_close": 9.5e-07,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 1028.74,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$1,028.74",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/EQIX/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "EQIX",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 1028.739990234375,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:46Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/EQIX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "FCX": {
+      "comparison": {
+        "absolute_price_divergence": 0.01,
+        "divergence_pct_of_yahoo_close": 0.01538462,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 64.99,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$64.99",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/FCX/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "FCX",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 65.0,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:48Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/FCX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "GE": {
+      "comparison": {
+        "absolute_price_divergence": 0.03999756,
+        "divergence_pct_of_yahoo_close": 0.01172296,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 341.23,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$341.23",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/GE/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "GE",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 341.19000244140625,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:47Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/GE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "GOOGL": {
+      "comparison": {
+        "absolute_price_divergence": 3.66e-06,
+        "divergence_pct_of_yahoo_close": 1.07e-06,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 342.09,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$342.09",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:57Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/GOOGL/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "GOOGL",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 342.0899963378906,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:41Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOOGL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "GS": {
+      "comparison": {
+        "absolute_price_divergence": 0.18004883,
+        "divergence_pct_of_yahoo_close": 0.0163949,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 1098.38,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$1,098.38",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/GS/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "GS",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 1098.199951171875,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:48Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/GS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "JPM": {
+      "comparison": {
+        "absolute_price_divergence": 0.14000854,
+        "divergence_pct_of_yahoo_close": 0.04020808,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 348.35,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$348.35",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/JPM/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "JPM",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 348.2099914550781,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:49Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/JPM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "LLY": {
+      "comparison": {
+        "absolute_price_divergence": 9.77e-06,
+        "divergence_pct_of_yahoo_close": 8.4e-07,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 1163.01,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$1,163.01",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/LLY/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "LLY",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 1163.010009765625,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:50Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/LLY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "NVDA": {
+      "comparison": {
+        "absolute_price_divergence": 2.44e-06,
+        "divergence_pct_of_yahoo_close": 1.15e-06,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 212.06,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$212.06",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/NVDA/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "NVDA",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 212.05999755859375,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:52Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "QQQ": {
+      "comparison": {
+        "absolute_price_divergence": 2.441e-05,
+        "divergence_pct_of_yahoo_close": 3.46e-06,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "etf",
+        "attempts": 1,
+        "close": 705.35,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$705.35",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/QQQ/info?assetclass=etf",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "QQQ",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 705.3499755859375,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:57Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "SOXX": {
+      "comparison": {
+        "absolute_price_divergence": 1.953e-05,
+        "divergence_pct_of_yahoo_close": 3.52e-06,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "etf",
+        "attempts": 1,
+        "close": 555.52,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$555.52",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/SOXX/info?assetclass=etf",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "SOXX",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 555.52001953125,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:57Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/SOXX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "SPY": {
+      "comparison": {
+        "absolute_price_divergence": 0.07002686,
+        "divergence_pct_of_yahoo_close": 0.00936927,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "etf",
+        "attempts": 1,
+        "close": 747.48,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$747.48",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/SPY/info?assetclass=etf",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "SPY",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 747.4099731445312,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:57Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "UNH": {
+      "comparison": {
+        "absolute_price_divergence": 0.02000244,
+        "divergence_pct_of_yahoo_close": 0.0046376,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 431.33,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$431.33",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/UNH/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "UNH",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 431.30999755859375,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:55Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/UNH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    },
+    "V": {
+      "comparison": {
+        "absolute_price_divergence": 0.04998657,
+        "divergence_pct_of_yahoo_close": 0.01414367,
+        "gate_status": "PASS",
+        "gate_threshold_pct": 1.0,
+        "within_1_percent_gate": true
+      },
+      "nasdaq": {
+        "api_status_code": 200,
+        "assetclass": "stocks",
+        "attempts": 1,
+        "close": 353.47,
+        "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+        "http_status": 200,
+        "provider": "Nasdaq",
+        "raw_close": "$353.47",
+        "reported_date": "2026-07-22",
+        "request_started_at": "2026-07-22T20:49:58Z",
+        "retrieved_at": "2026-07-22T20:49:58Z",
+        "source_type": "official at-close secondary quote snapshot",
+        "url": "https://api.nasdaq.com/api/quote/V/info?assetclass=stocks",
+        "volume": ""
+      },
+      "status": "VERIFIED",
+      "symbol": "V",
+      "target_date": "2026-07-22",
+      "yahoo": {
+        "close": 353.4200134277344,
+        "provider": "Yahoo Finance",
+        "reported_date": "2026-07-22",
+        "retrieved_at": "2026-07-22T20:49:56Z",
+        "source_type": "query2 chart daily close",
+        "url": "https://query2.finance.yahoo.com/v8/finance/chart/V?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+      }
+    }
+  },
+  "target_settlement_date": "2026-07-22"
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-22T20:48:49Z",
+  "nasdaq100_cache": "agents/equity/turtle-trader/universe/nasdaq100.json",
+  "nasdaq100_count": 101,
+  "nasdaq100_fetched_at": "2026-06-21T21:05:56Z",
+  "overlap_count": 89,
+  "source": "S&P 500 union Nasdaq-100 constituent caches",
+  "sp500_cache": "agents/equity/turtle-trader/universe/sp500.json",
+  "sp500_count": 503,
+  "sp500_fetched_at": "2026-06-21T21:05:56Z",
+  "tickers_file": "agents/equity/output/gpt-5-2026-07-22/eligible_universe.txt",
+  "union_count": 515
+}

@@ -34,6 +34,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
+from zoneinfo import ZoneInfo
 
 CanonicalKey = tuple[str, str, str, str, str]
 
@@ -491,7 +492,11 @@ def extract_settlement_candidates(
 
 
 def validate_timing(
-    target_date_s: str, settlement_run_date_s: str, price_date_s: str | None
+    target_date_s: str,
+    settlement_run_date_s: str,
+    price_date_s: str | None,
+    declared_timing_flag: str | None = None,
+    settled_at_s: str | None = None,
 ) -> tuple[str, bool, str]:
     """Returns (settlement_convention, is_valid, rejection_reason).
 
@@ -501,10 +506,14 @@ def validate_timing(
     - WEEKEND_TARGET: target_date is not a trading session -> settle at the
       last completed trading close at or before target_date.
     - TARGET_EQ_RUN_DATE: target_date is a trading session but equals the
-      settlement's own run date (settled the moment it became due, before
-      that session's close exists) -> settle at the prior completed session.
-      This is unconditional: a prediction is never settled on a same-day or
-      intraday print, even if the run happened to execute after the close.
+      settlement's own run date and the run occurs before the close exists ->
+      settle at the prior completed session.
+
+    A run after the target session closes may use that same-day close only
+    when the row explicitly declares ``TARGET_DATE_CLOSE`` and its
+    timezone-aware ``settled_at`` timestamp is at or after 16:00 ET. This
+    preserves rejection of unlabeled or pre-close same-day prints while
+    allowing the ordinary target-close rule to operate after the close.
 
     Any other target-date/price-date combination is timing-invalid.
     """
@@ -549,13 +558,35 @@ def validate_timing(
         expected = prior_trading_day(target_date)
         if price_date == expected:
             return ("TARGET_EQ_RUN_DATE", True, "")
+        if price_date == target_date and declared_timing_flag == "TARGET_DATE_CLOSE":
+            try:
+                settled_at = dt.datetime.fromisoformat(
+                    (settled_at_s or "").replace("Z", "+00:00")
+                )
+                if settled_at.tzinfo is None:
+                    raise ValueError("settled_at must include a timezone")
+                settled_at_et = settled_at.astimezone(ZoneInfo("America/New_York"))
+            except (TypeError, ValueError):
+                settled_at_et = None
+            if (
+                settled_at_et is not None
+                and settled_at_et.date() == target_date
+                and settled_at_et.time() >= dt.time(16, 0)
+            ):
+                return ("TARGET_DATE_CLOSE", True, "")
+            return (
+                "TARGET_DATE_CLOSE",
+                False,
+                "TARGET_DATE_CLOSE requires a timezone-aware settled_at timestamp "
+                "on target_date at or after 16:00 America/New_York",
+            )
         return (
             "TARGET_EQ_RUN_DATE",
             False,
             f"target_date {target_date_s} equals the settlement run date: "
             f"expected the prior completed close ({expected.isoformat()}), "
-            f"got price_date {price_date_s} -- never settle on a same-day "
-            "or intraday print",
+            f"got price_date {price_date_s}; same-day/intraday values require an "
+            "explicit TARGET_DATE_CLOSE flag after the session closes",
         )
 
     # Ordinary case: settlement_run_date > target_date, target_date is a
@@ -816,7 +847,11 @@ def build_manifest(
     candidates = extract_settlement_candidates(packages, lookup_by_no_vintage)
     for c in candidates:
         convention, valid, reason = validate_timing(
-            c.target_date, c.settlement_run_date, c.price_date
+            c.target_date,
+            c.settlement_run_date,
+            c.price_date,
+            c.declared_timing_flag,
+            c.settled_at,
         )
         c.settlement_convention = convention
         c.is_timing_valid = valid
