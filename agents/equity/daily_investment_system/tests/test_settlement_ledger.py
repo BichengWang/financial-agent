@@ -117,7 +117,105 @@ def test_target_eq_run_date_same_day_close_is_invalid() -> None:
     )
     assert convention == "TARGET_EQ_RUN_DATE"
     assert not valid
-    assert "intraday" in reason
+    assert "TARGET_DATE_CLOSE" in reason
+
+
+def test_target_date_close_after_session_is_valid_when_explicit() -> None:
+    convention, valid, reason = sl.validate_timing(
+        "2026-07-22",
+        "2026-07-22",
+        "2026-07-22",
+        "TARGET_DATE_CLOSE",
+        "2026-07-22T20:52:13Z",
+    )
+    assert (convention, valid, reason) == ("TARGET_DATE_CLOSE", True, "")
+
+
+def test_target_date_close_before_session_end_is_invalid_even_when_explicit() -> None:
+    convention, valid, reason = sl.validate_timing(
+        "2026-07-22",
+        "2026-07-22",
+        "2026-07-22",
+        "TARGET_DATE_CLOSE",
+        "2026-07-22T19:59:59Z",
+    )
+    assert convention == "TARGET_DATE_CLOSE"
+    assert not valid
+    assert "16:00 America/New_York" in reason
+
+
+def test_target_date_close_requires_timezone_aware_settled_at() -> None:
+    for settled_at in (None, "2026-07-22T16:30:00"):
+        convention, valid, reason = sl.validate_timing(
+            "2026-07-22",
+            "2026-07-22",
+            "2026-07-22",
+            "TARGET_DATE_CLOSE",
+            settled_at,
+        )
+        assert convention == "TARGET_DATE_CLOSE"
+        assert not valid
+        assert "timezone-aware settled_at" in reason
+
+
+def test_build_manifest_uses_explicit_target_date_close_flag() -> None:
+    packages = [
+        {
+            "run_date": "2026-06-24",
+            "model": "gpt-5",
+            "_source_file": "gpt-5-2026-06-24",
+            "predictions": [
+                {
+                    "run_date": "2026-06-24",
+                    "model": "gpt-5",
+                    "ticker": "AAPL",
+                    "type": "EQUITY_ALPHA",
+                    "target_date": "2026-07-22",
+                    "entry_price": 100.0,
+                    "mu": 0.02,
+                    "sigma": 0.1,
+                    "adj_score": 1.0,
+                }
+            ],
+            "settlements": [],
+        },
+        {
+            "run_date": "2026-07-22",
+            "model": "gpt-5",
+            "_source_file": "gpt-5-2026-07-22",
+            "predictions": [],
+            "settlements": [
+                {
+                    "vintage": "2026-06-24",
+                    "model": "gpt-5",
+                    "ticker": "AAPL",
+                    "type": "EQUITY_ALPHA",
+                    "target_date": "2026-07-22",
+                    "settle_price": 103.0,
+                    "settle_price_date": "2026-07-22",
+                    "timing_flag": "TARGET_DATE_CLOSE",
+                    "settled_at": "2026-07-22T20:52:13Z",
+                    "entry_price": 100.0,
+                    "mu": 0.02,
+                    "sigma": 0.1,
+                    "realized_return": 0.03,
+                    "benchmark_return": 0.01,
+                    "realized_alpha": 0.02,
+                    "direction": "HIT",
+                    "ci_result": "IN_CI",
+                    "z": 0.1,
+                }
+            ],
+        },
+    ]
+
+    manifest = sl.build_manifest(packages, as_of="2026-07-22")
+
+    assert manifest["summary"]["canonical_equity_alpha_settlements"] == 1
+    assert manifest["summary"]["due_inventory"] == 0
+    assert manifest["canonical_settlements"][0]["settlement_convention"] == (
+        "TARGET_DATE_CLOSE"
+    )
 
 
 def test_weekend_target_at_prior_friday_close_is_valid() -> None:
@@ -315,7 +413,11 @@ def _candidate(**overrides: Any) -> sl.SettlementCandidate:
     base.update(overrides)
     cand = sl.SettlementCandidate(**base)
     convention, valid, reason = sl.validate_timing(
-        cand.target_date, cand.settlement_run_date, cand.price_date
+        cand.target_date,
+        cand.settlement_run_date,
+        cand.price_date,
+        cand.declared_timing_flag,
+        cand.settled_at,
     )
     cand.settlement_convention = convention
     cand.is_timing_valid = valid

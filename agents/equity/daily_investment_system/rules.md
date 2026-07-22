@@ -134,10 +134,12 @@ A raw negative return in a falling tape is **not** automatically a Miss; a raw p
 
 Predictions from `REVIEW_ONLY` and `ILLUSTRATIVE` runs are settled and scored identically to `GO` predictions (illustrative ones flagged `ILLUSTRATIVE_VINTAGE` in the settlement record). Run status governs execution, not evaluation — paper forecasts are exactly how the system earns the evidence needed to ever publish `GO`.
 
-**Settlement-timing conventions** (codified 2026-07-14, Track B; previously applied by convention since 2026-07-12): the settlement price is the close of the prediction's `target_date` when that close exists at run time. Two standing exceptions, each flagged in the settlement record:
+**Settlement-timing conventions** (codified 2026-07-14, Track B; clarification accepted 2026-07-22 and effective next run): the settlement price is the close of the prediction's `target_date` when that close exists at run time. A same-day post-close settlement must declare `TARGET_DATE_CLOSE` and carry a timezone-aware `settled_at` timestamp at or after 16:00 America/New_York; together they assert that the completed target-date close, not an intraday print, was used. Two standing exceptions are also flagged in the settlement record:
 
 - `WEEKEND_TARGET` — `target_date` falls on a weekend or market holiday: settle at the last trading close **at or before** the target date.
 - `TARGET_EQ_RUN_DATE` — `target_date` equals the run date and the run executes before that session's close (pre-open or intraday): settle at the latest completed close (the prior trading day's). A prediction is never held open past its target date waiting for a same-day close, and never settled on an intraday print.
+
+The initial `TARGET_DATE_CLOSE` validator covers regular 16:00 ET sessions only. It does not admit a same-day scheduled early close; leave that key due and settle it from the target-date historical close on the next run until an exchange-calendar-aware close-time change is separately reviewed.
 
 ### Rolling Calibration Metrics
 
@@ -173,7 +175,7 @@ python3 agents/equity/daily_investment_system/settlement_ledger.py \
 Contract:
 
 1. Canonical key: `(model, vintage, ticker, type, target_date)`, where `vintage` is the settled prediction's own `run_date` and a missing `type` normalizes to `EQUITY_ALPHA`.
-2. A settlement candidate is timing-valid only when its price is the close of `target_date` itself, or one of the two documented exceptions above applies (`WEEKEND_TARGET`, `TARGET_EQ_RUN_DATE`). Intraday or same-day-as-target prints are never valid, and this is re-validated for every historical candidate, not only new ones.
+2. A settlement candidate is timing-valid only when its price is the close of `target_date` itself, or one of the two documented exceptions above applies (`WEEKEND_TARGET`, `TARGET_EQ_RUN_DATE`). Effective with the run after the 2026-07-22 acceptance, when `target_date == run_date`, the target-date close is valid only with the explicit `TARGET_DATE_CLOSE` declaration and a timezone-aware `settled_at` timestamp at or after 16:00 America/New_York; an unlabeled or pre-close same-day value and any intraday print are never valid. Timing is re-validated for every historical candidate, not only new ones.
 3. Among timing-valid, complete candidates for a key, the earliest one (by the settlement's own run date, i.e. settled the moment it became due) is canonical. Later, lower-priority re-settlements are kept only as audit-only lineage and never override an earlier valid settlement. Same-tier candidates that materially disagree on price or direction make the key an unresolved conflict: excluded from calibration and reported separately, not silently picked.
 4. Due inventory is `source prediction keys - canonical keys - conflicted keys`, filtered to `target_date <= as_of`. It is never read from a prediction's `status` field, which this system never mutates. A conflicted key needs manual reconciliation, not another automated settlement attempt, so treat it as neither due nor settled until resolved.
 5. A key can have zero valid candidates — most commonly pre-2026-07-12 settlements that used the settlement day's "current price" instead of the target date's own close, a violation distinct from (and stricter than) the two named exceptions. Report these as due, not settled; do not loosen the validator to make old data fit without a Track A/B change logged in `13_evolution_log.md`.
