@@ -1,0 +1,683 @@
+{
+  "candidate_count": 17,
+  "candidates": [
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "OUT_CI_LOW",
+      "direction": "MISS",
+      "entry_price": 994.45,
+      "model": "gpt-5",
+      "mu": 0.06,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.00787155,
+        "primary": {
+          "close": 889.3099975585938,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:44Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/CAT?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 889.38,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/CAT/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": -0.1250519363204915,
+      "realized_return": -0.1057267861042851,
+      "settle_price": 889.3099975585938,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.1241,
+      "target_date": "2026-07-22",
+      "ticker": "CAT",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -1.335429380372966
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "MISS",
+      "entry_price": 345.29,
+      "model": "gpt-5",
+      "mu": 0.06,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 1.07e-06,
+        "primary": {
+          "close": 342.0899963378906,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:41Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOOGL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 342.09,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/GOOGL/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": -0.028592733007800075,
+      "realized_return": -0.009267582791593676,
+      "settle_price": 342.0899963378906,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0888,
+      "target_date": "2026-07-22",
+      "ticker": "GOOGL",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -0.7800403467521809
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "OUT_CI_LOW",
+      "direction": "MISS",
+      "entry_price": 365.88,
+      "model": "gpt-5",
+      "mu": 0.05,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.01172296,
+        "primary": {
+          "close": 341.19000244140625,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:47Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/GE?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 341.23,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/GE/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": -0.08680628490133202,
+      "realized_return": -0.06748113468512562,
+      "settle_price": 341.19000244140625,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0994,
+      "target_date": "2026-07-22",
+      "ticker": "GE",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -1.1819027634318473
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 1117.26,
+      "model": "gpt-5",
+      "mu": 0.05,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 8.4e-07,
+        "primary": {
+          "close": 1163.010009765625,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:50Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/LLY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 1163.01,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/LLY/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.021623250125365923,
+      "realized_return": 0.04094840034157232,
+      "settle_price": 1163.010009765625,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0845,
+      "target_date": "2026-07-22",
+      "ticker": "LLY",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -0.10711952258494296
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 61.84,
+      "model": "gpt-5",
+      "mu": 0.04,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.01538462,
+        "primary": {
+          "close": 65.0,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:48Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/FCX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 64.99,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/FCX/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.031774461685475375,
+      "realized_return": 0.051099611901681774,
+      "settle_price": 65.0,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.1678,
+      "target_date": "2026-07-22",
+      "ticker": "FCX",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.06614786592182224
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 1076.91,
+      "model": "gpt-5",
+      "mu": 0.04,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.0163949,
+        "primary": {
+          "close": 1098.199951171875,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:48Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/GS?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 1098.38,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/GS/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.00044433021565404296,
+      "realized_return": 0.019769480431860442,
+      "settle_price": 1098.199951171875,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.1016,
+      "target_date": "2026-07-22",
+      "ticker": "GS",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -0.1991192870879878
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 57.73,
+      "model": "gpt-5",
+      "mu": 0.03,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.05680147,
+        "primary": {
+          "close": 61.619998931884766,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:42Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/BAC?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 61.655,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/BAC/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.04805747462156895,
+      "realized_return": 0.06738262483777535,
+      "settle_price": 61.619998931884766,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0547,
+      "target_date": "2026-07-22",
+      "ticker": "BAC",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.6834117886247779
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "OUT_CI_HIGH",
+      "direction": "HIT",
+      "entry_price": 171.45,
+      "model": "gpt-5",
+      "mu": 0.02,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.01036155,
+        "primary": {
+          "close": 192.97999572753906,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:44Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/CVX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 192.96,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/CVX/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.10625079453467778,
+      "realized_return": 0.12557594475088418,
+      "settle_price": 192.97999572753906,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0759,
+      "target_date": "2026-07-22",
+      "ticker": "CVX",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 1.3909874143726506
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 405.8,
+      "model": "gpt-5",
+      "mu": 0.02,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.0046376,
+        "primary": {
+          "close": 431.30999755859375,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:55Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/UNH?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 431.33,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/UNH/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.04353832331408869,
+      "realized_return": 0.06286347353029509,
+      "settle_price": 431.30999755859375,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0735,
+      "target_date": "2026-07-22",
+      "ticker": "UNH",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.5831765106162596
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "OUT_CI_LOW",
+      "direction": "MISS",
+      "entry_price": 1095.0,
+      "model": "gpt-5",
+      "mu": 0.02,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 9.5e-07,
+        "primary": {
+          "close": 1028.739990234375,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:46Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/EQIX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 1028.74,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/EQIX/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": -0.07983657465969951,
+      "realized_return": -0.06051142444349311,
+      "settle_price": 1028.739990234375,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0572,
+      "target_date": "2026-07-22",
+      "ticker": "EQIX",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": -1.4075423853757538
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 333.45,
+      "model": "gpt-5",
+      "mu": 0.02,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.04020808,
+        "primary": {
+          "close": 348.2099914550781,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:49Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/JPM?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 348.35,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/JPM/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.024939331580399182,
+      "realized_return": 0.04426448179660558,
+      "settle_price": 348.2099914550781,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0694,
+      "target_date": "2026-07-22",
+      "ticker": "JPM",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.349632302544749
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 199.0,
+      "model": "gpt-5",
+      "mu": 0.01,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 1.15e-06,
+        "primary": {
+          "close": 212.05999755859375,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:52Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 212.06,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/NVDA/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.04630297821893814,
+      "realized_return": 0.06562812843514454,
+      "settle_price": 212.05999755859375,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.1262,
+      "target_date": "2026-07-22",
+      "ticker": "NVDA",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.4407934107380708
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 332.23,
+      "model": "gpt-5",
+      "mu": 0.01,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.01414367,
+        "primary": {
+          "close": 353.4200134277344,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:56Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/V?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 353.47,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/V/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.0444560056930563,
+      "realized_return": 0.0637811559092627,
+      "settle_price": 353.4200134277344,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0573,
+      "target_date": "2026-07-22",
+      "ticker": "V",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 0.938589108364096
+    },
+    {
+      "benchmark_return": 0.0193251502162064,
+      "ci_result": "OUT_CI_HIGH",
+      "direction": "HIT",
+      "entry_price": 293.08,
+      "model": "gpt-5",
+      "mu": 0.01,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 4.49e-06,
+        "primary": {
+          "close": 325.8900146484375,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:42Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/AAPL?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 325.89,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/AAPL/info?assetclass=stocks"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": 0.0926238556812875,
+      "realized_return": 0.1119490058974939,
+      "settle_price": 325.8900146484375,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0616,
+      "target_date": "2026-07-22",
+      "ticker": "AAPL",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "EQUITY_ALPHA",
+      "vintage": "2026-06-24",
+      "z": 1.6550163295047713
+    },
+    {
+      "benchmark_return": null,
+      "ci_result": "IN_CI",
+      "direction": "HIT",
+      "entry_price": 733.24,
+      "model": "gpt-5",
+      "mu": 0.015,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 0.00936927,
+        "primary": {
+          "close": 747.4099731445312,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:57Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 747.48,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/SPY/info?assetclass=etf"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": null,
+      "realized_return": 0.0193251502162064,
+      "settle_price": 747.4099731445312,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0433,
+      "target_date": "2026-07-22",
+      "ticker": "SPY",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "MARKET_FORECAST",
+      "vintage": "2026-06-24",
+      "z": 0.09988799575534411
+    },
+    {
+      "benchmark_return": null,
+      "ci_result": "IN_CI",
+      "direction": "MISS",
+      "entry_price": 710.62,
+      "model": "gpt-5",
+      "mu": 0.0229,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 3.46e-06,
+        "primary": {
+          "close": 705.3499755859375,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:57Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 705.35,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/QQQ/info?assetclass=etf"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": null,
+      "realized_return": -0.007416093571898541,
+      "settle_price": 705.3499755859375,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.0796,
+      "target_date": "2026-07-22",
+      "ticker": "QQQ",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "MARKET_FORECAST",
+      "vintage": "2026-06-24",
+      "z": -0.3808554468831475
+    },
+    {
+      "benchmark_return": null,
+      "ci_result": "IN_CI",
+      "direction": "MISS",
+      "entry_price": 601.5,
+      "model": "gpt-5",
+      "mu": 0.0557,
+      "note": "Ordinary target-date settlement using the completed 2026-07-22 close; Yahoo and Nasdaq at-close values agree within 1%.",
+      "price_source": {
+        "divergence_pct": 3.52e-06,
+        "primary": {
+          "close": 555.52001953125,
+          "provider": "Yahoo Finance",
+          "retrieved_at": "2026-07-22T20:49:57Z",
+          "url": "https://query2.finance.yahoo.com/v8/finance/chart/SOXX?range=5y&interval=1d&events=history&includeAdjustedClose=true"
+        },
+        "secondary": {
+          "close": 555.52,
+          "close_marker": "Closed at Jul 22, 2026 4:00 PM ET",
+          "provider": "Nasdaq",
+          "retrieved_at": "2026-07-22T20:49:58Z",
+          "url": "https://api.nasdaq.com/api/quote/SOXX/info?assetclass=etf"
+        },
+        "within_1_percent_gate": true
+      },
+      "realized_alpha": null,
+      "realized_return": -0.07644219529301743,
+      "settle_price": 555.52001953125,
+      "settle_price_date": "2026-07-22",
+      "settled_at": "2026-07-22T21:09:10Z",
+      "settlement_price_tag": "DELAYED",
+      "sigma": 0.1998,
+      "target_date": "2026-07-22",
+      "ticker": "SOXX",
+      "timing_flag": "TARGET_DATE_CLOSE",
+      "type": "MARKET_FORECAST",
+      "vintage": "2026-06-24",
+      "z": -0.6613723488139011
+    }
+  ],
+  "counterfactual_summary": {
+    "audit_only_rows": 145,
+    "canonical_equity_alpha_settlements": 189,
+    "canonical_market_forecast_settlements": 33,
+    "conflicted_rows": 0,
+    "conflicts": 0,
+    "due_inventory": 0,
+    "rejected_rows": 87,
+    "total_candidate_rows": 454
+  },
+  "format_version": 1,
+  "model": "gpt-5",
+  "note": "Verified same-day target-close candidates retained for audit, but not admitted to the 2026-07-22 canonical ledger. The Track B timing clarification is HUMAN_REVIEW and becomes effective next run.",
+  "run_date": "2026-07-22",
+  "status": "PENDING_NEXT_RUN"
+}
