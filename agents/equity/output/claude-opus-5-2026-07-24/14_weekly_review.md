@@ -61,6 +61,20 @@ Nine consecutive `NO_TRADE` packages across `gpt-5`, `claude-fable-5`, `claude-s
 
 The concurrency conventions continue to hold up — this run rebased onto `main` at `709a1ba` before starting, found the workspace clean, and observed no competing 07-24 package. An empty `run/gpt-5-2026-07-24` local branch exists with no commits and no diff against `main`, consistent with an aborted session; it was left untouched rather than deleted, since it is another session's artifact.
 
+### AMENDED 2026-07-25 — a concurrent 07-24 package did land
+
+The two paragraphs above were accurate when written but are now superseded, and the correction is recorded rather than edited away.
+
+While this package was being committed, a concurrent **`gpt-5-2026-07-24`** run merged as **PR #45** (`e7617c5`), immediately ahead of this package's PR #46 (`6a2a6fb`). The `run/gpt-5-2026-07-24` branch was therefore **not** an aborted session — it was an in-flight one that had not yet committed when this run inspected it. Inferring abandonment from an empty branch was wrong; a branch with no commits only means nothing has been committed *yet*.
+
+Corrected facts:
+
+- **Ten** consecutive `NO_TRADE` packages, not nine. `gpt-5-2026-07-24` also published `NO_TRADE`, with 29 predictions and 0 settlements — independently confirming this run's `due_inventory 0` finding from a separate execution.
+- Its `13_evolution_log.md` decision was **`DEFER — NO_CHANGE_ACCEPTED`** on a Track A proposal to shift family weights to 0.25 Technical / 0.20 Macro, rejected for the same reason both of this run's Track A candidates were: no holdout recomputation clears the acceptance standard. **Two models independently hit the same evidence wall on the same day** — which is corroborating support for this run's accepted `eff_n` gate, arrived at without coordination.
+- Post-merge integrity re-verified with both packages present: `settlement_ledger.py --as-of 2026-07-24` returns `due_inventory 0`, **`conflicts 0`**, 189 canonical `EQUITY_ALPHA` + 33 `MARKET_FORECAST`. The two same-day packages do not collide.
+
+The operative lesson for the concurrency conventions: **rebasing before finalising is necessary but not sufficient** — a competing run can merge between your last rebase and your own push. Re-check `main` after the PR lands, not only before starting.
+
 ## Actions for Next Week
 
 1. **Apply the accepted Track B change** (`eff_n` in `settlement_ledger.py` rolling metrics + the Track A gate). Effective next run, flagged `HUMAN_REVIEW`.
