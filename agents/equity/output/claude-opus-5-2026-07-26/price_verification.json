@@ -1,0 +1,152 @@
+{
+ "all_within_1pct": true,
+ "max_diff_across_all_pct": 0.0,
+ "n_symbols": 17,
+ "note": "cnbc_last_time == 2026-07-24 on every symbol confirms the Friday close, not an after-hours or stale tape.",
+ "run_date": "2026-07-26",
+ "sources": [
+  "stockanalysis.com/api/symbol/{s|e}/{SYM}/history?range=5Y",
+  "api.nasdaq.com/api/quote/{SYM}/historical?assetclass={stocks|etf}",
+  "quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol"
+ ],
+ "standard": "rules.md \u00a7 Price Sourcing Standard \u2014 two independent web sources agreeing within 1%",
+ "symbols": {
+  "AAPL": {
+   "cnbc_last": 333.02,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 333.02,
+   "stockanalysis": 333.02,
+   "verdict": "OK"
+  },
+  "BAC": {
+   "cnbc_last": 62.05,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 62.05,
+   "stockanalysis": 62.05,
+   "verdict": "OK"
+  },
+  "CAT": {
+   "cnbc_last": 888.73,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 888.73,
+   "stockanalysis": 888.73,
+   "verdict": "OK"
+  },
+  "CVX": {
+   "cnbc_last": 194.79,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 194.79,
+   "stockanalysis": 194.79,
+   "verdict": "OK"
+  },
+  "EQIX": {
+   "cnbc_last": 1084.24,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 1084.24,
+   "stockanalysis": 1084.24,
+   "verdict": "OK"
+  },
+  "FCX": {
+   "cnbc_last": 62.6,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 62.6,
+   "stockanalysis": 62.6,
+   "verdict": "OK"
+  },
+  "GE": {
+   "cnbc_last": 353.73,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 353.73,
+   "stockanalysis": 353.73,
+   "verdict": "OK"
+  },
+  "GOOGL": {
+   "cnbc_last": 319.74,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 319.74,
+   "stockanalysis": 319.74,
+   "verdict": "OK"
+  },
+  "GS": {
+   "cnbc_last": 1061.23,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 1061.23,
+   "stockanalysis": 1061.23,
+   "verdict": "OK"
+  },
+  "JPM": {
+   "cnbc_last": 353.21,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 353.21,
+   "stockanalysis": 353.21,
+   "verdict": "OK"
+  },
+  "LLY": {
+   "cnbc_last": 1196.03,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 1196.03,
+   "stockanalysis": 1196.03,
+   "verdict": "OK"
+  },
+  "QQQ": {
+   "cnbc_last": 684.23,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 684.23,
+   "stockanalysis": 684.23,
+   "verdict": "OK"
+  },
+  "SHW": {
+   "cnbc_last": 317.51,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 317.51,
+   "stockanalysis": 317.51,
+   "verdict": "OK"
+  },
+  "SOXX": {
+   "cnbc_last": 527.01,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 527.01,
+   "stockanalysis": 527.01,
+   "verdict": "OK"
+  },
+  "SPY": {
+   "cnbc_last": 738.93,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 738.93,
+   "stockanalysis": 738.93,
+   "verdict": "OK"
+  },
+  "UNH": {
+   "cnbc_last": 420.74,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 420.74,
+   "stockanalysis": 420.74,
+   "verdict": "OK"
+  },
+  "V": {
+   "cnbc_last": 355.74,
+   "cnbc_last_time": "2026-07-24",
+   "max_pairwise_diff_pct": 0.0,
+   "nasdaq_historical": 355.74,
+   "stockanalysis": 355.74,
+   "verdict": "OK"
+  }
+ },
+ "target_close_date": "2026-07-24"
+}
