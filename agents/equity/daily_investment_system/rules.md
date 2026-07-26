@@ -143,7 +143,7 @@ The initial `TARGET_DATE_CLOSE` validator covers regular 16:00 ET sessions only.
 
 ### Rolling Calibration Metrics
 
-The Reflection artifact must report, over all settled predictions (minimum 10; otherwise state `INSUFFICIENT_SETTLED_N`):
+The Reflection artifact must report, over all settled predictions (minimum 10; otherwise state `INSUFFICIENT_SETTLED_N`), both raw `n` and effective independent sample size `eff_n`. `eff_n` is the maximum count of non-overlapping 28-calendar-day target windows represented by the canonical settlements: sort distinct target dates, select the earliest, then select each next date at least 28 days after the last selected date. Duplicate target dates and target dates fewer than 28 days apart do not increase `eff_n`.
 
 | Metric | Definition | Healthy Range |
 |---|---|---|
@@ -153,6 +153,8 @@ The Reflection artifact must report, over all settled predictions (minimum 10; o
 | Rank IC | Spearman correlation of `adj_score` vs `realized_alpha` per vintage | > 0 |
 
 All four metrics are computed over `EQUITY_ALPHA` records only. Settled `MARKET_FORECAST` records are reported as a separate line — direction accuracy and CI coverage — under the same minimum-N rule, never pooled with the equity metrics.
+
+`eff_n` is an evidence-adequacy measure only; it does not change any scoring formula or rolling metric. A Track A calibration proposal requires both raw `n >= 20` and `eff_n >= 3` for the relevant record type. If either gate fails, record the finding as an observation and `DEFER` the proposal rather than `REJECT` it.
 
 Interpretation rules:
 
@@ -179,7 +181,7 @@ Contract:
 3. Among timing-valid, complete candidates for a key, the earliest one (by the settlement's own run date, i.e. settled the moment it became due) is canonical. Later, lower-priority re-settlements are kept only as audit-only lineage and never override an earlier valid settlement. Same-tier candidates that materially disagree on price or direction make the key an unresolved conflict: excluded from calibration and reported separately, not silently picked.
 4. Due inventory is `source prediction keys - canonical keys - conflicted keys`, filtered to `target_date <= as_of`. It is never read from a prediction's `status` field, which this system never mutates. A conflicted key needs manual reconciliation, not another automated settlement attempt, so treat it as neither due nor settled until resolved.
 5. A key can have zero valid candidates — most commonly pre-2026-07-12 settlements that used the settlement day's "current price" instead of the target date's own close, a violation distinct from (and stricter than) the two named exceptions. Report these as due, not settled; do not loosen the validator to make old data fit without a Track A/B change logged in `13_evolution_log.md`.
-6. The manifest's `rolling_metrics` block is the source for the `§ Rolling Calibration Metrics` table above — `EQUITY_ALPHA` and `MARKET_FORECAST` stay separate, exactly as required there.
+6. The manifest's `rolling_metrics` block is the source for the `§ Rolling Calibration Metrics` table above — `EQUITY_ALPHA` and `MARKET_FORECAST` stay separate, exactly as required there. Each record-type block reports raw `n`, `eff_n`, and whether the `n >= 20` plus `eff_n >= 3` Track A calibration-proposal gate is satisfied.
 7. New `settlements` rows should be written with the canonical field names the module documents as primary (`settle_price`, `settle_price_date`; see the source for the full list) rather than inventing another spelling. The normalizer's alias fallbacks exist to reconcile pre-existing packages, not as a standing license for schema drift going forward.
 
 This is a Track B process fix: it changes how settlement rows are counted and deduplicated, not any scoring formula, factor weight, forecast prior, or protected risk limit.
@@ -751,6 +753,7 @@ Every proposal must be classified before evaluation. The tracks exist so process
 **Track A — Performance changes** (factor weights, thresholds, mu Calibration Table, Core ETF mu prior table, confidence calibration, sizing parameters):
 
 - Require ≥ 20 settled prediction records from `15_predictions.json` files and a holdout/rolling validation per the Acceptance Standard below.
+- Track A calibration proposals additionally require `eff_n >= 3` non-overlapping 28-day target windows for the relevant record type, as emitted by `settlement_ledger.py`. Below either `n >= 20` or `eff_n >= 3`, log the calibration finding as an observation and `DEFER`, not `REJECT`, the proposal.
 
 **Track B — Process changes** (prompt wording clarity, artifact naming/numbering, spec-consistency fixes, schema corrections, sequencing, missing-fetch procedure fixes):
 

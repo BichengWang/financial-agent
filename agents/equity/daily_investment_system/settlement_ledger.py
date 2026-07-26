@@ -38,6 +38,10 @@ from zoneinfo import ZoneInfo
 
 CanonicalKey = tuple[str, str, str, str, str]
 
+FORECAST_HORIZON_DAYS = 28
+TRACK_A_MIN_SETTLED_N = 20
+TRACK_A_MIN_EFFECTIVE_N = 3
+
 
 # ---------------------------------------------------------------------------
 # Trading calendar (weekends + computed NYSE holiday rules; no hardcoded
@@ -753,6 +757,33 @@ def spearman_rank_ic(pairs: list[tuple[float, float]]) -> float | None:
     return cov / math.sqrt(var_x * var_y)
 
 
+def effective_independent_sample_size(
+    records: Iterable[SettlementCandidate],
+    horizon_days: int = FORECAST_HORIZON_DAYS,
+) -> int:
+    """Maximum count of non-overlapping forecast-horizon target windows.
+
+    Each distinct target date represents the end of one `horizon_days`
+    forecast window. Greedily selecting target dates in ascending order is
+    the interval-scheduling optimum because every window has equal length.
+    Dates exactly one horizon apart count as non-overlapping.
+    """
+    target_dates = sorted(
+        {
+            dt.date.fromisoformat(c.target_date)
+            for c in records
+            if _looks_like_date(c.target_date)
+        }
+    )
+    selected = 0
+    last_target: dt.date | None = None
+    for target_date in target_dates:
+        if last_target is None or (target_date - last_target).days >= horizon_days:
+            selected += 1
+            last_target = target_date
+    return selected
+
+
 def compute_rolling_metrics(
     canonical: dict[CanonicalKey, SettlementCandidate],
     predictions_index: dict[CanonicalKey, Prediction],
@@ -783,9 +814,22 @@ def compute_rolling_metrics(
         return (sum(zs) / len(zs)) if zs else None
 
     def _block(records: list[SettlementCandidate]) -> dict[str, Any]:
+        n = len(records)
+        eff_n = effective_independent_sample_size(records)
+        if n < TRACK_A_MIN_SETTLED_N:
+            proposal_status = "INSUFFICIENT_SETTLED_N"
+        elif eff_n < TRACK_A_MIN_EFFECTIVE_N:
+            proposal_status = "INSUFFICIENT_EFFECTIVE_N"
+        else:
+            proposal_status = "ELIGIBLE"
         return {
-            "n": len(records),
-            "status": "OK" if len(records) >= 10 else "INSUFFICIENT_SETTLED_N",
+            "n": n,
+            "eff_n": eff_n,
+            "status": "OK" if n >= 10 else "INSUFFICIENT_SETTLED_N",
+            "track_a_calibration_proposal_eligible": (
+                n >= TRACK_A_MIN_SETTLED_N and eff_n >= TRACK_A_MIN_EFFECTIVE_N
+            ),
+            "track_a_calibration_proposal_status": proposal_status,
             "hit_rate": _hit_rate(records),
             "ci_coverage": _ci_coverage(records),
             "mean_z": _mean_z(records),
