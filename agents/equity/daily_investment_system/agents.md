@@ -28,7 +28,7 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 1. Scan all dated output folders (all models) for `15_predictions.json`.
 2. Settle every `OPEN` prediction with `target_date <= run_date` using grounded prices per the Price Sourcing Standard; settlement is keyed to each prediction's own `target_date`, never to folder-window proximity.
 3. Score each settled prediction per `rules.md § Settlement Rules` (alpha direction, CI calibration, magnitude error z).
-4. Report rolling calibration metrics in `02_reflection.md § 0` and write settlements into this run's `15_predictions.json`.
+4. Report rolling calibration metrics with raw `n`, 28-day `eff_n`, and Track A calibration-proposal eligibility in `02_reflection.md § 0`, and write settlements into this run's `15_predictions.json`.
 5. If no prior ledger exists anywhere, state `NO_PREDICTION_LEDGER` and rely on Step 2 alone.
 
 ### Step 2 — Folder-Window MoM Baseline
@@ -240,14 +240,14 @@ Review **all dated output packages from the past 7 calendar days, across all mod
 
 1. All packages in `agents/equity/output/` dated within the trailing 7 days (every model), plus the current run.
 2. **Settled predictions from `15_predictions.json` files** — the primary evidence base; "settled observations" always means these records.
-3. Rolling calibration metrics from `02_reflection.md § 0` (hit rate, CI coverage, mean z, rank IC).
+3. Rolling calibration metrics from `02_reflection.md § 0` (raw `n`, 28-day `eff_n`, Track A calibration-proposal eligibility, hit rate, CI coverage, mean z, rank IC).
 4. Source Ledger coverage and grounding failures from `01`, `02`, and `08` across the window.
 
 ## Tasks
 
 1. Compare forecast vs realized behavior over the window; compare models against each other where they overlap.
 2. Diagnose the main miss category: data quality / regime classification / factor calibration / portfolio construction / risk review / output clarity / source grounding.
-3. Propose exactly one change, classified Track A or Track B. **Priority override:** CI coverage < 55% or rank IC ≤ 0 over ≥ 20 settled predictions → the change must address calibration (sigma sourcing, mu table, score weighting) before anything else.
+3. Propose exactly one change, classified Track A or Track B. **Priority override:** CI coverage < 55% or rank IC ≤ 0 over ≥ 20 settled predictions → the change must address calibration (sigma sourcing, mu table, score weighting) before anything else. A Track A calibration proposal is eligible only when the relevant record type also has `eff_n >= 3`; otherwise record the finding and `DEFER` the proposal for insufficient effective evidence.
 4. State the hypothesis; validate per the policy's acceptance standard; decide; log in `13_evolution_log.md` (fields per `runbook.md § 13`).
 
 ## Boundaries

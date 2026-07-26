@@ -656,10 +656,82 @@ def test_compute_rolling_metrics_separates_equity_and_market_forecast() -> None:
     canonical = {eq.key(): eq, mf.key(): mf}
     metrics = sl.compute_rolling_metrics(canonical, {})
     assert metrics["equity_alpha"]["n"] == 1
+    assert metrics["equity_alpha"]["eff_n"] == 1
     assert metrics["market_forecast"]["n"] == 1
+    assert metrics["market_forecast"]["eff_n"] == 1
     assert metrics["equity_alpha"]["hit_rate"] == 1.0
     assert metrics["market_forecast"]["hit_rate"] == 0.0
     assert metrics["equity_alpha"]["status"] == "INSUFFICIENT_SETTLED_N"
+    assert not metrics["equity_alpha"]["track_a_calibration_proposal_eligible"]
+
+
+def test_eff_n_counts_non_overlapping_28_day_target_windows() -> None:
+    records = [
+        _candidate(ticker="A", target_date="2026-07-01"),
+        _candidate(ticker="B", target_date="2026-07-01"),
+        _candidate(ticker="C", target_date="2026-07-28"),
+        _candidate(ticker="D", target_date="2026-07-29"),
+        _candidate(ticker="E", target_date="2026-08-26"),
+    ]
+
+    assert sl.effective_independent_sample_size(records) == 3
+
+
+def test_track_a_calibration_proposal_requires_raw_and_effective_n() -> None:
+    overlapping_candidates = [
+        _candidate(
+            ticker=f"OVERLAP_{i}",
+            vintage=f"2026-06-{(i % 20) + 1:02d}",
+            target_date=f"2026-07-{(i % 20) + 1:02d}",
+            direction="HIT" if i % 2 == 0 else "MISS",
+        )
+        for i in range(20)
+    ]
+    overlapping = {candidate.key(): candidate for candidate in overlapping_candidates}
+    overlapping_metrics = sl.compute_rolling_metrics(overlapping, {})["equity_alpha"]
+
+    assert overlapping_metrics["n"] == 20
+    assert overlapping_metrics["eff_n"] == 1
+    assert overlapping_metrics["hit_rate"] == 0.5
+    assert not overlapping_metrics["track_a_calibration_proposal_eligible"]
+    assert (
+        overlapping_metrics["track_a_calibration_proposal_status"]
+        == "INSUFFICIENT_EFFECTIVE_N"
+    )
+
+    independent = {
+        candidate.key(): candidate
+        for candidate in [
+            _candidate(
+                ticker=f"WINDOW_1_{i}",
+                vintage=f"2026-06-{i + 1:02d}",
+                target_date="2026-07-01",
+            )
+            for i in range(7)
+        ]
+        + [
+            _candidate(
+                ticker=f"WINDOW_2_{i}",
+                vintage=f"2026-07-{i + 1:02d}",
+                target_date="2026-07-29",
+            )
+            for i in range(7)
+        ]
+        + [
+            _candidate(
+                ticker=f"WINDOW_3_{i}",
+                vintage=f"2026-08-{i + 1:02d}",
+                target_date="2026-08-26",
+            )
+            for i in range(6)
+        ]
+    }
+    independent_metrics = sl.compute_rolling_metrics(independent, {})["equity_alpha"]
+
+    assert independent_metrics["n"] == 20
+    assert independent_metrics["eff_n"] == 3
+    assert independent_metrics["track_a_calibration_proposal_eligible"]
+    assert independent_metrics["track_a_calibration_proposal_status"] == "ELIGIBLE"
 
 
 # ---------------------------------------------------------------------------
@@ -730,6 +802,28 @@ def test_market_forecast_counts_match_the_plans_acceptance_criteria() -> None:
     m15 = sl.build_manifest(_packages_as_of("2026-07-15"), as_of="2026-07-15")
     assert m14["summary"]["canonical_market_forecast_settlements"] == 9
     assert m15["summary"]["canonical_market_forecast_settlements"] == 12
+
+
+@real_data
+def test_july24_overlapping_cohort_has_one_effective_window() -> None:
+    manifest = sl.build_manifest(_packages_as_of("2026-07-24"), as_of="2026-07-24")
+    metrics = manifest["rolling_metrics"]
+    equity = metrics["equity_alpha"]
+    market = metrics["market_forecast"]
+
+    assert (equity["n"], equity["eff_n"]) == (189, 1)
+    assert (market["n"], market["eff_n"]) == (33, 1)
+    assert not equity["track_a_calibration_proposal_eligible"]
+    assert not market["track_a_calibration_proposal_eligible"]
+
+    # The Track B evidence-count change must not alter scoring math.
+    assert equity["hit_rate"] == pytest.approx(0.5291005291005291)
+    assert equity["ci_coverage"] == pytest.approx(0.7619047619047619)
+    assert equity["mean_z"] == pytest.approx(-0.2129000450276962)
+    assert market["hit_rate"] == pytest.approx(0.21212121212121213)
+    assert market["ci_coverage"] == pytest.approx(0.6363636363636364)
+    assert market["mean_z"] == pytest.approx(-0.7306131150503343)
+    assert metrics["rank_ic_weighted_mean"] == pytest.approx(-0.09391437593767778)
 
 
 @real_data
