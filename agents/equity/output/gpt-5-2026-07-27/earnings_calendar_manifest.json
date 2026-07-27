@@ -1,0 +1,1360 @@
+{
+  "run_date": "2026-07-27",
+  "retrieved_at": "2026-07-27T12:55:12Z",
+  "requested": 62,
+  "succeeded": 62,
+  "failed": 0,
+  "failures": {},
+  "resolution_rule_current_run": "Carry-forward 2026-07-24 bounded two-pass rule: confirmed Nasdaq date; otherwise print signature >=3.5% one-day move OR >=1.8x median volume, else conservative print-week penalty. Proposed tightening in 13 applies next run.",
+  "excluded_third_pass": [
+    "MTB",
+    "AON",
+    "ESS",
+    "ITW",
+    "WM",
+    "JNJ"
+  ],
+  "raw": {
+    "AAPL": {
+      "url": "https://api.nasdaq.com/api/analyst/AAPL/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AAPL: Jul 30, 2026",
+      "report_text": "Apple Inc. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  11 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.88.  The reported EPS for the same quarter last year was $1.57.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ABBV": {
+      "url": "https://api.nasdaq.com/api/analyst/ABBV/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for ABBV: Jul 31, 2026",
+      "report_text": "AbbVie Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.66.  The reported EPS for the same quarter last year was $2.97.",
+      "parsed_date": "2026-07-31",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ACGL": {
+      "url": "https://api.nasdaq.com/api/analyst/ACGL/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for ACGL: Jul 28, 2026",
+      "report_text": "Arch Capital Group Ltd. Common Stock is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.49.  The reported EPS for the same quarter last year was $2.58.",
+      "parsed_date": "2026-07-28",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ADM": {
+      "url": "https://api.nasdaq.com/api/analyst/ADM/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for ADM: Aug 04, 2026",
+      "report_text": "Archer-Daniels-Midland Company Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  3 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.27.  The reported EPS for the same quarter last year was $0.93.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ADP": {
+      "url": "https://api.nasdaq.com/api/analyst/ADP/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for ADP: Jul 29, 2026",
+      "report_text": "Automatic Data Processing, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.59.  The reported EPS for the same quarter last year was $2.26.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "AFL": {
+      "url": "https://api.nasdaq.com/api/analyst/AFL/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AFL: Aug 06, 2026",
+      "report_text": "AFLAC Incorporated Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.77.  The reported EPS for the same quarter last year was $1.78.",
+      "parsed_date": "2026-08-06",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "AIZ": {
+      "url": "https://api.nasdaq.com/api/analyst/AIZ/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AIZ: Aug 04, 2026",
+      "report_text": "Assurant, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $5.16.  The reported EPS for the same quarter last year was $5.56.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "AJG": {
+      "url": "https://api.nasdaq.com/api/analyst/AJG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AJG: Jul 30, 2026",
+      "report_text": "Arthur J. Gallagher & Co. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.84.  The reported EPS for the same quarter last year was $2.33.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ALL": {
+      "url": "https://api.nasdaq.com/api/analyst/ALL/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for ALL: Aug 05, 2026",
+      "report_text": "Allstate Corporation (The) Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $5.61.  The reported EPS for the same quarter last year was $5.94.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "AMGN": {
+      "url": "https://api.nasdaq.com/api/analyst/AMGN/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AMGN: Aug 04, 2026",
+      "report_text": "Amgen Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $5.6.  The reported EPS for the same quarter last year was $6.02.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "AON": {
+      "url": "https://api.nasdaq.com/api/analyst/AON/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for AON: Jul 29, 2026",
+      "report_text": "Aon plc Class A Ordinary Shares (Ireland) is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.77.  The reported EPS for the same quarter last year was $3.49.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "BMY": {
+      "url": "https://api.nasdaq.com/api/analyst/BMY/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for BMY: Jul 30, 2026",
+      "report_text": "Bristol-Myers Squibb Company Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.59.  The reported EPS for the same quarter last year was $1.46.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "BNY": {
+      "url": "https://api.nasdaq.com/api/analyst/BNY/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for BNY: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "CB": {
+      "url": "https://api.nasdaq.com/api/analyst/CB/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for CB: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "CPAY": {
+      "url": "https://api.nasdaq.com/api/analyst/CPAY/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:09Z",
+      "announcement": "Earnings announcement* for CPAY: Aug 05, 2026",
+      "report_text": "Corpay, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $6.17.  The reported EPS for the same quarter last year was $4.81.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "CSX": {
+      "url": "https://api.nasdaq.com/api/analyst/CSX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for CSX: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "CTAS": {
+      "url": "https://api.nasdaq.com/api/analyst/CTAS/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for CTAS: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "CVS": {
+      "url": "https://api.nasdaq.com/api/analyst/CVS/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for CVS: Aug 05, 2026",
+      "report_text": "CVS Health Corporation Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.87.  The reported EPS for the same quarter last year was $1.81.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "DGX": {
+      "url": "https://api.nasdaq.com/api/analyst/DGX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for DGX: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "DOC": {
+      "url": "https://api.nasdaq.com/api/analyst/DOC/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for DOC: Aug 04, 2026",
+      "report_text": "Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.44.  The reported EPS for the same quarter last year was $0.46.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "DVA": {
+      "url": "https://api.nasdaq.com/api/analyst/DVA/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for DVA: Aug 04, 2026",
+      "report_text": "DaVita Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  2 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.01.  The reported EPS for the same quarter last year was $2.95.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "EG": {
+      "url": "https://api.nasdaq.com/api/analyst/EG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for EG: Jul 29, 2026",
+      "report_text": "Everest Group, Ltd. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $14.59.  The reported EPS for the same quarter last year was $17.36.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "EIX": {
+      "url": "https://api.nasdaq.com/api/analyst/EIX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for EIX: Jul 30, 2026",
+      "report_text": "Edison International Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.02.  The reported EPS for the same quarter last year was $0.97.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "EQR": {
+      "url": "https://api.nasdaq.com/api/analyst/EQR/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for EQR: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ESS": {
+      "url": "https://api.nasdaq.com/api/analyst/ESS/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for ESS: Jul 29, 2026",
+      "report_text": "Essex Property Trust, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.03.  The reported EPS for the same quarter last year was $4.03.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "FRT": {
+      "url": "https://api.nasdaq.com/api/analyst/FRT/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for FRT: Jul 31, 2026",
+      "report_text": "Federal Realty Investment Trust Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.85.  The reported EPS for the same quarter last year was $1.91.",
+      "parsed_date": "2026-07-31",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "GD": {
+      "url": "https://api.nasdaq.com/api/analyst/GD/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for GD: Jul 29, 2026",
+      "report_text": "General Dynamics Corporation Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.95.  The reported EPS for the same quarter last year was $3.74.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "HIG": {
+      "url": "https://api.nasdaq.com/api/analyst/HIG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for HIG: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "HST": {
+      "url": "https://api.nasdaq.com/api/analyst/HST/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for HST: Aug 05, 2026",
+      "report_text": "Host Hotels & Resorts, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  8 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.62.  The reported EPS for the same quarter last year was $0.58.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "IQV": {
+      "url": "https://api.nasdaq.com/api/analyst/IQV/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:10Z",
+      "announcement": "Earnings announcement* for IQV: Jul 28, 2026",
+      "report_text": "IQVIA Holdings, Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.72.  The reported EPS for the same quarter last year was $2.53.",
+      "parsed_date": "2026-07-28",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "ITW": {
+      "url": "https://api.nasdaq.com/api/analyst/ITW/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for ITW: Jul 28, 2026",
+      "report_text": "Illinois Tool Works Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.8.  The reported EPS for the same quarter last year was $2.58.",
+      "parsed_date": "2026-07-28",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "JNJ": {
+      "url": "https://api.nasdaq.com/api/analyst/JNJ/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for JNJ: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "KIM": {
+      "url": "https://api.nasdaq.com/api/analyst/KIM/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for KIM: Aug 04, 2026",
+      "report_text": "Kimco Realty Corporation (HC) Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.46.  The reported EPS for the same quarter last year was $0.44.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "LH": {
+      "url": "https://api.nasdaq.com/api/analyst/LH/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for LH: Jul 30, 2026",
+      "report_text": "Labcorp Holdings Inc. Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $4.79.  The reported EPS for the same quarter last year was $4.35.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "LLY": {
+      "url": "https://api.nasdaq.com/api/analyst/LLY/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for LLY: Aug 05, 2026",
+      "report_text": "Eli Lilly and Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $6.71.  The reported EPS for the same quarter last year was $6.31.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "LMT": {
+      "url": "https://api.nasdaq.com/api/analyst/LMT/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for LMT: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "MET": {
+      "url": "https://api.nasdaq.com/api/analyst/MET/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for MET: Aug 05, 2026",
+      "report_text": "MetLife, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $2.3.  The reported EPS for the same quarter last year was $2.02.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "MPC": {
+      "url": "https://api.nasdaq.com/api/analyst/MPC/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for MPC: Aug 04, 2026",
+      "report_text": "Marathon Petroleum Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $14.52.  The reported EPS for the same quarter last year was $3.96.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "MRK": {
+      "url": "https://api.nasdaq.com/api/analyst/MRK/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for MRK: Aug 04, 2026",
+      "report_text": "Merck & Company, Inc. Common Stock (new) is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  3 analysts'  forecasts, the consensus EPS forecast for the quarter is $-0.26.  The reported EPS for the same quarter last year was $2.13.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "MTB": {
+      "url": "https://api.nasdaq.com/api/analyst/MTB/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for MTB: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "NSC": {
+      "url": "https://api.nasdaq.com/api/analyst/NSC/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for NSC: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "OKE": {
+      "url": "https://api.nasdaq.com/api/analyst/OKE/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for OKE: Aug 03, 2026",
+      "report_text": "ONEOK, Inc. Common Stock is expected* to report earnings on  08/03/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.44.  The reported EPS for the same quarter last year was $1.34.",
+      "parsed_date": "2026-08-03",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PAYX": {
+      "url": "https://api.nasdaq.com/api/analyst/PAYX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PAYX: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PCG": {
+      "url": "https://api.nasdaq.com/api/analyst/PCG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PCG: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PFG": {
+      "url": "https://api.nasdaq.com/api/analyst/PFG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PFG: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PKG": {
+      "url": "https://api.nasdaq.com/api/analyst/PKG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PKG: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PM": {
+      "url": "https://api.nasdaq.com/api/analyst/PM/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PM: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PRU": {
+      "url": "https://api.nasdaq.com/api/analyst/PRU/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PRU: Aug 04, 2026",
+      "report_text": "Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  7 analysts'  forecasts, the consensus EPS forecast for the quarter is $3.39.  The reported EPS for the same quarter last year was $3.58.",
+      "parsed_date": "2026-08-04",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "PSX": {
+      "url": "https://api.nasdaq.com/api/analyst/PSX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for PSX: Aug 05, 2026",
+      "report_text": "Phillips 66 Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $7.68.  The reported EPS for the same quarter last year was $2.38.",
+      "parsed_date": "2026-08-05",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "REG": {
+      "url": "https://api.nasdaq.com/api/analyst/REG/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for REG: Jul 29, 2026",
+      "report_text": "Regency Centers Corporation Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.2.  The reported EPS for the same quarter last year was $1.16.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "RTX": {
+      "url": "https://api.nasdaq.com/api/analyst/RTX/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for RTX: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "SJM": {
+      "url": "https://api.nasdaq.com/api/analyst/SJM/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for SJM: Aug 26, 2026",
+      "report_text": "The J.M. Smucker Company Common Stock is estimated to report earnings on  08/26/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our vendor, Zacks Investment Research, might revise this date in the future, once the company announces the actual earnings date. According to Zacks Investment Research, based on  6 analysts' forecasts, the consensus EPS forecast for the quarter is $2.18.  The reported EPS for the same quarter last year was $1.9.",
+      "parsed_date": "2026-08-26",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "TMO": {
+      "url": "https://api.nasdaq.com/api/analyst/TMO/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for TMO: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "TRV": {
+      "url": "https://api.nasdaq.com/api/analyst/TRV/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:12Z",
+      "announcement": "Earnings announcement* for TRV: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "UNP": {
+      "url": "https://api.nasdaq.com/api/analyst/UNP/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for UNP: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "VLO": {
+      "url": "https://api.nasdaq.com/api/analyst/VLO/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for VLO: Jul 30, 2026",
+      "report_text": "Valero Energy Corporation Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  5 analysts'  forecasts, the consensus EPS forecast for the quarter is $9.87.  The reported EPS for the same quarter last year was $2.28.",
+      "parsed_date": "2026-07-30",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "VTR": {
+      "url": "https://api.nasdaq.com/api/analyst/VTR/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for VTR: Jul 29, 2026",
+      "report_text": "Ventas, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  6 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.96.  The reported EPS for the same quarter last year was $0.87.",
+      "parsed_date": "2026-07-29",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "VTRS": {
+      "url": "https://api.nasdaq.com/api/analyst/VTRS/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for VTRS: Aug 06, 2026",
+      "report_text": "Viatris Inc. Common Stock is expected* to report earnings on  08/06/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  4 analysts'  forecasts, the consensus EPS forecast for the quarter is $0.62.  The reported EPS for the same quarter last year was $0.62.",
+      "parsed_date": "2026-08-06",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "WAB": {
+      "url": "https://api.nasdaq.com/api/analyst/WAB/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for WAB: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "WELL": {
+      "url": "https://api.nasdaq.com/api/analyst/WELL/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:12Z",
+      "announcement": "Earnings announcement* for WELL: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "WM": {
+      "url": "https://api.nasdaq.com/api/analyst/WM/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:11Z",
+      "announcement": "Earnings announcement* for WM: Jul 28, 2026",
+      "report_text": "Waste Management, Inc. Common Stock is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, based on  9 analysts'  forecasts, the consensus EPS forecast for the quarter is $1.99.  The reported EPS for the same quarter last year was $1.92.",
+      "parsed_date": "2026-07-28",
+      "vendor_empty": false,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    },
+    "WRB": {
+      "url": "https://api.nasdaq.com/api/analyst/WRB/earnings-date",
+      "retrieved_at": "2026-07-27T12:55:12Z",
+      "announcement": "Earnings announcement* for WRB: ",
+      "report_text": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "parsed_date": null,
+      "vendor_empty": true,
+      "status": {
+        "rCode": 200,
+        "bCodeMessage": null,
+        "developerMessage": null
+      }
+    }
+  },
+  "resolved": {
+    "AAPL": {
+      "ticker": "AAPL",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AAPL: Jul 30, 2026 Apple Inc. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, ba"
+    },
+    "ABBV": {
+      "ticker": "ABBV",
+      "date": "2026-07-31",
+      "days_to": 4,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ABBV: Jul 31, 2026 AbbVie Inc. Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, b"
+    },
+    "ACGL": {
+      "ticker": "ACGL",
+      "date": "2026-07-28",
+      "days_to": 1,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ACGL: Jul 28, 2026 Arch Capital Group Ltd. Common Stock is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment"
+    },
+    "ADM": {
+      "ticker": "ADM",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ADM: Aug 04, 2026 Archer-Daniels-Midland Company Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Inve"
+    },
+    "ADP": {
+      "ticker": "ADP",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ADP: Jul 29, 2026 Automatic Data Processing, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Inv"
+    },
+    "AFL": {
+      "ticker": "AFL",
+      "date": "2026-08-06",
+      "days_to": 10,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AFL: Aug 06, 2026 AFLAC Incorporated Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Resea"
+    },
+    "AIZ": {
+      "ticker": "AIZ",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AIZ: Aug 04, 2026 Assurant, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research,"
+    },
+    "AJG": {
+      "ticker": "AJG",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AJG: Jul 30, 2026 Arthur J. Gallagher & Co. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investmen"
+    },
+    "ALL": {
+      "ticker": "ALL",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ALL: Aug 05, 2026 Allstate Corporation (The) Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investme"
+    },
+    "AMGN": {
+      "ticker": "AMGN",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AMGN: Aug 04, 2026 Amgen Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, ba"
+    },
+    "AON": {
+      "ticker": "AON",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for AON: Jul 29, 2026 Aon plc Class A Ordinary Shares (Ireland) is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Invest"
+    },
+    "BMY": {
+      "ticker": "BMY",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for BMY: Jul 30, 2026 Bristol-Myers Squibb Company Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Invest"
+    },
+    "BNY": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-15 (1d 5.08%, vol 2.3x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for BNY:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-15",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "BNY"
+    },
+    "CB": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-17 (1d 2.46%, vol 1.96x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for CB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-17",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "CB"
+    },
+    "CPAY": {
+      "ticker": "CPAY",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for CPAY: Aug 05, 2026 Corpay, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, "
+    },
+    "CSX": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 5.77%, vol 2.46x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for CSX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "CSX"
+    },
+    "CTAS": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-15 (1d 4.36%, vol 2.23x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for CTAS:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-15",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "CTAS"
+    },
+    "CVS": {
+      "ticker": "CVS",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for CVS: Aug 05, 2026 CVS Health Corporation Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment R"
+    },
+    "DGX": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-16 (1d 3.79%, vol 1.14x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for DGX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-16",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "DGX"
+    },
+    "DOC": {
+      "ticker": "DOC",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for DOC: Aug 04, 2026 Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investm"
+    },
+    "DVA": {
+      "ticker": "DVA",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for DVA: Aug 04, 2026 DaVita Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, ba"
+    },
+    "EG": {
+      "ticker": "EG",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for EG: Jul 29, 2026 Everest Group, Ltd. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Resea"
+    },
+    "EIX": {
+      "ticker": "EIX",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for EIX: Jul 30, 2026 Edison International Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Res"
+    },
+    "EQR": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 0.01%, vol 1.97x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for EQR:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "EQR"
+    },
+    "ESS": {
+      "ticker": "ESS",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ESS: Jul 29, 2026 Essex Property Trust, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investme"
+    },
+    "FRT": {
+      "ticker": "FRT",
+      "date": "2026-07-31",
+      "days_to": 4,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for FRT: Jul 31, 2026 Federal Realty Investment Trust Common Stock is expected* to report earnings on  07/31/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Inv"
+    },
+    "GD": {
+      "ticker": "GD",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for GD: Jul 29, 2026 General Dynamics Corporation Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investm"
+    },
+    "HIG": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; no print signature in last 12 sessions -> assume print week, penalized (conservative)",
+      "raw": "Earnings announcement* for HIG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "tag": "ESTIMATED_PRINT_WEEK_(+/-5d)",
+      "ticker": "HIG"
+    },
+    "HST": {
+      "ticker": "HST",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for HST: Aug 05, 2026 Host Hotels & Resorts, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investm"
+    },
+    "IQV": {
+      "ticker": "IQV",
+      "date": "2026-07-28",
+      "days_to": 1,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for IQV: Jul 28, 2026 IQVIA Holdings, Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Res"
+    },
+    "ITW": {
+      "ticker": "ITW",
+      "date": "2026-07-28",
+      "days_to": 1,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for ITW: Jul 28, 2026 Illinois Tool Works Inc. Common Stock is expected* to report earnings on  07/28/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment"
+    },
+    "JNJ": {
+      "ticker": "JNJ",
+      "date": null,
+      "days_to": null,
+      "band": 5,
+      "tag": "UNRESOLVED_THIRD_PASS_EXCLUDED",
+      "raw": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+    },
+    "KIM": {
+      "ticker": "KIM",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for KIM: Aug 04, 2026 Kimco Realty Corporation (HC) Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Inves"
+    },
+    "LH": {
+      "ticker": "LH",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for LH: Jul 30, 2026 Labcorp Holdings Inc. Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Res"
+    },
+    "LLY": {
+      "ticker": "LLY",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for LLY: Aug 05, 2026 Eli Lilly and Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Re"
+    },
+    "LMT": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 10.54%, vol 2.75x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for LMT:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "LMT"
+    },
+    "MET": {
+      "ticker": "MET",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for MET: Aug 05, 2026 MetLife, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, "
+    },
+    "MPC": {
+      "ticker": "MPC",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for MPC: Aug 04, 2026 Marathon Petroleum Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Inve"
+    },
+    "MRK": {
+      "ticker": "MRK",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for MRK: Aug 04, 2026 Merck & Company, Inc. Common Stock (new) is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investm"
+    },
+    "MTB": {
+      "ticker": "MTB",
+      "date": null,
+      "days_to": null,
+      "band": 5,
+      "tag": "UNRESOLVED_THIRD_PASS_EXCLUDED",
+      "raw": "Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date."
+    },
+    "NSC": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 5.32%, vol 2.53x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for NSC:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "NSC"
+    },
+    "OKE": {
+      "ticker": "OKE",
+      "date": "2026-08-03",
+      "days_to": 7,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for OKE: Aug 03, 2026 ONEOK, Inc. Common Stock is expected* to report earnings on  08/03/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, ba"
+    },
+    "PAYX": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-16 (1d 4.27%, vol 1.04x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for PAYX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-16",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "PAYX"
+    },
+    "PCG": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-22 (1d 3.54%, vol 1.22x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for PCG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-22",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "PCG"
+    },
+    "PFG": {
+      "band": 0,
+      "date": "2026-07-27",
+      "days_to": 0,
+      "raw": "Earnings announcement* for PFG: Jul 27, 2026 Principal Financial Group Inc Common Stock is expected* to report earnings on  07/27/2026 after market close.  The report will be for the fiscal Quarter en",
+      "tag": "CONFIRMED",
+      "ticker": "PFG"
+    },
+    "PKG": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-22 (1d 0.01%, vol 2.13x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for PKG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-22",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "PKG"
+    },
+    "PM": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-16 (1d 4.95%, vol 1.31x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for PM:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-16",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "PM"
+    },
+    "PRU": {
+      "ticker": "PRU",
+      "date": "2026-08-04",
+      "days_to": 8,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for PRU: Aug 04, 2026 Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investme"
+    },
+    "PSX": {
+      "ticker": "PSX",
+      "date": "2026-08-05",
+      "days_to": 9,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for PSX: Aug 05, 2026 Phillips 66 Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, ba"
+    },
+    "REG": {
+      "ticker": "REG",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for REG: Jul 29, 2026 Regency Centers Corporation Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investm"
+    },
+    "RTX": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 7.33%, vol 1.95x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for RTX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "RTX"
+    },
+    "SJM": {
+      "ticker": "SJM",
+      "date": "2026-08-26",
+      "days_to": 30,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for SJM: Aug 26, 2026 The J.M. Smucker Company Common Stock is estimated to report earnings on  08/26/2026. The upcoming earnings date is derived from an algorithm based on a company's historical reporting dates. Our "
+    },
+    "TMO": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-23 (1d 8.71%, vol 2.86x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for TMO:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-23",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "TMO"
+    },
+    "TRV": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-17 (1d 9.22%, vol 3.1x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for TRV:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-17",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "TRV"
+    },
+    "UNP": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-16 (1d 3.84%, vol 1.32x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for UNP:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-16",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "UNP"
+    },
+    "VLO": {
+      "ticker": "VLO",
+      "date": "2026-07-30",
+      "days_to": 3,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for VLO: Jul 30, 2026 Valero Energy Corporation Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investmen"
+    },
+    "VTR": {
+      "ticker": "VTR",
+      "date": "2026-07-29",
+      "days_to": 2,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for VTR: Jul 29, 2026 Ventas, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, b"
+    },
+    "VTRS": {
+      "ticker": "VTRS",
+      "date": "2026-08-06",
+      "days_to": 10,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for VTRS: Aug 06, 2026 Viatris Inc. Common Stock is expected* to report earnings on  08/06/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Research, "
+    },
+    "WAB": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-22 (1d 10.04%, vol 3.87x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for WAB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-22",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "WAB"
+    },
+    "WELL": {
+      "band": 0,
+      "date": "2026-07-27",
+      "days_to": 0,
+      "raw": "Earnings announcement* for WELL: Jul 27, 2026 Welltower Inc. Common Stock is expected* to report earnings on  07/27/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.",
+      "tag": "CONFIRMED",
+      "ticker": "WELL"
+    },
+    "WM": {
+      "ticker": "WM",
+      "date": "2026-07-28",
+      "days_to": 1,
+      "band": 0,
+      "tag": "CONFIRMED",
+      "raw": "Earnings announcement* for WM: Jul 28, 2026 Waste Management, Inc. Common Stock is expected* to report earnings on  07/28/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  According to Zacks Investment Re"
+    },
+    "WRB": {
+      "band": 5,
+      "date": null,
+      "days_to": null,
+      "note": "vendor-empty; print-like signature 2026-07-17 (1d 2.45%, vol 2.0x median) -> next print ~+91d, outside 14d window, no penalty",
+      "raw": "Earnings announcement* for WRB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+      "signature_date": "2026-07-17",
+      "tag": "ESTIMATED_CADENCE_+91d",
+      "ticker": "WRB"
+    }
+  }
+}
