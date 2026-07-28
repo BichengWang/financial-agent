@@ -1,0 +1,1030 @@
+{
+ "generated_at": "2026-07-28T08:05:00-04:00",
+ "run_date": "2026-07-28",
+ "endpoint": "api.nasdaq.com/api/analyst/{sym}/earnings-date",
+ "schema_note": "response is data.announcement / data.reportText free text (not data.rows); the date is parsed out of that text",
+ "passes": [
+  {
+   "pass": 1,
+   "scope": "top-40 pre-penalty ranks",
+   "names": 40,
+   "fetch_errors": 0
+  },
+  {
+   "pass": 2,
+   "scope": "post-penalty top-40 entrants not yet grounded",
+   "names": 18,
+   "fetch_errors": 0
+  }
+ ],
+ "converged": true,
+ "convergence_test": "post-penalty top-20 fully earnings-grounded",
+ "cap": {
+  "max_passes": 4,
+  "max_names": 60
+ },
+ "names_fetched": 58,
+ "vendor_empty_rule": "gpt-5-2026-07-27 Track B, effective 2026-07-28: print-like iff |1d move| >= 3.5% OR (volume >= 1.8x trailing median AND |1d move| >= 1.5%), over the last 12 sessions",
+ "resolution_counts": {
+  "CONFIRMED": 31,
+  "ESTIMATED_CADENCE": 22,
+  "ESTIMATED_PRINT_WEEK": 5
+ },
+ "unfetched_top30_entrants_excluded_from_publication": [
+  "DXCM",
+  "BXP",
+  "BAC",
+  "FRT",
+  "KVUE",
+  "FFIV",
+  "SO"
+ ],
+ "per_name": {
+  "AAPL": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for AAPL: Jul 30, 2026 Apple Inc. Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  Ac",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.040144826271993894,
+     "vol_ratio": 1.2612318747919495,
+     "hit": true
+    }
+   }
+  },
+  "ADM": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for ADM: Aug 04, 2026 Archer-Daniels-Midland Company Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter e",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-17",
+     "move": 0.03493975903614466,
+     "vol_ratio": 1.2300217699666833,
+     "hit": false
+    }
+   }
+  },
+  "ADP": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-29",
+   "vendor_text": "Earnings announcement* for ADP: Jul 29, 2026 Automatic Data Processing, Inc. Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 1,
+   "label": "1d (2026-07-29, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.03773974867724883,
+     "vol_ratio": 0.9815665741969418,
+     "hit": true
+    }
+   }
+  },
+  "AFL": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-06",
+   "vendor_text": "Earnings announcement* for AFL: Aug 06, 2026 AFLAC Incorporated Common Stock is expected* to report earnings on  08/06/2026 after market close.  The report will be for the fiscal Quarter ending Jun 20",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 9,
+   "label": "9d (2026-08-06, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.016610197504338453,
+     "vol_ratio": 1.1314886063839777,
+     "hit": false
+    }
+   }
+  },
+  "AIZ": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for AIZ: Aug 04, 2026 Assurant, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026. ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-24",
+     "move": 0.011468224981738384,
+     "vol_ratio": 0.5792397304864687,
+     "hit": false
+    }
+   }
+  },
+  "ALL": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for ALL: Aug 05, 2026 Allstate Corporation (The) Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter endin",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.04341921310165775,
+     "vol_ratio": 2.0707361962777644,
+     "hit": true
+    }
+   }
+  },
+  "AMGN": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for AMGN: Aug 04, 2026 Amgen Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  Ac",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03700602813127918,
+     "vol_ratio": 0.946904077718918,
+     "hit": true
+    }
+   }
+  },
+  "AMP": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for AMP:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_PRINT_WEEK",
+   "days_to_earnings": 0,
+   "label": "print wk (ESTIMATED_PRINT_WEEK \u00b15d)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.02263398847580711,
+     "vol_ratio": 1.1193076365753682,
+     "hit": false
+    }
+   }
+  },
+  "AON": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-29",
+   "vendor_text": "Earnings announcement* for AON: Jul 29, 2026 Aon plc Class A Ordinary Shares (Ireland) is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter end",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 1,
+   "label": "1d (2026-07-29, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.037955793326763354,
+     "vol_ratio": 0.6843511461244657,
+     "hit": true
+    }
+   }
+  },
+  "BBY": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-27",
+   "vendor_text": "Earnings announcement* for BBY: Aug 27, 2026 Best Buy Co., Inc. Common Stock is expected* to report earnings on  08/27/2026 before market open.  The report will be for the fiscal Quarter ending Jul 20",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 30,
+   "label": "30d (2026-08-27, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-27",
+     "move": 0.035350579421748796,
+     "vol_ratio": 0.7715904439211895,
+     "hit": true
+    }
+   }
+  },
+  "BNY": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for BNY:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.050809061488673146,
+     "vol_ratio": 2.2720217035775514,
+     "hit": true
+    }
+   }
+  },
+  "CB": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for CB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-22",
+     "move": 0.032609921082299875,
+     "vol_ratio": 2.9207003076572833,
+     "hit": true
+    }
+   }
+  },
+  "CPAY": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for CPAY: Aug 05, 2026 Corpay, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-27",
+     "move": 0.024637055426628418,
+     "vol_ratio": 1.0076730781929495,
+     "hit": false
+    }
+   }
+  },
+  "CSX": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for CSX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.057680753054276,
+     "vol_ratio": 2.5218740616667428,
+     "hit": true
+    }
+   }
+  },
+  "CTAS": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for CTAS:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.07215262255029375,
+     "vol_ratio": 2.126675232878222,
+     "hit": true
+    }
+   }
+  },
+  "CTVA": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for CTVA: Jul 30, 2026 Corteva, Inc. Common Stock  is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.026050917702782783,
+     "vol_ratio": 1.0733123742802557,
+     "hit": false
+    }
+   }
+  },
+  "CVS": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for CVS: Aug 05, 2026 CVS Health Corporation Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Ju",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-21",
+     "move": 0.027785521791654944,
+     "vol_ratio": 1.3000488163067832,
+     "hit": false
+    }
+   }
+  },
+  "DGX": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for DGX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.08611733307915936,
+     "vol_ratio": 4.562986023922839,
+     "hit": true
+    }
+   }
+  },
+  "DOC": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for DOC: Aug 04, 2026 Healthpeak Properties, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter endi",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.027138914443422202,
+     "vol_ratio": 0.9671814730746,
+     "hit": false
+    }
+   }
+  },
+  "DVA": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for DVA: Aug 04, 2026 DaVita Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  Ac",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-22",
+     "move": 0.021915037086985834,
+     "vol_ratio": 1.319911476395278,
+     "hit": false
+    }
+   }
+  },
+  "EG": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-29",
+   "vendor_text": "Earnings announcement* for EG: Jul 29, 2026 Everest Group, Ltd. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 20",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 1,
+   "label": "1d (2026-07-29, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-24",
+     "move": 0.02545532005538398,
+     "vol_ratio": 0.8272784422494246,
+     "hit": false
+    }
+   }
+  },
+  "EIX": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for EIX: Jul 30, 2026 Edison International Common Stock is expected* to report earnings on  07/30/2026 after market close.  The report will be for the fiscal Quarter ending Jun ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-22",
+     "move": 0.02827171549187657,
+     "vol_ratio": 1.1671666844375386,
+     "hit": false
+    }
+   }
+  },
+  "EXR": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for EXR:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03933904867256666,
+     "vol_ratio": 1.0747170948714622,
+     "hit": true
+    }
+   }
+  },
+  "GD": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-29",
+   "vendor_text": "Earnings announcement* for GD: Jul 29, 2026 General Dynamics Corporation Common Stock is expected* to report earnings on  07/29/2026 before market open.  The report will be for the fiscal Quarter endi",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 1,
+   "label": "1d (2026-07-29, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.02312680887554941,
+     "vol_ratio": 1.3884033781753846,
+     "hit": false
+    }
+   }
+  },
+  "HIG": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for HIG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_PRINT_WEEK",
+   "days_to_earnings": 0,
+   "label": "print wk (ESTIMATED_PRINT_WEEK \u00b15d)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.026420557365182784,
+     "vol_ratio": 0.9515710282022622,
+     "hit": false
+    }
+   }
+  },
+  "HWM": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-06",
+   "vendor_text": "Earnings announcement* for HWM: Aug 06, 2026 Howmet Aerospace Inc. Common Stock is expected* to report earnings on  08/06/2026 before market open.  The report will be for the fiscal Quarter ending Jun",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 9,
+   "label": "9d (2026-08-06, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.02882824810199114,
+     "vol_ratio": 0.8185336190847873,
+     "hit": false
+    }
+   }
+  },
+  "INCY": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for INCY:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_PRINT_WEEK",
+   "days_to_earnings": 0,
+   "label": "print wk (ESTIMATED_PRINT_WEEK \u00b15d)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.021249250278467913,
+     "vol_ratio": 0.9063963390960718,
+     "hit": false
+    }
+   }
+  },
+  "IQV": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for IQV:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.04432802740278041,
+     "vol_ratio": 0.8917322484065467,
+     "hit": true
+    }
+   }
+  },
+  "ITW": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for ITW:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.04259238790022479,
+     "vol_ratio": 1.238107692913696,
+     "hit": true
+    }
+   }
+  },
+  "IVZ": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for IVZ:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.05464671075530814,
+     "vol_ratio": 1.3762949876579904,
+     "hit": true
+    }
+   }
+  },
+  "JNJ": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for JNJ:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_PRINT_WEEK",
+   "days_to_earnings": 0,
+   "label": "print wk (ESTIMATED_PRINT_WEEK \u00b15d)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-15",
+     "move": 0.026905652944652303,
+     "vol_ratio": 1.3103105039999423,
+     "hit": false
+    }
+   }
+  },
+  "KHC": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for KHC: Aug 05, 2026 The Kraft Heinz Company Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending J",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.030648330058939077,
+     "vol_ratio": 1.068489276536602,
+     "hit": false
+    }
+   }
+  },
+  "KIM": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for KIM: Aug 04, 2026 Kimco Realty Corporation (HC) Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter en",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03746512554802717,
+     "vol_ratio": 1.040501580057004,
+     "hit": true
+    }
+   }
+  },
+  "LH": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for LH: Jul 30, 2026 Labcorp Holdings Inc. Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending Jun ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03658222728776783,
+     "vol_ratio": 0.8844800253134313,
+     "hit": true
+    }
+   }
+  },
+  "LMT": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for LMT:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.10543199315654417,
+     "vol_ratio": 2.8665254181480053,
+     "hit": true
+    }
+   }
+  },
+  "MET": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for MET: Aug 05, 2026 MetLife, Inc. Common Stock is expected* to report earnings on  08/05/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-24",
+     "move": 0.02474605575967148,
+     "vol_ratio": 1.4124981042197966,
+     "hit": false
+    }
+   }
+  },
+  "MPC": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for MPC: Aug 04, 2026 Marathon Petroleum Corporation Common Stock is expected* to report earnings on  08/04/2026 before market open.  The report will be for the fiscal Quarter e",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.04631000211461189,
+     "vol_ratio": 0.9697148688352133,
+     "hit": true
+    }
+   }
+  },
+  "NSC": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for NSC:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.05321206260953648,
+     "vol_ratio": 2.828389542429799,
+     "hit": true
+    }
+   }
+  },
+  "OKE": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-03",
+   "vendor_text": "Earnings announcement* for OKE: Aug 03, 2026 ONEOK, Inc. Common Stock is expected* to report earnings on  08/03/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  Ac",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 6,
+   "label": "6d (2026-08-03, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-27",
+     "move": 0.03971661657363679,
+     "vol_ratio": 0.9721234486133796,
+     "hit": true
+    }
+   }
+  },
+  "PAYX": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for PAYX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.042727272727272725,
+     "vol_ratio": 1.1489658899728268,
+     "hit": true
+    }
+   }
+  },
+  "PCG": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for PCG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-22",
+     "move": 0.03544882790165804,
+     "vol_ratio": 1.422375655312388,
+     "hit": true
+    }
+   }
+  },
+  "PFG": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for PFG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-21",
+     "move": 0.02222023915759419,
+     "vol_ratio": 1.909561248092918,
+     "hit": true
+    }
+   }
+  },
+  "PKG": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for PKG:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-24",
+     "move": 0.0876015391192817,
+     "vol_ratio": 2.303552765688955,
+     "hit": true
+    }
+   }
+  },
+  "PM": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for PM:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.049535603715170407,
+     "vol_ratio": 1.2812160366244592,
+     "hit": true
+    }
+   }
+  },
+  "PRU": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-04",
+   "vendor_text": "Earnings announcement* for PRU: Aug 04, 2026 Prudential Financial, Inc. Common Stock is expected* to report earnings on  08/04/2026 after market close.  The report will be for the fiscal Quarter endin",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 7,
+   "label": "7d (2026-08-04, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.02790333796940181,
+     "vol_ratio": 0.9377931943706681,
+     "hit": false
+    }
+   }
+  },
+  "PSX": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-05",
+   "vendor_text": "Earnings announcement* for PSX: Aug 05, 2026 Phillips 66 Common Stock is expected* to report earnings on  08/05/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  Ac",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 8,
+   "label": "8d (2026-08-05, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.052718199193034554,
+     "vol_ratio": 1.2497021715945449,
+     "hit": true
+    }
+   }
+  },
+  "RTX": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for RTX:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.07327586206896552,
+     "vol_ratio": 1.9178770765216817,
+     "hit": true
+    }
+   }
+  },
+  "SJM": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-26",
+   "vendor_text": "Earnings announcement* for SJM: Aug 26, 2026 The J.M. Smucker Company Common Stock is estimated to report earnings on  08/26/2026. The upcoming earnings date is derived from an algorithm based on a co",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 29,
+   "label": "29d (2026-08-26, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.04540451293340664,
+     "vol_ratio": 0.91411531178822,
+     "hit": true
+    }
+   }
+  },
+  "TMO": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for TMO:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.08711013182388028,
+     "vol_ratio": 2.80432784596024,
+     "hit": true
+    }
+   }
+  },
+  "TRV": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for TRV:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-17",
+     "move": 0.09223847019122622,
+     "vol_ratio": 2.998137922627813,
+     "hit": true
+    }
+   }
+  },
+  "UDR": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for UDR:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_PRINT_WEEK",
+   "days_to_earnings": 0,
+   "label": "print wk (ESTIMATED_PRINT_WEEK \u00b15d)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.028129751647237633,
+     "vol_ratio": 0.8088363436539456,
+     "hit": false
+    }
+   }
+  },
+  "UNP": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for UNP:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-23",
+     "move": 0.04023106371342622,
+     "vol_ratio": 2.6768646805597798,
+     "hit": true
+    }
+   }
+  },
+  "VLO": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for VLO: Jul 30, 2026 Valero Energy Corporation Common Stock is expected* to report earnings on  07/30/2026 before market open.  The report will be for the fiscal Quarter ending",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-13",
+     "move": 0.05379600270761342,
+     "vol_ratio": 1.0,
+     "hit": true
+    }
+   }
+  },
+  "VTR": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-29",
+   "vendor_text": "Earnings announcement* for VTR: Jul 29, 2026 Ventas, Inc. Common Stock is expected* to report earnings on  07/29/2026 after market close.  The report will be for the fiscal Quarter ending Jun 2026.  A",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 1,
+   "label": "1d (2026-07-29, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.029797377830750982,
+     "vol_ratio": 0.8529635324083854,
+     "hit": false
+    }
+   }
+  },
+  "VTRS": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-08-06",
+   "vendor_text": "Earnings announcement* for VTRS: Aug 06, 2026 Viatris Inc. Common Stock is expected* to report earnings on  08/06/2026 before market open.  The report will be for the fiscal Quarter ending Jun 2026.  ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 9,
+   "label": "9d (2026-08-06, CONFIRMED)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03896882494004794,
+     "vol_ratio": 1.0,
+     "hit": true
+    }
+   }
+  },
+  "WAB": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for WAB:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-22",
+     "move": 0.10044397222327639,
+     "vol_ratio": 4.001473469573037,
+     "hit": true
+    }
+   }
+  },
+  "WELL": {
+   "vendor_status": "VENDOR_EMPTY",
+   "vendor_date": null,
+   "vendor_text": "Earnings announcement* for WELL:  Our vendor, Zacks Investment Research, hasn't provided us with the upcoming earnings report date.",
+   "resolution": "ESTIMATED_CADENCE",
+   "days_to_earnings": 91,
+   "label": "~91d (2026-10-27, ESTIMATED_CADENCE \u00b15d)",
+   "print_signature": {
+    "print_like": true,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03514938488576447,
+     "vol_ratio": 0.886774088045424,
+     "hit": true
+    }
+   }
+  },
+  "WTW": {
+   "vendor_status": "CONFIRMED",
+   "vendor_date": "2026-07-30",
+   "vendor_text": "Earnings announcement* for WTW: Jul 30, 2026 Willis Towers Watson Public Limited Company Ordinary Shares is expected* to report earnings on  07/30/2026 before market open.  The report will be for the ",
+   "resolution": "CONFIRMED",
+   "days_to_earnings": 2,
+   "label": "2d (2026-07-30, CONFIRMED)",
+   "print_signature": {
+    "print_like": false,
+    "evidence": {
+     "date": "2026-07-16",
+     "move": 0.03230218855218858,
+     "vol_ratio": 0.5646640416990341,
+     "hit": false
+    }
+   }
+  }
+ }
+}
