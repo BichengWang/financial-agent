@@ -1,0 +1,531 @@
+{
+  "run_date": "2026-07-28",
+  "price_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:19:26Z",
+  "standard": "two independent sources within 1%; raw/unadjusted close for entry, target and CI",
+  "sources": {
+    "stockanalysis": {
+      "manifest": "stockanalysis_history_manifest.json",
+      "field": "raw close"
+    },
+    "yahoo": {
+      "manifest": "price_history_fetch_manifest.json",
+      "field": "raw close"
+    },
+    "nasdaq": {
+      "manifest": "nasdaq_summary_manifest.json",
+      "field": "previous close"
+    }
+  },
+  "summary": {
+    "validated_universe_symbols": 518,
+    "published_gate_pass": true,
+    "package_symbols": 42
+  },
+  "records": [
+    {
+      "ticker": "AMD",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 494.95,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 494.95,
+      "two_source_gate": true,
+      "yahoo_raw_close": 494.950012
+    },
+    {
+      "ticker": "BAC",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 62.13,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 62.13,
+      "two_source_gate": true,
+      "yahoo_raw_close": 62.130001
+    },
+    {
+      "ticker": "BBY",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 88.45,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 88.45,
+      "two_source_gate": true,
+      "yahoo_raw_close": 88.449997
+    },
+    {
+      "ticker": "CAT",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 873.28,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 873.28,
+      "two_source_gate": true,
+      "yahoo_raw_close": 873.280029
+    },
+    {
+      "ticker": "CB",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 358.91,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 358.91,
+      "two_source_gate": true,
+      "yahoo_raw_close": 358.910004
+    },
+    {
+      "ticker": "CSX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 51.8,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 51.8,
+      "two_source_gate": true,
+      "yahoo_raw_close": 51.799999
+    },
+    {
+      "ticker": "CTAS",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 210.98,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 210.98,
+      "two_source_gate": true,
+      "yahoo_raw_close": 210.979996
+    },
+    {
+      "ticker": "CVX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 190,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 190,
+      "two_source_gate": true,
+      "yahoo_raw_close": 190
+    },
+    {
+      "ticker": "DGX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 231.84,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 231.84,
+      "two_source_gate": true,
+      "yahoo_raw_close": 231.839996
+    },
+    {
+      "ticker": "DUK",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 128.83,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 128.83,
+      "two_source_gate": true,
+      "yahoo_raw_close": 128.830002
+    },
+    {
+      "ticker": "EXR",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 148.29,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 148.29,
+      "two_source_gate": true,
+      "yahoo_raw_close": 148.289993
+    },
+    {
+      "ticker": "GE",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 361.61,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 361.61,
+      "two_source_gate": true,
+      "yahoo_raw_close": 361.609985
+    },
+    {
+      "ticker": "GOOGL",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 326.56,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 326.56,
+      "two_source_gate": true,
+      "yahoo_raw_close": 326.559998
+    },
+    {
+      "ticker": "HD",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 336.09,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 336.09,
+      "two_source_gate": true,
+      "yahoo_raw_close": 336.089996
+    },
+    {
+      "ticker": "IQV",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 213.22,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 213.22,
+      "two_source_gate": true,
+      "yahoo_raw_close": 213.220001
+    },
+    {
+      "ticker": "ITW",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 284.82,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 284.82,
+      "two_source_gate": true,
+      "yahoo_raw_close": 284.820007
+    },
+    {
+      "ticker": "IVZ",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 30.11,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 30.11,
+      "two_source_gate": true,
+      "yahoo_raw_close": 30.110001
+    },
+    {
+      "ticker": "JNJ",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 265.95,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 265.95,
+      "two_source_gate": true,
+      "yahoo_raw_close": 265.950012
+    },
+    {
+      "ticker": "JPM",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 356.2,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 356.2,
+      "two_source_gate": true,
+      "yahoo_raw_close": 356.200012
+    },
+    {
+      "ticker": "LIN",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 507.02,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 507.02,
+      "two_source_gate": true,
+      "yahoo_raw_close": 507.019989
+    },
+    {
+      "ticker": "LLY",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 1197.53,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 1197.53,
+      "two_source_gate": true,
+      "yahoo_raw_close": 1197.530029
+    },
+    {
+      "ticker": "MET",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 95.19,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 95.19,
+      "two_source_gate": true,
+      "yahoo_raw_close": 95.190002
+    },
+    {
+      "ticker": "MPC",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 312.35,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 312.35,
+      "two_source_gate": true,
+      "yahoo_raw_close": 312.350006
+    },
+    {
+      "ticker": "MU",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 900.2,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 900.2,
+      "two_source_gate": true,
+      "yahoo_raw_close": 900.200012
+    },
+    {
+      "ticker": "NSC",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 343.35,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 343.35,
+      "two_source_gate": true,
+      "yahoo_raw_close": 343.350006
+    },
+    {
+      "ticker": "PAYX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 114.29,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0.010412,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 115.48,
+      "two_source_gate": true,
+      "yahoo_raw_close": 115.480003
+    },
+    {
+      "ticker": "PG",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 148.63,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 148.63,
+      "two_source_gate": true,
+      "yahoo_raw_close": 148.630005
+    },
+    {
+      "ticker": "PM",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 195.66,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 195.66,
+      "two_source_gate": true,
+      "yahoo_raw_close": 195.660004
+    },
+    {
+      "ticker": "PRU",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 121.89,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 121.89,
+      "two_source_gate": true,
+      "yahoo_raw_close": 121.889999
+    },
+    {
+      "ticker": "QQQ",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 682.12,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 682.12,
+      "two_source_gate": true,
+      "yahoo_raw_close": 682.119995
+    },
+    {
+      "ticker": "RTX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 218.42,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 218.42,
+      "two_source_gate": true,
+      "yahoo_raw_close": 218.419998
+    },
+    {
+      "ticker": "SHW",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 327.27,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 327.27,
+      "two_source_gate": true,
+      "yahoo_raw_close": 327.269989
+    },
+    {
+      "ticker": "SJM",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 121.05,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 121.05,
+      "two_source_gate": true,
+      "yahoo_raw_close": 121.050003
+    },
+    {
+      "ticker": "SO",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 96.48,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 96.48,
+      "two_source_gate": true,
+      "yahoo_raw_close": 96.480003
+    },
+    {
+      "ticker": "SOXX",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 516.23,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 516.23,
+      "two_source_gate": true,
+      "yahoo_raw_close": 516.22998
+    },
+    {
+      "ticker": "SPY",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 739.09,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 739.09,
+      "two_source_gate": true,
+      "yahoo_raw_close": 739.090027
+    },
+    {
+      "ticker": "TRV",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 390.35,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 390.35,
+      "two_source_gate": true,
+      "yahoo_raw_close": 390.350006
+    },
+    {
+      "ticker": "TSLA",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 309.22,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 309.22,
+      "two_source_gate": true,
+      "yahoo_raw_close": 309.220001
+    },
+    {
+      "ticker": "UNH",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 417.64,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 417.64,
+      "two_source_gate": true,
+      "yahoo_raw_close": 417.640015
+    },
+    {
+      "ticker": "UNP",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 299.3,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 299.3,
+      "two_source_gate": true,
+      "yahoo_raw_close": 299.299988
+    },
+    {
+      "ticker": "V",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 362.53,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 362.53,
+      "two_source_gate": true,
+      "yahoo_raw_close": 362.529999
+    },
+    {
+      "ticker": "WELL",
+      "price_date": "2026-07-27",
+      "nasdaq_previous_close": 248.34,
+      "pair_divergences": {
+        "stockanalysis_vs_nasdaq": 0,
+        "stockanalysis_vs_yahoo": 0
+      },
+      "stockanalysis_raw_close": 248.34,
+      "two_source_gate": true,
+      "yahoo_raw_close": 248.339996
+    }
+  ]
+}
