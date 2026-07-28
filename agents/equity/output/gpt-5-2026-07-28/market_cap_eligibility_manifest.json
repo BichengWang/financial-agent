@@ -1,0 +1,4133 @@
+{
+  "run_date": "2026-07-28",
+  "observation_date": "2026-07-27",
+  "generated_at": "2026-07-28T13:19:26Z",
+  "source": "Nasdaq screener current-run summary; values carried in run_computed_manifest.json",
+  "eligibility_rule": "market_cap_usd >= 2000000000",
+  "summary": {
+    "eligible_union_n": 515,
+    "scored_n": 514,
+    "unavailable_or_excluded": 1
+  },
+  "records": [
+    {
+      "ticker": "A",
+      "company": "Agilent Technologies",
+      "market_cap_usd": 38975608272,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "market_cap_usd": 4983419890800,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ABBV",
+      "company": "AbbVie",
+      "market_cap_usd": 462511024681,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ABNB",
+      "company": "Airbnb",
+      "market_cap_usd": 87812359437,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ABT",
+      "company": "Abbott Laboratories",
+      "market_cap_usd": 184910807463,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ACGL",
+      "company": "Arch Capital Group",
+      "market_cap_usd": 36161822358,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ACN",
+      "company": "Accenture",
+      "market_cap_usd": 105132858075,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ADBE",
+      "company": "Adobe Inc.",
+      "market_cap_usd": 96990000000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ADI",
+      "company": "Analog Devices",
+      "market_cap_usd": 177893928749,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ADM",
+      "company": "Archer Daniels Midland",
+      "market_cap_usd": 40315663484,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ADP",
+      "company": "Automatic Data Processing",
+      "market_cap_usd": 104687534640,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ADSK",
+      "company": "Autodesk",
+      "market_cap_usd": 48694580000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AEE",
+      "company": "Ameren",
+      "market_cap_usd": 31026623670,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AEP",
+      "company": "American Electric Power",
+      "market_cap_usd": 72686991225,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AES",
+      "company": "AES Corporation",
+      "market_cap_usd": 10583260461,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AFL",
+      "company": "Aflac",
+      "market_cap_usd": 64590184318,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AIG",
+      "company": "American International Group",
+      "market_cap_usd": 42143759600,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AIZ",
+      "company": "Assurant",
+      "market_cap_usd": 13718254256,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AJG",
+      "company": "Arthur J. Gallagher & Co.",
+      "market_cap_usd": 65088184000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AKAM",
+      "company": "Akamai Technologies",
+      "market_cap_usd": 16174131424,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ALB",
+      "company": "Albemarle Corporation",
+      "market_cap_usd": 13485827342,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ALGN",
+      "company": "Align Technology",
+      "market_cap_usd": 12031845336,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ALL",
+      "company": "Allstate",
+      "market_cap_usd": 67928235008,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ALLE",
+      "company": "Allegion",
+      "market_cap_usd": 13548060746,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ALNY",
+      "company": "Alnylam Pharmaceuticals",
+      "market_cap_usd": 37650545586,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMAT",
+      "company": "Applied Materials",
+      "market_cap_usd": 389357704472,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMCR",
+      "company": "Amcor",
+      "market_cap_usd": 20916519016,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMD",
+      "company": "Advanced Micro Devices",
+      "market_cap_usd": 771502386336,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AME",
+      "company": "Ametek",
+      "market_cap_usd": 55691745426,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMGN",
+      "company": "Amgen",
+      "market_cap_usd": 206060619013,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMP",
+      "company": "Ameriprise Financial",
+      "market_cap_usd": 48365530163,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMT",
+      "company": "American Tower",
+      "market_cap_usd": 78941899987,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AMZN",
+      "company": "Amazon",
+      "market_cap_usd": 2510709342362,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ANET",
+      "company": "Arista Networks",
+      "market_cap_usd": 209732783890,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AON",
+      "company": "Aon plc",
+      "market_cap_usd": 78419048364,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AOS",
+      "company": "A. O. Smith",
+      "market_cap_usd": 8606019283,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APA",
+      "company": "APA Corporation",
+      "market_cap_usd": 12318437411,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APD",
+      "company": "Air Products",
+      "market_cap_usd": 65151915110,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APH",
+      "company": "Amphenol",
+      "market_cap_usd": 178691553136,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APO",
+      "company": "Apollo Global Management",
+      "market_cap_usd": 71764900018,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APP",
+      "company": "AppLovin",
+      "market_cap_usd": 139519241400,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "APTV",
+      "company": "Aptiv",
+      "market_cap_usd": 12157599276,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ARE",
+      "company": "Alexandria Real Estate Equities",
+      "market_cap_usd": 8955708577,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ARES",
+      "company": "Ares Management",
+      "market_cap_usd": 42124840316,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ARM",
+      "company": "Arm Holdings",
+      "market_cap_usd": 271844835781,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ASML",
+      "company": "ASML Holding",
+      "market_cap_usd": 605463324560,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ATO",
+      "company": "Atmos Energy",
+      "market_cap_usd": 29748450677,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AVB",
+      "company": "AvalonBay Communities",
+      "market_cap_usd": 26091859662,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AVGO",
+      "company": "Broadcom",
+      "market_cap_usd": 1784044998448,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AVY",
+      "company": "Avery Dennison",
+      "market_cap_usd": 12575019294,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AWK",
+      "company": "American Water Works",
+      "market_cap_usd": 26284758127,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AXON",
+      "company": "Axon Enterprise",
+      "market_cap_usd": 42823883510,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AXP",
+      "company": "American Express",
+      "market_cap_usd": 231254078062,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "AZO",
+      "company": "AutoZone",
+      "market_cap_usd": 50608600500,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BA",
+      "company": "Boeing",
+      "market_cap_usd": 168475974181,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BAC",
+      "company": "Bank of America",
+      "market_cap_usd": 443394983874,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BALL",
+      "company": "Ball Corporation",
+      "market_cap_usd": 17218161866,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BAX",
+      "company": "Baxter International",
+      "market_cap_usd": 12179423794,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BBY",
+      "company": "Best Buy",
+      "market_cap_usd": 18336739962,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BDX",
+      "company": "Becton Dickinson",
+      "market_cap_usd": 43788884659,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BEN",
+      "company": "Franklin Resources",
+      "market_cap_usd": 17262346522,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BF-B",
+      "company": "Brown–Forman",
+      "market_cap_usd": 12570000000,
+      "eligible": true,
+      "status": "OBSERVED_EXTERNAL",
+      "source": "https://stockanalysis.com/stocks/bf.b/statistics/"
+    },
+    {
+      "ticker": "BG",
+      "company": "Bunge Global",
+      "market_cap_usd": 22700119455,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BIIB",
+      "company": "Biogen",
+      "market_cap_usd": 29970334751,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BKNG",
+      "company": "Booking Holdings",
+      "market_cap_usd": 145212528858,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BKR",
+      "company": "Baker Hughes",
+      "market_cap_usd": 60694762882,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BLDR",
+      "company": "Builders FirstSource",
+      "market_cap_usd": 7880912115,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BLK",
+      "company": "BlackRock",
+      "market_cap_usd": 166564517857,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BMY",
+      "company": "Bristol Myers Squibb",
+      "market_cap_usd": 129263109935,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BNY",
+      "company": "BNY Mellon",
+      "market_cap_usd": 109134268155,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BR",
+      "company": "Broadridge Financial Solutions",
+      "market_cap_usd": 17787089496,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BRK-B",
+      "company": "Berkshire Hathaway",
+      "market_cap_usd": 1104920734597,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BRO",
+      "company": "Brown & Brown",
+      "market_cap_usd": 23624664518,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BSX",
+      "company": "Boston Scientific",
+      "market_cap_usd": 68550700855,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BX",
+      "company": "Blackstone Inc.",
+      "market_cap_usd": 98721297552,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "BXP",
+      "company": "BXP, Inc.",
+      "market_cap_usd": 11061351840,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "C",
+      "company": "Citigroup",
+      "market_cap_usd": 228547311970,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CAG",
+      "company": "Conagra Brands",
+      "market_cap_usd": 7398624825,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CAH",
+      "company": "Cardinal Health",
+      "market_cap_usd": 54335758360,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CARR",
+      "company": "Carrier Global",
+      "market_cap_usd": 56829025537,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CASY",
+      "company": "Casey's",
+      "market_cap_usd": 31579253509,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CAT",
+      "company": "Caterpillar Inc.",
+      "market_cap_usd": 392126481123,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CB",
+      "company": "Chubb Limited",
+      "market_cap_usd": 139637395362,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CBOE",
+      "company": "Cboe Global Markets",
+      "market_cap_usd": 32301082313,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CBRE",
+      "company": "CBRE Group",
+      "market_cap_usd": 42130449387,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CCEP",
+      "company": "Coca-Cola Europacific Partners",
+      "market_cap_usd": 50205917265,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CCI",
+      "company": "Crown Castle",
+      "market_cap_usd": 32854446763,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CCL",
+      "company": "Carnival Corporation",
+      "market_cap_usd": 36898347266,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CDNS",
+      "company": "Cadence Design Systems",
+      "market_cap_usd": 96656269500,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CDW",
+      "company": "CDW Corporation",
+      "market_cap_usd": 17635086376,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CEG",
+      "company": "Constellation Energy",
+      "market_cap_usd": 96274416675,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CF",
+      "company": "CF Industries",
+      "market_cap_usd": 18427831416,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CFG",
+      "company": "Citizens Financial Group",
+      "market_cap_usd": 30684821170,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CHD",
+      "company": "Church & Dwight",
+      "market_cap_usd": 23924432438,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CHRW",
+      "company": "C.H. Robinson",
+      "market_cap_usd": 20564130907,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CHTR",
+      "company": "Charter Communications",
+      "market_cap_usd": 18439870736,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CI",
+      "company": "Cigna",
+      "market_cap_usd": 77507994372,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CIEN",
+      "company": "Ciena",
+      "market_cap_usd": 49631059027,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CINF",
+      "company": "Cincinnati Financial",
+      "market_cap_usd": 27826598018,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CL",
+      "company": "Colgate-Palmolive",
+      "market_cap_usd": 75298614260,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CLX",
+      "company": "Clorox",
+      "market_cap_usd": 11882941163,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CMCSA",
+      "company": "Comcast",
+      "market_cap_usd": 82241072034,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CME",
+      "company": "CME Group",
+      "market_cap_usd": 93273470074,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CMG",
+      "company": "Chipotle Mexican Grill",
+      "market_cap_usd": 42881797620,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CMI",
+      "company": "Cummins",
+      "market_cap_usd": 90244849818,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CMS",
+      "company": "CMS Energy",
+      "market_cap_usd": 22946548037,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CNC",
+      "company": "Centene Corporation",
+      "market_cap_usd": 32111618910,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CNP",
+      "company": "CenterPoint Energy",
+      "market_cap_usd": 28789998815,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COF",
+      "company": "Capital One",
+      "market_cap_usd": 128378459840,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COHR",
+      "company": "Coherent Corp.",
+      "market_cap_usd": 49371539048,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COIN",
+      "company": "Coinbase",
+      "market_cap_usd": 42854354137,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COO",
+      "company": "Cooper Companies (The)",
+      "market_cap_usd": 13708702983,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COP",
+      "company": "ConocoPhillips",
+      "market_cap_usd": 142540398819,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COR",
+      "company": "Cencora",
+      "market_cap_usd": 60537673819,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "COST",
+      "company": "Costco",
+      "market_cap_usd": 430617918684,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CPAY",
+      "company": "Corpay",
+      "market_cap_usd": 25192653598,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CPRT",
+      "company": "Copart",
+      "market_cap_usd": 27950248642,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CPT",
+      "company": "Camden Property Trust",
+      "market_cap_usd": 11141607095,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CRH",
+      "company": "CRH plc",
+      "market_cap_usd": 68848253976,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CRL",
+      "company": "Charles River Laboratories",
+      "market_cap_usd": 10982242440,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CRM",
+      "company": "Salesforce",
+      "market_cap_usd": 145290600000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CRWD",
+      "company": "CrowdStrike",
+      "market_cap_usd": 185730492672,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CSCO",
+      "company": "Cisco",
+      "market_cap_usd": 448417021837,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CSGP",
+      "company": "CoStar Group",
+      "market_cap_usd": 11973112071,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CSX",
+      "company": "CSX Corporation",
+      "market_cap_usd": 96958537156,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CTAS",
+      "company": "Cintas",
+      "market_cap_usd": 85619289112,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CTSH",
+      "company": "Cognizant",
+      "market_cap_usd": 22745734512,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CTVA",
+      "company": "Corteva",
+      "market_cap_usd": 58575255600,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CVNA",
+      "company": "Carvana",
+      "market_cap_usd": 70378245890,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CVS",
+      "company": "CVS Health",
+      "market_cap_usd": 137800149156,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "CVX",
+      "company": "Chevron Corporation",
+      "market_cap_usd": 379001048400,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "D",
+      "company": "Dominion Energy",
+      "market_cap_usd": 61799331169,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DAL",
+      "company": "Delta Air Lines",
+      "market_cap_usd": 57061950313,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DASH",
+      "company": "DoorDash",
+      "market_cap_usd": 80628398778,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DD",
+      "company": "DuPont",
+      "market_cap_usd": 19121681321,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DDOG",
+      "company": "Datadog",
+      "market_cap_usd": 91054616346,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DE",
+      "company": "Deere & Company",
+      "market_cap_usd": 168716289374,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DECK",
+      "company": "Deckers Brands",
+      "market_cap_usd": 13583946404,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DELL",
+      "company": "Dell Technologies",
+      "market_cap_usd": 264233627931,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DG",
+      "company": "Dollar General",
+      "market_cap_usd": 27463037552,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DGX",
+      "company": "Quest Diagnostics",
+      "market_cap_usd": 25588959782,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DHI",
+      "company": "D. R. Horton",
+      "market_cap_usd": 41222372730,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DHR",
+      "company": "Danaher Corporation",
+      "market_cap_usd": 140231658052,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DIS",
+      "company": "Walt Disney Company (The)",
+      "market_cap_usd": 169205673155,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DLR",
+      "company": "Digital Realty",
+      "market_cap_usd": 74354893032,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DLTR",
+      "company": "Dollar Tree",
+      "market_cap_usd": 24310085382,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DOC",
+      "company": "Healthpeak Properties",
+      "market_cap_usd": 15594742601,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DOV",
+      "company": "Dover Corporation",
+      "market_cap_usd": 27723924316,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DOW",
+      "company": "Dow Inc.",
+      "market_cap_usd": 20879879459,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DPZ",
+      "company": "Domino's",
+      "market_cap_usd": 11478369593,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DRI",
+      "company": "Darden Restaurants",
+      "market_cap_usd": 23423553464,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DTE",
+      "company": "DTE Energy",
+      "market_cap_usd": 30372133698,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DUK",
+      "company": "Duke Energy",
+      "market_cap_usd": 101308528399,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DVA",
+      "company": "DaVita",
+      "market_cap_usd": 15249201300,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DVN",
+      "company": "Devon Energy",
+      "market_cap_usd": 49953888564,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "DXCM",
+      "company": "Dexcom",
+      "market_cap_usd": 28747536787,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EA",
+      "company": "Electronic Arts",
+      "market_cap_usd": 52489808146,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EBAY",
+      "company": "eBay Inc.",
+      "market_cap_usd": 50726824522,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ECL",
+      "company": "Ecolab",
+      "market_cap_usd": 77113875548,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ED",
+      "company": "Consolidated Edison",
+      "market_cap_usd": 41385885872,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EFX",
+      "company": "Equifax",
+      "market_cap_usd": 21062692155,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EG",
+      "company": "Everest Group",
+      "market_cap_usd": 15406807523,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EIX",
+      "company": "Edison International",
+      "market_cap_usd": 30394873400,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EL",
+      "company": "Estée Lauder Companies (The)",
+      "market_cap_usd": 30101336928,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ELV",
+      "company": "Elevance Health",
+      "market_cap_usd": 82054664564,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EME",
+      "company": "Emcor",
+      "market_cap_usd": 32219201550,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EMR",
+      "company": "Emerson Electric",
+      "market_cap_usd": 83622930000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EOG",
+      "company": "EOG Resources",
+      "market_cap_usd": 75473462701,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EQIX",
+      "company": "Equinix",
+      "market_cap_usd": 104073237702,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EQR",
+      "company": "Equity Residential",
+      "market_cap_usd": 25513353363,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EQT",
+      "company": "EQT Corporation",
+      "market_cap_usd": 32526832000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ERIE",
+      "company": "Erie Indemnity",
+      "market_cap_usd": 10732620584,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ES",
+      "company": "Eversource Energy",
+      "market_cap_usd": 28089417067,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ESS",
+      "company": "Essex Property Trust",
+      "market_cap_usd": 18679929889,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ETN",
+      "company": "Eaton Corporation",
+      "market_cap_usd": 152062163000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ETR",
+      "company": "Entergy",
+      "market_cap_usd": 52089207715,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EVRG",
+      "company": "Evergy",
+      "market_cap_usd": 19787238066,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EW",
+      "company": "Edwards Lifesciences",
+      "market_cap_usd": 48839356000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EXC",
+      "company": "Exelon",
+      "market_cap_usd": 47619595325,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EXE",
+      "company": "Expand Energy",
+      "market_cap_usd": 21652603123,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EXPD",
+      "company": "Expeditors International",
+      "market_cap_usd": 22409752728,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EXPE",
+      "company": "Expedia Group",
+      "market_cap_usd": 33366137406,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "EXR",
+      "company": "Extra Space Storage",
+      "market_cap_usd": 31327884199,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "F",
+      "company": "Ford Motor Company",
+      "market_cap_usd": 58734369366,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FANG",
+      "company": "Diamondback Energy",
+      "market_cap_usd": 55553749892,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FAST",
+      "company": "Fastenal",
+      "market_cap_usd": 55050278067,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FCX",
+      "company": "Freeport-McMoRan",
+      "market_cap_usd": 89272467617,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FDS",
+      "company": "FactSet",
+      "market_cap_usd": 9456877884,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FDX",
+      "company": "FedEx",
+      "market_cap_usd": 73529967711,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FDXF",
+      "market_cap_usd": null,
+      "eligible": false,
+      "status": "EXCLUDED_LISTING_AGE",
+      "source": "run_computed_manifest.json"
+    },
+    {
+      "ticker": "FE",
+      "company": "FirstEnergy",
+      "market_cap_usd": 28736460774,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FER",
+      "company": "Ferrovial",
+      "market_cap_usd": 44843801682,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FFIV",
+      "company": "F5, Inc.",
+      "market_cap_usd": 23019052776,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FICO",
+      "company": "Fair Isaac",
+      "market_cap_usd": 30032223270,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FIS",
+      "company": "Fidelity National Information Services",
+      "market_cap_usd": 22690994729,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FISV",
+      "company": "Fiserv",
+      "market_cap_usd": 28043827124,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FITB",
+      "company": "Fifth Third Bancorp",
+      "market_cap_usd": 51659758236,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FIX",
+      "company": "Comfort Systems USA",
+      "market_cap_usd": 58950501075,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FLEX",
+      "company": "Flex Ltd.",
+      "market_cap_usd": 40669240494,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FOX",
+      "company": "Fox Corporation (Class B)",
+      "market_cap_usd": 21475722560,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FOXA",
+      "company": "Fox Corporation (Class A)",
+      "market_cap_usd": 23648085808,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FRT",
+      "company": "Federal Realty Investment Trust",
+      "market_cap_usd": 10982658615,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FSLR",
+      "company": "First Solar",
+      "market_cap_usd": 21791542016,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FTNT",
+      "company": "Fortinet",
+      "market_cap_usd": 113291838440,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "FTV",
+      "company": "Fortive",
+      "market_cap_usd": 18966471552,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GD",
+      "company": "General Dynamics",
+      "market_cap_usd": 106011337606,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GDDY",
+      "company": "GoDaddy",
+      "market_cap_usd": 12853090053,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GE",
+      "company": "GE Aerospace",
+      "market_cap_usd": 376645567844,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GEHC",
+      "company": "GE HealthCare",
+      "market_cap_usd": 28115132704,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GEN",
+      "company": "Gen Digital",
+      "market_cap_usd": 16319933105,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GEV",
+      "company": "GE Vernova",
+      "market_cap_usd": 254878573681,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GILD",
+      "company": "Gilead Sciences",
+      "market_cap_usd": 164748872861,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GIS",
+      "company": "General Mills",
+      "market_cap_usd": 19880637751,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GL",
+      "company": "Globe Life",
+      "market_cap_usd": 13547846123,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GLW",
+      "company": "Corning Inc.",
+      "market_cap_usd": 101262646490,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GM",
+      "company": "General Motors",
+      "market_cap_usd": 76706813714,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GNRC",
+      "company": "Generac",
+      "market_cap_usd": 11556510767,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GOOG",
+      "company": "Alphabet Inc. (Class C)",
+      "market_cap_usd": 4013274500000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc. (Class A)",
+      "market_cap_usd": 4013152200000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GPC",
+      "company": "Genuine Parts Company",
+      "market_cap_usd": 17783908782,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GPN",
+      "company": "Global Payments",
+      "market_cap_usd": 23196489394,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GRMN",
+      "company": "Garmin",
+      "market_cap_usd": 46761844269,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GS",
+      "company": "Goldman Sachs",
+      "market_cap_usd": 307146976374,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "GWW",
+      "company": "W. W. Grainger",
+      "market_cap_usd": 66048792825,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HAL",
+      "company": "Halliburton",
+      "market_cap_usd": 26966638886,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HAS",
+      "company": "Hasbro",
+      "market_cap_usd": 12820471602,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HBAN",
+      "company": "Huntington Bancshares",
+      "market_cap_usd": 34925838310,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HCA",
+      "company": "HCA Healthcare",
+      "market_cap_usd": 86921270436,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HD",
+      "company": "Home Depot (The)",
+      "market_cap_usd": 339019671880,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HIG",
+      "company": "Hartford (The)",
+      "market_cap_usd": 38157738922,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HII",
+      "company": "Huntington Ingalls Industries",
+      "market_cap_usd": 11358211359,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HLT",
+      "company": "Hilton Worldwide",
+      "market_cap_usd": 73530424156,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HON",
+      "company": "Honeywell Technologies",
+      "market_cap_usd": 78918062490,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HOOD",
+      "company": "Robinhood Markets",
+      "market_cap_usd": 84422349094,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HPE",
+      "company": "Hewlett Packard Enterprise",
+      "market_cap_usd": 61662993579,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HPQ",
+      "company": "HP Inc.",
+      "market_cap_usd": 24161689470,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HRL",
+      "company": "Hormel Foods",
+      "market_cap_usd": 14500799170,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HSIC",
+      "company": "Henry Schein",
+      "market_cap_usd": 9590651772,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HST",
+      "company": "Host Hotels & Resorts",
+      "market_cap_usd": 17121982025,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HSY",
+      "company": "Hershey Company (The)",
+      "market_cap_usd": 36919522138,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HUBB",
+      "company": "Hubbell Incorporated",
+      "market_cap_usd": 26685097385,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HUM",
+      "company": "Humana",
+      "market_cap_usd": 45623370000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "HWM",
+      "company": "Howmet Aerospace",
+      "market_cap_usd": 114295263744,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IBKR",
+      "company": "Interactive Brokers",
+      "market_cap_usd": 155402966305,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IBM",
+      "company": "IBM",
+      "market_cap_usd": 206233217971,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ICE",
+      "company": "Intercontinental Exchange",
+      "market_cap_usd": 85957899240,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IDXX",
+      "company": "Idexx Laboratories",
+      "market_cap_usd": 44155546401,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IEX",
+      "company": "IDEX Corporation",
+      "market_cap_usd": 16536442918,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IFF",
+      "company": "International Flavors & Fragrances",
+      "market_cap_usd": 19505185337,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "INCY",
+      "company": "Incyte",
+      "market_cap_usd": 23787152632,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "INSM",
+      "company": "Insmed",
+      "market_cap_usd": 22650631130,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "INTC",
+      "company": "Intel",
+      "market_cap_usd": 436206540000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "INTU",
+      "company": "Intuit",
+      "market_cap_usd": 84435401160,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "INVH",
+      "company": "Invitation Homes",
+      "market_cap_usd": 17880662876,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IP",
+      "company": "International Paper",
+      "market_cap_usd": 22901609126,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IQV",
+      "company": "IQVIA",
+      "market_cap_usd": 39501892000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IR",
+      "company": "Ingersoll Rand",
+      "market_cap_usd": 33130576366,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IRM",
+      "company": "Iron Mountain",
+      "market_cap_usd": 38083159168,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "market_cap_usd": 129048934501,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IT",
+      "company": "Gartner",
+      "market_cap_usd": 10068225068,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ITW",
+      "company": "Illinois Tool Works",
+      "market_cap_usd": 84842730000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "IVZ",
+      "company": "Invesco",
+      "market_cap_usd": 13564876847,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "J",
+      "company": "Jacobs Solutions",
+      "market_cap_usd": 15968077267,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JBHT",
+      "company": "J.B. Hunt",
+      "market_cap_usd": 26545225645,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JBL",
+      "company": "Jabil",
+      "market_cap_usd": 31331339611,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JCI",
+      "company": "Johnson Controls",
+      "market_cap_usd": 86941473428,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JKHY",
+      "company": "Jack Henry & Associates",
+      "market_cap_usd": 10515515440,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JNJ",
+      "company": "Johnson & Johnson",
+      "market_cap_usd": 653738253195,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "JPM",
+      "company": "JPMorgan Chase",
+      "market_cap_usd": 960336892211,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KDP",
+      "company": "Keurig Dr Pepper",
+      "market_cap_usd": 41823598139,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KEY",
+      "company": "KeyCorp",
+      "market_cap_usd": 24591756520,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KEYS",
+      "company": "Keysight Technologies",
+      "market_cap_usd": 52123087240,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KHC",
+      "company": "Kraft Heinz",
+      "market_cap_usd": 31459866514,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KIM",
+      "company": "Kimco Realty",
+      "market_cap_usd": 17905048978,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KKR",
+      "company": "KKR & Co.",
+      "market_cap_usd": 91583039982,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KLAC",
+      "company": "KLA Corporation",
+      "market_cap_usd": 250530522526,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KMB",
+      "company": "Kimberly-Clark",
+      "market_cap_usd": 37569009605,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KMI",
+      "company": "Kinder Morgan",
+      "market_cap_usd": 71194424224,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KO",
+      "company": "Coca-Cola Company (The)",
+      "market_cap_usd": 375752546162,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KR",
+      "company": "Kroger",
+      "market_cap_usd": 36084924910,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "KVUE",
+      "company": "Kenvue",
+      "market_cap_usd": 37862570933,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "L",
+      "company": "Loews Corporation",
+      "market_cap_usd": 24391842205,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LDOS",
+      "company": "Leidos",
+      "market_cap_usd": 14581051219,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LEN",
+      "company": "Lennar",
+      "market_cap_usd": 20639895767,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LH",
+      "company": "Labcorp",
+      "market_cap_usd": 24695940000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LHX",
+      "company": "L3Harris",
+      "market_cap_usd": 57378844908,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LII",
+      "company": "Lennox International",
+      "market_cap_usd": 19047762485,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LIN",
+      "company": "Linde plc",
+      "market_cap_usd": 237234921585,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LITE",
+      "company": "Lumentum",
+      "market_cap_usd": 52126000000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LLY",
+      "company": "Lilly (Eli)",
+      "market_cap_usd": 1143697850517,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LMT",
+      "company": "Lockheed Martin",
+      "market_cap_usd": 135012590505,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LNT",
+      "company": "Alliant Energy",
+      "market_cap_usd": 19094421345,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LOW",
+      "company": "Lowe's",
+      "market_cap_usd": 119991306774,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LRCX",
+      "company": "Lam Research",
+      "market_cap_usd": 344607344760,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LULU",
+      "company": "Lululemon Athletica",
+      "market_cap_usd": 12849897905,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LUV",
+      "company": "Southwest Airlines",
+      "market_cap_usd": 22249188981,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LVS",
+      "company": "Las Vegas Sands",
+      "market_cap_usd": 32025261917,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LYB",
+      "company": "LyondellBasell",
+      "market_cap_usd": 19044301607,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "LYV",
+      "company": "Live Nation Entertainment",
+      "market_cap_usd": 42398471700,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MA",
+      "company": "Mastercard",
+      "market_cap_usd": 494806958800,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MAA",
+      "company": "Mid-America Apartment Communities",
+      "market_cap_usd": 15630478909,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MAR",
+      "company": "Marriott International",
+      "market_cap_usd": 99937988117,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MAS",
+      "company": "Masco",
+      "market_cap_usd": 16643091053,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MCD",
+      "company": "McDonald's",
+      "market_cap_usd": 195502792162,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MCHP",
+      "company": "Microchip Technology",
+      "market_cap_usd": 41143744195,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MCK",
+      "company": "McKesson Corporation",
+      "market_cap_usd": 103111034948,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MCO",
+      "company": "Moody's Corporation",
+      "market_cap_usd": 84435000000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MDLZ",
+      "company": "Mondelez International",
+      "market_cap_usd": 79111335079,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MDT",
+      "company": "Medtronic",
+      "market_cap_usd": 109981482725,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MELI",
+      "company": "MercadoLibre",
+      "market_cap_usd": 93268670366,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MET",
+      "company": "MetLife",
+      "market_cap_usd": 61248746993,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "META",
+      "company": "Meta Platforms",
+      "market_cap_usd": 1521911691913,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MGM",
+      "company": "MGM Resorts",
+      "market_cap_usd": 11692401440,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MKC",
+      "company": "McCormick & Company",
+      "market_cap_usd": 13606577047,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MLM",
+      "company": "Martin Marietta Materials",
+      "market_cap_usd": 34373455135,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MMM",
+      "company": "3M",
+      "market_cap_usd": 92732769812,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MNST",
+      "company": "Monster Beverage",
+      "market_cap_usd": 94416120533,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MO",
+      "company": "Altria",
+      "market_cap_usd": 123805736163,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MOS",
+      "company": "Mosaic Company (The)",
+      "market_cap_usd": 7100694027,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MPC",
+      "company": "Marathon Petroleum",
+      "market_cap_usd": 91376166755,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MPWR",
+      "company": "Monolithic Power Systems",
+      "market_cap_usd": 63929429900,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MRK",
+      "company": "Merck & Co.",
+      "market_cap_usd": 329323670689,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MRNA",
+      "company": "Moderna",
+      "market_cap_usd": 22033540962,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MRSH",
+      "company": "Marsh McLennan",
+      "market_cap_usd": 87472825424,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MRVL",
+      "company": "Marvell Technology",
+      "market_cap_usd": 157077465629,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MS",
+      "company": "Morgan Stanley",
+      "market_cap_usd": 338311820398,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MSCI",
+      "company": "MSCI Inc.",
+      "market_cap_usd": 41257250000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MSFT",
+      "company": "Microsoft",
+      "market_cap_usd": 2941660142784,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MSI",
+      "company": "Motorola Solutions",
+      "market_cap_usd": 70348927652,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MSTR",
+      "company": "Strategy",
+      "market_cap_usd": 33474780733,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MTB",
+      "company": "M&T Bank",
+      "market_cap_usd": 36483857798,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MTD",
+      "company": "Mettler Toledo",
+      "market_cap_usd": 27003215140,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "MU",
+      "company": "Micron Technology",
+      "market_cap_usd": 944586258008,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NCLH",
+      "company": "Norwegian Cruise Line Holdings",
+      "market_cap_usd": 9154656192,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NDAQ",
+      "company": "Nasdaq, Inc.",
+      "market_cap_usd": 52745104822,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NDSN",
+      "company": "Nordson Corporation",
+      "market_cap_usd": 16569960556,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NEE",
+      "company": "NextEra Energy",
+      "market_cap_usd": 186806972970,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NEM",
+      "company": "Newmont",
+      "market_cap_usd": 97445461222,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NFLX",
+      "company": "Netflix",
+      "market_cap_usd": 299122436141,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NI",
+      "company": "NiSource",
+      "market_cap_usd": 21860327183,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NKE",
+      "company": "Nike, Inc.",
+      "market_cap_usd": 63375064592,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman",
+      "market_cap_usd": 78477036193,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NOW",
+      "company": "ServiceNow",
+      "market_cap_usd": 112087047600,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NRG",
+      "company": "NRG Energy",
+      "market_cap_usd": 28478953721,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NSC",
+      "company": "Norfolk Southern",
+      "market_cap_usd": 77489888685,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NTAP",
+      "company": "NetApp",
+      "market_cap_usd": 33087118292,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NTRS",
+      "company": "Northern Trust",
+      "market_cap_usd": 33774825530,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NUE",
+      "company": "Nucor",
+      "market_cap_usd": 56650561313,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "Nvidia",
+      "market_cap_usd": 4731688060000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NVR",
+      "company": "NVR, Inc.",
+      "market_cap_usd": 17036689430,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NWS",
+      "company": "News Corp (Class B)",
+      "market_cap_usd": 17074864444,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NWSA",
+      "company": "News Corp (Class A)",
+      "market_cap_usd": 15054785900,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "NXPI",
+      "company": "NXP Semiconductors",
+      "market_cap_usd": 65258724500,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "O",
+      "company": "Realty Income",
+      "market_cap_usd": 61684380860,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ODFL",
+      "company": "Old Dominion",
+      "market_cap_usd": 47707924120,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "OKE",
+      "company": "Oneok",
+      "market_cap_usd": 56303673943,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "OMC",
+      "company": "Omnicom Group",
+      "market_cap_usd": 23798017366,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ON",
+      "company": "ON Semiconductor",
+      "market_cap_usd": 33703674426,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ORCL",
+      "company": "Oracle Corporation",
+      "market_cap_usd": 341623860600,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ORLY",
+      "company": "O’Reilly Automotive",
+      "market_cap_usd": 77070502347,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "OTIS",
+      "company": "Otis Worldwide",
+      "market_cap_usd": 28326557188,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "OXY",
+      "company": "Occidental Petroleum",
+      "market_cap_usd": 54883047630,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PANW",
+      "company": "Palo Alto Networks",
+      "market_cap_usd": 260139850000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PAYX",
+      "company": "Paychex",
+      "market_cap_usd": 41010233758,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PCAR",
+      "company": "Paccar",
+      "market_cap_usd": 71032852328,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PCG",
+      "company": "PG&E Corporation",
+      "market_cap_usd": 47035939205,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PDD",
+      "company": "PDD Holdings",
+      "market_cap_usd": 121358782350,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PEG",
+      "company": "Public Service Enterprise Group",
+      "market_cap_usd": 39424448559,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PEP",
+      "company": "PepsiCo",
+      "market_cap_usd": 194742727495,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PFE",
+      "company": "Pfizer",
+      "market_cap_usd": 141802170925,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PFG",
+      "company": "Principal Financial Group",
+      "market_cap_usd": 24076740321,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PG",
+      "company": "Procter & Gamble",
+      "market_cap_usd": 353452217373,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PGR",
+      "company": "Progressive Corporation",
+      "market_cap_usd": 127356132329,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PH",
+      "company": "Parker Hannifin",
+      "market_cap_usd": 123944181251,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PHM",
+      "company": "PulteGroup",
+      "market_cap_usd": 24676346092,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PKG",
+      "company": "Packaging Corporation of America",
+      "market_cap_usd": 22635511270,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PLD",
+      "company": "Prologis",
+      "market_cap_usd": 138817140320,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PLTR",
+      "company": "Palantir Technologies",
+      "market_cap_usd": 303397331067,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PM",
+      "company": "Philip Morris International",
+      "market_cap_usd": 310433750946,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PNC",
+      "company": "PNC Financial Services",
+      "market_cap_usd": 100603987255,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PNR",
+      "company": "Pentair",
+      "market_cap_usd": 9693100349,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PNW",
+      "company": "Pinnacle West Capital",
+      "market_cap_usd": 12687084409,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PODD",
+      "company": "Insulet Corporation",
+      "market_cap_usd": 11371181531,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PPG",
+      "company": "PPG Industries",
+      "market_cap_usd": 26948610000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PPL",
+      "company": "PPL Corporation",
+      "market_cap_usd": 27039547245,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PRU",
+      "company": "Prudential Financial",
+      "market_cap_usd": 42295830000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PSA",
+      "company": "Public Storage",
+      "market_cap_usd": 57159451006,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PSKY",
+      "company": "Paramount Skydance Corporation",
+      "market_cap_usd": 9042918309,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PSX",
+      "company": "Phillips 66",
+      "market_cap_usd": 83394965282,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PTC",
+      "company": "PTC Inc.",
+      "market_cap_usd": 14670390515,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PWR",
+      "company": "Quanta Services",
+      "market_cap_usd": 91201561559,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "PYPL",
+      "company": "PayPal",
+      "market_cap_usd": 50579928969,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "Q",
+      "company": "Qnity Electronics",
+      "market_cap_usd": 26900088100,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "QCOM",
+      "company": "Qualcomm",
+      "market_cap_usd": 174415920000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RCL",
+      "company": "Royal Caribbean Group",
+      "market_cap_usd": 80458493400,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "REG",
+      "company": "Regency Centers",
+      "market_cap_usd": 15061541945,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "REGN",
+      "company": "Regeneron Pharmaceuticals",
+      "market_cap_usd": 69945456979,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RF",
+      "company": "Regions Financial Corporation",
+      "market_cap_usd": 26275555975,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RJF",
+      "company": "Raymond James Financial",
+      "market_cap_usd": 33831694702,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RL",
+      "company": "Ralph Lauren Corporation",
+      "market_cap_usd": 22738219989,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RMD",
+      "company": "ResMed",
+      "market_cap_usd": 29572645006,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ROK",
+      "company": "Rockwell Automation",
+      "market_cap_usd": 52828778003,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ROL",
+      "company": "Rollins, Inc.",
+      "market_cap_usd": 18851276929,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ROP",
+      "company": "Roper Technologies",
+      "market_cap_usd": 38670522795,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ROST",
+      "company": "Ross Stores",
+      "market_cap_usd": 79232925772,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RSG",
+      "company": "Republic Services",
+      "market_cap_usd": 67344592003,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RTX",
+      "company": "RTX Corporation",
+      "market_cap_usd": 297005462193,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "RVTY",
+      "company": "Revvity",
+      "market_cap_usd": 12144396889,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SATS",
+      "company": "EchoStar",
+      "market_cap_usd": 24721090526,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SBAC",
+      "company": "SBA Communications",
+      "market_cap_usd": 18414661012,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SBUX",
+      "company": "Starbucks",
+      "market_cap_usd": 120078792000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SCHW",
+      "company": "Charles Schwab Corporation",
+      "market_cap_usd": 181183137119,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SHOP",
+      "company": "Shopify",
+      "market_cap_usd": 166744962697,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SHW",
+      "company": "Sherwin-Williams",
+      "market_cap_usd": 85479590115,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SJM",
+      "company": "J.M. Smucker Company (The)",
+      "market_cap_usd": 13092884525,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SLB",
+      "company": "Schlumberger",
+      "market_cap_usd": 76995469542,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SMCI",
+      "company": "Supermicro",
+      "market_cap_usd": 17152455107,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SNA",
+      "company": "Snap-on",
+      "market_cap_usd": 20923880294,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SNDK",
+      "company": "Sandisk",
+      "market_cap_usd": 174449734924,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SNPS",
+      "company": "Synopsys",
+      "market_cap_usd": 75634333375,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SO",
+      "company": "Southern Company",
+      "market_cap_usd": 110206269435,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SOLV",
+      "company": "Solventum",
+      "market_cap_usd": 14183008913,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SPG",
+      "company": "Simon Property Group",
+      "market_cap_usd": 75128243913,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SPGI",
+      "company": "S&P Global",
+      "market_cap_usd": 125749680000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SRE",
+      "company": "Sempra",
+      "market_cap_usd": 59650800341,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "STE",
+      "company": "Steris",
+      "market_cap_usd": 21766330180,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "STLD",
+      "company": "Steel Dynamics",
+      "market_cap_usd": 36341620812,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "STT",
+      "company": "State Street Corporation",
+      "market_cap_usd": 51201901105,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "STX",
+      "company": "Seagate Technology",
+      "market_cap_usd": 169965575936,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "STZ",
+      "company": "Constellation Brands",
+      "market_cap_usd": 22388711141,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SW",
+      "company": "Smurfit Westrock",
+      "market_cap_usd": 26731409592,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SWK",
+      "company": "Stanley Black & Decker",
+      "market_cap_usd": 14639250462,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SWKS",
+      "company": "Skyworks Solutions",
+      "market_cap_usd": 9408509650,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SYF",
+      "company": "Synchrony Financial",
+      "market_cap_usd": 24568752128,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SYK",
+      "company": "Stryker Corporation",
+      "market_cap_usd": 132201958776,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "SYY",
+      "company": "Sysco",
+      "market_cap_usd": 40009538811,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "T",
+      "company": "AT&T",
+      "market_cap_usd": 168842782416,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TAP",
+      "company": "Molson Coors Beverage Company",
+      "market_cap_usd": 7811514144,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TDG",
+      "company": "TransDigm Group",
+      "market_cap_usd": 70163086515,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TDY",
+      "company": "Teledyne Technologies",
+      "market_cap_usd": 30254502305,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TECH",
+      "company": "Bio-Techne",
+      "market_cap_usd": 11241636322,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TEL",
+      "company": "TE Connectivity",
+      "market_cap_usd": 59984586695,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TER",
+      "company": "Teradyne",
+      "market_cap_usd": 50251599424,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TFC",
+      "company": "Truist Financial",
+      "market_cap_usd": 64760929302,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TGT",
+      "company": "Target Corporation",
+      "market_cap_usd": 64595877493,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TJX",
+      "company": "TJX Companies",
+      "market_cap_usd": 174974137202,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TKO",
+      "company": "TKO Group Holdings",
+      "market_cap_usd": 34790718205,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TMO",
+      "company": "Thermo Fisher Scientific",
+      "market_cap_usd": 211035914436,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TMUS",
+      "company": "T-Mobile US",
+      "market_cap_usd": 194003387927,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TPL",
+      "company": "Texas Pacific Land Corporation",
+      "market_cap_usd": 27589771600,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TPR",
+      "company": "Tapestry, Inc.",
+      "market_cap_usd": 29787452185,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TRGP",
+      "company": "Targa Resources",
+      "market_cap_usd": 57888752314,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TRI",
+      "company": "Thomson Reuters",
+      "market_cap_usd": 43127633929,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TRMB",
+      "company": "Trimble Inc.",
+      "market_cap_usd": 13138165211,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TROW",
+      "company": "T. Rowe Price",
+      "market_cap_usd": 25542722101,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TRV",
+      "company": "Travelers Companies (The)",
+      "market_cap_usd": 82366276188,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TSCO",
+      "company": "Tractor Supply",
+      "market_cap_usd": 16876788643,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TSLA",
+      "company": "Tesla, Inc.",
+      "market_cap_usd": 1212748022802,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TSN",
+      "company": "Tyson Foods",
+      "market_cap_usd": 21234107199,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TT",
+      "company": "Trane Technologies",
+      "market_cap_usd": 108201682243,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TTD",
+      "company": "Trade Desk (The)",
+      "market_cap_usd": 8551271087,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TTWO",
+      "company": "Take-Two Interactive",
+      "market_cap_usd": 45776115763,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TXN",
+      "company": "Texas Instruments",
+      "market_cap_usd": 248437130087,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TXT",
+      "company": "Textron",
+      "market_cap_usd": 15650008290,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "TYL",
+      "company": "Tyler Technologies",
+      "market_cap_usd": 13429912743,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UAL",
+      "company": "United Airlines Holdings",
+      "market_cap_usd": 39206473820,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UBER",
+      "company": "Uber",
+      "market_cap_usd": 140110280065,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UDR",
+      "company": "UDR, Inc.",
+      "market_cap_usd": 12346794814,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UHS",
+      "company": "Universal Health Services",
+      "market_cap_usd": 9318965873,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ULTA",
+      "company": "Ulta Beauty",
+      "market_cap_usd": 20414334115,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group",
+      "market_cap_usd": 381874721882,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UNP",
+      "company": "Union Pacific Corporation",
+      "market_cap_usd": 178994947547,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "UPS",
+      "company": "United Parcel Service",
+      "market_cap_usd": 96662714048,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "URI",
+      "company": "United Rentals",
+      "market_cap_usd": 70302891326,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "USB",
+      "company": "U.S. Bancorp",
+      "market_cap_usd": 99970405389,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "V",
+      "company": "Visa Inc.",
+      "market_cap_usd": 699210233570,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VEEV",
+      "company": "Veeva Systems",
+      "market_cap_usd": 32542962772,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VICI",
+      "company": "Vici Properties",
+      "market_cap_usd": 28852804038,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VLO",
+      "company": "Valero Energy",
+      "market_cap_usd": 90714241712,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VLTO",
+      "company": "Veralto",
+      "market_cap_usd": 23481745822,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VMC",
+      "company": "Vulcan Materials Company",
+      "market_cap_usd": 37326587768,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VRSK",
+      "company": "Verisk Analytics",
+      "market_cap_usd": 27076973454,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VRSN",
+      "company": "Verisign",
+      "market_cap_usd": 24816246000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VRT",
+      "company": "Vertiv",
+      "market_cap_usd": 105764362486,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VRTX",
+      "company": "Vertex Pharmaceuticals",
+      "market_cap_usd": 122770756311,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VST",
+      "company": "Vistra Corp.",
+      "market_cap_usd": 52560003112,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VTR",
+      "company": "Ventas",
+      "market_cap_usd": 49443460829,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VTRS",
+      "company": "Viatris",
+      "market_cap_usd": 20787264874,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "VZ",
+      "company": "Verizon",
+      "market_cap_usd": 199818866303,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WAB",
+      "company": "Wabtec",
+      "market_cap_usd": 50825275066,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WAT",
+      "company": "Waters Corporation",
+      "market_cap_usd": 36457389820,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WBD",
+      "company": "Warner Bros. Discovery",
+      "market_cap_usd": 63681272231,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WDAY",
+      "company": "Workday, Inc.",
+      "market_cap_usd": 37667500000,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WDC",
+      "company": "Western Digital",
+      "market_cap_usd": 158381439195,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WEC",
+      "company": "WEC Energy Group",
+      "market_cap_usd": 37005694278,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WELL",
+      "company": "Welltower",
+      "market_cap_usd": 180682191867,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WFC",
+      "company": "Wells Fargo",
+      "market_cap_usd": 267062737141,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WM",
+      "company": "Waste Management",
+      "market_cap_usd": 95298222810,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WMB",
+      "company": "Williams Companies",
+      "market_cap_usd": 87248696225,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WMT",
+      "company": "Walmart",
+      "market_cap_usd": 909608447417,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WRB",
+      "company": "W. R. Berkley Corporation",
+      "market_cap_usd": 28181348612,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WSM",
+      "company": "Williams-Sonoma, Inc.",
+      "market_cap_usd": 27905946807,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WST",
+      "company": "West Pharmaceutical Services",
+      "market_cap_usd": 23329565103,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WTW",
+      "company": "Willis Towers Watson",
+      "market_cap_usd": 28805688200,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WY",
+      "company": "Weyerhaeuser",
+      "market_cap_usd": 17434819740,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "WYNN",
+      "company": "Wynn Resorts",
+      "market_cap_usd": 10199121859,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "XEL",
+      "company": "Xcel Energy",
+      "market_cap_usd": 50416009666,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "XOM",
+      "company": "ExxonMobil",
+      "market_cap_usd": 636663884083,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "XYL",
+      "company": "Xylem Inc.",
+      "market_cap_usd": 29100814348,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "XYZ",
+      "company": "Block, Inc.",
+      "market_cap_usd": 48408861128,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "YUM",
+      "company": "Yum! Brands",
+      "market_cap_usd": 41332155452,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ZBH",
+      "company": "Zimmer Biomet",
+      "market_cap_usd": 18011860077,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ZBRA",
+      "company": "Zebra Technologies",
+      "market_cap_usd": 12622848880,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ZS",
+      "company": "Zscaler",
+      "market_cap_usd": 24094719225,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    },
+    {
+      "ticker": "ZTS",
+      "company": "Zoetis",
+      "market_cap_usd": 32729139172,
+      "eligible": true,
+      "status": "OBSERVED",
+      "source": "nasdaq_summary_manifest.json"
+    }
+  ]
+}
