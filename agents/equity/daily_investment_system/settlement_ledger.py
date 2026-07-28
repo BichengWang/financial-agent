@@ -784,6 +784,64 @@ def effective_independent_sample_size(
     return selected
 
 
+def project_effective_sample_size(
+    records: Iterable[SettlementCandidate],
+    predictions: Iterable[Prediction],
+    horizon_days: int = FORECAST_HORIZON_DAYS,
+) -> dict[str, Any]:
+    """When `eff_n` can next increase, given the predictions already written down.
+
+    `eff_n` counts non-overlapping target windows, so it cannot rise until a
+    prediction settles whose target date is at least one horizon after the last
+    window this ledger already selected. That date is knowable in advance from
+    the outstanding prediction inventory -- it is a fact about what has been
+    forecast, not a guess about the market.
+
+    Reports `null` dates when no outstanding prediction reaches far enough yet;
+    later runs create those records at the standard run_date + horizon cadence.
+    """
+    target_dates = sorted(
+        {
+            dt.date.fromisoformat(c.target_date)
+            for c in records
+            if _looks_like_date(c.target_date)
+        }
+    )
+    selected: list[dt.date] = []
+    for target_date in target_dates:
+        if not selected or (target_date - selected[-1]).days >= horizon_days:
+            selected.append(target_date)
+    if not selected:
+        return {
+            "eff_n": 0,
+            "target_date_span_days": None,
+            "next_window_opens": None,
+            "eff_n_increments_on": None,
+            "pending_predictions_at_that_date": 0,
+        }
+
+    pending: dict[dt.date, int] = defaultdict(int)
+    for p in predictions:
+        if _looks_like_date(p.target_date):
+            pending[dt.date.fromisoformat(p.target_date)] += 1
+
+    next_opens = selected[-1] + dt.timedelta(days=horizon_days)
+    qualifying = sorted(d for d in pending if d >= next_opens)
+    increments_on = qualifying[0] if qualifying else None
+    return {
+        "eff_n": len(selected),
+        "target_date_span_days": (target_dates[-1] - target_dates[0]).days,
+        "earliest_target_date": target_dates[0].isoformat(),
+        "latest_target_date": target_dates[-1].isoformat(),
+        "selected_windows": [d.isoformat() for d in selected],
+        "next_window_opens": next_opens.isoformat(),
+        "eff_n_increments_on": increments_on.isoformat() if increments_on else None,
+        "pending_predictions_at_that_date": (
+            pending[increments_on] if increments_on else 0
+        ),
+    }
+
+
 def compute_rolling_metrics(
     canonical: dict[CanonicalKey, SettlementCandidate],
     predictions_index: dict[CanonicalKey, Prediction],
@@ -813,7 +871,9 @@ def compute_rolling_metrics(
         zs = [c.z for c in records if c.z is not None]
         return (sum(zs) / len(zs)) if zs else None
 
-    def _block(records: list[SettlementCandidate]) -> dict[str, Any]:
+    def _block(
+        records: list[SettlementCandidate], record_type: str
+    ) -> dict[str, Any]:
         n = len(records)
         eff_n = effective_independent_sample_size(records)
         if n < TRACK_A_MIN_SETTLED_N:
@@ -833,6 +893,10 @@ def compute_rolling_metrics(
             "hit_rate": _hit_rate(records),
             "ci_coverage": _ci_coverage(records),
             "mean_z": _mean_z(records),
+            "eff_n_projection": project_effective_sample_size(
+                records,
+                [p for p in predictions_index.values() if p.type == record_type],
+            ),
         }
 
     eq = [c for c in canonical.values() if c.type == "EQUITY_ALPHA"]
@@ -859,8 +923,8 @@ def compute_rolling_metrics(
             weighted_n += len(pairs)
 
     return {
-        "equity_alpha": _block(eq),
-        "market_forecast": _block(mf),
+        "equity_alpha": _block(eq, "EQUITY_ALPHA"),
+        "market_forecast": _block(mf, "MARKET_FORECAST"),
         "rank_ic_by_vintage": per_vintage_ic,
         "rank_ic_weighted_mean": (weighted_sum / weighted_n) if weighted_n else None,
     }
