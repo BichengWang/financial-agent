@@ -1,0 +1,193 @@
+{
+  "run_date": "2026-07-29",
+  "price_date": "2026-07-28",
+  "retrieved_at": "2026-07-29T13:49:35Z",
+  "source": "Robinhood connected market-data tool",
+  "source_method": "official prior-session SIP/list-exchange close; live 2026-07-29 prints ignored",
+  "results": [
+    {
+      "ticker": "PAYX",
+      "price": 118.87,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "ADP",
+      "price": 264.17,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "TRV",
+      "price": 397.22,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "MRSH",
+      "price": 192.19,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "BRO",
+      "price": 73.65,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "INCY",
+      "price": 129.93,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "RTX",
+      "price": 218.58,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "IQV",
+      "price": 242.94,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "CTAS",
+      "price": 214.9,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "KO",
+      "price": 88.27,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "VLTO",
+      "price": 98.47,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "PM",
+      "price": 200.17,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "SCHW",
+      "price": 105.97,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "ITW",
+      "price": 295.16,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "WELL",
+      "price": 243.57,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "UNP",
+      "price": 294.45,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "RJF",
+      "price": 177.18,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "AMP",
+      "price": 546.62,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "WTW",
+      "price": 316.16,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "SJM",
+      "price": 123.04,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "SPY",
+      "price": 740.86,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "QQQ",
+      "price": 675.49,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    },
+    {
+      "ticker": "SOXX",
+      "price": 491.46,
+      "date": "2026-07-28",
+      "source": "sip-list-exchange-close",
+      "interpolated": false,
+      "state": "active"
+    }
+  ]
+}

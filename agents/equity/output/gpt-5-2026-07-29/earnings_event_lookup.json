@@ -1,0 +1,155 @@
+{
+  "run_date": "2026-07-29",
+  "retrieved_at": "2026-07-29T13:46:26Z",
+  "source": "Bigdata.com Events Calendar",
+  "underlying_source": "Quartr",
+  "source_url": "https://quartr.com",
+  "query_window": [
+    "2026-07-29",
+    "2026-12-31"
+  ],
+  "classification": "CONFIRMED_EVENT_CALENDAR",
+  "note": "Current-run company event lookup. Release dates are used as exact next-earnings dates; event times are UTC.",
+  "results": [
+    {
+      "ticker": "ACGL",
+      "release_date": "2026-07-29",
+      "earnings_call_time_utc": "14:00",
+      "fiscal_period": "Q2 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "ADP",
+      "release_date": "2026-10-28",
+      "earnings_call_time_utc": "12:30",
+      "fiscal_period": "Q1 2027",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "AMP",
+      "release_date": "2026-10-29",
+      "earnings_call_time_utc": "13:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "BRO",
+      "release_date": "2026-10-27",
+      "earnings_call_time_utc": "12:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "CTAS",
+      "release_date": "2026-09-23",
+      "earnings_call_time_utc": "14:00",
+      "fiscal_period": "Q1 2027",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "INCY",
+      "release_date": "2026-10-27",
+      "earnings_call_time_utc": "12:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "IQV",
+      "release_date": "2026-10-27",
+      "earnings_call_time_utc": "13:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "ITW",
+      "release_date": "2026-10-23",
+      "earnings_call_time_utc": "14:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "KO",
+      "release_date": "2026-10-20",
+      "earnings_call_time_utc": "12:30",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "MRSH",
+      "release_date": "2026-10-15",
+      "earnings_call_time_utc": "12:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "PAYX",
+      "release_date": "2026-09-29",
+      "earnings_call_time_utc": "13:30",
+      "fiscal_period": "Q1 2027",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "PM",
+      "release_date": "2026-10-21",
+      "earnings_call_time_utc": "11:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "RJF",
+      "release_date": "2026-10-28",
+      "earnings_call_time_utc": "21:00",
+      "fiscal_period": "Q4 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "RTX",
+      "release_date": "2026-10-20",
+      "earnings_call_time_utc": "16:30",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "SCHW",
+      "release_date": "2026-10-15",
+      "earnings_call_time_utc": "12:30",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "TRV",
+      "release_date": "2026-10-15",
+      "earnings_call_time_utc": "13:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "UNP",
+      "release_date": "2026-10-22",
+      "earnings_call_time_utc": "12:45",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "VLTO",
+      "release_date": "2026-10-28",
+      "earnings_call_time_utc": "12:30",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "WELL",
+      "release_date": "2026-10-27",
+      "earnings_call_time_utc": "13:00",
+      "fiscal_period": "Q3 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    },
+    {
+      "ticker": "WTW",
+      "release_date": "2026-07-30",
+      "earnings_call_time_utc": "13:00",
+      "fiscal_period": "Q2 2026",
+      "previous_resolution": "CONFIRMED_EVENT_CALENDAR"
+    }
+  ]
+}
