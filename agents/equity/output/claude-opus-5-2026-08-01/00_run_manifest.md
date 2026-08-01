@@ -134,10 +134,20 @@ recommendation without requesting a revision).
 | `14_weekly_review.md` | **Published (real)** — the Friday 2026-07-31 run never executed, so this run owes it |
 | `15_predictions.json` | Published — 24 `EQUITY_ALPHA` + 3 `MARKET_FORECAST` + 107 settlements |
 | `16_monthly_review.md` | **Published (real)** — 2026-07-31 was the last trading day of July and no run fired that day |
-| `eligible_universe.txt` | Published (515 tickers) |
-| `universe_summary.json` | Published |
-| `technical_indicators.json` | Published (519 tickers, daily/weekly/monthly) |
+| `eligible_universe.txt` | Working artifact (515 tickers) — counts persisted in `01`/`04` |
+| `universe_summary.json` | Working artifact — cache dates and counts persisted in `01`/`04` |
+| `technical_indicators.json` | Working artifact (519 tickers, daily/weekly/monthly) — decision-relevant values persisted in `01`/`05`/`15` |
 | Core ETF Market Forecast Block | **Present** — SPY, QQQ, SOXX in `03` with 3 `MARKET_FORECAST` records |
+
+> **AMENDED 2026-08-01 (post-publication, third scheduled fire ~19:05 ET).** This package was
+> published before housekeeping commit `e754d79`, which moved run working data out of
+> `output/` (`main.md` now scopes `output/` to "compact, durable dated reports and prediction
+> ledgers only" and gitignores `agents/equity/.work/`). Fourteen support artifacts were
+> removed from this folder accordingly; the three checklist rows above said "Published" and
+> now name them as working artifacts. No decision-relevant value was lost — every figure used
+> for a ranked or monitoring name is persisted in `01`/`05`/`15` with command and formula
+> lineage, and the removed files are regenerable from the sources and commands recorded in
+> `01_preflight.md` § Source Ledger and `05_factor_scores.md` § Methodology.
 
 ## Outstanding blockers
 

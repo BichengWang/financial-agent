@@ -45,6 +45,17 @@ retrieval timestamp, the per-symbol bar count, first/last bar date, last raw and
 close, and the ex-dividend flag for all 519 symbols, and `technical_indicators.json` records
 the exact per-ticker source path used at compute time.
 
+> **AMENDED 2026-08-01 (third scheduled fire ~19:05 ET).** Those two manifests are themselves
+> no longer committed either: housekeeping commit `e754d79` moved all run working data to the
+> gitignored `agents/equity/.work/` tree, per the revised `main.md` scoping of `output/` to
+> compact durable reports. The regeneration path is unchanged and fully specified — the source
+> URL template, header requirements, adjusted-vs-raw rule and 8-worker fetch are all recorded
+> in this section and in `05_factor_scores.md` § Methodology, and every decision-relevant value
+> is persisted in the Source Ledger rows below. Re-verified this evening against a fresh
+> `stockanalysis.com` fetch: **27 of 27** published entry prices and the SPY benchmark price
+> reproduce **exactly to the cent** off the 2026-07-31 basis close, with zero ex-dividend
+> artifacts on the basis bar.
+
 A full-universe scan of last-bar `c` vs `a` found
 **0** ex-dividend
 artifacts on the basis bar, so no name required reconciliation this run.
