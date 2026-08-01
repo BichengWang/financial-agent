@@ -1,0 +1,26 @@
+{
+  "run_date": "2026-07-30",
+  "generated_at": "2026-07-31T03:49:18Z",
+  "vix": {
+    "close": 17.09,
+    "date": "2026-07-30",
+    "avg_20d": 17.218,
+    "source": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+    "retrieved_at": "2026-07-31T03:46:58Z"
+  },
+  "risk_free": {
+    "annual_pct": 3.83,
+    "monthly_decimal": 0.003191666666666667,
+    "date": "2026-07-30",
+    "series": "3M Treasury yield",
+    "source": "Bigdata.com US Country Tearsheet / FMP Treasury Yields, retrieved 2026-07-30T14:13:00Z",
+    "alignment_note": "All computed ratios use exactly 3.83%, correcting the July 29 one-basis-point manifest/computation mismatch."
+  },
+  "fomc": {
+    "meeting": "2026-07-28 through 2026-07-29",
+    "decision": "Maintained the federal-funds target range at 3.50%-3.75%; 9-3 vote, with three dissenters preferring a 25bp increase.",
+    "statement_date": "2026-07-29",
+    "source": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+    "retrieved_at": "2026-07-31T03:46:58Z"
+  }
+}
