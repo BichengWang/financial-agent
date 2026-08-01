@@ -25,12 +25,13 @@ Rules: U.S. market holidays still publish an `ILLUSTRATIVE_MODE` `REVIEW_ONLY` a
 
 ## Output Location and Naming
 
-Every run writes to `agents/equity/output/{model-name}-{YYYY-MM-DD}/` (repo-relative; `../output/` from this directory). `{model-name}` is the executing model's id (e.g. `gpt-5`, `claude-fable-5`); the date is the actual run date.
+Every run publishes durable artifacts to `agents/equity/output/{model-name}-{YYYY-MM-DD}/` and writes reproducible intermediates to gitignored `agents/equity/.work/{model-name}-{YYYY-MM-DD}/`. `{model-name}` is the executing model's id; the date is the actual run date.
 
 1. Two-digit prefixes keep files ordered.
 2. Never overwrite a previous date's folder.
-3. A halted run still creates the folder and publishes every completed artifact.
-4. A file that does not apply is created with a one-line explanation, never omitted.
+3. A halted run still creates the durable folder and publishes every completed artifact.
+4. Omit optional checkpoint files when their stage did not run; do not create placeholders.
+5. Git tracks decisions, provenance, and prediction/settlement state—not fetched data or reproducible intermediates.
 
 ## Artifact Table
 
@@ -46,19 +47,25 @@ Every run writes to `agents/equity/output/{model-name}-{YYYY-MM-DD}/` (repo-rela
 | 07 | `07_portfolio_proposal.md` | Portfolio Construction Agent | Always |
 | 08 | `08_risk_review.md` | Risk Committee Agent | Always |
 | 09 | `09_final_report.md` | Orchestrator | Always |
-| 10–12 | midday / preclose / close | Orchestrator | Scheduled checkpoints |
+| 10–12 | midday / preclose / close | Orchestrator | Only when the checkpoint runs |
 | 13 | `13_evolution_log.md` | Evolution Agent | Always |
 | 14 | `14_weekly_review.md` | Evolution Agent | Friday after close |
 | 15 | `15_predictions.json` | Orchestrator | **Always when any name is ranked — publishing gate** |
 | 16 | `16_monthly_review.md` | Evolution Agent | Last trading day of month |
-| support | `eligible_universe.txt` | Orchestrator / `build_index_universe.py` | Required before price-history fetch and factor scoring |
-| support | `universe_summary.json` | Orchestrator / `build_index_universe.py` | Required before price-history fetch and factor scoring |
-| support | `technical_indicators.json` | Orchestrator / `technical_indicators.py` | Required whenever fetched price history exists |
+| working | `eligible_universe.txt`, `universe_summary.json` | Orchestrator / `build_index_universe.py` | Required during the run; store under `.work/` |
+| working | `technical_indicators.json` | Orchestrator / `technical_indicators.py` | Required during the run when history exists; store under `.work/` |
+| working | `*_manifest.json`, diagnostics, fetched CSV/JSON | Helpers | Never publish; store under `.work/` |
+
+### Retention Contract
+
+- **Track in Git:** numbered Markdown artifacts for stages that actually ran, plus `15_predictions.json`.
+- **Temporary/ignored:** full-universe indicators, universe helper outputs, fetch/verification manifests, raw prices, diagnostics, and ad hoc JSON.
+- Durable artifacts must record commands/formulas, source and observation dates, coverage counts, and every value that affects a score, recommendation, risk decision, or settlement. A clean run folder contains only numbered contract files.
 
 ## Per-Artifact Requirements
 
 ### `00_run_manifest.md`
-Date, run mode, data mode, status target and final status, agents executed, outstanding blockers; reflection baseline path + flag (`NO_PRIOR_BASELINE` / `CROSS_MODEL_BASELINE` / `BASELINE_WINDOW_GAP` / `NO_VALID_MOM_BASELINE`); prediction-settlement summary (count settled, or `NO_PREDICTION_LEDGER`) plus canonical rolling raw `n` and 28-day `eff_n` for `EQUITY_ALPHA` and `MARKET_FORECAST`; Source Ledger coverage counts (observed/derived/inferred/illustrative/unavailable) and status eligibility; **GO-Gate Table** — one row per Required input from `rules.md § Input Classification`, each grounded or failed-with-attempt, with missing Enhancing inputs listed separately as confidence/exposure caps (never as GO blockers); artifact checklist including `eligible_universe.txt`, `universe_summary.json`, `technical_indicators.json`, `15_predictions.json`, and the Core ETF Market Forecast Block status (present, or fields `UNAVAILABLE` with documented fetch attempts).
+Date, run mode, data mode, status target and final status, agents executed, outstanding blockers; reflection baseline path + flag (`NO_PRIOR_BASELINE` / `CROSS_MODEL_BASELINE` / `BASELINE_WINDOW_GAP` / `NO_VALID_MOM_BASELINE`); prediction-settlement summary (count settled, or `NO_PREDICTION_LEDGER`) plus canonical rolling raw `n` and 28-day `eff_n` for `EQUITY_ALPHA` and `MARKET_FORECAST`; Source Ledger coverage counts and status eligibility; **GO-Gate Table** for Required inputs, with missing Enhancing inputs listed as caps; durable artifact checklist including `15_predictions.json`; working-data checklist reporting universe/technical helper success, source/cache dates, coverage counts, and failures; and Core ETF Market Forecast Block status.
 
 ### `01_preflight.md`
 Source Ledger before any agent uses facts downstream. Schema:
@@ -66,16 +73,16 @@ Source Ledger before any agent uses facts downstream. Schema:
 | artifact | field | ticker/entity | value | unit | observation_date | source | freshness_tag | claim_type | used_by |
 |---|---|---|---|---|---|---|---|---|---|
 
-Allowed `freshness_tag` / `claim_type` values: `rules.md § Source Ledger Contract` (single source). Derived rows cite formula + input rows; a critical field with no source is `UNAVAILABLE`, never estimated. Any score-attribution metric used in `Adj Score`, penalties, confidence, or sizing must have a ledger row; unavailable metrics must be recorded as `UNAVAILABLE` when material. Technical indicator rows must cite both the underlying price-history row and `technical_indicators.json` / `technical_indicators.py` formula lineage.
+Allowed `freshness_tag` / `claim_type` values: `rules.md § Source Ledger Contract` (single source). Derived rows cite formula + input rows; a critical field with no source is `UNAVAILABLE`, never estimated. Any score-attribution metric used in `Adj Score`, penalties, confidence, or sizing must have a ledger row. Technical indicator rows cite the price-history row plus `technical_indicators.py` command/formula lineage; the temporary JSON path is not a durable dependency.
 
-### `technical_indicators.json`
+### Working `technical_indicators.json`
 Support artifact generated by:
 
 ```bash
 python3 agents/equity/daily_investment_system/technical_indicators.py ...
 ```
 
-It must include all core ETFs and every eligible-universe ticker handed off by Data/Regime when fetched price history exists. The artifact carries `generated_at`, `benchmark`, formula definitions, per-ticker source metadata, daily indicators, weekly indicators, and monthly indicators. Downstream markdown tables never introduce a technical indicator value absent from this artifact and the Source Ledger.
+During execution it includes all core ETFs and every eligible-universe ticker handed off by Data/Regime. Do not commit it. Persist all decision-relevant values and reproducibility lineage in `01`, `05`, and `15`; downstream reports never introduce a value absent from the working pack and Source Ledger.
 
 ### `eligible_universe.txt` / `universe_summary.json`
 
@@ -85,7 +92,7 @@ Support artifacts generated by:
 python3 agents/equity/daily_investment_system/build_index_universe.py ...
 ```
 
-`eligible_universe.txt` is the exact S&P 500 ∪ Nasdaq-100 ticker list used for equity candidate ranking. `universe_summary.json` records source cache paths, cache timestamps, S&P 500 count, Nasdaq-100 count, overlap count, and union count. `04_universe_summary.md` must report these counts and label ranks `INDEX_UNION_PCTL (n=XX)` when this path succeeds.
+Keep these helper outputs under `.work/`. `01_preflight.md` and `04_universe_summary.md` persist their cache timestamps and S&P 500, Nasdaq-100, overlap, and union counts; ranks use `INDEX_UNION_PCTL (n=XX)` when this path succeeds.
 
 ### `02_reflection.md`
 Standalone MoM reflection, sections in order. Every price, return, regime, and thesis-validation claim cites `01` ledger rows or is `UNAVAILABLE` / explicitly `INFERRED`.

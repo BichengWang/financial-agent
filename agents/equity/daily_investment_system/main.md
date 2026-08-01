@@ -10,7 +10,8 @@ Core prompt files plus one deterministic compute helper:
 - `agents.md` — orchestrator + five specialist stage prompts, in execution order.
 - `build_index_universe.py` — deterministic helper that materializes the S&P 500 ∪ Nasdaq-100 universe from local constituent caches.
 - `technical_indicators.py` — deterministic support script for daily/weekly/monthly TD-9, RSI(14), MACD(12,26,9), MA alignment, momentum, volume confirmation, and benchmark relative strength.
-- `../output/` (repo path `agents/equity/output/`) — dated run artifacts only; prompts and specs live here.
+- `../output/` — compact, durable dated reports and prediction ledgers only.
+- `../.work/` — gitignored fetched data, full-universe computations, manifests, CSVs, and diagnostics.
 
 ## Primary Goal
 
@@ -32,8 +33,8 @@ Before fetching price histories or selecting/ranking candidates, materialize the
 
 ```bash
 python3 agents/equity/daily_investment_system/build_index_universe.py \
-  --output-tickers agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
-  --output-summary agents/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+  --output-tickers agents/equity/.work/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary agents/equity/.work/{model-name}-{YYYY-MM-DD}/universe_summary.json
 ```
 
 Use `eligible_universe.txt` as the equity candidate universe. The normal daily path is the full S&P 500 ∪ Nasdaq-100 union from the local caches in `agents/equity/turtle-trader/universe/`; a 30-name sampled set is an emergency fallback only when the index-union helper fails, and that failure must be documented in `00`, `01`, `03`, `04`, `08`, and `13`.
@@ -43,26 +44,25 @@ Whenever the run has fetched or selected price histories for core ETFs and the e
 ```bash
 python3 agents/equity/daily_investment_system/technical_indicators.py \
   --tickers SPY QQQ SOXX \
-  --tickers-file agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --tickers-file agents/equity/.work/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
   --benchmark SPY \
   --range 5y \
-  --output agents/equity/output/{model-name}-{YYYY-MM-DD}/technical_indicators.json \
-  --pretty
+  --output agents/equity/.work/{model-name}-{YYYY-MM-DD}/technical_indicators.json
 ```
 
-If the current run has already materialized daily history CSVs, add `--history-dir <csv-history-dir>` so the helper computes from the exact fetched bars rather than fetching again. Use enough history for monthly indicators: 5 years is the default and expected fetch range. Treat `technical_indicators.json` as the canonical computed source for daily/weekly/monthly TD-9, RSI, MACD, MA alignment, momentum, volume ratio, and relative strength; cite it through `01_preflight.md` before using those values downstream. If the helper cannot produce a value for a ticker/timeframe, record that indicator as `UNAVAILABLE` rather than hand-filling it.
+If the current run has already materialized daily history CSVs, add `--history-dir <csv-history-dir>` so the helper computes from the exact fetched bars rather than fetching again. Use enough history for monthly indicators: 5 years is the default and expected fetch range. Treat the working JSON as canonical during the run. Persist every value used for ranked or monitoring names in `01_preflight.md`, `05_factor_scores.md`, and `15_predictions.json`, together with command/formula lineage and observation date; do not publish the full-universe JSON. If the helper cannot produce a value, record it as `UNAVAILABLE` rather than hand-filling it.
 
 | Stage | Agent (`agents.md`) | Artifacts |
 |---|---|---|
 | 0. Reflection (orchestrator-owned) | § Orchestrator — Reflection Stage | `02_reflection.md` |
-| 1. Data & regime | § Data and Regime | `03`, `eligible_universe.txt`, `universe_summary.json` |
-| 2. Technical indicator compute | `technical_indicators.py` | `technical_indicators.json`, Source Ledger rows in `01` |
+| 1. Data & regime | § Data and Regime | `03`; working universe files; durable counts/cache dates in `01`/`04` |
+| 2. Technical indicator compute | `technical_indicators.py` | working indicator pack; durable used values in `01`/`05`/`15` |
 | 3. Factor scoring | § Factor Scoring | `04`, `05` |
 | 4. Portfolio construction | § Portfolio Construction | `06`, `07` |
 | 5. Risk committee | § Risk Committee | `08` |
 | 6. Evolution | § Evolution | `13` |
 
-The orchestrator also publishes `00`, `01` (Source Ledger), `09`, `technical_indicators.json`, and `15_predictions.json` per `runbook.md`.
+The orchestrator also publishes `00`, `01` (Source Ledger), `09`, and `15_predictions.json` per `runbook.md`.
 
 State machine — a run is a state machine, not an essay:
 
@@ -91,7 +91,7 @@ After close, review all models' output packages from the trailing 7 days, compar
 - Every run that analyzes or ranks tickers also analyzes and forecasts the core ETFs — **SPY, QQQ, SOXX** — and includes their `MARKET_FORECAST` records in `15_predictions.json` (`rules.md § Core ETF Market Forecast`).
 - Never cite an **Enhancing** input (options IV/skew, short interest, bid-ask tape, full-universe feed) as a `GO` blocker; only the five **Required** inputs in `rules.md § Input Classification` may block `GO`.
 - Every ranked equity `Adj Score` must include score attribution from source metrics to family z-scores to final score per `rules.md § Financial Metrics and Score Attribution`.
-- Every run with fetched price history must compute the daily/weekly/monthly technical indicator pack through `technical_indicators.py`; downstream TD-9, RSI, MACD, MA, momentum, volume, and relative-strength fields come from that artifact or are `UNAVAILABLE`.
+- Every run with fetched price history must compute the daily/weekly/monthly technical indicator pack through `technical_indicators.py`; downstream values come from that working artifact or are `UNAVAILABLE`, and only decision-relevant values are persisted.
 - The daily run must not reuse the fixed 30-40-name sector sample when `build_index_universe.py` succeeds; repeated recommendations from a sampled set are a process failure, not a market signal.
 
 ## Deliverables

@@ -211,3 +211,6 @@ __marimo__/
 
 # Project-local artifacts
 tensorboard_log/
+
+# Equity-agent reproducible working data; keep durable reports in output/.
+agents/equity/.work/

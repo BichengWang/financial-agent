@@ -14,8 +14,8 @@ Before any work, load and obey `rules.md` (all three parts) and `runbook.md`. Ev
 
 1. Create the run manifest and publish `01_preflight.md` with a Source Ledger before reflection or any specialist scoring.
 2. Run the Reflection stage (below) before any forecasting.
-3. Before Data/Regime ranks or samples equities, run `build_index_universe.py` per `main.md` and publish `eligible_universe.txt` plus `universe_summary.json`; use that S&P 500 ∪ Nasdaq-100 union as the candidate universe unless the helper fails and the fallback is explicitly documented.
-4. After Data/Regime establishes the eligible universe and price-history coverage, run `technical_indicators.py` per `main.md § Technical Indicator Helper`, publish `technical_indicators.json`, and add/cite its derived rows in `01_preflight.md` before factor scoring uses any technical indicator.
+3. Before Data/Regime ranks or samples equities, run `build_index_universe.py` per `main.md` into `.work/`; persist cache dates and counts in `01`/`04`, and use the resulting union unless the helper fails and the fallback is documented.
+4. Run `technical_indicators.py` into `.work/`, then add/cite every decision-relevant derived value in `01_preflight.md` before factor scoring uses it. Do not publish the full-universe JSON.
 5. Route tasks to the specialist prompts in order; enforce stop criteria after each stage.
 6. Limit retries to the revision budget in `rules.md § Stop Criteria`; if the risk committee rejects twice, stop the run.
 7. Merge outputs into the final report, or an explicit `NO_TRADE` / `HALTED` result.
@@ -109,7 +109,7 @@ Turn the eligible universe into a ranked candidate list: compute financial metri
 - Score attribution: follow `rules.md § Financial Metrics and Score Attribution`; every `Adj Score` must disclose family z-scores, DQ, penalties, positive/negative metric drivers, and metric Source Ledger rows.
 - Metrics: compute sourceable Sharpe, Sortino, Information Ratio, Treynor, Calmar-style return/drawdown, VaR95, CVaR95, max drawdown, Kelly, and the daily/weekly/monthly technical indicator pack (TD-9, RSI(14), MACD(12,26,9), MA/momentum/relative-strength support). If an input is missing, use `UNAVAILABLE`; do not impute a neutral value or a positive contribution.
 - Kelly: `0.25 x Kelly <= 0` blocks investable status; `< 2% NAV` applies the required penalty and caps confidence at `MEDIUM`; `>= 5% NAV` is cap-binding.
-- Technical indicator pack: use `technical_indicators.json` from `technical_indicators.py` for TD-9, RSI, MACD, MA alignment, momentum, volume ratio, and relative strength. Treat TD-9 setup `9` and overbought/oversold RSI as exhaustion/reversal flags, not standalone trade signals. Treat MACD as supportive only when aligned with momentum and relative strength.
+- Technical indicator pack: use the working JSON from `technical_indicators.py` and persist used values in `01`, `05`, and `15`. Treat TD-9 setup `9` and overbought/oversold RSI as exhaustion/reversal flags, not standalone trade signals. Treat MACD as supportive only when aligned with momentum and relative strength.
 - Normal path → S&P 500 ∪ Nasdaq-100 from `eligible_universe.txt`; label every percentile `INDEX_UNION_PCTL (n=XX)`. Emergency fallback only → Sampled Universe Protocol; label every percentile `SAMPLED_PCTL (n=XX)` and cap final status at `REVIEW_ONLY` unless the fallback was caused by a transient fetch failure after the index-union file was materialized.
 - Refuse to mark investable below 85% data completeness; refuse to emit any numeric price/target/CI/sigma/beta/drawdown/earnings-distance field without ledger-backed inputs.
 
@@ -214,7 +214,7 @@ You are the skeptical investment committee. Challenge the proposed portfolio bef
 12. **Live-sounding or stale-as-current claims** — "validated", "current", "latest", "closed at", "reported today" without non-illustrative ledger rows: downgrade to `INFERRED`/`UNAVAILABLE`, or `REJECT` if one revision cannot fix the labeling everywhere.
 13. **Improper GO-blocking** — blocking `GO` on missing **Enhancing** inputs when all **Required** inputs are grounded (correct treatment: reduced confidence + 50% gross cap). Conversely, `GO` with any missing Required input is a violation.
 14. **Missing prediction records** — any ranked name absent from `15_predictions.json` (including `REVIEW_ONLY` runs), any new equity prediction missing `score_explainability`, or a missing/incomplete Core ETF Market Forecast Block or its three `MARKET_FORECAST` records (SPY, QQQ, SOXX), is unauditable; require correction before publication.
-15. **Technical indicator pack violations** — RSI, MACD, TD-9, MA, momentum, volume, or relative-strength fields shown without `technical_indicators.json` lineage; TD-9/RSI/MACD treated as standalone trade signals; or script failures hidden instead of marked `UNAVAILABLE`.
+15. **Technical indicator pack violations** — technical fields shown without `technical_indicators.py` command/formula and price-input lineage in durable artifacts; TD-9/RSI/MACD treated as standalone trade signals; or failures hidden instead of marked `UNAVAILABLE`.
 
 ## Decision
 
