@@ -1,0 +1,239 @@
+{
+  "run_date": "2026-07-30",
+  "retrieved_at": "2026-08-01T19:16:59Z",
+  "source": "Nasdaq quote API",
+  "source_method": "completed-session last sale with marketStatus=Closed",
+  "price_date": "2026-07-30",
+  "results": [
+    {
+      "ticker": "AAPL",
+      "price": 333.43,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/AAPL/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "ADP",
+      "price": 263.87,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/ADP/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "AON",
+      "price": 366.57,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/AON/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "AWK",
+      "price": 136.81,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/AWK/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "BAX",
+      "price": 26.75,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/BAX/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "BBY",
+      "price": 87.82,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/BBY/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "BRO",
+      "price": 70.87,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/BRO/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "BXP",
+      "price": 71.67,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/BXP/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "CTAS",
+      "price": 206.79,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/CTAS/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "INCY",
+      "price": 122.99,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/INCY/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "LH",
+      "price": 315.53,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/LH/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "MRSH",
+      "price": 191.51,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/MRSH/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "PAYX",
+      "price": 116.33,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/PAYX/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "PCG",
+      "price": 17.78,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/PCG/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "PM",
+      "price": 192.0,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/PM/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "QQQ",
+      "price": 683.55,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/QQQ/historical?assetclass=etf&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "RTX",
+      "price": 214.38,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/RTX/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "SJM",
+      "price": 122.21,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/SJM/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "SOXX",
+      "price": 504.53,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/SOXX/historical?assetclass=etf&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "SPY",
+      "price": 741.69,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/SPY/historical?assetclass=etf&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "SYK",
+      "price": 348.04,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/SYK/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "TRV",
+      "price": 375.99,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/TRV/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    },
+    {
+      "ticker": "WTW",
+      "price": 336.05,
+      "date": "2026-07-30",
+      "source": "Nasdaq historical API completed-session close",
+      "url": "https://api.nasdaq.com/api/quote/WTW/historical?assetclass=stocks&fromdate=2026-07-29&todate=2026-07-31&limit=10",
+      "retrieved_at": "2026-08-01T19:16:59Z",
+      "market_status": "HISTORICAL_COMPLETED_SESSION",
+      "is_real_time": false
+    }
+  ]
+}
