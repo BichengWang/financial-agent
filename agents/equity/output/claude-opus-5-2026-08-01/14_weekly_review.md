@@ -5,6 +5,14 @@ Friday 17:15 ET. **No run fired on Friday 2026-07-31** — the last package befo
 dated 2026-07-30. This run is the first since, so it owes the weekly review, and it is
 written from the full week's evidence rather than stubbed.
 
+> **AMENDED 2026-08-01 (post-publication, third scheduled fire ~19:05 ET).** Two rows below
+> were stale on arrival. `gpt-5-2026-07-30` merged as PR #58 *after* this package merged as
+> PR #57, so it was invisible when the roster was built; and this package's own status read
+> `NO_09_ARTIFACT` only because `09_final_report.md` had not yet been written at the moment
+> the roster was generated. Both are corrected, with originals preserved as *(was …)*. The
+> conclusion strengthens rather than changes: the cross-model agreement now extends to a
+> fourth shared date.
+
 ## Packages in the window (2026-07-25 … 2026-08-01, all models)
 
 | Package | Date | Status |
@@ -17,14 +25,15 @@ written from the full week's evidence rather than stubbed.
 | `claude-opus-5-2026-07-29` | 2026-07-29 | `NO_TRADE` |
 | `gpt-5-2026-07-29` | 2026-07-29 | `NO_TRADE` |
 | `claude-opus-5-2026-07-30` | 2026-07-30 | `NO_TRADE` |
-| `claude-opus-5-2026-08-01` | 2026-08-01 | `NO_09_ARTIFACT` |
+| `gpt-5-2026-07-30` *(added by amendment)* | 2026-07-30 | `NO_TRADE` |
+| `claude-opus-5-2026-08-01` | 2026-08-01 | `NO_TRADE` *(was `NO_09_ARTIFACT`)* |
 
-Status distribution: **{'NO_TRADE': 8, 'NO_09_ARTIFACT': 1}**. Every package in the window that reached a status
-published `NO_TRADE`.
+Status distribution: **{'NO_TRADE': 10}** *(was {'NO_TRADE': 8, 'NO_09_ARTIFACT': 1})*. Every
+package in the window published `NO_TRADE`.
 
 ## Cross-model comparison
 
-`claude-opus-5` and `gpt-5` ran the same dates 07-27, 07-28 and 07-29 and **agreed on
+`claude-opus-5` and `gpt-5` ran the same dates 07-27, 07-28, 07-29 and 07-30 and **agreed on
 `NO_TRADE` every time**. That agreement is diagnostic: two independently-prompted models,
 fetching from different vendor paths, reach the same conclusion because they hit the same
 structural wall (`Fund_Z`/`Sent_Z` unavailable), not because of a shared judgement call. When

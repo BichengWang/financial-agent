@@ -5,15 +5,30 @@ review for the last trading day of the month at 17:30 ET — that was Friday **2
 **no run fired that day**. This is the first run since, so it owes the review. It covers the
 full month rather than deferring to August.
 
+> **AMENDED 2026-08-01 (post-publication, third scheduled fire ~19:05 ET).** The census was
+> recomputed after two changes to the July corpus that landed *after* this package merged as
+> PR #57:
+>
+> 1. `gpt-5-2026-07-30` merged as PR #58 — a July package published after this review was written.
+> 2. Housekeeping commit `e754d79` removed `gemini-3.5-flash-2026-07-01` and
+>    `gemini-3.5-flash-2026-07-06`, and two loose `*_analysis_2026-07-04.md` files.
+>
+> Net **54 → 53** dated packages. Original figures are preserved inline as *(was N)*.
+> **The structural conclusion is invariant**: the added package is `NO_TRADE`, and both
+> removed packages had no `09_final_report.md` (neither ever reached a status), so July still
+> contains **zero `GO` runs**. Distinct run dates (26), weekdays with no package and models
+> active (6) are all unchanged — 07-01 and 07-06 remain covered by `claude-fable-5` and
+> `gpt-5` packages.
+
 ## July 2026 census
 
 | Field | Value |
 |---|---|
-| Dated packages | **54** |
+| Dated packages | **53** *(was 54)* |
 | Distinct run dates | 26 of 23 weekdays |
 | Weekdays with no package | 2026-07-23, 2026-07-31 |
 | Models active | 6 |
-| **Status distribution** | **{'NO_TRADE': 39, 'REVIEW_ONLY': 11, 'HALTED': 1, 'NO_09_ARTIFACT': 3}** |
+| **Status distribution** | **{'NO_TRADE': 40, 'REVIEW_ONLY': 11, 'HALTED': 1, 'NO_09_ARTIFACT': 1}** |
 | **`GO` runs** | **0** |
 
 | Model | Packages | Status distribution |
@@ -22,16 +37,16 @@ full month rather than deferring to August.
 | `claude-haiku-4-5` | 1 | {'NO_09_ARTIFACT': 1} |
 | `claude-opus-5` | 6 | {'NO_TRADE': 6} |
 | `claude-sonnet-5` | 3 | {'NO_TRADE': 3} |
-| `gemini-3.5-flash` | 3 | {'NO_09_ARTIFACT': 2, 'NO_TRADE': 1} |
-| `gpt-5` | 23 | {'NO_TRADE': 16, 'REVIEW_ONLY': 7} |
+| `gemini-3.5-flash` | 1 *(was 3)* | {'NO_TRADE': 1} |
+| `gpt-5` | 24 *(was 23)* | {'NO_TRADE': 17, 'REVIEW_ONLY': 7} |
 
 ## Structural finding 1 — July produced zero tradeable portfolios, and the cause is singular
 
-**54 packages. Six models. Twenty-six run dates. Zero `GO`.**
+**53 packages. Six models. Twenty-six run dates. Zero `GO`.**
 
-Every package that reached a status published `NO_TRADE` (39),
-`REVIEW_ONLY` (11) or `HALTED` (1). This is not a
-market judgement repeated 54 times — it is one blocker observed 54 times. `Fund_Z` and
+All 52 packages that reached a status published `NO_TRADE` (40),
+`REVIEW_ONLY` (11) or `HALTED` (1); the 53rd has no `09_final_report.md`. This is not a
+market judgement repeated 52 times — it is one blocker observed 52 times. `Fund_Z` and
 `Sent_Z` are `UNAVAILABLE` universe-wide, which makes `rules.md § Evidence Thresholds` #2
 (≥ 3 of 4 families non-negative), #3 (no family > 50% of conviction) and #4 (data
 completeness ≥ 85%) **arithmetically unsatisfiable for every name in every regime**.
