@@ -171,7 +171,7 @@ Run it before Reflection on any run that settles predictions:
 ```bash
 python3 agents/equity/daily_investment_system/settlement_ledger.py \
   --output-dir agents/equity/output \
-  --manifest-out agents/equity/output/{model-name}-{YYYY-MM-DD}/settlement_manifest.json
+  --manifest-out agents/equity/.work/{model-name}-{YYYY-MM-DD}/settlement_manifest.json
 ```
 
 Contract:
@@ -292,14 +292,14 @@ The normal daily run scans the full S&P 500 ∪ Nasdaq-100 constituent union, no
 
 ```bash
 python3 agents/equity/daily_investment_system/build_index_universe.py \
-  --output-tickers agents/equity/output/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
-  --output-summary agents/equity/output/{model-name}-{YYYY-MM-DD}/universe_summary.json
+  --output-tickers agents/equity/.work/{model-name}-{YYYY-MM-DD}/eligible_universe.txt \
+  --output-summary agents/equity/.work/{model-name}-{YYYY-MM-DD}/universe_summary.json
 ```
 
 Rules:
 
-1. `eligible_universe.txt` is the candidate universe for scoring and percentile ranks.
-2. `universe_summary.json` is cited in `00_run_manifest.md`, `01_preflight.md`, `03_regime_and_data.md`, and `04_universe_summary.md`; it must report the S&P 500 count, Nasdaq-100 count, overlap count, and union count.
+1. The working `eligible_universe.txt` is the candidate universe for scoring and percentile ranks.
+2. Persist the working summary's cache timestamps and S&P 500, Nasdaq-100, overlap, and union counts in `01_preflight.md` and `04_universe_summary.md`; do not commit the helper output.
 3. Core ETFs (`SPY`, `QQQ`, `SOXX`) are analyzed separately and do not count as universe members.
 4. Percentiles from this path are labeled `INDEX_UNION_PCTL (n=XX)`.
 5. If local constituent caches are stale, still use them for the run and log the cache `fetched_at` values; refresh is a maintenance task, not a reason to fall back to 30 names.
