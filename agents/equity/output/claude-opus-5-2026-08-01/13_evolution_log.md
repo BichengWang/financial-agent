@@ -172,3 +172,32 @@ no parameter has been moved back and forth.
 Apply the `Tech_Z` deduplication in the 2026-08-03 run. Report rank IC for the deduplicated
 engine against the un-deduplicated baseline once `eff_n ≥ 3` (projected early September) and
 revert if it has not improved.
+
+## Amendment — third scheduled fire, 2026-08-01 ~19:05 ET (verification only)
+
+The scheduled task fired a third time for this same `(model, run_date)` — after the 14:35
+package (PR #57) and the 15:14 verification fire. **No new package was published and no
+parameter was changed**, on the standing double-fire gate, all three legs of which were
+re-checked and hold:
+
+| Gate | Result |
+|---|---|
+| `settlement_ledger.py --as-of 2026-08-01` | `due_inventory: 0`, `conflicts: 0` — nothing left to settle |
+| Same price basis (markets closed) | 27/27 published entry prices + SPY benchmark reproduce **exactly to the cent** off the 2026-07-31 close |
+| Pending Track B stamped for a future run | `Tech_Z` deduplication is stamped **effective 2026-08-03** and was **deliberately not applied early** |
+
+Publishing a duplicate package would have injected 24 `EQUITY_ALPHA` + 3 `MARKET_FORECAST`
+records with identical vintage, target date and entry prices — perfectly correlated
+observations that inflate raw `n` while adding zero independent evidence, which is exactly
+the failure mode the `eff_n` machinery exists to prevent. Applying the `Tech_Z` change early
+would have broken the mid-series comparability this log's own rationale protects.
+
+What the fire did instead was catch **stale-on-arrival claims**, the hazard established on
+2026-07-24: two changes landed on `main` *after* this package merged — `gpt-5-2026-07-30`
+(PR #58, a July package) and housekeeping commit `e754d79` (removed two `gemini-3.5-flash`
+July packages; moved run working data to the gitignored `.work/` tree). `14_weekly_review.md`,
+`16_monthly_review.md`, `00_run_manifest.md` and `01_preflight.md` are amended accordingly,
+with original figures preserved inline. **Every headline conclusion is invariant** — July
+still contains zero `GO` runs, and rolling calibration reproduces unchanged
+(`EQUITY_ALPHA` n=439 / `eff_n` 1 / hit 42.37% / mean z −0.4608; `MARKET_FORECAST` n=78).
+Package integrity re-verified at **951 checks, 0 failures**.
