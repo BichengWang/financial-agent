@@ -443,6 +443,7 @@ Required fields from the helper for every ranked or monitored equity, plus core 
 Scoring use:
 
 - RSI and MACD may contribute to `Tech_Z` only when sourceable for at least 70% of the eligible universe; otherwise they appear as diagnostics.
+- Effective 2026-08-03 (Track B, `HUMAN_REVIEW` accepted 2026-08-01), `Tech_Z` equal-weights six distinct inputs: 20-bar momentum, 60-bar momentum, daily/weekly MA alignment, daily/weekly MACD state, volume confirmation, and 60-day drawdown. Continue to compute, display, and ledger 20/60-bar relative strength versus SPY, but do not add it as separate `Tech_Z` slots: with one common benchmark its cross-sectional z-scores are identical to the corresponding momentum z-scores and would double-count the same signal.
 - RSI overbought/oversold and TD-9 setup `9` are exhaustion flags that can reduce confidence or add penalties when confirmed by price action. They do not override the multi-factor score alone.
 - MACD crossovers can support momentum only when aligned with 20d/60d momentum and relative strength; a fresh bearish crossover is a negative technical driver.
 - Every displayed indicator value/state must cite the `technical_indicators.json` support artifact and the underlying price-history Source Ledger row.
