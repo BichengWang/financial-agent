@@ -1,5 +1,13 @@
 # 02 — Reflection — 2026-08-03
 
+## Run context
+
+Final status is `HALTED` and data mode is `DELAYED_PARTIAL`. Price, history, sigma,
+universe, and settlement inputs are grounded, but 15 of the 20 pre-halt ranked names have
+only a complete no-print-through-42-days result rather than a confirmed or cadence-estimated
+next earnings date. At 75% of the pre-halt set, this exceeds Hard Halt Criterion 3's 20%
+unresolved-critical-input threshold; the current-run rankings are diagnostics, not predictions.
+
 ## 0. Prediction Settlement
 
 All 88 due keys across all models were settled before new scoring. Weekend targets use the
@@ -101,17 +109,92 @@ conflicts=0.
 
 ### Rolling calibration
 
-| Record type | raw n | 28d eff_n | Hit rate | CI coverage | Mean z | Track A gate |
-| --- | --- | --- | --- | --- | --- | --- |
-| EQUITY_ALPHA | 515 | 1 | 39.81% | 69.90% | -0.5191 | INSUFFICIENT_EFFECTIVE_N |
-| MARKET_FORECAST | 90 | 1 | 22.09% | 81.11% | -0.6253 | INSUFFICIENT_EFFECTIVE_N |
+| Record type | raw n | 28d eff_n | Hit rate | CI coverage | Mean z | Rank IC | Track A gate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| EQUITY_ALPHA | 515 | 1 | 39.81% | 69.90% | -0.5191 | -0.0879 weighted mean across vintages | INSUFFICIENT_EFFECTIVE_N |
+| MARKET_FORECAST | 90 | 1 | 22.09% | 81.11% | -0.6253 | N/A — rank IC is not defined for this record type | INSUFFICIENT_EFFECTIVE_N |
 
 This run's batch: EQUITY_ALPHA n=76, hit=25.00%,
 CI=68.42%, mean z=-0.8561;
 MARKET_FORECAST n=12, hit=33.33%,
 CI=100.00%, mean z=-0.3785.
-The canonical normalizer scanned 72
-prediction packages. `eff_n < 3` keeps every Track A calibration proposal deferred.
+The pre-reflection canonical-normalizer pass scanned the following 71 prior prediction
+ledgers. The final post-publication pass also scanned this run's ledger, bringing its package
+count to 72. `eff_n < 3` keeps every Track A calibration proposal deferred.
+
+```text
+agents/equity/output/claude-fable-5-2026-06-10/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-01/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-02/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-03/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-04/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-05/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-06/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-07/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-08/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-09/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-10/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-11/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-12/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-13/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-14/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-15/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-17/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-20/15_predictions.json
+agents/equity/output/claude-fable-5-2026-07-21/15_predictions.json
+agents/equity/output/claude-opus-4-8-2026-06-30/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-24/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-26/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-27/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-28/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-29/15_predictions.json
+agents/equity/output/claude-opus-5-2026-07-30/15_predictions.json
+agents/equity/output/claude-opus-5-2026-08-01/15_predictions.json
+agents/equity/output/claude-sonnet-5-2026-07-02/15_predictions.json
+agents/equity/output/claude-sonnet-5-2026-07-03/15_predictions.json
+agents/equity/output/claude-sonnet-5-2026-07-22/15_predictions.json
+agents/equity/output/gemini-3.5-flash-2026-06-21/15_predictions.json
+agents/equity/output/gemini-3.5-flash-2026-06-29/15_predictions.json
+agents/equity/output/gemini-3.5-flash-2026-07-13/15_predictions.json
+agents/equity/output/gpt-5-2026-06-11/15_predictions.json
+agents/equity/output/gpt-5-2026-06-14/15_predictions.json
+agents/equity/output/gpt-5-2026-06-15/15_predictions.json
+agents/equity/output/gpt-5-2026-06-16/15_predictions.json
+agents/equity/output/gpt-5-2026-06-17/15_predictions.json
+agents/equity/output/gpt-5-2026-06-18/15_predictions.json
+agents/equity/output/gpt-5-2026-06-19/15_predictions.json
+agents/equity/output/gpt-5-2026-06-20/15_predictions.json
+agents/equity/output/gpt-5-2026-06-21/15_predictions.json
+agents/equity/output/gpt-5-2026-06-22/15_predictions.json
+agents/equity/output/gpt-5-2026-06-24/15_predictions.json
+agents/equity/output/gpt-5-2026-06-28/15_predictions.json
+agents/equity/output/gpt-5-2026-06-29/15_predictions.json
+agents/equity/output/gpt-5-2026-06-30/15_predictions.json
+agents/equity/output/gpt-5-2026-07-01/15_predictions.json
+agents/equity/output/gpt-5-2026-07-02/15_predictions.json
+agents/equity/output/gpt-5-2026-07-03/15_predictions.json
+agents/equity/output/gpt-5-2026-07-04/15_predictions.json
+agents/equity/output/gpt-5-2026-07-05/15_predictions.json
+agents/equity/output/gpt-5-2026-07-06/15_predictions.json
+agents/equity/output/gpt-5-2026-07-07/15_predictions.json
+agents/equity/output/gpt-5-2026-07-08/15_predictions.json
+agents/equity/output/gpt-5-2026-07-09/15_predictions.json
+agents/equity/output/gpt-5-2026-07-10/15_predictions.json
+agents/equity/output/gpt-5-2026-07-11/15_predictions.json
+agents/equity/output/gpt-5-2026-07-12/15_predictions.json
+agents/equity/output/gpt-5-2026-07-13/15_predictions.json
+agents/equity/output/gpt-5-2026-07-14/15_predictions.json
+agents/equity/output/gpt-5-2026-07-15/15_predictions.json
+agents/equity/output/gpt-5-2026-07-17/15_predictions.json
+agents/equity/output/gpt-5-2026-07-20/15_predictions.json
+agents/equity/output/gpt-5-2026-07-21/15_predictions.json
+agents/equity/output/gpt-5-2026-07-22/15_predictions.json
+agents/equity/output/gpt-5-2026-07-24/15_predictions.json
+agents/equity/output/gpt-5-2026-07-27/15_predictions.json
+agents/equity/output/gpt-5-2026-07-28/15_predictions.json
+agents/equity/output/gpt-5-2026-07-29/15_predictions.json
+agents/equity/output/gpt-5-2026-07-30/15_predictions.json
+```
 
 ## 1. Prior Run Summary and deterministic MoM tie
 
@@ -126,6 +209,13 @@ executing model, selects `gpt-5-2026-07-06`. Both books have usable ledgers and 
 The hit-rate spread is 6.09%; the MoM conclusion is **invariant** across the tied
 books. The selected baseline was `REVIEW_ONLY` / `NEUTRAL` and carried a technical-monitoring
 book rather than an executable portfolio.
+
+| Prior-run field | Selected-baseline value |
+| --- | --- |
+| Date / model / final status / regime | 2026-07-06 / `gpt-5` / `REVIEW_ONLY` / `NEUTRAL` |
+| Monitoring basket | HOOD, CRWD, MRNA, DDOG, AXON, DVA, DELL, INTC, AMD, TXN |
+| Top five adjusted scores | HOOD 0.788095; CRWD 0.753630; MRNA 0.706886; DDOG 0.672481; AXON 0.645009 |
+| Thesis cluster | Technical relative-strength monitors; no executable portfolio because earnings and non-price evidence were incomplete |
 
 ## 2. MoM Price & Return Table — selected baseline
 
@@ -172,6 +262,9 @@ supports `BULL`. SPY trend, 60-day momentum, and VIX evidence are ledgered in
 
 ## 6. Sign-Off
 
-All price inputs are `HISTORICAL` completed closes retrieved this run. Reflection confidence:
-`MEDIUM` — exact closes and canonical settlement logic are grounded, but `eff_n=1` means the
-large raw sample is not an independent calibration sample.
+Weekend settlements are tagged `HISTORICAL`; same-day completed target-date-close settlement
+same-day and weekend settlement closes are tagged `HISTORICAL`. Reflection confidence is `MEDIUM`: every close was retrieved
+and cross-checked this run and canonical timing is grounded, but `eff_n=1` means the large
+raw sample is not an independent calibration sample. Final run status is `HALTED` in
+`DELAYED_PARTIAL` mode; the pre-halt current-run rankings are diagnostics, not valid
+predictions.
