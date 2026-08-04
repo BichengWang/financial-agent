@@ -32,7 +32,7 @@ the prohibited fixed sample fallback.
 | Macro / Regime | 511 | 4 | AVAILABLE; four metrics | beta fit, sector leadership, rate resilience, vol stability |
 | Fundamental | 0 | 511 | DQ 0.80; family unavailable | SHADOW not promoted at ≥70% |
 | Sentiment / Positioning | 0 | 511 | DQ 0.80; family unavailable | No promoted full-universe source |
-| Earnings calendar | 511 | 0 | Required input grounded | Complete 42-day Nasdaq sweep; no-print classifications explicit |
+| Earnings calendar | 198 confirmed / 0 estimated | 313 unresolved | Required gap; `DELAYED_PARTIAL` / `HALTED` | Union: 200 confirmed / 315 unresolved; transport-complete sweep is not next-date completeness |
 
 ## Technical indicator coverage
 
