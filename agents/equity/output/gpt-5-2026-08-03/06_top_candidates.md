@@ -2,8 +2,8 @@
 
 ## Decision
 
-**Investable set: empty. Monitoring sleeve: 20 names. Final recommendation: `NO_TRADE`.**
-The table inherits every fact from `05`; no new metric is introduced.
+**Investable set: empty. Valid equity predictions: 0. Final recommendation: `HALTED`.**
+The table is a pre-halt diagnostic inherited from `05`, not a valid ranking or prediction. Unknown earnings penalties can change scores, percentiles, membership, mu, targets, and confidence.
 
 | Rank | Ticker | Sector | Entry | Adj Score | Pctl | Score trace | Technical state | mu | sigma | Target | Confidence | Ledger |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -28,6 +28,4 @@ The table inherits every fact from `05`; no new metric is introduced.
 | 19 | ULTA | Consumer Discretionary | $534.41 | +0.2429 | 96.38 | Tech +0.84; Macro +0.35; DQ .80; pen 0.00 | mom +18.10%; RSI 72.0; ABOVE_SIGNAL | +6.00% | 9.57% | $566.47 | MEDIUM | L-PX-ULTA, L-TI-ULTA, L-RM-ULTA, L-EA-ULTA, L-SC-ULTA |
 | 20 | ARES | Finance | $138.57 | +0.2419 | 96.18 | Tech +0.87; Macro +0.28; DQ .80; pen 0.00 | mom +13.74%; RSI 69.3; ABOVE_SIGNAL | +6.00% | 13.69% | $146.88 | MEDIUM | L-PX-ARES, L-TI-ARES, L-RM-ARES, L-EA-ARES, L-SC-ARES |
 
-All records are research forecasts, not executable recommendations. `LOW` confidence marks
-near-term earnings risk; otherwise the negative rolling rank IC caps confidence at `MEDIUM`.
-The two missing factor families remain the binding system-level risk.
+The 20 rows above are withdrawn as equity forecasts. Fifteen unresolved Required earnings dates trigger Hard Halt #3; the three independently grounded ETF market forecasts remain in `15`.

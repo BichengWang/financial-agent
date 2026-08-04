@@ -6,21 +6,22 @@
 | Fired/completed at | 2026-08-03T20:43:31-04:00 |
 | Model | `gpt-5` |
 | Run mode | Post-close full pipeline; completed 2026-08-03 close |
-| Data mode | `DELAYED` |
+| Data mode | `DELAYED_PARTIAL` |
 | Status target | `GO` |
-| Final status | **`NO_TRADE`** |
+| Final status | **`HALTED`** |
 | Regime | `BULL` |
-| Universe | S&P 500 ∪ Nasdaq-100 = 515; 511 scored, 4 rejected |
+| Universe | S&P 500 ∪ Nasdaq-100 = 515; 511 technically scoreable, 4 rejected; valid equity ranking halted |
 | Percentile label | INDEX_UNION_PCTL (n=511) |
 | Forecast target date | 2026-08-31 |
 | Data-quality multiplier | 0.80 |
 
-## Why `NO_TRADE`
+## Why `HALTED`
 
-The full-universe run is grounded and auditable, but no name can clear all five evidence
-thresholds while `Fund_Z` and `Sent_Z` remain unpromoted and `UNAVAILABLE`. The accepted
-2026-08-01 Track B correction is active today: `Tech_Z` uses six distinct signals and keeps
-RS20/RS60 as diagnostics instead of double-counting momentum.
+The completed-price and history analysis is grounded, but 15 of 20 provisional equity names
+have neither a confirmed next earnings date nor a permitted cadence estimate. This is 75% of
+the provisional selection and triggers Hard Halt criterion #3 (>20% unresolved critical
+inputs). The equity score, percentile, target, and portfolio tables are retained only as
+pre-halt diagnostics; they are not valid rankings, predictions, or trade instructions.
 
 | # | Threshold | Result |
 | --- | --- | --- |
@@ -28,28 +29,26 @@ RS20/RS60 as diagnostics instead of double-counting momentum.
 | 2 | ≥3 of 4 families non-negative | FAIL — only Technical and Macro are available |
 | 3 | No family >50% of conviction | FAIL — Technical is 66.7% of available family weight |
 | 4 | Data completeness ≥85% | FAIL — DQ multiplier is 0.80 |
-| 5 | No hard stop | PASS — no integrity halt |
+| 5 | No hard stop | FAIL — Hard Halt #3; 15/20 provisional names (75%) have unresolved Required earnings dates |
 
 ## GO-Gate Table — Required inputs
 
 | # | Required input | State | Evidence |
 | --- | --- | --- | --- |
-| 1 | Grounded entry price | GROUNDED | 23/23 published equity/ETF closes passed two-source <1% checks; max divergence 0.078750% |
+| 1 | Grounded entry price | GROUNDED | 23/23 provisional equity/ETF inputs passed two-source <1% checks; max divergence 0.078750% |
 | 2 | ~60d price history + SPY | GROUNDED | 519/519 fetched; 518/519 end 2026-08-03; FDXF is the disclosed stale/short-history exclusion |
 | 3 | sigma fallback chain | GROUNDED | REALIZED_VOL_30D for all 20 monitoring names and SPY/QQQ/SOXX |
-| 4 | next earnings date | GROUNDED | Complete Nasdaq forward sweep: 31 business days; every universe name classified as event or no-print-in-window |
+| 4 | next earnings date | **UNAVAILABLE FOR 15/20 PROVISIONAL NAMES** | 5 confirmed, 0 cadence-estimated, 15 unresolved after a complete 31-business-day Nasdaq sweep |
 | 5 | index-union universe | GROUNDED | build_index_universe.py → 515 names (503 S&P; 101 Nasdaq-100; 89 overlap) |
 
-Missing options IV/skew, short-interest/borrow, bid-ask tape, analyst revisions, ownership
-flow, and promoted full-universe Fundamental/Sentiment data are **Enhancing** gaps. They cap
-confidence/exposure; they are not misclassified as Required-input blockers.
+Missing options IV/skew, short-interest/borrow, bid-ask tape, analyst revisions, ownership flow, and promoted full-universe Fundamental/Sentiment data are **Enhancing** gaps. The missing earnings dates are a separate Required-input failure.
 
 ## Reflection baseline
 
 | Field | Value |
 | --- | --- |
 | Baseline path | `agents/equity/output/gpt-5-2026-07-06` |
-| Baseline flag | `SAME_MODEL_BASELINE` |
+| Baseline flag | none — valid same-model baseline; no exception flag applies |
 | Target/window | target 2026-07-06; window 2026-06-19…2026-07-13 |
 | Tie disclosure | Exact-date tie with `claude-fable-5-2026-07-06`; same-model criterion selects gpt-5; both books are reported in 02 |
 
@@ -70,16 +69,15 @@ confidence/exposure; they are not misclassified as Required-input blockers.
 
 | claim_type | Rows |
 | --- | --- |
-| OBSERVED | 134 |
-| DERIVED | 71 |
+| OBSERVED | 119 |
+| DERIVED | 182 |
 | INFERRED | 0 |
 | ILLUSTRATIVE | 0 |
-| UNAVAILABLE | 2 |
+| UNAVAILABLE | 17 |
 
 ## Execution and artifacts
 
-State machine: `PRECHECK → REFLECTION → DATA_OK → TECHNICALS_OK → SCORED →
-PORTFOLIO_DRAFT → RISK_REVIEW → NO_TRADE → EVOLUTION_REVIEW`. Agents executed:
+State machine: `PRECHECK → REFLECTION → DATA_PARTIAL → HALTED`. Agents executed:
 Orchestrator, Reflection, Data/Regime, deterministic technical compute, Factor Scoring,
 Portfolio Construction feasibility pre-check, Risk Committee, Evolution. Revision passes: 0.
 
@@ -89,6 +87,7 @@ files, and full technical packs remain under gitignored `.work/`.
 
 ## Outstanding blockers
 
-1. `Fund_Z` and `Sent_Z` remain unavailable at the required ≥70% universe coverage.
-2. Weighted rank IC remains -0.0879; confidence is capped at `MEDIUM`.
-3. Both record types remain at `eff_n=1`; Track A changes are ineligible.
+1. Fifteen of 20 provisional equity names lack a confirmed or cadence-estimated earnings date.
+2. `Fund_Z` and `Sent_Z` remain unavailable at required universe coverage.
+3. Weighted rank IC is -0.0879 and both record types remain at `eff_n=1`.
+4. A future run must populate cadence estimates, reapply earnings penalties, and rescore before publishing equity predictions.

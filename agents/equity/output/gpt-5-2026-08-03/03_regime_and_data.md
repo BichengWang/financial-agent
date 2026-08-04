@@ -2,9 +2,13 @@
 
 ## Data mode and integrity
 
-Data mode is `DELAYED`: completed 2026-08-03 closes and five-year histories were fetched
-during this run. The universe helper succeeded at 515 names; 511
-passed the eligibility/technical minimum and 4 were rejected.
+Data mode is `DELAYED_PARTIAL` and final status is `HALTED`: completed 2026-08-03
+closes and five-year histories were fetched during this run, but 15 of the 20 ranked names
+have only a complete no-print-through-42-days result rather than a confirmed or
+cadence-estimated next earnings date. That missing Required input prevents positioning and
+sizing. Because 75% of the pre-halt top-ranked set has an unresolved critical input, Hard Halt
+Criterion 3 (>20%) applies. The universe helper succeeded at 515 names; 511 passed the
+eligibility/technical minimum and 4 were rejected.
 
 ## Regime assessment
 
@@ -13,23 +17,29 @@ passed the eligibility/technical minimum and 4 were rejected.
 | Regime | BULL | L-TI-SPY, L-MAC-VIX, L-MAC-VIX60 |
 | SPY trend | ABOVE/MA20; ABOVE/MA50; RS60 +0.00% | L-TI-SPY |
 | VIX | 15.86 vs recent mean 17.2415 | L-MAC-VIX, L-MAC-VIX60 |
-| Event concentration | 153/511 scoreable names and 0/20 published names have earnings inside 14d | L-EA-* |
+| Event concentration | 153/511 scoreable names have confirmed events inside 14d; 313/511 dates unresolved. In the provisional top 20, 0/5 confirmed dates are inside 14d and 15/20 are unknown | L-EA-* |
 | Data quality | 0.80; Fundamental and Sentiment unavailable | L-UNA-FUND, L-UNA-SENT |
 
 ## Core ETF Market Forecast Block
 
-| ETF | Entry | Price date | Tag | Trend 20d/50d | 30d RVol | Beta vs SPY | mu | sigma | Sigma source | Target | Target date | 70% CI Lo | 70% CI Hi | Confidence | Ledger |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SPY | $757.67 | 2026-08-03 | HISTORICAL | ABOVE/ABOVE | 3.83% | +1.000 | +2.00% | 3.83% | REALIZED_VOL_30D | $772.82 | 2026-08-31 | $742.68 | $802.97 | MEDIUM | L-PX-SPY, L-TI-SPY, L-RM-SPY |
-| QQQ | $700.07 | 2026-08-03 | HISTORICAL | ABOVE/BELOW | 7.30% | +1.706 | +1.91% | 7.30% | REALIZED_VOL_30D | $713.46 | 2026-08-31 | $660.30 | $766.61 | MEDIUM | L-PX-QQQ, L-TI-QQQ, L-RM-QQQ |
-| SOXX | $507.68 | 2026-08-03 | HISTORICAL | BELOW/BELOW | 18.92% | +3.530 | +5.56% | 18.92% | REALIZED_VOL_30D | $535.91 | 2026-08-31 | $436.03 | $635.78 | MEDIUM | L-PX-SOXX, L-TI-SOXX, L-RM-SOXX |
+These three independently grounded research forecasts remain valid ledger records. The
+overall run is halted and they do not authorize an executable market view.
+
+| ETF | Entry | Price date | Tag | Trend 20d/50d | 30d RVol | Prior 30d RVol | Vol direction | Drawdown from 60d high | Beta vs SPY | mu | sigma | Sigma source | Target | Target date | 70% CI Lo | 70% CI Hi | Confidence | Ledger |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SPY | $757.67 | 2026-08-03 | HISTORICAL | ABOVE/ABOVE | 3.83% | 4.24% | FALLING | -4.49% | +1.000 | +2.00% | 3.83% | REALIZED_VOL_30D | $772.82 | 2026-08-31 | $742.68 | $802.97 | MEDIUM | L-HIST, L-PX-SPY, L-TI-SPY, L-RM-SPY |
+| QQQ | $700.07 | 2026-08-03 | HISTORICAL | ABOVE/BELOW | 7.30% | 7.63% | FALLING | -11.22% | +1.706 | +1.91% | 7.30% | REALIZED_VOL_30D | $713.46 | 2026-08-31 | $660.30 | $766.61 | MEDIUM | L-HIST, L-PX-QQQ, L-TI-QQQ, L-RM-QQQ |
+| SOXX | $507.68 | 2026-08-03 | HISTORICAL | BELOW/BELOW | 18.92% | 19.31% | FALLING | -29.01% | +3.530 | +5.56% | 18.92% | REALIZED_VOL_30D | $535.91 | 2026-08-31 | $436.03 | $635.78 | MEDIUM | L-HIST, L-PX-SOXX, L-TI-SOXX, L-RM-SOXX |
 
 Relative strength: QQQ vs SPY is -4.00%
 over 20d and -2.78% over 60d;
 SOXX vs SPY is -13.55% and
--3.30%. The ETF forecasts obey
-the existing regime-prior/beta rule; its known category-error concern remains deferred under
-Track A because `eff_n=1`. Confidence stays `MEDIUM`.
+-3.30%. Regime-consistency check: SPY's above-MA20/MA50 trend and falling realized volatility
+support the `BULL` label, while QQQ's mixed trend and SOXX's below-MA20/MA50 trend, negative
+relative strength, and deeper drawdowns show that the regime is broad-market-led rather than
+confirmed by growth and semiconductors. The ETF forecasts obey the existing
+regime-prior/beta rule; its known category-error concern remains deferred under Track A
+because `eff_n=1`. Confidence stays `MEDIUM`.
 
 ## Handoff
 

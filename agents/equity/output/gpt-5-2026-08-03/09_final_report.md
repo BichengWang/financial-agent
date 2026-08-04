@@ -3,19 +3,20 @@
 ```text
 ══════════════════════════════════════════════════════
 QUANTITATIVE EQUITY SELECTION REPORT — 2026-08-03
-Run Status: NO_TRADE
+Run Status: HALTED
 Classification: INTERNAL — INVESTMENT COMMITTEE USE
 ══════════════════════════════════════════════════════
 ```
 
 ## Executive summary
 
-All 88 due predictions settled with exact completed closes and current-run two-source checks,
-leaving due=0 and conflicts=0. The 515-name index
-union produced 511 scoreable equities and 20 complete monitoring forecasts plus
-SPY/QQQ/SOXX. The six-signal `Tech_Z` deduplication accepted on August 1 is active today.
-Zero names clear the full evidence bar because Fundamental and Sentiment remain unavailable,
-so the final status is **`NO_TRADE`**.
+All 88 due predictions settled with completed closes and current-run two-source checks,
+leaving due=0 and conflicts=0. The 515-name index union produced 511 scoreable equities,
+and 20 names reached pre-halt ranking before the Required-input breach was recognized.
+The six-signal `Tech_Z` deduplication was applied, but 15 of those 20 names lack a confirmed
+or cadence-estimated next earnings date. That 75% unresolved-critical-input rate exceeds
+Hard Halt Criterion 3's 20% threshold, so the final status is **`HALTED`**. All equity rankings below are pre-halt diagnostics, not valid predictions or trades; the
+three independently grounded ETF research forecasts remain ledgered and non-executable.
 
 ## MoM reflection summary
 
@@ -30,18 +31,25 @@ alternative `claude-fable-5-2026-07-06` is disclosed in `02`. Selected-book hit 
 | Field | Value | Ledger |
 | --- | --- | --- |
 | Regime | BULL | L-TI-SPY, L-MAC-VIX, L-MAC-VIX60 |
+| Data mode | DELAYED_PARTIAL; 15/20 pre-halt ranked names lack a confirmed/cadence-estimated next earnings date | L-EA-* |
 | Data quality | 0.80; two factor families unavailable | L-UNA-FUND, L-UNA-SENT |
-| Key risk | Rank IC -0.0879; 153 universe earnings events inside 14d | L-SET-SUM, L-EA-* |
+| Key risk | Hard Halt Criterion 3 triggered; weighted rank IC -0.0879 | L-SET-SUM, L-EA-* |
 
-## Core ETF market forecast
+## Core ETF market forecasts
 
-| ETF | Entry | Trend 20d/50d | Beta | mu | sigma | Target | 70% CI | Confidence |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SPY | $757.67 | ABOVE/ABOVE | +1.000 | +2.00% | 3.83% | $772.82 | $742.68–$802.97 | MEDIUM |
-| QQQ | $700.07 | ABOVE/BELOW | +1.706 | +1.91% | 7.30% | $713.46 | $660.30–$766.61 | MEDIUM |
-| SOXX | $507.68 | BELOW/BELOW | +3.530 | +5.56% | 18.92% | $535.91 | $436.03–$635.78 | MEDIUM |
+These independently grounded market forecasts remain valid research records, but the
+`HALTED` run status makes them non-executable.
 
-## Ranked candidates — monitoring sleeve (top 10 of 20)
+| ETF | Entry | Trend 20d/50d | 30d RVol trend | Drawdown from 60d high | Beta | mu | sigma | Target | 70% CI | Confidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SPY | $757.67 | ABOVE/ABOVE | 3.83% vs 4.24%; falling | -4.49% | +1.000 | +2.00% | 3.83% | $772.82 | $742.68–$802.97 | MEDIUM |
+| QQQ | $700.07 | ABOVE/BELOW | 7.30% vs 7.63%; falling | -11.22% | +1.706 | +1.91% | 7.30% | $713.46 | $660.30–$766.61 | MEDIUM |
+| SOXX | $507.68 | BELOW/BELOW | 18.92% vs 19.31%; falling | -29.01% | +3.530 | +5.56% | 18.92% | $535.91 | $436.03–$635.78 | MEDIUM |
+
+## Pre-halt ranked diagnostics (top 10 of 20)
+
+These rows are retained to audit work completed before the hard stop. They are not valid
+current-run predictions, a monitoring sleeve, or trade recommendations.
 
 | Rank | Ticker | Sector | Entry | Adj Score | Pctl | Score trace | Beta | mu | sigma | Target | Technical | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -56,29 +64,31 @@ alternative `claude-fable-5-2026-07-06` is disclosed in `02`. Selected-book hit 
 | 9 | KKR | Finance | $106.56 | +0.2711 | 98.34 | Tech +0.85; Macro +0.56 | +1.27 | +6.00% | 10.59% | $112.95 | SELL_SETUP_1; RSI 65.8; ABOVE_SIGNAL | MEDIUM |
 | 10 | ROST | Consumer Discretionary | $252.91 | +0.2596 | 98.14 | Tech +0.90; Macro +0.35 | +0.22 | +6.00% | 8.99% | $268.08 | SELL_SETUP_7; RSI 71.0; ABOVE_SIGNAL | MEDIUM |
 
-## No-trade rationale
+## Halt rationale
 
 | # | Evidence threshold | Result |
 | --- | --- | --- |
-| 1 | Adjusted-score percentile ≥80 | PASS — 102/511 names |
+| 1 | Adjusted-score percentile ≥80 | PRE-HALT DIAGNOSTIC — 102/511 names |
 | 2 | ≥3 of 4 families non-negative | FAIL — only Technical and Macro are available |
 | 3 | No family >50% of conviction | FAIL — Technical is 66.7% of available family weight |
 | 4 | Data completeness ≥85% | FAIL — DQ multiplier is 0.80 |
-| 5 | No hard stop | PASS — no integrity halt |
+| 5 | No hard stop | FAIL — 15/20 pre-halt ranked names have an unresolved Required earnings-date input |
 
-No portfolio analytics are presented as executable. `07` contains a clearly labeled
-equal-weight monitoring diagnostic and the full 60-session correlation matrix.
+Hard Halt Criterion 3 applies because unresolved critical inputs affect 75% of the pre-halt
+set. No equity prediction set or portfolio is valid; retained equity analytics are audit-only
+diagnostics, while the three ETF research forecasts remain in `15`.
 
 ## Assumptions and limitations
 
-1. Fundamental and Sentiment are unpromoted and `UNAVAILABLE` universe-wide.
-2. Rank IC is negative and both record types have `eff_n=1`; confidence is capped `MEDIUM`.
-3. VaR/CVaR and drawdown diagnostics use normal-return approximations where stated.
-4. Options IV, positioning, bid-ask, and analyst tape are missing Enhancing inputs.
-5. The mandated ETF beta×SPY-mu architecture has a known deferred Track A concern.
+1. Fifteen of 20 pre-halt ranked names lack a confirmed or cadence-estimated next earnings date.
+2. Fundamental and Sentiment are unpromoted and `UNAVAILABLE` universe-wide.
+3. Rank IC is negative and both record types have `eff_n=1`; no confidence label is actionable.
+4. VaR/CVaR and drawdown diagnostics use normal-return approximations where stated.
+5. Options IV, positioning, bid-ask, and analyst tape are missing Enhancing inputs.
+6. The mandated ETF beta×SPY-mu architecture has a known deferred Track A concern.
 
-## Next scheduled review
+## Next manual review
 
-Next weekday full run: 2026-08-04 at 07:27 ET. Equity `eff_n` is projected to increment on
-2026-08-05 but remains below the
-Track A minimum of 3.
+No scheduler is active. The next manual weekday full-run opportunity is 2026-08-04 at 07:27
+ET, after confirmed or cadence-estimated earnings dates are supplied for the full ranked
+set. Equity `eff_n` is projected to increment on 2026-08-05 but remains below 3.
