@@ -1,5 +1,14 @@
 # 13 — Evolution Log — 2026-08-04
 
+> **AMENDED 2026-08-05** — two corrections after this package merged as PR #63. (1) The
+> trailing-7-day census was computed before PR #62 landed, which amended `gpt-5-2026-08-03` to
+> `HALTED`; the census read *(was **10** — {'NO_TRADE': 10})*. (2) This run's own intraday
+> observation was over-claimed as a second live demonstration of the rank inversion; the computed
+> same-session alpha is **+0.06pp**, which is flat, not underperformance.
+> Corrected below and in `10_midday_monitor.md`. **The headline conclusion is invariant**: still
+> zero `GO` packages in the window, status remains `NO_TRADE`, and the proposed Track B change
+> is unaffected.
+
 ## Run context
 
 | Field | Value |
@@ -8,7 +17,7 @@
 | Final status | `NO_TRADE` |
 | Regime | `BULL` |
 | Evaluation window | 2026-07-28 … 2026-08-04 (trailing 7 days, all models) |
-| Packages reviewed | **10** — {'NO_TRADE': 10} |
+| Packages reviewed | **10** — {'NO_TRADE': 9, 'HALTED': 1} *(was {'NO_TRADE': 10} before PR #62 amended `gpt-5-2026-08-03` to `HALTED`)* |
 | Ledger status | `EQUITY_ALPHA` n=515, `eff_n`=1 · `MARKET_FORECAST` n=90, `eff_n`=1 |
 | Baseline flag | `CROSS_MODEL_BASELINE` (2-way tie resolved by rule 8) |
 | Due inventory / conflicts | 48 settled → 0 / 0 |
@@ -39,9 +48,10 @@
 - **The settled batch was poor again:** 14/42 = 33.33% equity
   direction hits, mean z -0.7494.
 - **Rank-order inversion persists** — weighted-mean rank IC -0.0879 over n=515,
-  non-positive in 20 of 32 vintages — and
-  it was demonstrated live again: the published sleeve trailed SPY by
-  0.06pp intraday while SOXX ran +6.27% (`10`).
+  non-positive in 20 of 32 vintages. Note
+  this run's intraday session added **no** evidence either way: same-session alpha was
+  +0.06pp (flat), unlike 2026-07-30's −4.6pp, and a one-session mean cannot
+  speak to a cross-sectional rank property regardless (`10`).
 - **`MARKET_FORECAST` remains badly calibrated** — 22.09% over n=90.
 - **`Macro_Z` is still not reproducible**, because `rate_sens` was never pinned down.
 - **Non-`GO` again**, for the same structural reason as every package since 2026-07-01.
@@ -131,12 +141,13 @@ failed self-test.
    +7.06% off a beta of +3.530. Hit rate
    22.09% over n=90. **Track A** (Core ETF mu prior table) → **`DEFER`**,
    `eff_n` = 1 < 3. **Fifth consecutive log.**
-2. **Rank-order inversion.** Rank IC -0.0879 over n=515, with a second live intraday
-   demonstration today (0.06pp of same-session underperformance, `10`).
-   The 2026-08-01 `Tech_Z` deduplication cannot be judged until `eff_n >= 3`. **Track A** → **`DEFER`**.
+2. **Rank-order inversion.** Rank IC -0.0879 over n=515. The 2026-08-01 `Tech_Z`
+   deduplication cannot be judged until `eff_n >= 3`. **Track A** → **`DEFER`**.
 3. **`Fund_Z`/`Sent_Z` universe-scale tooling** remains the single highest-value open item and is an
-   engineering task, not a prompt mutation. It is the sole cause of 10 of
-   10 packages in the review window being non-`GO`.
+   engineering task, not a prompt mutation. It is the sole cause of the
+   9 `NO_TRADE` packages in the 10-package review window; the
+   remaining package is `HALTED` for an unrelated earnings-coverage failure (PR #62), so the window
+   contains **zero `GO` runs** on two distinct causes.
 4. **Rank-ordered selection walks out of the beta band even when the band is feasible.** Attainable
    [-0.5413, +1.3472] versus a realized sleeve
    beta of +0.5323. Fifth consecutive run where 2026-07-27's "provably
