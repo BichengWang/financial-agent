@@ -1,5 +1,11 @@
 # 10 — Midday Monitor — 2026-08-04
 
+> **AMENDED 2026-08-05** — the original narrative described the sleeve as having
+> *underperformed* SPY and called the session a second live demonstration of the rank inversion.
+> The computed same-session alpha is **+0.06pp** — flat, not negative — so
+> that claim was wrong and is corrected below. Every table figure is unchanged; only the prose
+> around them was over-claimed.
+
 **Observation-only.** This checkpoint changes nothing unless a stop criterion fires
 (`runbook.md § Cadence`). No stop criterion fired. The run remains `NO_TRADE`, and no position
 exists to adjust.
@@ -49,7 +55,7 @@ exists to adjust.
 | **HIG** | 142.90 | 141.86 | -0.73% | -2.17% | inside |
 | **WSM** | 239.80 | 249.87 | +4.20% | +2.76% | inside |
 
-## Observation — a live out-of-sample demonstration of the rank inversion
+## Observation — the sleeve versus a risk-on session
 
 | Statistic | Value |
 |---|---|
@@ -61,19 +67,25 @@ exists to adjust.
 | SOXX over the same window | +6.27% |
 
 Within hours of a ranking computed from the 2026-08-03 close, the market ran a sharp risk-on session —
-SOXX +6.27%, QQQ +2.72% — and the published sleeve **underperformed SPY by
-0.06pp**, with 10 of 24 names down outright. This mirrors the
-2026-07-30 intraday observation almost exactly.
+SOXX +6.27%, QQQ +2.72%. Against that, the published sleeve returned
++1.50% versus SPY's +1.44%, i.e. **same-session alpha of
++0.06pp** with 10 of 24 names down outright.
 
-The mechanism is structural, not bad luck: with `Fund_Z` and `Sent_Z` unavailable, `Tech_Z` carries
-66.67% of live conviction and is essentially trend-persistence plus low-volatility preference, so the
-engine mechanically ranks defensives first and is anti-correlated through a rotation into high beta.
-The published sleeve's diagnostic beta is +0.5323.
+**Read this carefully, because it is easy to over-claim.** The sleeve **essentially matched** its
+benchmark — +0.06pp is not a meaningful deviation over a few hours. This is
+therefore **not** a repeat of the 2026-07-30 intraday observation, where the sleeve trailed SPY by
+4.6pp; the superficially similar setup (defensive book, semis ripping) did **not** produce the same
+outcome today.
+
+What the session *does* show is narrower: a sleeve with diagnostic beta +0.5323
+kept pace with SPY while the high-beta complex ran far ahead of both. That is consistent with a
+defensive tilt — it is evidence about the sleeve's **beta**, which `07` already establishes from the
+fetched covariance matrix, and it is **not** independent evidence about rank ordering. Rank IC is a
+cross-sectional property and cannot be evaluated from one session's mean.
 
 **No action is taken on this.** One session is not a dataset, `eff_n` = 1 forbids any
 Track A change, and re-scoring mid-series would break the comparability the settlement ledger depends
-on. It is recorded as corroborating evidence for the standing rank-inversion diagnosis in `13`, and
-the 24 records settle on 2026-09-01 on their own terms.
+on. The 24 records settle on 2026-09-01 on their own terms.
 
 ## Stop-criteria check
 
