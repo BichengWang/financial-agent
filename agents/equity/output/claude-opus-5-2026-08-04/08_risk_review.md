@@ -33,8 +33,10 @@ Weighted-mean rank IC is -0.0879 over n=515, non-positive in
 20 of 32 vintages. Publishing forecasts
 from a score with inverted rank ordering is defensible **only** because these are paper records that
 generate the settlement evidence needed to fix it — and because confidence is capped `MEDIUM`
-everywhere. It would not be defensible at `GO`. The committee accepts it on that basis and notes the
-live intraday corroboration in `10`.
+everywhere. It would not be defensible at `GO`. The committee accepts it on that basis. It explicitly
+does **not** treat this session's intraday tape as corroboration: same-session alpha was
++0.06pp (flat), and a one-session mean cannot evidence a cross-sectional rank
+property either way (see `10`).
 
 **2. `Macro_Z` is not reproducible from the prior disclosure — one slot remains unpinned.**
 `rate_sens` reproduces only to 0.1951 against the prior package's
