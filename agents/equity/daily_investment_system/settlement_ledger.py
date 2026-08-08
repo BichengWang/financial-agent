@@ -515,8 +515,10 @@ def validate_timing(
 
     A run after the target session closes may use that same-day close only
     when the row explicitly declares ``TARGET_DATE_CLOSE`` and its
-    timezone-aware ``settled_at`` timestamp is at or after 16:00 ET. This
-    preserves rejection of unlabeled or pre-close same-day prints while
+    timezone-aware ``settled_at`` timestamp is at or after the 16:00 ET close
+    *of target_date* -- with no upper bound, so a settlement stamped later
+    (e.g. a long post-close pipeline that crosses midnight) still validates.
+    This preserves rejection of unlabeled or pre-close same-day prints while
     allowing the ordinary target-close rule to operate after the close.
 
     Any other target-date/price-date combination is timing-invalid.
@@ -572,17 +574,16 @@ def validate_timing(
                 settled_at_et = settled_at.astimezone(ZoneInfo("America/New_York"))
             except (TypeError, ValueError):
                 settled_at_et = None
-            if (
-                settled_at_et is not None
-                and settled_at_et.date() == target_date
-                and settled_at_et.time() >= dt.time(16, 0)
-            ):
+            target_close_et = dt.datetime.combine(
+                target_date, dt.time(16, 0), tzinfo=ZoneInfo("America/New_York")
+            )
+            if settled_at_et is not None and settled_at_et >= target_close_et:
                 return ("TARGET_DATE_CLOSE", True, "")
             return (
                 "TARGET_DATE_CLOSE",
                 False,
                 "TARGET_DATE_CLOSE requires a timezone-aware settled_at timestamp "
-                "on target_date at or after 16:00 America/New_York",
+                "at or after the 16:00 America/New_York close of target_date",
             )
         return (
             "TARGET_EQ_RUN_DATE",
