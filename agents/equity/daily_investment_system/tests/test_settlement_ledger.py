@@ -144,6 +144,21 @@ def test_target_date_close_before_session_end_is_invalid_even_when_explicit() ->
     assert "16:00 America/New_York" in reason
 
 
+def test_target_date_close_valid_when_settled_after_midnight() -> None:
+    # claude-opus-5's real 2026-08-07 run: fired 22:02 ET, settlement pass ran past
+    # midnight, so a truthful settled_at lands on 2026-08-08. A timestamp *later* than
+    # the target-date close is strictly stronger evidence that the completed close was
+    # used, so it must validate. (Track B accepted 2026-08-07.)
+    convention, valid, reason = sl.validate_timing(
+        "2026-08-07",
+        "2026-08-07",
+        "2026-08-07",
+        "TARGET_DATE_CLOSE",
+        "2026-08-08T01:30:38-04:00",
+    )
+    assert (convention, valid, reason) == ("TARGET_DATE_CLOSE", True, "")
+
+
 def test_target_date_close_requires_timezone_aware_settled_at() -> None:
     for settled_at in (None, "2026-07-22T16:30:00"):
         convention, valid, reason = sl.validate_timing(
