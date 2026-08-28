@@ -10,6 +10,11 @@ This artifact is generated from `run_computed_manifest.json`, `settlement_manife
 (`runbook.md § Retention Contract`); every decision-relevant value they carry is persisted here,
 in `05`, and in `15`.
 
+> **AMENDED 2026-08-27** (second scheduled fire ~22:03 ET). One over-claimed count in row `L011`
+> is corrected in place, original preserved. No package was republished and no prediction record
+> was added or altered; `NO_TRADE` and every downstream number stand. See **§ Amendment** at the
+> end of this file for the three re-verified gates and the evidence.
+
 ## Fire window and price basis
 
 The task fired at 19:09 ET, **after** the 16:00 close. At that hour the same-day close is final at
@@ -86,7 +91,7 @@ automatically `REVIEW_ONLY`. This run's `NO_TRADE` is therefore driven by the ev
 | L008a | FRED DTB3 fetch attempt | RF | FAILED — read operation timed out | n/a | 2026-08-27 | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTB3 — 9th consecutive session timing out; Treasury CSV (L008) is the standing fallback | UNAVAILABLE | OBSERVED | 01 |
 | L009 | market cap + sector | 7103 listed issues | one screener call; B-shares keyed BRK/B, BF/B | USD / GICS-style label | 2026-08-27 | https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=10000&offset=0&download=true (Origin/Referer headers) retrieved_at 2026-08-27T16:11:46-0700 | DELAYED | OBSERVED | 04, 05, 07 |
 | L010 | forward earnings calendar sweep | entire scored universe | 27/27 business days fetched, 0 transport failures, sweep_complete=True, 366 distinct symbols on calendar | count | 2026-08-27 .. 2026-10-03 | https://api.nasdaq.com/api/calendar/earnings?date=YYYY-MM-DD swept over every business day in [run_date, run_date+37d]; Track B accepted 2026-07-29 — absence is positive evidence only when the sweep is complete | DELAYED | OBSERVED | 03, 04, 05, 15 |
-| L011 | entry-price cross-check (CNBC) | 27 published symbols | agreement with L002 to the cent on 27/27 | USD | 2026-08-27 | https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol — field `last` gated on last_time date == 2026-08-27 (market POST_MKT) | DELAYED | OBSERVED | 05, 06, 07, 15 |
+| L011 | entry-price cross-check (CNBC) | 27 published symbols | agreement with L002 to the cent on **26/27** *(was 27/27 — AMENDED 2026-08-27, see § Amendment)*; the exception is `TECH`, which L221 already tabulates at 0.0138% | USD | 2026-08-27 | https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol — field `last` gated on last_time date == 2026-08-27 (market POST_MKT) | DELAYED | OBSERVED | 05, 06, 07, 15 |
 | L012 | entry-price cross-check (Nasdaq) | 27 published symbols | max deviation vs L002 0.095123% | USD | 2026-08-27 | https://api.nasdaq.com/api/quote/{sym}/info — field `secondaryData.lastSalePrice` gated on the 'Closed at Aug 27, 2026 4:00 PM ET' marker (primaryData is the after-hours tape) | DELAYED | OBSERVED | 05, 06, 07, 15 |
 | L012a | price grounding summary | 27 published symbols | 27/27 grounded on 3 independent sources, 0 confirmation re-reads | count | 2026-08-27 | DERIVED from L002 + L011 + L012 under rules.md § Price Sourcing Standard (two independent web sources agreeing within 1%) | DELAYED | DERIVED | 05, 06, 07, 08, 15 |
 | L013 | technical indicator pack | 518 symbols (514 universe with history + 4 ETFs) | TD-9 / RSI(14) / MACD(12,26,9) / MA / momentum / volume / RS, daily+weekly+monthly | mixed | 2026-08-27 | python3 agents/equity/daily_investment_system/technical_indicators.py --tickers SPY QQQ SOXX TLT --tickers-file .work/claude-opus-5-2026-08-27/universe_with_history.txt --benchmark SPY --range 5y --history-dir <adjusted-close CSV tree> (formula: rules.md § Technical Indicator Pack Definition); input L002 | DELAYED | DERIVED | 05, 06, 07, 15 |
@@ -259,3 +264,97 @@ Total ledger rows: **177**. The run is not in `ILLUSTRATIVE_MODE`; no row carrie
 | stockanalysis `EQR` 5Y history | 3 attempts with backoff | HTTP 400 Bad Request | classified `CORPORATE_ACTION_RENAMED` against two independent references (L025); the ticker is excluded from scoring and its 2 open prediction keys are left due (L025a) |
 | IBKR MCP (`get_price_snapshot` / `get_price_history`) | not attempted | connector invalidated since 2026-08-04 | grounding stands on three independent web sources; recorded as an absence of evidence, not as agreement (L017) |
 | FOMC meeting calendar | not attempted | no wired source | event-concentration section in `03` records the FOMC field as `UNAVAILABLE` rather than asserting an absence |
+
+## Amendment — 2026-08-27 (second scheduled fire, 22:03 ET)
+
+> **AMENDED 2026-08-27 (second scheduled fire ~22:03 ET, ~3h after the 19:09 package merged as
+> PR #68).** The scheduled task fired a second time for the same `(model, date)`. Per the
+> no-republish gate established 2026-08-01, a duplicate package would inject 24 `EQUITY_ALPHA` +
+> 3 `MARKET_FORECAST` records with identical vintage, target date and entry prices into the
+> ledger — perfectly correlated rows that inflate raw `n` while adding zero independent
+> evidence. **No package was republished and no prediction record was added or altered.** All
+> three gates were re-verified and held; this amendment corrects one over-claimed count found
+> in the process. The `NO_TRADE` status and every downstream number are unchanged.
+
+### Gate 1 — settlement inventory (nothing left to settle)
+
+`settlement_ledger.py --as-of 2026-08-27` re-run to a scratchpad path reproduces the committed
+manifest exactly: canonical `EQUITY_ALPHA` **1355**, `MARKET_FORECAST` **201**,
+conflicts **0**, rejected rows **87**, audit-only
+**268**, from **80** packages. Rolling metrics
+re-derive to the committed § Reflection table to every published digit — EQ hit rate
+**37.49%**, CI coverage **71.88%**, mean z
+**-0.5553**, `eff_n` **2**; MF hit rate **40.11%**,
+CI coverage **90.55%**, mean z **-0.1848**, `eff_n`
+**2**.
+
+`due_inventory` is **2**, and both keys are exactly the corporate-action
+pair the 19:09 run documented as unsettleable (`EQR` claude-opus-5 vintage 2026-07-26 target 2026-08-23; `EQR` gpt-5 vintage 2026-07-27 target 2026-08-24). Nothing was left for this fire to
+settle. The `eff_n` projection is unchanged and still falsifiable: EQ increments on
+**2026-09-03** (24 pending), MF on
+**2026-09-07** (3 pending).
+
+### Gate 2 — same basis, and one genuine vendor drift
+
+Markets were closed and the basis is unchanged, so a re-fetch must return the identical closes.
+A fresh `stockanalysis .../history?range=5D` fetch and an independent CNBC sweep of all 27
+published symbols each returned **26 of 27 exact to the cent**. The single exception is
+`TECH` (Bio-Techne): published **72.48**, now **72.47** at all three vendors — stockanalysis
+`c` and `a`, CNBC `last` (`last_time` 2026-08-27T16:00:00-0400, NASDAQ, volume 1,661,988) and
+Nasdaq `primaryData.lastSalePrice`.
+
+This is not a fetch error. At 19:09 ET stockanalysis's same-day bar carried a **preliminary**
+close of 72.48 while CNBC and Nasdaq already carried the consolidated 72.47 — which is precisely
+what row `L221` recorded at publication (both cross-checks at 0.0138%). By 22:03 ET
+stockanalysis had converged to 72.47.
+
+**The published `entry_price` of 72.48 is left unchanged, deliberately.** It was grounded when
+observed (two independent sources within the 1% gate; the deviation is 0.0138%, and the run's
+worst cross-vendor spread was 0.095123%), it is what the run actually saw, and rewriting a
+merged package's entry price would break the property that a package records its own fire-time
+observation — the property settlement integrity depends on. The residual effect is 1.38 bps on
+one monitoring-sleeve name in a `NO_TRADE` run, or **0.012 sigma** against `TECH`'s sigma of
+0.011834.
+
+### Gate 3 — no early application of a future-effective change
+
+The 19:09 run accepted one Track B change — the `SYMBOL_REUSE_FOREIGN_LISTING` price gate —
+stamped **effective 2026-08-28** and flagged `HUMAN_REVIEW`. It was **not** applied here;
+applying an accepted-but-not-yet-effective change inside a same-day duplicate is exactly what
+the evolution log's comparability rationale forbids. It was exercised in verification only,
+where it accepted all 27 published symbols (every one a US venue with non-zero volume,
+`TECH` included) — consistent with the 27/27-accept, zero-false-reject result the log reports.
+
+### What this amendment corrects
+
+Row `L011` claimed CNBC agreement "to the cent on 27/27". The package's own row `L221`
+simultaneously recorded `TECH`'s CNBC deviation as 0.0138% — so the summary count contradicted
+the per-name evidence it summarizes. Counting the ledger's own entry-price rows gives 23 of 24
+equity names at 0.0000% plus the three core ETFs, i.e. **26/27**. `L011` is corrected in place
+with the original preserved. This is the "check counts you narrate, not just counts you
+tabulate" error class: the count was asserted rather than computed from the rows beneath it.
+
+**Nothing else changes.** The grounding gate is met either way — the standard is two independent
+sources agreeing within 1%, and the worst spread in the run was 0.095123% — so GO-Gate row 1,
+`L012a`, `03 § Hard halt 2` and `09 § 7` all remain accurate as written. Package integrity was
+re-verified at **1,634 checks / 0 failures**, including the `15_predictions.json` contract, the
+`MARKET_FORECAST` null contract, `composite_z` and `Adj Score` re-derived from
+`score_explainability`, the 70% CI bounds re-derived at the `rules.md § Price and Target
+Citation Standard` factor of 1.04, all 50 `TARGET_DATE_CLOSE` rows carrying timezone-aware
+`settled_at` at or after 16:00 ET, and 66 markdown tables with zero column mismatches.
+
+### Corpus check
+
+`origin/main` is at `7c4a718` (PR #68) and nothing merged after it, so — unlike the 2026-08-01
+third fire — no committed census or roster claim went stale on arrival.
+
+### Carried forward to the next run
+
+Post-close vendor precedence deserves a look. Nasdaq deviates from stockanalysis on many names
+as an ordinary consolidated-tape artifact (0.0075%-0.0951% on 15 of the 24 equity ledger rows here), so its
+disagreement is noise. **CNBC's disagreement is not**: CNBC matched stockanalysis on 23 of 24
+equity names exactly, and the one name it flagged is the one where stockanalysis was carrying a
+preliminary close. A candidate rule — *when CNBC and Nasdaq agree with each other against
+stockanalysis on the basis bar, take their value* — is recorded here as an observation only. It
+is **not** proposed as a change this run: `13_evolution_log.md` already accepted its one Track B
+change for 2026-08-27 under the policy limit, and this fire publishes no package.
