@@ -2,7 +2,7 @@
 
 Modular, multi-agent, self-evolving prompt system for short-horizon U.S. equity selection.
 
-Core prompt files plus one deterministic compute helper:
+Core prompt files plus six deterministic compute helpers (the two this entrypoint runs are listed below; `settlement_ledger.py`, `factor_scoring.py`, `fundamental_diagnostics.py`, and `sentiment_diagnostics.py` are documented in `rules.md`):
 
 - `main.md` — entrypoint (this file).
 - `runbook.md` — schedule, scheduler, and dated-output specification.
