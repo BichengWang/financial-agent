@@ -750,6 +750,200 @@ def test_track_a_calibration_proposal_requires_raw_and_effective_n() -> None:
 
 
 # ---------------------------------------------------------------------------
+# Duplicate prediction books
+# ---------------------------------------------------------------------------
+
+
+def _book(model: str, source_file: str, run_date: str = "2026-07-13") -> dict[str, Any]:
+    """A package whose two-name prediction book targets 2026-08-10 (a Monday)."""
+    return {
+        "run_date": run_date,
+        "model": model,
+        "_source_file": source_file,
+        "predictions": [
+            {
+                "run_date": "2026-07-13",
+                "model": model,
+                "ticker": ticker,
+                "type": "EQUITY_ALPHA",
+                "target_date": "2026-08-10",
+                "entry_price": 100.0,
+                "mu": 0.02,
+                "sigma": 0.1,
+                "adj_score": adj_score,
+                "thesis": f"{model} momentum call",
+            }
+            for ticker, adj_score in (("AAA", 1.0), ("BBB", -0.5))
+        ],
+        "settlements": [],
+    }
+
+
+def _settler(*models: str) -> dict[str, Any]:
+    """A 2026-08-11 run settling each model's 2026-07-13 book at the 08-10 close."""
+    return {
+        "run_date": "2026-08-11",
+        "model": "model-c",
+        "_source_file": "model-c-2026-08-11",
+        "predictions": [],
+        "settlements": [
+            {
+                "vintage": "2026-07-13",
+                "model": model,
+                "ticker": ticker,
+                "type": "EQUITY_ALPHA",
+                "target_date": "2026-08-10",
+                "settle_price": price,
+                "settle_price_date": "2026-08-10",
+                "entry_price": 100.0,
+                "mu": 0.02,
+                "sigma": 0.1,
+                "realized_return": price / 100.0 - 1,
+                "benchmark_return": 0.0,
+                "realized_alpha": price / 100.0 - 1,
+                "direction": "HIT" if price > 100.0 else "MISS",
+                "ci_result": "IN_CI",
+                "z": 0.1,
+            }
+            for model in models
+            for ticker, price in (("AAA", 105.0), ("BBB", 98.0))
+        ],
+    }
+
+
+def test_cloned_package_is_duplicate_of_its_original_and_excluded_from_metrics() -> (
+    None
+):
+    # The gemini-3.5-flash-2026-07-13 incident in miniature: model-b's package is
+    # model-a's book republished under another model name (free text included),
+    # and a later run settled both copies.
+    original = _book("model-a", "model-a-2026-07-13")
+    clone = _book("model-b", "model-b-2026-07-13")
+
+    manifest = sl.build_manifest(
+        [original, clone, _settler("model-a", "model-b")], as_of="2026-08-11"
+    )
+
+    # Counted once: only the original's forecasts are canonical and scored.
+    assert manifest["rolling_metrics"]["equity_alpha"]["n"] == 2
+    assert {c["model"] for c in manifest["canonical_settlements"]} == {"model-a"}
+    assert set(manifest["rolling_metrics"]["rank_ic_by_vintage"]) == {
+        "model-a:2026-07-13"
+    }
+
+    # Reported: the copy is DUPLICATE_OF the original, with what it excluded.
+    (book,) = manifest["duplicate_books"]
+    assert (book["source_file"], book["duplicate_of"], book["original_rule"]) == (
+        "model-b-2026-07-13",
+        "model-a-2026-07-13",
+        "FOLDER_NAME_TIEBREAK",
+    )
+    assert (book["excluded_prediction_keys"], book["excluded_candidate_rows"]) == (2, 2)
+    assert {c["model"] for c in manifest["duplicate_book_candidates"]} == {"model-b"}
+
+    s = manifest["summary"]
+    assert (s["duplicate_books"], s["duplicate_book_rows"], s["due_inventory"]) == (
+        1,
+        2,
+        0,
+    )
+    settled = (
+        s["canonical_equity_alpha_settlements"]
+        + s["canonical_market_forecast_settlements"]
+    )
+    assert (
+        settled
+        + s["rejected_rows"]
+        + s["audit_only_rows"]
+        + s["conflicted_rows"]
+        + s["duplicate_book_rows"]
+        == s["total_candidate_rows"]
+        == 4
+    )
+
+    # The copy contributes nothing: metrics match a ledger that never had it...
+    never_cloned = sl.build_manifest(
+        [original, _settler("model-a")], as_of="2026-08-11"
+    )
+    assert manifest["rolling_metrics"] == never_cloned["rolling_metrics"]
+
+    # ...and its keys are never due, so no later run is asked to settle them.
+    unsettled = sl.build_manifest([original, clone], as_of="2026-08-10")
+    assert {d["model"] for d in unsettled["due_inventory"]} == {"model-a"}
+
+
+def test_pinned_original_overrides_the_folder_name_tiebreak() -> None:
+    # In the June pairs the copy's folder (gemini-3.5-flash-*) sorts before its
+    # original's (gpt-5-*), so without a pin the tiebreak would keep the copy.
+    copy = _book("gemini-x", "gemini-x-2026-06-21")
+    original = _book("gpt-x", "gpt-x-2026-06-21")
+
+    unpinned = sl.find_duplicate_books([copy, original], pinned_originals={})
+    assert unpinned["gpt-x-2026-06-21"].duplicate_of == "gemini-x-2026-06-21"
+
+    pinned = sl.find_duplicate_books(
+        [copy, original], pinned_originals={"gpt-x-2026-06-21": "provenance"}
+    )
+    assert set(pinned) == {"gemini-x-2026-06-21"}
+    book = pinned["gemini-x-2026-06-21"]
+    assert (book.duplicate_of, book.original_rule, book.reason) == (
+        "gpt-x-2026-06-21",
+        "PINNED",
+        "provenance",
+    )
+
+
+def test_unpinned_copy_with_a_later_run_date_is_the_duplicate() -> None:
+    # A later package republishing an earlier book verbatim loses to the
+    # earlier one whatever the folder names are.
+    earlier = _book("model-z", "model-z-2026-07-13")
+    republished = _book("model-a", "model-a-2026-07-20", run_date="2026-07-20")
+
+    found = sl.find_duplicate_books([republished, earlier], pinned_originals={})
+
+    assert set(found) == {"model-a-2026-07-20"}
+    book = found["model-a-2026-07-20"]
+    assert (book.duplicate_of, book.original_rule) == (
+        "model-z-2026-07-13",
+        "EARLIEST_RUN_DATE",
+    )
+
+
+def test_packages_without_predictions_are_never_duplicate_books() -> None:
+    # Two NO_TRADE packages with empty books are identical once the model name
+    # is masked, but there is no forecast in them to double-count.
+    empty = [
+        {
+            "run_date": "2026-07-13",
+            "model": model,
+            "_source_file": f"{model}-2026-07-13",
+            "predictions": [],
+            "settlements": [],
+        }
+        for model in ("model-a", "model-b")
+    ]
+    assert sl.find_duplicate_books(empty) == {}
+
+
+def test_same_model_copy_never_excludes_the_original_books_keys() -> None:
+    # A second folder holding the same model's run carries the same canonical
+    # keys as the original, so nothing is double-counted: the copy is
+    # reported, but the original's settlements must still count.
+    original = _book("model-a", "model-a-2026-07-13")
+    rerun = _book("model-a", "model-a-2026-07-13-rerun")
+
+    manifest = sl.build_manifest(
+        [original, rerun, _settler("model-a")], as_of="2026-08-11"
+    )
+
+    assert [
+        (b["source_file"], b["excluded_prediction_keys"])
+        for b in manifest["duplicate_books"]
+    ] == [("model-a-2026-07-13-rerun", 0)]
+    assert manifest["rolling_metrics"]["equity_alpha"]["n"] == 2
+
+
+# ---------------------------------------------------------------------------
 # Integration properties against the real repository data
 # ---------------------------------------------------------------------------
 
@@ -826,19 +1020,26 @@ def test_july24_overlapping_cohort_has_one_effective_window() -> None:
     equity = metrics["equity_alpha"]
     market = metrics["market_forecast"]
 
-    assert (equity["n"], equity["eff_n"]) == (189, 1)
-    assert (market["n"], market["eff_n"]) == (33, 1)
+    # Was (189, 1) and (33, 1) before duplicate books were excluded:
+    # gemini-3.5-flash-2026-06-21 is a copy of gpt-5-2026-06-21's book, and
+    # claude-fable-5-2026-07-20 settled both copies (14 EQ + 3 MF each), so
+    # those forecasts were counted twice.
+    assert (equity["n"], equity["eff_n"]) == (175, 1)
+    assert (market["n"], market["eff_n"]) == (30, 1)
     assert not equity["track_a_calibration_proposal_eligible"]
     assert not market["track_a_calibration_proposal_eligible"]
 
-    # The Track B evidence-count change must not alter scoring math.
-    assert equity["hit_rate"] == pytest.approx(0.5291005291005291)
-    assert equity["ci_coverage"] == pytest.approx(0.7619047619047619)
-    assert equity["mean_z"] == pytest.approx(-0.2129000450276962)
-    assert market["hit_rate"] == pytest.approx(0.21212121212121213)
-    assert market["ci_coverage"] == pytest.approx(0.6363636363636364)
-    assert market["mean_z"] == pytest.approx(-0.7306131150503343)
-    assert metrics["rank_ic_weighted_mean"] == pytest.approx(-0.09391437593767778)
+    # Neither Track B counting change alters scoring math: eff_n left these
+    # untouched, and they moved only because the copy's 17 duplicate records
+    # left the input (was 0.5291 / 0.7619 / -0.2129, market 0.2121 / 0.6364 /
+    # -0.7306, rank IC -0.0939).
+    assert equity["hit_rate"] == pytest.approx(0.5371428571428571)
+    assert equity["ci_coverage"] == pytest.approx(0.7657142857142857)
+    assert equity["mean_z"] == pytest.approx(-0.2005164238724117)
+    assert market["hit_rate"] == pytest.approx(0.23333333333333334)
+    assert market["ci_coverage"] == pytest.approx(0.6666666666666666)
+    assert market["mean_z"] == pytest.approx(-0.7035508867875725)
+    assert metrics["rank_ic_weighted_mean"] == pytest.approx(-0.09070225128741728)
 
 
 @real_data
@@ -881,7 +1082,55 @@ def test_every_real_candidate_row_lands_in_exactly_one_bucket() -> None:
         + s["canonical_market_forecast_settlements"]
     )
     assert (
-        settled + s["rejected_rows"] + s["audit_only_rows"] + s["conflicted_rows"]
+        settled
+        + s["rejected_rows"]
+        + s["audit_only_rows"]
+        + s["conflicted_rows"]
+        + s["duplicate_book_rows"]
         == s["total_candidate_rows"]
     )
     assert s["conflicts"] == 0  # no real conflicts observed as of this cutoff
+    # gemini-3.5-flash-2026-07-13 copies claude-fable-5-2026-07-13, including
+    # its 20 settlement rows. A copy is not independent evidence, so those rows
+    # now land in duplicate_book_rows instead of audit_only_rows.
+    assert s["duplicate_book_rows"] == 20
+
+
+@real_data
+def test_real_duplicate_books_are_excluded_from_rolling_metrics() -> None:
+    """Every gemini-3.5-flash prediction book in the repo is another model's
+    book republished under that name, and a later run settled both copies of
+    each: claude-fable-5-2026-07-20 (the 06-21 books, 17 + 17), gpt-5-2026-07-27
+    (06-29, 17 + 17), and gpt-5.6-sol-2026-08-10 (07-13, 27 + 27). Excluding
+    the copies takes EQUITY_ALPHA n from 819 to 767 (-14 - 14 - 24) and
+    MARKET_FORECAST n from 132 to 123 (-3 per copy). eff_n stays 2 because each
+    original covers the same target dates as its copy."""
+    manifest = sl.build_manifest(_packages_as_of("2026-08-10"), as_of="2026-08-10")
+
+    assert {
+        b["source_file"]: (
+            b["duplicate_of"],
+            b["original_rule"],
+            b["excluded_prediction_keys"],
+        )
+        for b in manifest["duplicate_books"]
+    } == {
+        "gemini-3.5-flash-2026-06-21": ("gpt-5-2026-06-21", "PINNED", 17),
+        "gemini-3.5-flash-2026-06-29": ("gpt-5-2026-06-29", "PINNED", 17),
+        "gemini-3.5-flash-2026-07-13": ("claude-fable-5-2026-07-13", "PINNED", 27),
+    }
+    assert not any(
+        c["model"] == "gemini-3.5-flash" for c in manifest["canonical_settlements"]
+    )
+
+    metrics = manifest["rolling_metrics"]
+    equity, market = metrics["equity_alpha"], metrics["market_forecast"]
+    assert (equity["n"], equity["eff_n"]) == (767, 2)
+    assert (market["n"], market["eff_n"]) == (123, 2)
+    # Each original book still counts, once.
+    assert metrics["rank_ic_by_vintage"]["claude-fable-5:2026-07-13"]["n"] == 24
+    assert metrics["rank_ic_by_vintage"]["gpt-5:2026-06-21"]["n"] == 14
+    assert metrics["rank_ic_by_vintage"]["gpt-5:2026-06-29"]["n"] == 14
+    assert not any(
+        k.startswith("gemini-3.5-flash:") for k in metrics["rank_ic_by_vintage"]
+    )
