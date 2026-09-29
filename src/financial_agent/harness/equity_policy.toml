@@ -1,0 +1,134 @@
+# Equity daily research policy: the numeric rules of
+# agents/equity/daily_investment_system/rules.md (v3.3) as data.
+#
+# Spike status: rules.md prose stays canonical. This file mirrors it so the
+# harness can compute and gate deterministically; Phase 3 of
+# plan/2026-09-28-financial-harness-and-skills.md makes this file canonical and
+# generates the rules.md tables from it.
+#
+# Governance (enforced by policy.check_mutation):
+#   * keys under a `protected` prefix change only with human approval;
+#   * keys under a `track_a` prefix change only with settled-prediction
+#     evidence (n and eff_n gates), otherwise the proposal is DEFERred;
+#   * the `evolution` table itself is protected (a change cannot relax its
+#     own limits).
+
+schema_version = 1
+policy_version = "3.3"
+effective_date = "2026-08-03"
+
+[score]
+# rules.md § Financial Metrics and Score Attribution
+formula = "Adj Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * DQ - Penalties"
+unavailable_family_contribution = 0.0
+
+[score.family_weights]
+fund_z = 0.30
+tech_z = 0.30
+sent_z = 0.25
+macro_z = 0.15
+
+[forecast]
+# rules.md § Price and Target Citation Standard, § Ratio Definitions
+ci70_z = 1.04
+var95_z = 1.65
+cvar95_z = 2.06
+default_horizon_days = 28
+allowed_horizon_days = [21, 28, 42]
+mu_adjustment_max = 0.02
+
+# rules.md § mu Calibration Table (adjusted-score percentile -> prior mu)
+[[forecast.mu_bands]]
+min_pctl = 95.0
+mu = 0.06
+sleeve = "INVESTABLE"
+
+[[forecast.mu_bands]]
+min_pctl = 90.0
+mu = 0.05
+sleeve = "INVESTABLE"
+
+[[forecast.mu_bands]]
+min_pctl = 85.0
+mu = 0.04
+sleeve = "INVESTABLE"
+
+[[forecast.mu_bands]]
+min_pctl = 80.0
+mu = 0.03
+sleeve = "INVESTABLE"
+
+[[forecast.mu_bands]]
+min_pctl = 70.0
+mu = 0.02
+sleeve = "MONITORING"
+
+[[forecast.mu_bands]]
+min_pctl = 60.0
+mu = 0.01
+sleeve = "MONITORING"
+
+[market_forecast]
+# rules.md § Core ETF Market Forecast
+tickers = ["SPY", "QQQ", "SOXX"]
+spy_adjustment_max = 0.01
+beta_scaled_adjustment_max = 0.015
+flat_call_abs_mu = 0.005
+
+[market_forecast.spy_regime_prior]
+BULL = 0.02
+NEUTRAL = 0.005
+HIGH_VOL = 0.0
+RATE_SHOCK = -0.015
+BEAR = -0.025
+
+[evidence]
+# rules.md § Evidence Thresholds, § Data Quality Multiplier, Downgrade to NO_TRADE
+min_pctl = 80.0
+min_non_negative_families = 3
+max_family_conviction_share = 0.50
+min_data_completeness = 0.85
+min_data_quality_multiplier = 0.70
+min_investable_names = 5
+max_investable_names = 10
+
+[kelly]
+# rules.md § Risk Controls / Position Level. Values are NAV fractions; the
+# cap-binding level is risk.max_single_name_weight (one source of truth).
+fraction = 0.25
+block_at_or_below = 0.0
+penalty_below = 0.02
+
+[risk]
+# rules.md § Risk Controls / Portfolio Level (protected rules 3-7)
+max_single_name_weight = 0.05
+max_sector_weight = 0.30
+beta_band = [0.90, 1.10]
+max_avg_pairwise_corr = 0.45
+max_dd95_1m = 0.08
+earnings_window_days = 14
+earnings_penalty = 0.10
+enhancing_missing_gross_cap = 0.50
+
+[evolution]
+# rules.md § Evolution Policy
+max_family_weight_step = 0.05
+track_a_min_settled_n = 20
+track_a_min_eff_n = 3
+protected = [
+    "risk.max_single_name_weight",
+    "risk.max_sector_weight",
+    "risk.beta_band",
+    "risk.max_avg_pairwise_corr",
+    "risk.max_dd95_1m",
+    "evolution",
+]
+track_a = [
+    "score.family_weights",
+    "forecast.mu_bands",
+    "market_forecast.spy_regime_prior",
+    "market_forecast.spy_adjustment_max",
+    "market_forecast.beta_scaled_adjustment_max",
+    "evidence",
+    "kelly",
+]
