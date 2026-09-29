@@ -20,12 +20,19 @@ design this implements.
 Canonical key: (model, vintage, ticker, type, target_date), where `vintage`
 is the run_date of the *original* prediction and `type` defaults to
 "EQUITY_ALPHA" when absent, per rules.md.
+
+A package whose prediction book is a copy of another package's (the same
+forecasts republished under a second model name) would put the same forecasts
+under a second set of keys and double-count them. `find_duplicate_books` detects
+these by content fingerprint; the copy is reported as DUPLICATE_OF its original
+and contributes nothing to canonical settlements, due inventory, or metrics.
 """
 
 from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import math
 import re
@@ -389,6 +396,125 @@ def extract_predictions(packages: Iterable[dict[str, Any]]) -> list[Prediction]:
                 )
             )
     return out
+
+
+# ---------------------------------------------------------------------------
+# Duplicate prediction books
+# ---------------------------------------------------------------------------
+
+# Originals of prediction books that were also published under a second model
+# name, with the provenance evidence. find_duplicate_books() decides from
+# content alone *whether* two books are copies; this table only decides which
+# copy is the original, which content cannot tell when both share a run_date.
+# An entry never excludes anything by itself.
+PINNED_ORIGINAL_BOOKS: dict[str, str] = {
+    "gpt-5-2026-06-21": (
+        "gemini-3.5-flash-2026-06-21 is the copy: its 13_evolution_log.md "
+        "reviews gemini-3.5-flash-2026-06-14..20 packages that never existed "
+        "(this book's review list with the model name swapped); both copies "
+        "landed in commit f801a31"
+    ),
+    "gpt-5-2026-06-29": (
+        "gemini-3.5-flash-2026-06-29 is the copy: its 13_evolution_log.md "
+        "reviews gemini-3.5-flash-2026-06-22 and -24 packages that never "
+        "existed (this book's review list with the model name swapped); both "
+        "copies landed in commit f801a31"
+    ),
+    "claude-fable-5-2026-07-13": (
+        "gemini-3.5-flash-2026-07-13 is the copy: an uncommitted package left "
+        "by a dead session (see claude-fable-5-2026-07-15/00_run_manifest.md), "
+        "swept into commit f70fbc1 three days after this one landed in 256771e"
+    ),
+}
+
+_MODEL_MASK = "\x00model\x00"  # json.dumps escapes NUL, so no dump contains it
+
+
+@dataclass(frozen=True)
+class DuplicateBook:
+    source_file: str
+    duplicate_of: str
+    original_rule: str
+    reason: str
+    fingerprint: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_file": self.source_file,
+            "duplicate_of": self.duplicate_of,
+            "original_rule": self.original_rule,
+            "reason": self.reason,
+            "fingerprint": self.fingerprint,
+        }
+
+
+def prediction_book_fingerprint(pkg: dict[str, Any]) -> str | None:
+    """SHA-256 of a package's `predictions` with its own model name masked
+    wherever it appears, so the same book republished under another model name
+    hashes identically. None for a package with no predictions to double-count.
+    """
+    predictions = pkg.get("predictions") or []
+    if not predictions:
+        return None
+    text = json.dumps(predictions, sort_keys=True)
+    models = {pkg.get("model")} | {p.get("model") for p in predictions}
+    for model in sorted(
+        (m for m in models if isinstance(m, str) and m), key=len, reverse=True
+    ):
+        text = text.replace(model, _MODEL_MASK)
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
+def find_duplicate_books(
+    packages: Iterable[dict[str, Any]],
+    pinned_originals: dict[str, str] = PINNED_ORIGINAL_BOOKS,
+) -> dict[str, DuplicateBook]:
+    """Packages whose prediction book is a copy of another package's, keyed by
+    source folder.
+
+    Packages are grouped by `prediction_book_fingerprint`. In each group of two
+    or more, the original is the member named in `pinned_originals`, else the
+    one with the earliest run_date, ties broken by folder name. Every other
+    member is DUPLICATE_OF it.
+    """
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for pkg in packages:
+        fingerprint = prediction_book_fingerprint(pkg)
+        if fingerprint is not None:
+            groups[fingerprint].append(pkg)
+
+    duplicates: dict[str, DuplicateBook] = {}
+    for fingerprint, members in groups.items():
+        if len(members) < 2:
+            continue
+        ordered = sorted(
+            members, key=lambda p: (p.get("run_date", ""), p.get("_source_file", ""))
+        )
+        names = [p.get("_source_file", "") for p in ordered]
+        pinned = [name for name in names if name in pinned_originals]
+        if pinned:
+            original = pinned[0]
+            rule, reason = "PINNED", pinned_originals[original]
+        elif ordered[0].get("run_date") == ordered[1].get("run_date"):
+            original = names[0]
+            rule = "FOLDER_NAME_TIEBREAK"
+            reason = (
+                "copies share a run_date, so folder name picked the original; "
+                "pin the true original in PINNED_ORIGINAL_BOOKS if this is wrong"
+            )
+        else:
+            original = names[0]
+            rule, reason = "EARLIEST_RUN_DATE", "earliest run_date is the original"
+        for name in names:
+            if name != original:
+                duplicates[name] = DuplicateBook(
+                    source_file=name,
+                    duplicate_of=original,
+                    original_rule=rule,
+                    reason=reason,
+                    fingerprint=fingerprint,
+                )
+    return duplicates
 
 
 def normalize_settlement_candidate(
@@ -943,14 +1069,26 @@ def build_manifest(
         run_dates = [p.get("run_date", "") for p in packages if p.get("run_date")]
         as_of = max(run_dates) if run_dates else ""
 
-    predictions = extract_predictions(packages)
+    all_predictions = extract_predictions(packages)
+    duplicate_books = find_duplicate_books(packages)
+    predictions = [p for p in all_predictions if p.source_file not in duplicate_books]
     predictions_index: dict[CanonicalKey, Prediction] = {
         p.key(): p for p in predictions
     }
+    # A copy's keys differ from its original's only by model name. Exclude just
+    # those, never a key that some original book also carries.
+    duplicate_keys: dict[str, set[CanonicalKey]] = {
+        name: set() for name in duplicate_books
+    }
+    for p in all_predictions:
+        if p.source_file in duplicate_books and p.key() not in predictions_index:
+            duplicate_keys[p.source_file].add(p.key())
+    excluded_keys: set[CanonicalKey] = set().union(*duplicate_keys.values())
+
     lookup_by_no_vintage: dict[tuple[str, str, str, str], list[Prediction]] = (
         defaultdict(list)
     )
-    for p in predictions:
+    for p in all_predictions:
         lookup_by_no_vintage[(p.model, p.ticker, p.type, p.target_date)].append(p)
 
     candidates = extract_settlement_candidates(packages, lookup_by_no_vintage)
@@ -966,8 +1104,12 @@ def build_manifest(
         c.is_timing_valid = valid
         c.rejection_reason = reason
 
+    def _from_duplicate_book(c: SettlementCandidate) -> bool:
+        return c.source_file in duplicate_books or c.key() in excluded_keys
+
+    duplicate_rows = [c for c in candidates if _from_duplicate_book(c)]
     canonical, conflicts, rejected, audit_only, conflicted = build_canonical_ledger(
-        candidates
+        [c for c in candidates if not _from_duplicate_book(c)]
     )
     conflicted_keys = {c.key for c in conflicts}
     due = compute_due_inventory(predictions, canonical, conflicted_keys, as_of)
@@ -988,12 +1130,27 @@ def build_manifest(
             "rejected_rows": len(rejected),
             "audit_only_rows": len(audit_only),
             "conflicted_rows": len(conflicted),
+            "duplicate_books": len(duplicate_books),
+            "duplicate_book_rows": len(duplicate_rows),
         },
         "canonical_settlements": [c.to_dict() for _, c in sorted(canonical.items())],
         "conflicts": [c.to_dict() for c in conflicts],
         "rejected_candidates": [c.to_dict() for c in rejected],
         "audit_only_candidates": [c.to_dict() for c in audit_only],
         "conflicted_candidates": [c.to_dict() for c in conflicted],
+        "duplicate_books": [
+            {
+                **book.to_dict(),
+                "excluded_prediction_keys": len(duplicate_keys[name]),
+                "excluded_candidate_rows": sum(
+                    1
+                    for c in duplicate_rows
+                    if c.source_file == name or c.key() in duplicate_keys[name]
+                ),
+            }
+            for name, book in sorted(duplicate_books.items())
+        ],
+        "duplicate_book_candidates": [c.to_dict() for c in duplicate_rows],
         "due_inventory": [
             {
                 "model": k[0],
