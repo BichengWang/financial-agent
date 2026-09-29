@@ -20,7 +20,7 @@ dependencies = [
     "click",
     "mypy",
     "pyparsing",
-    "pandas<2.0.0",
+    "pandas>=2.0,<3",
     "seaborn",
     "scikit-learn",
     "keras-nightly",
