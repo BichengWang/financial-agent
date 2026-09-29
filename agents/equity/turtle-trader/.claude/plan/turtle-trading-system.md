@@ -2,12 +2,12 @@
 
 ## Context
 
-`investments/equity/turtle-trader/` currently holds only a 4-line Chinese stub
+`agents/equity/turtle-trader/` currently holds only a 4-line Chinese stub
 (`The Complete TurtleTrader.md` — "海龟交易法 / 编写策略开始执行"). The goal is a real,
 runnable Turtle Trading System here: a Python **script** plus a **SKILL.md**.
 
 The system mirrors the proven sibling pattern in
-`investments/equity/daily_investment_system/` — a deterministic, stdlib-only Python
+`agents/equity/daily_investment_system/` — a deterministic, stdlib-only Python
 helper (`technical_indicators.py`) that fetches from Yahoo Finance and emits JSON, paired
 with markdown spec/operating files, under a strict non-fabrication discipline. We reuse
 that style so the new sub-system is consistent and discoverable in the same repo.
@@ -25,7 +25,7 @@ Confirmed decisions:
 > stdlib-only design — accepted deliberately so the large index scan is fast and the
 > constituent lists are maintainable.
 
-## Deliverables (files in `investments/equity/turtle-trader/`)
+## Deliverables (files in `agents/equity/turtle-trader/`)
 
 1. `turtle.py` — the deterministic Turtle engine (scanner + backtester).
 2. `SKILL.md` — Claude Code skill: Turtle rules, parameters, when/how to run the script.
@@ -100,7 +100,7 @@ expectancy`. JSON output + a compact stdout summary table. Note in output that c
 correlation caps are not modeled in the per-instrument backtest.
 
 **Output convention:** default stdout; document writing dated artifacts to
-`investments/equity/output/turtle-{YYYY-MM-DD}/` to match the repo (`runbook.md` convention),
+`agents/equity/output/turtle-{YYYY-MM-DD}/` to match the repo (`runbook.md` convention),
 via `--output`. Ranges: scan default `2y` (needs ≥56 bars), backtest default `max`.
 
 ## `SKILL.md` design
