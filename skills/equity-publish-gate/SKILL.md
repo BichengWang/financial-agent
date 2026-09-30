@@ -4,7 +4,7 @@ description: Checks a daily equity research package before it is published - req
 compatibility: Requires Python 3.11+ (standard library only), run from the repository root. No network access.
 metadata:
   fa-stages: "RISK_REVIEW PUBLISHED"
-  fa-tools: "gate audit"
+  fa-tools: "gate audit hash clones"
   fa-writes: "none"
   fa-version: "1"
 ---
@@ -26,7 +26,8 @@ This skill tells you when to run them and how to act on the result.
    ```
 
 3. Exit status 0 and `publish gate: PASS` means the package may move to
-   `PUBLISHED`. Copy the `status replay` line into `00_run_manifest.md`; if it
+   `PUBLISHED`. Copy the `status replay` and `content hash` lines into
+   `00_run_manifest.md` (the hash pins exactly what was published); if the replay
    disagrees with your status, explain why in `08_risk_review.md` (the replay
    assumes all Required inputs are grounded and knows nothing about market
    holidays or integrity halts).
@@ -43,6 +44,10 @@ This skill tells you when to run them and how to act on the result.
   `13_evolution_log.md` as a schema-clarity observation. Do not "fix" history.
 
 ## Auditing history
+
+`python -m financial_agent.harness clones --since YYYY-MM-DD` lists artifacts
+that are byte-identical in more than one package. A clone means an analysis
+file was copied instead of produced; explain or regenerate it.
 
 ```bash
 PYTHONPATH=src python3 -m financial_agent.harness audit --output-dir agents/equity/output
