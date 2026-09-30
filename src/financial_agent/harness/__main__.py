@@ -4,6 +4,7 @@
     python -m financial_agent.harness skills catalog
     python -m financial_agent.harness audit --output-dir agents/equity/output
     python -m financial_agent.harness gate agents/equity/output/<model>-<date>
+    python -m financial_agent.harness run --model <id> --date <YYYY-MM-DD>
     python -m financial_agent.harness hash agents/equity/output/<model>-<date>
     python -m financial_agent.harness clones --since 2026-07-31
     python -m financial_agent.harness policy-check OLD.toml NEW.toml --settled-n 20
@@ -33,6 +34,7 @@ from financial_agent.harness.gates import (
 )
 from financial_agent.harness.lifecycle import RunState
 from financial_agent.harness.policy import MutationEvidence, check_mutation, load_policy
+from financial_agent.harness.runner import DEFAULT_HANDLERS, RunLocked, run
 from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
 
 DEFAULT_SKILL_ROOTS = (
@@ -113,6 +115,22 @@ def cmd_gate(args: argparse.Namespace) -> int:
     return 1 if failures else 0
 
 
+def cmd_run(args: argparse.Namespace) -> int:
+    try:
+        report = run(args.model, args.date, args.output_dir, DEFAULT_HANDLERS)
+    except RunLocked as exc:
+        print(f"LOCKED: {exc}")
+        return 2
+    print(report.lifecycle.transcript())
+    for failure in report.gate_failures:
+        print(f"GATE FAIL: {failure}")
+    if report.published:
+        print(f"run {report.run_id}: {report.lifecycle.status}")
+        return 0
+    print(f"run {report.run_id}: HALTED: {report.halt_reason}")
+    return 1
+
+
 def cmd_hash(args: argparse.Namespace) -> int:
     for name, digest in artifact_digests(args.package).items():
         print(f"{digest}  {name}")
@@ -166,6 +184,14 @@ def build_parser() -> argparse.ArgumentParser:
     gate.add_argument("package", type=Path)
     gate.add_argument("--policy", type=Path)
     gate.set_defaults(func=cmd_gate)
+
+    run_parser = sub.add_parser("run", help="drive one run through the lifecycle")
+    run_parser.add_argument("--model", required=True)
+    run_parser.add_argument("--date", required=True, help="YYYY-MM-DD")
+    run_parser.add_argument(
+        "--output-dir", type=Path, default=Path("agents/equity/output")
+    )
+    run_parser.set_defaults(func=cmd_run)
 
     digest = sub.add_parser("hash", help="per-artifact and package content hashes")
     digest.add_argument("package", type=Path)
