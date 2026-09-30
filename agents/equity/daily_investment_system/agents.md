@@ -52,6 +52,7 @@ The reflection records: prior status, prior lead names and thesis clusters, what
 - Complete Reflection before candidate ranking. Never force a portfolio on weak evidence.
 - If an agent output conflicts with shared rules, reject it and request at most one revision.
 - The manifest must contain the **GO-Gate Table** (Required inputs only as possible blockers; Enhancing inputs listed separately as caps) and an artifact checklist including `15_predictions.json`; the run may not transition to `PUBLISHED` while any name is ranked and that file is missing.
+- Before `PUBLISHED`, run the publish gate on the package (`skills/equity-publish-gate/SKILL.md`): `PYTHONPATH=src python3 -m financial_agent.harness gate agents/equity/output/{model}-{YYYY-MM-DD}`. A non-zero exit blocks publication; fix and regenerate the artifact, or the run is `HALTED`. Copy its `status replay` line into `00_run_manifest.md`. CI re-runs the same gate on every PR.
 
 ## Orchestrator Output
 

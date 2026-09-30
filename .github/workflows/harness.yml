@@ -1,0 +1,76 @@
+# Phase 1 of plan/2026-09-28-financial-harness-and-skills.md ("validate, don't
+# replace"): run the harness tests and the publish gate on every PR that touches
+# the harness, the skills, or the daily equity system and its output.
+
+name: Harness
+
+on:
+  pull_request:
+    paths:
+      - "src/financial_agent/harness/**"
+      - "tests/harness/**"
+      - "skills/**"
+      - "agents/equity/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/harness.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/financial_agent/harness/**"
+      - "tests/harness/**"
+      - "skills/**"
+      - "agents/equity/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/harness.yml"
+
+permissions:
+  contents: read
+
+env:
+  # Every package dated on or after this passes the current artifact contract.
+  # Older packages predate it (pre-ledger numbering, percentile adj_score, leaked
+  # working files) and are immutable, so they are audited but never gated.
+  GATE_EFFECTIVE_DATE: "2026-07-31"
+
+jobs:
+  harness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: uv sync --locked
+
+      - name: Tests
+        run: uv run pytest tests/harness agents/equity/daily_investment_system/tests -q
+
+      - name: Validate skills
+        run: uv run python -m financial_agent.harness skills validate
+
+      - name: Publish gate
+        run: |
+          failed=0
+          for dir in agents/equity/output/*/; do
+            dir="${dir%/}"
+            date="$(basename "$dir" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}' | head -1)"
+            if [ -z "$date" ] || [[ "$date" < "$GATE_EFFECTIVE_DATE" ]]; then
+              continue
+            fi
+            echo "::group::gate $dir"
+            if ! uv run python -m financial_agent.harness gate "$dir"; then
+              echo "::error::publish gate failed for $dir"
+              failed=1
+            fi
+            echo "::endgroup::"
+          done
+          exit "$failed"
+
+      - name: Audit (report only)
+        if: always()
+        run: uv run python -m financial_agent.harness audit >> "$GITHUB_STEP_SUMMARY"
