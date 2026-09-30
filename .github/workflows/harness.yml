@@ -74,3 +74,12 @@ jobs:
       - name: Audit (report only)
         if: always()
         run: uv run python -m financial_agent.harness audit >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Cloned artifacts (report only)
+        if: always()
+        run: |
+          {
+            echo
+            echo '### Artifacts shared between packages'
+            uv run python -m financial_agent.harness clones --since "$GATE_EFFECTIVE_DATE"
+          } >> "$GITHUB_STEP_SUMMARY"

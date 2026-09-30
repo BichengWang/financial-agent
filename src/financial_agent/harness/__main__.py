@@ -4,6 +4,8 @@
     python -m financial_agent.harness skills catalog
     python -m financial_agent.harness audit --output-dir agents/equity/output
     python -m financial_agent.harness gate agents/equity/output/<model>-<date>
+    python -m financial_agent.harness hash agents/equity/output/<model>-<date>
+    python -m financial_agent.harness clones --since 2026-07-31
     python -m financial_agent.harness policy-check OLD.toml NEW.toml --settled-n 20
 
 Exit status is non-zero when a check fails, so a skill, a CI job, or a
@@ -18,6 +20,11 @@ import sys
 from pathlib import Path
 
 from financial_agent.harness.audit import audit_output_dir
+from financial_agent.harness.fingerprint import (
+    artifact_digests,
+    find_clones,
+    package_digest,
+)
 from financial_agent.harness.gates import (
     REQUIRED_INPUTS,
     decide_status,
@@ -99,10 +106,26 @@ def cmd_gate(args: argparse.Namespace) -> int:
             f"status replay: {decision.status.value} ({'; '.join(decision.reasons)}); "
             f"published: {published}; Required inputs assumed grounded"
         )
+    print(f"content hash: sha256:{package_digest(args.package)}")
     for failure in failures:
         print(f"GATE FAIL: {failure}")
     print("publish gate:", "FAIL" if failures else "PASS")
     return 1 if failures else 0
+
+
+def cmd_hash(args: argparse.Namespace) -> int:
+    for name, digest in artifact_digests(args.package).items():
+        print(f"{digest}  {name}")
+    print(f"content hash: sha256:{package_digest(args.package)}")
+    return 0
+
+
+def cmd_clones(args: argparse.Namespace) -> int:
+    clones = find_clones(args.output_dir, since=args.since)
+    for (name, digest), packages in sorted(clones.items()):
+        print(f"{name} {digest[:12]}: {', '.join(packages)}")
+    print(f"{len(clones)} artifact(s) shared between packages")
+    return 1 if clones and args.strict else 0
 
 
 def cmd_policy_check(args: argparse.Namespace) -> int:
@@ -143,6 +166,16 @@ def build_parser() -> argparse.ArgumentParser:
     gate.add_argument("package", type=Path)
     gate.add_argument("--policy", type=Path)
     gate.set_defaults(func=cmd_gate)
+
+    digest = sub.add_parser("hash", help="per-artifact and package content hashes")
+    digest.add_argument("package", type=Path)
+    digest.set_defaults(func=cmd_hash)
+
+    clones = sub.add_parser("clones", help="artifacts shared between packages")
+    clones.add_argument("--output-dir", type=Path, default=Path("agents/equity/output"))
+    clones.add_argument("--since", help="only packages dated on or after YYYY-MM-DD")
+    clones.add_argument("--strict", action="store_true", help="exit 1 on any clone")
+    clones.set_defaults(func=cmd_clones)
 
     check = sub.add_parser("policy-check", help="govern a proposed policy change")
     check.add_argument("old", type=Path)
