@@ -5,6 +5,7 @@
     python -m financial_agent.harness audit --output-dir agents/equity/output
     python -m financial_agent.harness gate agents/equity/output/<model>-<date>
     python -m financial_agent.harness run --model <id> --date <YYYY-MM-DD>
+    python -m financial_agent.harness manifest agents/equity/output/<model>-<date>
     python -m financial_agent.harness hash agents/equity/output/<model>-<date>
     python -m financial_agent.harness clones --since 2026-07-31
     python -m financial_agent.harness policy-check OLD.toml NEW.toml --settled-n 20
@@ -16,7 +17,6 @@ PreToolUse hook can use the command as a gate.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
@@ -26,13 +26,9 @@ from financial_agent.harness.fingerprint import (
     find_clones,
     package_digest,
 )
-from financial_agent.harness.gates import (
-    REQUIRED_INPUTS,
-    decide_status,
-    investability,
-    publish_gate,
-)
+from financial_agent.harness.gates import publish_gate, replay_status
 from financial_agent.harness.lifecycle import RunState
+from financial_agent.harness.manifest import render_manifest_sections
 from financial_agent.harness.policy import MutationEvidence, check_mutation, load_policy
 from financial_agent.harness.runner import DEFAULT_HANDLERS, RunLocked, run
 from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
@@ -83,30 +79,13 @@ def cmd_audit(args: argparse.Namespace) -> int:
 def cmd_gate(args: argparse.Namespace) -> int:
     policy = load_policy(args.policy)
     failures = publish_gate(args.package, policy)
-    path = args.package / "15_predictions.json"
-    if path.exists():
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        equities = [
-            p
-            for p in payload.get("predictions", [])
-            if p.get("type", "EQUITY_ALPHA") == "EQUITY_ALPHA"
-        ]
-        passing = [p["ticker"] for p in equities if not investability(p, policy)]
-        decision = decide_status(
-            data_mode=str(payload.get("data_mode") or "DELAYED"),
-            required_inputs={name: True for name in REQUIRED_INPUTS},
-            investable_count=len(passing),
-            policy=policy,
-        )
-        published = (
-            payload.get("run_status")
-            or payload.get("final_status")
-            or payload.get("status")
-        )
-        print(f"investable (recomputed): {len(passing)} {passing}")
+    replay = replay_status(args.package, policy)
+    if replay is not None:
+        print(f"investable (recomputed): {len(replay.investable)} {replay.investable}")
         print(
-            f"status replay: {decision.status.value} ({'; '.join(decision.reasons)}); "
-            f"published: {published}; Required inputs assumed grounded"
+            f"status replay: {replay.decision.status.value} "
+            f"({'; '.join(replay.decision.reasons)}); "
+            f"published: {replay.published}; Required inputs assumed grounded"
         )
     print(f"content hash: sha256:{package_digest(args.package)}")
     for failure in failures:
@@ -129,6 +108,12 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 0
     print(f"run {report.run_id}: HALTED: {report.halt_reason}")
     return 1
+
+
+def cmd_manifest(args: argparse.Namespace) -> int:
+    text, failures = render_manifest_sections(args.package, load_policy(args.policy))
+    print(text)
+    return 1 if failures else 0
 
 
 def cmd_hash(args: argparse.Namespace) -> int:
@@ -192,6 +177,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--output-dir", type=Path, default=Path("agents/equity/output")
     )
     run_parser.set_defaults(func=cmd_run)
+
+    manifest = sub.add_parser("manifest", help="generated manifest sections")
+    manifest.add_argument("package", type=Path)
+    manifest.add_argument("--policy", type=Path)
+    manifest.set_defaults(func=cmd_manifest)
 
     digest = sub.add_parser("hash", help="per-artifact and package content hashes")
     digest.add_argument("package", type=Path)
