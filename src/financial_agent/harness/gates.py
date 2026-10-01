@@ -215,3 +215,39 @@ def publish_gate(package_dir: Path, policy: Policy) -> list[str]:
             if finding.severity == "error":
                 failures.append(f"{finding.ticker}: {finding.check}: {finding.detail}")
     return failures
+
+
+@dataclass(frozen=True)
+class StatusReplay:
+    investable: list[str]
+    decision: StatusDecision
+    published: str | None
+
+
+def replay_status(package_dir: Path, policy: Policy) -> StatusReplay | None:
+    """Recompute the run status from the ledger; ``None`` without a ledger.
+
+    Assumes every Required input was grounded: the ledger cannot show otherwise.
+    """
+    path = package_dir / PREDICTIONS_FILE
+    if not path.exists():
+        return None
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    equities = [
+        p
+        for p in payload.get("predictions", [])
+        if p.get("type", "EQUITY_ALPHA") == "EQUITY_ALPHA"
+    ]
+    passing = [p["ticker"] for p in equities if not investability(p, policy)]
+    decision = decide_status(
+        data_mode=str(payload.get("data_mode") or "DELAYED"),
+        required_inputs={name: True for name in REQUIRED_INPUTS},
+        investable_count=len(passing),
+        policy=policy,
+    )
+    published = (
+        payload.get("run_status")
+        or payload.get("final_status")
+        or payload.get("status")
+    )
+    return StatusReplay(passing, decision, published)
