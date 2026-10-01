@@ -4,7 +4,7 @@ description: Checks a daily equity research package before it is published - req
 compatibility: Requires Python 3.11+ (standard library only), run from the repository root. No network access.
 metadata:
   fa-stages: "RISK_REVIEW PUBLISHED"
-  fa-tools: "gate audit hash clones"
+  fa-tools: "gate audit hash clones manifest"
   fa-writes: "none"
   fa-version: "1"
 ---
@@ -34,6 +34,11 @@ This skill tells you when to run them and how to act on the result.
 4. On `GATE FAIL`, fix the cause and regenerate the artifact. Do not edit the
    policy file or loosen a check to get a pass. A failure you cannot fix makes
    the run `HALTED`, not published.
+
+To generate the manifest's artifact checklist, gate result, status replay, and
+content hash from the finished directory, run
+`PYTHONPATH=src python3 -m financial_agent.harness manifest agents/equity/output/{model}-{YYYY-MM-DD}`
+and paste its output into `00_run_manifest.md`. Never type the checklist by hand.
 
 ## Reading the output
 
