@@ -214,3 +214,6 @@ tensorboard_log/
 
 # Equity-agent reproducible working data; keep durable reports in output/.
 agents/equity/.work/
+
+# Harness run locks (removed on exit; a leftover one marks a crashed run).
+agents/equity/output/.locks/
