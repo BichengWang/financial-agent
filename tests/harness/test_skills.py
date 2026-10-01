@@ -161,7 +161,7 @@ def test_repository_skills_validate_and_route() -> None:
     assert {"equity-publish-gate", "turtle-trader"} <= set(registry.skills)
     gate = registry.get("equity-publish-gate")
     assert gate.stages == ("RISK_REVIEW", "PUBLISHED")
-    assert gate.tools == ("gate", "audit", "hash", "clones")
+    assert gate.tools == ("gate", "audit", "hash", "clones", "manifest")
     assert [s.name for s in registry.for_stage("PUBLISHED")] == ["equity-publish-gate"]
     turtle = next(r for r in registry.results if r.path.name == "turtle-trader")
     assert any("leaves the skill root" in w for w in turtle.warnings)
