@@ -30,7 +30,7 @@ from financial_agent.harness.gates import publish_gate, replay_status
 from financial_agent.harness.lifecycle import RunState
 from financial_agent.harness.manifest import render_manifest_sections
 from financial_agent.harness.policy import MutationEvidence, check_mutation, load_policy
-from financial_agent.harness.runner import DEFAULT_HANDLERS, RunLocked, run
+from financial_agent.harness.runner import RunLocked, default_handlers, run
 from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
 
 DEFAULT_SKILL_ROOTS = (
@@ -96,7 +96,7 @@ def cmd_gate(args: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     try:
-        report = run(args.model, args.date, args.output_dir, DEFAULT_HANDLERS)
+        report = run(args.model, args.date, args.output_dir, default_handlers())
     except RunLocked as exc:
         print(f"LOCKED: {exc}")
         return 2
