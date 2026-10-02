@@ -39,11 +39,6 @@ PIPELINE = (
 POST_PUBLISH = RunState.EVOLUTION_REVIEW
 
 
-# Stage handlers shipped with the harness. Empty until adapters and kernels land
-# (plan Phase 2): every stage halts rather than pretending to work.
-DEFAULT_HANDLERS: Mapping[RunState, "Handler"] = {}
-
-
 class RunLocked(RuntimeError):
     """Another run holds the (model, date) lock, or a crashed one left it."""
 
@@ -176,3 +171,10 @@ def _gate(context: RunContext, policy: Policy) -> list[str]:
     if not context.package_dir.is_dir():
         return [f"package directory {context.package_dir} was never created"]
     return publish_gate(context.package_dir, policy)
+
+
+def default_handlers() -> Mapping[RunState, Handler]:
+    """Shipped handlers. Stages without one halt the run (plan Phase 2)."""
+    from financial_agent.harness.handlers import reflection_handler
+
+    return {RunState.REFLECTION: reflection_handler}
