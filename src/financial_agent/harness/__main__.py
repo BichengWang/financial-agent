@@ -8,7 +8,8 @@
     python -m financial_agent.harness schema [<package>] [--json-schema]
     python -m financial_agent.harness session <YYYY-MM-DD>
     python -m financial_agent.harness reachability [--families tech_z macro_z]
-    python -m financial_agent.harness kernel {equity,market,risk,portfolio} --input FILE
+    python -m financial_agent.harness kernel <kind> --input FILE
+        (kind: equity, market, risk, portfolio, score)
     python -m financial_agent.harness run --model <id> --date <YYYY-MM-DD>
     python -m financial_agent.harness manifest agents/equity/output/<model>-<date>
     python -m financial_agent.harness hash agents/equity/output/<model>-<date>
@@ -66,6 +67,7 @@ from financial_agent.harness.policy import (
 )
 from financial_agent.harness.runner import RunLocked, default_handlers, run
 from financial_agent.harness.schema import json_schema, validate_payload
+from financial_agent.harness.scoring import score_request
 from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
 
 DEFAULT_SKILL_ROOTS = (
@@ -241,6 +243,8 @@ def run_kernel(kind: str, request: dict[str, Any], policy: Any) -> Any:
                 policy,
             )
         )
+    if kind == "score":
+        return score_request(request, policy)
     if kind == "risk":
         return vars(
             price_risk(
@@ -372,7 +376,9 @@ def build_parser() -> argparse.ArgumentParser:
     reach.set_defaults(func=cmd_reachability)
 
     kernel = sub.add_parser("kernel", help="compute records or risk from JSON input")
-    kernel.add_argument("kind", choices=["equity", "market", "risk", "portfolio"])
+    kernel.add_argument(
+        "kind", choices=["equity", "market", "risk", "portfolio", "score"]
+    )
     kernel.add_argument("--input", type=Path, required=True, help="JSON file or -")
     kernel.add_argument("--policy", type=Path)
     kernel.set_defaults(func=cmd_kernel)

@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 
 import pytest
-from conftest import REPO
+from conftest import OUTPUT_DIR, REPO, real_data
 
 from financial_agent.harness.policy import Policy
 
@@ -154,3 +154,23 @@ def test_holiday_status_matches_the_runbook(policy: Policy) -> None:
     match = re.search(r"U\.S\. market holidays still publish an `\w+` `(\w+)`", runbook)
     assert match
     assert policy.get("calendar.holiday_status") == match.group(1)
+
+
+def test_family_slot_minimum_and_coverage(policy: Policy) -> None:
+    assert "If fewer than two sourceable metrics support a family" in RULES
+    assert policy.num("score.min_family_slots") == 2
+    coverage = scalar(r"sourceable for at least (\d+)% of the eligible universe")
+    assert coverage / 100 == policy.num("score.min_slot_coverage")
+
+
+@real_data
+def test_slots_match_the_normative_metric_definition_table(policy: Policy) -> None:
+    text = (OUTPUT_DIR / "claude-opus-5-2026-09-03" / "05_factor_scores.md").read_text(
+        encoding="utf-8"
+    )
+    families = {"Technical": "tech_z", "Macro": "macro_z"}
+    rows = re.findall(r"^\| `(\w+)` \| (Technical|Macro) \|", text, re.MULTILINE)
+    table: dict[str, list[str]] = {}
+    for slot, family in rows[:10]:  # the Metric Definition Table comes first
+        table.setdefault(families[family], []).append(slot)
+    assert table == {k: list(v) for k, v in policy.get("score.slots").items()}

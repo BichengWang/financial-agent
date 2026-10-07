@@ -59,6 +59,7 @@ def test_handshake_and_tool_listing(server: HarnessServer) -> None:
         "build_market_forecasts",
         "price_risk",
         "portfolio_feasibility",
+        "score_universe",
         "policy",
     }
     assert all(t["annotations"]["readOnlyHint"] for t in tools.values())

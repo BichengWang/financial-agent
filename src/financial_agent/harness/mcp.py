@@ -29,6 +29,7 @@ from financial_agent.harness.kernels import (
     Holding,
     KernelError,
     MarketInputs,
+    PriceRisk,
     equity_record,
     market_forecast_records,
     portfolio_feasibility,
@@ -42,6 +43,7 @@ from financial_agent.harness.manifest import (
 from financial_agent.harness.market_calendar import session
 from financial_agent.harness.policy import FAMILIES, Policy, load_policy
 from financial_agent.harness.schema import validate_payload
+from financial_agent.harness.scoring import score_request
 
 SERVER_INFO = {"name": "financial-agent-harness", "version": "0.1.0"}
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
@@ -295,6 +297,51 @@ class HarnessServer:
                         policy,
                     )
                 ),
+            ),
+            Tool(
+                "score_universe",
+                "Slot z-scores, family z, Adj Score, rank and percentile for the "
+                "eligible universe, per the normative Metric Definition Table. "
+                "Pass each name's pctl, family_z, data quality and penalties to "
+                "build_equity_records; never re-derive them.",
+                _object(
+                    {
+                        "indicators": {
+                            "description": "technical_indicators.py payload or "
+                            "its list of records",
+                        },
+                        "sectors": {
+                            "type": "object",
+                            "additionalProperties": {"type": "string"},
+                        },
+                        "universe": {"type": "array", "items": {"type": "string"}},
+                        "risk": {
+                            "type": "object",
+                            "additionalProperties": dataclass_schema(PriceRisk),
+                        },
+                        "closes": {
+                            "type": "object",
+                            "additionalProperties": SERIES,
+                        },
+                        "spy_closes": SERIES,
+                        "tlt_closes": SERIES,
+                        "data_quality": {
+                            "anyOf": [
+                                {"type": "number"},
+                                {
+                                    "type": "object",
+                                    "additionalProperties": {"type": "number"},
+                                },
+                            ]
+                        },
+                        "penalties": {
+                            "type": "object",
+                            "additionalProperties": {"type": "number"},
+                        },
+                    },
+                    ("indicators", "data_quality"),
+                ),
+                lambda a: score_request(a, policy),
             ),
             Tool(
                 "policy",
