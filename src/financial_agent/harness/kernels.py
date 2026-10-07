@@ -12,7 +12,10 @@ inputs, defined once:
 * ``forecast_ratios`` -- Sharpe, Sortino, Information Ratio, Treynor, Calmar
   (``rules.md`` § Ratio Definitions);
 * ``equity_record`` / ``market_forecast_records`` -- complete schema-v1 ledger
-  records built from data plus the model's judgment inputs.
+  records built from data plus the model's judgment inputs;
+* ``portfolio_feasibility`` -- the portfolio-level risk controls (protected
+  rules 3-7) and the event-risk stop, from proposed weights and closes
+  (``rules.md`` § Computed Risk Analytics, § Risk Controls / Portfolio Level).
 
 The model supplies judgment (percentile inputs, a bounded mu adjustment with a
 reason, confidence, thesis); the kernel computes every number and refuses a
@@ -26,6 +29,7 @@ import datetime as dt
 import math
 import statistics
 from dataclasses import dataclass, field
+from itertools import combinations
 from typing import Any, Mapping, Sequence
 
 from financial_agent.harness.gates import (
@@ -525,3 +529,168 @@ def predictions_payload(
         "predictions": [dict(p) for p in predictions],
         "settlements": [dict(s) for s in settlements],
     }
+
+
+@dataclass(frozen=True)
+class Holding:
+    """One proposed position: a NAV weight plus its own adjusted closes."""
+
+    ticker: str
+    weight: float  # fraction of NAV; the rest of NAV is cash (beta 0, vol 0)
+    sector: str  # GICS sector
+    closes: Sequence[float]  # date-aligned with the SPY closes, oldest first
+    earnings_within_window: bool = False
+
+    @classmethod
+    def from_mapping(cls, data: Mapping[str, Any]) -> "Holding":
+        unknown = sorted(set(data) - {f.name for f in dataclasses.fields(cls)})
+        if unknown:
+            raise KernelError(f"unknown holding field(s) {unknown}")
+        try:
+            return cls(**data)
+        except TypeError as exc:
+            raise KernelError(str(exc)) from None
+
+
+@dataclass(frozen=True)
+class PortfolioRisk:
+    """Portfolio analytics and the protected limits they breach.
+
+    ``breaches`` feeds ``decide_status(risk_breaches=...)`` directly, so the
+    status no longer depends on a model transcribing its own risk review.
+    Beta and sector weight come on both bases; ``basis`` says which one the
+    beta band and sector cap were checked on (``risk.exposure_basis``).
+    """
+
+    names: int
+    gross: float
+    basis: str  # NAV | INVESTED
+    max_name_weight: float
+    sector_weights: dict[str, float]  # fraction of NAV
+    sector_shares: dict[str, float]  # fraction of gross
+    beta_vs_spy: float  # NAV: sum(w * beta), cash at beta 0
+    invested_beta: float  # beta_vs_spy / gross
+    sigma_1m: float  # NAV: sqrt(w' S w), one-month scale
+    dd95_1m: float  # parametric: var95_z * sigma_1m, normality assumed
+    avg_pairwise_corr: float | None  # None with fewer than two names
+    earnings_names: tuple[str, ...]
+    breaches: tuple[str, ...]
+
+
+def _corr(a: Sequence[float], b: Sequence[float]) -> float:
+    sa, sb = statistics.pstdev(a), statistics.pstdev(b)
+    mean_a, mean_b = statistics.fmean(a), statistics.fmean(b)
+    cov = statistics.fmean([(x - mean_a) * (y - mean_b) for x, y in zip(a, b)])
+    return cov / (sa * sb)
+
+
+def portfolio_feasibility(
+    holdings: Sequence[Holding], spy_closes: Sequence[float], policy: Policy
+) -> PortfolioRisk:
+    """``rules.md`` § Computed Risk Analytics 1-4 and § Risk Controls /
+    Portfolio Level, checked against the policy's protected limits.
+
+    Weights are NAV fractions, so uninvested NAV is cash: it adds nothing to
+    beta or sigma. The drawdown cap is a loss of NAV and is always checked on
+    NAV. The beta band and sector cap are checked on ``risk.exposure_basis``:
+    on ``NAV`` a book capped at 5% a name and 10 names (50% gross) can reach
+    the 0.90 beta floor only if its average beta is 1.8 or more, which is why
+    past runs disagree on the basis (plan/2026-09-28 §6, decision 7).
+
+    Every series uses the latest 61 closes (60 intervals) and population
+    moments, as ``price_risk`` does. Factor crowding is not checked here: it
+    needs per-name family contributions, not prices.
+    """
+    basis = str(policy.get("risk.exposure_basis"))
+    if basis not in ("NAV", "INVESTED"):
+        raise KernelError(f"risk.exposure_basis={basis!r} not in ['NAV', 'INVESTED']")
+    if not holdings:
+        raise KernelError("no holdings: a portfolio needs at least one name")
+    tickers = [h.ticker for h in holdings]
+    if len(set(tickers)) != len(tickers):
+        raise KernelError(f"duplicate tickers in {tickers}")
+    for h in holdings:
+        if not math.isfinite(h.weight) or h.weight <= 0:
+            raise KernelError(f"{h.ticker}: weight {h.weight} must be positive")
+        if not h.sector.strip():
+            raise KernelError(f"{h.ticker}: a GICS sector is required")
+    gross = math.fsum(h.weight for h in holdings)
+    if gross > 1 + 1e-9:
+        raise KernelError(f"gross {gross:.4f} exceeds NAV: long-only, no leverage")
+    spy = daily_returns(_window("spy_closes", spy_closes))
+    returns = [daily_returns(_window(h.ticker, h.closes)) for h in holdings]
+    for h, r in zip(holdings, returns):
+        if statistics.pstdev(r) == 0:
+            raise KernelError(
+                f"{h.ticker}: zero return variance, correlation undefined"
+            )
+    weights = [h.weight for h in holdings]
+    betas = [_beta(r, spy) for r in returns]
+    beta = math.fsum(w * b for w, b in zip(weights, betas))
+    # Portfolio daily return series: the quadratic form w' S w without the matrix.
+    book = [
+        math.fsum(w * r[t] for w, r in zip(weights, returns)) for t in range(len(spy))
+    ]
+    sigma = statistics.pstdev(book) * MONTH
+    dd95 = policy.num("forecast.var95_z") * sigma
+    pairs = [_corr(a, b) for a, b in combinations(returns, 2)]
+    avg_corr = statistics.fmean(pairs) if pairs else None
+    sectors: dict[str, float] = {}
+    for h in holdings:
+        sectors[h.sector] = sectors.get(h.sector, 0.0) + h.weight
+    earnings = tuple(h.ticker for h in holdings if h.earnings_within_window)
+
+    breaches: list[str] = []
+    cap = policy.num("risk.max_single_name_weight")
+    for h in holdings:
+        if h.weight > cap + 1e-9:
+            breaches.append(
+                f"{h.ticker} weight {h.weight:.2%} > {cap:.0%} single-name cap"
+            )
+    shares = {sector: weight / gross for sector, weight in sectors.items()}
+    invested = beta / gross
+    sector_cap = policy.num("risk.max_sector_weight")
+    checked = sectors if basis == "NAV" else shares
+    for sector, weight in sorted(checked.items()):
+        if weight > sector_cap + 1e-9:
+            breaches.append(
+                f"{sector} {weight:.2%} of {basis} > {sector_cap:.0%} sector cap"
+            )
+    lo, hi = (float(x) for x in policy.get("risk.beta_band"))
+    checked_beta = beta if basis == "NAV" else invested
+    if not lo <= checked_beta <= hi:
+        note = (
+            f" (invested-book beta {invested:.2f} at gross {gross:.0%})"
+            if basis == "NAV" and gross < 1 - 1e-9
+            else ""
+        )
+        breaches.append(
+            f"{basis} beta {checked_beta:.2f} outside {lo:.2f}-{hi:.2f}{note}"
+        )
+    corr_cap = policy.num("risk.max_avg_pairwise_corr")
+    if avg_corr is not None and avg_corr >= corr_cap:
+        breaches.append(f"avg pairwise corr {avg_corr:.2f} >= {corr_cap:.2f}")
+    dd_cap = policy.num("risk.max_dd95_1m")
+    if dd95 > dd_cap + 1e-12:
+        breaches.append(f"dd95 1m {dd95:.2%} > {dd_cap:.0%}")
+    max_earnings = int(policy.num("evidence.max_earnings_names"))
+    if len(earnings) > max_earnings:
+        breaches.append(
+            f"{len(earnings)} names with earnings inside the window "
+            f"(> {max_earnings}): {', '.join(earnings)}"
+        )
+    return PortfolioRisk(
+        names=len(holdings),
+        gross=gross,
+        basis=basis,
+        max_name_weight=max(weights),
+        sector_weights=dict(sorted(sectors.items())),
+        sector_shares=dict(sorted(shares.items())),
+        beta_vs_spy=beta,
+        invested_beta=invested,
+        sigma_1m=sigma,
+        dd95_1m=dd95,
+        avg_pairwise_corr=avg_corr,
+        earnings_names=earnings,
+        breaches=tuple(breaches),
+    )

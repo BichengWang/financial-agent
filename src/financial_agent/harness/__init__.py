@@ -20,10 +20,13 @@ from financial_agent.harness.gates import (
 )
 from financial_agent.harness.kernels import (
     EquityInputs,
+    Holding,
     KernelError,
     MarketInputs,
+    PortfolioRisk,
     equity_record,
     market_forecast_records,
+    portfolio_feasibility,
     price_risk,
 )
 from financial_agent.harness.ledger import LedgerRow, SourceLedger
@@ -36,10 +39,12 @@ from financial_agent.harness.skills import Skill, SkillRegistry, validate_skill_
 __all__ = [
     "AuditReport",
     "EquityInputs",
+    "Holding",
     "KernelError",
     "LedgerRow",
     "MarketInputs",
     "Policy",
+    "PortfolioRisk",
     "Reachability",
     "RunLifecycle",
     "RunState",
@@ -56,6 +61,7 @@ __all__ = [
     "investability",
     "load_policy",
     "market_forecast_records",
+    "portfolio_feasibility",
     "price_risk",
     "session",
     "validate_payload",

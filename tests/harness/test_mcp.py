@@ -58,6 +58,7 @@ def test_handshake_and_tool_listing(server: HarnessServer) -> None:
         "build_equity_records",
         "build_market_forecasts",
         "price_risk",
+        "portfolio_feasibility",
         "policy",
     }
     assert all(t["annotations"]["readOnlyHint"] for t in tools.values())
@@ -105,6 +106,11 @@ def test_compute_tools(server: HarnessServer) -> None:
     stock = [50 * (1.002**i) * (1.01 if i % 2 else 0.99) for i in range(61)]
     is_error, text = call(server, "price_risk", closes=stock, spy_closes=spy)
     assert not is_error and json.loads(text)["realized_vol_30d"] > 0
+    holding = {"ticker": "A", "weight": 0.05, "sector": "Tech", "closes": stock}
+    is_error, text = call(
+        server, "portfolio_feasibility", holdings=[holding], spy_closes=spy
+    )
+    assert not is_error and json.loads(text)["avg_pairwise_corr"] is None
 
 
 def test_kernel_tools_refuse_out_of_policy_inputs(server: HarnessServer) -> None:
