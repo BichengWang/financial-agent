@@ -34,6 +34,7 @@ from financial_agent.harness.lifecycle import RunLifecycle, RunState
 from financial_agent.harness.market_calendar import Session, session
 from financial_agent.harness.policy import Policy, load_policy
 from financial_agent.harness.schema import validate_payload
+from financial_agent.harness.scoring import NameInputs, Scoreboard, score_universe
 from financial_agent.harness.skills import Skill, SkillRegistry, validate_skill_dir
 
 __all__ = [
@@ -43,11 +44,13 @@ __all__ = [
     "KernelError",
     "LedgerRow",
     "MarketInputs",
+    "NameInputs",
     "Policy",
     "PortfolioRisk",
     "Reachability",
     "RunLifecycle",
     "RunState",
+    "Scoreboard",
     "Session",
     "Skill",
     "SkillRegistry",
@@ -63,6 +66,7 @@ __all__ = [
     "market_forecast_records",
     "portfolio_feasibility",
     "price_risk",
+    "score_universe",
     "session",
     "validate_payload",
     "validate_skill_dir",
