@@ -381,11 +381,11 @@ are never rewritten.
 
 | Phase | Work | Exit criterion |
 |---|---|---|
-| **1. Validate, don't replace** | Resolve the §6 decisions. Freeze JSON Schema v1 for `15_predictions.json` (canonical names, decimals, `kelly_method`, split Kelly fields, one status key). Call the `gate` command before `PUBLISHED` (one line in `agents.md` + the skill). CI workflow: harness tests + `audit --strict` on PRs touching `agents/equity/`. Content hash per package. *(Gate call, CI workflow (gate by effective date), and content hash / `clones` report shipped; schema and §6 decisions open.)* | 10 consecutive runs pass the gate with 0 error findings; no new settlement key-sets |
-| **2. Compute, don't transcribe** | Promote the per-run engine to kernels: families/trace, risk analytics, forecast, Kelly, feasibility, earnings sweep (fail closed), liveness and corporate-action screens. Typed ledger writer. Ledger + renderer produce `01`/`05`/`06`/`07`/`09` tables; model text uses `{{L…}}` citations, enforced by the lint. | Numeric tables are 100% generated. Two models on the same day with the same inputs produce identical numbers, differing only in judgment fields. |
+| **1. Validate, don't replace** | Resolve the §6 decisions. Freeze JSON Schema v1 for `15_predictions.json` (canonical names, decimals, `kelly_method`, split Kelly fields, one status key). Call the `gate` command before `PUBLISHED` (one line in `agents.md` + the skill). CI workflow: harness tests + `audit --strict` on PRs touching `agents/equity/`. Content hash per package. *(Gate call, CI workflow (gate by effective date), and content hash / `clones` report shipped. Schema v1 shipped opt-in: `harness schema`, enforced by the gate when a ledger declares `schema_version: 1`; adopting it and the §6 decisions stay open.)* | 10 consecutive runs pass the gate with 0 error findings; no new settlement key-sets |
+| **2. Compute, don't transcribe** | Promote the per-run engine to kernels: families/trace, risk analytics, forecast, Kelly, feasibility, earnings sweep (fail closed), liveness and corporate-action screens. Typed ledger writer. Ledger + renderer produce `01`/`05`/`06`/`07`/`09` tables; model text uses `{{L…}}` citations, enforced by the lint. *(`kernels.py` shipped: risk analytics, ratios, and v1 record builders for names and core ETFs that refuse out-of-policy judgment; they reproduce the 2026-09-03 numbers. Not yet called by the daily prompts.)* | Numeric tables are 100% generated. Two models on the same day with the same inputs produce identical numbers, differing only in judgment fields. |
 | **3. Skills, not monolith** | Split the prompt stack into the §3.4 skills. `equity_policy.toml` becomes canonical and generates the `rules.md` tables. Evolution emits policy diffs or PRs; an accepted Track B change is a merged PR with a test. | Per-stage prompt context under 15 KB (from 104 KB); zero accepted changes that exist only in run logs |
-| **4. Run anywhere, on schedule** | `fa-harness run` entry point *(skeleton shipped: `harness run`, lock, handler table, gated publish; one handler so far, REFLECTION settlement summary; `harness manifest` generates the checklist, replay, and hash)*; MCP server over the same functions; scheduled GitHub Actions workflow with a (model, date) lock, heartbeat, and duplicate-run guard; cassette record/replay; golden-run regression over history. | ≥ 95% of trading days run within ±30 min of schedule; any run replays byte-for-byte from cassettes |
-| **5. Make GO reachable** | Fund/Sent Phase 2 (bulk `companyfacts` + threaded Nasdaq) as capability skills and adapters. SHADOW → promoted becomes a policy diff with human approval. GO-reachability check at PRECHECK. | GO is reachable, or its impossibility is reported by the harness on the first run instead of being discovered |
+| **4. Run anywhere, on schedule** | `fa-harness run` entry point *(skeleton shipped: `harness run`, lock, handler table, gated publish, run journal under `output/.runs/`; handlers for PRECHECK (calendar + GO reachability) and REFLECTION (settlement summary); `harness manifest` generates the checklist, replay, and hash)*; MCP server over the same functions *(shipped: `harness mcp`, read-only tools over stdio)*; scheduled GitHub Actions workflow with a (model, date) lock, heartbeat, and duplicate-run guard; cassette record/replay; golden-run regression over history. | ≥ 95% of trading days run within ±30 min of schedule; any run replays byte-for-byte from cassettes |
+| **5. Make GO reachable** | Fund/Sent Phase 2 (bulk `companyfacts` + threaded Nasdaq) as capability skills and adapters. SHADOW → promoted becomes a policy diff with human approval *(`score.shadow_families`, protected)*. GO-reachability check at PRECHECK *(shipped: `harness reachability`, the PRECHECK handler, and the gate output)*. | GO is reachable, or its impossibility is reported by the harness on the first run instead of being discovered |
 
 ## 6. Decisions needed from the owner
 
@@ -402,10 +402,15 @@ are never rewritten.
    weighted family contribution divided by the sum of positive contributions.
    Alternative: the share of absolute contributions. Pick one.
 5. **Threshold #4 ("data completeness ≥ 85%").** Define the denominator. The spike
-   uses family availability as a labeled proxy.
+   uses family availability as a labeled proxy. Under that proxy only 4 of 4
+   families pass, so promoting one SHADOW family would not make `GO` reachable
+   (`harness reachability --families fund_z tech_z macro_z`).
 6. **Non-trading days.** One status rule for weekends and holidays, computed from
    the exchange calendar. Today fable says `REVIEW_ONLY` and opus-5 says
-   `NO_TRADE`.
+   `NO_TRADE`. The harness applies the runbook's holiday rule (`REVIEW_ONLY`) and
+   keeps the computed status on weekends until `calendar.weekend_status` is set.
+   With the calendar the replay still agrees on 73 of 83 packages: fable 07-03
+   now matches, and gpt-5 06-19 (Juneteenth, published `NO_TRADE`) is a new miss.
 7. **Governance.** An accepted evolution change means a merged PR (human merge).
    Is that acceptable? It closes the 46-flag `HUMAN_REVIEW` loop that never closes
    today.

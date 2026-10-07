@@ -272,7 +272,7 @@ def _check_str(
 
 
 def validate_skill_dir(
-    path: Path, *, known_stages: Iterable[str] = ()
+    path: Path, *, known_stages: Iterable[str] = (), known_tools: Iterable[str] = ()
 ) -> ValidationResult:
     """Validate one skill directory against the open spec plus harness keys."""
     result = ValidationResult(path=path)
@@ -329,7 +329,7 @@ def validate_skill_dir(
                 "non-string; quote it"
             )
 
-    stages = set(known_stages)
+    stages, tools = set(known_stages), set(known_tools)
     for key, value in metadata.items():
         if not key.startswith(HARNESS_PREFIX):
             continue
@@ -339,6 +339,10 @@ def validate_skill_dir(
             unknown = sorted(set(value.split()) - stages)
             if unknown:
                 errors.append(f"fa-stages names unknown run states {unknown}")
+        if key == "fa-tools" and tools:
+            unknown = sorted(set(value.split()) - tools)
+            if unknown:
+                errors.append(f"fa-tools names unknown harness tools {unknown}")
 
     extra = {k: v for k, v in fields.items() if k not in SPEC_FIELDS}
     for key in sorted(extra):
@@ -405,10 +409,14 @@ class SkillRegistry:
 
     @classmethod
     def discover(
-        cls, roots: Iterable[Path], *, known_stages: Iterable[str] = ()
+        cls,
+        roots: Iterable[Path],
+        *,
+        known_stages: Iterable[str] = (),
+        known_tools: Iterable[str] = (),
     ) -> SkillRegistry:
         """Validate every skill directory at, or one level under, each root."""
-        stages = tuple(known_stages)
+        stages, tools = tuple(known_stages), tuple(known_tools)
         dirs: list[Path] = []
         for root in roots:
             if (root / SKILL_FILE).is_file():
@@ -417,7 +425,9 @@ class SkillRegistry:
                 dirs.extend(
                     sorted(p for p in root.iterdir() if (p / SKILL_FILE).is_file())
                 )
-        return cls(validate_skill_dir(d, known_stages=stages) for d in dirs)
+        return cls(
+            validate_skill_dir(d, known_stages=stages, known_tools=tools) for d in dirs
+        )
 
     def get(self, name: str) -> Skill:
         return self.skills[name]

@@ -33,9 +33,7 @@ def test_two_family_composite_is_never_investable(
     assert any("tech_z carries" in f for f in failures)  # threshold 3
 
 
-def test_complete_record_can_be_investable(
-    policy: Policy, vlo_record: dict[str, Any]
-) -> None:
+def complete_record(vlo_record: dict[str, Any]) -> dict[str, Any]:
     record = dict(vlo_record, pctl=92.0, mu=0.05, sigma=0.08)
     record["score_explainability"] = dict(
         vlo_record["score_explainability"],
@@ -45,7 +43,18 @@ def test_complete_record_can_be_investable(
         macro_z=0.5,
         data_quality_multiplier=0.9,
     )
-    assert investability(record, policy) == []
+    return record
+
+
+def test_complete_record_can_be_investable_once_families_are_promoted(
+    policy: Policy, promoted_policy: Policy, vlo_record: dict[str, Any]
+) -> None:
+    record = complete_record(vlo_record)
+    assert investability(record, promoted_policy) == []
+    # rules.md § SHADOW Diagnostic Tooling: SHADOW z-scores never count, even
+    # when a record carries them.
+    failures = investability(record, policy)
+    assert any("fund_z (SHADOW), sent_z (SHADOW)" in f for f in failures)
 
 
 @pytest.mark.parametrize(

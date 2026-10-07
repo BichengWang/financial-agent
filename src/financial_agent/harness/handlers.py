@@ -6,39 +6,50 @@ data adapters or a model are not registered, so ``run`` still halts before them.
 
 from __future__ import annotations
 
-import importlib.util
-import sys
+import datetime as dt
 from pathlib import Path
-from types import ModuleType
 from typing import Any
+from zoneinfo import ZoneInfo
 
+from financial_agent.harness.gates import go_reachability
+from financial_agent.harness.helpers import load_helper
+from financial_agent.harness.market_calendar import session
+from financial_agent.harness.policy import load_policy
 from financial_agent.harness.runner import RunContext, StageResult
 
-_SYSTEM_DIR = (
-    Path(__file__).resolve().parents[3]
-    / "agents"
-    / "equity"
-    / "daily_investment_system"
-)
+MARKET_TZ = ZoneInfo("America/New_York")
 
 
-def _settlement_ledger() -> ModuleType:
-    """The helper script is not a package; load it by path once."""
-    name = "settlement_ledger"
-    if name in sys.modules:
-        return sys.modules[name]
-    spec = importlib.util.spec_from_file_location(name, _SYSTEM_DIR / f"{name}.py")
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"cannot load {name} from {_SYSTEM_DIR}")
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    spec.loader.exec_module(module)
-    return module
+def precheck_handler(context: RunContext) -> StageResult:
+    """PRECHECK: the run date's session, and whether GO is reachable at all.
+
+    Plan §3.5 step 2: if no name can pass the evidence thresholds with the
+    families that can score, say so on day 1 rather than in run 13. An
+    unreachable GO does not halt; the run still publishes NO_TRADE.
+    """
+    today = dt.datetime.now(MARKET_TZ).date()
+    if dt.date.fromisoformat(context.date) > today:
+        return StageResult(halt=f"run date {context.date} is after {today} (ET)")
+    day = session(context.date)
+    reach = go_reachability(context.policy or load_policy())
+    note = day.describe() + (
+        "; GO reachable"
+        if reach.reachable
+        else f"; GO unreachable ({len(reach.blockers)} structural blockers)"
+    )
+    return StageResult(
+        note,
+        data={
+            "session": vars(day),
+            "go_reachable": reach.reachable,
+            "go_blockers": list(reach.blockers),
+        },
+    )
 
 
 def settlement_summary(output_dir: Path, run_date: str, run_id: str) -> dict[str, Any]:
     """Canonical settlement state from packages dated before this run."""
-    ledger = _settlement_ledger()
+    ledger = load_helper("settlement_ledger")
     packages = [
         p
         for p in ledger.load_packages(output_dir)
