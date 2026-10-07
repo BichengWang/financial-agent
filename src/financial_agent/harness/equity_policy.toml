@@ -25,12 +25,24 @@ unavailable_family_contribution = 0.0
 # diagnostics only and may not enter Adj Score, the evidence-threshold count, or
 # the confidence label until a reviewed promotion (protected below).
 shadow_families = ["fund_z", "sent_z"]
+# rules.md § Family Aggregation: a family with fewer sourceable slots is
+# UNAVAILABLE. § Metric History and Grounding: a slot scores only when it is
+# sourceable for at least this share of the eligible universe.
+min_family_slots = 2
+min_slot_coverage = 0.70
 
 [score.family_weights]
 fund_z = 0.30
 tech_z = 0.30
 sent_z = 0.25
 macro_z = 0.15
+
+[score.slots]
+# The normative Metric Definition Table (Track B, shipped 2026-08-04; carried in
+# 05_factor_scores.md since): the slots each family averages. Their transforms
+# and polarity are formulas and live in scoring.py.
+tech_z = ["mom20", "mom60", "ma_align", "macd", "vol_conf", "dd60"]
+macro_z = ["beta", "sector_lead", "rate_sens", "vol_stability"]
 
 [forecast]
 # rules.md § Price and Target Citation Standard, § Ratio Definitions
