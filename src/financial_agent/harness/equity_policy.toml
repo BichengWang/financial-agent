@@ -21,6 +21,10 @@ effective_date = "2026-08-03"
 # rules.md § Financial Metrics and Score Attribution
 formula = "Adj Score = (0.30*Fund_Z + 0.30*Tech_Z + 0.25*Sent_Z + 0.15*Macro_Z) * DQ - Penalties"
 unavailable_family_contribution = 0.0
+# rules.md § SHADOW Diagnostic Tooling: these families are computed as
+# diagnostics only and may not enter Adj Score, the evidence-threshold count, or
+# the confidence label until a reviewed promotion (protected below).
+shadow_families = ["fund_z", "sent_z"]
 
 [score.family_weights]
 fund_z = 0.30
@@ -92,6 +96,17 @@ min_data_quality_multiplier = 0.70
 min_investable_names = 5
 max_investable_names = 10
 
+[confidence]
+# rules.md § Confidence Labels: the highest label a record may carry. A model may
+# publish a lower label, never a higher one. Families count when non-negative,
+# as in evidence threshold 2.
+high_min_families = 4
+high_min_pctl = 90.0
+high_min_data_quality = 0.90
+medium_min_families = 3
+medium_min_pctl = 80.0
+medium_min_data_quality = 0.80
+
 [kelly]
 # rules.md § Risk Controls / Position Level. Values are NAV fractions; the
 # cap-binding level is risk.max_single_name_weight (one source of truth).
@@ -110,6 +125,14 @@ earnings_window_days = 14
 earnings_penalty = 0.10
 enhancing_missing_gross_cap = 0.50
 
+[calendar]
+# runbook.md § Cadence: "U.S. market holidays still publish an ILLUSTRATIVE_MODE
+# REVIEW_ONLY artifact set".
+holiday_status = "REVIEW_ONLY"
+# Weekends have no written rule yet (plan/2026-09-28 §6 decision 6). COMPUTED
+# keeps the status the gates compute; set REVIEW_ONLY or NO_TRADE once decided.
+weekend_status = "COMPUTED"
+
 [evolution]
 # rules.md § Evolution Policy
 max_family_weight_step = 0.05
@@ -121,6 +144,8 @@ protected = [
     "risk.beta_band",
     "risk.max_avg_pairwise_corr",
     "risk.max_dd95_1m",
+    "score.shadow_families",
+    "calendar",
     "evolution",
 ]
 track_a = [

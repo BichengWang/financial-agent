@@ -4,7 +4,7 @@ description: Checks a daily equity research package before it is published - req
 compatibility: Requires Python 3.11+ (standard library only), run from the repository root. No network access.
 metadata:
   fa-stages: "RISK_REVIEW PUBLISHED"
-  fa-tools: "gate audit hash clones manifest"
+  fa-tools: "gate audit hash clones manifest schema replay"
   fa-writes: "none"
   fa-version: "1"
 ---
@@ -29,8 +29,10 @@ This skill tells you when to run them and how to act on the result.
    `PUBLISHED`. Copy the `status replay` and `content hash` lines into
    `00_run_manifest.md` (the hash pins exactly what was published); if the replay
    disagrees with your status, explain why in `08_risk_review.md` (the replay
-   assumes all Required inputs are grounded and knows nothing about market
-   holidays or integrity halts).
+   assumes all Required inputs are grounded and knows nothing about integrity
+   halts). The replay applies the NYSE calendar: a market holiday publishes
+   `REVIEW_ONLY`; a weekend keeps the computed status until a weekend rule is
+   set in the policy.
 4. On `GATE FAIL`, fix the cause and regenerate the artifact. Do not edit the
    policy file or loosen a check to get a pass. A failure you cannot fix makes
    the run `HALTED`, not published.
@@ -40,6 +42,11 @@ content hash from the finished directory, run
 `PYTHONPATH=src python3 -m financial_agent.harness manifest agents/equity/output/{model}-{YYYY-MM-DD}`
 and paste its output into `00_run_manifest.md`. Never type the checklist by hand.
 
+A ledger that declares `"schema_version": 1` is also held to ledger schema
+v1 (one `run_status`, split Kelly fields, decimals, canonical settlement keys).
+`PYTHONPATH=src python3 -m financial_agent.harness schema agents/equity/output/{model}-{YYYY-MM-DD}`
+lists its v1 findings; `schema --json-schema` prints the shape.
+
 ## Reading the output
 
 - `error`: breaks an explicit rule (missing artifact, enum, CI or mu-band
@@ -47,12 +54,19 @@ and paste its output into `00_run_manifest.md`. Never type the checklist by hand
 - `drift`: a unit or meaning the rules leave implicit (VaR stored as percent,
   `kelly_025` capped in one run and uncapped in the next). Report it in
   `13_evolution_log.md` as a schema-clarity observation. Do not "fix" history.
+- `GO unreachable: threshold N ...`: no name can pass that evidence threshold
+  with the factor families that can score. This is structural, not a property
+  of today's names: cite it as the reason for `NO_TRADE` rather than
+  re-deriving it, and do not count it as a new finding each run.
 
 ## Auditing history
 
 `python -m financial_agent.harness clones --since YYYY-MM-DD` lists artifacts
 that are byte-identical in more than one package. A clone means an analysis
 file was copied instead of produced; explain or regenerate it.
+
+`python -m financial_agent.harness replay --since YYYY-MM-DD` recomputes every
+published status from its ledger and lists the packages that disagree.
 
 ```bash
 PYTHONPATH=src python3 -m financial_agent.harness audit --output-dir agents/equity/output

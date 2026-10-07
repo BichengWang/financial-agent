@@ -62,6 +62,17 @@ class Policy:
         return {k: float(v) for k, v in self.get("score.family_weights").items()}
 
     @property
+    def shadow_families(self) -> tuple[str, ...]:
+        """Families computed as diagnostics only (rules.md § SHADOW Diagnostic
+        Tooling); they never count toward Adj Score or the thresholds."""
+        return tuple(self.get("score.shadow_families"))
+
+    @property
+    def gating_families(self) -> tuple[str, ...]:
+        shadow = set(self.shadow_families)
+        return tuple(f for f in FAMILIES if f not in shadow)
+
+    @property
     def mu_bands(self) -> list[MuBand]:
         bands = [
             MuBand(float(b["min_pctl"]), float(b["mu"]), str(b["sleeve"]))
@@ -97,7 +108,10 @@ class Policy:
         one number called ``kelly_025`` that some runs cap at 5% and others do
         not, which makes the ``< 2%`` and cap-binding gates unreproducible.
         """
-        raw = mu / sigma**2
+        return self.kelly_sizing(mu / sigma**2)
+
+    def kelly_sizing(self, raw: float) -> KellySizing:
+        """Gate and sizing views of a raw Kelly edge from either method."""
         fractional = self.num("kelly.fraction") * raw
         cap = self.num("risk.max_single_name_weight")
         weight = min(max(fractional, 0.0), cap)

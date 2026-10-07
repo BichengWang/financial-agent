@@ -11,18 +11,39 @@ Standard library only, like the helpers in
 """
 
 from financial_agent.harness.audit import AuditReport, audit_output_dir, audit_record
-from financial_agent.harness.gates import StatusDecision, decide_status, investability
+from financial_agent.harness.gates import (
+    Reachability,
+    StatusDecision,
+    decide_status,
+    go_reachability,
+    investability,
+)
+from financial_agent.harness.kernels import (
+    EquityInputs,
+    KernelError,
+    MarketInputs,
+    equity_record,
+    market_forecast_records,
+    price_risk,
+)
 from financial_agent.harness.ledger import LedgerRow, SourceLedger
 from financial_agent.harness.lifecycle import RunLifecycle, RunState
+from financial_agent.harness.market_calendar import Session, session
 from financial_agent.harness.policy import Policy, load_policy
+from financial_agent.harness.schema import validate_payload
 from financial_agent.harness.skills import Skill, SkillRegistry, validate_skill_dir
 
 __all__ = [
     "AuditReport",
+    "EquityInputs",
+    "KernelError",
     "LedgerRow",
+    "MarketInputs",
     "Policy",
+    "Reachability",
     "RunLifecycle",
     "RunState",
+    "Session",
     "Skill",
     "SkillRegistry",
     "SourceLedger",
@@ -30,7 +51,13 @@ __all__ = [
     "audit_output_dir",
     "audit_record",
     "decide_status",
+    "equity_record",
+    "go_reachability",
     "investability",
     "load_policy",
+    "market_forecast_records",
+    "price_risk",
+    "session",
+    "validate_payload",
     "validate_skill_dir",
 ]
