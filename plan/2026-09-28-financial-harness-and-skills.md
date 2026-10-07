@@ -382,7 +382,7 @@ are never rewritten.
 | Phase | Work | Exit criterion |
 |---|---|---|
 | **1. Validate, don't replace** | Resolve the §6 decisions. Freeze JSON Schema v1 for `15_predictions.json` (canonical names, decimals, `kelly_method`, split Kelly fields, one status key). Call the `gate` command before `PUBLISHED` (one line in `agents.md` + the skill). CI workflow: harness tests + `audit --strict` on PRs touching `agents/equity/`. Content hash per package. *(Gate call, CI workflow (gate by effective date), and content hash / `clones` report shipped. Schema v1 shipped opt-in: `harness schema`, enforced by the gate when a ledger declares `schema_version: 1`; adopting it and the §6 decisions stay open.)* | 10 consecutive runs pass the gate with 0 error findings; no new settlement key-sets |
-| **2. Compute, don't transcribe** | Promote the per-run engine to kernels: families/trace, risk analytics, forecast, Kelly, feasibility, earnings sweep (fail closed), liveness and corporate-action screens. Typed ledger writer. Ledger + renderer produce `01`/`05`/`06`/`07`/`09` tables; model text uses `{{L…}}` citations, enforced by the lint. *(`kernels.py` shipped: risk analytics, ratios, and v1 record builders for names and core ETFs that refuse out-of-policy judgment; they reproduce the 2026-09-03 numbers. Not yet called by the daily prompts.)* | Numeric tables are 100% generated. Two models on the same day with the same inputs produce identical numbers, differing only in judgment fields. |
+| **2. Compute, don't transcribe** | Promote the per-run engine to kernels: families/trace, risk analytics, forecast, Kelly, feasibility, earnings sweep (fail closed), liveness and corporate-action screens. Typed ledger writer. Ledger + renderer produce `01`/`05`/`06`/`07`/`09` tables; model text uses `{{L…}}` citations, enforced by the lint. *(`kernels.py` shipped: risk analytics, ratios, and v1 record builders for names and core ETFs that refuse out-of-policy judgment; they reproduce the 2026-09-03 numbers. `portfolio_feasibility` shipped: portfolio beta, sigma, dd95, average pairwise correlation, sector weights and the event-risk count from proposed weights and closes, returned as `risk_breaches` for `decide_status` (`harness kernel portfolio`, MCP `portfolio_feasibility`). Not yet called by the daily prompts.)* | Numeric tables are 100% generated. Two models on the same day with the same inputs produce identical numbers, differing only in judgment fields. |
 | **3. Skills, not monolith** | Split the prompt stack into the §3.4 skills. `equity_policy.toml` becomes canonical and generates the `rules.md` tables. Evolution emits policy diffs or PRs; an accepted Track B change is a merged PR with a test. | Per-stage prompt context under 15 KB (from 104 KB); zero accepted changes that exist only in run logs |
 | **4. Run anywhere, on schedule** | `fa-harness run` entry point *(skeleton shipped: `harness run`, lock, handler table, gated publish, run journal under `output/.runs/`; handlers for PRECHECK (calendar + GO reachability) and REFLECTION (settlement summary); `harness manifest` generates the checklist, replay, and hash)*; MCP server over the same functions *(shipped: `harness mcp`, read-only tools over stdio)*; scheduled GitHub Actions workflow with a (model, date) lock, heartbeat, and duplicate-run guard; cassette record/replay; golden-run regression over history. | ≥ 95% of trading days run within ±30 min of schedule; any run replays byte-for-byte from cassettes |
 | **5. Make GO reachable** | Fund/Sent Phase 2 (bulk `companyfacts` + threaded Nasdaq) as capability skills and adapters. SHADOW → promoted becomes a policy diff with human approval *(`score.shadow_families`, protected)*. GO-reachability check at PRECHECK *(shipped: `harness reachability`, the PRECHECK handler, and the gate output)*. | GO is reachable, or its impossibility is reported by the harness on the first run instead of being discovered |
@@ -411,7 +411,15 @@ are never rewritten.
    keeps the computed status on weekends until `calendar.weekend_status` is set.
    With the calendar the replay still agrees on 73 of 83 packages: fable 07-03
    now matches, and gpt-5 06-19 (Juneteenth, published `NO_TRADE`) is a new miss.
-7. **Governance.** An accepted evolution change means a merged PR (human merge).
+7. **Exposure basis.** The beta band and the 30% sector cap are measured on
+   NAV (uninvested NAV is cash at beta 0) or on the invested book (normalized by
+   gross). Past runs use both: several gpt-5 packages publish `NO_TRADE` because
+   "maximum NAV beta is 0.509" at 35% gross, others check sleeve beta. On NAV a
+   book of at most 10 names at the 5% cap (50% gross) reaches the 0.90 floor only
+   with an average beta of 1.8, so `GO` is structurally unreachable. The harness
+   computes both and gates on `risk.exposure_basis` (protected), set to the
+   literal `NAV` until this is decided. The drawdown cap stays on NAV either way.
+8. **Governance.** An accepted evolution change means a merged PR (human merge).
    Is that acceptable? It closes the 46-flag `HUMAN_REVIEW` loop that never closes
    today.
 

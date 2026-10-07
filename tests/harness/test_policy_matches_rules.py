@@ -100,6 +100,11 @@ def test_core_etf_regime_priors(policy: Policy) -> None:
             1,
         ),
         (r"Fewer than (\d+) names pass", "evidence.min_investable_names", 1),
+        (
+            r"more than (\d+) names with earnings inside",
+            "evidence.max_earnings_names",
+            1,
+        ),
         (r"`0.25 x Kelly < (\d+)% NAV`", "kelly.penalty_below", 100),
         (
             r"change limit of `\+/- ([\d.]+)` per family",
