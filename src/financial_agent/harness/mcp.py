@@ -26,10 +26,12 @@ from typing import IO, Any, Callable, Mapping
 from financial_agent.harness.gates import go_reachability, replay_history
 from financial_agent.harness.kernels import (
     EquityInputs,
+    Holding,
     KernelError,
     MarketInputs,
     equity_record,
     market_forecast_records,
+    portfolio_feasibility,
     price_risk,
 )
 from financial_agent.harness.manifest import (
@@ -258,6 +260,39 @@ class HarnessServer:
                 lambda a: vars(
                     price_risk(
                         a["closes"], a["spy_closes"], tlt_closes=a.get("tlt_closes")
+                    )
+                ),
+            ),
+            Tool(
+                "portfolio_feasibility",
+                "Portfolio beta, sigma, dd95, average pairwise correlation and "
+                "sector weights for proposed NAV weights, with the protected "
+                "limits they breach. Pass breaches to the status decision.",
+                _object(
+                    {
+                        "holdings": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": _object(
+                                {
+                                    "ticker": {"type": "string"},
+                                    "weight": {"type": "number"},
+                                    "sector": {"type": "string"},
+                                    "closes": SERIES,
+                                    "earnings_within_window": {"type": "boolean"},
+                                },
+                                ("ticker", "weight", "sector", "closes"),
+                            ),
+                        },
+                        "spy_closes": SERIES,
+                    },
+                    ("holdings", "spy_closes"),
+                ),
+                lambda a: vars(
+                    portfolio_feasibility(
+                        [Holding.from_mapping(h) for h in a["holdings"]],
+                        a["spy_closes"],
+                        policy,
                     )
                 ),
             ),

@@ -95,6 +95,8 @@ min_data_completeness = 0.85
 min_data_quality_multiplier = 0.70
 min_investable_names = 5
 max_investable_names = 10
+# Downgrade to NO_TRADE #4: event risk too concentrated.
+max_earnings_names = 2
 
 [confidence]
 # rules.md § Confidence Labels: the highest label a record may carry. A model may
@@ -124,6 +126,11 @@ max_dd95_1m = 0.08
 earnings_window_days = 14
 earnings_penalty = 0.10
 enhancing_missing_gross_cap = 0.50
+# What the beta band and the sector cap are measured on: NAV (uninvested NAV is
+# cash at beta 0) or INVESTED (the book normalized by gross). NAV is the literal
+# reading; at a 5% name cap and <= 10 names it makes the beta floor unreachable
+# for ordinary betas. Owner decision pending (plan/2026-09-28 §6, decision 7).
+exposure_basis = "NAV"
 
 [calendar]
 # runbook.md § Cadence: "U.S. market holidays still publish an ILLUSTRATIVE_MODE
@@ -144,6 +151,7 @@ protected = [
     "risk.beta_band",
     "risk.max_avg_pairwise_corr",
     "risk.max_dd95_1m",
+    "risk.exposure_basis",
     "score.shadow_families",
     "calendar",
     "evolution",

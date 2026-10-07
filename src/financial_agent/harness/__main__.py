@@ -8,7 +8,7 @@
     python -m financial_agent.harness schema [<package>] [--json-schema]
     python -m financial_agent.harness session <YYYY-MM-DD>
     python -m financial_agent.harness reachability [--families tech_z macro_z]
-    python -m financial_agent.harness kernel {equity,market,risk} --input FILE
+    python -m financial_agent.harness kernel {equity,market,risk,portfolio} --input FILE
     python -m financial_agent.harness run --model <id> --date <YYYY-MM-DD>
     python -m financial_agent.harness manifest agents/equity/output/<model>-<date>
     python -m financial_agent.harness hash agents/equity/output/<model>-<date>
@@ -43,10 +43,12 @@ from financial_agent.harness.gates import (
 )
 from financial_agent.harness.kernels import (
     EquityInputs,
+    Holding,
     KernelError,
     MarketInputs,
     equity_record,
     market_forecast_records,
+    portfolio_feasibility,
     price_risk,
 )
 from financial_agent.harness.lifecycle import RunState
@@ -231,6 +233,14 @@ def run_kernel(kind: str, request: dict[str, Any], policy: Any) -> Any:
             [MarketInputs.from_mapping(item) for item in request["etfs"]],
             policy,
         )
+    if kind == "portfolio":
+        return vars(
+            portfolio_feasibility(
+                [Holding.from_mapping(item) for item in request["holdings"]],
+                request["spy_closes"],
+                policy,
+            )
+        )
     if kind == "risk":
         return vars(
             price_risk(
@@ -362,7 +372,7 @@ def build_parser() -> argparse.ArgumentParser:
     reach.set_defaults(func=cmd_reachability)
 
     kernel = sub.add_parser("kernel", help="compute records or risk from JSON input")
-    kernel.add_argument("kind", choices=["equity", "market", "risk"])
+    kernel.add_argument("kind", choices=["equity", "market", "risk", "portfolio"])
     kernel.add_argument("--input", type=Path, required=True, help="JSON file or -")
     kernel.add_argument("--policy", type=Path)
     kernel.set_defaults(func=cmd_kernel)
