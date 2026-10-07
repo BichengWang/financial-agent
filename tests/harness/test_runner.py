@@ -118,5 +118,57 @@ def test_default_cli_run_halts_with_no_side_effects(
         ["run", "--model", MODEL, "--date", DATE, "--output-dir", str(tmp_path)]
     )
     out = capsys.readouterr().out
-    assert code == 1 and "HALTED: no handler for PRECHECK" in out
-    assert [p.name for p in tmp_path.iterdir()] == [".locks"]
+    assert code == 1 and "HALTED: no handler for DATA_OK" in out
+    assert out.startswith("PRECHECK -> REFLECTION -> DATA_OK -> HALTED")
+    # Only the released lock directory and the journal: no package is written.
+    assert sorted(p.name for p in tmp_path.iterdir()) == [".locks", ".runs"]
+    journal = json.loads((tmp_path / ".runs" / f"{MODEL}-{DATE}.json").read_text())
+    assert journal["finished"] and journal["state"] == "HALTED"
+    precheck = journal["stages"]["PRECHECK"]
+    assert precheck["data"]["session"]["kind"] == "TRADING"
+    assert precheck["data"]["go_reachable"] is False
+
+
+def test_journal_records_every_stage_and_the_outcome(tmp_path: Path) -> None:
+    report = run(MODEL, DATE, tmp_path, handlers())
+    journal = json.loads((tmp_path / ".runs" / f"{MODEL}-{DATE}.json").read_text())
+    assert journal["finished"] and journal["status"] == "NO_TRADE"
+    assert journal["transcript"] == report.lifecycle.transcript()
+    assert list(journal["stages"]) == [s.value for s in PIPELINE]
+    assert journal["stages"]["PORTFOLIO_DRAFT"]["note"] == "wrote package"
+    assert journal["halt_reason"] is None and journal["gate_failures"] == []
+    assert not list((tmp_path / ".runs").glob("*.partial"))
+
+
+def test_later_stages_see_earlier_stage_data(tmp_path: Path) -> None:
+    seen: dict[str, object] = {}
+
+    def produce(_: RunContext) -> StageResult:
+        return StageResult("scored", data={"investable": ["VLO"]})
+
+    def consume(context: RunContext) -> StageResult:
+        seen.update(context.results[RunState.SCORED].data)
+        return StageResult("drafted")
+
+    table = handlers()
+    table[RunState.SCORED] = produce
+    table[RunState.PORTFOLIO_DRAFT] = lambda c: (consume(c), write_package(c))[1]
+    assert run(MODEL, DATE, tmp_path, table).published
+    assert seen == {"investable": ["VLO"]}
+
+
+def test_precheck_reports_the_session_and_refuses_future_dates(
+    tmp_path: Path,
+) -> None:
+    from financial_agent.harness.handlers import precheck_handler
+
+    holiday = precheck_handler(RunContext(MODEL, "2026-07-03", tmp_path))
+    assert holiday.halt is None
+    assert holiday.data["session"] == {
+        "date": "2026-07-03",
+        "kind": "HOLIDAY",
+        "basis_date": "2026-07-02",
+    }
+    assert "GO unreachable (3 structural blockers)" in holiday.note
+    future = precheck_handler(RunContext(MODEL, "2999-01-04", tmp_path))
+    assert future.halt is not None and "is after" in future.halt

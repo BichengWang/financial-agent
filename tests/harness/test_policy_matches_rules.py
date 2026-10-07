@@ -118,3 +118,34 @@ def test_beta_band(policy: Policy) -> None:
     assert [float(match.group(1)), float(match.group(2))] == policy.get(
         "risk.beta_band"
     )
+
+
+def test_shadow_families(policy: Policy) -> None:
+    match = re.search(r"must not fold `(\w+)`/`(\w+)` into `Adj Score`", RULES)
+    assert match
+    assert policy.shadow_families == match.groups()
+
+
+@pytest.mark.parametrize("label", ["HIGH", "MEDIUM"])
+def test_confidence_labels(policy: Policy, label: str) -> None:
+    match = re.search(
+        rf"`{label}`: (\d) of 4 (?:factor )?families supportive, "
+        r"percentile >= (\d+), data quality >= ([\d.]+)",
+        RULES,
+    )
+    assert match
+    level = label.lower()
+    assert [float(g) for g in match.groups()] == [
+        policy.num(f"confidence.{level}_min_families"),
+        policy.num(f"confidence.{level}_min_pctl"),
+        policy.num(f"confidence.{level}_min_data_quality"),
+    ]
+
+
+def test_holiday_status_matches_the_runbook(policy: Policy) -> None:
+    runbook = (REPO / "agents/equity/daily_investment_system/runbook.md").read_text(
+        encoding="utf-8"
+    )
+    match = re.search(r"U\.S\. market holidays still publish an `\w+` `(\w+)`", runbook)
+    assert match
+    assert policy.get("calendar.holiday_status") == match.group(1)

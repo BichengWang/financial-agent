@@ -19,8 +19,8 @@ def test_reflection_on_an_empty_history(tmp_path: Path) -> None:
     assert "0 canonical EQUITY_ALPHA settlements" in result.note
 
 
-def test_reflection_only_registered_handler() -> None:
-    assert set(default_handlers()) == {RunState.REFLECTION}
+def test_registered_handlers() -> None:
+    assert set(default_handlers()) == {RunState.PRECHECK, RunState.REFLECTION}
 
 
 @real_data

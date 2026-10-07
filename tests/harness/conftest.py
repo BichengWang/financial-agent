@@ -5,6 +5,7 @@ Run with: uv run pytest tests/harness  (or PYTHONPATH=src python3 -m pytest)
 
 from __future__ import annotations
 
+import copy
 import sys
 from pathlib import Path
 from typing import Any
@@ -25,6 +26,14 @@ real_data = pytest.mark.skipif(
 @pytest.fixture(scope="session")
 def policy() -> Policy:
     return load_policy()
+
+
+@pytest.fixture(scope="session")
+def promoted_policy(policy: Policy) -> Policy:
+    """The policy after Fund_Z and Sent_Z are promoted out of SHADOW."""
+    data = copy.deepcopy(dict(policy.data))
+    data["score"]["shadow_families"] = []
+    return Policy(data)
 
 
 @pytest.fixture
