@@ -25,7 +25,7 @@ jobs:
               /co-authored-by:.*(claude|anthropic)/i,
               /claude-session:/i,
               /claude\.ai\/code/i,
-              /generated with \[?claude/i,
+              /generated (with|by) \[?claude/i,
               /noreply@anthropic\.com/i,
             ];
             const person = (p) =>
