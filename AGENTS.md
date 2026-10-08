@@ -43,3 +43,10 @@ Run a script: `uv run python example/rl/cartpole_example.py`.
 3. **Notebooks are outputs.** `.ipynb` files in `notebooks/` contain committed results. Re-running them rewrites cell outputs and inflates diffs; avoid unless the task is about the notebook itself.
 4. **Dependencies go in `pyproject.toml`**, then `uv lock`. Do not edit `uv.lock` by hand.
 5. **Verify before declaring done.** For code changes, run the relevant example or test with `uv run …` and report the actual output.
+
+## Git and pull requests
+
+1. **No assistant attribution.** Nothing pushed to GitHub may name the coding assistant or tool that produced it: branch names (no `claude/` or similar prefix), commit messages, `Co-authored-by` trailers, commit author/committer, PR titles and descriptions, review replies, and PR comments. No "Generated with …" footers or session links. Model names that are part of the data (e.g. a daily-run package such as `claude-opus-5-2026-09-03`) are fine.
+2. **Branch prefixes** describe the change: `feat/`, `fix/`, `docs/`, `ci/`, `chore/`, `refactor/`, `test/`, or `run/` for daily-run packages.
+3. **Scope feature work into a sequence of PRs.** Split a new feature into small, independently reviewable PRs (at most 10 per feature), each with one purpose and passing CI on its own.
+4. **Land them sequentially.** Open each PR from the latest `main`, merge it, then branch the next one from the updated `main`. Don't stack branches on unmerged work or merge out of order.
