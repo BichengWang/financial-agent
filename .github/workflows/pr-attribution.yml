@@ -1,0 +1,64 @@
+# Enforces AGENTS.md "Git and pull requests" rule 1: no assistant attribution in
+# the branch name, PR title/description, or any commit on the PR. Model names
+# that are part of the data (e.g. run/claude-opus-5-2026-09-03) are allowed.
+
+name: PR Attribution
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  attribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch, title, description, and commits
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branchPrefix = /^claude([\/_-]|$)/i;
+            const text = [
+              /co-authored-by:.*(claude|anthropic)/i,
+              /claude-session:/i,
+              /claude\.ai\/code/i,
+              /generated (with|by) \[?claude/i,
+              /noreply@anthropic\.com/i,
+            ];
+            const person = (p) =>
+              /anthropic\.com/i.test(p?.email ?? '') || /^claude\b/i.test(p?.name ?? '');
+
+            const pr = context.payload.pull_request;
+            const problems = [];
+            if (branchPrefix.test(pr.head.ref)) {
+              problems.push(`branch name: ${pr.head.ref}`);
+            }
+            for (const [where, value] of [['title', pr.title], ['description', pr.body ?? '']]) {
+              for (const re of text) {
+                if (re.test(value)) problems.push(`PR ${where} matches ${re}`);
+              }
+            }
+
+            const commits = await github.paginate(github.rest.pulls.listCommits, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+            for (const c of commits) {
+              const sha = c.sha.slice(0, 7);
+              for (const re of text) {
+                if (re.test(c.commit.message)) problems.push(`commit ${sha} message matches ${re}`);
+              }
+              if (person(c.commit.author)) problems.push(`commit ${sha} author: ${c.commit.author.name} <${c.commit.author.email}>`);
+              if (person(c.commit.committer)) problems.push(`commit ${sha} committer: ${c.commit.committer.name} <${c.commit.committer.email}>`);
+            }
+
+            if (problems.length) {
+              core.setFailed(`Assistant attribution found (see AGENTS.md):\n- ${problems.join('\n- ')}`);
+            } else {
+              core.info(`No attribution found in ${commits.length} commit(s).`);
+            }
