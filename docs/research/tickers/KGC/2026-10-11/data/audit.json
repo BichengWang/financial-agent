@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "fact price: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact market_cap: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact capital_expenditure: needs observations from two distinct publishers"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

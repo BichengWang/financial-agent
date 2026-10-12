@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "ticker": "STRL",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-fy25",
+      "url": "https://www.strlco.com/news/sterling-reports-strong-fourth-quarter-and-full-year-2025-results-and-issues-full-year-2026-guidance/",
+      "title": "Full year 2025 results",
+      "publisher": "Sterling Infrastructure",
+      "accessed_at": "2026-10-11",
+      "excerpt": "February25,2026. Statements thousands USD except EPS. FY2025 revenue2,490,049; net income including NCI309,725; attributable common290,153; diluted EPS9.38, adjusted10.88; OCF439,988; capex77,312. Cash390,721; debt current15,146/noncurrent275,903; lease obligations18,679/40,186. FY2024 revenue2,115,756, attributed net257,461, EPS8.27, OCF497,104, capex80,954. RHB deconsolidation2024 pretax gain91,289, posttax EPS2.18, revenue/backlog cease consolidation. FY2025 E-Infrastructure sales1,466,777, operating margin23.6%; Transportation640,674/12.1%; Building382,598/10.2%. Signed backlog$3.01B, combined$3.31B includes unsigned300.7M; CEC contributes488.9M signed/715.2M combined. Mission-critical data center/manufacturing/semiconductor84% E-Infrastructure backlog. Receivables501,163 versus247,050; contract assets101,154 versus55,387; contract liabilities652,357 versus508,846. OCF change operating assets/liabilities9,363 versus199,816. Cash acquisitions482,333, repurchases74,200, stock compensation24,181; Q4 buybacks25.7M at average310.09. Low-bid Texas highway business downsizing; Building affected by housing affordability."
+    },
+    {
+      "id": "issuer-q226",
+      "url": "https://www.strlco.com/news/sterling-reports-record-second-quarter-results-and-raises-full-year-2026-guidance/",
+      "title": "Second quarter 2026 results",
+      "publisher": "Sterling Infrastructure",
+      "accessed_at": "2026-10-11",
+      "excerpt": "August3,2026. Thousands USD except EPS. Q2 revenue1,168,179 +90%, CEC/StoneRidge acquisition revenue250.8M; organic approx50%; common net155,826/EPS5.00, adjusted5.80. H1 revenue1,993,854, attributed common251,795/EPS8.09, OCF328,021, capex69,646. June30 cash464,451, debt current15,141/long268,734, lease14,613/38,327. Receivables770,671/current contract assets156,295/contract liabilities802,601; H1 operating assets/liabilities cash(22,620), acquisition cash139,985, repurchases35,256. Signed backlog4.33B +116%, organic+50%; combined5.62B includes unsigned1.28B of which1.24B CEC/StoneRidge. Future phases exceed1.4B, aggregate opportunity pool>7B is not signed backlog. Mission-critical92% E-Infrastructure backlog. Q2 E-Infrastructure revenue905,001 (78% company), operating margin23.3% versus27.0%; Transportation revenue-20%/margin18.0%; Building revenue-1%/margin8.0%. Raised2026 GAAP EPS17.25-17.85, adjusted19.70-20.30, revenue4.00-4.15B; forecasts not realized. Current CEO Joe Cutillo."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/strl/",
+      "title": "Dated regular-session quote and snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "STRL ordinary common stock, NASDAQ, USD. At close October9,2026,4:00PM EDT: $513.00. Shares Out 30.59M; market cap 15.69B. Vendor displayed actual shares outstanding, not weighted-average EPS shares; underlying share effective date not supplied in quote snapshot. After-hours separately displayed and not used. No split normalization needed for displayed USD price/EPS basis."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/strl/financials/",
+      "title": "Annual and trailing financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD; FY2025 December31 revenue2,490; common net290.15; EPS9.38; OCF439.99; capex-77.31; cash/investments390.72; standardized debt349.91. FY2021-25 revenue1,414/1,769/1,972/2,116/2,490; EPS2.15/3.48/4.44/8.27/9.38; OCF158.93/219.12/478.58/497.1/439.99. Vendor operating413.51 differs issuer405.916, not GAAP corroboration."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "513.00",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; no split or ADR conversion. Yahoo historical alternate429 and FinanceCharts alternate403; single dated publisher retained.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "513.00",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "30590000",
+      "unit": "shares",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "30590000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "15690000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "15690000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "2490049000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "2490049000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "2490000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "290153000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Attributable to common shareholders, not pre-noncontrolling-interest consolidated income.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "290153000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "290150000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "439988000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "439988000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "439990000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "77312000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Positive gross cash capital spend for same annual period as OCF; proceeds and acquisitions not netted.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "77312000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "77310000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "390721000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Cash and equivalents only; excludes restricted cash and separately identified investments.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "390721000",
+          "period": "2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "390720000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "291049000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-fy25"
+      ],
+      "note": "Explicit component aggregation estimate; borrowings exclude operating leases. Current15.146M plus long275.903M =291.049M; excludes58.865M lease obligations. Vendor349.91M wider lease-inclusive, not corroboration."
+    },
+    "eps": {
+      "value": "9.38",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. GAAP diluted total annual EPS, not adjusted/forward or quarterly annualized.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "9.38",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "9.38",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.13",
+      "unit": "decimal",
+      "period": "2026-10-11 nominal USD equity hurdle",
+      "kind": "assumption",
+      "sources": [],
+      "note": "Assumed return hurdle above sourced5.24% Treasury; project underwriting, concentrated AI-capex cycle and acquisition integration require materially higher equity hurdle."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://finance.yahoo.com/quote/STRL/history/",
+      "result": "HTTP429",
+      "alternative": "https://stockanalysis.com/stocks/strl/"
+    },
+    {
+      "url": "https://www.financecharts.com/stocks/STRL",
+      "result": "HTTP403",
+      "alternative": "https://stockanalysis.com/stocks/strl/"
+    }
+  ],
+  "valuation": {
+    "base_eps": "eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2030-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 GAAP diluted EPS9.38 is assumed as conservative initial October11,2026 earning capacity, not literal FY2029 EPS nor current observed EPS. Four annual compounding periods end October11,2030; exit PE applies trailing terminal earning capacity.2026 GAAP guidance17.25-17.85 is context, not the anchor or a fifth growth year; project cycle and acquisition integration make normalization uncertain."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.00",
+        "exit_multiple": "14",
+        "years": 4,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "22",
+        "years": 4,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "28",
+        "years": 4,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

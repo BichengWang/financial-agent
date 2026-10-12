@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "AMD",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "992708073040.20",
+    "market_cap_deviation": "0.000001941110495512284554401587573410160066888",
+    "free_cash_flow": "6697000000",
+    "free_cash_flow_yield": "0.006746179649645918747670518076779724189340",
+    "pe": "229.4716981132075471698113207547169811321"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "20",
+        "years": 3,
+        "probability": "0.30",
+        "target_price": "45.44087500",
+        "total_return": "-0.9252740092090116757112317053116263772406",
+        "annualized_return": "-0.5787978681005827372002027672667408112895",
+        "present_target": "32.34391726835823615160349854227405247813"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "30",
+        "years": 3,
+        "probability": "0.50",
+        "target_price": "137.37600000",
+        "total_return": "-0.7740897878638381845091267883571780957079",
+        "annualized_return": "-0.3909607418369389289310922952513205753677",
+        "present_target": "97.78152332361516034985422740524781341108"
+      },
+      {
+        "name": "bull",
+        "growth": "0.35",
+        "exit_multiple": "40",
+        "years": 3,
+        "probability": "0.20",
+        "target_price": "260.79975000",
+        "total_return": "-0.5711235816477553034040453872718302910705",
+        "annualized_return": "-0.2458737541843072939261140131346748754774",
+        "present_target": "185.6321106846756559766763848396501457726"
+      }
+    ],
+    "weighted_present_target": "95.72035897925018221574344023323615160350"
+  }
+}

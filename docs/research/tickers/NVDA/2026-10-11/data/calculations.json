@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "NVDA",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "5536424160000.00",
+    "market_cap_deviation": "0.0006454584837545126353790613718411552346570",
+    "free_cash_flow": "96676000000",
+    "free_cash_flow_yield": "0.01745054151624548736462093862815884476534",
+    "pe": "46.79183673469387755102040816326530612245"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "20",
+        "years": 3,
+        "probability": "0.30",
+        "target_price": "84.02275000",
+        "total_return": "-0.6335365055826936496859734822051639916260",
+        "annualized_return": "-0.2843891672914456050552932859332538247826",
+        "present_target": "59.80573381696428571428571428571428571429"
+      },
+      {
+        "name": "base",
+        "growth": "0.15",
+        "exit_multiple": "28",
+        "years": 3,
+        "probability": "0.50",
+        "target_price": "208.66405000",
+        "total_return": "-0.0899160415212840195394277739009071877181",
+        "annualized_return": "-0.0309180903237598480625627966504362712838",
+        "present_target": "148.52294921875"
+      },
+      {
+        "name": "bull",
+        "growth": "0.25",
+        "exit_multiple": "35",
+        "years": 3,
+        "probability": "0.20",
+        "target_price": "334.96093750",
+        "total_return": "0.460925233339148639218422889043963712491",
+        "annualized_return": "0.134686784613498038084221479007451418985",
+        "present_target": "238.4185791015625"
+      }
+    ],
+    "weighted_present_target": "139.8869105747767857142857142857142857143"
+  }
+}

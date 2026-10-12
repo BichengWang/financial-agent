@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "PDD",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "115517000000.00",
+    "market_cap_deviation": "0.002357716555833837118922186717333103031350",
+    "free_cash_flow": "15128285000",
+    "free_cash_flow_yield": "0.1306527765782882805078158735642110717679",
+    "pe": "8.619525530303030303030303030150712839000"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-.10",
+        "exit_multiple": "6",
+        "years": 3,
+        "probability": ".35",
+        "target_price": "37.153136663282378344368019907304000",
+        "total_return": "-0.5432927269418269410649290730509649661955",
+        "annualized_return": "-0.2299020346951713772207910693709025090048",
+        "present_target": "23.80244209946234620651729513516851859445"
+      },
+      {
+        "name": "base",
+        "growth": ".04",
+        "exit_multiple": "10",
+        "years": 3,
+        "probability": ".45",
+        "target_price": "95.546927113869385537172355612733440",
+        "total_return": "0.174516620944921764439733935005942716656",
+        "annualized_return": "0.055082425354789719143754713920693032572",
+        "present_target": "61.21287203879655373399147387957521833614"
+      },
+      {
+        "name": "bull",
+        "growth": ".10",
+        "exit_multiple": "14",
+        "years": 3,
+        "probability": ".20",
+        "target_price": "158.278817691724700061489182202264000",
+        "total_return": "0.945652337943757837264771754176570374923",
+        "annualized_return": "0.248403794665102301360835615559078585508",
+        "present_target": "101.4025391132559120284049560010814301529"
+      }
+    ],
+    "weighted_present_target": "56.15715497492145275825820774333411578990"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "ticker": "COHR",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/cohr/",
+      "title": "COHR observed quote and capitalization",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ/NYSE COHR, USD. At close: Oct 9, 2026, 4:00 PM EDT: 312.62. Market Cap 61.56B; Shares Out 196.93M. Vendor snapshot, not independently audited quote-date shares."
+    },
+    {
+      "id": "fiscal-search",
+      "url": "https://fiscal.ai/company/NYSE-COHR",
+      "title": "October9 closing quote search observation",
+      "publisher": "Fiscal.ai",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Coherent Corp. \u20142026-10-09 (USD). Open318.50; Close312.62. Change+10.27(+3.40%) vs302.35 close2026-10-08. Prices split-adjusted. Search-only; direct page429."
+    },
+    {
+      "id": "cohr-fy26",
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/financial-releases/2026/august-12/earnings-release-fy26-q4.pdf",
+      "title": "Coherent FY2026 results August12",
+      "publisher": "Coherent Corp.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "URL: https://www.coherent.com/content/dam/coherent/site/en/documents/investors/financial-releases/2026/august-12/earnings-release-fy26-q4.pdf\nContent-Type: application/pdf\nMethod: markit\nNotes: Converted with markit\n\n---\n\n<!-- Page 1 -->\n\n|||Coherent Corp.|\n|---|---|---|\n|||375 Saxonburg Blvd. Saxonburg, PA 16056-9499|\n\n## PRESS RELEASE\n\n# COHERENT CORP. REPORTS FOURTH QUARTER AND FULL YEAR FISCAL 2026 RESULTS\n\n- **Q4 REVENUE OF $2.05B, INCREASED 34% Y/Y AND 42% Y/Y ON A PRO FORMA BASIS**\n- **Q4 GAAP GROSS MARGIN OF 38.5%, INCREASED 277 bps Y/Y; Q4 NON-GAAP GROSS MARGIN OF 40.2%, INCREASED 215 bps Y/Y**\n- **Q4 GAAP EPS OF $1.19, INCREASED $2.02 Y/Y; Q4 NON-GAAP EPS OF $1.74, INCREASED $0.74 Y/Y** **SAXONBURG, Pa., August 12, 2026** \u2013 Coherent Corp. (NYSE: COHR) (\u201cCoherent,\u201d \u201cWe,\u201d or the \u201cCompany\u201d), a global leader in photonics, announced financial results today for its fiscal fourth quarter and full year fiscal 2026 ended June 30, 2026. Revenue for the fourth quarter of fiscal 2026 was $2.05 billion, with GAAP gross margin of\n38.5% and GAAP net income of $1.19 per diluted share. On a non-GAAP basis, gross margin was 40.2% with net income per diluted share of $1.74. \u201cFiscal 2026 was an outstanding year for Coherent, with record revenue, significant margin expansion, and non-GAAP EPS growth that was more than twice the rate of revenue growth\u201d said Jim Anderson, CEO. \u201cWe enter fiscal 2027 with exceptional customer demand, expanding production capacity, and multiple new growth platforms beginning to ramp. As AI datacenter architectures increasingly transition from copper to optical connectivity, we believe Coherent\u2019s broad photonic technology portfolio and manufacturing scale uniquely position us to deliver accelerating growth and capitalize on this multi-year opportunity.\u201d Sherri Luther, CFO, said, \u201cStrong operational execution across our business drove meaningful gross margin expansion and converted our top-line revenue growth into robust GAAP and non-GAAP EPS growth. As we enter fiscal 2027, we remain disciplined in our capital allocation, prioritizing investments to expand manufacturing capacity so we can efficiently fulfill the ongoing acceleration in customer demand.\u201d\n\n<!-- Page 2 -->\n\n**Selected Fourth Quarter and Full Year 2026 Financial Results and Comparisons (in millions, except percentages and per share data)**\n\n|Table 1||||||||||\n|---|---|---|---|---|---|---|---|---|---|\n|||Q4 FY26|Q3 FY26|Q4 FY25|GAAP Financial Results (unaudited) Q/Q|Y/Y|FY 2026|FY 2025|FY/FY|\n|Revenues||$ 2,046|$ 1,806|$ 1,529|13.3%|33.8%|$ 7,118|$ 5,810|22.5%|\n|Gross Margin %||38.5 %|37.7 %|35.7 %|82 bps|277 bps|37.5 %|35.2 %|233 bps|\n|R&D Expense %||10.6 %|10.3 %|10.2 %|28 bps|40 bps|10.2 %|10.0 %|14 bps|\n|SG&A Expense %||13.0 %|14.8 %|16.0 %|(180) bps|(302) bps|14.7 %|15.9 %|(127) bps|\n|Operating Expenses||$ 533|$ 479|$ 540|11.2 %|(1.3)%|$ 1,771|$ 1,753|1.0%|\n|Operating Income<sup>(1)</sup>||$ 254|$ 201|$ 6|26.5%|4063.9%|$ 898|$ 290|209.7%|\n|Operating Margin||12.4 %|11.1 %|0.4 %|130 bps|1,202 bps|12.6 %|5.0 %|762 bps|\n|Net Earnings Attributable to Coherent Corp.||$ 241|$ 191|$ (96)|25.8%|(351.6)%|$ 805|$ 49|1530.8%|\n|Diluted Earnings (Loss) Per Share||$ 1.19|$ 0.97|$ (0.83)|$ 0.22|$ 2.02|$ 4.12|$ (0.52)|$ 4.64|\n\n(1)Operating Income is defined as earnings (loss) before income taxes, interest expense, and other expense or income, net.\n**Selected Fourth Quarter and Full Year 2026 Financial Results and Comparisons (in millions, except percentages and per share data)**\n\n|Table 1, continued||||||||||\n|---|---|---|---|---|---|---|---|---|---|\n|||Q4 FY26|Q3 FY26|Q4 FY25|Non-GAAP Financial Results (unaudited) Q/Q|Y/Y|<sub>(1)(2)</sub> FY 2026|FY 2025|FY/FY|\n|Revenues||$ 2,046|$ 1,806|$ 1,529|13.3%|33.8%|$ 7,118|$ 5,810|22.5 %|\n|Gross Margin %||40.2 %|39.6 %|38.1 %|66 bps|215 bps|39.4 %|37.9 %|152 bps|\n|R&D Expense %||10.2 %|9.9 %|9.8 %|30 bps|39 bps|9.7 %|9.5 %|20 bps|\n|SG&A Expense %||8.2 %|9.4 %|10.3 %|(116) bps|(205) bps|9.2 %|10.5 %|(130) bps|\n|Operating Expenses||$ 377|$ 348|$ 307|8.2%|22.7%|$ 1,350|$ 1,165|15.8 %|\n|Operating Income||$ 446|$ 366|$ 275|21.8%|62.1%|$ 1,457|$ 1,037|40.5 %|\n|Operating Margin||21.8 %|20.3 %|18.0 %|152 bps|381 bps|20.5 %|17.8 %|262 bps|\n|Net Earnings Attributable to Coherent Corp.||$ 351|$ 276|$ 192|27.2%|82.7%|$ 1,097|$ 693|58.3 %|\n|Diluted Earnings Per Share||$ 1.74|$ 1.41|$ 1.00|$ 0.33|$ 0.74|$ 5.61|$ 3.53|$ 2.08|\n\n(1)During the second fiscal quarter of 2025, the Company refined its methodology to report non-GAAP measures. The change does not impact the Company\u2019s financial position, cash flows, or GAAP consolidated results of operations. Prior period non-GAAP financial measures presented in this press release have been recast to conform to the current presentation.\n(2)The Company has disclosed financial measurements in this earnings release that present financial information that are considered to be non-GAAP financial measures. These measurements are not a substitute for GAAP measurements, although the Company's management uses these measurements as an aid in monitoring the Company's on-going financial performance. The non-GAAP net earnings attributable to Coherent Corp., the non-GAAP diluted earnings per share, the non-GAAP operating income, the non-GAAP gross margin, the non-GAAP research and development, the non-GAAP selling, general and administration, the non-GAAP operating expenses, the non-GAAP interest and other (income) expense, and the non-GAAP income taxes, measure earnings and operating income (loss), respectively, excluding non- recurring or unusual items that are considered by management to be outside the Company\u2019s standard operation and excluding certain non-cash items. There are limitations associated with the use of non-GAAP financial measures, including that such measures may not be entirely\n\n<!-- Page 3 -->\n\ncomparable to similarly titled measures used by other companies, due to potential differences among calculation methodologies. Thus, there can be no assurance whether (i) items excluded from the non-GAAP financial measures will occur in the future or (ii) there will be cash costs associated with items excluded from the non-GAAP financial measures. The Company compensates for these limitations by using these non-GAAP financial measures as supplements to GAAP financial measures and by providing the reconciliations of the non-GAAP financial measures to their most comparable GAAP financial measures. Investors should consider adjusted measures in addition to, and not as a substitute for, or superior to, financial performance measures prepared in accordance with GAAP. All non-GAAP amounts exclude certain adjustments for share-based compensation, acquired intangible amortization expense, restructuring charges (recoveries), impairments of assets held-for-sale, gains on sale of business, integration and site consolidation expenses, integration transaction expenses, and various one-time adjustments. See Table 6 for the Reconciliation of GAAP measures to non-GAAP measures.\n\n||Business Outlook \u2013 First Quarter Fiscal 2027 (1)|\n|---|---|\n||\u2022 Revenue for the first quarter of fiscal 2027 is expected to be between $2.2 billion and $2.4 billion. \u2022 Gross margin percentage for the first quarter of fiscal 2027 is expected to be between 39.5% and 41.5% on a non-GAAP basis. \u2022 Total operating expenses for the first quarter of fiscal 2027 are expected to be between $400 million and $420 million on a non-GAAP basis. \u2022 Tax rate for the first quarter of fiscal 2027 is expected to be between 18% and 20% on a non-GAAP basis. \u2022 EPS for the first quarter of fiscal 2027 is expected to be between $1.85 and $2.05 on a non-GAAP basis. expenses, non-GAAP tax rate and non-GAAP earnings per share, because we cannot, without unreasonable efforts, forecast certain items required to develop comparable GAAP measures. These items include, without limitation, restructuring charges, integration, site consolidation and other expenses, foreign exchange gains (losses), and share based compensation expense. The variability of these items could significantly impact our future GAAP financial results and we believe that the inclusion of any such reconciliations would imply a degree or precision that could be confusing or misleading to investors. Investor Conference Call / Webcast Details Coherent will review the Company\u2019s financial results for its fourth quarter and full year fiscal 2026 and business outlook on Wednesday, August 12, at 4:30 p.m. ET. A live webcast and replay of the conference call will be available on the Investor Relations section of the Company\u2019s website at coherent.com/company/investor-relations. The Company\u2019s financial guidance will be limited to the comments on its public quarterly earnings call and the public business outlook statements contained in this press release.|\n\n(1) The Company has not provided a quantitative reconciliation of forward-looking non-GAAP gross margin percentage, non-GAAP operating\n\n### Additional Information and Where to Find It\n\nIn connection with the conference call described above, the Company intends to file an investor presentation as an exhibit to a Current Report on Form 8-K filed with the Securities and Exchange Commission (\u201cSEC\u201d) and to post the investor presentation on the Company\u2019s website at <u>coherent.com/company/investor-relations/investor-presentations</u> after market close on August 12, 2026. We also may, from time to time, post other important information for investors on our website at <u>coherent.com/company/investor-relations.</u> We intend to use our website as a means of disclosing material, non-public information and for complying with our disclosure obligations under Regulation FD. Accordingly, investors should review the Investor Relations page of our website referenced above, in addition to following the Company\u2019s press releases, SEC filings, and public conference calls, presentations, and webcasts. Investors and security holders are\n\n<!-- Page 4 -->\n\nable to obtain free copies of these documents through the Company\u2019s website referenced above. Copies of the documents filed by the Company with the SEC may be obtained free of charge on the Company\u2019s website at <u>coherent.com/company/investor-relations/sec-filings</u>. The information contained on, or that may be accessed through, the Company\u2019s website is not incorporated by reference into, and is not part of, this release.\n\n### Forward-Looking Statements\n\nThis press release contains statements, estimates, and projections that constitute \u201cforward-looking statements\u201d as defined under U.S. federal securities laws \u2013 including our estimates and projections for our business outlook for the first quarter of fiscal 2027, each of which is made pursuant to the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995 and relate to the Company\u2019s performance on a going-forward basis. The forward-looking statements are subject to certain risks and uncertainties that could cause the Company\u2019s actual results to differ materially from its historical experience and our present expectations or projections.\n\nThe Company believes that all forward-looking statements made by it herein have a reasonable basis, but there can be no assurance that management\u2019s expectations, beliefs, or projections as expressed in the forward-looking statements will actually occur or prove to be correct. In addition to general industry and global economic conditions, factors that could cause actual results to differ materially from those discussed in the forward-looking statements herein include but are not limited to: (i) the failure of any one or more of the assumptions stated herein to prove to be correct; (ii) changes in demand in the Company\u2019s end markets along with the Company\u2019s ability to respond to such market changes; (iii) our failure to accurately estimate customer demand and future sales and/or fluctuations in purchasing patterns of customers and end users; (iv) the ability of the Company to retain and hire key employees; (v) the terms of the Company\u2019s indebtedness and ability to service such debt (vi) the timely release of new products and acceptance of such new products by the market; (vii) the introduction of new products by competitors and other competitive responses; (viii) the risks to realizing the benefits of investments in R&D and commercialization of innovations; (ix) the risks that the Company\u2019s stock price will not trade in line with industrial technology leaders; (x) the impact of international conflict and economic volatility in either domestic or foreign markets, including risks related to the impact of trade protection measures, such as import tariffs by the United States or retaliatory actions taken by other countries; and/or (xi) the risks relating to forward-looking statements and other \u201cRisk Factors\u201d identified from time to time in our filings with the SEC, including our Annual Report on Form 10-K for the fiscal year ended June 30, 2025, and our subsequently filed Quarterly Reports on Form 10-Q and Form 10-K, which filings are available from the SEC. You should not place undue reliance on forward-looking statements, which speak only as of the date they are made. The Company disclaims any obligation to update information contained in these forward-looking statements, whether as a result of new information, future events or developments, or otherwise.\n\n<!-- Page 5 -->\n\n### <u>About Coherent</u>\n\nCoherent is the global photonics leader. We harness photons to drive innovation. Industry leaders in the datacenter, communications, and industrial markets rely on Coherent\u2019s world- leading technology to fuel their own innovation and growth.\n\nFounded in 1971 and operating in more than 20 countries, Coherent brings the industry\u2019s broadest, deepest technology stack; unmatched supply chain resilience; and global scale to help its customers solve their toughest technology challenges. For more information, please visit us at <u>coherent.com</u>.\n\n### Contact:\n\nPaul Silverstein Senior VP, Investor Relations investor.relations@coherent.com\n\n### # # #\n\n|Table 2|||||||\n|---|---|---|---|---|---|---|\n|Coherent Corp. and Subsidiaries|||||||\n|Condensed Consolidated Statements of Earnings (Loss)*||THREE MONTHS ENDED|||||\n|$ Millions, except per share amounts (unaudited)||Jun 30, 2026||Mar 31, 2026||Jun 30, 2025|\n|Revenues||$ 2,045.5||$ 1,805.6||$ 1,529.4|\n|Costs, Expenses & Other Expense (Income)|||||||\n|Cost of goods sold||1,258.5||1,125.7||983.3|\n|Research and development||216.4||186.0||155.7|\n|Selling, general and administrative||266.4||267.6||245.4|\n|Restructuring charges||6.1||34.4||53.9|\n|Impairment of assets held-for-sale||44.3||\u2014||85.0|\n|Gain on sale of business||\u2014||(8.9)||\u2014|\n|Interest expense||41.1||44.6||55.0|\n|Other expense (income), net||(65.6)||(28.1)||14.4|\n|Total Costs, Expenses, & Other Expense||1,767.0||1,621.3||1,592.9|\n|Earnings (Loss) Before Income Taxes||278.5||184.3||(63.4)|\n|Income Taxes||42.3||2.7||34.7|\n|Net Earnings (Loss)||236.2||181.7||(98.1)|\n|Net Loss Attributable to Noncontrolling Interests||(4.3)||(9.7)||(2.5)|\n|Net Earnings (Loss) Attributable to Coherent Corp.||240.5||191.4||(95.6)|\n|Less: Dividends on Preferred Stock||\u2014||\u2014||33.1|\n|Net Earnings (Loss) Available to the Common Shareholders||$ 240.5||$ 191.4||$ (128.8)|\n|Basic Earnings (Loss) Per Share||$ 1.23||$ 1.01||$ (0.83)|\n|Diluted Earnings (Loss) Per Share||$ 1.19||$ 0.97||$ (0.83)|\n|Average Shares Outstanding-Basic||195.7||190.2||155.5|\n|Average Shares Outstanding-Diluted||202.2||196.4||155.5|\n|*Amounts may not recalculate due to rounding.|||||||\n\n|Table 2|||||\n|---|---|---|---|---|\n|Coherent Corp. and Subsidiaries|||||\n|Condensed Consolidated Statements of Earnings*|||||\n|(Continued)||YEAR ENDED|||\n|$ Millions, except per share amounts (unaudited)||Jun 30, 2026||Jun 30, 2025|\n|Revenues||$ 7,118.2||$ 5,810.1|\n|Costs, Expenses & Other Expense (Income)|||||\n|Cost of goods sold||4,449.1||3,766.8|\n|Research and development||723.0||581.9|\n|Selling, general and administrative||1,044.6||926.5|\n|Restructuring charges||63.4||160.1|\n|Impairment of assets held-for-sale||64.4||85.0|\n|Gain on sale of business||(124.1)||\u2014|\n|Interest expense||190.3||243.3|\n|Other expense (income), net||(140.1)||(47.6)|\n|Total Costs, Expenses, & Other Expense||6,270.4||5,715.9|\n|Earnings Before Income Taxes||847.7||94.2|\n|Income Taxes||60.8||64.1|\n|Net Earnings||786.9||30.1|\n|Net Loss Attributable to Noncontrolling Interests||(18.1)||(19.3)|\n|Net Earnings Attributable to Coherent Corp.||805.0||49.4|\n|Less: Dividends on Preferred Stock||35.1||129.9|\n|Net Earnings (Loss) Available to the Common Shareholders||$ 769.9||$ (80.6)|\n|Basic Earnings (Loss) Per Share||$ 4.34||$ (0.52)|\n|Diluted Earnings (Loss) Per Share||$ 4.12||$ (0.52)|\n|Average Shares Outstanding-Basic||177.3||154.8|\n|Average Shares Outstanding-Diluted||195.4||154.8|\n|*Amounts may not recalculate due to rounding.|||||\n\n|Table 3||||\n|---|---|---|---|\n|Coherent Corp. and Subsidiaries||||\n|Condensed Consolidated Balance Sheets*||||\n|$ Millions (unaudited)|Jun 30, 2026||Jun 30, 2025|\n|Assets||||\n|Current Assets||||\n|Cash and cash equivalents|$ 1,162.0||$ 909.2|\n|Restricted cash, current|35.2||8.9|\n|Short-term investments|825.0||\u2014|\n|Accounts receivable|1,343.3||964.1|\n|Inventories|2,581.0||1,437.6|\n|Prepaid and refundable income taxes|78.9||55.8|\n|Prepaid and other current assets|900.1||551.6|\n|Total Current Assets|6,925.5||3,927.2|\n|Property, plant & equipment, net|2,999.3||1,877.5|\n|Goodwill|4,375.6||4,471.1|\n|Other intangible assets, net|2,884.5||3,204.7|\n|Deferred income taxes|69.4||53.4|\n|Restricted cash, non-current|571.2||714.8|\n|Other assets|474.3||662.2|\n|Total Assets|$ 18,299.9||$ 14,910.9|\n|Liabilities, Mezzanine Equity and Equity||||\n|Current Liabilities||||\n|Current portion of long-term debt|$ 7.9||$ 188.3|\n|Accounts payable|1,905.4||847.0|\n|Operating lease current liabilities|61.4||41.6|\n|Accruals and other current liabilities|879.3||718.0|\n|Total Current Liabilities|2,853.9||1,794.8|\n|Long-term debt|3,214.3||3,498.6|\n|Deferred income taxes|540.6||711.7|\n|Operating lease liabilities|254.8||165.2|\n|Other liabilities|198.0||259.3|\n|Total Liabilities|7,061.7||6,429.7|\n|Total Mezzanine Equity|\u2014||2,483.3|\n|Total Coherent Corp. Shareholders' Equity|10,903.5||5,644.5|\n|Noncontrolling interests|334.7||353.5|\n|Total Equity|11,238.2||5,998.0|\n|Total Liabilities, Mezzanine Equity and Equity|$ 18,299.9||$ 14,910.9|\n|*Amounts may not recalculate due to rounding.||||\n\n|Table 4|||||\n|---|---|---|---|---|\n|Coherent Corp. and Subsidiaries|||||\n|Condensed Consolidated Statements of Cash Flows*||YEAR ENDED|||\n|$ Millions (unaudited)||Jun 30, 2026||Jun 30, 2025|\n|Cash Flows from Operating Activities|||||\n|Net cash provided by operating activities||$ 79.5||$ 633.6|\n|Cash Flows from Investing Activities|||||\n|Additions to property, plant & equipment||(1,102.9)||(440.8)|\n|Purchases of intangible assets||(7.2)||\u2014|\n|Proceeds from the sale of business||437.0||27.0|\n|Proceeds from sale of equity investment||89.4||\u2014|\n|Purchases of short-term investments||(1,025.0)||\u2014|\n|Proceeds from sales/maturities of short-term investments||200.0||\u2014|\n|Other investing activities||(5.0)||(0.4)|\n|Net cash used in investing activities||(1,413.7)||(414.2)|\n|Cash Flows from Financing Activities|||||\n|Proceeds from borrowings of Term A Facility||1,250.0||\u2014|\n|Proceeds from borrowings of Term B Facility||3.3||\u2014|\n|Proceeds from borrowings of revolving credit facilities||640.1||53.7|\n|Proceeds from borrowings of other credit facilities||28.0||\u2014|\n|Proceeds from issuance of common shares||1,998.6||\u2014|\n|Payments on existing debt||(1,723.4)||(437.0)|\n|Payments on borrowings under revolving credit facilities||(676.2)||(51.7)|\n|Debt issuance costs||(9.1)||\u2014|\n|Proceeds from exercises of stock options and purchases under employee stock purchase plan||53.8||49.6|\n|Payments in satisfaction of employees' minimum tax obligations||(77.4)||(54.0)|\n|Payment of dividends||(11.4)||(11.4)|\n|Other financing activities||1.0||(0.9)|\n|Net cash provided by (used in) financing activities||1,477.1||(451.7)|\n|Effect of exchange rate changes on cash and cash equivalents||(7.4)||75.6|\n|Net increase (decrease) in cash and cash equivalents||135.5||(156.8)|\n|Cash, Cash Equivalents, and Restricted Cash at Beginning of Period||1,632.9||1,789.7|\n|Cash, Cash Equivalents, and Restricted Cash at End of Period||$ 1,768.4||$ 1,632.9|\n|*Amounts may not recalculate due to rounding.|||||\n\n<!-- Page 10 -->\n\n|YEAR ENDED||\n|---|---|\n|Jun 30, 2026|Jun 30, 2025|\n|$ 5,274.6|$ 3,755.2|\n|1,843.6|2,054.9|\n|$ 7,118.2|$ 5,810.1|\n\n<u>Table 5</u>\n\n**Segment Revenues* THREE MONTHS ENDED**\n\n**Jun 30, Mar 31, Jun 30,** $ Millions (unaudited) **2026 2026 2025**\n\n**Revenues:** Datacenter & Communications $ 1,615.0 $ 1,361.6 $ 1,018.3 Industrial 430.5 444.0 511.1 **Consolidated** $ 2,045.5 <u>$ 1,805.6</u> $ 1,529.4\n\n*Amounts may not recalculate due to rounding.\n\n|Table 6|||||||||||||\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|Reconciliation of GAAP Measures to Non- GAAP Measures*|||THREE MONTHS ENDED|||YEAR ENDED|||||||\n|$ Millions, except per share amounts (unaudited)|||Jun 30, 2026||Mar 31, 2026||Jun 30, 2025|||Jun 30, 2026||Jun 30, (1) 2025|\n|Gross margin on GAAP basis|||$ 787.1||$ 679.9||$ 546.1|||$ 2,669.0||$ 2,043.3|\n|Share-based compensation|||7.4||6.4||5.8|||26.0||22.5|\n|Amortization of acquired intangibles|||27.8||27.9||30.6|||111.2||135.1|\n|Integration, site consolidation and other<sup>(2)</sup>|||0.3||\u2014||(0.4)|||0.3||1.3|\n|Gross margin on non-GAAP basis|||$ 822.6||$ 714.2||$ 582.2|||$ 2,806.5||$ 2,202.3|\n|Research & development on GAAP basis|||$ 216.4||$ 186.0||$ 155.7|||$ 723.0||$ 581.9|\n|Share-based compensation|||(8.0)||(7.4)||(5.9)|||(28.9)||(22.2)|\n|Amortization of acquired intangibles|||(0.2)||(0.2)||(0.2)|||(0.8)||(5.3)|\n|Integration, site consolidation and other<sup>(2)</sup>|||\u2014||\u2014||0.1|||\u2014||(0.2)|\n|Research & development on non-GAAP basis|||$ 208.3||$ 178.4||$ 149.7|||$ 693.3||$ 554.3|\n|Selling, general and administrative on GAAP basis|||$ 266.4||$ 267.6||$ 245.4|||$ 1,044.6||$ 926.5|\n|Share-based compensation|||(38.5)||(36.8)||(32.6)|||(138.9)||(116.3)|\n|Amortization of acquired intangibles|||(41.8)||(42.4)||(41.2)|||(168.3)||(162.4)|\n|Financing fees<sup>(3)</sup>|||\u2014||\u2014||\u2014|||(1.1)||\u2014|\n|Integration, site consolidation and other<sup>(2)</sup>|||(17.4)||(18.9)||(14.4)|||(79.9)||(36.7)|\n|Selling, general and administrative on non- GAAP basis|||$ 168.5||$ 169.7||$ 157.3|||$ 656.3||$ 611.0|\n|Restructuring charges on GAAP basis|||$ 6.1||$ 34.4||$ 53.9|||$ 63.4||$ 160.1|\n|Restructuring charges<sup>(4)</sup>|||(6.1)||(34.4)||(53.9)|||(63.4)||(160.1)|\n|Restructuring charges on non-GAAP basis|||$ \u2014||$ \u2014||$ \u2014|||$ \u2014||$ \u2014|\n|Impairment of assets held-for-sale on GAAP basis|||$ 44.3||$ \u2014||$ 85.0|||$ 64.4||$ 85.0|\n|Impairment of assets held-for-sale<sup>(5)</sup>|||(44.3)||\u2014||(85.0)|||(64.4)||(85.0)|\n|Impairment of assets held-for-sale on non- GAAP basis|||$ \u2014||$ \u2014||$ \u2014|||$ \u2014||$ \u2014|\n|Gain on sale of business on GAAP basis|||$ \u2014||$ (8.9)||$ \u2014|||$ (124.1)||$ \u2014|\n|Gain on sale of business<sup>(6)</sup>|||\u2014||8.9||\u2014|||124.1||\u2014|\n|Gain on sale of business on non-GAAP basis|||$ \u2014||$ \u2014||$ \u2014|||$ \u2014||$ \u2014|\n|Operating income on GAAP basis|||$ 253.9||$ 200.8||$ 6.1|||$ 897.9||$ 289.9|\n|Share-based compensation|||53.9||50.6||44.3|||193.8||161.0|\n|Amortization of acquired intangibles|||69.8||70.5||72.0|||280.3||302.8|\n|Restructuring charges<sup>(4)</sup>|||6.1||34.4||53.9|||63.4||160.1|\n|Impairment of assets held-for-sale<sup>(5)</sup>|||44.3||\u2014||85.0|||64.4||85.0|\n|Gain on sale of business<sup>(6)</sup>|||\u2014||(8.9)||\u2014|||(124.1)||\u2014|\n|Financing fees<sup>(3)</sup>|||\u2014||\u2014||\u2014|||1.1||\u2014|\n|Integration, site consolidation and other<sup>(2)</sup>|||17.7||18.9||13.8|||80.2||38.2|\n|Operating income on non-GAAP basis|||$ 445.8||$ 366.1||$ 275.1|||$ 1,456.9||$ 1,036.9|\n\n<!-- Page 12 -->\n\n* Amounts may not recalculate due to rounding.\n\n|Table 6|||||||||||||\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|Reconciliation of GAAP Measures to Non-GAAP Measures*|||||||||||||\n|(Continued)|||THREE MONTHS ENDED|||YEAR ENDED|||||||\n|$ Millions, except per share amounts (unaudited)|||Jun 30, 2026||Mar 31, 2026||Jun 30, 2025|||Jun 30, 2026||Jun 30, (1) 2025|\n|Interest and other (income) expense, net on GAAP basis|||$ (24.6)||$ 16.5||$ 69.5|||$ 50.1||$ 195.7|\n|Foreign currency exchange gains (losses), net|||3.8||(0.9)||(37.0)|||6.1||(28.4)|\n|Gain on sale of investment<sup>(7)</sup>|||38.4||14.1||\u2014|||74.0||\u2014|\n|Financing fees<sup>(3)</sup>|||\u2014||\u2014||\u2014|||(12.1)||\u2014|\n|Interest and other (income) expense, net on non-GAAP basis|||$ 17.6||$ 29.7||$ 32.5|||$ 118.1||$ 167.3|\n|Income taxes on GAAP basis|||$ 42.3||$ 2.7||$ 34.7|||$ 60.8||$ 64.1|\n|Tax impact of non-GAAP measures<sup>(8)</sup>|||39.1||61.3||18.1|||193.6||119.9|\n|Income taxes on non-GAAP basis|||$ 81.4||$ 63.9||$ 52.8|||$ 254.4||$ 184.0|\n|Net earnings attributable to Coherent Corp. on GAAP basis|||$ 240.5||$ 191.4||$ (95.6)|||$ 805.0||$ 49.4|\n|Share-based compensation|||53.9||50.6||44.3|||193.8||161.0|\n|Amortization of acquired intangibles|||69.8||70.5||72.0|||280.3||302.8|\n|Foreign currency exchange gains|||(3.8)||0.9||37.0|||(6.1)||28.4|\n|Restructuring charges<sup>(4)</sup>|||6.1||34.4||53.9|||63.4||160.1|\n|Impairment of assets held-for-sale<sup>(5)</sup>|||44.3||\u2014||85.0|||64.4||85.0|\n|Gain on sale of business<sup>(6)</sup>|||\u2014||(8.9)||\u2014|||(124.1)||\u2014|\n|Integration, site consolidation and other<sup>(2)</sup>|||17.7||18.9||13.8|||80.2||38.2|\n|Gain on sale of investment<sup>(7)</sup>|||(38.4)||(14.1)||\u2014|||(74.0)||\u2014|\n|Financing fees<sup>(3)</sup>|||\u2014||\u2014||\u2014|||13.2||\u2014|\n|Non-controlling interest impact of non-GAAP items|||\u2014||(6.0)||\u2014|||(6.0)||(12.3)|\n|Tax impact of non-GAAP measures<sup>(8)</sup>|||(38.9)||(61.3)||(18.1)|||(193.5)||(119.9)|\n|Net earnings attributable to Coherent Corp. on non-GAAP basis|||$ 351.2||$ 276.2||$ 192.3|||$ 1,096.6||$ 692.6|\n|Per share data:|||||||||||||\n|Net earnings on GAAP basis|||||||||||||\n|Basic Earnings Per Share|||$ 1.23||$ 1.01||$ (0.83)|||$ 4.34||$ (0.52)|\n|Diluted Earnings Per Share|||$ 1.19||$ 0.97||$ (0.83)|||$ 4.12||$ (0.52)|\n|Net earnings on non-GAAP basis|||||||||||||\n|Basic Earnings Per Share|||$ 1.79||$ 1.45||$ 1.02|||$ 5.99||$ 3.64|\n|Diluted Earnings Per Share|||$ 1.74||$ 1.41||$ 1.00|||$ 5.61||$ 3.53|\n\n<!-- Page 13 -->\n\n(1)During the second fiscal quarter of 2025, the Company refined its methodology to report non-GAAP measures. The change does not impact the Company\u2019s financial position, cash flows, or GAAP consolidated results of operations. Prior period non-GAAP financial measures presented in this press release have been recast to conform to the current presentation.\n(2)Integration, site consolidation and other costs include retention and severance payments and other integration costs related to the acquisition of Coherent, Inc., implementation of common technology systems and costs related to business divestitures.\n(3)Financing fees include debt extinguishment costs and various fees related to closing the new Credit Agreement and repricing our Term Loan B as well as the conversion of Preferred Stock to Common Stock.\n(4)Restructuring charges include non-cash impairment charges for production assets and improvements on leased facilities, loss on sale of a facility, severance, contract termination costs and other costs related to the restructuring plans.\n(5)Impairment of assets held-for-sale relate to several entities classified as held-for-sale at June 30, 2026, December 31, 2025, September 30, 2025 and/or June 30, 2025.\n(6)Gain on sale of business is due to the sale of our aerospace and defense and Munich tools businesses.\n(7)Gain on sale of investment is due to the sale of shares in an equity method investment. <sup>(8)</sup> The Company adopted a full-year, normalized tax rate for the computation of the non-GAAP income tax provision for fiscal year 2026. We believe this approach provides investors with a more consistent view of our underlying operating performance. In estimating the full-year non-GAAP normalized tax rate, the Company utilized a full-year financial projection that considers multiple factors such as changes to the Company's current operating structure, expected reserve changes for the year, and other significant tax matters to the extent they are applicable to the full fiscal year financial projection. In addition to the adjustments described above, this normalized tax rate excludes the impact of share-based awards, amortization of acquisition-related intangible assets, integration and restructuring charges, foreign exchange gain/(loss), and certain tax valuation allowances. For fiscal year 2026, the Company's non-GAAP normalized tax rate is 19%. This projected normalized tax rate was be applied to each quarter of fiscal year 2026. The Company's non-GAAP normalized tax rate on non-GAAP net income may be adjusted during the year to account for events or trends that the Company believes materially impact the original annual non-GAAP normalized tax rate including, but not limited to, significant changes resulting from tax legislation, acquisitions or dispositions, entity structures or operational changes and other significant events. These additional non-GAAP financial measures should not be considered substitutes for any measures derived in accordance with GAAP and may be inconsistent with similar measures presented by other companies.\n\n<!-- Page 14 -->\n\n||YEAR ENDED|\n|---|---|\n|Jun 30, 2026|Jun 30, (1) 2025|\n|$ 805.0|$ 49.4|\n|(35.1)|(129.9)|\n|$ 769.9|$ (80.6)|\n|$ 35.1|$ \u2014|\n|$ 805.0|$ (80.6)|\n|177.3|154.8|\n|5.7|\u2014|\n|12.4|\u2014|\n|195.4|154.8|\n|$ 4.34|$ (0.52)|\n|$ 4.12|$ (0.52)|\n\n<u>Table 7</u>\n **GAAP Earnings Per Share Calculation* THREE MONTHS ENDED** $ Millions, except per share amounts **Jun 30, Mar 31, Jun 30,** (unaudited) **2026 2026 2025** **Numerator** Net earnings (loss) attributable to Coherent Corp. $ 240.5 $ 191.4 $ (95.6) Deduct Series B redeemable preferred dividends \u2014 \u2014 (33.1) **Basic earnings (loss) available to common** **shareholders** $ 240.5 $ 191.4 <u>$ (128.8)</u> *Effect of dilutive securities:* Add back Series B preferred dividends $ \u2014 $ \u2014 $ \u2014 **Diluted earnings (loss) available to common** **shareholders** $ 240.5 $ 191.4 <u>$ (128.8)</u> **Denominator** Weighted average shares 195.7 190.2 155.5 *Effect of dilutive securities:* Common stock equivalents 6.6 6.1 \u2014 Series B Redeemable Preferred Stock \u2014 \u2014 \u2014 **Diluted weighted average common shares** 202.2 196.4 155.5 **Basic earnings (loss) per common share** $ 1.23 $ 1.01 $ (0.83) **Diluted earnings (loss) per common share** $ 1.19 $ 0.97 $ (0.83) *Amounts may not recalculate due to rounding.\n\n<!-- Page 15 -->\n\n||YEAR ENDED|\n|---|---|\n|Jun 30, 2026|Jun 30, (1) 2025|\n|$ 1,096.6|$ 692.6|\n|(35.1)|(129.9)|\n|$ 1,061.5|$ 562.6|\n|$ 35.1|$ \u2014|\n|$ 1,096.6|$ 562.6|\n|177.3|154.8|\n|5.7|4.5|\n|12.4|\u2014|\n|195.4|159.2|\n|$ 5.99|$ 3.64|\n|$ 5.61|$ 3.53|\n\n<u>Table 8</u>\n **Non-GAAP Earnings Per Share Calculation***\n**THREE MONTHS ENDED**\n\n**Jun 30, Mar 31, Jun 30,** $ Millions, except per share amounts (unaudited) **2026 2026 2025**\n\n**Numerator** Net earnings attributable to Coherent Corp. on non-GAAP basis $ 351.2 $ 276.2 $ 192.3 Deduct Series B redeemable preferred dividends \u2014 \u2014 (33.1) **Basic earnings available to common** **shareholders** $ 351.2 $ 276.2 $ 159.1\n\n*Effect of dilutive securities:* Add back Series B preferred dividends $ \u2014 $ \u2014 $ \u2014 **Diluted earnings available to common** **shareholders** $ 351.2 $ 276.2 $ 159.1\n\n**Denominator** Weighted average shares 195.7 190.2 155.5 *Effect of dilutive securities:* Common stock equivalents 6.6 6.1 3.7 Series B Redeemable Preferred Stock \u2014 \u2014 \u2014 **Diluted weighted average common shares** 202.2 196.4 159.2\n\n**Basic earnings per common share on non-** $ 1.79 $ 1.45 $ 1.02 **GAAP basis**\n\n**Diluted earnings per common share on non-** $ 1.74 $ 1.41 $ 1.00 **GAAP basis**\n\n*Amounts may not recalculate due to rounding.\n\n(1)During the second fiscal quarter of 2025, the Company refined its methodology to report non-GAAP measures. The change does not impact the Company\u2019s financial position, cash flows, or GAAP consolidated results of operations. Prior period non-GAAP financial measures presented in this press release have been recast to conform to the current presentation."
+    },
+    {
+      "id": "cohr-presentation",
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/investor-presentations/2026/august-12/investor-presentation-20260812.pdf",
+      "title": "Coherent Q4FY2026 capacity presentation",
+      "publisher": "Coherent Corp.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "August12 2026: Q4 Datacenter&Communications79%/Industrial21% revenue. Pro forma revenue excludes aerospace/defense sale closedSeptember2 2025 and Munich sale closedJanuary30 2026. On track double internal InP output by year-end and more than double again by2027;6-inch platform EMLs,CW lasers,photodiodes with higher yields than3-inch lines. Multiple CPO architectures, silicon photonics, InP,VCSEL;400G/lane links; multi-rail4X fiber capacity. CHIPS Letter of Intent up to$50m, building on$20m Texas support; NVIDIA partnered at Sherman groundbreaking. New optical circuit switch revenue now,CPO/NPO H22026,multi-rail H12027,thermal H22027. Opportunity estimates2030 include third-party/internal estimates, not verified TAM. GAAP EPS reconciliation includes sale/investment gains. SeriesB diluted weighted-average shares29.9m September2025,19.8m December2025,zero March/June2026. Q4GAAP diluted202.2m includes6.6m equivalents; not actual outstanding shares."
+    },
+    {
+      "id": "sa-cash",
+      "url": "https://stockanalysis.com/stocks/cohr/financials/cash-flow-statement/",
+      "title": "Coherent independent cash flow tables",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "USDmillions. FY2026 endedJune30 2026: net income805; OCF79.51; capex-1103; loss(gain)sale assets-123.53; sale investment-74; inventory change-1183; AR-367.63; AP748.53; SBC186.47. FY2025 OCF633.6 capex-440.84; FY2024OCF545.73 capex-346.82;FY2023OCF634.03 capex-436.06;FY2022OCF413.33 capex-314.33. FY2023 cash acquisitions-5489. FY2026 commonissuance2052 includes options; cash interest189.26. FY2026 net income805 represents attributable not common after preferred dividends."
+    },
+    {
+      "id": "sec-api-analysis",
+      "url": "https://sec-api.io/insights/financial-analysis-of-lumentum-fiscal-2026",
+      "title": "Independent peer figures FY2026",
+      "publisher": "SEC API",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Peer table Coherent FY26June26: revenue7118millions, net margin11.3%; CFO80millions capex1103millions FCF-1023millions. Source SECXBRL; Coherent GAAP net income attributable to issuer used in ratio. Separately discusses industry-wide capacity and Coherent InP/laser scale. No individual customer percentages disclosed in article."
+    },
+    {
+      "id": "sa-eps",
+      "url": "https://stockanalysis.com/stocks/cohr/",
+      "title": "Coherent October9 snapshot financial basis",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "At closeOctober9 2026 16:00EDT312.62, revenueTTM7.12B, NetIncome769.90M, EPS4.12. NetIncome represents common available basis and is not consolidated786.9m or issuer-attributable805.0m. EPS corroborates issuer4.12."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "312.62",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "fiscal-search"
+      ],
+      "note": "Regular-session close, no split conversion.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "312.62",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fiscal-search",
+          "value": "312.62",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "196930000",
+      "unit": "shares",
+      "period": "2026-10-09 vendor snapshot",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Vendor common outstanding; not annual diluted195.4m or quarterly202.2m weighted-average EPS denominator. Precise filing date not independently verified.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "196930000",
+          "period": "2026-10-09 vendor snapshot"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "61560000000",
+      "unit": "USD",
+      "period": "2026-10-09 vendor snapshot",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Rounded61.56billion common cap on matching vendor snapshot.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "61560000000",
+          "period": "2026-10-09 vendor snapshot"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "7118200000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26",
+        "sec-api-analysis"
+      ],
+      "note": "Consolidated revenue; peer source rounded7118million.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "7118200000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sec-api-analysis",
+          "value": "7118000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "805000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26",
+        "sa-cash"
+      ],
+      "note": "GAAP attributable to Coherent; consolidated includingNCI786.9m, common after35.1m preferred dividends769.9m. Do not use snapshot769.9m as corroboration of805m.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "805000000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-cash",
+          "value": "805000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "79500000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26",
+        "sa-cash"
+      ],
+      "note": "Consolidated OCF; issuer rounded79.5m vs standardized79.51m.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "79500000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-cash",
+          "value": "79510000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "1102900000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26",
+        "sa-cash"
+      ],
+      "note": "Positive PP&E cash additions; excludes7.2m separately purchased intangibles. Secondary rounded1103m.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "1102900000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-cash",
+          "value": "1103000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "cash": {
+      "value": "1162000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26"
+      ],
+      "note": "Cash/equivalents excludes825.0m investments and35.2m/571.2m restricted cash current/noncurrent.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "1162000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "3222200000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "estimate",
+      "sources": [
+        "cohr-fy26"
+      ],
+      "note": "7.9m current+3214.3m long-term debt aggregation; excludes316.2m current/noncurrent operating leases. Sum is estimate."
+    },
+    "eps": {
+      "value": "4.12",
+      "unit": "USD/share",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "cohr-fy26",
+        "sa-eps"
+      ],
+      "note": "GAAP diluted EPS not adjusted5.61 or guidance1.85-2.05. FY26 sale and investment gains mean this is an imperfect recurring-capacity proxy.",
+      "observations": [
+        {
+          "source": "cohr-fy26",
+          "value": "4.12",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-eps",
+          "value": "4.12",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.13",
+      "unit": "decimal",
+      "period": "2026-10-11",
+      "kind": "assumption",
+      "sources": [],
+      "note": "Assumed13% USD equity hurdle exceeds sourced5.24% Treasury; compensates ordinary equity opportunity cost and cyclical financing exposure, not arbitrary adjustment to hide catastrophic risk."
+    }
+  },
+  "valuation": {
+    "base_eps": "eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2026 GAAP diluted EPS4.12 through June30 is assumed current Oct11 earning-capacity proxy, not factual annualization or forward fiscal forecast. Five calendar growth steps end Oct11 2031; terminal multiple applies trailing normalized annual EPS ending at that date. Divestment/investment gains and changed share structure make this normalization uncertain; growth assumptions must absorb dilution and loss of one-offs."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "25",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.25",
+        "exit_multiple": "35",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  },
+  "source_access_failures": [
+    "IR releaseHTTP403; main corporate HTML and issuer PDF/presentation fetched successfully.",
+    "SEC FY2026 10-K rawHTTP403; source annual detailed release retained instead. Exact individual customer concentration and current proxy not independently inspected.",
+    "Fiscal.ai quote fullpageHTTP429; dated search excerpt retained.",
+    "PhotonLink issuer release syndicated on GlobeNewswireHTTP403; do not treat headline/transcript snippets as verified product economics."
+  ]
+}

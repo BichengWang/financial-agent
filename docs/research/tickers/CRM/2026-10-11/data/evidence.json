@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "ticker": "CRM",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "crm-10k",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001108524/124f523f-1f0b-4e13-8076-23cfd73951cf.pdf",
+      "title": "Salesforce FY2026 Form 10-K, filed March 2 2026",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Fiscal year ended January 31, 2026. Consolidated statements in millions except per-share: revenues 41,525 (2025 37,895; 2024 34,857); net income 7,457 (6,197; 4,136); diluted EPS 7.80 (6.36; 4.20); income from operations 8,331 (7,205; 5,011). OCF 14,996 (13,092; 10,234); capital expenditures (594) ((658); (736)); SBC 3,509 (3,183; 2,787); common-stock repurchases (12,596); taxes for net share settlement (351); dividends (1,587); acquisitions net of cash (9,268). Balance January 31 2026: cash 7,327; marketable securities 2,238; debt current 4,000; noncurrent debt 10,439; operating lease liabilities current 548 and noncurrent 2,189; goodwill 57,941. Shares outstanding 929 million January 31 and approximately 923 million February 25. Subscription revenue 39,388: Sales 9,028; Service 9,818; Platform Slack Other 8,882; Marketing Commerce 5,428; Integration Analytics 6,232. Platform includes Informatica subscription 388. Regions: Americas 27,193; Europe 10,017; Asia Pacific 4,315. Pricing not a significant driver of FY26 revenue increase. No customer >10% revenue. Term licenses approximately 6% subscription revenue. Offerings renamed Agentforce in Q3 FY26 without reallocation. Fiscal 2026 GAAP operating margin 20.1%."
+    },
+    {
+      "id": "crm-q2",
+      "url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/",
+      "title": "Second quarter fiscal 2027 results, August 26 2026",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Quarter ended July 31 2026: revenue $11.3bn +11%, Informatica $456m; subscription/support $10.8bn +12%, Informatica $440m. cRPO $33.5bn +14% Y/Y and CC; RPO $66.3bn +11%. GAAP operating margin 20.5%; adjusted 34.1%; GAAP diluted EPS $4.29; adjusted $5.90. OCF $1.3bn +71%; FCF $1.1bn +81%. Agentforce/Data 360 ARR nearly $3.9bn, over 210% growth; Agentforce ARR exceeded $1.5bn, over 240% growth; effective Q2 FY27 Agentforce ARR includes AI offerings, Slackbot and Headless 360. 7.0bn AWUs delivered to date, 3.2bn Q2 +97% Q/Q. Data 360 104trillion records incl 82trillion Zero Copy. FY27 revenue guidance $46.1-46.4bn +11-12%, slightly above 3pts Informatica; raise $200m reflects $100m organic, $200m acquisitions, $100m FX headwind. GAAP margin 20.1%, adjusted 34.3%; OCF/FCF growth approximately 4-5%. $25bn ASR final settlement expected October 2026, EPS guidance includes 103m initial shares delivered but excludes final settlement. Contentful and Fin then expected to close Q3; all guidance except cRPO incorporates them."
+    },
+    {
+      "id": "crm-q2-cover",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+      "title": "July 2026 Form 10-Q observed search excerpts",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed live web_search targeted filing excerpts: approximately 823 million common shares outstanding as of August 20, 2026; cash and cash equivalents $8,310 million July 31, 2026; noncurrent debt $39,288 million July 31, 2026. Full read returned company index and raw read HTTP403, so this retained observation is a search excerpt, not a retrieved full filing."
+    },
+    {
+      "id": "sa-history",
+      "url": "https://stockanalysis.com/stocks/crm/financials/",
+      "title": "Salesforce financial history",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD, fiscal year February-January. FY2026 period Jan31 2026; 2025 Jan31 2025; 2024 Jan31 2024; 2023 Jan31 2023; 2022 Jan31 2022. Revenue 41,525;37,895;34,857;31,352;26,492. Gross profit 32,255;29,252;26,316;22,992;19,466. Net income 7,457;6,197;4,136;208;1,444. EPS 7.80;6.36;4.20;0.21;1.48. OCF 14,996;13,092;10,234;7,111;6,000. Capex -594;-658;-736;-798;-717. FCF 14,402;12,434;9,498;6,313;5,283. FY2026 subscription 39,388 and services 2,137. Standardized operating income 8,917 differs from primary GAAP 8,331; not used as GAAP. TTM July31 2026 EPS10.79; annual data kept distinct."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/crm/financials/balance-sheet/",
+      "title": "Salesforce detailed balance sheet",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD. July31 2026 cash/equivalents 8,310; short-term investments3,093; long-term debt39,288; leases current678 noncurrent2,410; standardized total debt42,376. January31 2026 cash7,327; short-term investments2,238; current debt4,000; noncurrent debt10,439; standardized total debt17,711 including lease classifications. Filing-date shares823m under July column, not exact July date; balance total common823m. Annual total common929m; filing-date923m. Standardization means these lease-inclusive debt figures are not identical to issuer borrowings."
+    },
+    {
+      "id": "sa-stats",
+      "url": "https://stockanalysis.com/stocks/crm/statistics/",
+      "title": "Salesforce current quote and statistics",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NYSE CRM USD. 229.13 +1.33 at close Oct9 2026 4:00PM EDT; after-hours228.83 Oct9 7:59PM EDT. Market cap188.57B; shares outstanding823.00M. Last earnings August26 2026. Last split April18 2013 4:1. Shares count not a same-day issuer certification. Statistics summary cash/equivalents11.40B actually includes investments; detailed balance sheet used instead. TTM EPS10.79, trailing PE21.23; not same basis as annual GAAP EPS7.80."
+    },
+    {
+      "id": "fiscal-quote",
+      "url": "https://fiscal.ai/company/NYSE-CRM",
+      "title": "CRM dated close observed search result",
+      "publisher": "Fiscal.ai",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed live web_search quote: Salesforce Inc 2026-10-09 USD. Open229.85 Close229.13; change+1.33 (+0.58%) versus227.80 October8; volume4,676,862 shares. Prices split-adjusted. Direct read HTTP429; only this dated search excerpt retained. Closing timestamp supplied by independently observed Stock Analysis quote, not separately printed here."
+    },
+    {
+      "id": "cmc-cap",
+      "url": "https://companiesmarketcap.com/salesforce/marketcap/",
+      "title": "Salesforce market capitalization snapshot",
+      "publisher": "CompaniesMarketCap",
+      "accessed_at": "2026-10-11",
+      "excerpt": "As of October2026 market cap$188.57 Billion USD; share price$229.13 +0.58% one day. End of Day market cap: On Oct10th2026 $188.57bn by Nasdaq and CompaniesMarketCap. Weekend observation carried the October9 Friday close; no independent Nasdaq fetch claimed. Delayed stock prices disclaimer."
+    },
+    {
+      "id": "scout-financials",
+      "url": "https://tickerscout.ai/crm/financials/",
+      "title": "Salesforce annual and quarterly SEC-derived financial tables, August28 2026",
+      "publisher": "Ticker Scout",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Actual dollars, shares actual shares, EPS dollars. FY2026 February1 2025-January31 2026: revenue41,525,000,000; net income7,457,000,000; diluted EPS7.80; OCF14,996,000,000; capex-594,000,000; cash7,327,000,000; current debt4,000,000,000 noncurrent10,439,000,000 total14,439,000,000; SBC3,509,000,000; common stock repurchases-12,596,000,000. Q2 May1-July31 2026: revenue11,345,000,000; subscription10,820,000,000; net income3,526,000,000; operating income2,331,000,000 vs2,332,000,000; strategic investment gains2,613,000,000 vs6,000,000 largely Anthropic unrealized markup; EPS4.29 vs1.96; diluted shares821m vs962m; interest473m; SBC906m; OCF1,269m capex171m. July31 cash8,310m, securities3,093m, noncurrent debt39,288m, current0, shares823m (date presentation differs from cover Aug20). First half FY27 OCF7,970m capex316m SBC1,763m repurchases27,332m proceeds debt24,842m."
+    },
+    {
+      "id": "sa-forecast",
+      "url": "https://stockanalysis.com/stocks/crm/forecast/",
+      "title": "Salesforce analyst forecast observed October11 2026",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financial forecast EPS this year FY2027 January31 2027 16.75 from12.52 FY2026; next year FY2028 EPS16.02. Explicit: EPS and Forward PE are based on non-GAAP adjusted numbers. FY2027 revenue46.30B; EPS low16.67 avg16.75 high17.60. 46 analysts FY2027 financial forecast; 56 price-target analysts average283.36, low160 high475, consensus Buy. Forecast table is not GAAP EPS; adjustments/gain treatment not fully reconciled in this page."
+    },
+    {
+      "id": "crm-pricing",
+      "url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/",
+      "title": "Agentforce flexible pricing launch, May15 2025",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Existing $2/conversation; Flex Credits $500/100,000 credits;20credits/$0.10 action. Flex Agreement permits converting user licenses to Flex Credits and vice versa. Employee-facing unmetered usage uses per-user-per-month license/add-on pricing. Enterprise and above Foundations100,000credits free. This is dated launch pricing, not proof of current realized rates or paid consumption."
+    },
+    {
+      "id": "crm-fin",
+      "url": "https://www.salesforce.com/news/press-releases/2026/09/10/salesforce-completes-acquisition-of-fin/",
+      "title": "Fin acquisition completed September10 2026",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Salesforce completed acquisition Fin formerly Intercom September10 2026. Established customer base more than30,000 companies; issuer claims average resolution76%; AI Labs will continue to serve customers and advance proprietary CX models. Fin deploys on existing help desks versus deeply customizable Agentforce. Resolution claim is issuer promotional metric, not independently audited customer return."
+    },
+    {
+      "id": "crm-contentful",
+      "url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-contentful/",
+      "title": "Contentful acquisition announcement with September1 closing update",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Editor note: acquisition completed September1 2026. Original June1 2026 announcement: composable content platform more than4,800 leading brands, native content layer for Headless360; Data360 Agentforce and composable APIs connect customer data and personalized content. Stale original future-tense closing statement superseded by editor note."
+    },
+    {
+      "id": "crm-proxy",
+      "url": "https://s205.q4cdn.com/626266368/files/doc_financials/2026/ar/Salesforce-FY26-Proxy-Statement.pdf",
+      "title": "2026 Salesforce proxy, April16 2026",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "One vote per share, no dual class. Governance Committee periodically reviews CEO succession. Fiscal2026 Marc Benioff total compensation$49,379,252; intended annual equity target$36m FY26 and$48m FY27 (different from ASC718 total compensation). Beneficial ownership table22,791,882 shares/2.8%, includes vested/exercisable or next60-day awards, date March25 2026. Requested additional34m2013Plan shares and20mESPP shares (not automatically issued); fiscal2026 TIME affiliated purchases$450,000 and business-aircraft reimbursements$1,112,096; related-party policy Audit Committee oversight. Appendix FY2026 GAAP/nonGAAP operating margins20.1%/34.1%; FY2025 19.0%/33.0%; FY2024 14.4%/30.5%; FY2023 3.3%/22.5%."
+    },
+    {
+      "id": "msft-competition",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/productivity-and-business-processes-performance",
+      "title": "Microsoft FY26 Q1 competitive observation",
+      "publisher": "Microsoft",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Microsoft FY2026 first quarter performance: Dynamics products/cloud revenue+16%; Dynamics365 revenue+18% across all workloads. Microsoft365Commercial cloud+17%, revenue per user driven by E5/Copilot, seats+6%. These older competitor observations establish competing distribution and product demand, not current CRM market share or directly comparable pure CRM growth."
+    },
+    {
+      "id": "crm-fy26-release",
+      "url": "https://www.salesforce.com/news/press-releases/2026/02/25/fy26-q4-earnings/",
+      "title": "Salesforce FY2026 annual results, February 25 2026",
+      "publisher": "Salesforce",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Fiscal year ended January 31, 2026. Revenue $41.5 billion +10%; GAAP operating margin20.1%, non-GAAP34.1%; OCF15.0bn FCF14.4bn; returned14.3bn including12.7bn repurchases1.6bn dividends. Combined Agentforce/Data360 ARR exceeds2.9bn, up over200%, including1.1bn Informatica Cloud ARR and800m Agentforce ARR, up169%. Over29,000 Agentforce deals; more than60% of Agentforce/Data360 Q4 bookings from existing customer expansion. Initiated FY27 OCF growth9-10%, revenue45.8-46.2bn; expects H2FY27 organic reacceleration. FY30 revenue target63bn including Informatica. These initial FY27 guidance figures were superseded by Q2 release."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "revenue": {
+      "value": "41525000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials",
+        "sa-history"
+      ],
+      "note": "Consolidated annual GAAP; original primary and Stock Analysis millions converted to dollars. Capex normalized from negative statement cash outflow to positive spend. EPS diluted, not adjusted, current post-2013 split basis; net income consolidated.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "41525000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "41525000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "sa-history",
+          "value": "41525000000",
+          "period": "FY2026 ended 2026-01-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "7457000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials",
+        "sa-history"
+      ],
+      "note": "Consolidated annual GAAP; original primary and Stock Analysis millions converted to dollars. Capex normalized from negative statement cash outflow to positive spend. EPS diluted, not adjusted, current post-2013 split basis; net income consolidated.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "7457000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "7457000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "sa-history",
+          "value": "7457000000",
+          "period": "FY2026 ended 2026-01-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "14996000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials",
+        "sa-history"
+      ],
+      "note": "Consolidated annual GAAP; original primary and Stock Analysis millions converted to dollars. Capex normalized from negative statement cash outflow to positive spend. EPS diluted, not adjusted, current post-2013 split basis; net income consolidated.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "14996000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "14996000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "sa-history",
+          "value": "14996000000",
+          "period": "FY2026 ended 2026-01-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "594000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials",
+        "sa-history"
+      ],
+      "note": "Consolidated annual GAAP; original primary and Stock Analysis millions converted to dollars. Capex normalized from negative statement cash outflow to positive spend. EPS diluted, not adjusted, current post-2013 split basis; net income consolidated.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "594000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "594000000",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "sa-history",
+          "value": "594000000",
+          "period": "FY2026 ended 2026-01-31"
+        }
+      ]
+    },
+    "eps": {
+      "value": "7.80",
+      "unit": "USD/share",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials",
+        "sa-history"
+      ],
+      "note": "Consolidated annual GAAP; original primary and Stock Analysis millions converted to dollars. Capex normalized from negative statement cash outflow to positive spend. EPS diluted, not adjusted, current post-2013 split basis; net income consolidated.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "7.80",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "7.80",
+          "period": "FY2026 ended 2026-01-31"
+        },
+        {
+          "source": "sa-history",
+          "value": "7.80",
+          "period": "FY2026 ended 2026-01-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "8310000000",
+      "unit": "USD",
+      "period": "2026-07-31",
+      "kind": "reported",
+      "sources": [
+        "crm-q2-cover",
+        "sa-balance",
+        "scout-financials"
+      ],
+      "note": "Consolidated cash/equivalents only; excludes $3.093bn securities and strategic holdings. Primary observed via targeted search excerpt, not full 10-Q. No claim all cash immediately distributable.",
+      "observations": [
+        {
+          "source": "crm-q2-cover",
+          "value": "8310000000",
+          "period": "2026-07-31"
+        },
+        {
+          "source": "sa-balance",
+          "value": "8310000000",
+          "period": "2026-07-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "8310000000",
+          "period": "2026-07-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "14439000000",
+      "unit": "USD",
+      "period": "2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials"
+      ],
+      "note": "Fiscal-year-end consolidated borrowings: current $4.000bn + noncurrent $10.439bn; excludes operating and finance lease obligations. Historical, NOT current: latest July borrowings $39.288bn separately retained. Vendor standardized lease-inclusive $17.711bn/$42.376bn is different definition, not corroboration of borrowings.",
+      "observations": [
+        {
+          "source": "crm-10k",
+          "value": "14439000000",
+          "period": "2026-01-31"
+        },
+        {
+          "source": "scout-financials",
+          "value": "14439000000",
+          "period": "2026-01-31"
+        }
+      ]
+    },
+    "price": {
+      "value": "229.13",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-stats",
+        "fiscal-quote",
+        "cmc-cap"
+      ],
+      "note": "Regular-session NYSE closing price; excludes $228.83 aftermarket. Fiscal.ai explicitly split-adjusted; last split 4:1 April18 2013; no ADR ratio.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "229.13",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fiscal-quote",
+          "value": "229.13",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "823000000",
+      "unit": "shares",
+      "period": "2026-08-20 issuer approximation carried to 2026-10-09 valuation snapshot",
+      "kind": "estimate",
+      "sources": [
+        "crm-q2-cover",
+        "sa-stats",
+        "sa-balance"
+      ],
+      "note": "Approximately823m common outstanding on Aug20 cover, vendor823m October quote snapshot. Not821m quarter diluted weighted average nor956m FY26 denominator. Estimated current outstanding for cap reconciliation; ongoing SBC, repurchases and October ASR final settlement mean actual October9 count not established. Vendor filing-date July-column presentation not treated as proof of a July31 count."
+    },
+    "market_cap": {
+      "value": "188570000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-stats",
+        "cmc-cap"
+      ],
+      "note": "$188.57bn quote snapshot, rounded to0.01bn. CMC Oct10 Saturday EOD snapshot carries same Friday price/cap; canonical market session date normalized to Oct9. Nasdaq is not a separately observed source.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "188570000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "cmc-cap",
+          "value": "188570000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.115",
+      "unit": "decimal",
+      "period": "Five-year conditional model as of 2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "11.5% equity hurdle exceeds observed5.24% ten-year Treasury; compensates minority equity exposure, cyclic enterprise spending and financing risk. Specific monetization/multiple failure modeled in scenarios, not only rate."
+    },
+    "forward_eps": {
+      "value": "16.02",
+      "unit": "USD/share",
+      "period": "FY2028 ended 2028-01-31 consensus observed 2026-10-11",
+      "kind": "estimate",
+      "sources": [
+        "sa-forecast"
+      ],
+      "note": "Next-year adjusted non-GAAP consensus EPS, NOT GAAP. Chosen over FY27 $16.75 spike; no assumed automatic repeat of investment gains. Publisher adjustments not fully reconciled; SBC remains an economic cost and exit multiple restricted accordingly. Scenarios incorporate net share effects, not an added mechanical buyback uplift."
+    },
+    "latest_debt": {
+      "value": "39288000000",
+      "unit": "USD",
+      "period": "2026-07-31",
+      "kind": "reported",
+      "sources": [
+        "crm-q2-cover",
+        "scout-financials"
+      ],
+      "note": "Latest borrowings excluding leases; not substituted into historical fiscal year-end canonical debt."
+    },
+    "sbc": {
+      "value": "3509000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "crm-10k",
+        "scout-financials"
+      ],
+      "note": "Cash-flow addback, economic employee cost."
+    },
+    "latest_quarter_revenue": {
+      "value": "11345000000",
+      "unit": "USD",
+      "period": "Q2 FY2027 ended 2026-07-31",
+      "kind": "reported",
+      "sources": [
+        "scout-financials",
+        "crm-q2"
+      ],
+      "note": "Exact secondary statement number, primary release rounds11.3bn."
+    },
+    "latest_quarter_investment_gains": {
+      "value": "2613000000",
+      "unit": "USD",
+      "period": "Q2 FY2027 ended 2026-07-31",
+      "kind": "reported",
+      "sources": [
+        "scout-financials"
+      ],
+      "note": "Strategic investment gains largely unrealized Anthropic markup; not recurring operating earnings."
+    },
+    "historical_adjusted_eps": {
+      "value": "12.52",
+      "unit": "USD/share",
+      "period": "FY2026 ended 2026-01-31",
+      "kind": "reported",
+      "sources": [
+        "sa-forecast"
+      ],
+      "note": "Historical adjusted EPS as printed forecast page, not GAAP7.80."
+    }
+  },
+  "valuation": {
+    "base_eps": "forward_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "11",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "17",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.14",
+        "exit_multiple": "23",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

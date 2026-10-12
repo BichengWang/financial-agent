@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "ticker": "UNH",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "unh-10k",
+      "url": "https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2025/UNH-Q4-2025-Form-10-K.pdf",
+      "title": "2025 Form 10-K",
+      "publisher": "UnitedHealth Group",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD FY2025 revenue447,567; net earnings12,807, earnings attributable to common shareholders12,056; diluted EPS13.23. OCF19,697; purchases of property equipment and capitalized software3,622. Cash24,365; short-term borrowings/current long-term maturities6,069; long-term debt72,320. Notes senior/short debt77,681 plus other financing708. MCR89.1% vs85.5%2024 and83.2%2023; medical costs divided by premium revenue. CMS premium revenue44% of total. Only~1.1 billion cash available general corporate use. IBNR26.7 billion; favorable prior-year reserves140 million vs700 million2024. FY2025 segment revenue/operating income: UnitedHealthcare344,903/9,425; Optum Health101,957/-278; Insight19,417/2,624; Rx154,726/7,193; includes affiliates/eliminations.2025 repurchases5,545 and cash dividends7,916 million. Employment agreement effective May12 2025 Stephen Hemsley.2026 realignment moves Optum Financial from Health to Insight."
+    },
+    {
+      "id": "unh-q2",
+      "url": "https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2026/UNH_2026.6.30_10-Q.pdf",
+      "title": "2026 Q2 Form 10-Q",
+      "publisher": "UnitedHealth Group",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Q2 2026 total revenue 112,032 million versus 111,616; net earnings attributable to common shareholders 5,484 versus 3,406; diluted EPS 6.04 versus 3.74. Q2 MCR 86.7% versus 89.4%. Medical cost trend remains above historical levels affected by No Surprises Act provider reimbursement and service/coding intensity. Lower MCR reflects favorable prior-period reserve development, affordability, medical management and pricing. Fewer people served in Medicare Advantage/commercial risk/Medicaid and fewer Optum value-based patients partly offset pricing. June 30 cash 28,585; current debt 3,827 plus long debt 69,501 million. RADV audits may adjust retrospective payments. 2017 DOJ False Claims Act case: March 2025 special master recommends summary judgment for company, DOJ objects April 2025; outcome cannot be estimated. March 6 2026 IRS proposed adjustments for 2017-2020 foreign transfer pricing, company contests."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/unh/financials/",
+      "title": "Annual financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD FY2021/2022/2023/2024/2025: revenue segment total 287,597/324,162/371,622/400,278/447,567 (headline overview uses 447,964). Common net income 17,285/20,120/22,381/14,405/12,056; EPS 18.08/21.18/23.86/15.51/13.23. OCF 22,343/26,206/29,068/24,204/19,697; capex -2,454/-2,802/-3,386/-3,499/-3,622."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/unh/financials/balance-sheet/",
+      "title": "Annual balance sheet definitions",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD FY2025 cash and equivalents 24,365; short-term debt 2,249; current long-term debt 3,820; long-term debt 72,320. Current leases 1,052; long-term leases 3,563; standardized total debt 83,004, not equivalent to narrow debt. June 2026 cash 28,585; current debt 3,827; long debt 69,501. Filing-date shares 897.59 million."
+    },
+    {
+      "id": "sa-stats",
+      "url": "https://stockanalysis.com/stocks/unh/statistics/",
+      "title": "Capitalization snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "At close October 9 2026 4 PM EDT price 379.30 USD; market cap 340.46 billion; actual filing-date shares 897.59 million; last split May 31 2005 2:1."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/unh/history/",
+      "title": "Regular closing price history",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Oct 9 2026 close 379.30 USD at 4:00 PM EDT; after-hours 379.98 at 7:59 PM EDT separately displayed."
+    },
+    {
+      "id": "doj-merger",
+      "url": "https://www.justice.gov/opa/pr/court-approves-justice-departments-settlement-unitedhealth-group-and-amedisys-merger",
+      "title": "Court approves UnitedHealth Amedisys settlement",
+      "publisher": "U.S. Department of Justice",
+      "accessed_at": "2026-10-11",
+      "excerpt": "December 10 2025, updated April 15 2026. Court entered final judgment resolving challenge to $3.3 billion Amedisys acquisition. Requires at least 164 home health and hospice locations across 19 states, about $528 million annual revenue, to be divested; monitor appointed; eight additional facilities conditionally. Amedisys pays $1.1 million civil penalty for falsely certifying HSR responses. DOJ describes UNH as vertically integrated insurer/provider/PBM/software vendor."
+    },
+    {
+      "id": "mi-quote",
+      "url": "https://markets.businessinsider.com/news/stocks/humana-jumps-alignment-healthcare-slips-after-cms-releases-star-ratings-1036610961",
+      "title": "Dated related-stock market quote",
+      "publisher": "Markets Insider",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Related Stocks: UNH UnitedHealth Inc. 379.30; 8.35 (2.25%); 10/9/2026. This is the site's dated market-data widget, not the TipRanks syndicated article or its October8 publication time. No independent intraday quote clock shown."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "379.30",
+      "unit": "USD/share",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "mi-quote"
+      ],
+      "note": "Regular close; after-hours excluded; present split basis.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "379.30",
+          "period": "2026-10-09 regular-session close"
+        }
+        ,{
+          "source": "mi-quote",
+          "value": "379.30",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "shares": {
+      "value": "897590000",
+      "unit": "shares",
+      "period": "June 2026 filing-date actual shares; observed 2026-10-11",
+      "kind": "reported",
+      "sources": [
+        "sa-stats",
+        "sa-balance"
+      ],
+      "note": "Actual filing-date vendor common shares, not weighted-average EPS shares or claimed exact October quote-date shares. Cover-date text in issuer Q2PDF was garbled, so precise legal count/date not independently corroborated. Same vendor publisher on both pages is one corroboration source.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "897590000",
+          "period": "June 2026 filing-date actual shares; observed 2026-10-11"
+        },
+        {
+          "source": "sa-balance",
+          "value": "897590000",
+          "period": "June 2026 filing-date actual shares; observed 2026-10-11"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "340460000000",
+      "unit": "USD",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-stats"
+      ],
+      "note": "Vendor rounded equity cap; not enterprise value. NVO canonical dated history171.40B is supported by share-price reconciliation; incompatible headline169.11B excluded and retained, one publisher only.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "340460000000",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "447567000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-fin"
+      ],
+      "note": "UNH canonical segment total447567, not overview447964; retained source contradiction settled by primary statements.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "447567000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "447567000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "12056000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-fin"
+      ],
+      "note": "Attributable to common shareholders; UNH consolidated before NCI is12.807b, excluded for EPS attribution reconciliation.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "12056000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "12056000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "19697000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-fin"
+      ],
+      "note": "Consolidated annual reported OCF, same fiscal period as capex.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "19697000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "19697000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "3622000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-fin"
+      ],
+      "note": "Positive cash PP&E spend; UNH includes capitalized software; acquisitions excluded.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "3622000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "3622000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "24365000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-balance"
+      ],
+      "note": "Cash and equivalents only; excludes securities. UNH only~1.1b available general corporate use.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "24365000000",
+          "period": "2025-12-31"
+        },
+        {
+          "source": "sa-balance",
+          "value": "24365000000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "78389000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "unh-10k",
+        "sa-balance"
+      ],
+      "note": "Estimate component sum excluding operating leases. LLY1.635b+40.868b=42.503b, vendor includes1.362b leases. UNH6.069b+72.320b=78.389b, includes0.708b other financing; vendor83.004b includes4.615b operating leases. No conflicting all-in total is corroboration."
+    },
+    "eps": {
+      "value": "13.23",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "unh-10k",
+        "sa-fin"
+      ],
+      "note": "Annual US GAAP diluted EPS, historical, not adjusted/TTM/forward.",
+      "observations": [
+        {
+          "source": "unh-10k",
+          "value": "13.23",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "13.23",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.105",
+      "unit": "decimal",
+      "period": "2026-10-11 model assumption",
+      "kind": "assumption",
+      "sources": [],
+      "note": "Equity hurdle above sourced5.24% Treasury; clinical/capital concentration for LLY, insurance/reserving/policy uncertainty for UNH; not beta-derived WACC."
+    }
+  },
+  "valuation": {
+    "base_eps": "eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 GAAP diluted EPS is assumed a conservative present earning-capacity proxy, not claimed to be current trailing or forward EPS. Five annual growth steps begin2026-10-11 and end2031-10-11; exit multiple applies to hypothetical terminal trailing EPS. No extra growth period is silently added for the elapsed fiscal year. Normalization deliberately excludes observed newer EPS to avoid temporary quarter/reserve effects; no factual earnings bridge is implied."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "13",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.15",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  },
+  "source_access_limitations": [
+    "UnitedHealth BusinessWire annual release HTTP403; alternative issuer full10-K and Q2PDF successfully fetched."
+  ]
+}

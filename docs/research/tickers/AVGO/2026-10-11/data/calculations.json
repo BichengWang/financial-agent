@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "AVGO",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "1724545800000.00",
+    "market_cap_deviation": "0.003152716763005780346820809248554913294798",
+    "free_cash_flow": "26914000000",
+    "free_cash_flow_yield": "0.01555722543352601156069364161849710982659",
+    "pe": "75.79454926624737945492662473794549266247"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.06",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "140.433392113344",
+        "total_return": "-0.6115688662019582895391934502406372738839",
+        "annualized_return": "-0.1723193416686287255974385420650375148679",
+        "present_target": "79.68567812477193979814958053192122329982"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "356.078592000000",
+        "total_return": "-0.0151059578469878851579354981468163965260",
+        "annualized_return": "-0.0030396139936433682698557037325814540358",
+        "present_target": "202.0485558472660201106681739751294103647"
+      },
+      {
+        "name": "bull",
+        "growth": "0.32",
+        "exit_multiple": "38",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "726.392968722432",
+        "total_return": "1.009163491515273552027438181114122918626",
+        "annualized_return": "0.149749039931980869661893647473490955128",
+        "present_target": "412.1748782582685041946807877670018444696"
+      }
+    ],
+    "weighted_present_target": "207.3649570127182928337151187005414410663"
+  }
+}

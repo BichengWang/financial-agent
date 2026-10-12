@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "ticker": "NVO",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "nvo-annual",
+      "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/irmaterial/annual_report/2026/novo-nordisk-annual-report-2025.pdf",
+      "title": "Annual Report 2025",
+      "publisher": "Novo Nordisk",
+      "accessed_at": "2026-10-11",
+      "excerpt": "DKK million FY2025 sales309,064; net profit102,434; operating profit127,658; diluted EPS DKK23.03/share/ADR; adjusted EPS26.17. OCF119,102; PP&E purchases60,140; intangible29,973; old-definition FCF28,295. December31 cash26,464; securities498; borrowings130,958 inclusive leases8,572; current12,017 noncurrent118,941. Issued4,465 million, treasury21, outstanding4,444. ADRs equal B shares nominalDKK0.10;2023 split CopenhagenSeptember13, ADRSeptember20. Note4.4 hedged-currency applied exchange rates averageDKK/100USD662 for2025, year-end635. A100votes, B10. Semaglutide compound patent US2032,China2026,Japan/Europe2031; other patents may extend.2025 gross/operating margins81.0%/41.3% versus2024 84.7%/44.2%.52countries with Wegovy by2025. PP&E60.1b versus47.2; former Catalent sites2024 USD11.7b. BloomingtonFDA inspection OAI/warning2025. Around9,000roles reduced,8bDKK annualized savings. Doustdar succeeded Jorgensen2025; board renewed following Foundation disagreement."
+    },
+    {
+      "id": "nvo-q2",
+      "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2026/Q2-2026-Full%20presentation.pdf",
+      "title": "Q2 2026 investor presentation",
+      "publisher": "Novo Nordisk",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Q2 adjusted sales78,488 million DKK, growth7% CER; H1 adjusted sales148,551, growth2% CER. Adjusted P&L excludes one-off noncash USD4.2 billion 340B sales-rebate provision reversal. Q2 adjusted gross margin78.2%; operating margin42.5%; net profit DKK21.0b; FCF42.5b. August4 outlook adjusted sales and operating profit growth0% to-6% CER, respectively ~1/~2 percentage points lower DKK; capex~55b; FCF45-55b. Wegovy7.2mg approved US/UK/EU and pill UK/UAE/EU; CagriSema US decision expected Q4; zenagamtide phase3 initiated/planned. ZEUS ziltivekimab6376 ASCVD/CKD participants failed primary time-to-first 3-point MACE endpoint, HR0.99 95%CI0.88-1.11; serious infections more frequent. Wegovy pill weekly TRx estimate from IQVIA plus internal self-pay data; not independent clinical outcomes."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/nvo/financials/",
+      "title": "DKK annual financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions DKK FY2021/2022/2023/2024/2025: sales140,800/176,954/232,261/290,403/309,064; net income47,757/55,525/83,683/100,988/102,434; EPS10.37/12.22/18.62/22.63/23.03; OCF55,000/78,887/108,908/120,968/119,102; PP&E capex-6,335/-12,146/-25,806/-47,164/-60,140. Standardized FY2025 operating income140,618 not equivalent to issuer127,658."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/nvo/financials/balance-sheet/",
+      "title": "DKK balance sheet definitions",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions DKK FY2025 cash and equivalents26,464; short-term investments498; total debt130,958. Actual shares4,444 million at FY2025; June2026 filing-date actual shares4,428 million. Current leases1,336 long leases7,236 for FY2025."
+    },
+    {
+      "id": "sa-stats",
+      "url": "https://stockanalysis.com/stocks/nvo/statistics/",
+      "title": "Capitalization snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Oct9 2026 4PM EDT price38.64 USD ADR; headline market cap169.11b; rounded shares4.43b; last ADR split September20 2023 2:1. Converted TTM figures have unspecified vendor FX basis and are not used as canonical annual USD data."
+    },
+    {
+      "id": "sa-cap",
+      "url": "https://stockanalysis.com/stocks/nvo/market-cap/",
+      "title": "Dated capitalization history",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Headline states market cap169.11 billion as of October9 2026. History table for October9 2026 instead shows171.40B. December31 2025 table226.09B. Formula defined as share price times outstanding shares. Contradictory headline not used to corroborate dated table row."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/nvo/history/",
+      "title": "ADR regular closing price history",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Oct9 2026 regular close38.64 USD at4PM EDT; after-hours38.62 at7:59PM EDT separately displayed."
+    },
+    {
+      "id": "tl-quote",
+      "url": "https://tickerlandia.com/en/stocks/novo-nordisk-nvo",
+      "title": "ADR dated closing price history",
+      "publisher": "TickerLandia",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NVO NYSE USD; secondary listing, primary Nasdaq Copenhagen DKK. $38.64; close October9 2026. Daily closing prices adjusted for splits. October9 2026 $38.64, October8 $38.18. No independent intraday quote clock shown."
+    },
+    {
+      "id": "fda-cv",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or",
+      "title": "Wegovy cardiovascular indication approval March8 2024",
+      "publisher": "U.S. Food and Drug Administration",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Randomized multinational multicenter placebo-controlled double-blind trial over17,600 participants, standard-of-care plus lifestyle counseling in both groups. Cardiovascular death, heart attack or stroke occurred in6.5% Wegovy versus8% placebo. Indication adults with cardiovascular disease and obesity/overweight, not general primary prevention. Boxed thyroid C-cell tumor warning; MTC/MEN2 contraindications, GI/pancreatitis/gallbladder/other warnings."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "38.64",
+      "unit": "USD/share",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "tl-quote"
+      ],
+      "note": "Regular close; after-hours excluded; present split basis.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "38.64",
+          "period": "2026-10-09 regular-session close"
+        }
+        ,{
+          "source": "tl-quote",
+          "value": "38.64",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "shares": {
+      "value": "4428000000",
+      "unit": "shares",
+      "period": "June 2026 filing-date actual shares; observed 2026-10-11",
+      "kind": "reported",
+      "sources": [
+        "sa-stats",
+        "sa-balance"
+      ],
+      "note": "Actual June2026 vendor filing-date aggregate A/B economic share equivalents excluding treasury, not weighted-average EPS shares or ADRs actually deposited. Canonical4.428b from balance table; statistics4.43b is directly observed rounded corroboration within tolerance, but same publisher. No claim of exact October share count.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "4430000000",
+          "period": "June 2026 filing-date actual shares; observed 2026-10-11"
+        },
+        {
+          "source": "sa-balance",
+          "value": "4428000000",
+          "period": "June 2026 filing-date actual shares; observed 2026-10-11"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "171400000000",
+      "unit": "USD",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-cap"
+      ],
+      "note": "Vendor rounded equity cap; not enterprise value. NVO canonical dated history171.40B is supported by share-price reconciliation; incompatible headline169.11B excluded and retained, one publisher only.",
+      "observations": [
+        {
+          "source": "sa-cap",
+          "value": "171400000000",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "46686404833.836858",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-fin"
+      ],
+      "note": "USD translation estimate of reported DKK 309064000000 divided by 6.62 DKK/USD, using issuer note4.4 applied hedged-currency 2025 average rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "net_income": {
+      "value": "15473413897.280967",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-fin"
+      ],
+      "note": "USD translation estimate of reported DKK 102434000000 divided by 6.62 DKK/USD, using issuer note4.4 applied hedged-currency 2025 average rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "operating_cash_flow": {
+      "value": "17991238670.694864",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-fin"
+      ],
+      "note": "USD translation estimate of reported DKK 119102000000 divided by 6.62 DKK/USD, using issuer note4.4 applied hedged-currency 2025 average rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "capital_expenditure": {
+      "value": "9084592145.015106",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-fin"
+      ],
+      "note": "USD translation estimate of reported DKK 60140000000 divided by 6.62 DKK/USD, using issuer note4.4 applied hedged-currency 2025 average rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "cash": {
+      "value": "4167559055.118110",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-balance"
+      ],
+      "note": "USD translation estimate of reported DKK 26464000000 divided by 6.35 DKK/USD, using issuer note4.4 applied hedged-currency 2025 year-end rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "debt": {
+      "value": "20623307086.614173",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-balance"
+      ],
+      "note": "USD translation estimate of reported DKK 130958000000 divided by 6.35 DKK/USD, using issuer note4.4 applied hedged-currency 2025 year-end rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    },
+    "eps": {
+      "value": "3.478852",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "nvo-annual",
+        "sa-fin"
+      ],
+      "note": "USD translation estimate of reported DKK 23.03 divided by 6.62 DKK/USD, using issuer note4.4 applied hedged-currency 2025 average rate as historical translation proxy. Not quote-date spot, convenience USD filing truth, or native FX calculation. PP&E capex excludes29.973b DKK intangibles; debt includes8.572b DKK lease liabilities."
+    }
+  },
+  "reporting_currency_reconciliation": {
+    "reporting_currency": "DKK",
+    "adr_ratio": "1 ADR = 1 B share",
+    "share_basis": "Post September2023 2:1 split, nominal DKK0.10; A/B aggregated economic equivalents",
+    "raw_reported_dkk": {
+      "revenue": "309064000000",
+      "net_income": "102434000000",
+      "operating_cash_flow": "119102000000",
+      "capital_expenditure": "60140000000",
+      "cash": "26464000000",
+      "debt": "130958000000",
+      "eps": "23.03"
+    },
+    "average_dkk_per_usd": "6.62",
+    "year_end_dkk_per_usd": "6.35",
+    "fx_basis": "Annual note4.4 exchange rates applied for hedged currencies,2025. Historical proxy estimates; no claim of October2026 spot conversion.",
+    "independent_corroboration": "Stock Analysis independently publishes matching annual DKK revenue,profit,EPS,OCF,PP&E,cash,debt. These do not constitute independently observed USD translations."
+  },
+  "source_access_limitations": [
+    "Novo issuer annualPDF,Q2presentation and DKK vendor statements fetched. Vendor cap headline conflicts with dated history; history row retained as canonical. No sourced contemporary spot FX; historical applied rates disclosed as estimate."
+  ]
+}

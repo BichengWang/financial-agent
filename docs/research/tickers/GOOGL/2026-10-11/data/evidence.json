@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "ticker": "GOOGL",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "tikr-debt",
+      "url": "https://www.tikr.com/blog/alphabets-free-cash-flow-just-went-negative-heres-what-the-debt-behind-it-says",
+      "title": "Alphabet debt-and-equity bridge, dated TIKR article",
+      "publisher": "TIKR",
+      "accessed_at": "2026-10-11",
+      "excerpt": "September18,2026 article by Gian Estrada, reviewed David Hanson. Total debt rose from29.3 billion September2024 to120.8 billion by June2026. Embedded GOOGL Total Debt/Net Debt/Total Equity chart actually fetched separately: unit B, June30,2026 total debt120.79, net debt-121.68, equity640.48. Other data and article forecasts not canonical. Article does not separately itemize leases; the matching all-in definition is reconciled to issuer components rather than falsely attributed as an explicit TIKR lease note."
+    },
+    {
+      "id": "tikr-debt-chart",
+      "url": "https://res.cloudinary.com/tikr/images/w_1266,h_834,c_scale/f_webp,q_auto/v1789718031/images/image-580_1318166cd87/image-580_1318166cd87.png?_i=AA",
+      "title": "TIKR embedded Alphabet debt chart, actual image observation",
+      "publisher": "TIKR",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Actually fetched and viewed chart: GOOGL (Alphabet Inc.), Powered by TIKR.com. Legend Total Debt orange, Net Debt green, Total Equity purple. Vertical labels200B/400B/600B/800B; last column6/30/26 shows Total Debt120.79, Net Debt-121.68, Total Equity640.48. Thus directly displayed120.79 billion onJune30,2026, not a number inferred from a pixel height. Same publisher as article, counted once."
+    },
+    {
+      "id": "annual",
+      "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
+      "title": "Fourth Quarter and Fiscal Year 2025 Results",
+      "publisher": "Alphabet",
+      "accessed_at": "2026-10-11",
+      "excerpt": "February 4, 2026 release. In millions except per-share amounts, year ended December 31 2025: revenues 402,836; operating income 129,039; net income 132,170; diluted EPS 10.81; diluted weighted-average shares 12,230. Operating cash flow 164,713; purchases property/equipment (91,447); FCF 73,266; SBC 24,953; repurchases (45,709); dividends (10,049). FY2024 revenue 350,018; operating income 112,390; net income 100,118; OCF125,299; capex52,535. YouTube annual ads and subscriptions exceeded $60 billion. Q4 Cloud revenue17,664 and operating income5,313. Initial 2026 capex anticipated $175-$185 billion; not latest guidance. Q42025 Waymo compensation charge $2.1 billion."
+    },
+    {
+      "id": "quarter",
+      "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
+      "title": "Second Quarter 2026 Results",
+      "publisher": "Alphabet",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July22 2026 release, quarter ended June30 2026; in millions: revenue119,796 (+24%); operating income40,770 (+30%), margin34%; Google Services revenue94,540, operating income39,544; Search63,271 (+17%); YouTube ads11,055 (+13%); Network7,303; subscriptions/platforms/devices12,911; Cloud24,768 (+82%), operating income8,814; Other Bets382, loss(1,799); Alphabet-level costs(5,789), mainly shared AI R&D. Net income112,193; common-stockholder income112,107 after preferred dividends86; diluted EPS9.11. Other income97,983, equity gains99,031. OCF39,069; purchases property/equipment44,924; H12026 OCF84,859 and capex80,598; SBC14,708; repurchases0; dividends5,231; acquisitions/intangibles33,697. June30 cash/equivalents55,911; marketable securities186,563. Common shares12,230 million (A5,868 B835 C5,527), not diluted quarterly denominator12,309. June common stock net issuance30,499 and preferred issuance19,063; $40 billion ATM authorized, none sold at June30. Dividend $0.22 common; preferred6.25%. Gemini App950 million MAU, API22 billion tokens/minute, company claims AI features drive query growth. Cloud includes TPU system sales. Other Bets mainly autonomous transportation/internet services."
+    },
+    {
+      "id": "filing",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001652044/513183d2-787c-48f5-8da7-8a897b1649e0.html",
+      "title": "Form10-Q June30 2026 filed July23",
+      "publisher": "Alphabet",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Filed10-Q: July15 2026 outstanding ClassA5,868 million ClassB835 million ClassC5,527 million; June30 balance sheet same classes12,230 total. Debt note June30: face101,085 million less discount/issuance costs921, less current notes1,999 = long-term98,165; no commercial paper. Lease note total operating lease liabilities18,037; finance lease liabilities2,590. Wiz closed March11 2026 for $29.5 billion excluding post-combination compensation; Intersect closed March10 for $5.9 billion. H12026 no ClassA/ClassC repurchases; $69.5 billion remaining authorization. June30 material purchase commitments and contractual obligations $811.0 billion, short term$200.7 billion; guarantees maximum$7.6 billion, credit-derivative backstops$43.8 billion. Q22026 US revenue60,846 million (51%), EMEA32,501 (27%), APAC19,317 (16%), Other Americas7,026 (6%). A/B/C equal economic dividend/liquidation rights except voting. Preferred common conversion and capped calls disclosed."
+    },
+    {
+      "id": "financials",
+      "url": "https://stockanalysis.com/stocks/googl/financials/",
+      "title": "Alphabet Financials Overview",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millionsUSD, fiscal Jan-Dec. FY2021/2022/2023/2024/2025 revenue257,637/282,836/307,394/350,018/402,836; operating income78,714/74,842/84,293/112,390/129,039; net income76,033/59,972/73,795/100,118/132,170; EPS5.61/4.56/5.80/8.04/10.80. OCF91,652/91,495/101,746/125,299/164,713; capex negative24,640/31,485/32,251/52,535/91,447; FCF67,012/60,010/69,495/72,764/73,266. FY2025 Search224,532; YouTube ads40,367; Network29,792; subscriptions/platforms/devices48,030; Cloud58,705; Other Bets1,537. TTM endedJune30 2026 revenue445,866; net income244,119; EPS19.93; OCF185,675; capex132,402; FCF53,273. Source displays historical EPS10.80 rather than issuer10.81, rounding/class allocation difference unresolved in detail but below1% tolerance; not treated as exact equality."
+    },
+    {
+      "id": "balance",
+      "url": "https://stockanalysis.com/stocks/googl/financials/balance-sheet/",
+      "title": "Alphabet Balance Sheet",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millionsUSD. June30 2026 cash/equivalents55,911; short-term investments186,563; current portion long-term debt1,999; long-term debt98,165; current leases3,895; long-term leases16,732; total debt120,791. Total common shares outstanding12,230 million; period June30 2026. FY2025 total common12,088; filing-date shares12,097, distinct. FY2025 cash/equivalents30,708; debt66,996."
+    },
+    {
+      "id": "quote",
+      "url": "https://stockanalysis.com/stocks/googl/",
+      "title": "Alphabet Class A Quote",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ GOOGL USD ClassA Shares.351.66 +3.37(0.97%). At close Oct9 2026 4:00PM EDT. Afterhours351.61 Oct9 7:59PM EDT. SharesOut12.23B; marketcap4.30T; EPS TTM19.93; PE17.64; ForwardPE26.18. Earnings dateOct28 2026. Employees190,820 is historical2025 not latest quarter198,933."
+    },
+    {
+      "id": "yahoo-price",
+      "url": "https://finance.yahoo.com/quote/GOOGL/history/?period1=1791417600&period2=1791676800&interval=1d",
+      "title": "GOOGL Historical Prices search-observed row",
+      "publisher": "Yahoo Finance",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Live web_search observation on2026-10-11: Date|Open|High|Low|Close Close price adjusted for splits.|Adj Close adjusted for splits/dividends/capital gains.|Volume. Oct9 2026|351.40|354.70|350.31|351.66|351.66|17,2... Direct read returned HTTP429; search row, not an invented full-page observation. Close date supports session close; intraday timestamp taken from StockAnalysis."
+    },
+    {
+      "id": "cap",
+      "url": "https://stockanalysis.com/stocks/googl/market-cap/",
+      "title": "Alphabet Market Capitalization",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Alphabet market cap or net worth $4.3 trillion as of October9 2026. MarketCap4.30T; enterprisevalue4.18T. Formula share price times shares outstanding. Rounded total-equity GOOGL-price convention; does not provide sum of separately priced classes."
+    },
+    {
+      "id": "public-cap",
+      "url": "https://public.com/stocks/googl/market-cap",
+      "title": "Alphabet Market Capitalization Overview",
+      "publisher": "Public",
+      "accessed_at": "2026-10-11",
+      "excerpt": "MarketCap $4.31T as of Oct9 2026. Market capitalization represents total value of Alphabet, current stock price times total outstanding shares. Other trend percentages on page contradict one another; use only dated cap observation, not growth commentary."
+    },
+    {
+      "id": "forecast",
+      "url": "https://stockanalysis.com/stocks/googl/forecast/",
+      "title": "Alphabet Stock Forecast",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed2026-10-11: 62 analysts polled by S&PGlobal StrongBuy; mean1-year target429.47, low340 high515. FY2026 endingDec31 revenue498.95B, EPS12.11; nextyearEPS15.21. EPS and ForwardPE are based on non-GAAP adjusted numbers. FY2026 EPS forecast low11.38/avg12.11/high13.47;52 analysts. FY2026 FCF forecast10.19B. Forecast is not GAAP historical EPS; adjustment bridge not supplied."
+    },
+    {
+      "id": "proxy",
+      "url": "https://files.sec2pdf.com/Alphabet%20Inc.%20%28GOOG%29/SEC_Filings_PDF/DEF%2014A/20260424-DEF%2014A-Alphabet%20Inc.-0001308179-26-000342.pdf",
+      "title": "2026 Proxy Statement filed April24",
+      "publisher": "Alphabet",
+      "accessed_at": "2026-10-11",
+      "excerpt": "April6 recorddate: ClassA one vote, ClassB ten votes, ClassC no vote. Ownership voting table LarryPage27.4% total voting power, SergeyBrin25.3%; equity ownership and votes differ. Board recommends against equal shareholder voting proposal. March2026 CEO award: GSUs target$84m, two PSU tranches$63m each depending on Alphabet TSR; Waymo BPU target$130m, Wing$45m depend on per-unit value over three years. Succession regularly reviewed by compensation/governance committees, not a disclosed named successor. Hangar LTA affiliated with Sergey: company charged$8,430,140 from2025 throughMarch31 2026; BCH affiliated with founders/Schmidt paid$1,582,762; audit committee says arm-length reviewed comparables. GV/CapitalG committed/invested$42,430,000 into certain KPCB-affiliated portfolio co-investments; KPCB Waymo invested$120m. Proxy seeks200m ClassC share reserve increase, no claim here that meeting approved it."
+    },
+    {
+      "id": "doj-search",
+      "url": "https://www.justice.gov/opa/pr/department-justice-wins-significant-remedies-against-google",
+      "title": "Search Antitrust Remedies September2 2025 updatedApril15 2026",
+      "publisher": "U.S. Department of Justice",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Court prohibited exclusive distribution contracts for Search,Chrome,Assistant,Gemini; certain index/user-interaction data made available to rivals; search/search-text-ad syndication offered. Cannot condition licensing on placements, bundle placement revenue shares, condition continued placement payments for more than one year, or prohibit simultaneous distribution of competitors. DOJ describes historical approximately90% US search queries, not current2026 observed marketshare. This announcement does not establish current appeal/stay implementation status."
+    },
+    {
+      "id": "doj-adtech",
+      "url": "https://www.justice.gov/opa/pr/department-justice-again-wins-substantial-relief-against-google",
+      "title": "Ad Tech Antitrust Remedies September16 2026",
+      "publisher": "U.S. Department of Justice",
+      "accessed_at": "2026-10-11",
+      "excerpt": "EDVirginia ordered behavioral relief: AdX/DFP integrations with Prebid and competing publisher ad servers; publishers can export their DFP/AdX data; AdWords nondiscriminatory bidding and no direct bids into DFP; anti-self-preferencing; six-year monitor/technical committee. DOJ continues reviewing nextsteps. Announcement supports behavioral remedies, not assumed divestiture or finalized no-appeal implementation."
+    },
+    {
+      "id": "cnbc",
+      "url": "https://www.cnbc.com/amp/2026/07/22/google-earnings-q2-goog-live-updates.html",
+      "title": "Alphabet Q22026 earnings live coverage",
+      "publisher": "CNBC",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July22 updated7:21PM EDT: revenue119.80B; adjustedEPS2.85 versus2.89 expected, not GAAP9.11. Cloud grew82% to24.8B; Search17% to63.3B; YouTube13% to11.06B. Full-year2026 capex guidance raised to195-205B from180-190B. CFO cites supply constraints; plans Q3 third-party capacity with modest near-term marginpressure. Most44.9B Q2 capex technical infrastructure, about60%servers40%datacenters/network. Q3 Search laps tougher prior-year growth. Equity gains99.03B; common income112.11B. Article describes Chinese open-weight substitutes/tokencost pressure and Gemini3.5Pro delay."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "351.66",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "quote",
+        "yahoo-price"
+      ],
+      "note": "Regular-session ClassA close on the vendor's current split-adjusted quotation basis; Yahoo labels Close adjusted for splits. No legacy unsplit price or EPS used; do not substitute after-hours quote.",
+      "observations": [
+        {
+          "source": "quote",
+          "value": "351.66",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "yahoo-price",
+          "value": "351.66",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "12230000000",
+      "unit": "shares",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter",
+        "filing",
+        "balance"
+      ],
+      "note": "Actual June30 total ClassA5.868B+ClassB0.835B+ClassC5.527B common outstanding. Same total on July15 cover. NOT quarterly diluted12.309B nor FY2025 diluted12.230B (numerical coincidence). Million units converted; dated actual not current October register. Preferred19m securities excluded; future dilution modeled only conditionally.",
+      "observations": [
+        {
+          "source": "quarter",
+          "value": "12230000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "balance",
+          "value": "12230000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "4300000000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "cap",
+        "public-cap"
+      ],
+      "note": "Observed rounded total Alphabet common-equity capitalization using GOOGL single-price convention, not just ClassA. Public4.31T differs by rounding/data convention within1%. Not exact class-price-weighted enterprise equity value; nontradedB and GOOG spread prevent exact consolidation.",
+      "observations": [
+        {
+          "source": "cap",
+          "value": "4300000000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "public-cap",
+          "value": "4310000000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "402836000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual",
+        "financials"
+      ],
+      "note": "Consolidated FY2025; original millions normalized toUSD. Not TTM445.866B.",
+      "observations": [
+        {
+          "source": "annual",
+          "value": "402836000000",
+          "period": "FY ended 2025-12-31"
+        },
+        {
+          "source": "financials",
+          "value": "402836000000",
+          "period": "FY ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "132170000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual",
+        "financials"
+      ],
+      "note": "Consolidated FY2025; original millions normalized toUSD. GAAP consolidated income, no preferred at FY2025; not normalized recurring profit.",
+      "observations": [
+        {
+          "source": "annual",
+          "value": "132170000000",
+          "period": "FY ended 2025-12-31"
+        },
+        {
+          "source": "financials",
+          "value": "132170000000",
+          "period": "FY ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "164713000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual",
+        "financials"
+      ],
+      "note": "Consolidated FY2025; original millions normalized toUSD. Same fiscal period as capital spend; SBC noncash addback and working-capital changes are real economic limitations.",
+      "observations": [
+        {
+          "source": "annual",
+          "value": "164713000000",
+          "period": "FY ended 2025-12-31"
+        },
+        {
+          "source": "financials",
+          "value": "164713000000",
+          "period": "FY ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "91447000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual",
+        "financials"
+      ],
+      "note": "Consolidated FY2025; original millions normalized toUSD. Positive cash purchases of property/equipment; source cash outflow sign reversed. Excludes acquisitions and noncash lease asset additions.",
+      "observations": [
+        {
+          "source": "annual",
+          "value": "91447000000",
+          "period": "FY ended 2025-12-31"
+        },
+        {
+          "source": "financials",
+          "value": "91447000000",
+          "period": "FY ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "55911000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter",
+        "balance"
+      ],
+      "note": "Consolidated cash/equivalents ONLY; excludes186.563B marketable securities and restricted/noncurrent investments. Not a guarantee all freely distributable.",
+      "observations": [
+        {
+          "source": "quarter",
+          "value": "55911000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "balance",
+          "value": "55911000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "120791000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "balance",
+        "filing",
+        "tikr-debt",
+        "tikr-debt-chart"
+      ],
+      "note": "Canonical all-in debt carrying100.164B plus operating18.037B and finance2.590B leases; issuer components98.165+1.999+18.037+2.590B explicitly reconcile, not quoted issuer aggregate. StockAnalysis120.791B and actually viewed TIKR chart120.79B directly publish date-matched aggregate; TIKR article120.8B is further rounding, not another publisher. TIKR omits lease itemization, so scope judgment uses matching amount and primary component reconciliation; no assertion it independently audited issuer truth. TickerScout102.754B excludes operating leases and is not matching direct observation; Yahoo mrq120.79B lacks retained period and direct fetch429.",
+      "observations": [
+        {
+          "source": "balance",
+          "value": "120791000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "tikr-debt-chart",
+          "value": "120790000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "eps": {
+      "value": "10.81",
+      "unit": "USD/share",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual",
+        "financials"
+      ],
+      "note": "GAAP FY2025 diluted consolidated EPS post-split. Vendor10.80 differs onecent, within1% audit tolerance but not asserted exact; primary10.81 governs. TTM19.93 heavily mark-to-market distorted; not model basis.",
+      "observations": [
+        {
+          "source": "annual",
+          "value": "10.81",
+          "period": "FY ended 2025-12-31"
+        },
+        {
+          "source": "financials",
+          "value": "10.80",
+          "period": "FY ended 2025-12-31"
+        }
+      ]
+    },
+    "forward_eps": {
+      "value": "12.11",
+      "unit": "USD/share",
+      "period": "FY ending 2026-12-31 forecast observed 2026-10-11",
+      "kind": "estimate",
+      "sources": [
+        "forecast"
+      ],
+      "note": "Sourced analyst non-GAAP adjustedEPS; positive starting annual earnings power. Excludes/adjusts unusual gains with vendor adjustment bridge unavailable; no representation as GAAP. Future EPS growth assumptions incorporate common dilution; preferred conversion could exceed assumption."
+    },
+    "required_return": {
+      "value": "0.105",
+      "unit": "decimal",
+      "period": "Five-year conditional model as of 2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "10.5% opportunity-cost hurdle above observed10-year5.24%; compensates ordinary equity uncertainty, not secretly quantifying discrete antitrust or catastrophic risks. Scenario growth/multiple handle operating downside."
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "short_term_investments": {
+      "value": "186563000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_revenue": {
+      "value": "119796000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_operating_income": {
+      "value": "40770000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_common_income": {
+      "value": "112107000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_gaap_eps": {
+      "value": "9.11",
+      "unit": "USD/share",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_cloud_revenue": {
+      "value": "24768000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_cloud_operating_income": {
+      "value": "8814000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_search_revenue": {
+      "value": "63271000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_youtube_ads": {
+      "value": "11055000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_ocf": {
+      "value": "39069000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "q2_capex": {
+      "value": "44924000000",
+      "unit": "USD",
+      "period": "Quarter ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "fy_sbc": {
+      "value": "24953000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "fy_repurchases": {
+      "value": "45709000000",
+      "unit": "USD",
+      "period": "FY ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "annual"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    },
+    "h1_sbc": {
+      "value": "14708000000",
+      "unit": "USD",
+      "period": "Six months ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "quarter"
+      ],
+      "note": "Supplementary reported statement fact; original USD millions normalized where applicable."
+    }
+  },
+  "valuation": {
+    "base_eps": "forward_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "16",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.11",
+        "exit_multiple": "24",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.19",
+        "exit_multiple": "31",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "TSLA",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "1511491787683.80",
+    "market_cap_deviation": "0.0009879388634437086092715231788079470198675",
+    "free_cash_flow": "6220000000",
+    "free_cash_flow_yield": "0.004119205298013245033112582781456953642384",
+    "pe": "354.3518518518518518518518518518518518519"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "15",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "12.535251187500",
+        "total_return": "-0.9672452281486804285340998170891037366083",
+        "annualized_return": "-0.4952748848925874078604474313570060821708",
+        "present_target": "6.510416666666666666666666666666666666667"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "80.621568000000",
+        "total_return": "-0.7893348105565717272014632871701071335250",
+        "annualized_return": "-0.2676502196426433856478304134921459607921",
+        "present_target": "41.87231609075404497154596807316670294685"
+      },
+      {
+        "name": "bull",
+        "growth": "0.35",
+        "exit_multiple": "50",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "242.137805625000",
+        "total_return": "-0.3672908136268617716226809511366605696368",
+        "annualized_return": "-0.0874832857647784816513171992304823460233",
+        "present_target": "125.7587886984728801231291640600799887242"
+      }
+    ],
+    "weighted_present_target": "48.04104078507159851039881684859934921826"
+  }
+}

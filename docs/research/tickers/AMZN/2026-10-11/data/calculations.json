@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "AMZN",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "2829782690000.00",
+    "market_cap_deviation": "0.00007678798586572438162544169611307420494700",
+    "free_cash_flow": "-11625000000",
+    "free_cash_flow_yield": "-0.004107773851590106007067137809187279151943",
+    "pe": "21.09565916398713826366559485530546623794"
+  },
+  "valuation": {
+    "base_eps_fact": "forward_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.02",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "165.148406542656",
+        "total_return": "-0.3706953986104637427123423389094234653050",
+        "annualized_return": "-0.0884674501624802334726913557840051847095",
+        "present_target": "98.00754118949398863984643968327333843957"
+      },
+      {
+        "name": "base",
+        "growth": "0.13",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "428.697817519524",
+        "total_return": "0.633570161641291010936249666577754067751",
+        "annualized_return": "0.103132191772541042487938201017635993021",
+        "present_target": "254.4112891427672246040216205710703426392"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "36",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "808.542174102912",
+        "total_return": "2.080982258518126738558853789581983767100",
+        "annualized_return": "0.252384948470614096115394230363348353734",
+        "present_target": "479.8304270127276155040045122060487869509"
+      }
+    ],
+    "weighted_present_target": "271.6651366219390133379735482578657026672"
+  }
+}

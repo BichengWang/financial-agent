@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "MCD",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "167107072557.66",
+    "market_cap_deviation": "0.003887255542833113060194641355280547879370",
+    "free_cash_flow": "7186000000",
+    "free_cash_flow_yield": "0.04316953021746966238135287756818454884056",
+    "pe": "19.68451882845188284518828451882845188285"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.01",
+        "exit_multiple": "16",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "181.829297540880",
+        "total_return": "-0.2270148469970667006759341920673383497003",
+        "annualized_return": "-0.0501954833531898960288617477971067767759",
+        "present_target": "115.5030001567340950004518247238362500682"
+      },
+      {
+        "name": "base",
+        "growth": "0.05",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "335.534422781250",
+        "total_return": "0.426409993543553118224716235174084938146",
+        "annualized_return": "0.073615751437015098875401352153551844250",
+        "present_target": "213.1407480050304273307361845655274482361"
+      },
+      {
+        "name": "bull",
+        "growth": "0.085",
+        "exit_multiple": "26",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "467.18613363834343750",
+        "total_return": "0.986082275383001477277558134591676231773",
+        "annualized_return": "0.147095159460369498793908068130037391683",
+        "present_target": "296.7695569231445687519650250586405208849"
+      }
+    ],
+    "weighted_present_target": "200.5751854341643559158966447116427033155"
+  }
+}

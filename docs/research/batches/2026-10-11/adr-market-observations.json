@@ -1,0 +1,33 @@
+{
+  "as_of": "2026-10-11",
+  "scope": "Observed alternative vendor quote/statistics snapshots; no source-truth or precise cap-time certification",
+  "observations": [
+    {
+      "ticker": "BABA",
+      "url": "https://www.google.com/finance/quote/BABA:NYSE?hl=en",
+      "publisher": "Google Finance",
+      "accessed_at": "2026-10-11",
+      "method": "Observed public Chromium DOM after static reader returned unsupported/429",
+      "excerpt": "Home\n|\nBABA:NYSE\nadd\nAdd to list\nAlibaba Group Holding Ltd - ADR\n$111.37\narrow_upward\n+5.36%\n(+5.67) Today\nClosed:\u00a0Oct 9, 4:02:19\u202fPM UTC-4\u00a0 \u00b7 \u00a0 USD\n$111.18\narrow_downward\n-0.17%\n(-0.19)\nbedtime\nAfter hours\u00a0 \u00b7 \u00a07:59\u202fPM\n\n\nOpen\n$108.91\nHigh\n$111.47\nLow\n$108.75\nMkt. cap\n277.06B\nAvg. vol.\n8.60M\nVolume\n12.35M\nDividend\n0.94%\nQuarterly dividend\n$0.26\nEx-dividend date\nDec 20, 2023\nP/E ratio\n24.53\n52-wk high\n$182.50\n52-wk low\n$91.99\nEPS\n$4.54\nBeta\n0.75\nShares outstanding\n2.49B\nNo. of employees\n132K",
+      "note": "Quote close timestamp displayed; market statistics have no separate timestamp. These are observed vendor statistics, not issuer-verified current share counts or independently dated closing capitalizations. AI-generated narrative was excluded."
+    },
+    {
+      "ticker": "PDD",
+      "url": "https://www.google.com/finance/quote/PDD:NASDAQ?hl=en",
+      "publisher": "Google Finance",
+      "accessed_at": "2026-10-11",
+      "method": "Observed public Chromium DOM after static reader returned unsupported/429",
+      "excerpt": "Finance\nsearch_spark\nmic\nVoice Search\nsettings\nSettings\nfeedback\nSend feedback\nSign in\nLists\nNew list\nExpand\nadd\nCreate a portfolio\nSIXB\n+0.32%\narrow_upward\n\n\nSIXC\n-1.59%\narrow_downward\n\n\nSIXE\n-0.19%\narrow_downward\n\n\nSIXI\n+0.49%\narrow_upward\n\n\nSIXM\n+0.91%\narrow_upward\n\n\nSIXR\n+0.05%\narrow_upward\n\n\nSIXRE\n+1.90%\narrow_upward\n\n\nSIXT\n+0.52%\narrow_upward\n\n\nSIXU\n+0.81%\narrow_upward\n\n\nSIXV\n+1.58%\narrow_upward\n\n\nSIXY\n+1.05%\narrow_upward\ninsights_auto\nWhy is PDD up 3.95%?\nDive Deeper\nchevron_right\nPDD:NASDAQ\ncheck_indeterminate_small\nAdd to list\nPDD Holdings Inc - ADR\n$81.35\narrow_upward\n+3.95%\n(+3.09) Today\nClosed:\u00a0Oct 9, 4:00:00\u202fPM UTC-4\u00a0 \u00b7 \u00a0 USD\n$81.24\narrow_downward\n-0.14%\n(-0.11)\nbedtime\nAfter hours\u00a0 \u00b7 \u00a08:01\u202fPM\n\n\nOpen\n$79.30\nHigh\n$81.58\nLow\n$79.19\nMkt. cap\n115.79B\nAvg. vol.\n6.37M\nVolume\n7.16M\nP/E ratio\n8.76\n52-wk high\n$139.41\n52-wk low\n$71.94\nEPS\n$9.28\nBeta\n-0.05\nShares outstanding\n1.42B\nNo. of employees\n25K",
+      "note": "Quote close timestamp displayed; market statistics have no separate timestamp. These are observed vendor statistics, not issuer-verified current share counts or independently dated closing capitalizations. AI-generated narrative was excluded."
+    },
+    {
+      "ticker": "JD",
+      "url": "https://www.google.com/finance/quote/JD:NASDAQ?hl=en",
+      "publisher": "Google Finance",
+      "accessed_at": "2026-10-11",
+      "method": "Observed public Chromium DOM after static reader returned unsupported/429",
+      "excerpt": "Finance\nsearch_spark\nSearch\u00a0for\u00a0stocks,\u00a0ETFs,\u00a0and\u00a0more\nmic\nVoice Search\nsettings\nSettings\nfeedback\nSend feedback\nSign in\nLists\nNew list\nExpand\nadd\nCreate a portfolio\nSIXB\n+0.32%\narrow_upward\n\n\nSIXC\n-1.59%\narrow_downward\n\n\nSIXE\n-0.19%\narrow_downward\n\n\nSIXI\n+0.49%\narrow_upward\n\n\nSIXM\n+0.91%\narrow_upward\n\n\nSIXR\n+0.05%\narrow_upward\n\n\nSIXRE\n+1.90%\narrow_upward\n\n\nSIXT\n+0.52%\narrow_upward\n\n\nSIXU\n+0.81%\narrow_upward\n\n\nSIXV\n+1.58%\narrow_upward\n\n\nSIXY\n+1.05%\narrow_upward\nJD:NASDAQ\nadd\nAdd to list\nJD.Com Inc\n$27.09\narrow_upward\n+0.67%\n(+0.18) Today\nClosed:\u00a0Oct 9, 4:00:01\u202fPM UTC-4\u00a0 \u00b7 \u00a0 USD\n$27.06\narrow_downward\n-0.11%\n(-0.030)\nbedtime\nAfter hours\u00a0 \u00b7 \u00a07:37\u202fPM\n\n\nOpen\n$26.91\nHigh\n$27.36\nLow\n$26.85\nMkt. cap\n38.03B\nAvg. vol.\n6.14M\nVolume\n8.93M\nP/E ratio\n17.71\n52-wk high\n$35.06\n52-wk low\n$24.51\nEPS\n$1.53\nBeta\n0.33\nShares outstanding\n1.25B\nNo. of employees\n900K",
+      "note": "Quote close timestamp displayed; market statistics have no separate timestamp. These are observed vendor statistics, not issuer-verified current share counts or independently dated closing capitalizations. AI-generated narrative was excluded."
+    }
+  ]
+}

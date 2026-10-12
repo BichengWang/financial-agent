@@ -110,6 +110,35 @@ inspect their imports, data requirements, and assumptions before rerunning.
 The [`notebook notes`](notebooks/README.md) link to the original write-up and
 video, rather than serving as a current performance benchmark.
 
+### Repository-native ticker research
+
+Browse [the dated research index](docs/research/index.md) for the retained 50-security
+scan, conditional model targets, declared horizons and source gaps. Read
+[run guidance](docs/research/README.md) before collecting or changing evidence.
+
+The [native skill graph](skills/equity-investment-research/README.md) separates nine
+analytical nodes from Decimal arithmetic and the structural/evidence audit.
+Optional earnings, cash-flow DCF and peer-comparison skills share the ticker/date
+workspace; they do not replace the core EPS/exit-multiple model or its audit.
+
+```sh
+uv sync --locked --python 3.12 --extra research
+uv run --python 3.12 --extra research python \
+  skills/equity-investment-research/scripts/research.py plan \
+  --tickers INTC CRM --as-of 2026-10-12 \
+  --skills earnings-analysis dcf-model comps-analysis
+```
+
+`plan` prints instructions, prerequisites and destinations; it does not perform
+research. Canonical source lives in `skills/`, with relative discovery links for
+omp, Claude Code and Codex. Reports remain in
+`docs/research/tickers/TICKER/DATE/`; inputs, calculations and audits remain in
+that run's `data/` folder. Shared verification belongs in `batches/DATE/`.
+
+Existing reports are provisional research, not investment approval. Source
+coverage and model timing gaps remain explicit. Openpyxl writes formulas but
+cannot recalculate them; actual Excel/LibreOffice recalculation is required before
+relying on workbook values. No orders, broker actions or autonomous trading.
 ### Daily equity research and report checks
 
 Read the [`workflow entrypoint`](agents/equity/daily_investment_system/main.md),
@@ -167,6 +196,8 @@ tool does not place orders.
 | [`agents/equity/daily_investment_system/`](agents/equity/daily_investment_system/) | Prompt workflow, compute helpers, and helper tests |
 | [`agents/equity/turtle-trader/`](agents/equity/turtle-trader/) | Turtle scanner/backtester, fixtures, and universe caches |
 | [`tests/harness/`](tests/harness/) | Harness tests |
+| [`skills/`](skills/) | Canonical native research skills, source references and licenses |
+| [`docs/research/`](docs/research/) | Dated ticker reports, central index and shared verification |
 | [`notebooks/`](notebooks/) / [`archive/`](archive/) | Current experiment notebooks / older notebooks |
 | [`pure_prompt_coding/equity/`](pure_prompt_coding/equity/) | Prompt-based research material and outputs |
 

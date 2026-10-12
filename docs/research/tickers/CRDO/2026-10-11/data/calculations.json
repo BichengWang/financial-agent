@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "CRDO",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "40700572500.00",
+    "market_cap_deviation": "0.00001406633906633906633906633906633906633907",
+    "free_cash_flow": "406996000",
+    "free_cash_flow_yield": "0.009999901719901719901719901719901719901720",
+    "pe": "86.27490039840637450199203187250996015936"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "20",
+        "years": 5,
+        "probability": "0.35",
+        "target_price": "38.843803062500",
+        "total_return": "-0.8206243220387901177557146155622258138998",
+        "annualized_return": "-0.2908261532521416996533318675451513304364",
+        "present_target": "20.17425411522633744855967078189300411523"
+      },
+      {
+        "name": "base",
+        "growth": "0.25",
+        "exit_multiple": "32",
+        "years": 5,
+        "probability": "0.45",
+        "target_price": "245.117187500000",
+        "total_return": "0.131919591318402216578157469406603555761",
+        "annualized_return": "0.025092639976074608441123981746494936246",
+        "present_target": "127.3061862835094730193521567461875269528"
+      },
+      {
+        "name": "bull",
+        "growth": "0.40",
+        "exit_multiple": "42",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "566.974060800000",
+        "total_return": "1.618213164627106903717386284922650658047",
+        "annualized_return": "0.212274585129251828418117491865338609449",
+        "present_target": "294.4685606843568486728419617478845993807"
+      }
+    ],
+    "weighted_present_target": "123.2424849047798507002727476590238584452"
+  }
+}

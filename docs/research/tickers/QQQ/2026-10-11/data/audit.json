@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "fact price: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact shares: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact market_cap: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact market_cap: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact revenue: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact revenue: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact net_income: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact net_income: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact operating_cash_flow: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact operating_cash_flow: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact capital_expenditure: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact capital_expenditure: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact cash: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact cash: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact debt: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact debt: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact eps: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact eps: unavailable, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "valuation omitted; no valuation decision can be verified"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

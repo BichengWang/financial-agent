@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "SMCI",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "27500570974.24",
+    "market_cap_deviation": "0.00002076269963636363636363636363636363636364",
+    "free_cash_flow": "-6971885000",
+    "free_cash_flow_yield": "-0.2535230909090909090909090909090909090909",
+    "pe": "12.84049079754601226993865030674846625767"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.10",
+        "exit_multiple": "8",
+        "years": 3,
+        "probability": "0.30",
+        "target_price": "19.01232000",
+        "total_return": "-0.5458117534639273769708552317247969421882",
+        "annualized_return": "-0.2313205032749111503883924711873155931508",
+        "present_target": "12.83277445691791806385770520484035573699"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "12",
+        "years": 3,
+        "probability": "0.50",
+        "target_price": "49.27993344",
+        "total_return": "0.177255935021500238891543239369326325848",
+        "annualized_return": "0.055902041431923711841331103739036055684",
+        "present_target": "33.26255139233124362151917189094620207027"
+      },
+      {
+        "name": "bull",
+        "growth": "0.20",
+        "exit_multiple": "18",
+        "years": 3,
+        "probability": "0.20",
+        "target_price": "101.39904000",
+        "total_return": "1.422337314859053989488772097467749641663",
+        "annualized_return": "0.343006783964734883566807645236288761989",
+        "present_target": "68.44146377022889634057442775914856393060"
+      }
+    ],
+    "weighted_present_target": "34.16940078728677649803178305875492054236"
+  }
+}

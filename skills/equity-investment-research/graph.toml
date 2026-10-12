@@ -1,0 +1,78 @@
+version = 1
+
+[policy]
+required_facts = ['price', 'shares', 'market_cap', 'revenue', 'net_income', 'operating_cash_flow', 'capital_expenditure', 'cash', 'debt', 'eps']
+max_quote_age_days = 7
+market_cap_tolerance = '0.01'
+
+[[nodes]]
+id = 'grounding'
+requires = []
+instructions = 'references/grounding.md'
+section = 'Grounding'
+
+[[nodes]]
+id = 'business'
+requires = ['grounding']
+instructions = 'references/business.md'
+section = 'Business'
+
+[[nodes]]
+id = 'moat'
+requires = ['business']
+instructions = 'references/moat.md'
+section = 'Moat'
+
+[[nodes]]
+id = 'management'
+requires = ['business']
+instructions = 'references/management.md'
+section = 'Management'
+
+[[nodes]]
+id = 'inversion'
+requires = ['moat', 'management']
+instructions = 'references/inversion.md'
+section = 'Inversion'
+
+[[nodes]]
+id = 'industry'
+requires = ['grounding']
+instructions = 'references/industry.md'
+section = 'Industry'
+
+[[nodes]]
+id = 'valuation'
+requires = ['grounding', 'inversion', 'industry']
+instructions = 'references/valuation.md'
+section = 'Valuation'
+
+[[nodes]]
+id = 'synthesis'
+requires = ['valuation']
+instructions = 'references/synthesis.md'
+section = 'Decision'
+
+[[nodes]]
+id = 'audit'
+requires = ['synthesis']
+instructions = 'references/audit.md'
+section = 'Limitations and audit'
+
+[[extensions]]
+id = 'earnings-analysis'
+node = 'business'
+instructions = 'skills/earnings-analysis/SKILL.md'
+artifacts = ['earnings.md', 'data/earnings-inputs.json']
+
+[[extensions]]
+id = 'dcf-model'
+node = 'valuation'
+instructions = 'skills/dcf-model/SKILL.md'
+artifacts = ['dcf.md', 'data/dcf-model.xlsx']
+
+[[extensions]]
+id = 'comps-analysis'
+node = 'valuation'
+instructions = 'skills/comps-analysis/SKILL.md'
+artifacts = ['comps.md', 'data/comps-model.xlsx']

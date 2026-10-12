@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "STRL",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "15692670000.00",
+    "market_cap_deviation": "0.0001701720841300191204588910133843212237094",
+    "free_cash_flow": "362676000",
+    "free_cash_flow_yield": "0.02311510516252390057361376673040152963671",
+    "pe": "54.69083155650319829424307036247334754797"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.00",
+        "exit_multiple": "14",
+        "years": 4,
+        "probability": "0.30",
+        "target_price": "131.3200000000",
+        "total_return": "-0.7440155945419103313840155945419103313840",
+        "annualized_return": "-0.2886990688306402348157896535813606952054",
+        "present_target": "80.54101531885572806051120324480443446122"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "22",
+        "years": 4,
+        "probability": "0.50",
+        "target_price": "324.7114551296",
+        "total_return": "-0.3670342005270955165692007797270955165692",
+        "annualized_return": "-0.1080406524102049430618743816318762128944",
+        "present_target": "199.1516165230052389501722754040772239178"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "28",
+        "years": 4,
+        "probability": "0.20",
+        "target_price": "581.8354688384",
+        "total_return": "0.134182200464717348927875243664717348928",
+        "annualized_return": "0.031978636470689348050903172505953848436",
+        "present_target": "356.8505894667010280528244796307988082064"
+      }
+    ],
+    "weighted_present_target": "195.1082307504995435038043946016397039386"
+  }
+}

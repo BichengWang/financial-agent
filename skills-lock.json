@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "comps-analysis": {
+      "source": "anthropics/financial-services",
+      "sourceType": "github",
+      "skillPath": "plugins/vertical-plugins/financial-analysis/skills/comps-analysis/SKILL.md",
+      "computedHash": "0e0c5e94e64e20d734874daf2afab71dfcb7e48f2064d34146e09128f1de6fdd"
+    },
+    "dcf-model": {
+      "source": "anthropics/financial-services",
+      "sourceType": "github",
+      "skillPath": "plugins/vertical-plugins/financial-analysis/skills/dcf-model/SKILL.md",
+      "computedHash": "5ec4336850cc7cf2c93932d7163bdb273d2f3ffadcaa216cb90361fe8d2f217f"
+    },
+    "earnings-analysis": {
+      "source": "anthropics/financial-services",
+      "sourceType": "github",
+      "skillPath": "plugins/vertical-plugins/equity-research/skills/earnings-analysis/SKILL.md",
+      "computedHash": "57da904968b9c28d0538f0876078601e662aa12932aeffda45391cd832eb5dcd"
+    }
+  }
+}

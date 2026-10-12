@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "MKSI",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "17885490000.00",
+    "market_cap_deviation": "0.0003070469798657718120805369127516778523490",
+    "free_cash_flow": "497000000",
+    "free_cash_flow_yield": "0.02779642058165548098434004474272930648770",
+    "pe": "60.52631578947368421052631578947368421053"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "58.497838875000",
+        "total_return": "-0.7788361479206049149338374291115311909263",
+        "annualized_return": "-0.2604920807843505015421855469252105146159",
+        "present_target": "33.19324477917449963882236568096626405664"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "20",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "222.055052083200",
+        "total_return": "-0.1604723928801512287334593572778827977316",
+        "annualized_return": "-0.0343783455626440201011465992312154714296",
+        "present_target": "126.00"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "26",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "442.703597132160",
+        "total_return": "0.673737607304952741020793950850661625709",
+        "annualized_return": "0.108504536761756776636649997322594336401",
+        "present_target": "251.2019101360151043835901707621824239900"
+      }
+    ],
+    "weighted_present_target": "123.1983554609553707683647438567263640150"
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "ticker": "LLY",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "lly-10k",
+      "url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm",
+      "title": "2025 Form 10-K",
+      "publisher": "Eli Lilly and Company",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Dollars and shares in millions. 2025 revenue 65,179; net income 20,640; diluted EPS 22.95. Net cash provided by operating activities 16,813; purchases of property and equipment (7,841). Cash and cash equivalents 7,268. Short-term borrowings and current maturities 1,635; long-term debt 40,868. Mounjaro and Zepbound accounted for 56 percent of total revenues. Compound patent expiry: US 2036, major European countries 2037, Japan 2040. Employee benefit trust held 50 million common shares at December 31 2025 and 2024; excluded in EPS computation; dividends eliminated. Manufacturing contract commitments could require approximately $10 billion if specified purchases are not made, generally up to 8 years."
+    },
+    {
+      "id": "lly-q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000081/lly-20260630.htm",
+      "title": "2026 Q2 Form 10-Q",
+      "publisher": "Eli Lilly and Company",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Common shares outstanding August 3 2026: 941,357,065. Q2 2026 revenue 22,974 million versus 15,558 million; revenue increased primarily through volume, partially offset by lower realized prices. Mounjaro and Zepbound accounted for 65 percent of H1 revenue. FDA approved orforglipron for obesity; launched Foundayo in Q2 in US. Orforglipron submitted for diabetes. Phase 3 retatrutide trials met primary endpoints. Foundayo license royalties to Chugai: mid-single digits to low teens. Q1 finalized drug pricing agreements with US government including Medicare Bridge Program. In July 2026 multiple generic companies filed ANDAs for Mounjaro/Zepbound; Lilly intends to file patent infringement suits. Product liability matters also disclosed."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/lly/financials/",
+      "title": "Annual financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD; fiscal years December 31 2021/2022/2023/2024/2025. Revenue 28,318/28,541/34,124/45,043/65,179; net income 5,582/6,245/5,240/10,590/20,640; EPS 6.12/6.90/5.80/11.71/22.95; OCF 7,366/7,586/4,240/8,818/16,813; capex -1,310/-1,854/-3,448/-5,058/-7,841. FY2025 product/therapy revenue: Mounjaro22,965; Zepbound13,542; Trulicity4,276; Jardiance3,432; oncology9,376; immunology5,247. TTM June 2026 EPS29.79; not used as annual anchor."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/lly/financials/balance-sheet/",
+      "title": "Balance sheet definitions",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD FY2025 cash and equivalents 7,268; current debt 1,635; long-term debt 40,868; current leases 222; long-term leases 1,140. Standardized total debt 43,865 includes leases. Filing-date shares 891.36 million for June 2026 filing. Total common shares June 2026 891.5 million; legal issuer shares include trust."
+    },
+    {
+      "id": "sa-stats",
+      "url": "https://stockanalysis.com/stocks/lly/statistics/",
+      "title": "Statistics snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "At close Oct 9 2026 4 PM EDT 1,179.27 USD. Market cap 1.05T; shares outstanding 891.36M. Last split October 16 1997 2:1."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/lly/history/",
+      "title": "Regular closing price history",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Oct 9 2026 close 1,179.27 USD; At close Oct 9 2026 4:00 PM EDT. After-hours 1,177.05 at 7:59 PM EDT is separate."
+    },
+    {
+      "id": "fiscal-search",
+      "url": "https://fiscal.ai/company/NYSE-LLY",
+      "title": "Dated price search observation",
+      "publisher": "Fiscal.ai",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Search-observed: Eli Lilly and Company \u2014 2026-10-09 (USD). Open 1151.67; Close 1179.27. Change +9.67 (+0.83%) vs 1169.60 on 2026-10-08. Prices split-adjusted. Full page fetch returned HTTP 429; only dated search excerpt retained."
+    },
+    {
+      "id": "fda-osa",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-medication-obstructive-sleep-apnea",
+      "title": "Zepbound OSA approval December 20 2024",
+      "publisher": "U.S. Food and Drug Administration",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Two randomized double-blind placebo-controlled studies of 469 adults without type 2 diabetes, one on PAP and one unable/unwilling to use PAP. Zepbound 10 or 15 mg weekly for 52 weeks. Primary efficacy measure change in apnea hypopnea index at week 52; statistically significant clinically meaningful reduction versus placebo. Improvement likely related to body weight reduction. Thyroid C-cell tumors in rats; human relevance unknown; contraindicated in MTC history or MEN2. GI, pancreatitis, gallbladder and other warnings."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "1179.27",
+      "unit": "USD/share",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "fiscal-search"
+      ],
+      "note": "Regular close; after-hours excluded; present split basis.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "1179.27",
+          "period": "2026-10-09 regular-session close"
+        },
+        {
+          "source": "fiscal-search",
+          "value": "1179.27",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "shares": {
+      "value": "891360000",
+      "unit": "shares",
+      "period": "2026-08-03 effective excluding trust (LLY); filing snapshot observed 2026-10-11",
+      "kind": "reported",
+      "sources": [
+        "sa-stats",
+        "sa-balance"
+      ],
+      "note": "Actual filing-date vendor effective economic shares, not EPS weighted average; vendor excludes employee trust shares whereas issuer legal August3 common shares941,357,065 include them. Annual filing reports50m trust shares, excluded from EPS and intra-company dividends. Current vendor891.36m is compatible with legal less trust; current trust count not independently re-observed. Same vendor publisher on both pages is one corroboration source.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "891360000",
+          "period": "2026-08-03 effective excluding trust (LLY); filing snapshot observed 2026-10-11"
+        },
+        {
+          "source": "sa-balance",
+          "value": "891360000",
+          "period": "2026-08-03 effective excluding trust (LLY); filing snapshot observed 2026-10-11"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "1050000000000",
+      "unit": "USD",
+      "period": "2026-10-09 regular-session close",
+      "kind": "reported",
+      "sources": [
+        "sa-stats"
+      ],
+      "note": "Vendor rounded equity cap; not enterprise value. NVO canonical dated history171.40B is supported by share-price reconciliation; incompatible headline169.11B excluded and retained, one publisher only.",
+      "observations": [
+        {
+          "source": "sa-stats",
+          "value": "1050000000000",
+          "period": "2026-10-09 regular-session close"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "65179000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-fin"
+      ],
+      "note": "Consolidated US GAAP, millions normalized to dollars.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "65179000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "65179000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "20640000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-fin"
+      ],
+      "note": "Consolidated US GAAP net income.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "20640000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "20640000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "16813000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-fin"
+      ],
+      "note": "Consolidated annual reported OCF, same fiscal period as capex.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "16813000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "16813000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "7841000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-fin"
+      ],
+      "note": "Positive cash PP&E spend; UNH includes capitalized software; acquisitions excluded.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "7841000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "7841000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "7268000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-balance"
+      ],
+      "note": "Cash and equivalents only; excludes securities. UNH only~1.1b available general corporate use.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "7268000000",
+          "period": "2025-12-31"
+        },
+        {
+          "source": "sa-balance",
+          "value": "7268000000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "42503000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "lly-10k",
+        "sa-balance"
+      ],
+      "note": "Estimate component sum excluding operating leases. LLY1.635b+40.868b=42.503b, vendor includes1.362b leases. UNH6.069b+72.320b=78.389b, includes0.708b other financing; vendor83.004b includes4.615b operating leases. No conflicting all-in total is corroboration."
+    },
+    "eps": {
+      "value": "22.95",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "lly-10k",
+        "sa-fin"
+      ],
+      "note": "Annual US GAAP diluted EPS, historical, not adjusted/TTM/forward.",
+      "observations": [
+        {
+          "source": "lly-10k",
+          "value": "22.95",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "22.95",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.11",
+      "unit": "decimal",
+      "period": "2026-10-11 model assumption",
+      "kind": "assumption",
+      "sources": [],
+      "note": "Equity hurdle above sourced5.24% Treasury; clinical/capital concentration for LLY, insurance/reserving/policy uncertainty for UNH; not beta-derived WACC."
+    }
+  },
+  "valuation": {
+    "base_eps": "eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 GAAP diluted EPS is assumed a conservative present earning-capacity proxy, not claimed to be current trailing or forward EPS. Five annual growth steps begin2026-10-11 and end2031-10-11; exit multiple applies to hypothetical terminal trailing EPS. No extra growth period is silently added for the elapsed fiscal year. Normalization deliberately excludes observed newer EPS to avoid temporary quarter/reserve effects; no factual earnings bridge is implied."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.06",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.18",
+        "exit_multiple": "32",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.28",
+        "exit_multiple": "40",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  },
+  "source_access_limitations": [
+    "Lilly issuer IR release and annual PDF HTTP403; SEC read returned entity chronology, actual annual/Q2 HTML recovered with urllib HTTPS and retained locally; Fiscal.ai HTTP429 after search quote observed."
+  ]
+}

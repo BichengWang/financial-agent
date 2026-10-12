@@ -1,0 +1,53 @@
+{
+  "initial_calculate_failure": {
+    "exit_code": 1,
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.12",
+      "python",
+      "skills/equity-investment-research/scripts/research.py",
+      "calculate",
+      "docs/research/tickers/JD/2026-10-11/data/evidence.json",
+      "--output",
+      "docs/research/tickers/JD/2026-10-11/data/calculations.json"
+    ],
+    "output": "{\"status\": \"BLOCKED\", \"error\": \"fact market_cap: observation value disagreement\"}\n",
+    "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+  },
+  "calculate": {
+    "exit_code": 0,
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.12",
+      "python",
+      "skills/equity-investment-research/scripts/research.py",
+      "calculate",
+      "docs/research/tickers/JD/2026-10-11/data/evidence.json",
+      "--output",
+      "docs/research/tickers/JD/2026-10-11/data/calculations.json"
+    ],
+    "output": "{\n  \"schema_version\": 1,\n  \"ticker\": \"JD\",\n  \"as_of\": \"2026-10-11\",\n  \"currency\": \"USD\",\n  \"metrics\": {\n    \"implied_market_cap\": \"37223471386.395\",\n    \"market_cap_deviation\": null,\n    \"free_cash_flow\": \"216000000\",\n    \"free_cash_flow_yield\": null,\n    \"pe\": \"14.72282608695652173913043478260869565217\"\n  },\n  \"valuation\": null\n}\n",
+    "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+  },
+  "audit": {
+    "exit_code": 1,
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.12",
+      "python",
+      "skills/equity-investment-research/scripts/research.py",
+      "audit",
+      "docs/research/tickers/JD/2026-10-11",
+      "--output",
+      "docs/research/tickers/JD/2026-10-11/data/audit.json"
+    ],
+    "output": "{\n  \"schema_version\": 1,\n  \"status\": \"PROVISIONAL\",\n  \"findings\": [\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact market_cap: unavailable\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact market_cap: unavailable, not verified reported data\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact debt: estimate, not verified reported data\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact eps: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact revenue: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact net_income: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact operating_cash_flow: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact capital_expenditure: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact cash: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact shares: estimate, not verified reported data\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"valuation omitted; no valuation decision can be verified\"\n    }\n  ],\n  \"scope\": \"Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade.\"\n}\n",
+    "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+  }
+}

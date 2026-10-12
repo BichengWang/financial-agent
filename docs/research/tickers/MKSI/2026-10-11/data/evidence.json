@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "ticker": "MKSI",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "sp-close-limited",
+      "url": "https://shareprices.com/us/mksi/history/",
+      "title": "Secondary close with venue and metadata limits",
+      "publisher": "SharePrices.com",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Heading Mks Instruments (MKSI.US) Share Price History. Row 9th Oct 2026 (Fri): open265.96, high265.96, low256.645, close264.50, volume37,853. Metadata misleadingly names MKSI.L/LON:MKSI and heading hyperlink leads to /lse/mksi/. The close agrees with Stock Analysis, but venue/currency metadata and very different volume prevent treating it as robust same-basis quote corroboration; excluded from required observations."
+    },
+    {
+      "id": "issuer-annual",
+      "url": "https://investor.mks.com/news-releases/news-release-details/mks-inc-reports-fourth-quarter-and-full-year-2025-financial",
+      "title": "MKSI annual financial statements and economics",
+      "publisher": "MKS Inc.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Products \nSolutions \nSupport \nCompany \nContact \nSearch\nCompany Investor Relations News Releases MKS Inc. Reports Fourth Quarter and Full-Year 2025 Financial Results\nMKS Inc. Reports Fourth Quarter and Full-Year 2025 Financial Results\nDownload PDF\nQuarterly revenue of $1,033 million\nQuarterly GAAP net income of $108 million and net income per diluted share of $1.58 \nQuarterly Adjusted EBITDA of $249 million and Non-GAAP net earnings per diluted share of $2.47\nANDOVER, Mass., Feb. 17, 2026 (GLOBE NEWSWIRE) -- MKS Inc. (NASDAQ: MKSI), a global provider of enabling technologies that transform our world, today reported its financial results for the fourth quarter and full year of 2025.\n“Our outstanding Q4 and full-year 2025 financial performance demonstrates that the investments we have made to enable today’s advanced electronics are bearing fruit,” said John T.C. Lee, President and Chief Executive Officer. “Our broad technology portfolio targeted to next-generation semiconductor manufacturing and advanced packaging drove double-digit growth in our two key end markets in 2025. MKS is in an excellent position to capitalize on current and future opportunities in a secular growth environment driven by AI transformation.”\n“The strong cash flow we generated in 2025 allowed us to proactively invest in our business to support growth and manage our balance sheet,” said Ram Mayampurath, Executive Vice President and Chief Financial Officer. “Our debt prepayments, along with the recent refinancing of our term loans and the issuance of €1.0 billion senior notes, have diversified our capital structure, extended our maturities and meaningfully reduced our interest rates, strengthening our financial position.”\nSelected GAAP and Non-GAAP Financial Measures\n(In millions, except per share data)\n \tQuarter\t \tFull Year\n \tQ4 2025\t \tQ3 2025\t \tQ4 2024\t \t2025\n\t \t2024\nNet Revenues\t \t \t \t \t \t \t \t \t \nSemiconductor\t$\t435\t \t \t$\t415\t \t \t$\t400\t \t \t$\t1,696\t \t \t$\t1,498\t \nElectronics & Packaging\t \t303\t \t \t \t289\t \t \t \t254\t \t \t$\t1,111\t \t \t$\t922\t \nSpecialty Industrial\t \t295\t \t \t \t284\t \t \t \t281\t \t \t$\t1,124\t \t \t$\t1,166\t \nTotal net revenues\t$\t1,033\t \t \t$\t988\t \t \t$\t935\t \t \t$\t3,931\t \t \t$\t3,586\t \nGross Margin\t \t46.4\t%\t \t \t46.6\t%\t \t \t47.2\t%\t \t \t46.7\t%\t \t \t47.6\t%\nGAAP Financial Measures\t \t \t \t \t \t \t \t \t \nOperating margin\t \t13.9\t%\t \t \t14.0\t%\t \t \t14.5\t%\t \t \t13.4\t%\t \t \t13.9\t%\nNet income\t$\t108\t \t \t$\t74\t \t \t$\t90\t \t \t$\t295\t \t \t$\t190\t \nNet income per diluted share\t$\t1.58\t \t \t$\t1.10\t \t \t$\t1.33\t \t \t$\t4.37\t \t \t$\t2.81\t \nNon-GAAP Financial Measures\t \t \t \t \t \t \t \t \t \nOperating margin\t \t21.0\t%\t \t \t20.8\t%\t \t \t21.3\t%\t \t \t20.7\t%\t \t \t21.3\t%\nNet earnings\t$\t168\t \t \t$\t130\t \t \t$\t146\t \t \t$\t533\t \t \t$\t444\t \nNet earnings per diluted share\t$\t2.47\t \t \t$\t1.93\t \t \t$\t2.15\t \t \t$\t7.88\t \t \t$\t6.58\t \nAdditional Financial Information\nAt December 31, 2025, the Company had $675 million in cash and cash equivalents, $2.9 billion of secured term loan principal outstanding, $1.4 billion of convertible senior notes outstanding and up to $675 million of additional borrowing capacity under a revolving credit facility, subject to certain leverage ratio requirements. During the fourth quarter of 2025, the Company paid a cash dividend of $15 million or $0.22 per diluted share and made a voluntary principal prepayment of $100 million on its USD term loan B.\nOn February 4, 2026, the Company completed a private offering of €1.0 billion aggregate principal amount of 4.25% senior notes due 2034. The Company used the net proceeds from the offering, together with the net proceeds from the partial refinancing of its then-existing USD term loan B and refinancing of its then-existing EUR term loan B, both of which were also completed on February 4, 2026, and cash on hand to prepay approximately $1.3 billion of, and refinance in full, its existing USD term loan B and refinance in full its existing EUR term loan B. In addition, the Company upsized its revolving credit facility from $675 million to $1 billion.\nFirst Quarter 2026 Guidance(1)  \nRevenue of $1,040 million, plus or minus $40 million\nGross margin of 46.0%, plus or minus 1.0%\nNon-GAAP operating expenses of $270 million, plus or minus $5 million\nNon-GAAP net earnings of $136 million, plus or minus $19 million\nNon-GAAP net earnings per diluted share of $2.00, plus or minus $0.28\nAdjusted EBITDA of $251 million, plus or minus $24 million\nThe guidance for the first quarter is based on the current business environment, including the impact of U.S. import tariffs and the imposition of retaliatory actions taken by other countries up through but not including the date of this release. The Company will continue to monitor and adapt to changes in the business environment as needed.\nConference Call Details\nA conference call with management will be held on Wednesday, February 18, 2026 at 8:30 a.m. (Eastern Time). To participate in the call by phone, participants should visit the Investor Relations section of MKS’ website at investor.mks.com and click on Events & Presentations, where you will be able to register online and receive dial-in details. We encourage participants to register and dial in to the conference call at least 15 minutes before the start of the call to ensure a timely connection. A live and archived webcast and related presentation materials will be available on the Investor Relations section of the MKS website.\n____________________________________\n(1) See “Use of Non-GAAP Financial Results” below for a discussion of our Non-GAAP financial measures and reliance on the exception in Item 10(e)(1)(i)(B) of Regulation S-K for reconciliations of forward-looking Non-GAAP financial measures.\nAbout MKS Inc.\nMKS Inc. (NASDAQ: MKSI) enables technologies that transform our world. We deliver foundational technology solutions to leading edge semiconductor manufacturing, electronics and packaging, and specialty industrial applications. We apply our broad science and engineering capabilities to create instruments, subsystems, systems, process control solutions and specialty chemicals technology that improve process performance, optimize productivity and enable unique innovations for many of the world's leading technology and industrial companies. Our solutions are critical to addressing the challenges of miniaturization and complexity in advanced device manufacturing by enabling increased power, speed, feature enhancement, and optimized connectivity. Our solutions are also critical to addressing ever-increasing performance requirements across a wide array of specialty industrial applications. Additional information can be found at www.mks.com.\nUse of Non-GAAP Financial Results\nThis press release includes financial measures that are not in accordance with U.S. generally accepted accounting principles (“Non-GAAP financial measures”). These Non-GAAP financial measures should be viewed in addition to, and not as a substitute for, MKS’ reported results under U.S. generally accepted accounting principles (“GAAP”), and may be different from Non-GAAP financial measures used by other companies. In addition, these Non-GAAP financial measures are not based on any comprehensive set of accounting rules or principles. MKS management believes the presentation of these Non-GAAP financial measures is useful to investors for comparing prior periods and analyzing ongoing business trends and operating results.\nMKS is not providing a quantitative reconciliation of forward-looking Non-GAAP net earnings, Non-GAAP net earnings per diluted share, Non-GAAP operating expenses, and Adjusted EBITDA to their most directly comparable GAAP financial measures because it is unable to estimate with reasonable certainty the ultimate timing or amount of certain significant items without unreasonable efforts. These items include, but are not limited to, fees and expenses related to amendments to the Term Loan Facility and Revolving Credit Facility, amortization of debt issuance costs, interest expense, and the income tax effect of these items. These items are uncertain, depend on various factors, including, but not limited to, our recently completed private offering of €1.0 billion principal amount of 4.25% senior notes and refinancing of our Term Loan Facility and Revolving Credit Facility on February 4, 2026, and could have a material impact on GAAP reported results for the relevant period.\nFor further information regarding these Non-GAAP financial measures, please refer to the tables presenting reconciliations of our Non-GAAP results to our GAAP results and the “Notes on Our Non-GAAP Financial Information” at the end of this press release.\nSAFE HARBOR FOR FORWARD-LOOKING STATEMENTS\nThis press release contains “forward-looking statements” within the meaning of the Private Securities Litigation Reform Act of 1995, Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934 regarding the future financial performance, business prospects and growth of MKS Inc. (“MKS,” the “Company,” “our,” or “we”). These statements are only predictions based on current assumptions and expectations. Any statements that are not statements of historical fact (including statements containing the words “will,” “projects,” “intends,” “believes,” “plans,” “anticipates,” “expects,” “estimates,” “forecasts,” “continues” and similar expressions) should be considered to be forward-looking statements. Actual events or results may differ materially from those in the forward-looking statements set forth herein. Among the important factors that could cause actual events to differ materially from those in the forward-looking statements that we make are the level and terms of our substantial indebtedness and our ability to service such debt; our entry into the chemicals technology business through our acquisition of Atotech Limited (“Atotech”) in August 2022 (the “Atotech Acquisition”), which has exposed us to significant additional liabilities; the risk that we are unable to realize the anticipated benefits of the Atotech Acquisition; risks related to cybersecurity, data privacy and intellectual property; competition from larger, more advanced or more established companies in our markets; the ability to successfully grow our business, including through growth of the Atotech business, and financial risks associated with that acquisition and potential future acquisitions, including goodwill and intangible asset impairments; manufacturing and sourcing risks, including those associated with limited and sole source suppliers and the impact and duration of supply chain disruptions, component shortages, and price increases; changes in global demand; risks associated with doing business internationally, including geopolitical conflicts, such as the conflict in the Middle East, trade compliance, trade protection measures, such as import tariffs by the United States or retaliatory actions taken by other countries, regulatory restrictions on our products, components or markets, particularly the semiconductor market, and unfavorable currency exchange and tax rate fluctuations, which risks become more significant as we grow our business internationally and in China specifically; conditions affecting the markets in which we operate, including fluctuations in capital spending in the semiconductor, electronics manufacturing and automotive industries, and fluctuations in sales to our major customers; disruptions or delays from third-party service providers upon which our operations may rely; the ability to anticipate and meet customer demand; the challenges, risks and costs involved with integrating or transitioning global operations of the companies we have acquired; risks associated with the attraction and retention of key personnel; potential fluctuations in quarterly results; dependence on new product development; rapid technological and market change; acquisition strategy; volatility of stock price; risks associated with chemical manufacturing and environmental regulation compliance; risks related to defective products; financial and legal risk management; and the other important factors described under the heading “Risk Factors” in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2024 and any subsequent Quarterly Reports on Form 10-Q, each as filed with the U.S. Securities and Exchange Commission. MKS is under no obligation to, and expressly disclaims any obligation to, update or alter these forward-looking statements, whether as a result of new information, future events or otherwise, even if subsequent events cause our views to change, after the date of this press release. Amounts reported in this press release are preliminary and subject to finalization prior to the filing of our Annual Report on Form 10-K for the year ended December 31, 2025.\nCompany Contact:\nParetosh Misra\nVice President, Investor Relations\nTelephone: (978) 284-4705\nEmail: paretosh.misra@mks.com\nMKS Inc.\nUnaudited Consolidated Statements of Operations\n(In millions, except per share data)\n \tThree Months Ended\t \tTwelve Months Ended\n \tDecember 31,\t \tSeptember 30,\t \tDecember 31,\t \tDecember 31,\t \tDecember 31,\n \t2025\n\t \t2025\n\t \t2024\n\t \t2025\n\t \t2024\nNet revenues:\t \t \t \t \t \t \t \t \t \nProducts\t$\t907\t \t \t$\t860\t \t \t$\t824\t \t \t$\t3,436\t \t \t$\t3,124\t \nServices\t \t126\t \t \t \t128\t \t \t \t111\t \t \t \t495\t \t \t \t462\t \nTotal net revenues\t \t1,033\t \t \t \t988\t \t \t \t935\t \t \t \t3,931\t \t \t \t3,586\t \nCost of revenues:\t \t \t \t \t \t \t \t \t \nProducts\t \t491\t \t \t \t466\t \t \t \t443\t \t \t \t1,859\t \t \t \t1,662\t \nServices\t \t62\t \t \t \t61\t \t \t \t51\t \t \t \t235\t \t \t \t216\t \nTotal cost of revenues (exclusive of amortization shown separately below)\t \t553\t \t \t \t527\t \t \t \t494\t \t \t \t2,094\t \t \t \t1,878\t \nGross profit\t \t480\t \t \t \t461\t \t \t \t441\t \t \t \t1,837\t \t \t \t1,708\t \nResearch and development\t \t78\t \t \t \t76\t \t \t \t65\t \t \t \t299\t \t \t \t271\t \nSelling, general and administrative\t \t185\t \t \t \t180\t \t \t \t176\t \t \t \t724\t \t \t \t674\t \nAcquisition and integration costs\t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t—\t \t \t \t9\t \nRestructuring and other\t \t11\t \t \t \t4\t \t \t \t1\t \t \t \t37\t \t \t \t6\t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2\t \t \t \t5\t \nAmortization of intangible assets\t \t62\t \t \t \t63\t \t \t \t61\t \t \t \t247\t \t \t \t245\t \nIncome from operations\t \t144\t \t \t \t138\t \t \t \t135\t \t \t \t528\t \t \t \t498\t \nInterest income\t \t(3\t)\t \t \t(3\t)\t \t \t(5\t)\t \t \t(14\t)\t \t \t(21\t)\nInterest expense\t \t50\t \t \t \t53\t \t \t \t54\t \t \t \t212\t \t \t \t284\t \nLoss on extinguishment of debt\t \t2\t \t \t \t2\t \t \t \t4\t \t \t \t10\t \t \t \t57\t \nOther expense (income), net\t \t6\t \t \t \t2\t \t \t \t3\t \t \t \t16\t \t \t \t(2\t)\nIncome before income taxes\t \t89\t \t \t \t84\t \t \t \t79\t \t \t \t304\t \t \t \t180\t \n(Benefit) provision for income taxes\t \t(19\t)\t \t \t10\t \t \t \t(11\t)\t \t \t9\t \t \t \t(10\t)\nNet income\t$\t108\t \t \t$\t74\t \t \t$\t90\t \t \t$\t295\t \t \t$\t190\t \nNet income per share:\t \t \t \t \t \t \t \t \t \nBasic\t$\t1.60\t \t \t$\t1.10\t \t \t$\t1.34\t \t \t$\t4.39\t \t \t$\t2.82\t \nDiluted\t$\t1.58\t \t \t$\t1.10\t \t \t$\t1.33\t \t \t$\t4.37\t \t \t$\t2.81\t \nCash dividends per common share\t$\t0.22\t \t \t$\t0.22\t \t \t$\t0.22\t \t \t$\t0.88\t \t \t$\t0.88\t \nWeighted average shares outstanding:\t \t \t \t \t \t \t \t \t \nBasic\t \t67.3\t \t \t \t67.3\t \t \t \t67.4\t \t \t \t67.3\t \t \t \t67.3\t \nDiluted\t \t68.0\t \t \t \t67.6\t \t \t \t67.7\t \t \t \t67.7\t \t \t \t67.6\t \nMKS Inc.\nUnaudited Consolidated Balance Sheet\n(In millions)\n \tDecember 31,\t \tDecember 31,\n \t2025\n\t \t2024\nASSETS\t \t \t \nCash and cash equivalents\t$\t675\t \t \t$\t714\t \nTrade accounts receivable, net\t \t651\t \t \t \t615\t \nInventories\t \t921\t \t \t \t893\t \nOther current assets\t \t263\t \t \t \t252\t \nTotal current assets\t \t2,510\t \t \t \t2,474\t \nProperty, plant and equipment, net\t \t810\t \t \t \t771\t \nRight-of-use assets\t \t270\t \t \t \t238\t \nGoodwill\t \t2,574\t \t \t \t2,479\t \nIntangible assets, net\t \t2,140\t \t \t \t2,272\t \nOther assets\t \t492\t \t \t \t356\t \nTotal assets\t$\t8,796\t \t \t$\t8,590\t \nLIABILITIES AND STOCKHOLDERS' EQUITY\t \t \t \nShort-term debt\t$\t51\t \t \t$\t50\t \nAccounts payable\t \t407\t \t \t \t341\t \nOther current liabilities\t \t469\t \t \t \t384\t \nTotal current liabilities\t \t927\t \t \t \t775\t \nLong-term debt, net\t \t4,150\t \t \t \t4,488\t \nNon-current deferred taxes\t \t474\t \t \t \t504\t \nNon-current accrued compensation\t \t149\t \t \t \t141\t \nNon-current lease liabilities\t \t246\t \t \t \t211\t \nOther non-current liabilities\t \t131\t \t \t \t149\t \nTotal liabilities\t \t6,077\t \t \t \t6,268\t \nStockholders' equity:\t \t \t \nCommon stock\t \t—\t \t \t \t—\t \nAdditional paid-in capital\t \t2,101\t \t \t \t2,067\t \nRetained earnings\t \t711\t \t \t \t503\t \nAccumulated other comprehensive loss\t \t(93\t)\t \t \t(248\t)\nTotal stockholders' equity\t \t2,719\t \t \t \t2,322\t \nTotal liabilities and stockholders' equity\t$\t8,796\t \t \t$\t8,590\t \nMKS Inc.\nUnaudited Consolidated Statements of Cash Flows\n(In millions)\n \tThree Months Ended\t \tTwelve Months Ended\n \tDecember 31,\t \tSeptember 30,\t \tDecember 31,\t \tDecember 31,\t \tDecember 31,\n \t2025\n\t \t2025\n\t \t2024\n\t \t2025\n\t \t2024\nCash flows from operating activities:\t \t \t \t \t \t \t \t \t \nNet income\t$\t108\t \t \t$\t74\t \t \t$\t90\t \t \t$\t295\t \t \t$\t190\t \nAdjustments to reconcile net income to net cash provided by operating activities:\t \t \t \t \t \t \t \t \t \nDepreciation and amortization\t \t86\t \t \t \t85\t \t \t \t87\t \t \t \t344\t \t \t \t348\t \nUnrealized (gain) loss on foreign currency and derivative instruments\t \t(6\t)\t \t \t(8\t)\t \t \t11\t \t \t \t(9\t)\t \t \t13\t \nAmortization of debt issuance costs and original issue discount\t \t6\t \t \t \t7\t \t \t \t7\t \t \t \t26\t \t \t \t30\t \nLoss on extinguishment of debt\t \t2\t \t \t \t2\t \t \t \t4\t \t \t \t10\t \t \t \t57\t \nStock-based compensation\t \t8\t \t \t \t12\t \t \t \t11\t \t \t \t55\t \t \t \t48\t \nProvision for excess and obsolete inventory\t \t8\t \t \t \t10\t \t \t \t15\t \t \t \t45\t \t \t \t56\t \nDeferred income taxes\t \t(71\t)\t \t \t(44\t)\t \t \t(58\t)\t \t \t(196\t)\t \t \t(226\t)\nOther\t \t2\t \t \t \t1\t \t \t \t2\t \t \t \t—\t \t \t \t8\t \nChanges in operating assets and liabilities\t \t(1\t)\t \t \t58\t \t \t \t7\t \t \t \t75\t \t \t \t4\t \nNet cash provided by operating activities\t \t142\t \t \t \t197\t \t \t \t176\t \t \t \t645\t \t \t \t528\t \nCash flows from investing activities:\t \t \t \t \t \t \t \t \t \nNet purchases (sales) of investments\t \t1\t \t \t \t(1\t)\t \t \t—\t \t \t \t—\t \t \t \t—\t \nProceeds from sale of long-lived assets\t \t1\t \t \t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t1\t \nPurchases of property, plant and equipment\t \t(51\t)\t \t \t(50\t)\t \t \t(51\t)\t \t \t(148\t)\t \t \t(118\t)\nNet cash used in investing activities\t \t(49\t)\t \t \t(51\t)\t \t \t(51\t)\t \t \t(145\t)\t \t \t(117\t)\nCash flows from financing activities:\t \t \t \t \t \t \t \t \t \nRepurchase of common stock\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t(45\t)\t \t \t—\t \nProceeds from borrowings\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2,161\t \nPayments of borrowings\t \t(113\t)\t \t \t(113\t)\t \t \t(229\t)\t \t \t(451\t)\t \t \t(2,427\t)\nPurchase of capped calls related to Convertible Notes\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t(167\t)\nPayments of deferred financing fees\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t(33\t)\nDividend payments\t \t(15\t)\t \t \t(15\t)\t \t \t(15\t)\t \t \t(59\t)\t \t \t(59\t)\nNet proceeds (payments) related to employee stock awards\t \t3\t \t \t \t—\t \t \t \t3\t \t \t \t(4\t)\t \t \t(9\t)\nOther financing activities\t \t—\t \t \t \t(1\t)\t \t \t(5\t)\t \t \t(3\t)\t \t \t(15\t)\nNet cash used in financing activities\t \t(125\t)\t \t \t(129\t)\t \t \t(246\t)\t \t \t(562\t)\t \t \t(549\t)\nEffect of exchange rate changes on cash and cash equivalents\t \t10\t \t \t \t6\t \t \t \t(26\t)\t \t \t23\t \t \t \t(23\t)\n(Decrease) increase in cash and cash equivalents\t \t(22\t)\t \t \t23\t \t \t \t(147\t)\t \t \t(39\t)\t \t \t(161\t)\nCash and cash equivalents at beginning of period\t \t697\t \t \t \t674\t \t \t \t861\t \t \t \t714\t \t \t \t875\t \nCash and cash equivalents at end of period\t$\t675\t \t \t$\t697\t \t \t$\t714\t \t \t$\t675\t \t \t$\t714\t \nThe following supplemental Non-GAAP earnings information is presented to aid in understanding MKS’ operating results:\nMKS Inc.\nSchedule Reconciling Selected Non-GAAP Financial Measures\n(In millions, except per share data)\n \tThree Months Ended\t \tTwelve Months Ended\n \tDecember 31,\t \tSeptember 30,\t \tDecember 31,\t \tDecember 31,\t \tDecember 31,\n \t2025\n\t \t2025\n\t \t2024\n\t \t2025\n\t \t2024\nNet income\t$\t108\t \t \t$\t74\t \t \t$\t90\t \t \t$\t295\t \t \t$\t190\t \nAcquisition and integration costs\t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t—\t \t \t \t9\t \nRestructuring and other\t \t11\t \t \t \t4\t \t \t \t1\t \t \t \t37\t \t \t \t6\t \nAmortization of intangible assets\t \t62\t \t \t \t63\t \t \t \t61\t \t \t \t247\t \t \t \t245\t \nLoss on extinguishment of debt\t \t2\t \t \t \t2\t \t \t \t4\t \t \t \t10\t \t \t \t57\t \nAmortization of debt issuance costs\t \t5\t \t \t \t5\t \t \t \t5\t \t \t \t19\t \t \t \t21\t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2\t \t \t \t5\t \nTax effect of Non-GAAP adjustments\t \t(20\t)\t \t \t(18\t)\t \t \t(18\t)\t \t \t(77\t)\t \t \t(89\t)\nNon-GAAP net earnings\t$\t168\t \t \t$\t130\t \t \t$\t146\t \t \t$\t533\t \t \t$\t444\t \nNon-GAAP net earnings per diluted share\t$\t2.47\t \t \t$\t1.93\t \t \t$\t2.15\t \t \t$\t7.88\t \t \t$\t6.58\t \nWeighted average diluted shares outstanding\t \t68.0\t \t \t \t67.6\t \t \t \t67.7\t \t \t \t67.7\t \t \t \t67.6\t \nNet cash provided by operating activities\t$\t142\t \t \t$\t197\t \t \t$\t176\t \t \t$\t645\t \t \t$\t528\t \nPurchases of property, plant and equipment\t \t(51\t)\t \t \t(50\t)\t \t \t(51\t)\t \t \t(148\t)\t \t \t(118\t)\nFree cash flow\t$\t91\t \t \t$\t147\t \t \t$\t125\t \t \t$\t497\t \t \t$\t410\t \nOperating expenses\t$\t336\t \t \t$\t323\t \t \t$\t306\t \t \t$\t1,309\t \t \t$\t1,210\t \nAcquisition and integration costs\t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t—\t \t \t \t9\t \nRestructuring and other\t \t11\t \t \t \t4\t \t \t \t1\t \t \t \t37\t \t \t \t6\t \nAmortization of intangible assets\t \t62\t \t \t \t63\t \t \t \t61\t \t \t \t247\t \t \t \t245\t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2\t \t \t \t5\t \nNon-GAAP operating expenses\t$\t263\t \t \t$\t256\t \t \t$\t242\t \t \t$\t1,023\t \t \t$\t945\t \nIncome from operations\t$\t144\t \t \t$\t138\t \t \t$\t135\t \t \t$\t528\t \t \t$\t498\t \nOperating margin\t \t13.9\t%\t \t \t14.0\t%\t \t \t14.5\t%\t \t \t13.4\t%\t \t \t13.9\t%\nAcquisition and integration costs\t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t—\t \t \t \t9\t \nRestructuring and other\t \t11\t \t \t \t4\t \t \t \t1\t \t \t \t37\t \t \t \t6\t \nAmortization of intangible assets\t \t62\t \t \t \t63\t \t \t \t61\t \t \t \t247\t \t \t \t245\t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2\t \t \t \t5\t \nNon-GAAP income from operations\t$\t217\t \t \t$\t205\t \t \t$\t199\t \t \t$\t814\t \t \t$\t763\t \nNon-GAAP operating margin\t \t21.0\t%\t \t \t20.8\t%\t \t \t21.3\t%\t \t \t20.7\t%\t \t \t21.3\t%\nInterest expense, net\t$\t47\t \t \t$\t50\t \t \t$\t49\t \t \t$\t198\t \t \t$\t263\t \nAmortization of debt issuance costs\t \t5\t \t \t \t5\t \t \t \t5\t \t \t \t19\t \t \t \t21\t \nNon-GAAP interest expense, net\t$\t42\t \t \t$\t45\t \t \t$\t45\t \t \t$\t179\t \t \t$\t242\t \nNet income\t$\t108\t \t \t$\t74\t \t \t$\t90\t \t \t$\t295\t \t \t$\t190\t \nInterest expense, net\t \t47\t \t \t \t50\t \t \t \t49\t \t \t \t198\t \t \t \t263\t \nOther expense (income), net\t \t6\t \t \t \t2\t \t \t \t3\t \t \t \t16\t \t \t \t(2\t)\n(Benefit) provision for income taxes\t \t(19\t)\t \t \t10\t \t \t \t(11\t)\t \t \t9\t \t \t \t(10\t)\nDepreciation\t \t24\t \t \t \t23\t \t \t \t26\t \t \t \t97\t \t \t \t103\t \nAmortization of intangible assets\t \t62\t \t \t \t63\t \t \t \t61\t \t \t \t247\t \t \t \t245\t \nStock-based compensation\t \t8\t \t \t \t12\t \t \t \t11\t \t \t \t55\t \t \t \t48\t \nAcquisition and integration costs\t \t—\t \t \t \t—\t \t \t \t3\t \t \t \t—\t \t \t \t9\t \nRestructuring and other\t \t11\t \t \t \t4\t \t \t \t1\t \t \t \t37\t \t \t \t6\t \nLoss on extinguishment of debt\t \t2\t \t \t \t2\t \t \t \t4\t \t \t \t10\t \t \t \t57\t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t \t—\t \t \t \t—\t \t \t \t2\t \t \t \t5\t \nAdjusted EBITDA\t$\t249\t \t \t$\t240\t \t \t$\t237\t \t \t$\t966\t \t \t$\t914\t \nAdjusted EBITDA margin\t \t24.1\t%\t \t \t24.3\t%\t \t \t25.3\t%\t \t \t24.6\t%\t \t \t25.5\t%\nMKS Inc.\nSchedule Reconciling Selected Non-GAAP Financial Measures\n(In millions, except per share data)\n \tThree Months Ended December 31, 2025\t \tThree Months Ended December 31, 2024\n \tIncome Before\t \t(Benefit) Provision\t \tEffective\t \tIncome Before\t \t(Benefit) Provision\t \tEffective\n \tIncome Taxes\t \tfor Income Taxes\t \tTax Rate\t \tIncome Taxes\t \tfor Income Taxes\t \tTax Rate\nGAAP\t$\t89\t \t$\t(19\t)\t \t(20.8\t%)\t \t$\t79\t \t$\t(11\t)\t \t(14.5\t%)\nAcquisition and integration costs\t \t—\t \t \t—\t \t \t \t \t \t3\t \t \t—\t \t \t \nRestructuring and other\t \t11\t \t \t—\t \t \t \t \t \t1\t \t \t—\t \t \t \nAmortization of intangible assets\t \t62\t \t \t—\t \t \t \t \t \t61\t \t \t—\t \t \t \nLoss on extinguishment of debt\t \t2\t \t \t—\t \t \t \t \t \t4\t \t \t—\t \t \t \nAmortization of debt issuance costs\t \t5\t \t \t—\t \t \t \t \t \t5\t \t \t—\t \t \t \nFees and expenses related to amendments to the Term Loan Facility\t \t—\t \t \t—\t \t \t \t \t \t—\t \t \t—\t \t \t \nTax effect of Non-GAAP adjustments\t \t—\t \t \t20\t \t \t \t \t \t—\t \t \t18\t \t \t \nNon-GAAP\t$\t169\t \t$\t1\t \t \t0.9\t%\t \t$\t153\t \t$\t7\t \t \t4.0\t%\n \tThree Months Ended September 30, 2025\t \t \t \t \t \t \n \tIncome Before\t \tProvision\t \tEffective\t \t \t \t \t \t \n \tIncome Taxes\t \tfor Income Taxes\t \tTax Rate\t \t \t \t \t \t \nGAAP\t$\t84\t \t$\t10\t \t \t12.3\t%\t \t \t \t \t \t \nRestructuring and other\t \t4\t \t \t—\t \t \t \t \t \t \t \t \t \nAmortization of intangible assets\t \t63\t \t \t—\t \t \t \t \t \t \t \t \t \nLoss on extinguishment of debt\t \t2\t \t \t—\t \t \t \t \t \t \t \t \t \nAmortization of debt issuance costs\t \t5\t \t \t—\t \t \t \t \t \t \t \t \t \nTax effect of Non-GAAP adjustments\t \t—\t \t \t18\t \t \t \t \t \t \t \t \t \nNon-GAAP\t$\t158\t \t$\t28\t \t \t17.9\t%\t \t \t \t \t \t \n \tTwelve Months Ended December 31, 2025\t \tTwelve Months Ended December 31, 2024\n \tIncome Before\t \tProvision\t \tEffective\t \tIncome Before\t \t(Benefit) Provision\t \tEffective\n \tIncome Taxes\t \tfor Income Taxes\t \tTax Rate\t \tIncome Taxes\t \tfor Income Taxes\t \tTax Rate\nGAAP\t$\t304\t \t$\t9\t \t \t2.9\t%\t \t$\t180\t \t$\t(10\t)\t \t(5.7\t%)\nAcquisition and integration costs\t \t—\t \t \t—\t \t \t \t \t \t9\t \t \t—\t \t \t \nRestructuring and other\t \t37\t \t \t—\t \t \t \t \t \t6\t \t \t—\t \t \t \nAmortization of intangible assets\t \t247\t \t \t—\t \t \t \t \t \t245\t \t \t—\t \t \t \nLoss on extinguishment of debt\t \t10\t \t \t—\t \t \t \t \t \t57\t \t \t—\t \t \t \nAmortization of debt issuance costs\t \t19\t \t \t—\t \t \t \t \t \t21\t \t \t—\t \t \t \nFees and expenses related to amendments to the Term Loan Facility\t \t2\t \t \t—\t \t \t \t \t \t5\t \t \t—\t \t \t \nTax effect of Non-GAAP adjustments\t \t—\t \t \t77\t \t \t \t \t \t—\t \t \t89\t \t \t \nNon-GAAP\t$\t619\t \t$\t86\t \t \t13.8\t%\t \t$\t523\t \t$\t78\t \t \t14.8\t%\nMKS Inc.\nNotes on Our Non-GAAP Financial Information\nNon-GAAP financial measures adjust GAAP financial measures for the items listed below. These Non-GAAP financial measures should be viewed in addition to, and not as a substitute for, MKS’ reported GAAP results, and may be different from Non-GAAP financial measures used by other companies. In addition, these Non-GAAP financial measures are not based on any comprehensive set of accounting rules or principles. MKS management believes the presentation of these Non-GAAP financial measures is useful to investors for comparing prior periods and analyzing ongoing business trends and operating results. Totals presented may not sum and percentages may not recalculate using figures presented due to rounding.\nAcquisition and integration costs include incremental expenses incurred to effect the Atotech Acquisition. Such acquisition costs may include advisory, legal, tax, accounting, valuation, and other professional or consulting fees. Such integration costs may include expenses directly related to integration of business and facility operations, information technology systems and infrastructure and other employee-related costs.\nRestructuring and other include incremental expenses incurred in connection with restructuring programs and other strategic initiatives, primarily related to changes in business and/or cost structure. Such costs may include third-party services, one-time termination benefits, facility-related costs, contract termination fees and other items that have no direct correlation to our future business operations.\nAmortization of intangible assets includes non-cash amortization expense associated with intangible assets acquired in acquisitions.\nLoss on extinguishment of debt includes the non-cash write-off of unamortized debt issuance costs and original issue discount costs incurred from voluntary prepayments and/or repricing of our term loan facility.\nAmortization of debt issuance costs includes non-cash additional interest expense related to the amortization of debt issuance costs associated with our term loan facility.\nFees and expenses related to amendments to the Term Loan Facility includes direct third-party costs related to repricings or refinancings of our term loan facility.\nTax effect of Non-GAAP adjustments includes the impact of Non-GAAP adjustments that are tax effected at applicable statutory rates resulting in a difference between the GAAP and Non-GAAP tax rates. \nSource: MKS Inc.\n©2026 MKS Inc. All rights reserved.\n Terms of UsePrivacy\nContact UsCareersLegalAbout UsInvestors"
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/mksi/history/",
+      "title": "MKSI observed daily quote",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ MKSI USD. At close: Oct9,2026,4:00PM EDT. Close 264.50 USD/share. Regular-session unadjusted close, not after-hours or analyst target."
+    },
+    {
+      "id": "sa-stat",
+      "url": "https://stockanalysis.com/stocks/mksi/statistics/",
+      "title": "MKSI statistics snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Stock Analysis October9,2026 close264.50; actual shares outstanding67.62 million; market cap17.88 billion. Financials millionsUSD FY2025 endingDecember31,2025 revenue3,931; net income295; EPS4.37; OCF645; capex(148); cash675; standardized debt4,478 includes leases unlike narrow debt4,201. FY2021/22/23/24/25 revenue2,950/3,547/3,622/3,586/3,931; EPS9.90/5.56/-27.56/2.81/4.37; OCF640/529/319/528/645; capex87/164/87/118/148. LatestTTM June30,2026 revenue4,347; net income439; EPS6.30; OCF635; capex180."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/mksi/financials/",
+      "title": "MKSI annual and TTM histories",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Stock Analysis October9,2026 close264.50; actual shares outstanding67.62 million; market cap17.88 billion. Financials millionsUSD FY2025 endingDecember31,2025 revenue3,931; net income295; EPS4.37; OCF645; capex(148); cash675; standardized debt4,478 includes leases unlike narrow debt4,201. FY2021/22/23/24/25 revenue2,950/3,547/3,622/3,586/3,931; EPS9.90/5.56/-27.56/2.81/4.37; OCF640/529/319/528/645; capex87/164/87/118/148. LatestTTM June30,2026 revenue4,347; net income439; EPS6.30; OCF635; capex180."
+    },
+    {
+      "id": "issuer-update",
+      "url": "https://www.nasdaq.com/press-release/mks-inc-reports-second-quarter-2026-financial-results-2026-08-05",
+      "title": "Q2FY2026 release distributed through Nasdaq",
+      "publisher": "MKS Inc.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "August5,2026; Q2 revenue$1,248million; GAAP netincome$175million EPS$2.41 versusnonGAAP$3.30; Semiconductor554; Electronics&Packaging381; SpecialtyIndustrial313million. H1revenue2,326million netincome258million dilutedEPS3.60; OCF296million PP&E purchases79million; cash611million June30,2026. Securedloanprincipal$1.5billion; convertibles$1.4billion; seniornotes€1.0billion (no unsourced FX conversion). Currentdebt carryingvalue1,399million; longtermdebtnet2,544million. Convertible seniornotes became convertible at holdersoption Q3and classifiedshortterm. Augustprepayment$100million. Q3guidance revenue1,350+/-40million GAAPEPS2.73+/-0.31. Risks debt service/acquisitions/cybersecurity/export/trade restrictions/WFEcapex/chemicalsregulation."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "264.50",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; post-split basis. No invented current timestamp.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "264.50",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "67620000",
+      "unit": "shares",
+      "period": "2026-10-09 vendor snapshot; underlying filing date not supplied",
+      "kind": "reported",
+      "sources": [
+        "sa-stat"
+      ],
+      "note": "Actual common shares outstanding, not EPS weighted-average shares; filing date differs from quote date.",
+      "observations": [
+        {
+          "source": "sa-stat",
+          "value": "67620000",
+          "period": "2026-10-09 vendor snapshot; underlying filing date not supplied"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "17880000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-stat"
+      ],
+      "note": "Rounded vendor snapshot; billion USD multiplied by 1,000,000,000.",
+      "observations": [
+        {
+          "source": "sa-stat",
+          "value": "17880000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "3931000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "3931000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "3931000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "295000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Consolidated GAAP net income, not necessarily common-attributable earnings.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "295000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "295000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "645000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "645000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "645000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "148000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Positive cash PP&E purchases; excludes acquisitions, investments and noncash leases.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "148000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "148000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "675000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Consolidated cash and equivalents only; excludes restricted cash and investments.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "675000000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "4201000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Narrow interest-bearing debt carrying value; excludes operating leases and preferred stock; sums disclosed current/noncurrent borrowing components. $51m shortterm+$4,150m longtermnet. 2026 euro notes not converted; canonicaldebt remains2025USDcarryingvalue."
+    },
+    "eps": {
+      "value": "4.37",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Annual GAAP diluted EPS; not adjusted or forward EPS.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "4.37",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "4.37",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.12",
+      "unit": "decimal",
+      "period": "2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Analyst equity hurdle above sourced 5.24% 10-year Treasury; not observed cost of capital."
+    },
+    "normalized_eps": {
+      "value": "6.30",
+      "unit": "USD/share",
+      "period": "2026-10-11 earning-capacity assumption",
+      "kind": "assumption",
+      "sources": [
+        "sa-fin"
+      ],
+      "note": "Uses observedvendor GAAPTTMJune30,2026EPS6.30 as currentcapacityproxy afterrefinancing; FY2025annual4.37 separate. NotreportedforwardEPS or fullyindependentlycorroboratedTTMbridge."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://investor.mks.com/news-releases/news-release-details/mks-inc-reports-fourth-quarter-and-full-year-2025-financial",
+      "attempt": "Static reader and alternatives",
+      "result": "IRrelease/annualPDFandGlobeNewswirestatic403; annualrelease recoveredinbrowser; latestissuerQ2releaseonNasdaqfetched."
+    }
+  ],
+  "valuation": {
+    "base_eps": "normalized_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 ended 2025-12-31 historical GAAP EPS remains the reported anchor. The 6.30 USD/share capacity proxy is explicitly assumed at October11,2026 using vendor latest TTM rather than the older annual tax/cycle-distorted figure. 5 annual growth periods begin on valuation date and end at the calendar anniversary; exit P/E applies to hypothetical trailing twelve-month EPS at terminal date, not remote forward fiscal EPS. Dividends, interim distributions and incremental dilution are excluded; growth is per-share."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "20",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "26",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

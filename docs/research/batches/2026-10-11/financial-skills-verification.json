@@ -1,0 +1,1105 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-12T06:00:04.308576+00:00",
+  "status": "PASS",
+  "scope": "Project-local skill installation, source retention, instruction activation and native graph integration. No new ticker financial analysis, DCF/comps workbook or recalculation was performed.",
+  "provenance": ".agents/skills/provenance.json",
+  "source_revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
+  "pinned_upstream_files_verified": 9,
+  "license_git_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+  "installed_skills": [
+    "earnings-analysis",
+    "dcf-model",
+    "comps-analysis"
+  ],
+  "canonical_root": ".agents/skills",
+  "omp_discovery_root": ".omp/skills",
+  "claude_discovery_root": ".claude/skills",
+  "omp_activation": [
+    {
+      "command": [
+        "omp",
+        "read",
+        "skill://earnings-analysis"
+      ],
+      "exit_code": 0,
+      "observed_skill_file": ".omp/skills/earnings-analysis/SKILL.md",
+      "native_entrypoint_sha256": "e44088c5efb6606ced9f5d72ffada639035554eef4a711abcefbf0344de64b71"
+    },
+    {
+      "command": [
+        "omp",
+        "read",
+        "skill://dcf-model"
+      ],
+      "exit_code": 0,
+      "observed_skill_file": ".omp/skills/dcf-model/SKILL.md",
+      "native_entrypoint_sha256": "da7cddf64c086187c415b919c1f9ec32bf8e7f6e0a734268f13c3fb9a2e41685"
+    },
+    {
+      "command": [
+        "omp",
+        "read",
+        "skill://comps-analysis"
+      ],
+      "exit_code": 0,
+      "observed_skill_file": ".omp/skills/comps-analysis/SKILL.md",
+      "native_entrypoint_sha256": "69460884399ee2ad916530a82e7a0af7acdd321c5027a307263c285b0f90a1a2"
+    }
+  ],
+  "registry_validation": {
+    "command": "uv run --python 3.12 --extra research python -m financial_agent.harness skills validate --root .agents/skills",
+    "exit_code": 0,
+    "valid_skills": 3,
+    "warnings": [
+      "Two DCF relative links leave the standalone skill root to the shared native graph/evidence contract; intentional repository-native bindings."
+    ]
+  },
+  "installer_listing": {
+    "command": "npx --yes skills list --json",
+    "exit_code": 0,
+    "scope": "project",
+    "selected_skills_registered": [
+      "earnings-analysis",
+      "dcf-model",
+      "comps-analysis"
+    ]
+  },
+  "runtime_smoke": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "skills/equity-investment-research/scripts/research.py",
+        "plan",
+        "--tickers",
+        "INTC",
+        "--as-of",
+        "2026-10-11"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "graph": {
+          "version": 1,
+          "policy": {
+            "required_facts": [
+              "price",
+              "shares",
+              "market_cap",
+              "revenue",
+              "net_income",
+              "operating_cash_flow",
+              "capital_expenditure",
+              "cash",
+              "debt",
+              "eps"
+            ],
+            "max_quote_age_days": 7,
+            "market_cap_tolerance": "0.01"
+          },
+          "nodes": [
+            {
+              "id": "grounding",
+              "requires": [],
+              "instructions": "references/grounding.md",
+              "section": "Grounding"
+            },
+            {
+              "id": "business",
+              "requires": [
+                "grounding"
+              ],
+              "instructions": "references/business.md",
+              "section": "Business"
+            },
+            {
+              "id": "moat",
+              "requires": [
+                "business"
+              ],
+              "instructions": "references/moat.md",
+              "section": "Moat"
+            },
+            {
+              "id": "management",
+              "requires": [
+                "business"
+              ],
+              "instructions": "references/management.md",
+              "section": "Management"
+            },
+            {
+              "id": "inversion",
+              "requires": [
+                "moat",
+                "management"
+              ],
+              "instructions": "references/inversion.md",
+              "section": "Inversion"
+            },
+            {
+              "id": "industry",
+              "requires": [
+                "grounding"
+              ],
+              "instructions": "references/industry.md",
+              "section": "Industry"
+            },
+            {
+              "id": "valuation",
+              "requires": [
+                "grounding",
+                "inversion",
+                "industry"
+              ],
+              "instructions": "references/valuation.md",
+              "section": "Valuation"
+            },
+            {
+              "id": "synthesis",
+              "requires": [
+                "valuation"
+              ],
+              "instructions": "references/synthesis.md",
+              "section": "Decision"
+            },
+            {
+              "id": "audit",
+              "requires": [
+                "synthesis"
+              ],
+              "instructions": "references/audit.md",
+              "section": "Limitations and audit"
+            }
+          ],
+          "extensions": [
+            {
+              "id": "earnings-analysis",
+              "node": "business",
+              "instructions": ".agents/skills/earnings-analysis/SKILL.md",
+              "artifacts": [
+                "earnings.md",
+                "data/earnings-inputs.json"
+              ]
+            },
+            {
+              "id": "dcf-model",
+              "node": "valuation",
+              "instructions": ".agents/skills/dcf-model/SKILL.md",
+              "artifacts": [
+                "dcf.md",
+                "data/dcf-model.xlsx"
+              ]
+            },
+            {
+              "id": "comps-analysis",
+              "node": "valuation",
+              "instructions": ".agents/skills/comps-analysis/SKILL.md",
+              "artifacts": [
+                "comps.md",
+                "data/comps-model.xlsx"
+              ]
+            }
+          ]
+        },
+        "artifacts": [
+          {
+            "ticker": "INTC",
+            "directory": "docs/research/tickers/INTC/2026-10-11",
+            "skills": []
+          }
+        ]
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "skills/equity-investment-research/scripts/research.py",
+        "plan",
+        "--tickers",
+        "INTC",
+        "CRM",
+        "--as-of",
+        "2026-10-11",
+        "--skills",
+        "earnings-analysis",
+        "dcf-model",
+        "comps-analysis"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "graph": {
+          "version": 1,
+          "policy": {
+            "required_facts": [
+              "price",
+              "shares",
+              "market_cap",
+              "revenue",
+              "net_income",
+              "operating_cash_flow",
+              "capital_expenditure",
+              "cash",
+              "debt",
+              "eps"
+            ],
+            "max_quote_age_days": 7,
+            "market_cap_tolerance": "0.01"
+          },
+          "nodes": [
+            {
+              "id": "grounding",
+              "requires": [],
+              "instructions": "references/grounding.md",
+              "section": "Grounding"
+            },
+            {
+              "id": "business",
+              "requires": [
+                "grounding"
+              ],
+              "instructions": "references/business.md",
+              "section": "Business"
+            },
+            {
+              "id": "moat",
+              "requires": [
+                "business"
+              ],
+              "instructions": "references/moat.md",
+              "section": "Moat"
+            },
+            {
+              "id": "management",
+              "requires": [
+                "business"
+              ],
+              "instructions": "references/management.md",
+              "section": "Management"
+            },
+            {
+              "id": "inversion",
+              "requires": [
+                "moat",
+                "management"
+              ],
+              "instructions": "references/inversion.md",
+              "section": "Inversion"
+            },
+            {
+              "id": "industry",
+              "requires": [
+                "grounding"
+              ],
+              "instructions": "references/industry.md",
+              "section": "Industry"
+            },
+            {
+              "id": "valuation",
+              "requires": [
+                "grounding",
+                "inversion",
+                "industry"
+              ],
+              "instructions": "references/valuation.md",
+              "section": "Valuation"
+            },
+            {
+              "id": "synthesis",
+              "requires": [
+                "valuation"
+              ],
+              "instructions": "references/synthesis.md",
+              "section": "Decision"
+            },
+            {
+              "id": "audit",
+              "requires": [
+                "synthesis"
+              ],
+              "instructions": "references/audit.md",
+              "section": "Limitations and audit"
+            }
+          ],
+          "extensions": [
+            {
+              "id": "earnings-analysis",
+              "node": "business",
+              "instructions": ".agents/skills/earnings-analysis/SKILL.md",
+              "artifacts": [
+                "earnings.md",
+                "data/earnings-inputs.json"
+              ]
+            },
+            {
+              "id": "dcf-model",
+              "node": "valuation",
+              "instructions": ".agents/skills/dcf-model/SKILL.md",
+              "artifacts": [
+                "dcf.md",
+                "data/dcf-model.xlsx"
+              ]
+            },
+            {
+              "id": "comps-analysis",
+              "node": "valuation",
+              "instructions": ".agents/skills/comps-analysis/SKILL.md",
+              "artifacts": [
+                "comps.md",
+                "data/comps-model.xlsx"
+              ]
+            }
+          ]
+        },
+        "artifacts": [
+          {
+            "ticker": "INTC",
+            "directory": "docs/research/tickers/INTC/2026-10-11",
+            "skills": [
+              {
+                "id": "earnings-analysis",
+                "node": "business",
+                "instructions": ".agents/skills/earnings-analysis/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/INTC/2026-10-11/earnings.md",
+                  "docs/research/tickers/INTC/2026-10-11/data/earnings-inputs.json"
+                ],
+                "requires": [
+                  "grounding"
+                ]
+              },
+              {
+                "id": "dcf-model",
+                "node": "valuation",
+                "instructions": ".agents/skills/dcf-model/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/INTC/2026-10-11/dcf.md",
+                  "docs/research/tickers/INTC/2026-10-11/data/dcf-model.xlsx"
+                ],
+                "requires": [
+                  "grounding",
+                  "inversion",
+                  "industry"
+                ]
+              },
+              {
+                "id": "comps-analysis",
+                "node": "valuation",
+                "instructions": ".agents/skills/comps-analysis/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/INTC/2026-10-11/comps.md",
+                  "docs/research/tickers/INTC/2026-10-11/data/comps-model.xlsx"
+                ],
+                "requires": [
+                  "grounding",
+                  "inversion",
+                  "industry"
+                ]
+              }
+            ]
+          },
+          {
+            "ticker": "CRM",
+            "directory": "docs/research/tickers/CRM/2026-10-11",
+            "skills": [
+              {
+                "id": "earnings-analysis",
+                "node": "business",
+                "instructions": ".agents/skills/earnings-analysis/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/CRM/2026-10-11/earnings.md",
+                  "docs/research/tickers/CRM/2026-10-11/data/earnings-inputs.json"
+                ],
+                "requires": [
+                  "grounding"
+                ]
+              },
+              {
+                "id": "dcf-model",
+                "node": "valuation",
+                "instructions": ".agents/skills/dcf-model/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/CRM/2026-10-11/dcf.md",
+                  "docs/research/tickers/CRM/2026-10-11/data/dcf-model.xlsx"
+                ],
+                "requires": [
+                  "grounding",
+                  "inversion",
+                  "industry"
+                ]
+              },
+              {
+                "id": "comps-analysis",
+                "node": "valuation",
+                "instructions": ".agents/skills/comps-analysis/SKILL.md",
+                "artifacts": [
+                  "docs/research/tickers/CRM/2026-10-11/comps.md",
+                  "docs/research/tickers/CRM/2026-10-11/data/comps-model.xlsx"
+                ],
+                "requires": [
+                  "grounding",
+                  "inversion",
+                  "industry"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "skills/equity-investment-research/scripts/research.py",
+        "plan",
+        "--tickers",
+        "INTC",
+        "--as-of",
+        "2026-10-11",
+        "--skills",
+        "unknown-research-skill"
+      ],
+      "exit_code": 1,
+      "stdout": {
+        "status": "BLOCKED",
+        "error": "plan: unknown research skills ['unknown-research-skill']"
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "skills/equity-investment-research/scripts/research.py",
+        "plan",
+        "--tickers",
+        "INTC",
+        "--as-of",
+        "2026-10-11",
+        "--skills",
+        "dcf-model",
+        "dcf-model"
+      ],
+      "exit_code": 1,
+      "stdout": {
+        "status": "BLOCKED",
+        "error": "plan: duplicate research skills"
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "-c",
+        "import json, runpy; from pathlib import Path; api=runpy.run_path('skills/equity-investment-research/scripts/research.py'); print(json.dumps(api['audit'](Path('docs/research/tickers/INTC/2026-10-11'), api['graph']())))"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "schema_version": 1,
+        "status": "PROVISIONAL",
+        "findings": [
+          {
+            "severity": "warning",
+            "message": "required fact shares: estimate, not verified reported data"
+          },
+          {
+            "severity": "warning",
+            "message": "fact process_yield: unavailable"
+          },
+          {
+            "severity": "warning",
+            "message": "valuation timing unverified: no explicit valuation/terminal dates and EPS alignment basis; returns are conditional period CAGR, not verified dated or YoY returns"
+          }
+        ],
+        "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.12",
+        "--locked",
+        "--extra",
+        "research",
+        "python",
+        "-c",
+        "import json, openpyxl; print(json.dumps({'openpyxl':openpyxl.__version__}))"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "openpyxl": "3.1.5"
+      },
+      "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+    }
+  ],
+  "regression_tests": {
+    "command": "uv run --python 3.12 --locked --extra research python -m pytest skills/equity-investment-research/scripts/test_research.py -q",
+    "exit_code": 0,
+    "passed": 33,
+    "elapsed_seconds": 0.14,
+    "added_cases": [
+      "extension cannot overwrite core calculations",
+      "extension entrypoint symlink cannot escape checkout"
+    ]
+  },
+  "static_checks": {
+    "mypy": {
+      "exit_code": 0,
+      "source_files": 2
+    },
+    "flake8": {
+      "exit_code": 0,
+      "max_line_length": 88
+    },
+    "black_check": {
+      "exit_code": 0,
+      "unchanged_source_files": 2
+    }
+  },
+  "dependency": {
+    "manifest": "pyproject.toml",
+    "extra": "research",
+    "requirement": "openpyxl>=3.1,<4",
+    "locked_version": "3.1.5",
+    "lock": "uv.lock",
+    "install_command": "uv add --optional research --python 3.12 'openpyxl>=3.1,<4'"
+  },
+  "ticker_materials_preserved": {
+    "file_count": 220,
+    "sha256": {
+      "docs/research/tickers/AMZN/2026-10-11/report.md": "f2c20351399236ac77f69d43de95da3ad8f24a96a06c10cfde1dc84651d0f778",
+      "docs/research/tickers/AMZN/2026-10-11/data/evidence.json": "917d4d44e5a134f846cda0a3835e92934061f9451fccb303e6b5c8a8d756179e",
+      "docs/research/tickers/AMZN/2026-10-11/data/audit.json": "93c0ea62bda3e19683db59f9993f88220d4c626a91eda37206c83fe380df403e",
+      "docs/research/tickers/AMZN/2026-10-11/data/calculations.json": "9c75fe7a3ea46530b7750cc1a235a9febcdbf94f58a11ca938004e11373c612e",
+      "docs/research/tickers/SPY/2026-10-11/report.md": "ccc72d2b7de4046007eabae4c2914356b57d47dea817539d6c45d4340112ab11",
+      "docs/research/tickers/SPY/2026-10-11/data/evidence.json": "d005a722d4af68ae5dd592d2cbdc635f0056d64c4b84c9f8c1ede74f038420ea",
+      "docs/research/tickers/SPY/2026-10-11/data/audit.json": "690d271db1e61fa7f38254c1baacbb44ba47e6676adbc29ab031a3b8317a4589",
+      "docs/research/tickers/SPY/2026-10-11/data/calculations.json": "784dde474776946f4318465b98d30dc33a56c46faa50971ff81ec6eee07a0257",
+      "docs/research/tickers/AAPL/2026-10-11/report.md": "e3e01001fbab3deafdc0d1643150a19596ea9d88d58860757112e533f7b1dbe3",
+      "docs/research/tickers/AAPL/2026-10-11/data/evidence.json": "ca05b2eb4740d1682a6fae755012685595565d6523362904d89d9c201c7223ba",
+      "docs/research/tickers/AAPL/2026-10-11/data/audit.json": "d286ed25fc06ada9ef669b5199ef7afa293b410671770ee3d7edc7cf90a635b1",
+      "docs/research/tickers/AAPL/2026-10-11/data/calculations.json": "d660b3b58e4782df3c5e86b2ea1cb34e4ea2e230d92a4fb27932e67de732b07d",
+      "docs/research/tickers/ANET/2026-10-11/report.md": "b2331d584afaf853b67a88fc6252e7283ac66f903255c1b4d58f462ea5ad9263",
+      "docs/research/tickers/ANET/2026-10-11/data/evidence.json": "6122d6ca718096cbde7016bff933a08e7680c8bf84fb8a63d48da89553c14a5c",
+      "docs/research/tickers/ANET/2026-10-11/data/audit.json": "becbff582377acb625faa8dae4c65d709fa831867eba5aa5b765c3601529d920",
+      "docs/research/tickers/ANET/2026-10-11/data/calculations.json": "fc628ebdac211da2264fef24e12045fd44c0f5284f17e822d7d8b2a8ee7be853",
+      "docs/research/tickers/MKSI/2026-10-11/report.md": "943928005a278d23b528afe494b0df90cf6fd1328763e24257814abbb6828b85",
+      "docs/research/tickers/MKSI/2026-10-11/data/evidence.json": "282681cd09d4227f7d2056b6e34c980495b60462a61f3efdb4988e4622fa6938",
+      "docs/research/tickers/MKSI/2026-10-11/data/audit.json": "5e2f53e4e739866ce73904adfe6807911b9bbf24cdcfc2d0e71b2a4ba08faa3d",
+      "docs/research/tickers/MKSI/2026-10-11/data/calculations.json": "1dec95e690022c59df35423c8f76c099f567aace4020f4ce16b986e983d4334e",
+      "docs/research/tickers/UBER/2026-10-11/report.md": "46aaac2c3705ea88a893118f6d326ad5309085a1e872b304018545bdec870522",
+      "docs/research/tickers/UBER/2026-10-11/data/evidence.json": "44f89be2e48411b391ab6932b9f13246d9f20eca2d4ef000ef1397c8478cf4a1",
+      "docs/research/tickers/UBER/2026-10-11/data/audit.json": "3a9af43b0e79fbcd3f3b6954d631f464ace6136c230a95f73242153a390110dc",
+      "docs/research/tickers/UBER/2026-10-11/data/calculations.json": "53f845bc49e0f37d021b7c2fe6ef7cb47998c27a4702faa462b5b24bb8073e66",
+      "docs/research/tickers/CRDO/2026-10-11/report.md": "a2c5170903e6fd0bd4346d13e7fc6573b69596ff16926a70b8b4da06ccc951f1",
+      "docs/research/tickers/CRDO/2026-10-11/data/evidence.json": "f7efae010a3e72f05e7aec773f0884a5175a7411cf06e813ebed1ac1a2178a1a",
+      "docs/research/tickers/CRDO/2026-10-11/data/audit.json": "7567c8e7b06e77ef99a1e92a53c8e0a6a1403fbe69cbac28e6a5928ca80f17e1",
+      "docs/research/tickers/CRDO/2026-10-11/data/calculations.json": "6acd22439081a36829620f713b34016ae08e1de096b008ca9f8e25d30e3f61dd",
+      "docs/research/tickers/INTC/2026-10-11/report.md": "eea2e3a417087ab2b64ac867ce2a4579c26bde559c637ccaab382c8ba434acdd",
+      "docs/research/tickers/INTC/2026-10-11/archive/claude-trial.md": "dec87ebf2cdf2101cd1be19f90e2a5d4aad995c17812f8e674f834c7168d4912",
+      "docs/research/tickers/INTC/2026-10-11/data/evidence.json": "b8ebf494778e01966d1dba541e7ecb45716bd8768ce5d33ccf5fd3ca4d2e39be",
+      "docs/research/tickers/INTC/2026-10-11/data/audit.json": "ae4fc7b4f17c5708a09c0a2badb3fbe9aeeb353bdbd0e2be5c65b945ea410265",
+      "docs/research/tickers/INTC/2026-10-11/data/calculations.json": "738fdd6c9ef3802c6808aba376828bf1872ed53f3c83a2ee46cf6e05e7949656",
+      "docs/research/tickers/BE/2026-10-11/report.md": "0dcbb242b3b3e0a13e999ab8447d26287e0ed3384694cccadb07737b8b60edf2",
+      "docs/research/tickers/BE/2026-10-11/data/evidence.json": "63920bf355877976063544dafcb2ecb39f0c42453d854969d81c602f0261c285",
+      "docs/research/tickers/BE/2026-10-11/data/audit.json": "313d1b6c3fe5eeb4a8d39f6387bef1de619771ad321425b49056a8c4390d2b46",
+      "docs/research/tickers/BE/2026-10-11/data/calculations.json": "de99462ba8081a19ffa7ab1e99a7dee3e5e168e13450a47c651c940760b57283",
+      "docs/research/tickers/MU/2026-10-11/report.md": "c46c8ba6b1cf95a7b1ac26e97f1f12930c1dbd1c1564703856c13a01a6bdeed8",
+      "docs/research/tickers/MU/2026-10-11/data/evidence.json": "35af43dd0ff1a1f8eaa3f4335187355dade18809d694279f6e94a811e0f83f9c",
+      "docs/research/tickers/MU/2026-10-11/data/audit.json": "1d675b285ca3984c7450e59540c12a07c8fa054cc355757587f969562cb109db",
+      "docs/research/tickers/MU/2026-10-11/data/calculations.json": "c1411a154e8c779ec5d48a231da455e67d7248ee5f1a3ae67b587c60b68c179d",
+      "docs/research/tickers/AMAT/2026-10-11/report.md": "1fda43ed56b6e906bd0bee3534876c3a7ec437d8d824a9ad8838a2388319fd9a",
+      "docs/research/tickers/AMAT/2026-10-11/data/evidence.json": "652fe704434f7aca7ed3c0d11ff6b3ecb0615d23d2887b10de349d8d4ab18a6a",
+      "docs/research/tickers/AMAT/2026-10-11/data/audit.json": "05ab5b29fe0ba48cacad78d085e6e8b6bf2bb8f5bc27d1368d0302b3b794c348",
+      "docs/research/tickers/AMAT/2026-10-11/data/calculations.json": "7ca20a490480b0ca50672775d6192d8b3200449c4b3037494bf6fe01c70e4162",
+      "docs/research/tickers/LLY/2026-10-11/report.md": "1a46e2b55bebacc6cdca08b478e2c77e0a204c7a84a97a0d9a431075893670c4",
+      "docs/research/tickers/LLY/2026-10-11/data/evidence.json": "34591bb1491bf5df5f8d50e49c591f5f8c62e1699e26c0202ca3d33e3a741f81",
+      "docs/research/tickers/LLY/2026-10-11/data/audit.json": "becbff582377acb625faa8dae4c65d709fa831867eba5aa5b765c3601529d920",
+      "docs/research/tickers/LLY/2026-10-11/data/lly-2025-10k.txt": "34f932d4229443da11a29486d01024f4166c3f040df67568f50f230964a7fcdf",
+      "docs/research/tickers/LLY/2026-10-11/data/calculations.json": "bf42c7e05aa8f9b96bc720ed88daedf63b5842ebc76e64131765a65dffff2710",
+      "docs/research/tickers/LLY/2026-10-11/data/lly-2026-q2.txt": "70b31539bef93346c46ffe30a7a4bf791984f1b17fae583b7c8f8cd48503fbed",
+      "docs/research/tickers/SNDK/2026-10-11/report.md": "407403ccae72fbf9983a27bae0acc9fb39a0d5b542e667af0b403e4f5d065c98",
+      "docs/research/tickers/SNDK/2026-10-11/data/evidence.json": "b83d83d8ee805ecdf0719a5b74a937bed94c7148cada79fa395e935e4fb38f3b",
+      "docs/research/tickers/SNDK/2026-10-11/data/audit.json": "78105e90970470a30500079661229fa7aafe7030d21b89a4a45fed48abe2fcb2",
+      "docs/research/tickers/SNDK/2026-10-11/data/calculations.json": "e622d133f8935f522ba25fb1a43f136d5167ff3d55c7b351f1e54bacfdcb2a08",
+      "docs/research/tickers/LITE/2026-10-11/report.md": "12c04b0b05534c03f4be7df7ed62fe45e432841069f27e19ffa73fb944bdbf31",
+      "docs/research/tickers/LITE/2026-10-11/data/evidence.json": "2e45b8372e5e86680512857d0458b39e9d59d5969dfcc2e111cc35249e3aa727",
+      "docs/research/tickers/LITE/2026-10-11/data/audit.json": "99cc96fa7d14b4391f033e12b1a4df47731b1b21c0e899225b221b0518360a52",
+      "docs/research/tickers/LITE/2026-10-11/data/calculations.json": "9321d89a313ebb13d33a3ca653a65bf50621fa56ff617633d9b76262a693a068",
+      "docs/research/tickers/BABA/2026-10-11/report.md": "2cdf0674a11a416a54b75786c8437e64d3e543c2288bdf0e62837a018b4d733d",
+      "docs/research/tickers/BABA/2026-10-11/data/evidence.json": "8f0d8cb4d85b4f33dca3891a5d2a5196204eed43ebbbe8db17e099721d19de29",
+      "docs/research/tickers/BABA/2026-10-11/data/audit.json": "4918b112c7747a1314dec29df9e8374ed5f58d0d6aad72629451ecaf7c479093",
+      "docs/research/tickers/BABA/2026-10-11/data/cli-failures.json": "fddb9e88715302c221aa359861b83918f19916fae8cdc58412205c75af0df497",
+      "docs/research/tickers/BABA/2026-10-11/data/issuer-release.txt": "aa8223fd51fb07660c070bfee361ee7d2d7dff3827353e4808803e523810656a",
+      "docs/research/tickers/BABA/2026-10-11/data/calculations.json": "ce0f38dca9905132bb83c9440f39bd1166c6e1f6e5dcdaf4d2637cc98e9ea34c",
+      "docs/research/tickers/BABA/2026-10-11/data/issuer-annual.pdf": "cfd546af210e57bbf687c4c34eba6826fa61b6cf2c4c54638a703c1d74ed4cc7",
+      "docs/research/tickers/BABA/2026-10-11/data/issuer-interim.pdf": "20f681e2561f5af21de9a513e3233160e1492fcbcdfdf69c0b2676aa7c44924a",
+      "docs/research/tickers/BABA/2026-10-11/data/native-cli.json": "05eced2270857bbc79c6490ead8fdf57cbf18c2f06578ec756715b9f79efa83e",
+      "docs/research/tickers/QCOM/2026-10-11/report.md": "29b0cb1680b72563e131e76c400cd4a840ad5ca7f23c645cb9205efcc150cd22",
+      "docs/research/tickers/QCOM/2026-10-11/data/evidence.json": "ada3be83bf9d320cfc64b05f1bd27dc3b66da53bd3da985256cac0a0345d974c",
+      "docs/research/tickers/QCOM/2026-10-11/data/audit.json": "a3e52df691672406ad4b0d2668db8ebfec165f6b4886dd1ae289950d17a85e36",
+      "docs/research/tickers/QCOM/2026-10-11/data/calculations.json": "eb0df38bfa0c21e92bae41fa4d854b1b81cc0877bff985648664fe754c7247e4",
+      "docs/research/tickers/TSLA/2026-10-11/report.md": "17c301b472c2bc587a5b1b552b32b44030d793ce8c3b99989382ce07a0ac1e15",
+      "docs/research/tickers/TSLA/2026-10-11/data/evidence.json": "e79f3bcb64305eef4d8fab1e1b19959f926e4d0f1fb561fd365905ac2711bfe7",
+      "docs/research/tickers/TSLA/2026-10-11/data/audit.json": "726cf71258e24b7a4f16effa6567db7753c31d5567e77ca25777c6a44adc6a5f",
+      "docs/research/tickers/TSLA/2026-10-11/data/calculations.json": "abe5e39a70e7481df90dc6ad9088ce09907577bd6d176087486de3a2cccd8f29",
+      "docs/research/tickers/CRM/2026-10-11/report.md": "3aeb7fb379f138ef4443336b842d5235cdaec7e949eb76b242b81c47fc7f5c56",
+      "docs/research/tickers/CRM/2026-10-11/data/evidence.json": "7981415f1fd3853261125932c5f3aafb310d30a1bbecc62e5cda37ae57fd10cb",
+      "docs/research/tickers/CRM/2026-10-11/data/audit.json": "d286ed25fc06ada9ef669b5199ef7afa293b410671770ee3d7edc7cf90a635b1",
+      "docs/research/tickers/CRM/2026-10-11/data/calculations.json": "c9c867445b22cac6a71501b99e6c134d5e21835f3d0dad5e4719cf831c856767",
+      "docs/research/tickers/GOOGL/2026-10-11/report.md": "a5431ffa46c72f6f7dc68345f83c261cae4e9d97cf3db1df2a75082b0796b082",
+      "docs/research/tickers/GOOGL/2026-10-11/data/evidence.json": "3920752851040f4c4413157f25b43e34400665cce28c68655f2a97eb699a7227",
+      "docs/research/tickers/GOOGL/2026-10-11/data/audit.json": "7d87af6698d3a7b065ac71a649329fa9174efd1cc97d964d73f0d6eb79a09c96",
+      "docs/research/tickers/GOOGL/2026-10-11/data/calculations.json": "8cad3b91715f6e90764ab1bc3d3156aee2ddfc63928a4bb540ba65aa64b29cc5",
+      "docs/research/tickers/MSFT/2026-10-11/report.md": "e2e6990c4621de0ccb1d3cbf2ffec76433c3aee56e324f765a03d8b02a8aa3a3",
+      "docs/research/tickers/MSFT/2026-10-11/data/evidence.json": "785ff341ec2fcf607c8faa17137f7f2e635654c4cf471b0c0cfe4fbc44705b5d",
+      "docs/research/tickers/MSFT/2026-10-11/data/audit.json": "aaf1fb04ec23f2e8fd956bbf7b64020414e495d1f17e57909f8ef38108a75bd2",
+      "docs/research/tickers/MSFT/2026-10-11/data/calculations.json": "e76b9b40d6d61a6d65912addcc3d03841704535354725f0b7852b9d0280f5ead",
+      "docs/research/tickers/META/2026-10-11/report.md": "6abc756499bb9f98c816d18e5d52666e2cddc7021d181f99ddc256e82c61c7a4",
+      "docs/research/tickers/META/2026-10-11/data/evidence.json": "425cb85d363ff30e046b03e07634403d213c27998a9cabf3e1d0b2f7fa8fb0d3",
+      "docs/research/tickers/META/2026-10-11/data/audit.json": "d286ed25fc06ada9ef669b5199ef7afa293b410671770ee3d7edc7cf90a635b1",
+      "docs/research/tickers/META/2026-10-11/data/calculations.json": "e47b86579b3707567a77fed4a8d9cdb896b5a6173f4b535b705ec52f50cdee8b",
+      "docs/research/tickers/TCEHY/2026-10-11/report.md": "604eb3fe5d93a5699bbb49dd3ede45a74bec5dafb8ee66a37cf5ddeb6300233b",
+      "docs/research/tickers/TCEHY/2026-10-11/data/evidence.json": "bdc3281c8efc57c73c9a8237a195e9726087dcfd43029d80c316debb3ffb3718",
+      "docs/research/tickers/TCEHY/2026-10-11/data/audit.json": "13b259296967f055305c3b855a74a76f646a0508f511648ac176f04c763860b0",
+      "docs/research/tickers/TCEHY/2026-10-11/data/calculations.json": "778f0405f16f6a1a285f0de79ad4d03710629a08ed97b2c93323766c65e8858b",
+      "docs/research/tickers/TCEHY/2026-10-11/data/issuer-annual.pdf": "2a7547168077c3d9994af673125e77612e8656bc0f17ad189371d7e4088f4e98",
+      "docs/research/tickers/TCEHY/2026-10-11/data/issuer-interim.pdf": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+      "docs/research/tickers/TCEHY/2026-10-11/data/native-cli.json": "613e7fabf993d01a40f700aaf14e0619ac58a90506fc4ad2654504e3f31f34c3",
+      "docs/research/tickers/XBI/2026-10-11/report.md": "5c4e363c30b94d55fd77d1f6c2a587fbfdba3a41d0dc848759274d7e39006fee",
+      "docs/research/tickers/XBI/2026-10-11/data/evidence.json": "c66ca2f4a4f498d34aeab0a70b1274bbfd0127f73fb90daf8694cd0481dd5d5b",
+      "docs/research/tickers/XBI/2026-10-11/data/audit.json": "690d271db1e61fa7f38254c1baacbb44ba47e6676adbc29ab031a3b8317a4589",
+      "docs/research/tickers/XBI/2026-10-11/data/calculations.json": "bca253ab395df618d018c12d40c57311d6e4b17639c412c55fbbdfbf5479c10f",
+      "docs/research/tickers/MCD/2026-10-11/report.md": "9668edc603bfbaa95b0aa7828f3869804e6bd798bd317f0eef7be0584f5f51cf",
+      "docs/research/tickers/MCD/2026-10-11/data/evidence.json": "9523132fbf248a1b891f17f06e495c7b487e2ff0de52e37a449f7aa73db5dcfd",
+      "docs/research/tickers/MCD/2026-10-11/data/audit.json": "ee730145ff310729707cddc9aa20d06349a948f202c739c88d726613520db3c2",
+      "docs/research/tickers/MCD/2026-10-11/data/calculations.json": "229d4165e77d3fb6a6bd5ac16a27363cdad736c5ef675a92b75035d2dc13d9dc",
+      "docs/research/tickers/QQQ/2026-10-11/report.md": "70921e0836301f047a8621176e99d109dddaa36818b29079aaf39b7605d33aa5",
+      "docs/research/tickers/QQQ/2026-10-11/data/evidence.json": "427dc77146b8d8d7fd4c627ea2fb764257341e2c157293df1aab6804cd2c2d81",
+      "docs/research/tickers/QQQ/2026-10-11/data/audit.json": "690d271db1e61fa7f38254c1baacbb44ba47e6676adbc29ab031a3b8317a4589",
+      "docs/research/tickers/QQQ/2026-10-11/data/calculations.json": "a663822fbc8e7de84f074ad0f82bcb4c3d4ee95db349e1296d43235000b15338",
+      "docs/research/tickers/NBIS/2026-10-11/report.md": "a4e0f850aeb277211459aae3b7722908428c6c1a84e0cef4d3271c27f8f31051",
+      "docs/research/tickers/NBIS/2026-10-11/data/evidence.json": "185287226593f813cf29e3dd207621a8f7e7bd24af0c84aff2f1ef34fce0c7eb",
+      "docs/research/tickers/NBIS/2026-10-11/data/audit.json": "7cc6751731fa576bc5ab5b60f0bab4dba9553244d94db422ece12bc2467f4f7a",
+      "docs/research/tickers/NBIS/2026-10-11/data/calculations.json": "d4598adc1f7640fcc0f91f1b05145886c277d7b48a5ccc4e2e55f5a80d96e9c5",
+      "docs/research/tickers/COHR/2026-10-11/report.md": "665923daf29428bb4c5eb63ff8026d97ee0b7e80fc746446896cb94638031c24",
+      "docs/research/tickers/COHR/2026-10-11/data/evidence.json": "c607a9bdd49769a10c24cda74c88d49de017f763f6d56cefe0622ac48f08bc8f",
+      "docs/research/tickers/COHR/2026-10-11/data/audit.json": "fa63cefdcc558166f83540bdc2cc7cb6504025f8d79ec3eee5870eb72397df66",
+      "docs/research/tickers/COHR/2026-10-11/data/calculations.json": "890503a1931b1ad40c2187b2f85c1453082a2cbe28eebcb7916051b52de5c3ab",
+      "docs/research/tickers/NFLX/2026-10-11/report.md": "26d8b0109a1dcef2f3218dcd2aa10b3f0eb9bc3e2a9fabc0d3d316ea964e21bf",
+      "docs/research/tickers/NFLX/2026-10-11/data/evidence.json": "ef36cdefa9a7198554699b1994f3ade1a1fe4c5ddc9739c578d03b22c34e34b2",
+      "docs/research/tickers/NFLX/2026-10-11/data/audit.json": "d286ed25fc06ada9ef669b5199ef7afa293b410671770ee3d7edc7cf90a635b1",
+      "docs/research/tickers/NFLX/2026-10-11/data/calculations.json": "3a057fb44a0da78de86e9dead083a19ed780882a1e7899ad252e26d7e9b54a31",
+      "docs/research/tickers/ORCL/2026-10-11/report.md": "84b3b1f5c8cd3a77aeeee3f2484bf79da4e2c5d4e853e8546b9edf14433a6fdb",
+      "docs/research/tickers/ORCL/2026-10-11/data/evidence.json": "e876ae61da6cbeae07a2b3b2d31ccc4247e9533539c995103ee6c7b6c8e9d126",
+      "docs/research/tickers/ORCL/2026-10-11/data/audit.json": "4dc0d87acef8fbb97b274b80d8971880017fb931a1cbe946faf4e06bfec1fd1f",
+      "docs/research/tickers/ORCL/2026-10-11/data/calculations.json": "309b0096b395a2c9edc2719d1d8fa5c29c074b2af40bbc6f9721d5ec1ba8c56c",
+      "docs/research/tickers/AMD/2026-10-11/report.md": "1b4ef7454dfacecbeb1eb2002a18a9b1e0b6e7d8acd0453f7d2d70096c7a2596",
+      "docs/research/tickers/AMD/2026-10-11/data/evidence.json": "fe6edfd0e64232c7c259f9557d37c91766b198f87893dab9d3fd2ac6ec9e759c",
+      "docs/research/tickers/AMD/2026-10-11/data/audit.json": "2d079440e99c8dbfcee065a136ea4d75846d2e9f5b1fddc3c677a307cb09d34d",
+      "docs/research/tickers/AMD/2026-10-11/data/calculations.json": "b779945c1ec96e7549479d16d8d48b80a19fb1a4a8f43abe8d239c2f344f9b72",
+      "docs/research/tickers/KGC/2026-10-11/report.md": "7aa8a52a0b2091450f808a58731df22d0ad44c34f4f4b1007385c7e5df425c5e",
+      "docs/research/tickers/KGC/2026-10-11/data/evidence.json": "215aae90c5e32ce0384aead2a9d77ac11f7b1b66b8a7bb8136db86d3b94c9743",
+      "docs/research/tickers/KGC/2026-10-11/data/audit.json": "c53d1e854926fefebc5271c40b89ce1569cc3291b4f09e1a1bc5cd5833fc3b2b",
+      "docs/research/tickers/KGC/2026-10-11/data/calculations.json": "e2e98fd5387a559a0a503413e54bd89b81ec3553d78833969ae2db57ee08ec30",
+      "docs/research/tickers/SMCI/2026-10-11/report.md": "9ebe459435e0d55e9c292a69b27996b1ad0b7086888c8e7d0eb48434aaaff55e",
+      "docs/research/tickers/SMCI/2026-10-11/data/evidence.json": "14827588a90d85f3e09d5abe3ffdf4537d8e851dc94e5c1d6f6605f3ac1b9eb8",
+      "docs/research/tickers/SMCI/2026-10-11/data/audit.json": "4d126f1bd9aed8fb71e508907d67f738c8dc355a98fe0174d0c552c81631bc69",
+      "docs/research/tickers/SMCI/2026-10-11/data/calculations.json": "a042b0cecaa64eb7879f07384a6dfb928c00fb00f0baa673a9ed4a79b6e5ce52",
+      "docs/research/tickers/TLT/2026-10-11/report.md": "2de7bc11eadc94491c87eb6939b14a15f54f07e61456ce700c61ddc9092117e9",
+      "docs/research/tickers/TLT/2026-10-11/data/evidence.json": "3c62aa9e7252536d77451568c1b4b361fe8d27815ff91c109ef49ae5f0d3a5ae",
+      "docs/research/tickers/TLT/2026-10-11/data/audit.json": "a5f9b1ea691ac8b29b90d785bdf889c936d99d4dacacb6721a894db05bca4a0a",
+      "docs/research/tickers/TLT/2026-10-11/data/calculations.json": "3be11424fa3e5c4a980c6ce0e28e476b895020875d07c343979272d6c60e207f",
+      "docs/research/tickers/TEAM/2026-10-11/report.md": "5856f5fbf4935ae1259faf83edb65df335a70b904e748e10f43808d6523233ff",
+      "docs/research/tickers/TEAM/2026-10-11/data/evidence.json": "c2ecab114c4e7389c84086e4750e3617588409afd13c5d93e68a20eca9e08fa8",
+      "docs/research/tickers/TEAM/2026-10-11/data/audit.json": "4ff8a45326129c68e199df052518c9730000db285703dde44e4143a9c3253e4d",
+      "docs/research/tickers/TEAM/2026-10-11/data/calculations.json": "b784973a63da73039a6f3571b21e160c9104eb9dc4f8b4e9256398e442754a80",
+      "docs/research/tickers/NOW/2026-10-11/report.md": "ebae639405237ee81b6f05638e8b798f92a6844bffddc12025bd91d79b182409",
+      "docs/research/tickers/NOW/2026-10-11/data/evidence.json": "6d261cab54b543b52e9d59663bf8d66b6a10cea7f0bd68170ca0510bf081daeb",
+      "docs/research/tickers/NOW/2026-10-11/data/audit.json": "117592ba9b791054339c7694c8a03843341590bded4b6f275b45de6abdccc010",
+      "docs/research/tickers/NOW/2026-10-11/data/calculations.json": "dfe3db607759a42d7e8347e91a0a808b864e607f8adc2d15ea15cb0c87a17d36",
+      "docs/research/tickers/CARR/2026-10-11/report.md": "1d40aaced8701eb7dcb1033d668fcfcc0cb05a280906a8240fb7c241f6d4358e",
+      "docs/research/tickers/CARR/2026-10-11/data/evidence.json": "a178c91b1981f554f90899ef1c1f133706d2087ff4bc39bb30c8a2341edcfe06",
+      "docs/research/tickers/CARR/2026-10-11/data/audit.json": "64d633c6f7ad015c85f99247fbc6e0b596e632f2758195483e89d2ad93738fa8",
+      "docs/research/tickers/CARR/2026-10-11/data/calculations.json": "2d468b75d73adba686bb1d341051281184a5d1f5fbfbb33e44aca4373a045bd4",
+      "docs/research/tickers/SOXX/2026-10-11/report.md": "2d5e9785521ff04c0475a7c127f8e49ba3e804ae71a6163348e73d0086ed44fb",
+      "docs/research/tickers/SOXX/2026-10-11/data/evidence.json": "a9e1aa2cd71335353aa026f744714044e4abdecab249cf7606defee3c2445fea",
+      "docs/research/tickers/SOXX/2026-10-11/data/audit.json": "a5f9b1ea691ac8b29b90d785bdf889c936d99d4dacacb6721a894db05bca4a0a",
+      "docs/research/tickers/SOXX/2026-10-11/data/calculations.json": "bb53218fb17667775f4fe7298214d5e79a7e369f1a0805a3682af07bde027ea4",
+      "docs/research/tickers/INTU/2026-10-11/report.md": "e31127fbba5b2b85d7605a1c3d2395d7ac1435d853626c4bca4ddeffb114eebc",
+      "docs/research/tickers/INTU/2026-10-11/data/evidence.json": "85389b66990987fc10269103ced836d648d09b363c295cbeb484089200af7959",
+      "docs/research/tickers/INTU/2026-10-11/data/audit.json": "c8a1aa33fbda25dd6dfa0cb98fb7d87bac016ad51686259e08130bd3c3228b27",
+      "docs/research/tickers/INTU/2026-10-11/data/calculations.json": "155f7e227dcbb31f55f784398ab22dd973d30b25dd399d011dc43541989be87c",
+      "docs/research/tickers/NVDA/2026-10-11/report.md": "1394af3732592c391d16addf291af24c8d20eaa0259bf8bded2e1ea2454adab5",
+      "docs/research/tickers/NVDA/2026-10-11/data/evidence.json": "0a203d4a5cae31aff6caae375c7a9c89f4e004de214d466bf404b02756a4cde6",
+      "docs/research/tickers/NVDA/2026-10-11/data/audit.json": "59bb254f2ce909ad208385f7b8054e782a260e3d63f39bb0eb5deeda2a172df3",
+      "docs/research/tickers/NVDA/2026-10-11/data/calculations.json": "3c3f9ee0402f7d03e297c916543611e3e48e7a860dca432d45d60a7ac8f90077",
+      "docs/research/tickers/UNH/2026-10-11/report.md": "0efab4c8f3964b010c980b1f0e8b11fb9eff094ebb8439136f0165150e4df4dc",
+      "docs/research/tickers/UNH/2026-10-11/data/evidence.json": "90742698d6886730cf8c84096c628136a6526e7e78d8aecfd4e84e27bc57a01e",
+      "docs/research/tickers/UNH/2026-10-11/data/audit.json": "becbff582377acb625faa8dae4c65d709fa831867eba5aa5b765c3601529d920",
+      "docs/research/tickers/UNH/2026-10-11/data/calculations.json": "7de839add1c9db4e2f9428169f9adb4771524a64e41a395d36b25d8300bbac4d",
+      "docs/research/tickers/AVGO/2026-10-11/report.md": "00055ec8af0bfa9e78a27bea55c216f7f330136bc395240a66c9b68fbd0d8606",
+      "docs/research/tickers/AVGO/2026-10-11/data/evidence.json": "a5b18638bc23787f05eb1080484e63d4a4533290ccd9f1876b0fe46ceb5036a8",
+      "docs/research/tickers/AVGO/2026-10-11/data/audit.json": "becbff582377acb625faa8dae4c65d709fa831867eba5aa5b765c3601529d920",
+      "docs/research/tickers/AVGO/2026-10-11/data/calculations.json": "a3c00177196c8fa911e21c1aaadcd691dd2f39a7d9f525b8fe436245f81e32ce",
+      "docs/research/tickers/ARM/2026-10-11/report.md": "b2a090a9aeafee588e9c76a62f3828a0aa46502116a1682069ced54d36c0d102",
+      "docs/research/tickers/ARM/2026-10-11/data/evidence.json": "999b2a1816a9c763443beeca11ec4b71e35cdca805de63b83c8a9032b7ac30a7",
+      "docs/research/tickers/ARM/2026-10-11/data/audit.json": "f4c80d3a2bb741700a108c90b502ee60a0dbf03785dd4b7ec32dcaf79e62c980",
+      "docs/research/tickers/ARM/2026-10-11/data/calculations.json": "9d7494aba48802634a6ad627fec573e367c1007d509e319177237cf15045862c",
+      "docs/research/tickers/STRL/2026-10-11/report.md": "7653ab73161ca463b293381033a8840eef7f92176cc51ee138f29a0153fb7b2b",
+      "docs/research/tickers/STRL/2026-10-11/data/evidence.json": "cfcced9f095fab5cce131adbb177c91528719cbd213ae090a1368a19431c8f74",
+      "docs/research/tickers/STRL/2026-10-11/data/audit.json": "64d633c6f7ad015c85f99247fbc6e0b596e632f2758195483e89d2ad93738fa8",
+      "docs/research/tickers/STRL/2026-10-11/data/calculations.json": "23c686a7d962e244a6bf3d9d88acd2b3ba48ca9501b8049cf8799c6faa45cef4",
+      "docs/research/tickers/JD/2026-10-11/report.md": "83c92b5ec4a3c2581368a1bc3a6950241367a49401a41b033bb6d1aa98a6c7b9",
+      "docs/research/tickers/JD/2026-10-11/data/evidence.json": "680849d4d22ff7eb0947acf235d5f8b745eaf74fffe8dd521e74364f17a685c0",
+      "docs/research/tickers/JD/2026-10-11/data/audit.json": "83ed0895198bf50de49f71e61560149ec811dd0351260b68e8a9766f61cdda0f",
+      "docs/research/tickers/JD/2026-10-11/data/cli-failures.json": "45770cbabf6f6ea062d1eab8957ea7b8fa03c6fda2e1a92bbecba90aaed8f7fc",
+      "docs/research/tickers/JD/2026-10-11/data/calculations.json": "f6fdba07bebdc0756b50c450e333cc5de60e9b6701f4af7b1cb4f046832bf8c1",
+      "docs/research/tickers/JD/2026-10-11/data/issuer-interim.txt": "d12649ce4742068f4205dff9d82c8975ab7e43634b64f624b3e2262f923f42e2",
+      "docs/research/tickers/JD/2026-10-11/data/issuer-annual.pdf": "b19a6d067cbd28c16c97fdd65e06dec5589022727edff6098a2e94002ae73163",
+      "docs/research/tickers/JD/2026-10-11/data/native-cli.json": "201ed200d053db7e50010de01b12bd4a520d5e76d0c8932b4cfbc3e265d9012e",
+      "docs/research/tickers/NKE/2026-10-11/report.md": "e9ee1f73f1129b7437fb85cb54ed5e945c38376dde7fedbe21a25a6b7c948755",
+      "docs/research/tickers/NKE/2026-10-11/data/evidence.json": "b5a2ab966fd0c0d11a8e168d1e80c2067b38fe148af403f62a5883e10f3571ef",
+      "docs/research/tickers/NKE/2026-10-11/data/audit.json": "ee730145ff310729707cddc9aa20d06349a948f202c739c88d726613520db3c2",
+      "docs/research/tickers/NKE/2026-10-11/data/calculations.json": "e206f4fdb313c507d91175ba3c3e8f7167c5900ffa9f0c88b563c7d628f6f50b",
+      "docs/research/tickers/ADBE/2026-10-11/report.md": "e6f0d75fa6d39f850617224d8d3416c54cf3016f82036699b2da606c27f5d0f8",
+      "docs/research/tickers/ADBE/2026-10-11/data/evidence.json": "802531df98388a9de1aeb08fe189ba66f579ba8b907884756161bea56838db2f",
+      "docs/research/tickers/ADBE/2026-10-11/data/audit.json": "304d38a65a9b7dfc63893e0e672762efc5e79b9eb81a8ffff17b4f672ee57858",
+      "docs/research/tickers/ADBE/2026-10-11/data/calculations.json": "b538831e4890251769a60d9dc31a605e8cf06003e735d3a6bcf94686a0978c78",
+      "docs/research/tickers/NVO/2026-10-11/report.md": "902192b91eb6f7bf6a091dbf98c4aa08edd76f1c7015c8822308b6eb919b4e22",
+      "docs/research/tickers/NVO/2026-10-11/data/evidence.json": "922a815422e45e77732a0d59193a30715ba0384ba66ba5a070d41874f3b45924",
+      "docs/research/tickers/NVO/2026-10-11/data/audit.json": "f369f5455d59bdf18065b7e169ac50f2e0d026acd8b4af8696a92954a4f68c43",
+      "docs/research/tickers/NVO/2026-10-11/data/calculations.json": "93863eeb64d14b1e33f6410ef2c861df2f3fb451c57acaec26d3a16f34375a4b",
+      "docs/research/tickers/GEV/2026-10-11/report.md": "cb7c2fe207d71375b31fa08b33d2adde697ecf5d9a6e5f59683d13229ca3815f",
+      "docs/research/tickers/GEV/2026-10-11/data/evidence.json": "dcedd042509f4a5bc32073e3aed5067d9f6c38273ea464fad587a141c03cf354",
+      "docs/research/tickers/GEV/2026-10-11/data/audit.json": "31bb4039ceca025d09db4f908704f3d8582e8270c2d791fde16df397c93dcd27",
+      "docs/research/tickers/GEV/2026-10-11/data/calculations.json": "bdf0d6887e99df06e33b0e9564035e84f848411d796a14de52543c540913e03a",
+      "docs/research/tickers/PDD/2026-10-11/report.md": "6da08c38f4d1884a1ed2d43d17ef950eb07cc77fc32b5f47aa005b3ce4c71c22",
+      "docs/research/tickers/PDD/2026-10-11/data/evidence.json": "7bccae6ef4e94af0737e2683f715014a29beac31f09b8be249d41e84157106f5",
+      "docs/research/tickers/PDD/2026-10-11/data/audit.json": "226c8a0ee08a669502a75969c9e511986f22aa0525b32a2d2e27000a12d1fcc6",
+      "docs/research/tickers/PDD/2026-10-11/data/cli-failures.json": "19402ff090c68de10c6d091f6a2bed0f1172054e1f5320eb3bc822f7d5e56e93",
+      "docs/research/tickers/PDD/2026-10-11/data/issuer-release.txt": "f6af8e65fdcba2e2bc1c7a82179011909652f72addec1a6f94a350e9b28b8ac5",
+      "docs/research/tickers/PDD/2026-10-11/data/calculations.json": "d12fba1d27e9b04c7f404a96799cd7b0a3cad488664583fa4a1d970ee9960493",
+      "docs/research/tickers/PDD/2026-10-11/data/issuer-interim.txt": "456995e25de5a78beb3fa73ac8438e7d3b1071e8c28fdbd5af161ee09c0f6488",
+      "docs/research/tickers/PDD/2026-10-11/data/issuer-annual.pdf": "2bc0e051e880de6651c7214afaa5629f6ef03621e0dd12dc852804a67d709743",
+      "docs/research/tickers/PDD/2026-10-11/data/native-cli.json": "2e34294a9f7b6cd6615158940358575ba08dbab467a304ddbfb6e4a216bb5491",
+      "docs/research/tickers/MRVL/2026-10-11/report.md": "8e40ef1f4a17064e188e13e7128ae751406beca11ae6e2d7467ea980eb99c1d6",
+      "docs/research/tickers/MRVL/2026-10-11/data/evidence.json": "50d082b12b3e1beb3dc384310e92cc49a2394ed0fe4ee9269f90d8016b4d4f29",
+      "docs/research/tickers/MRVL/2026-10-11/data/audit.json": "8f80aab5a41061617b137e07b331af7539d8f4704c1c4a317ea14043759f1c0e",
+      "docs/research/tickers/MRVL/2026-10-11/data/calculations.json": "c200250aff9fd7cca126eed0dc6047ddf9730440a3f5b8f4d46aebc88ed16973"
+    },
+    "all_unchanged": true
+  },
+  "limitations": [
+    "Planning exposes selected instructions, prerequisites and destinations; it does not execute research.",
+    "Licensed data and pre-release consensus access are not installed.",
+    "Openpyxl does not recalculate formulas; real Excel/LibreOffice recalculation was not exercised.",
+    "Upstream recalc.py and comps example workbook are absent; no fake replacements were created.",
+    "The retained upstream DCF validator has incomplete/heuristic checks documented in the native adapter; its PASS is not source truth or recalculation.",
+    "Core audit covers no extension workbook or earnings arithmetic.",
+    "Earnings Snyk W011 concerns indirect prompt injection from third-party content; adapters treat that content as data only."
+  ],
+  "active_document_links": {
+    "markdown_files": 8,
+    "checked_links": 50,
+    "all_resolved": true,
+    "links": [
+      {
+        "document": "docs/research/README.md",
+        "target": "index.md",
+        "resolved": "docs/research/index.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/SKILL.md",
+        "resolved": "skills/equity-investment-research/SKILL.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/graph.toml",
+        "resolved": "skills/equity-investment-research/graph.toml"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/references/evidence-contract.md",
+        "resolved": "skills/equity-investment-research/references/evidence-contract.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/graph.toml",
+        "resolved": "skills/equity-investment-research/graph.toml"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/README.md#installed-optional-financial-skills",
+        "resolved": "skills/equity-investment-research/README.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/financial-skills-verification.json",
+        "resolved": "docs/research/batches/2026-10-11/financial-skills-verification.json"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "../../skills/equity-investment-research/references/evidence-contract.md",
+        "resolved": "skills/equity-investment-research/references/evidence-contract.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/return-audit.md",
+        "resolved": "docs/research/batches/2026-10-11/return-audit.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/return-arithmetic-audit.json",
+        "resolved": "docs/research/batches/2026-10-11/return-arithmetic-audit.json"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "index.md#2026-10-11",
+        "resolved": "docs/research/index.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/expanded-scan.md",
+        "resolved": "docs/research/batches/2026-10-11/expanded-scan.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/expanded-scan-method.md",
+        "resolved": "docs/research/batches/2026-10-11/expanded-scan-method.md"
+      },
+      {
+        "document": "docs/research/README.md",
+        "target": "batches/2026-10-11/expanded-scan-verification.json",
+        "resolved": "docs/research/batches/2026-10-11/expanded-scan-verification.json"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "graph.toml",
+        "resolved": "skills/equity-investment-research/graph.toml"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "references/evidence-contract.md",
+        "resolved": "skills/equity-investment-research/references/evidence-contract.md"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "SKILL.md",
+        "resolved": "skills/equity-investment-research/SKILL.md"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "../../.agents/skills/provenance.json",
+        "resolved": ".agents/skills/provenance.json"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "../../docs/research/batches/2026-10-11/financial-skills-verification.json",
+        "resolved": "docs/research/batches/2026-10-11/financial-skills-verification.json"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "../../docs/research/README.md",
+        "resolved": "docs/research/README.md"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "../../docs/research/index.md#2026-10-11",
+        "resolved": "docs/research/index.md"
+      },
+      {
+        "document": "skills/equity-investment-research/README.md",
+        "target": "LICENSE.upstream",
+        "resolved": "skills/equity-investment-research/LICENSE.upstream"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "graph.toml",
+        "resolved": "skills/equity-investment-research/graph.toml"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/evidence-contract.md",
+        "resolved": "skills/equity-investment-research/references/evidence-contract.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/grounding.md",
+        "resolved": "skills/equity-investment-research/references/grounding.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/business.md",
+        "resolved": "skills/equity-investment-research/references/business.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/moat.md",
+        "resolved": "skills/equity-investment-research/references/moat.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/management.md",
+        "resolved": "skills/equity-investment-research/references/management.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/inversion.md",
+        "resolved": "skills/equity-investment-research/references/inversion.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/industry.md",
+        "resolved": "skills/equity-investment-research/references/industry.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/valuation.md",
+        "resolved": "skills/equity-investment-research/references/valuation.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/synthesis.md",
+        "resolved": "skills/equity-investment-research/references/synthesis.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "references/audit.md",
+        "resolved": "skills/equity-investment-research/references/audit.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "README.md",
+        "resolved": "skills/equity-investment-research/README.md"
+      },
+      {
+        "document": "skills/equity-investment-research/SKILL.md",
+        "target": "LICENSE.upstream",
+        "resolved": "skills/equity-investment-research/LICENSE.upstream"
+      },
+      {
+        "document": ".agents/skills/earnings-analysis/SKILL.md",
+        "target": "references/upstream-skill.md",
+        "resolved": ".agents/skills/earnings-analysis/references/upstream-skill.md"
+      },
+      {
+        "document": ".agents/skills/earnings-analysis/SKILL.md",
+        "target": "LICENSE.upstream",
+        "resolved": ".agents/skills/earnings-analysis/LICENSE.upstream"
+      },
+      {
+        "document": ".agents/skills/earnings-analysis/SKILL.md",
+        "target": "references/workflow.md",
+        "resolved": ".agents/skills/earnings-analysis/references/workflow.md"
+      },
+      {
+        "document": ".agents/skills/earnings-analysis/SKILL.md",
+        "target": "references/best-practices.md",
+        "resolved": ".agents/skills/earnings-analysis/references/best-practices.md"
+      },
+      {
+        "document": ".agents/skills/earnings-analysis/SKILL.md",
+        "target": "references/report-structure.md",
+        "resolved": ".agents/skills/earnings-analysis/references/report-structure.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "references/upstream-skill.md",
+        "resolved": ".agents/skills/dcf-model/references/upstream-skill.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "LICENSE.upstream",
+        "resolved": ".agents/skills/dcf-model/LICENSE.upstream"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "../../../skills/equity-investment-research/SKILL.md",
+        "resolved": "skills/equity-investment-research/SKILL.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "../../../skills/equity-investment-research/references/evidence-contract.md",
+        "resolved": "skills/equity-investment-research/references/evidence-contract.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "references/upstream-skill.md",
+        "resolved": ".agents/skills/dcf-model/references/upstream-skill.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "TROUBLESHOOTING.md",
+        "resolved": ".agents/skills/dcf-model/TROUBLESHOOTING.md"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "scripts/validate_dcf.py",
+        "resolved": ".agents/skills/dcf-model/scripts/validate_dcf.py"
+      },
+      {
+        "document": ".agents/skills/dcf-model/SKILL.md",
+        "target": "requirements.txt",
+        "resolved": ".agents/skills/dcf-model/requirements.txt"
+      },
+      {
+        "document": ".agents/skills/comps-analysis/SKILL.md",
+        "target": "references/upstream-skill.md",
+        "resolved": ".agents/skills/comps-analysis/references/upstream-skill.md"
+      },
+      {
+        "document": ".agents/skills/comps-analysis/SKILL.md",
+        "target": "LICENSE.upstream",
+        "resolved": ".agents/skills/comps-analysis/LICENSE.upstream"
+      }
+    ]
+  },
+  "source_bindings": {
+    "provenance_sha256": "cced15ceb3f994db3e5bb3399b85364024d7c98832c90888645c801058b10e5d",
+    "graph_sha256": "625111308a33af5765636ee0bbfded45d88a35d07cffe1bb4e0ddcee6ae5ff80",
+    "script_sha256": "a11accee6148430f5ee8798f10635877f4b4fa4573db30f3eaa1b01f4dde44a5",
+    "test_sha256": "64c60ec3ee4fa3d7211c9dafb16b31ae6f05407aaa26b4271b338ccbea650b58",
+    "dependency_manifest_sha256": "bd08a5711ea7cab1071c343376868b6343ba9da1d6318852dee1e157bbacc655",
+    "dependency_lock_sha256": "82625b5d81858b0fc558263accdb2fe83eb38cbc644a4b085b5534132fcfeab5"
+  }
+}

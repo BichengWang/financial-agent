@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "NOW",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "145649240000.00",
+    "market_cap_deviation": "0.0001321156355146604408432328503742360777312",
+    "free_cash_flow": "4576000000",
+    "free_cash_flow_yield": "0.03142209709537869944379592117008858064959",
+    "pe": "84.34730538922155688622754491017964071856"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.05",
+        "exit_multiple": "25",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "53.284755234375",
+        "total_return": "-0.6217183356923541104642907851767712622462",
+        "annualized_return": "-0.1766906297692262258172285990669163317838",
+        "present_target": "31.62190875911508770692159952741087446163"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "45",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "186.997248000000",
+        "total_return": "0.327539741587391736475933551043589379526",
+        "annualized_return": "0.058301730377747067941775450315281107860",
+        "present_target": "110.9737651688956832965271941432474065476"
+      },
+      {
+        "name": "bull",
+        "growth": "0.30",
+        "exit_multiple": "60",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "372.035586000000",
+        "total_return": "1.641172696294192815561550475649581144399",
+        "annualized_return": "0.214393292492598532553597055329171924731",
+        "present_target": "220.7850125967441751233360741117367504677"
+      }
+    ],
+    "weighted_present_target": "118.5886129234126573558280154814106095061"
+  }
+}

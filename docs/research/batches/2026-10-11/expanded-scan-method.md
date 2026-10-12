@@ -1,0 +1,31 @@
+# Expanded ticker scan — methodology and requested coverage
+
+Research date: **2026-10-11**, confirmed from the workstation clock. The user supplied 52 entries, comprising **50 unique securities**; INTC and NFLX were repeated. Existing INTC, CRM, MSFT, META, AAPL, GOOGL, AMZN, TSLA and NFLX packages are preserved. Research the other 41 securities, not duplicate the existing nine.
+
+## Artifact contract
+
+Each new security has `docs/research/tickers/TICKER/2026-10-11/report.md` and `data/{evidence,calculations,audit}.json`. Reports have the native graph's nine exact level-two headings and substantive security-specific content. No per-ticker README wrappers. Read `skills/equity-investment-research/SKILL.md`, `graph.toml`, `references/evidence-contract.md`, and each ready graph node's instruction file. All source excerpts and research artifacts stay in this repository. Parent integration owns the central index, shared guidance and verification; researchers own only their assigned new ticker directories.
+
+Use primary issuer filings, investor releases, official product/fund documents and government sources for business and financial claims. Observe reliable dated market quotes and independently corroborate material financial facts where possible. Retain fetched text, correct publisher identity, periods, currencies, accounting basis, split/ADR ratios and observations in `evidence.json`. A second URL from the same issuer is not independent corroboration. Populate available financial facts even if only one publisher is available, disclosing that gap; do not replace reachable facts with blanket nulls. Missing truly unavailable facts remain null with a precise reason. No fabricated figures, timestamps, source excerpts, successful audits or investment approvals.
+
+## Dates, currency and valuation
+
+The shared Treasury source and reported decimal risk-free rate are retained in `market-context.json`. A researcher may reuse those retained observations with their provenance; this does not claim a new source fetch. Company required-return assumptions must be justified and exceed the sourced Treasury reference.
+
+A price is an actual dated observation, not an analyst target. Never label an old observation current. Retain the latest genuinely observed date if source access prevents obtaining a current quote and disclose staleness; do not invent October 9 prices. If no dated quote at all is accessible after alternate sources, notify integration with the sources and failures rather than fabricate an evidence-envelope timestamp.
+
+USD is the native engine's currency. International issuers require explicit reporting-currency/ADR reconciliation and sourced FX/ratio evidence; issuer-provided USD convenience translations may be used with the exact rate and date disclosed. Any separately calculated conversion is labeled an estimate, not reported USD truth or native-tool-verified FX arithmetic. Do not silently combine RMB/DKK/HKD earnings with USD prices. Historical GAAP/IFRS diluted EPS is not adjusted or forward EPS, and diluted weighted-average EPS shares are not actual shares outstanding.
+
+Choose a sector-appropriate integer model horizon only when supported inputs make this earnings-multiple model suitable. Positive, sourced historical EPS can be an explicitly disclosed current earning-capacity proxy; this is a normalization assumption, not a factual earnings bridge. Prefer this clearly disclosed basis over silently taking a remote forward fiscal EPS and adding an arbitrary five years. Specify `valuation.timing`: kind `assumption`, valuation date `2026-10-11`, terminal calendar anniversary after the configured years, EPS basis `normalized_run_rate`, `trailing` or `forward`, and a substantive alignment note explaining source fiscal period, normalization/growth clock and terminal forward/trailing multiple. Do not add timing declarations merely to obtain PASS. Justify bear/base/bull growth, exit multiples, probability weights and hurdle in the report. Targets remain conditional; disclose price-only CAGR versus EPS growth, future terminal price versus discounted present value, dividends, dilution and unmodeled risks. Negative/unsuitable earnings or unavailable model inputs justify omitting valuation, with meaningful business/risk analysis and no invented target. Independent unsupported reverse-DCF or cash-flow outputs must not be attributed to the native engine.
+
+## ETF-specific treatment
+
+SPY, QQQ, SOXX, XBI and TLT are funds. Use sponsor documents for mandate, replication/index methodology, holdings/concentration, expense ratio, distributions, liquidity and tax/rate risks. TLT requires duration/yield/maturity and rate-path analysis; XBI requires biotech financing/trial risk and its portfolio weighting; do not treat ETFs as operating companies. Corporate revenue/net income/OCF/capex/cash/debt/EPS fields that are not applicable remain explicitly unavailable with an ETF-specific reason, not fictitious operating earnings. Fund NAV/AUM/expenses may be retained as separately sourced facts with supported units. Shares are fund units when observed; AUM is not quoted equity market capitalization. Omit the corporate EPS valuation model and explain NAV/premium/discount and underlying exposure instead. This is a completed fund analysis with disclosed model applicability limits, not a company-model placeholder.
+
+## Native calculations and finalization
+
+Use `uv run --python 3.12 python skills/equity-investment-research/scripts/research.py calculate .../data/evidence.json --output .../data/calculations.json`; do not hand-write calculations. Complete the report against actual output, then run `audit .../2026-10-11 --output .../data/audit.json`. Exit 0 means PASS, 1 means PROVISIONAL/BLOCKED; findings stay visible. Correct schema/arithmetic contradictions, not source gaps by relabeling. Reports must not claim source truth or imply investment certainty from a native verdict. Skip tests/build/lint/formatters during independent research; integration performs final checks and index generation.
+
+## Requested securities
+
+SPY QQQ SOXX XBI NVDA AMD ANET ARM MU INTC AVGO SMCI SNDK MRVL QCOM BE GEV CRDO NBIS LITE COHR AMAT ORCL CARR CRM MSFT META AAPL GOOGL AMZN TSLA NFLX STRL MKSI KGC LLY UBER TEAM NOW INTU TCEHY PDD BABA JD MCD NKE ADBE TLT UNH NVO

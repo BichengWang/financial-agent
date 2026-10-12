@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-11",
+  "scope": "Current50-security requested research coverage and observed local integration; detailed evidence is in expanded-scan-verification.json.",
+  "coverage": {
+    "requested_entries": 52,
+    "unique_securities": 50,
+    "new_packages": 41,
+    "preserved_packages": 9,
+    "etfs": 5,
+    "companies": 45,
+    "canonical_artifacts": 200,
+    "conditional_targets": 34,
+    "omitted_eps_models": 16,
+    "new_explicitly_dated_models": 25
+  },
+  "native_status_counts": {
+    "PROVISIONAL": 50
+  },
+  "detailed_evidence": "expanded-scan-verification.json",
+  "research_notes": "expanded-scan.md",
+  "methodology": "expanded-scan-method.md",
+  "previous_verification": "archive/verification-before-expanded-scan.json",
+  "checks": {
+    "native_audits": {
+      "runs": 50,
+      "new_package_CLI_runs": 41,
+      "existing_package_read_only_API_runs": 9,
+      "status_counts": {
+        "PROVISIONAL": 50
+      },
+      "error_findings": 0
+    },
+    "independent_arithmetic": {
+      "fields": 692,
+      "precision": 80,
+      "status": "PASS"
+    },
+    "pytest": {
+      "passed": 31,
+      "exit_code": 0
+    },
+    "mypy": {
+      "files": 2,
+      "exit_code": 0
+    },
+    "flake8": {
+      "exit_code": 0
+    },
+    "black": {
+      "files": 2,
+      "exit_code": 0
+    },
+    "index": {
+      "generated_files": 1,
+      "research_runs": 50,
+      "date_batches": 1,
+      "exit_code": 0,
+      "sha256": "30181f4583fe46c77e99731fcb9705a54da793781b087fee17c4888dbe54c5fc"
+    },
+    "navigation": {
+      "documents": 60,
+      "local_links": 633,
+      "status": "PASS"
+    },
+    "preservation": {
+      "existing_canonical_files": 36,
+      "initial_numeric_context_legacy_files": 20,
+      "status": "PASS"
+    }
+  },
+  "runtime_discovery": {
+    "rerun": false,
+    "historical_receipt": "archive/verification-before-return-audit.json"
+  },
+  "limitations": [
+    "PROVISIONAL is not source-truth certification or investment approval.",
+    "34targets are conditional present-value models;16EPS models are intentionally omitted.",
+    "25new target models have declared hypothetical dates;9preserved initial models remain calendar/EPS-unverified.",
+    "TCEHY2.2305% cap/share difference remains warned; JD comparable current market cap unavailable."
+  ]
+}

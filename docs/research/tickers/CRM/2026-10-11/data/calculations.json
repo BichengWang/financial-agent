@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "CRM",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "188573990000.00",
+    "market_cap_deviation": "0.00002115925120644853370101288646126107015962",
+    "free_cash_flow": "14402000000",
+    "free_cash_flow_yield": "0.07637482102137137402556079970302805324283",
+    "pe": "29.37564102564102564102564102564102564103"
+  },
+  "valuation": {
+    "base_eps_fact": "forward_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "11",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "159.288922812096",
+        "total_return": "-0.3048098336660585693710993759001440230437",
+        "annualized_return": "-0.0701332382593413746856945980083739176734",
+        "present_target": "92.42963508836416898134646388077103334075"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "17",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "400.156808435712",
+        "total_return": "0.746418227363121372146816217867586086501",
+        "annualized_return": "0.117968716481481663370421209984054131651",
+        "present_target": "232.1966093365323127053932620940081016897"
+      },
+      {
+        "name": "bull",
+        "growth": "0.14",
+        "exit_multiple": "23",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "709.438257031104",
+        "total_return": "2.096225972291293152358922882206607602671",
+        "annualized_return": "0.253621783051680668372877839175573796734",
+        "present_target": "411.6615145452574478281859902925636482697"
+      }
+    ],
+    "weighted_present_target": "226.1594981038268966127377682697480905009"
+  }
+}

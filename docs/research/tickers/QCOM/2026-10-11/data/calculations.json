@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "QCOM",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "188487000000.00",
+    "market_cap_deviation": "0.005746758444053145509844725468224747878982",
+    "free_cash_flow": "12820000000",
+    "free_cash_flow_yield": "0.06840616829411450829731604503495010938584",
+    "pe": "35.02994011976047904191616766467065868263"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.03",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "88.518303369156",
+        "total_return": "-0.4956222030247521367521367521367521367521",
+        "annualized_return": "-0.1279303103202780075647916351742024791928",
+        "present_target": "54.96290204292801659101775214062626124644"
+      },
+      {
+        "name": "base",
+        "growth": "0.07",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "216.862548600834",
+        "total_return": "0.235684037611589743589743589743589743590",
+        "annualized_return": "0.043233410559825964648991323527976971184",
+        "present_target": "134.6545805992101880770687546181023402525"
+      },
+      {
+        "name": "bull",
+        "growth": "0.15",
+        "exit_multiple": "24",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "414.661397775000",
+        "total_return": "1.362743007264957264957264957264957264957",
+        "annualized_return": "0.187635846056239346594449247516617659783",
+        "present_target": "257.4721037280116236471676673848656636718"
+      }
+    ],
+    "weighted_present_target": "135.3105816580858237452732364282121812345"
+  }
+}

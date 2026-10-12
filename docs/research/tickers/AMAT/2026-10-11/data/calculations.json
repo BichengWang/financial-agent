@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "AMAT",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "402379008000.00",
+    "market_cap_deviation": "0.000002465331278890600924499229583975346687211",
+    "free_cash_flow": "5698000000",
+    "free_cash_flow_yield": "0.01416074357572443958447238928376161837069",
+    "pe": "58.54849884526558891454965357967667436490"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "15",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "117.419311504320",
+        "total_return": "-0.7684174279543222294538784687296609668067",
+        "annualized_return": "-0.2536523415701645706170188755453769234767",
+        "present_target": "72.90815425195745447094398668744683361171"
+      },
+      {
+        "name": "base",
+        "growth": "0.10",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "306.834365200000",
+        "total_return": "-0.3948398217068023588347829516991105062817",
+        "annualized_return": "-0.0955718556456363183251913092184042606277",
+        "present_target": "190.52"
+      },
+      {
+        "name": "bull",
+        "growth": "0.18",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "594.359465216640",
+        "total_return": "0.172237274355836932725874208626708478788",
+        "annualized_return": "0.032293292288983970821852886726610834527",
+        "present_target": "369.0504655150480282643386256527435408659"
+      }
+    ],
+    "weighted_present_target": "190.9425393785968419941509211367827582567"
+  }
+}

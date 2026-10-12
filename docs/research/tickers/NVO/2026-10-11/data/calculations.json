@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "NVO",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "171097920000.00",
+    "market_cap_deviation": "0.001762427071178529754959159859976662777130",
+    "free_cash_flow": "8906646525.679758",
+    "free_cash_flow_yield": "0.05196409874959018669778296382730455075846",
+    "pe": "11.10711234625675366471468173983831447845"
+  },
+  "valuation": null
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "ARM",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "283336632502.56",
+    "market_cap_deviation": "0.003774014617770120600541471818853064238248",
+    "free_cash_flow": "979000000",
+    "free_cash_flow_yield": "0.003442213705565908371716887591856826412573",
+    "pe": "313.2705882352941176470588235294117647059"
+  },
+  "valuation": null
+}

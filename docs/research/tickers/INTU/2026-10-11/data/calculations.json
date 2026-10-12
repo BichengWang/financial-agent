@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "INTU",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "80906910000.00",
+    "market_cap_deviation": "0.00003819058212829069336299592139414163885799",
+    "free_cash_flow": "8617000000",
+    "free_cash_flow_yield": "0.1065010505499938202941539982696823631195",
+    "pe": "18.39307411907654921020656136087484811665"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "14",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "208.299508414592",
+        "total_return": "-0.3119751992911907514450867052023121387283",
+        "annualized_return": "-0.0720580284712834447755408800593104912339",
+        "present_target": "126.4377779731543951248716962855352480427"
+      },
+      {
+        "name": "base",
+        "growth": "0.10",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "583.197881200000",
+        "total_return": "0.926334867712634186622625928984310487201",
+        "annualized_return": "0.140108955727711319862236214897755056221",
+        "present_target": "354.0010477164145358540599502845088043034"
+      },
+      {
+        "name": "bull",
+        "growth": "0.16",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "968.005463154688",
+        "total_return": "2.197375600841248554913294797687861271676",
+        "annualized_return": "0.261707635534878523171909932781087174476",
+        "present_target": "587.5792063010887693679366788603239397827"
+      }
+    ],
+    "weighted_present_target": "355.5047699267680590502320689287191991081"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "AAPL",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "4912924160000.00",
+    "market_cap_deviation": "0.0005955519348268839103869653767820773930754",
+    "free_cash_flow": "98767000000",
+    "free_cash_flow_yield": "0.02011547861507128309572301425661914460285",
+    "pe": "45.12600536193029490616621983914209115282"
+  },
+  "valuation": {
+    "base_eps_fact": "forward_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.01",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "221.742100370098",
+        "total_return": "-0.3413079242808400665399239543726235741445",
+        "annualized_return": "-0.0801087502485783114892677182801861717714",
+        "present_target": "137.6843983397172324294788607335564510621"
+      },
+      {
+        "name": "base",
+        "growth": "0.075",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "385.49518666367187500",
+        "total_return": "0.145125910954348487999049429657794676806",
+        "annualized_return": "0.027473544253768245051906837873410411360",
+        "present_target": "239.3621813361431316787849811550378451546"
+      },
+      {
+        "name": "bull",
+        "growth": "0.12",
+        "exit_multiple": "34",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "574.629129224192",
+        "total_return": "0.706954400024334600760456273764258555133",
+        "annualized_return": "0.112869868629503860207783824539050529696",
+        "present_target": "356.7994791862155466280867551272578251610"
+      }
+    ],
+    "weighted_present_target": "232.3463060072298448938534998230374229281"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "initial_calculate_failure": {
+    "exit_code": 1,
+    "output": "{\"status\": \"BLOCKED\", \"error\": \"fact market_cap: observation value disagreement\"}",
+    "stderr": "uv warning: tool.uv.dev-dependencies deprecated."
+  },
+  "calculate": {
+    "exit_code": 0,
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.12",
+      "python",
+      "skills/equity-investment-research/scripts/research.py",
+      "calculate",
+      "docs/research/tickers/PDD/2026-10-11/data/evidence.json",
+      "--output",
+      "docs/research/tickers/PDD/2026-10-11/data/calculations.json"
+    ],
+    "output": "{\n  \"schema_version\": 1,\n  \"ticker\": \"PDD\",\n  \"as_of\": \"2026-10-11\",\n  \"currency\": \"USD\",\n  \"metrics\": {\n    \"implied_market_cap\": \"115517000000.00\",\n    \"market_cap_deviation\": \"0.002357716555833837118922186717333103031350\",\n    \"free_cash_flow\": \"15128285000\",\n    \"free_cash_flow_yield\": \"0.1306527765782882805078158735642110717679\",\n    \"pe\": \"8.619525530303030303030303030150712839000\"\n  },\n  \"valuation\": {\n    \"base_eps_fact\": \"normalized_eps\",\n    \"discount_rate_fact\": \"required_return\",\n    \"risk_free_rate_fact\": \"risk_free_rate\",\n    \"scenarios\": [\n      {\n        \"name\": \"bear\",\n        \"growth\": \"-.10\",\n        \"exit_multiple\": \"6\",\n        \"years\": 3,\n        \"probability\": \".35\",\n        \"target_price\": \"37.153136663282378344368019907304000\",\n        \"total_return\": \"-0.5432927269418269410649290730509649661955\",\n        \"annualized_return\": \"-0.2299020346951713772207910693709025090048\",\n        \"present_target\": \"23.80244209946234620651729513516851859445\"\n      },\n      {\n        \"name\": \"base\",\n        \"growth\": \".04\",\n        \"exit_multiple\": \"10\",\n        \"years\": 3,\n        \"probability\": \".45\",\n        \"target_price\": \"95.546927113869385537172355612733440\",\n        \"total_return\": \"0.174516620944921764439733935005942716656\",\n        \"annualized_return\": \"0.055082425354789719143754713920693032572\",\n        \"present_target\": \"61.21287203879655373399147387957521833614\"\n      },\n      {\n        \"name\": \"bull\",\n        \"growth\": \".10\",\n        \"exit_multiple\": \"14\",\n        \"years\": 3,\n        \"probability\": \".20\",\n        \"target_price\": \"158.278817691724700061489182202264000\",\n        \"total_return\": \"0.945652337943757837264771754176570374923\",\n        \"annualized_return\": \"0.248403794665102301360835615559078585508\",\n        \"present_target\": \"101.4025391132559120284049560010814301529\"\n      }\n    ],\n    \"weighted_present_target\": \"56.15715497492145275825820774333411578990\"\n  }\n}\n",
+    "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+  },
+  "audit": {
+    "exit_code": 1,
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.12",
+      "python",
+      "skills/equity-investment-research/scripts/research.py",
+      "audit",
+      "docs/research/tickers/PDD/2026-10-11",
+      "--output",
+      "docs/research/tickers/PDD/2026-10-11/data/audit.json"
+    ],
+    "output": "{\n  \"schema_version\": 1,\n  \"status\": \"PROVISIONAL\",\n  \"findings\": [\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact market_cap: estimate, not verified reported data\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact eps: estimate, not verified reported data\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact revenue: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact net_income: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact operating_cash_flow: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact capital_expenditure: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact cash: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"fact debt: needs observations from two distinct publishers\"\n    },\n    {\n      \"severity\": \"warning\",\n      \"message\": \"required fact shares: estimate, not verified reported data\"\n    }\n  ],\n  \"scope\": \"Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade.\"\n}\n",
+    "stderr": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\n"
+  }
+}

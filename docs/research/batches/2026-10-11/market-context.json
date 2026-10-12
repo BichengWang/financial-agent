@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-10-11",
+  "source": {
+    "id": "treasury-20261009",
+    "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+    "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+    "publisher": "U.S. Department of the Treasury",
+    "accessed_at": "2026-10-11",
+    "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+  },
+  "risk_free_rate": {
+    "value": "0.0524",
+    "unit": "decimal",
+    "period": "2026-10-09",
+    "kind": "reported",
+    "sources": ["treasury-20261009"],
+    "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+  }
+}
