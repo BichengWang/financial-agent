@@ -24,7 +24,7 @@ All materials and outputs stay in this checkout. No global skill installation or
 
 The graph also declares project-local `earnings-analysis`, `dcf-model` and `comps-analysis` skills. Select only requested methods with `plan --tickers INTC --as-of YYYY-MM-DD --skills earnings-analysis dcf-model comps-analysis`. The plan names each skill's entrypoint, existing graph prerequisites and ticker/date output paths; it does not execute research.
 
-Load earnings analysis with the Business node after Grounding. Load DCF and comps with Valuation after Grounding, Inversion and Industry. Read each selected skill's native `SKILL.md` under `skills/`; retained upstream material is progressively loaded from that skill's references. Omp, Claude Code and Codex discovery links resolve to the same tracked canonical files.
+Load earnings analysis with the Business node after Grounding. Load DCF and comps with Valuation after Grounding, Inversion and Industry. Read each selected skill's native `SKILL.md` under `skills/`; retained upstream material is progressively loaded from that skill's references. Common discovery links under `.agents/skills/` resolve to the same tracked canonical files.
 
 Extension outputs are separate `earnings.md`, `dcf.md` and `comps.md` files beside the main report, with inputs/workbooks in `data/`. Never replace core evidence, calculations or audits with extension results. The core audit does not verify extension calculations or workbook formulas. Full cash-flow DCF and peer valuation stay separate from the index's discounted EPS/exit-multiple targets.
 

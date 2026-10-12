@@ -39,7 +39,7 @@ The commands are usage examples, not evidence that these companies have been sca
 
 ## Installed optional financial skills
 
-The tracked canonical bundles live in `skills/`: the research graph plus `earnings-analysis`, `dcf-model` and `comps-analysis`. `.agents/skills/`, `.claude/skills/` and `.omp/skills/` contain repository-relative discovery links only, for Codex, Claude Code and omp respectively. There is one copy of each skill; registry discovery deduplicates aliases but still rejects different copies with the same name. Original instructions, resources and Apache-2.0 licenses remain with each financial skill.
+The tracked canonical bundles live in `skills/`: the research graph plus `earnings-analysis`, `dcf-model` and `comps-analysis`. `.agents/skills/` is the common repository-relative discovery directory; it contains links, not copies. There are no runtime-specific discovery directories. Registry discovery deduplicates aliases but still rejects different copies with the same name. Original instructions, resources and Apache-2.0 licenses remain with each financial skill.
 
 | Skill | Existing graph node | Additional ticker/date artifacts |
 |---|---|---|
@@ -59,6 +59,8 @@ omp read skill://comps-analysis
 These are usage commands, not receipts of completed ticker analysis. `--skills` is opt-in; omitting it selects no extensions. The planner preserves the nine core report sections, exposes each selected skill's real instructions and prerequisites, and rejects unknown/duplicate selections and extension paths that escape the checkout or overwrite core artifacts.
 
 Original upstream files are pinned to `anthropics/financial-services` revision `574ed3624aebd0418c7e96cd101262f30210ab26`. See [current provenance](financial-skills-provenance.json) and [structure review verification](../../docs/research/batches/2026-10-12/workspace-review-verification.json). The [original installation receipt](../../docs/research/batches/2026-10-11/financial-skills-verification.json) and [archived original provenance](../../docs/research/batches/2026-10-11/archive/financial-skills-provenance-before-structure.json) describe the earlier layout, not current file hashes. `skills-lock.json` describes the original upstream source, while current provenance identifies the native adaptations. Do not run `npx skills update` blindly: it replaces the native adapters. Review a new revision, preserve its original files and license, then deliberately update the canonical adapters and rerun verification.
+
+The [common discovery verification](../../docs/research/batches/2026-10-12/common-agent-discovery-verification.json) records the subsequent cutover to `.agents/skills/` only. Earlier receipts preserve the discovery paths observed at their execution time; they are not current configuration.
 
 The `research` extra supplies locked openpyxl. Excel or LibreOffice is still required for real recalculation; openpyxl does not evaluate formulas. Upstream `recalc.py` and `examples/comps_example.xlsx` are absent and are not simulated. The retained DCF validator is read-only unless given its optional output path, has documented incomplete checks, and is neither recalculation nor source verification. Core `audit.json` covers none of the extension workbooks or earnings arithmetic. DCF entrypoint links to the shared native contract intentionally leave its individual skill root and can produce portability warnings.
 

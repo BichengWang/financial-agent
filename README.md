@@ -130,8 +130,8 @@ uv run --python 3.12 --extra research python \
 ```
 
 `plan` prints instructions, prerequisites and destinations; it does not perform
-research. Canonical source lives in `skills/`, with relative discovery links for
-omp, Claude Code and Codex. Reports remain in
+research. Canonical source lives in `skills/`, with shared discovery links under
+`.agents/skills/`. Reports remain in
 `docs/research/tickers/TICKER/DATE/`; inputs, calculations and audits remain in
 that run's `data/` folder. Shared verification belongs in `batches/DATE/`.
 

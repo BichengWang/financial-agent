@@ -269,7 +269,7 @@ MB of raw packages.
 
 | Concern | Claude Code / Agent SDK | Other runtimes (Codex, Gemini CLI, GPT) |
 |---|---|---|
-| Skills | project skills under `.claude/skills/<name>/` (symlink or sync from `skills/`); SDK loads them with `setting_sources=["project"]` | same directories (open format); `python -m financial_agent.harness skills catalog` emits the `<available_skills>` block for prompt injection |
+| Skills | canonical source in `skills/`, shared discovery links under `.agents/skills/<name>/`; load explicitly through the harness catalog where a runtime does not discover this shared directory | same open format and shared directory; `python -m financial_agent.harness skills catalog` emits the `<available_skills>` block for prompt injection |
 | Tools | CLI today. Phase 4: the same functions as an MCP server (stdio), or in-process via the SDK's `create_sdk_mcp_server` | CLI or MCP |
 | Enforcement | the harness itself (gates inside `publish`); `PreToolUse` hooks to deny order tools and direct writes to `agents/equity/output/` | the harness itself |
 | Independence for review | subagent with its own context and model for `equity-risk-committee` | separate invocation with a different model |
@@ -423,10 +423,10 @@ are never rewritten.
    Is that acceptable? It closes the 46-flag `HUMAN_REVIEW` loop that never closes
    today.
 
-Also open:
+Location decision and remaining choices:
 
-- Canonical skill location: `skills/` plus `.claude/skills` symlinks, or
-  `.claude/skills` only.
+- Skill location is settled: canonical source in `skills/`, with common discovery
+  links under `.agents/skills/`; no runtime-specific discovery directories.
 - Stay stdlib-only, or adopt `pydantic`/`jsonschema`/`PyYAML` once schemas grow.
 - The environment itself (below).
 

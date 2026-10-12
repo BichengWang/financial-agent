@@ -25,6 +25,7 @@ No native runs to assess.
 
 ### Shared materials
 
+- [common-agent-discovery-verification.json](batches/2026-10-12/common-agent-discovery-verification.json)
 - [workspace-review-verification.json](batches/2026-10-12/workspace-review-verification.json)
 
 ## 2026-10-11

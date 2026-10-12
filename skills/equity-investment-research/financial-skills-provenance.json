@@ -4,12 +4,10 @@
   "source": "https://github.com/anthropics/financial-services",
   "revision": "574ed3624aebd0418c7e96cd101262f30210ab26",
   "scope": "project",
-  "install_command": "npx --yes skills add anthropics/financial-services --skill earnings-analysis dcf-model comps-analysis --agent codex claude-code --yes --json",
+  "historical_install_command": "npx --yes skills add anthropics/financial-services --skill earnings-analysis dcf-model comps-analysis --agent codex claude-code --yes --json",
   "canonical_root": "skills",
   "discovery_roots": {
-    "omp": ".omp/skills",
-    "claude-code": ".claude/skills",
-    "codex": ".agents/skills"
+    "common": ".agents/skills"
   },
   "original_files": [
     {
@@ -96,9 +94,7 @@
       "license_file": "skills/earnings-analysis/LICENSE.upstream",
       "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "discovery_links": {
-        "omp": ".omp/skills/earnings-analysis",
-        "claude-code": ".claude/skills/earnings-analysis",
-        "codex": ".agents/skills/earnings-analysis"
+        "common": ".agents/skills/earnings-analysis"
       }
     },
     {
@@ -111,9 +107,7 @@
       "license_file": "skills/dcf-model/LICENSE.upstream",
       "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "discovery_links": {
-        "omp": ".omp/skills/dcf-model",
-        "claude-code": ".claude/skills/dcf-model",
-        "codex": ".agents/skills/dcf-model"
+        "common": ".agents/skills/dcf-model"
       }
     },
     {
@@ -126,9 +120,7 @@
       "license_file": "skills/comps-analysis/LICENSE.upstream",
       "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "discovery_links": {
-        "omp": ".omp/skills/comps-analysis",
-        "claude-code": ".claude/skills/comps-analysis",
-        "codex": ".agents/skills/comps-analysis"
+        "common": ".agents/skills/comps-analysis"
       }
     }
   ],
