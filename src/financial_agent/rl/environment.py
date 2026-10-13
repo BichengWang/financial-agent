@@ -1,23 +1,25 @@
 import numpy as np
 from abc import ABC, abstractmethod
-from typing import Tuple, Dict, Any, Optional
+from typing import Any
 import gymnasium as gym
 
 
 class Environment(ABC):
     """Base class for RL environments."""
 
-    def __init__(self):
-        self.state = None
+    def __init__(self) -> None:
+        self.state: np.ndarray | None = None
         self.done = False
 
     @abstractmethod
-    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
+    def reset(
+        self, seed: int | None = None, options: dict[str, Any] | None = None
+    ) -> tuple[np.ndarray, dict[str, Any]]:
         """Reset environment to initial state."""
         pass
 
     @abstractmethod
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
+    def step(self, action: int) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
         """Take a step in the environment."""
         pass
 
@@ -35,30 +37,35 @@ class Environment(ABC):
 class SimpleGridWorld(Environment):
     """Simple grid world environment for testing."""
 
-    def __init__(self, grid_size: int = 5, goal_reward: float = 10.0,
-                 step_penalty: float = -0.1):
+    def __init__(
+        self, grid_size: int = 5, goal_reward: float = 10.0, step_penalty: float = -0.1
+    ) -> None:
         super().__init__()
+        if grid_size <= 0:
+            raise ValueError("grid_size must be positive")
         self.grid_size = grid_size
         self.goal_reward = goal_reward
         self.step_penalty = step_penalty
         self.goal_pos = (grid_size - 1, grid_size - 1)
-        self.agent_pos = None
+        self.agent_pos: tuple[int, int] | None = None
 
-    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
-        """Reset agent to starting position."""
-        if seed is not None:
-            np.random.seed(seed)
+    def reset(
+        self, seed: int | None = None, options: dict[str, Any] | None = None
+    ) -> tuple[np.ndarray, dict[str, Any]]:
+        """Reset to the deterministic starting position without reseeding NumPy."""
         self.agent_pos = (0, 0)
         self.done = False
         return np.array(self.agent_pos, dtype=np.float32), {}
 
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
+    def step(self, action: int) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
         """
         Take a step in the grid world.
         Actions: 0=up, 1=right, 2=down, 3=left
         """
-        if self.done:
-            return np.array(self.agent_pos, dtype=np.float32), 0, True, False, {}
+        if self.agent_pos is None or self.done:
+            raise RuntimeError("Call reset() before stepping a new episode")
+        if action not in range(self.get_action_dim()):
+            raise ValueError("action must be between 0 and 3")
 
         x, y = self.agent_pos
 
@@ -82,11 +89,17 @@ class SimpleGridWorld(Environment):
         info = {
             "agent_pos": self.agent_pos,
             "goal_pos": self.goal_pos,
-            "distance_to_goal": abs(self.agent_pos[0] - self.goal_pos[0]) +
-                              abs(self.agent_pos[1] - self.goal_pos[1])
+            "distance_to_goal": abs(self.agent_pos[0] - self.goal_pos[0])
+            + abs(self.agent_pos[1] - self.goal_pos[1]),
         }
 
-        return np.array(self.agent_pos, dtype=np.float32), reward, self.done, False, info
+        return (
+            np.array(self.agent_pos, dtype=np.float32),
+            reward,
+            self.done,
+            False,
+            info,
+        )
 
     def get_state_dim(self) -> int:
         return 2
@@ -96,82 +109,69 @@ class SimpleGridWorld(Environment):
 
     def render(self) -> str:
         """Render the current state of the grid world."""
-        grid = [['.' for _ in range(self.grid_size)] for _ in range(self.grid_size)]
-        grid[self.goal_pos[1]][self.goal_pos[0]] = 'G'
+        grid = [["." for _ in range(self.grid_size)] for _ in range(self.grid_size)]
+        grid[self.goal_pos[1]][self.goal_pos[0]] = "G"
         if self.agent_pos:
-            grid[self.agent_pos[1]][self.agent_pos[0]] = 'A'
-        return '\n'.join(''.join(row) for row in grid)
+            grid[self.agent_pos[1]][self.agent_pos[0]] = "A"
+        return "\n".join("".join(row) for row in grid)
 
 
 class GymEnvironmentWrapper(Environment):
-    """Wrapper for OpenAI Gym environments to work with our RL framework."""
+    """Gymnasium wrapper for numeric observations and discrete actions.
 
-    def __init__(self, env_name: str, **kwargs):
+    Observations are flattened to match get_state_dim(). Configure render_mode
+    when creating the wrapper, as required by Gymnasium.
+    """
+
+    def __init__(self, env_name: str, **kwargs: Any) -> None:
         super().__init__()
-        self.env = gym.make(env_name, **kwargs)
+        self.env: gym.Env[Any, int] = gym.make(env_name, **kwargs)
         self.env_name = env_name
+        if (
+            not isinstance(self.env.action_space, gym.spaces.Discrete)
+            or self.env.action_space.start != 0
+        ):
+            self.env.close()
+            raise ValueError("A zero-based Discrete action space is required")
+        if self.env.observation_space.shape is None:
+            self.env.close()
+            raise ValueError("A numeric observation space with a shape is required")
 
-    def reset(self, seed=None, options=None) -> Tuple[np.ndarray, Dict[str, Any]]:
-        """Reset the gym environment."""
-        kwargs = {}
-        if seed is not None:
-            kwargs['seed'] = seed
-        if options is not None:
-            kwargs['options'] = options
-            
-        if hasattr(self.env, 'reset'):
-            # Handle both old and new gym API
-            result = self.env.reset(**kwargs)
-            if isinstance(result, tuple):
-                state, info = result
-            else:
-                state = result
-                info = {}
-        else:
-            state = self.env.reset(**kwargs)
-            info = {}
-
+    def reset(
+        self, seed: int | None = None, options: dict[str, Any] | None = None
+    ) -> tuple[np.ndarray, dict[str, Any]]:
+        """Reset the Gymnasium environment."""
+        state, info = self.env.reset(seed=seed, options=options)
+        self.state = np.asarray(state, dtype=np.float32).reshape(-1)
         self.done = False
-        return np.array(state, dtype=np.float32), info
+        return self.state, info
 
-    def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
-        """Take a step in the gym environment."""
-        if self.done:
-            return np.array(self.env.observation_space.sample(), dtype=np.float32), 0, True, False, {}
-
-        # Handle both old and new gym API
-        result = self.env.step(action)
-        if len(result) == 4:
-            state, reward, done, info = result
-            terminated = done
-            truncated = False
-        else:  # New gym API returns 5 values
-            state, reward, terminated, truncated, info = result
-            done = terminated or truncated
-
-        self.done = done
-        return np.array(state, dtype=np.float32), float(reward), terminated, truncated, info
+    def step(self, action: int) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
+        """Step once; a terminated or truncated episode requires reset()."""
+        if self.state is None or self.done:
+            raise RuntimeError("Call reset() before stepping a new episode")
+        state, reward, terminated, truncated, info = self.env.step(action)
+        self.state = np.asarray(state, dtype=np.float32).reshape(-1)
+        self.done = terminated or truncated
+        return self.state, float(reward), terminated, truncated, info
 
     def get_state_dim(self) -> int:
         """Get the dimensionality of the state space."""
-        if hasattr(self.env.observation_space, 'shape'):
-            if len(self.env.observation_space.shape) == 0:
-                return 1
-            return int(np.prod(self.env.observation_space.shape))
-        else:
-            return self.env.observation_space.n
+        shape = self.env.observation_space.shape
+        if shape is None:
+            raise ValueError("A numeric observation space with a shape is required")
+        return int(np.prod(shape))
 
     def get_action_dim(self) -> int:
         """Get the dimensionality of the action space."""
-        if hasattr(self.env.action_space, 'n'):
-            return self.env.action_space.n
-        else:
-            return int(np.prod(self.env.action_space.shape))
+        if not isinstance(self.env.action_space, gym.spaces.Discrete):
+            raise ValueError("A zero-based Discrete action space is required")
+        return int(self.env.action_space.n)
 
-    def render(self, mode: str = 'human') -> Optional[str]:
-        """Render the gym environment."""
-        return self.env.render(mode=mode)
+    def render(self) -> object:
+        """Render using the mode configured when creating the environment."""
+        return self.env.render()
 
-    def close(self):
+    def close(self) -> None:
         """Close the gym environment."""
         self.env.close()
