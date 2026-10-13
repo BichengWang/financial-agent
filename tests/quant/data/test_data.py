@@ -326,7 +326,8 @@ def test_cache_weekend_coverage_and_csv_path_safety(tmp_path: Path) -> None:
     cache = CachedProvider(inner, tmp_path / "cache")
     first = cache.fetch(["A"], dt.date(2020, 1, 6), dt.date(2020, 1, 12))
     repeated = cache.fetch(["A"], dt.date(2020, 1, 6), dt.date(2020, 1, 12))
-    assert len(inner.calls) == 1
+    # Weekend requests remain beyond the last received session and retry.
+    assert len(inner.calls) == 2
     assert first.fingerprint() == repeated.fingerprint()
     with pytest.raises(DataError, match="safe"):
         CsvProvider(tmp_path).fetch(["../A"], dt.date(2020, 1, 1), dt.date(2020, 1, 2))
@@ -360,3 +361,53 @@ def test_yahoo_flat_single_symbol_and_exhausted_exception(
             ["A"], data.sessions[0].date(), data.sessions[-1].date()
         )
     assert attempts == 3
+
+
+def test_cache_retries_same_end_when_last_session_published_later(
+    tmp_path: Path,
+) -> None:
+    complete = market(20)
+    inner = CountingProvider(complete.upto(complete.sessions[-2]))
+    start, end = complete.sessions[0].date(), complete.sessions[-1].date()
+    first = CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert first.sessions[-1] == complete.sessions[-2]
+    metadata = json.loads((tmp_path / "_meta.json").read_text())["A"]
+    assert metadata["covered_end"] == complete.sessions[-2].date().isoformat()
+
+    inner.data = complete
+    second = CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert len(inner.calls) == 2
+    assert inner.calls[-1] == (("A",), complete.sessions[-6].date(), end)
+    assert second.sessions[-1] == complete.sessions[-1]
+    assert second.close["A"].equals(complete.close["A"])
+    assert check_quality(second, expected_last_session=end).ok
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert len(inner.calls) == 2
+
+
+def test_cache_empty_refresh_preserves_previous_coverage(tmp_path: Path) -> None:
+    data = market(20)
+    inner = CountingProvider(data.upto(data.sessions[9]))
+    start = data.sessions[0].date()
+    cache = CachedProvider(inner, tmp_path)
+    original = cache.fetch(["A"], start, data.sessions[9].date())
+    inner.data = data.upto(data.sessions[0] - pd.Timedelta(days=1))
+    refreshed = cache.fetch(["A"], start, data.sessions[-1].date())
+    assert refreshed.fingerprint() == original.fingerprint()
+    metadata = json.loads((tmp_path / "_meta.json").read_text())["A"]
+    assert metadata["covered_end"] == data.sessions[9].date().isoformat()
+    cache.fetch(["A"], start, data.sessions[-1].date())
+    assert len(inner.calls) == 3
+
+
+def test_cache_initial_empty_response_allows_same_day_retry(tmp_path: Path) -> None:
+    data = market(1)
+    start = data.sessions[0].date()
+    inner = CountingProvider(data.upto(data.sessions[0] - pd.Timedelta(days=1)))
+    cache = CachedProvider(inner, tmp_path)
+    assert cache.fetch(["A"], start, start).close.empty
+    assert json.loads((tmp_path / "_meta.json").read_text())["A"]["covered_end"] is None
+    inner.data = data
+    recovered = cache.fetch(["A"], start, start)
+    assert recovered.sessions.equals(data.sessions)
+    assert len(inner.calls) == 2

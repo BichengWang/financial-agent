@@ -22,7 +22,7 @@ from .providers import (
 
 
 class CachedProvider:
-    """Cache inclusive request coverage; refresh five sessions of tail overlap."""
+    """Cache received session coverage; refresh five sessions of tail overlap."""
 
     def __init__(
         self,
@@ -66,7 +66,10 @@ class CachedProvider:
         for symbol in symbols:
             record: dict[str, Any] = metadata.get(symbol, {})
             cached = None
-            if record and (self.cache_dir / f"{symbol}.csv").exists():
+            if (
+                record.get("first_session") is not None
+                and (self.cache_dir / f"{symbol}.csv").exists()
+            ):
                 cached = CsvProvider(self.cache_dir, adjusted=record["adjusted"]).fetch(
                     [symbol], dt.date.min, dt.date.max
                 )
@@ -74,13 +77,15 @@ class CachedProvider:
                 dt.date.fromisoformat(record["covered_start"]) if record else start
             )
             covered_end = (
-                dt.date.fromisoformat(record["covered_end"]) if record else start
+                dt.date.fromisoformat(record["covered_end"])
+                if record.get("covered_end") is not None
+                else None
             )
             needs_full = cached is None or start < covered_start
-            needs_tail = not needs_full and end > covered_end
+            needs_tail = not needs_full and (covered_end is None or end > covered_end)
             if needs_full or needs_tail:
                 full_start = min(start, covered_start)
-                full_end = max(end, covered_end) if cached is not None else end
+                full_end = max(end, covered_end) if covered_end is not None else end
                 fetch_start = full_start
                 if needs_tail and cached is not None and len(cached.sessions):
                     fetch_start = max(
@@ -94,7 +99,9 @@ class CachedProvider:
                     )
                 fresh = fresh.window(pd.Timestamp(fetch_start), pd.Timestamp(full_end))
                 incoming = symbol_frame(fresh, symbol)
-                if cached is not None and needs_tail:
+                if incoming.empty and cached is not None:
+                    incoming = symbol_frame(cached, symbol)
+                elif cached is not None and needs_tail:
                     old = symbol_frame(cached, symbol)
                     overlap = old.index[old.index >= pd.Timestamp(fetch_start)]
                     changed = (
@@ -137,7 +144,13 @@ class CachedProvider:
                         incoming.index[-1].date().isoformat() if len(incoming) else None
                     ),
                     "covered_start": full_start.isoformat(),
-                    "covered_end": full_end.isoformat(),
+                    "covered_end": (
+                        incoming.index[-1].date().isoformat()
+                        if len(incoming)
+                        else (
+                            covered_end.isoformat() if covered_end is not None else None
+                        )
+                    ),
                 }
                 metadata[symbol] = record
                 self._atomic_write(meta_path, json.dumps(metadata, indent=2))
