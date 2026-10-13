@@ -671,6 +671,7 @@ dependencies = [
     { name = "gymnasium" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "requests" },
     { name = "yfinance" },
 ]
 
@@ -758,6 +759,7 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "pytest-custom-exit-code", marker = "extra == 'dev'" },
+    { name = "requests", specifier = ">=2.32,<3" },
     { name = "scikit-learn", marker = "extra == 'dl'" },
     { name = "scikit-learn", marker = "extra == 'rl'" },
     { name = "seaborn", marker = "extra == 'dl'" },
