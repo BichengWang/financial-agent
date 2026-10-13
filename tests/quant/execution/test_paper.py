@@ -19,6 +19,8 @@ def test_next_open_costs_restart_and_idempotency(tmp_path: Path) -> None:
     assert broker.settle(data.upto(data.sessions[0])) == []
     order = Order("SPY", "buy", 3, client_order_id="buy")
     ack = broker.submit(order)
+    assert broker.lookup("unknown") is None
+    assert broker.lookup(order.client_order_id) == ack
     assert broker.submit(replace(order, qty=20)) == ack
     assert broker.settle(data.upto(data.sessions[0])) == []
     restarted = PaperBroker(path, costs=costs, initial_cash=0)
@@ -33,6 +35,8 @@ def test_next_open_costs_restart_and_idempotency(tmp_path: Path) -> None:
     assert account.positions["SPY"].avg_price == fill.price
     assert account.positions["SPY"].market_price == data.close.iloc[1, 0]
     assert account.equity == pytest.approx(account.cash + 3 * data.close.iloc[1, 0])
+    recovered = broker.lookup(order.client_order_id)
+    assert recovered is not None and recovered.filled_qty == 3
     assert broker.submit(order).filled_qty == 3
     assert restarted.settle(data.upto(data.sessions[1])) == []
     assert broker.open_orders() == []

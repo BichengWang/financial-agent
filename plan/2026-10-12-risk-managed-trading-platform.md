@@ -252,11 +252,15 @@ class Broker(Protocol):
     name: str; is_live: bool
     def account(self) -> AccountSnapshot: ...
     def submit(self, order: Order) -> OrderAck: ...      # idempotent on client_order_id
+    def lookup(self, client_order_id: str) -> OrderAck | None: ...
     def open_orders(self) -> list[OrderAck]: ...
     def cancel_all(self) -> int: ...
 PaperBroker(state_path, costs, initial_cash)    # persisted; fills pending orders at the
                                                 # next session's open from MarketData
 AlpacaBroker(key_id, secret_key, *, session=None, live_authorization=None)
+IBKRBroker(account_id, *, base_url="https://localhost:5000/v1/api", verify=True,
+           session=None, live_authorization=None, conids=None,
+           confirm_message_ids=(), timeout=10.0, max_retries=3)
 #   paper endpoint by default; the live endpoint requires a LiveAuthorization
 Journal(path)   # append-only JSONL, each event carries seq, ts, prev_hash, hash; verify()
 def reconcile(expected: Mapping[str, float], account: AccountSnapshot) -> list[Break]
@@ -307,8 +311,9 @@ decision support, and order placement exists only in `quant.execution` behind
 
 ### 3.4 Decisions taken (owner may override)
 
-- **Broker:** Alpaca REST v2 (commission-free US equities/ETFs, free paper
-  accounts, API-first). Other brokers (IBKR) plug into the same `Broker` protocol.
+- **Brokers:** Alpaca REST v2 and IBKR Client Portal Web API through the locally
+  run CP Gateway (REST; no TWS sockets or OAuth). Both use public `Broker.lookup`
+  for submission/fill recovery. Live promotion requires same-broker paper evidence.
 - **Universe:** liquid US-listed multi-asset ETFs with long histories (SPY, QQQ,
   IWM, EFA, EEM, TLT, IEF, LQD, GLD, DBC, VNQ). ETFs limit survivorship bias,
   which single-stock universes built from today's index lists don't.

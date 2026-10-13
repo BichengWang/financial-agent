@@ -19,6 +19,11 @@ from financial_agent.quant.validation import (
 )
 
 
+@pytest.fixture
+def config(config: TradingConfig) -> TradingConfig:
+    return replace(config, broker_kind="alpaca")
+
+
 def certificate(config: TradingConfig, tmp_path: Path) -> Path:
     report = PromotionReport(
         config.strategy_name,
