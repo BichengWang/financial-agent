@@ -49,13 +49,21 @@ jobs:
         run: |
           uv venv /tmp/fa-wheel
           uv pip install --python /tmp/fa-wheel dist/*.whl
-          /tmp/fa-wheel/bin/fa-quant --help
-          /tmp/fa-wheel/bin/python - <<'PY'
+          cd /tmp
+          /tmp/fa-wheel/bin/fa-quant demo --sessions 3 --state-dir /tmp/fa-wheel-state
+          /tmp/fa-wheel/bin/python - <<'PYCODE'
           from importlib.resources import files
+          from financial_agent.harness.helpers import load_helper
+          from financial_agent.harness.market_calendar import session
           policy = files("financial_agent.quant").joinpath("quant_policy.toml")
           assert policy.is_file(), "wheel is missing quant_policy.toml"
-          print("Wheel policy resource verified")
-          PY
+          result = session("2026-10-13")
+          assert result.trading_day, result
+          print(result)
+          scoring = load_helper("factor_scoring")
+          assert scoring.read_tickers(["SPY", "SPY"], None) == ["SPY"]
+          print("Wheel policy and helper resources verified")
+          PYCODE
       - name: Create GitHub release with distributions
         env:
           GH_TOKEN: ${{ github.token }}

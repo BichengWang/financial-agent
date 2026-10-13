@@ -5,6 +5,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-13
+
+### Fixed
+
+- Wheel installations can run trading sessions and the offline demo outside a
+  source checkout without failing with `FileNotFoundError` for missing helper scripts.
+
 ## [1.0.0] - 2026-10-13
 
 ### Added
@@ -45,5 +52,6 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   PBO and degradation slope remain not applicable; multi-variant calculations
   and every promotion threshold are unchanged.
 
-[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/BichengWang/financial-agent/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/BichengWang/financial-agent/releases/tag/v1.0.0
