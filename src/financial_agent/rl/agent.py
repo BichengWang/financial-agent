@@ -1,12 +1,13 @@
 import numpy as np
 from abc import ABC, abstractmethod
-from typing import Any, Dict, List, Optional, Tuple
 
 
 class RLAgent(ABC):
     """Base class for reinforcement learning agents."""
 
-    def __init__(self, state_dim: int, action_dim: int, learning_rate: float = 0.01):
+    def __init__(
+        self, state_dim: int, action_dim: int, learning_rate: float = 0.01
+    ) -> None:
         self.state_dim = state_dim
         self.action_dim = action_dim
         self.learning_rate = learning_rate
@@ -17,9 +18,15 @@ class RLAgent(ABC):
         pass
 
     @abstractmethod
-    def update(self, state: np.ndarray, action: int, reward: float,
-               next_state: np.ndarray, done: bool) -> None:
-        """Update the agent's policy based on experience."""
+    def update(
+        self,
+        state: np.ndarray,
+        action: int,
+        reward: float,
+        next_state: np.ndarray,
+        done: bool,
+    ) -> None:
+        """Update from experience; done indicates termination, not a time limit."""
         pass
 
 
@@ -27,24 +34,36 @@ class RandomAgent(RLAgent):
     """Random agent for baseline comparison."""
 
     def select_action(self, state: np.ndarray) -> int:
-        return np.random.randint(0, self.action_dim)
+        return int(np.random.randint(0, self.action_dim))
 
-    def update(self, state: np.ndarray, action: int, reward: float,
-               next_state: np.ndarray, done: bool) -> None:
+    def update(
+        self,
+        state: np.ndarray,
+        action: int,
+        reward: float,
+        next_state: np.ndarray,
+        done: bool,
+    ) -> None:
         pass
 
 
 class QLearningAgent(RLAgent):
     """Q-Learning agent implementation."""
 
-    def __init__(self, state_dim: int, action_dim: int,
-                 learning_rate: float = 0.1, discount_factor: float = 0.95,
-                 epsilon: float = 0.1, epsilon_decay: float = 0.995):
+    def __init__(
+        self,
+        state_dim: int,
+        action_dim: int,
+        learning_rate: float = 0.1,
+        discount_factor: float = 0.95,
+        epsilon: float = 0.1,
+        epsilon_decay: float = 0.995,
+    ) -> None:
         super().__init__(state_dim, action_dim, learning_rate)
         self.discount_factor = discount_factor
         self.epsilon = epsilon
         self.epsilon_decay = epsilon_decay
-        self.q_table = {}
+        self.q_table: dict[str, np.ndarray] = {}
 
     def _state_to_key(self, state: np.ndarray) -> str:
         """Convert state array to string key for Q-table."""
@@ -55,15 +74,21 @@ class QLearningAgent(RLAgent):
         state_key = self._state_to_key(state)
 
         if np.random.random() < self.epsilon:
-            return np.random.randint(0, self.action_dim)
+            return int(np.random.randint(0, self.action_dim))
 
         if state_key not in self.q_table:
             self.q_table[state_key] = np.zeros(self.action_dim)
 
-        return np.argmax(self.q_table[state_key])
+        return int(np.argmax(self.q_table[state_key]))
 
-    def update(self, state: np.ndarray, action: int, reward: float,
-               next_state: np.ndarray, done: bool) -> None:
+    def update(
+        self,
+        state: np.ndarray,
+        action: int,
+        reward: float,
+        next_state: np.ndarray,
+        done: bool,
+    ) -> None:
         """Q-learning update rule."""
         state_key = self._state_to_key(state)
         next_state_key = self._state_to_key(next_state)
@@ -76,7 +101,9 @@ class QLearningAgent(RLAgent):
         if done:
             target = reward
         else:
-            target = reward + self.discount_factor * np.max(self.q_table[next_state_key])
+            target = reward + self.discount_factor * np.max(
+                self.q_table[next_state_key]
+            )
 
         self.q_table[state_key][action] += self.learning_rate * (
             target - self.q_table[state_key][action]

@@ -1,0 +1,54 @@
+name: Python quality
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "example/**"
+      - "agents/equity/daily_investment_system/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".python-version"
+      - ".flake8"
+      - ".github/workflows/python-quality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "example/**"
+      - "agents/equity/daily_investment_system/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".python-version"
+      - ".flake8"
+      - ".github/workflows/python-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: uv sync --locked
+
+      - name: Tests
+        run: uv run pytest tests agents/equity/daily_investment_system/tests -q
+
+      - name: Check RL formatting
+        run: uv run black --check src/financial_agent/rl tests/rl
+
+      - name: Lint RL
+        run: uv run flake8 src/financial_agent/rl tests/rl
+
+      - name: Type-check RL and harness
+        run: uv run mypy src/financial_agent/rl src/financial_agent/harness

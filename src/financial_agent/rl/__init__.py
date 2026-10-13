@@ -9,5 +9,5 @@ __all__ = [
     "Environment",
     "SimpleGridWorld",
     "GymEnvironmentWrapper",
-    "Trainer"
+    "Trainer",
 ]
