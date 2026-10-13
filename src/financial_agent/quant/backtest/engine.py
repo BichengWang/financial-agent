@@ -217,7 +217,7 @@ def run_backtest(
             # Those sells are capped at execution, so projected holdings cannot short.
             projected = np.maximum(projected, 0.0)
             deltas = rebalance_deltas(
-                targets.to_dict(),
+                config.buffered_targets(targets.to_dict()),
                 dict(zip(symbols, projected)),
                 dict(zip(symbols, closes[i])),
                 nav,

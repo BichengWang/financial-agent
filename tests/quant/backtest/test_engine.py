@@ -342,3 +342,41 @@ def test_pending_exit_after_underfilled_or_skipped_buy(reference: float) -> None
     else:
         assert result.trades.empty
         assert len(result.skipped_trades) == 1
+
+
+@pytest.mark.parametrize("fractional", [False, True])
+@pytest.mark.parametrize("delay", [0, 2])
+def test_cash_buffer_caps_decision_price_allocations(
+    fractional: bool, delay: int
+) -> None:
+    data = bars()
+    constant = data.close * 0 + 10.0
+    data = replace(data, open=constant.copy(), close=constant.copy())
+    config = BacktestConfig(
+        initial_cash=1000,
+        cash_buffer=0.02,
+        rebalance="daily",
+        extra_delay=delay,
+        drift_threshold=0,
+        fractional_shares=fractional,
+        costs=CostModel.zero(),
+    )
+    result = run_backtest(Recording(warmup=1), data, config)
+    assert (result.weights.sum(axis=1) <= 0.98 + 1e-12).all()
+    assert result.weights.iloc[-1].sum() == pytest.approx(0.98)
+    assert result.trades.shares.sum() == pytest.approx(98)
+
+
+@pytest.mark.parametrize("buffer", [-0.01, 1, 1.01, float("nan"), float("inf"), True])
+def test_invalid_cash_buffer_rejected(buffer: float) -> None:
+    with pytest.raises(ValueError, match="cash_buffer"):
+        BacktestConfig(cash_buffer=buffer)
+
+
+def test_buffer_preserves_defensive_allocations_and_rejects_invalid_targets() -> None:
+    config = BacktestConfig(cash_buffer=0.02)
+    assert config.buffered_targets({"A": 0.2, "B": 0.3}) == {"A": 0.2, "B": 0.3}
+    assert config.buffered_targets({"A": 0}) == {"A": 0}
+    for targets in [{"A": 1.1}, {"A": -1}, {"A": float("nan")}]:
+        with pytest.raises(ValueError):
+            config.buffered_targets(targets)
