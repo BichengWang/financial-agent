@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "fact shares: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact cash: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact debt: estimate, not verified reported data"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

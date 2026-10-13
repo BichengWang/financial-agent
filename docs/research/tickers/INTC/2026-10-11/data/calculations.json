@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "INTC",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "553455220931.40",
+    "market_cap_deviation": "3.991858416673442285280646122991029080955E-7",
+    "free_cash_flow": "-4949000000",
+    "free_cash_flow_yield": "-0.008942009738822487826471890216910137228862",
+    "pe": null
+  },
+  "valuation": {
+    "base_eps_fact": "forward_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "15",
+        "years": 5,
+        "probability": "0.35",
+        "target_price": "17.642205375000",
+        "total_return": "-0.8314975608882521489971346704871060171920",
+        "annualized_return": "-0.2996401543220319543578239275789431743718",
+        "present_target": "10.01066112387802370059722139584696852502"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.45",
+        "target_price": "83.209420800000",
+        "total_return": "-0.2052586361031518624641833810888252148997",
+        "annualized_return": "-0.0449080965361529913629932851633664573747",
+        "present_target": "47.21526001070982328791574939013506277146"
+      },
+      {
+        "name": "bull",
+        "growth": "0.35",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "204.471924750000",
+        "total_return": "0.952931468481375358166189111747851002865",
+        "annualized_return": "0.143239972167315693313217545242591275670",
+        "present_target": "116.0228613436225622833863866246206937586"
+      }
+    ],
+    "weighted_present_target": "47.95517066690124123144839203903135598264"
+  }
+}

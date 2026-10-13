@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "ticker": "BE",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-fy25",
+      "url": "https://s29.q4cdn.com/452919417/files/doc_financials/2025/q4/Q4-2025-Financial-Results.pdf",
+      "title": "Fourth quarter and full year 2025 financial results",
+      "publisher": "Bloom Energy",
+      "accessed_at": "2026-10-11",
+      "excerpt": "February 5, 2026. Tables in thousands USD except share data and EPS. FY2025 revenue 2,023,994; net loss to common stockholders (88,434); diluted EPS (0.37); operating cash flow 113,949; purchase of property plant equipment (56,759). December 31 cash and equivalents 2,454,108; current non-recourse debt 4,153; noncurrent recourse debt 2,613,726; financing obligations 51,308 current and 192,460 noncurrent; operating leases 22,000 and 106,935. Class A actual issued/outstanding 280,045,459; no Class B issued/outstanding. FY2025 product revenue 1,531,281, installation 204,068, service 228,295, electricity 60,350; gross margin 29.0%, operating margin 3.6%, operating income 72,802. FY2024 revenue 1,473,856, operating income 22,909, gross margin 27.5%. Product backlog approximately $6 billion, total approximately $20 billion. Product backlog includes anticipated ITC and tax incentives; service contracts range 5 to 20 years subject to annual termination for convenience. Related-party FY2025 revenue $892.0 million, including Q4 $574.2 million. FY2025 stock compensation 139,406; debt proceeds 2,500,000, repayment (975,945), debt conversion inducement expense 66,241. OCF changes: contract assets (96,024), inventories (119,212), deposits/deferred revenue (142,605), accounts payable 110,911. Q4 OCF 418,073. Joint ventures with Brookfield: equity losses (40,421), investment cash (36,491). Risk disclosure: significant upfront costs, product financing, useful-life estimates, tax-credit availability, construction/interconnection delay, ability to convert backlog to revenue."
+    },
+    {
+      "id": "issuer-q226",
+      "url": "https://s29.q4cdn.com/452919417/files/doc_financials/2026/q2/Q226-Earnings-release.pdf",
+      "title": "Second quarter 2026 results",
+      "publisher": "Bloom Energy",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July28,2026. Thousands USD except EPS/shares. Q2 revenue1,065,365 versus401,242; product935,413; service69,023; installation50,978; electricity9,951. GAAP gross margin33.4%, operating margin17.1%, common net196,290, diluted EPS0.62, adjusted0.78; Q1 common net70,653, diluted0.23. Q2 OCF226,432 versus(213,111), PP&E cash51,641; Q1 OCF73,610, PP&E26,182. June30 cash2,666,859, restricted1,050 current/20,599 noncurrent; actual common293,354,001. Current recourse4,686, nonrecourse2,583, long recourse2,470,704; financing obligations62,034/144,446; operating leases23,094/102,730. Contract assets365,461 current/62,837 noncurrent; inventories758,188, deposits327,145 current/117,901 long. Customer consideration assets90,967 current/215,533 long are related-party upfront share-based consideration to customer customer. Q2 stock compensation52,217, deferred revenue/deposits cash211,693, contract assets(122,964), receivables(101,372). Related-party revenues Q2 $2.8M, Q1 $373.3M. Raised2026 guidance revenue$3.9B-$4.2B, nonGAAP operating income$800M-$900M/EPS2.55-2.85; not GAAP earnings guidance. May27,2026 Class A renamed common and obsolete Class B references eliminated. Risks include shift to consult-only installation for large sites and commodity prices."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/be/",
+      "title": "Dated regular-session quote and snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "BE ordinary common stock, NYSE, USD. At close October9,2026,4:00PM EDT: $280.50. Shares Out 294.53M; market cap 82.61B. Vendor displayed actual shares outstanding, not weighted-average EPS shares; underlying share effective date not supplied in quote snapshot. After-hours separately displayed and not used. No split normalization needed for displayed USD price/EPS basis."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/be/financials/",
+      "title": "Annual and trailing financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD; FY2025 December31: revenue2,024; common net -88.43; EPS-0.37; OCF113.95; capex-56.76; cash/investments2,454; standardized debt2,996. FY2021-25 revenue972.18/1,199/1,333/1,474/2,024, OCF-60.68/-191.72/-372.53/92/113.95. Vendor gross profit600.07 and operating88.47 differ from release587.4/72.802; not accepted as GAAP profit corroboration. TTM June2026 EPS0.89."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "280.50",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; no split or ADR conversion. Yahoo historical alternate429 and FinanceCharts alternate403; single dated publisher retained.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "280.50",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "294530000",
+      "unit": "shares",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "294530000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "82610000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "82610000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "2023994000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "2023994000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "2024000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "-88434000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Attributable to common shareholders, not pre-noncontrolling-interest consolidated income.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "-88434000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "-88430000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "113949000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "113949000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "113950000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "56759000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Positive gross cash capital spend for same annual period as OCF; proceeds and acquisitions not netted.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "56759000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "56760000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "2454108000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. Cash and equivalents only; excludes restricted cash and separately identified investments.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "2454108000",
+          "period": "2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "2454000000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "2617879000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-fy25"
+      ],
+      "note": "Explicit component aggregation estimate; borrowings exclude operating leases. Current nonrecourse4.153M plus noncurrent recourse2,613.726M. Also excludes243.768M financing obligations and128.935M operating leases; standardized vendor2,996M includes wider obligations, not corroboration."
+    },
+    "eps": {
+      "value": "-0.37",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer statements thousands converted to USD; vendor millions converted to USD with observed rounding. GAAP diluted total annual EPS, not adjusted/forward or quarterly annualized.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "-0.37",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "-0.37",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://finance.yahoo.com/quote/BE/history/",
+      "result": "HTTP429",
+      "alternative": "https://stockanalysis.com/stocks/be/"
+    },
+    {
+      "url": "https://www.financecharts.com/stocks/BE",
+      "result": "HTTP403",
+      "alternative": "https://stockanalysis.com/stocks/be/"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "KGC",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "28161356330.86",
+    "market_cap_deviation": "0.0007589314449182658137882018479033404406539",
+    "free_cash_flow": "2566300000",
+    "free_cash_flow_yield": "0.09119758351101634683724235963041933191187",
+    "pe": "12.17435897435897435897435897435897435897"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.15",
+        "exit_multiple": "8",
+        "years": 3,
+        "probability": "0.30",
+        "target_price": "9.03992000",
+        "total_return": "-0.6192114574557708508845829823083403538332",
+        "annualized_return": "-0.2751836897904338419997311486980350736988",
+        "present_target": "6.434436497813411078717201166180758017493"
+      },
+      {
+        "name": "base",
+        "growth": "0.00",
+        "exit_multiple": "12",
+        "years": 3,
+        "probability": "0.50",
+        "target_price": "22.08000000",
+        "total_return": "-0.0699241786015164279696714406065711878686",
+        "annualized_return": "-0.0238734664331242959410322683148962614508",
+        "present_target": "15.71610787172011661807580174927113702624"
+      },
+      {
+        "name": "bull",
+        "growth": "0.10",
+        "exit_multiple": "16",
+        "years": 3,
+        "probability": "0.20",
+        "target_price": "39.18464000",
+        "total_return": "0.650574557708508845829823083403538331929",
+        "annualized_return": "0.181802893169624865783762031051428091047",
+        "present_target": "27.89085276967930029154518950437317784257"
+      }
+    ],
+    "weighted_present_target": "15.36655543913994169096209912536443148688"
+  }
+}

@@ -425,8 +425,14 @@ class SkillRegistry:
                 dirs.extend(
                     sorted(p for p in root.iterdir() if (p / SKILL_FILE).is_file())
                 )
+        # Agent-specific discovery links may name the same canonical directory.
+        # Only collapse path aliases; different copies still conflict by name.
+        by_target: dict[Path, Path] = {}
+        for directory in dirs:
+            by_target.setdefault(directory.resolve(), directory)
         return cls(
-            validate_skill_dir(d, known_stages=stages, known_tools=tools) for d in dirs
+            validate_skill_dir(d, known_stages=stages, known_tools=tools)
+            for d in by_target.values()
         )
 
     def get(self, name: str) -> Skill:

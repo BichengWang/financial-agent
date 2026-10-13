@@ -18,7 +18,7 @@ Rules: U.S. market holidays still publish an `ILLUSTRATIVE_MODE` `REVIEW_ONLY` a
 
 ## Scheduler
 
-- **Current: none active.** The last durable job (`56841f5d`, created 2026-05-24 on the previous machine) expired; `.claude/scheduled_tasks.json` is empty. Runs are manual until recreated.
+- **Current: none active.** The last recorded durable job (`56841f5d`, created 2026-05-24 on the previous machine) expired. No runtime-specific scheduler directory is maintained in this workspace. Runs are manual until recreated.
 - **Recreate:** Claude Code `CronCreate`, cron `27 7 * * 1-5`, durable, with a self-contained prompt that executes `agents/equity/daily_investment_system/main.md` (repo-relative — never hardcode a `/Users/...` machine path; that killed the previous job).
 - Recurring `CronCreate` jobs auto-expire **7 days** after creation → recreate weekly. Jobs fire only while the REPL is idle; recurring jobs do not catch up missed fires. 07:27 (off-minute) avoids minute-zero pile-up.
 - **Permanent promotion path:** (1) macOS launchd plist invoking `claude -p` on the repo-relative `main.md` — survives reboots, no expiry; (2) GitHub Actions cron that commits the dated folder back — doubles as a regression harness for the prompt stack.

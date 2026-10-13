@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "COHR",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "61564256600.00",
+    "market_cap_deviation": "0.00006914554905782975958414554905782975958415",
+    "free_cash_flow": "-1023400000",
+    "free_cash_flow_yield": "-0.01662443144899285250162443144899285250162",
+    "pe": "75.87864077669902912621359223300970873786"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "57.383594325000",
+        "total_return": "-0.8164429840541232166847930394728424285075",
+        "annualized_return": "-0.2875503166762290768235239715091383367817",
+        "present_target": "31.14551598325530301059422459975821630796"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "25",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "181.521193369600",
+        "total_return": "-0.4193551488401253918495297805642633228840",
+        "annualized_return": "-0.1030213297042199646654656315194773652865",
+        "present_target": "98.52243129582756985083149513872289748457"
+      },
+      {
+        "name": "bull",
+        "growth": "0.25",
+        "exit_multiple": "35",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "440.063476562500",
+        "total_return": "0.407662582568293775190326914464845499328",
+        "annualized_return": "0.070778674723707537987453979331274203096",
+        "present_target": "238.8488243747572042465722148079046940287"
+      }
+    ],
+    "weighted_present_target": "106.3746353178418166779084579108698524404"
+  }
+}

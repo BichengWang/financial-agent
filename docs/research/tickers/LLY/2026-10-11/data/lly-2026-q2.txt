@@ -1,0 +1,4496 @@
+lly-20260630
+FALSE
+2026
+Q2
+0000059478
+12/31
+TRUE
+FALSE
+1
+273
+xbrli:shares
+iso4217:USD
+iso4217:USD
+xbrli:shares
+xbrli:pure
+lly:company
+lly:patent
+lly:party
+lly:site
+lly:petition
+lly:segment
+0000059478
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:CommonClassAMember
+2026-01-01
+2026-06-30
+0000059478
+lly:A2.125NotesDueJune32030Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A0.625NotesDue2031Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A0.500NotesDue2033Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A6.77NotesDueJanuary12036Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A1625NotesDue2043Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A1700NotesDue2049Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A1125NotesDue2051Member
+2026-01-01
+2026-06-30
+0000059478
+lly:A1375NotesDue2061Member
+2026-01-01
+2026-06-30
+0000059478
+2026-08-03
+0000059478
+2026-04-01
+2026-06-30
+0000059478
+2025-04-01
+2025-06-30
+0000059478
+2025-01-01
+2025-06-30
+0000059478
+2026-06-30
+0000059478
+2025-12-31
+0000059478
+2024-12-31
+0000059478
+2025-06-30
+0000059478
+us-gaap:ProductMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:ProductMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:ProductMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:ProductMember
+2025-01-01
+2025-06-30
+0000059478
+lly:CollaborationandOtherRevenueMember
+2026-04-01
+2026-06-30
+0000059478
+lly:CollaborationandOtherRevenueMember
+2025-04-01
+2025-06-30
+0000059478
+lly:CollaborationandOtherRevenueMember
+2026-01-01
+2026-06-30
+0000059478
+lly:CollaborationandOtherRevenueMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+us-gaap:SalesReturnsAndAllowancesMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+us-gaap:SalesReturnsAndAllowancesMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+us-gaap:SalesReturnsAndAllowancesMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+us-gaap:SalesReturnsAndAllowancesMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:MounjaroMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:MounjaroMember
+2026-04-01
+2026-06-30
+0000059478
+lly:MounjaroMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:MounjaroMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:MounjaroMember
+2025-04-01
+2025-06-30
+0000059478
+lly:MounjaroMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:ZepboundMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ZepboundMember
+2026-04-01
+2026-06-30
+0000059478
+lly:ZepboundMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:ZepboundMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ZepboundMember
+2025-04-01
+2025-06-30
+0000059478
+lly:ZepboundMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:JardianceMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:JardianceMember
+2026-04-01
+2026-06-30
+0000059478
+lly:JardianceMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:JardianceMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:JardianceMember
+2025-04-01
+2025-06-30
+0000059478
+lly:JardianceMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:TrulicityMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TrulicityMember
+2026-04-01
+2026-06-30
+0000059478
+lly:TrulicityMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:TrulicityMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TrulicityMember
+2025-04-01
+2025-06-30
+0000059478
+lly:TrulicityMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:OtherCardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherCardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+lly:OtherCardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:OtherCardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherCardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+lly:OtherCardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:CardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:CardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+lly:CardiometabolicHealthMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:CardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:CardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+lly:CardiometabolicHealthMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:VerzenioMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:VerzenioMember
+2026-04-01
+2026-06-30
+0000059478
+lly:VerzenioMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:VerzenioMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:VerzenioMember
+2025-04-01
+2025-06-30
+0000059478
+lly:VerzenioMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:OtherOncologyMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherOncologyMember
+2026-04-01
+2026-06-30
+0000059478
+lly:OtherOncologyMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:OtherOncologyMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherOncologyMember
+2025-04-01
+2025-06-30
+0000059478
+lly:OtherOncologyMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:OncologyMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OncologyMember
+2026-04-01
+2026-06-30
+0000059478
+lly:OncologyMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:OncologyMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OncologyMember
+2025-04-01
+2025-06-30
+0000059478
+lly:OncologyMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:TaltzMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TaltzMember
+2026-04-01
+2026-06-30
+0000059478
+lly:TaltzMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:TaltzMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TaltzMember
+2025-04-01
+2025-06-30
+0000059478
+lly:TaltzMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:OtherImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+lly:OtherImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:OtherImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+lly:OtherImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:ImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+lly:ImmunologyMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:ImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+lly:ImmunologyMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:NeuroscienceMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:NeuroscienceMember
+2026-04-01
+2026-06-30
+0000059478
+lly:NeuroscienceMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+lly:NeuroscienceMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:NeuroscienceMember
+2025-04-01
+2025-06-30
+0000059478
+lly:NeuroscienceMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+us-gaap:ProductAndServiceOtherMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+us-gaap:ProductAndServiceOtherMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:ProductAndServiceOtherMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+us-gaap:ProductAndServiceOtherMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+us-gaap:ProductAndServiceOtherMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:ProductAndServiceOtherMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+2026-04-01
+2026-06-30
+0000059478
+country:US
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+2025-04-01
+2025-06-30
+0000059478
+country:US
+lly:MounjaroMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:MounjaroMember
+2026-01-01
+2026-06-30
+0000059478
+lly:MounjaroMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:MounjaroMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:MounjaroMember
+2025-01-01
+2025-06-30
+0000059478
+lly:MounjaroMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:ZepboundMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ZepboundMember
+2026-01-01
+2026-06-30
+0000059478
+lly:ZepboundMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:ZepboundMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ZepboundMember
+2025-01-01
+2025-06-30
+0000059478
+lly:ZepboundMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:JardianceMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:JardianceMember
+2026-01-01
+2026-06-30
+0000059478
+lly:JardianceMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:JardianceMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:JardianceMember
+2025-01-01
+2025-06-30
+0000059478
+lly:JardianceMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:TrulicityMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TrulicityMember
+2026-01-01
+2026-06-30
+0000059478
+lly:TrulicityMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:TrulicityMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TrulicityMember
+2025-01-01
+2025-06-30
+0000059478
+lly:TrulicityMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:OtherCardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherCardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+lly:OtherCardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:OtherCardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherCardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+lly:OtherCardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:CardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:CardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+lly:CardiometabolicHealthMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:CardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:CardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+lly:CardiometabolicHealthMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:VerzenioMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:VerzenioMember
+2026-01-01
+2026-06-30
+0000059478
+lly:VerzenioMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:VerzenioMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:VerzenioMember
+2025-01-01
+2025-06-30
+0000059478
+lly:VerzenioMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:OtherOncologyMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherOncologyMember
+2026-01-01
+2026-06-30
+0000059478
+lly:OtherOncologyMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:OtherOncologyMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherOncologyMember
+2025-01-01
+2025-06-30
+0000059478
+lly:OtherOncologyMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:OncologyMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OncologyMember
+2026-01-01
+2026-06-30
+0000059478
+lly:OncologyMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:OncologyMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OncologyMember
+2025-01-01
+2025-06-30
+0000059478
+lly:OncologyMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:TaltzMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TaltzMember
+2026-01-01
+2026-06-30
+0000059478
+lly:TaltzMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:TaltzMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:TaltzMember
+2025-01-01
+2025-06-30
+0000059478
+lly:TaltzMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:OtherImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+lly:OtherImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:OtherImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:OtherImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+lly:OtherImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:ImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+lly:ImmunologyMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:ImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:ImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+lly:ImmunologyMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+lly:NeuroscienceMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+lly:NeuroscienceMember
+2026-01-01
+2026-06-30
+0000059478
+lly:NeuroscienceMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+lly:NeuroscienceMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+lly:NeuroscienceMember
+2025-01-01
+2025-06-30
+0000059478
+lly:NeuroscienceMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+us-gaap:ProductAndServiceOtherMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+us-gaap:ProductAndServiceOtherMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:ProductAndServiceOtherMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+us-gaap:ProductAndServiceOtherMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+us-gaap:ProductAndServiceOtherMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:ProductAndServiceOtherMember
+2025-01-01
+2025-06-30
+0000059478
+country:US
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:NonUsMember
+2026-01-01
+2026-06-30
+0000059478
+country:US
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:NonUsMember
+2025-01-01
+2025-06-30
+0000059478
+srt:EuropeMember
+2026-04-01
+2026-06-30
+0000059478
+srt:EuropeMember
+2025-04-01
+2025-06-30
+0000059478
+srt:EuropeMember
+2026-01-01
+2026-06-30
+0000059478
+srt:EuropeMember
+2025-01-01
+2025-06-30
+0000059478
+country:CN
+2026-04-01
+2026-06-30
+0000059478
+country:CN
+2025-04-01
+2025-06-30
+0000059478
+country:CN
+2026-01-01
+2026-06-30
+0000059478
+country:CN
+2025-01-01
+2025-06-30
+0000059478
+country:JP
+2026-04-01
+2026-06-30
+0000059478
+country:JP
+2025-04-01
+2025-06-30
+0000059478
+country:JP
+2026-01-01
+2026-06-30
+0000059478
+country:JP
+2025-01-01
+2025-06-30
+0000059478
+lly:RestOfWorldMember
+2026-04-01
+2026-06-30
+0000059478
+lly:RestOfWorldMember
+2025-04-01
+2025-06-30
+0000059478
+lly:RestOfWorldMember
+2026-01-01
+2026-06-30
+0000059478
+lly:RestOfWorldMember
+2025-01-01
+2025-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:JardianceMember
+2026-04-01
+2026-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:JardianceMember
+2026-01-01
+2026-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:JardianceMember
+2025-01-01
+2025-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:BoehringerIngelheimMember
+2026-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:EbglyssMember
+lly:RocheMember
+2026-06-30
+0000059478
+lly:MilestonePaymentsSalesBasedMember
+lly:EbglyssMember
+2026-06-30
+0000059478
+lly:KeloniaTherapeuticsMember
+2026-06-25
+0000059478
+lly:CentessaPharmaceuticalsMember
+2026-06-24
+0000059478
+lly:VentyxBiosciencesIncMember
+2026-03-04
+0000059478
+lly:KeloniaTherapeuticsMember
+2026-06-25
+2026-06-25
+0000059478
+lly:CentessaPharmaceuticalsMember
+2026-06-24
+2026-06-24
+0000059478
+lly:VentyxBiosciencesIncMember
+2026-03-04
+2026-03-04
+0000059478
+lly:KeloniaTherapeuticsMember
+2026-06-30
+0000059478
+lly:CentessaPharmaceuticalsMember
+2026-06-30
+0000059478
+lly:AjaxTherapeuticsInc.Member
+2026-06-01
+2026-06-30
+0000059478
+lly:OrnaTherapeuticsInc.Member
+2026-05-01
+2026-05-31
+0000059478
+lly:ScorpionTherapeuticsIncMember
+2025-03-01
+2025-03-31
+0000059478
+us-gaap:SubsequentEventMember
+lly:ThreeAcquiredCompaniesMember
+2026-07-01
+2026-07-31
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+2026-06-30
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel1Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel3Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+2025-12-31
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel1Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueInputsLevel3Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+2025-12-31
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:DebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:OtherDebtSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:PortionAtOtherThanFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel1Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+us-gaap:FairValueInputsLevel3Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+lly:MarketableSecuritiesMember
+2025-12-31
+0000059478
+lly:May2026IssuanceDateDebtMember
+2026-06-30
+0000059478
+lly:May2026IssuanceDateDebtMember
+srt:MinimumMember
+2026-06-30
+0000059478
+lly:May2026IssuanceDateDebtMember
+srt:MaximumMember
+2026-06-30
+0000059478
+lly:FloatingRateNotesMember
+2026-06-30
+0000059478
+lly:FloatingRateNotesDue2028Member
+2026-01-01
+2026-06-30
+0000059478
+lly:FloatingRateNotesDue2029Member
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CommercialPaperMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:CommercialPaperMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CommercialPaperMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:CommercialPaperMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueInputsLevel2Member
+2026-06-30
+0000059478
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueInputsLevel2Member
+2025-12-31
+0000059478
+us-gaap:FairValueInputsLevel3Member
+2026-06-30
+0000059478
+us-gaap:FairValueInputsLevel3Member
+2025-12-31
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+lly:ForeignCurrencyDenominatedNotesMember
+2026-06-30
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+lly:ForeignCurrencyDenominatedNotesMember
+2025-12-31
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:LongMember
+us-gaap:ForeignExchangeForwardMember
+2026-06-30
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ShortMember
+us-gaap:ForeignExchangeForwardMember
+2026-06-30
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:LongMember
+us-gaap:ForeignExchangeForwardMember
+2025-12-31
+0000059478
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ShortMember
+us-gaap:ForeignExchangeForwardMember
+2025-12-31
+0000059478
+us-gaap:NondesignatedMember
+us-gaap:LongMember
+us-gaap:ForeignExchangeForwardMember
+2026-06-30
+0000059478
+us-gaap:NondesignatedMember
+us-gaap:ShortMember
+us-gaap:ForeignExchangeForwardMember
+2026-06-30
+0000059478
+us-gaap:NondesignatedMember
+us-gaap:LongMember
+us-gaap:ForeignExchangeForwardMember
+2025-12-31
+0000059478
+us-gaap:NondesignatedMember
+us-gaap:ShortMember
+us-gaap:ForeignExchangeForwardMember
+2025-12-31
+0000059478
+us-gaap:ForeignExchangeForwardMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:ForeignExchangeForwardMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:ForeignExchangeForwardMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:ForeignExchangeForwardMember
+2025-01-01
+2025-06-30
+0000059478
+lly:ForeignCurrencyDenominatedNotesMember
+2026-04-01
+2026-06-30
+0000059478
+lly:ForeignCurrencyDenominatedNotesMember
+2025-04-01
+2025-06-30
+0000059478
+lly:ForeignCurrencyDenominatedNotesMember
+2026-01-01
+2026-06-30
+0000059478
+lly:ForeignCurrencyDenominatedNotesMember
+2025-01-01
+2025-06-30
+0000059478
+lly:EmgalityPatentLitigationMember
+2026-06-30
+0000059478
+us-gaap:UnfavorableRegulatoryActionMember
+2026-06-30
+0000059478
+country:IL
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2026-03-31
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2026-03-31
+0000059478
+us-gaap:RetainedEarningsMember
+2026-03-31
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2026-03-31
+0000059478
+us-gaap:RetainedEarningsMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2026-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2026-06-30
+0000059478
+us-gaap:RetainedEarningsMember
+2026-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2025-03-31
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2025-03-31
+0000059478
+us-gaap:RetainedEarningsMember
+2025-03-31
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-03-31
+0000059478
+us-gaap:RetainedEarningsMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:CommonStockMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:CommonStockMember
+2025-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2025-06-30
+0000059478
+us-gaap:RetainedEarningsMember
+2025-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-06-30
+0000059478
+us-gaap:CommonStockMember
+2025-12-31
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2025-12-31
+0000059478
+us-gaap:RetainedEarningsMember
+2025-12-31
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-12-31
+0000059478
+us-gaap:RetainedEarningsMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:CommonStockMember
+2024-12-31
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2024-12-31
+0000059478
+us-gaap:RetainedEarningsMember
+2024-12-31
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2024-12-31
+0000059478
+us-gaap:RetainedEarningsMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:CommonStockMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:AdditionalPaidInCapitalMember
+2025-01-01
+2025-06-30
+0000059478
+lly:December2024ShareRepurchaseProgramMember
+2026-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2026-03-31
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2026-03-31
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2026-03-31
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2026-04-01
+2026-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2026-04-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2026-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2026-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2026-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-03-31
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-03-31
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2025-03-31
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-04-01
+2025-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2025-04-01
+2025-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2025-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-12-31
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-12-31
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2025-12-31
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2026-01-01
+2026-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2026-01-01
+2026-06-30
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2024-12-31
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2024-12-31
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2024-12-31
+0000059478
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-01-01
+2025-06-30
+0000059478
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-01-01
+2025-06-30
+0000059478
+lly:OtherAccumulatedComprehensiveIncomeLossAttributableToParentMember
+2025-01-01
+2025-06-30
+0000059478
+lly:ReportableSegmentMember
+2026-04-01
+2026-06-30
+0000059478
+lly:ReportableSegmentMember
+2025-04-01
+2025-06-30
+0000059478
+lly:ReportableSegmentMember
+2026-01-01
+2026-06-30
+0000059478
+lly:ReportableSegmentMember
+2025-01-01
+2025-06-30
+0000059478
+lly:EarlyStageMember
+lly:ReportableSegmentMember
+2026-04-01
+2026-06-30
+0000059478
+lly:EarlyStageMember
+lly:ReportableSegmentMember
+2025-04-01
+2025-06-30
+0000059478
+lly:EarlyStageMember
+lly:ReportableSegmentMember
+2026-01-01
+2026-06-30
+0000059478
+lly:EarlyStageMember
+lly:ReportableSegmentMember
+2025-01-01
+2025-06-30
+0000059478
+lly:LateStageMember
+lly:ReportableSegmentMember
+2026-04-01
+2026-06-30
+0000059478
+lly:LateStageMember
+lly:ReportableSegmentMember
+2025-04-01
+2025-06-30
+0000059478
+lly:LateStageMember
+lly:ReportableSegmentMember
+2026-01-01
+2026-06-30
+0000059478
+lly:LateStageMember
+lly:ReportableSegmentMember
+2025-01-01
+2025-06-30
+0000059478
+lly:DonaldZakrowskiMember
+2026-04-01
+2026-06-30
+0000059478
+lly:DonaldZakrowskiMember
+2026-06-30
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+Form
+10-Q
+Quarterly Report Pursuant to Section 13 or 15(d) of the
+Securities Exchange Act of 1934
+For the quarterly period ended
+June 30, 2026
+COMMISSION FILE NUMBER
+001-6351
+ELI LILLY AND COMPANY
+(Exact name of Registrant as specified in its charter)
+Indiana
+35-0470950
+(State or other jurisdiction of
+(I.R.S. Employer
+incorporation or organization)
+Identification No.)
+Lilly Corporate Center
+,
+Indianapolis
+,
+Indiana
+46285
+(Address and zip code of principal executive offices)
+Registrant's telephone number, including area code (
+317
+)
+276-2000
+Securities registered pursuant to Section 12(b) of the Exchange Act:
+Title of Each Class
+Trading Symbols
+Name of Each Exchange On Which Registered
+Common Stock (no par value)
+LLY
+New York Stock Exchange
+2.125% Notes due 2030
+LLY30
+New York Stock Exchange
+0.625% Notes due 2031
+LLY31
+New York Stock Exchange
+0.500% Notes due 2033
+LLY33
+New York Stock Exchange
+6.77% Notes due 2036
+LLY36
+New York Stock Exchange
+1.625% Notes due 2043
+LLY43
+New York Stock Exchange
+1.700% Notes due 2049
+LLY49A
+New York Stock Exchange
+1.125% Notes due 2051
+LLY51
+New York Stock Exchange
+1.375% Notes due 2061
+LLY61
+New York Stock Exchange
+Indicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the Registrant was required to file such reports) and (2) has been subject to such filing requirements for the past 90 days.
+Yes
+☒
+No
+☐
+Indicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant was required to submit such files).
+Yes
+☒
+No
+☐
+Indicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of "large accelerated filer," "accelerated filer," "smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act.
+Large accelerated filer
+☒
+Accelerated filer
+☐
+Non-accelerated filer
+☐
+Smaller reporting company
+☐
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+☐
+Indicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).
+Yes
+☐
+No
+☒
+The number of shares of common stock outstanding as of August 3, 2026:
+Class
+Number of Shares Outstanding
+Common
+941,357,065
+Eli Lilly and Company
+Form 10-Q
+For the Quarter Ended June 30, 2026
+Table of Contents
+Page
+PART I. Financial Information
+5
+Item 1.
+Financial Statements
+5
+Consolidated Condensed Statements of Operations
+5
+Consolidated Condensed Statements of Comprehensive Income
+6
+Consolidated Condensed Balance Sheets
+7
+Consolidated Condensed Statements of Cash Flows
+8
+Notes to Consolidated Condensed Financial Statements
+9
+Item 2.
+Management's Discussion and Analysis of Results of Operations and Financial Condition
+24
+Executive Overview
+24
+Results of Operations
+28
+Financial Condition and Liquidity
+31
+Critical Accounting Estimates
+31
+Available Information on our Website
+32
+Item 3.
+Quantitative and Qualitative Disclosures About Market Risk
+32
+Item 4.
+Controls and Procedures
+32
+PART II. Other Information
+33
+Item 1.
+Legal Proceedings
+33
+Item 1A.
+Risk Factors
+33
+Item 2.
+Unregistered Sales of Equity Securities and Use of Proceeds
+33
+Item 5.
+Other Information
+33
+Item 6.
+Exhibits
+34
+Signatures
+34
+2
+Forward-Looking Statements
+This Quarterly Report on Form 10-Q and our other publicly available documents include forward-looking statements within the meaning of Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934 (Exchange Act), and are subject to the safe harbor created thereby under the Private Securities Litigation Reform Act of 1995. Forward-looking statements include all statements that do not relate solely to historical or current facts, and generally can be identified by the use of words such as "may," "could," "aim," "seek," "believe," "will," "expect," "project," "estimate," "intend," "target," "anticipate," "plan," "continue," or similar expressions or future or conditional verbs.
+Forward-looking statements inherently involve many risks and uncertainties that could cause actual results to differ from those expressed in forward-looking statements. Forward-looking statements are based on management's current plans and expectations, expressed in good faith and believed to have a reasonable basis. However, we can give no assurance that any expectation or belief will result or will be achieved or accomplished. Investors therefore should not place undue reliance on forward-looking statements. The following include some but not all of the factors that could cause actual results or events to differ from those anticipated:
+•
+the significant costs and uncertainties in the pharmaceutical research and development process, including with respect to the timing and process of obtaining regulatory approvals and the ability of the company's clinical trials to meet expectations;
+•
+the impact and uncertain outcome of acquisitions and business development transactions and related costs;
+•
+intense competition affecting our products, pipeline, or industry;
+•
+market uptake of launched products and indications;
+•
+continued pricing pressures and the impact of actions of governmental and private actors affecting pricing of, reimbursement for, and patient access to pharmaceuticals, or reporting obligations related thereto;
+•
+implementation of our voluntary agreement with the U.S. government related to drug pricing and access;
+•
+developments or uncertainties related to our or competitive products, including as may relate to safety or efficacy concerns;
+•
+dependence on relatively few products or product classes for a significant percentage of our total revenue and a consolidated supply chain;
+•
+the expiration of intellectual property protection for certain of our products and competition from generic and biosimilar products;
+•
+our ability to protect and enforce patents and other intellectual property and changes in patent law or regulations related to data package exclusivity;
+•
+information technology system inadequacies, inadequate controls or procedures, security breaches, or operating failures;
+•
+unauthorized access, disclosure, misappropriation, or compromise of confidential information or other data stored in our information technology systems, networks, and facilities, or those of third parties with whom we share our data and violations of data protection laws or regulations;
+•
+issues with product supply, regulatory approvals, or other negative outcomes stemming from manufacturing difficulties, disruptions, or shortages, including as a result of unpredictability and variability in demand, labor shortages, third-party performance, quality, cyber-attacks, or regulatory actions related to our and third-party facilities;
+•
+reliance on third-party relationships and outsourcing arrangements;
+•
+the use of artificial intelligence or other emerging technologies in various facets of our operations, including partnerships related to the use of, or the sharing of, such technologies with third parties, which may exacerbate competitive, regulatory, litigation, cybersecurity, and other risks;
+•
+the impact of global macroeconomic conditions, including uneven economic growth or downturns or uncertainty, trade and other global disputes and interruptions, including related to tariffs, trade protection measures, and similar restrictions, international tension, conflicts, regional dependencies, or other costs, uncertainties, and risks related to engaging in business globally;
+•
+fluctuations in foreign currency exchange rates, changes in interest rates, and inflation or deflation;
+•
+significant and sudden declines or volatility in the trading price of our common stock and market capitalization;
+•
+litigation, investigations, or other similar proceedings involving past, current, or future products, activities, or intellectual property;
+3
+•
+changes in tax law and regulation, tax rates, or events that differ from our assumptions related to tax positions;
+•
+regulatory changes, developments, and uncertainty;
+•
+regulatory oversight and actions regarding our operations and products;
+•
+regulatory compliance problems or government investigations;
+•
+risks from the proliferation of counterfeit, misbranded, adulterated, or illegally compounded products;
+•
+actual or perceived deviation from environmental-, social-, or governance-related requirements or expectations;
+•
+asset impairments and restructuring charges; and
+•
+changes in accounting and reporting standards.
+More information on factors that could cause our actual results to differ from those expressed in forward-looking statements is included from time to time in our reports filed with the Securities and Exchange Commission, including in our Annual Report on
+Form 10-K
+for the year ended December 31, 2025, particularly under Part I, Item 1A, "Risk Factors." Investors should understand that it is not possible to predict or identify all such factors and should not consider the risks described above and under Part I, Item 1A, "Risk Factors" of our Annual Report on
+Form 10-K
+to be a complete statement of all potential risks and uncertainties.
+All forward-looking statements speak only as of the date of this Quarterly Report on Form 10-Q and are expressly qualified in their entirety by the cautionary statements included in or incorporated by reference into this Quarterly Report on Form 10-Q. Except as is required by law, we expressly disclaim any obligation to publicly release any revisions to forward-looking statements to reflect events after the date of this Quarterly Report on Form 10-Q.
+Trademarks and Trade Names
+All trademarks or trade names referred to in this Quarterly Report on Form 10-Q are the property of the company, or, to the extent trademarks or trade names belonging to other companies are referenced in this Quarterly Report on Form 10-Q, the property of their respective owners. Solely for convenience, the trademarks and trade names in this Quarterly Report on Form 10-Q are referred to without the ® and ™ symbols, but such references should not be construed as any indicator that the company or, to the extent applicable, their respective owners will not assert, to the fullest extent under applicable law, the company’s or their rights thereto. We do not intend the use or display of other companies’ trademarks and trade names to imply a relationship with, or endorsement or sponsorship of us by, any other companies.
+4
+PART I. Financial Information
+Item 1. Financial Statements
+Consolidated Condensed Statements of Operations
+(Unaudited)
+ELI LILLY AND COMPANY
+(Dollars and shares in millions, except per-share data)
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Revenue
+$
+22,974
+$
+15,558
+$
+42,773
+$
+28,286
+Costs, expenses, and other:
+Cost of sales
+3,268
+2,448
+6,845
+4,672
+Research and development
+3,819
+3,336
+7,329
+6,070
+Marketing, selling, and administrative
+3,430
+2,753
+6,364
+5,221
+Acquired in-process research and development
+2,776
+154
+3,360
+1,726
+Asset impairment, restructuring, and other special charges
+703
+—
+982
+35
+Other–net, (income) expense
+(
+269
+)
+90
+(
+204
+)
+329
+13,727
+8,781
+24,676
+18,053
+Income before income taxes
+9,247
+6,777
+18,097
+10,233
+Income taxes
+2,152
+1,116
+3,606
+1,813
+Net income
+$
+7,095
+$
+5,661
+$
+14,491
+$
+8,420
+Earnings per share:
+Basic
+$
+7.95
+$
+6.30
+$
+16.22
+$
+9.37
+Diluted
+$
+7.94
+$
+6.29
+$
+16.19
+$
+9.35
+Shares used in calculation of earnings per share:
+Basic
+892.4
+897.9
+893.5
+898.3
+Diluted
+893.7
+899.8
+894.8
+900.2
+See notes to consolidated condensed financial statements.
+5
+Consolidated Condensed Statements of Comprehensive Income
+(Unaudited)
+ELI LILLY AND COMPANY
+(Dollars in millions)
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Net income
+$
+7,095
+$
+5,661
+$
+14,491
+$
+8,420
+Other comprehensive income, net of tax
+72
+59
+119
+606
+Comprehensive income
+$
+7,167
+$
+5,720
+$
+14,610
+$
+9,026
+See notes to consolidated condensed financial statements.
+6
+Consolidated Condensed Balance Sheets
+ELI LILLY AND COMPANY
+(Dollars in millions)
+June 30, 2026
+December 31, 2025
+Assets
+(Unaudited)
+Current Assets
+Cash and cash equivalents
+$
+8,950
+$
+7,268
+Accounts receivable
+20,083
+17,760
+Other receivables
+3,392
+2,395
+Inventories
+16,793
+13,744
+Prepaid expenses
+15,368
+14,315
+Other current assets
+86
+147
+Total current assets
+64,672
+55,629
+Noncurrent Assets
+Investments
+3,856
+2,802
+Goodwill
+8,849
+5,898
+Other intangibles, net
+18,110
+6,521
+Deferred tax assets
+10,028
+9,959
+Property and equipment, net of accumulated depreciation of
+$
+13,103
+(2026)
+and $
+12,560
+(2025)
+29,286
+24,675
+Other noncurrent assets
+7,482
+6,992
+Total assets
+$
+142,283
+$
+112,476
+Liabilities and Equity
+Current Liabilities
+Short-term borrowings and current maturities of long-term debt
+$
+7,050
+$
+1,635
+Accounts payable
+6,112
+5,379
+Employee compensation
+1,798
+2,375
+Sales rebates and discounts
+21,122
+17,382
+Other current liabilities
+11,659
+8,457
+Total current liabilities
+47,741
+35,228
+Noncurrent Liabilities
+Long-term debt
+47,858
+40,868
+Long-term income taxes payable
+5,461
+5,875
+Other noncurrent liabilities
+7,344
+3,970
+Total noncurrent liabilities
+60,663
+50,713
+Commitments and Contingencies
+Equity
+Common stock
+588
+590
+Additional paid-in capital
+7,117
+7,346
+Retained earnings
+31,893
+24,470
+Employee benefit trust
+(
+3,013
+)
+(
+3,013
+)
+Accumulated other comprehensive loss
+(
+2,761
+)
+(
+2,880
+)
+Other equity
+55
+22
+Total equity
+33,879
+26,535
+Total liabilities and equity
+$
+142,283
+$
+112,476
+See notes to consolidated condensed financial statements.
+7
+Consolidated Condensed Statements of Cash Flows
+(Unaudited)
+ELI LILLY AND COMPANY
+(Dollars in millions)
+Six Months Ended June 30,
+2026
+2025
+Cash Flows from Operating Activities
+Net income
+$
+14,491
+$
+8,420
+Adjustments to Reconcile Net Income to Cash Flows from Operating Activities:
+Depreciation and amortization
+1,043
+941
+Change in deferred income taxes
+(
+433
+)
+(
+1,460
+)
+Stock-based compensation expense
+362
+339
+Acquired in-process research and development
+3,360
+1,726
+Other changes in operating assets and liabilities, net of acquisitions and divestitures
+(
+2,334
+)
+(
+5,627
+)
+Other operating activities, net
+(
+466
+)
+414
+Net Cash Provided by Operating Activities
+16,023
+4,753
+Cash Flows from Investing Activities
+Purchases of property and equipment
+(
+5,259
+)
+(
+3,207
+)
+Purchases of noncurrent investments
+(
+604
+)
+(
+368
+)
+Purchases of in-process research and development
+(
+3,486
+)
+(
+1,864
+)
+Cash paid for acquisitions, net of cash acquired
+(
+9,805
+)
+—
+Other investing activities, net
+(
+158
+)
+252
+Net Cash Used for Investing Activities
+(
+19,312
+)
+(
+5,187
+)
+Cash Flows from Financing Activities
+Dividends paid
+(
+3,094
+)
+(
+2,693
+)
+Net change in short-term borrowings
+5,284
+(
+246
+)
+Proceeds from issuance of long-term debt
+8,941
+6,461
+Repayments of long-term debt
+(
+1,623
+)
+(
+778
+)
+Purchases of common stock
+(
+3,957
+)
+(
+1,892
+)
+Other financing activities, net
+(
+595
+)
+(
+717
+)
+Net Cash Provided by Financing Activities
+4,956
+135
+Effect of exchange rate changes on cash and cash equivalents
+15
+407
+Net increase in cash and cash equivalents
+1,682
+108
+Cash and cash equivalents at January 1
+7,268
+3,268
+Cash and Cash Equivalents at June 30
+$
+8,950
+$
+3,376
+See notes to consolidated condensed financial statements.
+8
+Notes to Consolidated Condensed Financial Statements
+(Tables present dollars and shares in millions, except per-share data, and numbers may not add due to rounding)
+Note 1:
+Basis of Presentation and Implementation of New Financial Accounting Standards
+We have prepared the accompanying unaudited consolidated condensed financial statements in accordance with the requirements of Form 10-Q and, therefore, they do not include all information and footnotes necessary for a fair presentation of financial position, results of operations, and cash flows in conformity with accounting principles generally accepted in the United States (GAAP). In our opinion, the consolidated condensed financial statements reflect all adjustments (including those that are normal and recurring) that are necessary for a fair presentation of the results of operations for the periods shown. In preparing financial statements in conformity with GAAP, we must make estimates and assumptions that affect the reported amounts of assets, liabilities, revenue, expenses, and related disclosures at the date of the financial statements and during the reporting period. Actual results could differ from those estimates.
+The information included in this Quarterly Report on Form 10-Q should be read in conjunction with our consolidated financial statements and accompanying notes included in our Annual Report on
+Form 10-K
+for the year ended December 31, 2025. We issued our financial statements by filing them with the Securities and Exchange Commission and have evaluated subsequent events up to the time of the filing of this Quarterly Report on Form 10-Q.
+All per-share amounts, unless otherwise noted in the footnotes, are presented on a diluted basis; that is, based on the weighted-average number of common shares outstanding plus the effect of incremental shares from our stock-based compensation programs, if dilutive.
+We operate as a single operating segment engaged in the discovery, development, manufacturing, marketing, and sales of pharmaceutical products worldwide. A global research and development organization and a supply chain organization are responsible for the discovery, development, manufacturing, and supply of our products. Our commercial organizations market, distribute, and sell the products. The business is also supported by global corporate staff functions. See
+Note 11
+for additional information.
+Implementation of New Financial Accounting Standards
+Accounting Standards Update 2024-03,
+Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures (Subtopic 220-40): Disaggregation of Income Statement Expenses
+, requires disaggregation of specific expense categories in the notes to the financial statements and a qualitative description of the remaining expense amounts not separately disaggregated. This standard is effective for annual reporting periods beginning after December 15, 2026, and requires prospective application with the option to apply it retrospectively. We intend to adopt this standard in our Annual Report on Form 10-K for the year ending December 31, 2027. We are currently evaluating the potential impact of adopting this standard on our disclosures.
+Note 2:
+Revenue
+The following table summarizes our revenue recognized in our consolidated condensed statements of operations:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Net product revenue
+$
+21,403
+$
+14,726
+$
+39,856
+$
+26,327
+Collaboration and other revenue
+1,571
+832
+2,917
+1,959
+Revenue
+$
+22,974
+$
+15,558
+$
+42,773
+$
+28,286
+We recognize revenue primarily from two different types of contracts, product sales to customers (net product revenue) and collaborations and other arrangements. Revenue recognized from collaborations and other arrangements includes our share of profits from the collaborations, as well as royalties, upfront, and milestone payments we receive under these types of contracts. See
+Note 3
+for additional information related to our collaborations and other arrangements. Collaboration and other revenue disclosed above includes the revenue resulting from our collaboration with Boehringer Ingelheim, as well as the sale of product rights. Substantially all of the remainder of collaboration and other revenue is related to contracts accounted for as contracts with customers.
+9
+Adjustments to Revenue
+Adjustments to revenue recognized as a result of changes in estimates for our most significant United States (U.S.) sales returns, rebates, and discounts liability balances for products shipped in previous periods were
+3
+percent and
+2
+percent of U.S. revenue during the three and six months ended June 30, 2026, respectively, and
+1
+percent and less than
+1
+percent of U.S. revenue during the three and six months ended June 30, 2025
+,
+respectively.
+Disaggregation of Revenue
+The following table summarizes revenue, including net product revenue and collaboration and other revenue, by product for the three months ended June 30, 2026 and 2025:
+Three Months Ended June 30,
+2026
+2025
+U.S.
+Outside U.S.
+Total
+U.S.
+Outside U.S.
+Total
+Cardiometabolic Health:
+Mounjaro
+$
+4,791
+$
+5,152
+$
+9,943
+$
+3,302
+$
+1,897
+$
+5,199
+Zepbound
+(1)
+4,873
+55
+4,928
+3,380
+2
+3,381
+Jardiance
+(2)
+616
+615
+1,232
+382
+308
+690
+Trulicity
+908
+312
+1,219
+744
+348
+1,092
+Other cardiometabolic health
+554
+477
+1,031
+556
+425
+980
+Total cardiometabolic health
+11,742
+6,611
+18,353
+8,363
+2,980
+11,343
+Oncology:
+Verzenio
+845
+629
+1,474
+929
+560
+1,489
+Other oncology
+628
+468
+1,096
+490
+434
+924
+Total oncology
+1,473
+1,097
+2,570
+1,419
+994
+2,414
+Immunology:
+Taltz
+539
+317
+856
+549
+299
+848
+Other immunology
+251
+310
+561
+152
+256
+408
+Total immunology
+790
+627
+1,417
+701
+555
+1,256
+Neuroscience
+325
+104
+429
+248
+96
+344
+Other
+84
+122
+205
+83
+119
+202
+Revenue
+$
+14,413
+$
+8,561
+$
+22,974
+$
+10,814
+$
+4,743
+$
+15,558
+(1)
+Tirzepatide is marketed for obesity under the brand name Zepbound in Canada, Japan, and the U.S.
+(2)
+Jardiance revenue includes Glyxambi,
+Synjardy,
+and Trijardy XR.
+10
+The following table summarizes revenue, including net product revenue and collaboration and other revenue, by product for the six months ended June 30, 2026 and 2025:
+Six Months Ended June 30,
+2026
+2025
+U.S.
+Outside U.S.
+Total
+U.S.
+Outside U.S.
+Total
+Cardiometabolic Health:
+Mounjaro
+$
+9,024
+$
+9,582
+$
+18,605
+$
+5,958
+$
+3,083
+$
+9,041
+Zepbound
+(1)
+9,006
+81
+9,088
+5,685
+8
+5,693
+Jardiance
+(2)
+1,128
+1,218
+2,346
+692
+1,012
+1,704
+Trulicity
+1,508
+630
+2,138
+1,514
+673
+2,187
+Other cardiometabolic health
+1,000
+936
+1,936
+1,091
+835
+1,925
+Total cardiometabolic health
+21,666
+12,447
+34,113
+14,940
+5,611
+20,551
+Oncology:
+Verzenio
+1,551
+1,224
+2,776
+1,587
+1,062
+2,648
+Other oncology
+1,149
+914
+2,062
+879
+835
+1,713
+Total oncology
+2,700
+2,138
+4,838
+2,465
+1,896
+4,361
+Immunology:
+Taltz
+956
+632
+1,588
+1,025
+584
+1,610
+Other immunology
+453
+579
+1,032
+254
+480
+734
+Total immunology
+1,409
+1,211
+2,620
+1,279
+1,065
+2,344
+Neuroscience
+617
+194
+811
+437
+179
+616
+Other
+140
+252
+392
+182
+232
+414
+Revenue
+$
+26,532
+$
+16,241
+$
+42,773
+$
+19,304
+$
+8,983
+$
+28,286
+(1)
+Tirzepatide is marketed for obesity under the brand name Zepbound in Canada, Japan, and the U.S.
+(2)
+Jardiance revenue includes Glyxambi,
+Synjardy,
+and Trijardy XR.
+The following table summarizes revenue by geographical area:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Revenue
+(1)
+:
+U.S.
+$
+14,413
+$
+10,814
+$
+26,532
+$
+19,304
+Europe
+4,115
+2,574
+7,760
+4,963
+China
+941
+466
+1,635
+917
+Japan
+628
+521
+1,199
+923
+Rest of world
+2,877
+1,182
+5,648
+2,180
+Revenue
+$
+22,974
+$
+15,558
+$
+42,773
+$
+28,286
+(1)
+Revenue is attributed to the countries based on the location of the customer or other party.
+11
+Note 3:
+Collaborations and Other Arrangements
+We often enter into collaborative and other arrangements to develop and commercialize drug candidates or to sell the rights of a product. See
+Note 2
+for a discussion of our recognition of revenue from our collaborations and other arrangements.
+Collaborative activities may include research and development, marketing and selling, manufacturing, and distribution for which we may receive from or pay to the collaboration partner expense reimbursements. Operating expenses for costs incurred pursuant to these arrangements are reported in their respective expense line item, net of any payments due to or reimbursements due from our collaboration partners, with such reimbursements being recognized at the time the party becomes obligated to pay. Each arrangement is unique in nature, and our more significant arrangements are discussed below.
+Boehringer Ingelheim Collaboration
+We and Boehringer Ingelheim have a global agreement to jointly develop and commercialize a portfolio of compounds. Boehringer Ingelheim's Jardiance product family, which includes Glyxambi, Synjardy, and Trijardy XR, is the significant product family included in the collaboration.
+For the Jardiance product family in the most significant markets, which remains in the collaboration through December 31, 2028, we receive a share of net sales depending on performance of the product, which we recognize as collaboration and other revenue.
+The following table summarizes our revenue recognized:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Jardiance
+$
+1,232
+$
+690
+$
+2,346
+$
+1,704
+During the three and six months ended June 30, 2026, we recognized $
+250
+million and $
+500
+million of sales-based milestones for Jardiance, respectively. During the six months ended June 30, 2025, we recognized a one-time benefit of $
+370
+million for Jardiance. As of June 30, 2026, we have the right to receive up to $
+410
+million in potential sales-based milestones related to the Jardiance product family in certain markets in 2026.
+Ebglyss
+We have a license agreement with F. Hoffmann-La Roche Ltd and Genentech, Inc. (collectively, Roche), which provides us the worldwide development and commercialization rights to lebrikizumab, which is branded and trademarked as Ebglyss. Roche receives tiered royalty payments on worldwide net sales ranging in percentages from high single digits to high teens, which we recognize as cost of sales. As of June 30, 2026, Roche is eligible to receive additional payments from us, including up to $
+975
+million in potential sales-based milestones.
+We have a license agreement with Almirall, S.A. (Almirall), under which Almirall licensed the rights to develop and commercialize Ebglyss, for the treatment or prevention of dermatology indications, including, but not limited to, atopic dermatitis, in Europe. We receive tiered royalty payments on net sales in Europe ranging in percentages from low double digits to low twenties, which we recognize as collaboration and other revenue. As of June 30, 2026, we are eligible to receive additional payments up to $
+1.2
+billion in a series of sales-based milestones.
+Foundayo
+We have a license agreement with Chugai Pharmaceutical Co., Ltd (Chugai), which provides us the worldwide development and commercialization rights to orforglipron, which is branded and trademarked as Foundayo. In addition to milestone payment rights which are not material, Chugai receives tiered royalty payments on worldwide net sales ranging in percentages from mid single digits to low teens, which we recognize as cost of sales.
+Note 4:
+Acquisitions
+We engage in various forms of business development activities to enhance or refine our product pipeline, including acquisitions, collaborations, investments, and licensing arrangements. In connection with these arrangements, our partners may be entitled to future royalties and/or commercial milestones based on sales if the products are approved for commercialization and/or milestones based on the successful progress of compounds through the development process. We account for each arrangement as either a business combination or an asset acquisition in accordance with GAAP.
+12
+Business Combinations
+When an acquisition met the definition of a business under GAAP, the assets acquired and liabilities assumed were recorded at their respective fair values as of the acquisition date in our consolidated condensed financial statements. The determination of estimated fair value required management to make significant estimates and assumptions. The excess of the purchase price over the fair value of the acquired net assets was recorded as goodwill. The results of operations of the acquisition are included in our consolidated condensed financial statements from the date of acquisition.
+For the six months ended June 30, 2026 and 2025, our significant acquisitions that were accounted for as business combinations were Kelonia Therapeutics, Inc. (Kelonia), Centessa Pharmaceuticals plc (Centessa), and Ventyx Biosciences, Inc. (Ventyx) and are summarized in the following table:
+Kelonia
+Centessa
+Ventyx
+Acquisition date
+June 25, 2026
+June 24, 2026
+March 4, 2026
+Business description
+In vivo chimeric antigen receptor T-cell (CAR-T) therapies
+Orexin receptor 2 agonists for sleep-wake disorders
+Oral therapies for inflammatory-mediated diseases
+Estimated fair value as of acquisition date:
+Cash
+$
+46
+$
+233
+$
+120
+Acquired in-process research and development (IPR&D)
+4,695
+6,058
+977
+Goodwill
+(1)
+1,052
+1,655
+232
+Deferred tax liabilities, net
+(
+822
+)
+(
+1,279
+)
+(
+150
+)
+Other assets and liabilities, net
+(
+74
+)
+(
+74
+)
+(
+1
+)
+Acquisition date fair value of consideration
+4,897
+6,593
+1,178
+Less:
+Cash acquired
+(
+46
+)
+(
+233
+)
+(
+120
+)
+Fair value of contingent consideration
+(
+1,765
+)
+(
+402
+)
+N/A
+Cash consideration paid or to be paid, net of cash acquired
+(2)
+$
+3,086
+$
+5,958
+$
+1,058
+Contingent consideration
+(3)
+$
+3,750
+$
+1,542
+N/A
+Primary acquired IPR&D intangible
+KLN-1010
+ORX750
+VTX3232
+(1)
+The goodwill recognized from these acquisitions is primarily attributable to future unidentified projects and products, the assembled workforce for the companies, and the recognition of deferred tax liabilities, which is not deductible for tax purposes.
+(2)
+As of June 30, 2026, cash consideration unpaid for Kelonia and Centessa was $
+208
+million and $
+88
+million, respectively.
+(3)
+These amounts represent the maximum amount of potential payments and are subject to the achievement of certain specified milestones. See Note 8 for additional information related to contingent consideration amounts.
+N/A - Not applicable
+We are in the process of determining fair values and tax bases of the assets acquired and liabilities assumed, including the identification and valuation of intangible assets and tax exposures, as our access to information was limited prior to each acquisition. The final determination of these amounts will be completed as soon as practicable but no later than one year from each acquisition date. The final determination may result in asset and liability fair values and tax bases that differ from the preliminary estimates and require changes to the preliminary amounts recognized.
+13
+Asset Acquisitions
+Upon each asset acquisition, the cost allocated to acquired IPR&D was immediately expensed as acquired IPR&D if the compound had no alternative future use. Milestone payment obligations incurred prior to regulatory approval of the compound were expensed as acquired IPR&D when the event triggering an obligation to pay the milestone occurred. We recognized acquired IPR&D charges of $
+2.8
+billion and $
+3.4
+billion for the three and six months ended June 30, 2026, respectively, and $
+154
+million and $
+1.7
+billion for the three and six months ended June 30, 2025, respectively.
+The following table summarizes our significant acquired IPR&D charges during 2026 and 2025:
+Counterparty
+Compound, Therapy, or Asset
+Acquisition Month
+Phase of Development
+(1)
+Acquired IPR&D Charge
+Ajax Therapeutics, Inc. (Ajax)
+AJ1-11095, oral, Type II JAK2 inhibitor for the treatment of myelofibrosis and polycythemia vera
+June 2026
+Phase 1
+$
+909
+Orna Therapeutics, Inc. (Orna)
+ORN-252, CD19 targeting in vivo CAR-T therapy designed to treat B cell-driven autoimmune diseases
+May 2026
+Phase 1
+1,233
+Scorpion Therapeutics, Inc. (Scorpion)
+STX-478, PI3Kα inhibitor for the treatment of breast cancer and other advanced solid tumors
+March 2025
+Phase 1
+1,412
+(1)
+The phase of development presented is as of the date of the arrangement and represents the phase of development of the most advanced asset acquired, where applicable.
+Subsequent Events
+In July 2026, we acquired
+three
+companies to build an infectious disease portfolio for up to $
+3.9
+billion in aggregate, inclusive of upfront payments and additional potential payments based upon the achievement of certain clinical, regulatory, and commercial milestones. Our access to information was limited prior to the acquisitions. As a consequence, we are in the process of determining the fair values of the assets acquired and liabilities assumed and the associated accounting treatments.
+Note 5:
+Asset Impairment, Restructuring, and Other Special Charges
+Asset impairment, restructuring, and other special charges recognized during the three and six months ended June 30, 2026 were $
+703
+million and $
+982
+million, respectively, primarily related to the accelerated vesting of employee equity awards and other acquisition and integration costs associated with the closing of our acquisitions of business combinations. See
+Note 4
+for additional information. In addition, asset impairment, restructuring, and other special charges recognized during the six months ended June 30, 2026 included charges related to litigation matters. See Note 9 for additional information related to litigation matters.
+14
+Note 6:
+Income Taxes
+The effective tax rates were
+23.3
+percent and
+16.5
+percent for the three months ended June 30, 2026 and 2025, respectively. The higher tax rate for the three months ended June 30, 2026 was primarily driven by the unfavorable tax impact of nondeductible acquired IPR&D charges and, to a lesser extent, a mix of earnings in higher tax jurisdictions and the unfavorable tax impact of asset impairment, restructuring, and other special charges.
+The effective tax rates were
+19.9
+percent and
+17.7
+percent for the six months ended June 30, 2026 and 2025, respectively. The higher tax rate for the six months ended June 30, 2026 was primarily driven by a mix of earnings in higher tax jurisdictions and the unfavorable tax impact of asset impairment, restructuring, and other special charges. The effective tax rates in both periods were unfavorably impacted by nondeductible acquired IPR&D charges.
+At June 30, 2026 and December 31, 2025, prepaid expenses included prepaid taxes of $
+13.6
+billion and $
+12.9
+billion, respectively.
+The U.S. examination of tax years 2019-2021 remains ongoing. For tax years 2016-2018, we are pursuing competent authority assistance through the Mutual Agreement Procedure (MAP) process for the pricing of certain intercompany transactions. The resolution of both audit periods will likely extend beyond the next 12 months.
+Note 7:
+Inventories
+The following table summarizes components of inventories:
+June 30, 2026
+December 31, 2025
+Finished products
+$
+2,630
+$
+1,931
+Work in process
+9,997
+8,183
+Raw materials and supplies
+4,128
+3,587
+Total (approximates replacement cost)
+16,755
+13,701
+Increase to last-in, first-out cost
+38
+43
+Inventories
+$
+16,793
+$
+13,744
+15
+Note 8:
+Financial Instruments
+Investments in Equity and Debt Securities
+The following table summarizes certain fair value information at June 30, 2026 and December 31, 2025 for investment assets measured at fair value on a recurring basis, as well as the carrying amount and amortized cost of certain other investments:
+Fair Value Measurements Using
+Carrying
+Amount
+Cost
+Quoted Prices in Active Markets for Identical Assets
+(Level 1)
+Significant Other
+Observable Inputs
+(Level 2)
+Significant
+Unobservable
+Inputs
+(Level 3)
+Fair
+Value
+June 30, 2026
+Cash equivalents
+(1)
+$
+4,410
+$
+4,410
+$
+4,410
+$
+—
+$
+—
+$
+4,410
+Short-term investments:
+Available-for-sale debt securities
+(2)
+$
+14
+$
+14
+$
+5
+$
+9
+$
+—
+$
+14
+Other securities
+46
+46
+—
+12
+34
+46
+Short-term investments
+$
+60
+Noncurrent investments:
+Available-for-sale debt securities
+(2)
+$
+367
+$
+379
+$
+67
+$
+300
+$
+—
+$
+367
+Other securities
+83
+52
+—
+2
+81
+83
+Marketable equity securities
+796
+527
+796
+—
+—
+796
+Equity investments without readily determinable fair values
+(3)
+1,073
+Equity method investments
+(3)
+1,537
+Noncurrent investments
+$
+3,856
+December 31, 2025
+Cash equivalents
+(1)
+$
+4,392
+$
+4,392
+$
+4,392
+$
+—
+$
+—
+$
+4,392
+Short-term investments:
+Available-for-sale debt securities
+(2)
+$
+16
+$
+16
+$
+9
+$
+7
+$
+—
+$
+16
+Other securities
+89
+89
+—
+12
+78
+89
+Short-term investments
+$
+105
+Noncurrent investments:
+Available-for-sale debt securities
+(2)
+$
+360
+$
+368
+$
+69
+$
+291
+$
+—
+$
+360
+Other securities
+85
+54
+—
+2
+83
+85
+Marketable equity securities
+223
+292
+223
+—
+—
+223
+Equity investments without readily determinable fair values
+(3)
+846
+Equity method investments
+(3)
+1,288
+Noncurrent investments
+$
+2,802
+(1)
+We consider all highly liquid investments with a maturity of three months or less from the date of purchase to be cash equivalents. The cost of these investments approximates fair value.
+(2)
+For available-for-sale debt securities, amounts disclosed represent the securities' amortized cost.
+(3)
+Fair value disclosures are not applicable for equity method investments and investments accounted for under the measurement alternative for equity investments.
+Debt
+Below are the details of our issuance of long-term debt in 2026. The cash proceeds were used for general corporate purposes, including the repayment of outstanding commercial paper and the funding of a portion of the upfront cash consideration and related fees and expenses payable in connection with our acquisitions of Centessa and Kelonia.
+Date of Issuance
+Amount
+Maturity
+Stated Interest Rate
+May 2026
+$
+9,000
+2028-2066
+4.150
+%-
+5.700
+%
+(1)
+(1)
+Included in the 2028 and 2029 tranches are an aggregate $
+1.3
+billion of floating-rate notes, with interest reset and paid quarterly using Secured Overnight Financing Rate (SOFR) plus
+0.350
+and
+0.460
+percent, respectively.
+16
+The following table summarizes the carrying amount and fair value using Level 2 inputs for our short-term and long-term debt:
+June 30, 2026
+December 31, 2025
+Carrying
+Amount
+Fair Value
+Carrying
+Amount
+Fair Value
+Short-term commercial paper borrowings
+$
+5,284
+$
+5,280
+$
+—
+$
+—
+Long-term debt, including current portion
+49,624
+46,555
+42,503
+39,799
+Contingent Consideration
+Contingent consideration is additional consideration payable as a result of an acquisition accounted for as a business combination that is contingent on the achievement of certain development, success-based regulatory, or sales-based milestones. Contingent consideration liabilities are carried at fair value, estimated using a discounted cash flow analysis and Level 3 inputs. These inputs include projections of expected cash payments associated with the agreed upon milestones based primarily on probabilities of technical success, timing of the potential milestone events for the compounds, and estimated discount rates.
+The following table summarizes the fair value for our contingent consideration liabilities:
+June 30, 2026
+December 31, 2025
+Other current liabilities
+$
+814
+$
+34
+Other noncurrent liabilities
+1,704
+217
+During 2026, the increase in contingent consideration liabilities primarily related to our acquisition of Kelonia. See
+Note 4
+for additional information.
+Hedging
+As a global company, we face foreign currency risk exposure from fluctuating currency exchange rates, primarily the U.S. dollar against the euro, Japanese yen, and Chinese yuan. We manage foreign currency risk primarily through the use of foreign currency debt and foreign currency forward contracts. Our foreign currency-denominated notes designated as accounting hedges had carrying amounts of $
+3.6
+billion and $
+6.0
+billion as of June 30, 2026 and December 31, 2025, respectively.
+The following table summarizes the aggregate outstanding notional amounts of our foreign currency forward contracts in U.S. dollar equivalent:
+June 30, 2026
+December 31, 2025
+Purchase
+Sell
+Purchase
+Sell
+Designated as accounting hedges
+$
+246
+$
+—
+$
+67
+$
+—
+Not designated as accounting hedges
+17,869
+10,123
+14,281
+9,264
+The following table summarizes the effects of significant hedging activity on our consolidated condensed financial statements:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Recognized in other–net, (income) expense:
+Foreign currency forward contracts not designated as accounting hedges
+$
+(
+53
+)
+$
+(
+651
+)
+$
+(
+150
+)
+$
+(
+639
+)
+Recognized in other comprehensive income (loss):
+Foreign currency-denominated notes:
+Designated as accounting hedges
+17
+(
+485
+)
+132
+(
+688
+)
+Foreign currency forward contracts:
+Designated as accounting hedges
+—
+(
+965
+)
+(
+30
+)
+(
+1,293
+)
+17
+Note 9:
+Contingencies
+We are and may become involved in various lawsuits, claims, government investigations and other legal proceedings that arise from time to time in the course of our business, including patent, environmental, commercial, contractual, licensing, employment, health and safety, consumer protection, pricing, access, consumer, sales and marketing, product liability, insurance, antitrust, securities, and regulatory compliance matters, among others. Such matters may involve inquiries from or disputes with various types of parties, including governments, regulatory agencies, competitors, customers, suppliers, service providers, licensees, employees, or shareholders, among others. We cannot predict the final outcome of these proceedings, and while we intend to vigorously prosecute or defend our position as appropriate, there can be no assurance that we will be successful or obtain any requested relief. Matters often develop over a long period of time and expectations can change as a result of new findings, rulings, appeals, settlements, legal or regulatory changes, or other factors. From time to time we may discontinue or settle and compromise matters as appropriate in our best interest.
+Legal proceedings that we believe are significant or could become significant or material are described below. For proceedings in which we are named as defendants, unless otherwise noted, we cannot reasonably estimate the maximum potential exposure or the range of possible loss in excess of amounts accrued; however, we believe that the resolution of all such matters will not have a material adverse effect on our consolidated financial position or liquidity, but could possibly be material to our consolidated results of operations in any one accounting period.
+Litigation accruals and environmental liabilities and any related estimated insurance recoverables are reflected on a gross basis as liabilities and assets, respectively, on our consolidated balance sheets. We accrue for estimated exposures to the extent they are both probable and reasonably estimable based on the then available information. We accrue for certain unfiled product liability claims to the extent we can formulate a reasonable estimate of their exposure. We estimate these exposures based primarily on historical claims experience and data regarding product usage. Legal defense costs expected to be incurred in connection with significant liability loss contingencies are accrued when both probable and reasonably estimable.
+Because of the nature of pharmaceutical products, it is possible that we could become subject to large numbers of additional product liability and related claims in the future. Due to a very restrictive market for litigation liability insurance, we are predominantly self-insured for litigation liability losses for all our currently and previously marketed products.
+Patent Matters
+In the course of our business, we are party to actions and proceedings involving third parties that seek to challenge, invalidate, or circumvent our patents and patent applications relating to our products, product candidates, and technologies, including the matter described below.
+Emgality Patent Litigation
+In September 2018, Teva Pharmaceuticals International GmbH and Teva Pharmaceuticals USA, Inc. (collectively, Teva) filed a complaint in the U.S. District Court for the District of Massachusetts alleging that Lilly's launch and continued sales of Emgality infringed various claims in
+three
+Teva patents. In November 2022, following a trial, a jury returned a verdict in favor of Teva. In September 2023, the trial court overruled the jury verdict, found all asserted claims invalid, and entered judgment in Lilly's favor. In April 2026, the U.S. Court of Appeals for the Federal Circuit issued an opinion reversing the trial court's finding that the patents are invalid and remanding to the district court, and we recognized a charge related to the matter during the three months ended March 31, 2026. In June 2026, we filed a petition for rehearing en banc.
+Verzenio Hatch-Waxman Litigation
+In April 2026, Lilly received notice that Cipla Ltd. had filed an Abbreviated New Drug Application (ANDA) seeking approval for a generic version of Verzenio (abemaciclib) tablets before expiration of the compound patent listed in the U.S. Food and Drug Administration's (FDA) Orange Book. In June 2026, Lilly filed a patent infringement action against Cipla Ltd. and its subsidiary Cipla USA Inc. in the U.S. District Court for the District of Delaware.
+Tirzepatide Hatch-Waxman Litigation
+In July 2026, Lilly received notice that multiple generic companies had filed ANDAs seeking approval to market generic versions of Mounjaro and/or Zepbound before the expiration of some or all of the patents listed for those products in the FDA’s Orange Book. We intend to file suit for patent infringement.
+18
+Environmental Matters
+Superfund Matters
+Under the Comprehensive Environmental Response, Compensation, and Liability Act, commonly known as "Superfund," we have been designated as
+one
+of several potentially responsible parties with respect to the cleanup of fewer than
+10
+sites. Under Superfund, each responsible party may be jointly and severally liable for the entire amount of the cleanup.
+Brazil Litigation – Cosmopolis Facility
+Labor Attorney Litigation
+In March 2008, the state Labor Public Attorney (LPA) filed a public civil action against Eli Lilly do Brasil Limitada (Lilly Brasil) in the Labor Court of Paulinia, State of Sao Paulo, alleging harm to employees and former employees from alleged exposure to soil and groundwater contaminants at a former manufacturing facility in Cosmopolis, operated by the company between 1977 and 2003. In May 2014, the trial court ruled against Lilly Brasil, ordering several remedial and compensatory actions, including health coverage for a class of individuals and certain of their children, and imposing a liquidated award. In December 2025, the superior labor court (TST) significantly reduced the liquidated award. Further appeals are ongoing.
+In July 2019, at the LPA's request, the trial court ordered a freeze of certain of Lilly Brasil's immovable property, which amount was reduced on Lilly's appeal. Both parties have appealed this order to the TST.
+The trial court is continuing to assess the status of Lilly Brasil's compliance with the obligations as to the land.
+Pricing Matters
+340B Litigation and Investigations
+In January 2021, we filed a lawsuit in the U.S. District Court for the Southern District of Indiana against the U.S. Department of Health and Human Services (HHS), the Secretary of HHS, the Health Resources and Services Administration (HRSA), and the Administrator of HRSA. The lawsuit challenges HHS's December 2020 advisory opinion that the 340B program requires drug manufacturers to deliver discounts to all contract pharmacies, as well as HHS's December 2020 administrative dispute resolution (ADR) regulations. It seeks declaratory, injunctive, and other related relief. In March 2021, the court preliminarily enjoined the government's use of the ADR process as to us. In May 2021, we amended the complaint to add claims related to a May 2021 letter from HRSA asserting that Lilly's contract pharmacy policy violated the 340B statute. In October 2021, the court granted in part and denied in part the parties' cross-motions for summary judgment. Both parties appealed to the U.S. Court of Appeals for the Seventh Circuit. The appeal remains pending.
+We have been named in various ADR petitions, filed between 2021 and 2024, seeking declaratory, injunctive, and/or monetary relief related to the 340B program. In light of the preliminary injunction order described above, these petitions are being held in abeyance as to us.
+In July 2021, Mosaic Health, Inc. filed a putative class action lawsuit in the U.S. District Court for the Western District of New York against us, Sanofi-Aventis U.S., LLC, Novo Nordisk Inc., and AstraZeneca Pharmaceuticals LP, alleging antitrust and unjust enrichment claims related to the defendants' 340B programs. In October 2021, an amended complaint added Central Virginia Health Services, Inc. as a plaintiff. After the district court dismissed the case for failure to state a claim, the U.S. Court of Appeals for the Second Circuit reversed. We filed a petition seeking U.S. Supreme Court review in March 2026. The matter is ongoing.
+Various state and 340B provider plaintiffs have filed lawsuits against us, and in some cases other manufacturers and third parties, relating to the 340B program, including our policies regarding contract pharmacies, submission of claims data, and our compliance with state laws purporting to regulate the 340B program. The complaints in these lawsuits assert a variety of claims, including consumer protection, unfair or deceptive trade practices, unfair competition, breach of contract, breach of the implied covenant of good faith and fair dealing, unjust enrichment, and violations of state statutes governing 340B pricing. The lawsuits generally seek damages, civil penalties, and/or injunctive relief, and are at various stages in the litigation process. We are also involved in other ongoing litigation and inquiries related to the 340B program, including lawsuits Lilly has filed challenging aspects of the 340B program.
+19
+Insulin Pricing Litigation
+Since 2017, various plaintiffs, including consumers, states and state attorneys general, counties, municipalities, Native American tribes, school districts, wholesalers, third-party payers, and others, have filed lawsuits, including putative class actions, against us, other manufacturers, pharmacy benefit managers, and others, relating to the pricing of insulin medications, and in some cases other diabetes medications, and rebates paid by manufacturers to pharmacy benefit managers. The complaints in the various lawsuits assert a variety of claims, including among others consumer protection, unfair or deceptive trade practices, fraud, false advertising, unjust enrichment, civil conspiracy, racketeering, antitrust, and unfair competition claims. Most cases have been coordinated or consolidated for pretrial proceedings in a multidistrict litigation (MDL) pending in the U.S. District Court for the District of New Jersey. The lawsuits are at various stages in the litigation process.
+The MDL court has issued various case management and other orders, including but not limited to orders establishing separate tracks for state attorney general claims, putative class actions, and non-class suits by self-funded payers; orders dismissing certain claims; and an order setting a constructive notice date of January 14, 2021 for statute of limitations purposes.
+In January 2022, the Michigan attorney general filed a petition in Michigan state court seeking authorization to investigate Lilly for potential violations of the Michigan Consumer Protection Act (MCPA), along with a complaint seeking a declaratory judgment that the state has authority to investigate Lilly's sale of insulin under the MCPA. The court authorized the proposed investigation and the issuance of civil investigative subpoenas. In April 2022, however, the parties entered into a stipulation providing that the state will not issue any civil investigative subpoena to us under the MCPA until the declaratory judgment action is resolved, and in July 2022, the court dismissed the case in its entirety. In June 2023, the Michigan Court of Appeals affirmed the judgment in our favor. In July 2026, the Michigan Supreme Court reversed the Michigan Court of Appeals decision.
+Lilly entered into settlement agreements with New York and Minnesota to resolve allegations relating to insulin pricing in 2023 and 2024, respectively. These agreements involved
+no
+monetary payments and no admission of wrongdoing or liability.
+Pricing Investigations
+We have been subject to various investigations and received subpoenas, civil investigative demands, information requests, interrogatories, and other inquiries from various governmental entities related to the pricing and sale of our medications, and/or calculations of average manufacturer price and best price. These include subpoenas, civil investigative demands, or information requests from the U.S. Department of Justice, the U.S. Federal Trade Commission, and attorneys general from various states and the District of Columbia.
+To the extent the foregoing governmental entities have not filed lawsuits, we are cooperating with the various investigations, subpoenas, and inquiries.
+Average Manufacturer Price Litigation
+In November 2014, a relator filed a
+qui tam
+action in the U.S. District Court for the Northern District of Illinois against us and Takeda Pharmaceuticals America, Inc. The relator's complaint alleged that the defendants should have treated certain credits from distributors as retroactive price increases and included such increases in calculating average manufacturer prices. In August 2022, following a trial, the jury returned a verdict in favor of the relator. In September 2025, the U.S. Court of Appeals for the Seventh Circuit affirmed, and we recognized a charge related to the matter. In May 2026, the U.S. Supreme Court denied further review.
+Other Matters
+Actos Litigation
+We, along with Takeda Chemical Industries, Ltd. and Takeda affiliates (collectively, Takeda), are named as defendants in a third-party payer class action in the U.S. District Court for the Central District of California. The plaintiffs allege that bladder cancer risk was concealed from them and claim that as a result they and a proposed class of third-party payers are entitled to recover money paid for Actos prescriptions. Our agreement with Takeda calls for Takeda to defend and indemnify us against losses and expenses with respect to U.S. litigation arising out of the manufacture, use, or sale of Actos and other related expenses in accordance with the terms of the agreement. In May 2023, the district court certified the class. The U.S. Court of Appeals for the Ninth Circuit subsequently affirmed, and the U.S. Supreme Court denied our petition for certiorari. The matter is ongoing.
+20
+Mounjaro, Trulicity, and Zepbound Product Liability Litigation
+Since August 2023, various plaintiffs have filed lawsuits against us, Novo Nordisk A/S, and other related entities, alleging various injuries following purported use of incretin medicines, including Mounjaro, Trulicity, and Zepbound. The complaints assert a variety of claims and generally seek damages and/or other relief. Most of these lawsuits in the United States have been coordinated or consolidated for pretrial proceedings in two federal MDLs: one focused on alleged gastrointestinal injuries, and the other relating to claims of non-arteritic anterior ischemic optic neuropathy (NAION). Both MDLs are pending in the U.S. District Court for the Eastern District of Pennsylvania. There are also similar proceedings pending in Delaware, Indiana, and New Jersey state courts. In addition to the cases in the United States, there are
+two
+class action petitions in Israel and two class action petitions in Canada alleging various injuries and claims.
+Health Choice Alliance
+In October 2019, a relator filed a
+qui tam
+lawsuit against us in Texas state court asserting claims under the Texas Medicaid Fraud Prevention Act (TMFPA) based on allegations about certain patient support programs related to three of our products. The relator sought to recover the value of payments by the Texas Medicaid Program for these products, as well as civil penalties and other relief. In August 2025, the relator purported to dismiss the first lawsuit and filed a second lawsuit in a different Texas state court adding the State of Texas as a party and expanding claims under the TMFPA to fifteen of our products. We are opposing the relator's purported dismissal of the first lawsuit.
+Note 10:
+Equity
+The following table summarizes components of equity with significant changes during the three months ended June 30, 2026 and 2025:
+Common Stock
+Additional
+Paid-in
+Capital
+Retained
+Earnings
+Accumulated Other Comprehensive Loss
+Shares
+Amount
+Balance at March 31, 2026
+943.5
+$
+590
+$
+6,921
+$
+29,514
+$
+(
+2,833
+)
+Net income
+7,095
+Other comprehensive income, net of tax
+72
+Cash dividends declared per share:
+$
+3.46
+(
+3,088
+)
+Purchases of common stock
+(
+2.0
+)
+(
+2
+)
+(
+1,628
+)
+Issuance of stock under employee stock plans, net
+—
+—
+(
+5
+)
+Stock-based compensation
+201
+Balance at June 30, 2026
+941.5
+$
+588
+$
+7,117
+$
+31,893
+$
+(
+2,761
+)
+Balance at March 31, 2025
+948.1
+$
+593
+$
+6,910
+$
+15,100
+$
+(
+3,775
+)
+Net income
+5,661
+Other comprehensive income, net of tax
+59
+Cash dividends declared per share: $
+3.00
+(
+2,692
+)
+Purchases of common stock
+(
+0.9
+)
+(
+1
+)
+(
+692
+)
+Issuance of stock under employee stock plans, net
+—
+—
+(
+6
+)
+Stock-based compensation
+185
+Balance at June 30, 2025
+947.2
+$
+592
+$
+7,089
+$
+17,376
+$
+(
+3,716
+)
+21
+The following table summarizes components of equity with significant changes during the six months ended June 30, 2026 and 2025:
+Common Stock
+Additional
+Paid-in
+Capital
+Retained
+Earnings
+Accumulated Other Comprehensive Loss
+Shares
+Amount
+Balance at December 31, 2025
+944.8
+$
+590
+$
+7,346
+$
+24,470
+$
+(
+2,880
+)
+Net income
+14,491
+Other comprehensive income, net of tax
+119
+Cash dividends declared per share: $
+3.46
+(
+3,088
+)
+Purchases of common stock
+(
+4.4
+)
+(
+3
+)
+(
+3,984
+)
+Issuance of stock under employee stock plans, net
+1.1
+1
+(
+591
+)
+Stock-based compensation
+362
+Other
+4
+Balance at June 30, 2026
+941.5
+$
+588
+$
+7,117
+$
+31,893
+$
+(
+2,761
+)
+Balance at December 31, 2024
+947.9
+$
+592
+$
+7,439
+$
+13,545
+$
+(
+4,322
+)
+Net income
+8,420
+Other comprehensive income, net of tax
+606
+Cash dividends declared per share: $
+3.00
+(
+2,692
+)
+Purchases of common stock
+(
+2.3
+)
+(
+1
+)
+(
+1,891
+)
+Issuance of stock under employee stock plans, net
+1.6
+1
+(
+689
+)
+Stock-based compensation
+339
+Other
+(
+6
+)
+Balance at June 30, 2025
+947.2
+$
+592
+$
+7,089
+$
+17,376
+$
+(
+3,716
+)
+As of June 30, 2026, we had
+$
+7.0
+billion
+remaining under our $
+15.0
+billion share repurchase program authorized in December 2024. We retire shares once we repurchase them.
+The following table summarizes the activity related to each component of accumulated other comprehensive income (loss) during the three months ended June 30, 2026 and 2025:
+Foreign Currency Translation
+(1)
+Retirement
+Benefit Plans
+Other
+Accumulated Other Comprehensive Loss
+Balance at March 31, 2026
+$
+(
+1,099
+)
+$
+(
+1,989
+)
+$
+254
+$
+(
+2,833
+)
+Other comprehensive income (loss)
+44
+32
+(
+4
+)
+72
+Balance at June 30, 2026
+$
+(
+1,055
+)
+$
+(
+1,957
+)
+$
+250
+$
+(
+2,761
+)
+Balance at March 31, 2025
+$
+(
+1,824
+)
+$
+(
+2,182
+)
+$
+230
+$
+(
+3,775
+)
+Other comprehensive income (loss)
+66
+(
+12
+)
+5
+59
+Balance at June 30, 2025
+$
+(
+1,758
+)
+$
+(
+2,193
+)
+$
+235
+$
+(
+3,716
+)
+(1)
+Includes the impact of foreign currency transactions designated as net investment hedges. See
+Note 8 fo
+r additional information.
+22
+The following table summarizes the activity related to each component of accumulated other comprehensive income (loss) during the six months ended June 30, 2026 and 2025:
+Foreign Currency Translation
+(1)
+Retirement
+Benefit Plans
+Other
+Accumulated Other Comprehensive Loss
+Balance at December 31, 2025
+$
+(
+1,149
+)
+$
+(
+1,987
+)
+$
+255
+$
+(
+2,880
+)
+Other comprehensive income (loss)
+94
+30
+(
+5
+)
+119
+Balance at June 30, 2026
+$
+(
+1,055
+)
+$
+(
+1,957
+)
+$
+250
+$
+(
+2,761
+)
+Balance at December 31, 2024
+$
+(
+2,390
+)
+$
+(
+2,179
+)
+$
+246
+$
+(
+4,322
+)
+Other comprehensive income (loss)
+632
+(
+15
+)
+(
+12
+)
+606
+Balance at June 30, 2025
+$
+(
+1,758
+)
+$
+(
+2,193
+)
+$
+235
+$
+(
+3,716
+)
+(1)
+Includes the impact of foreign currency transactions designated as net investment hedges. See
+Note 8 fo
+r additional information.
+Note 11:
+Segment Information
+We operate as a single reportable segment engaged in the discovery, development, manufacturing, marketing, and sales of pharmaceutical products worldwide. A global research and development organization and a supply chain organization are responsible for the discovery, development, manufacturing, and supply of our products. Our commercial organizations market, distribute, and sell the products. The business is also supported by global corporate staff functions. Our determination that we operate as a single segment is consistent with the nature of our operations and the financial information regularly reviewed by the chief executive officer, in his capacity as the chief operating decision maker (CODM), for the purposes of evaluating performance, allocating resources, setting incentive compensation targets, and planning and forecasting for future periods.
+Our purpose is to unite caring with discovery to create medicines that make life better for people around the world. Our long-term success is significantly dependent on our ability to research and develop innovative medicines. The CODM uses consolidated net income to assess performance of our company, ensuring that we are investing in future research and development while efficiently delivering products to patients. The CODM allocates research and development resources based upon several factors, including the likelihood of technical success, unmet medical needs, and the viability of commercial success. A significant component of the CODM’s decision-making process is to ensure a balanced investment in our research and development portfolio to drive near-term success and sustain for the long-term.
+The following table summarizes information for our single reportable segment, including significant segment expenses:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026
+2025
+2026
+2025
+Revenue
+$
+22,974
+$
+15,558
+$
+42,773
+$
+28,286
+Less:
+Cost of sales
+3,268
+2,448
+6,845
+4,672
+Early-stage research and development
+(1)
+1,450
+1,156
+2,715
+2,146
+Late-stage research and development
+(1)
+2,368
+2,180
+4,613
+3,924
+Marketing, selling, and administrative
+3,430
+2,753
+6,364
+5,221
+Acquired in-process research and development
+2,776
+154
+3,360
+1,726
+Other segment items
+(2)
+2,587
+1,207
+4,384
+2,177
+Net income
+$
+7,095
+$
+5,661
+$
+14,491
+$
+8,420
+Interest expense
+$
+345
+$
+249
+$
+677
+$
+493
+Expenditures for long-lived assets
+(3)
+2,906
+1,985
+5,344
+3,502
+(1)
+Early-stage research and development primarily includes costs incurred from discovery through Phase 2 clinical trials. Late-stage research and development primarily includes costs incurred from Phase 3 clinical trials.
+(2)
+Other segment items primarily include income taxes.
+(3)
+Includes expenditures for property and equipment and computer software costs.
+23
+Item 2. Management's Discussion and Analysis of Results of Operations and Financial Condition
+(Tables present dollars in millions, except per-share data, and numbers may not add due to rounding)
+General
+Management's discussion and analysis of results of operations and financial condition is intended to assist the reader in understanding and assessing significant changes and trends related to our results of operations and financial position. This discussion and analysis should be read in conjunction with the consolidated condensed financial statements and accompanying footnotes in Part I, Item 1 of this Quarterly Report on Form 10-Q. Certain statements in this Part I, Item 2 of this Quarterly Report on Form 10-Q constitute forward-looking statements. Various risks and uncertainties, including those discussed in "Forward-Looking Statements" in this Quarterly Report on Form 10-Q and "Risk Factors" in Part I, Item 1A of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025, may cause our actual results, financial position, and cash generated from operations to differ from these forward-looking statements.
+EXECUTIVE OVERVIEW
+This section provides an overview of our financial results, updates to our clinical development pipeline, and other matters affecting our company and industry.
+Financial Results
+The following table summarizes certain financial information:
+Three Months Ended June 30,
+Percent Change
+Six Months Ended June 30,
+Percent Change
+2026
+2025
+2026
+2025
+Revenue
+$
+22,974
+$
+15,558
+48
+$
+42,773
+$
+28,286
+51
+Net income
+7,095
+5,661
+25
+14,491
+8,420
+72
+Earnings per share - diluted
+7.94
+6.29
+26
+16.19
+9.35
+73
+Revenue increased for the three and six months ended June 30, 2026, driven primarily by increased volume, partially offset by lower realized prices. The increased volume and the lower realized prices during the three and six months ended June 30, 2026 were primarily driven by Mounjaro and Zepbound.
+Net income and earnings per share for the three months ended June 30, 2026 increased primarily due to higher gross margin, partially offset by higher acquired IPR&D charges, asset impairment, restructuring, and other special charges, and marketing, selling, and administrative expenses. Net income and earnings per share for the six months ended June 30, 2026 increased primarily due to higher gross margin, partially offset by higher acquired IPR&D charges, research and development expenses, and marketing, selling, and administrative expenses.
+See "Results of Operations" for additional information.
+24
+Clinical Development Pipeline Updates
+Our long-term success depends on our ability to continually discover or acquire, develop, and commercialize innovative medicines. See “Management’s Discussion and Analysis of Results of Operations and Financial Condition—Executive Overview—Clinical Development Pipeline” in Part II, Item 7 of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025 for select new molecular entities (NMEs) and new indication line extension (NILEX) products in clinical trials or that were submitted for regulatory review or received regulatory approval in the U.S., European Union (EU), or Japan. The following reflects certain developments since our Annual Report on
+Form 10-K
+for the year ended December 31, 2025:
+Compound
+Development
+Orforglipron (Foundayo)
+The FDA approved orforglipron for treatment of obesity.
+Submitted orforglipron for type 2 diabetes in the U.S., the EU, and Japan.
+Insulin efsitora alfa
+The Committee for Medicinal Products for Human Use (CHMP) issued a positive opinion recommending insulin efsitora alfa for the treatment of type 2 diabetes in the EU.
+Baricitinib
+A Phase 3 trial was initiated for baricitinib for type 1 diabetes.
+Eloralintide
+A Phase 3 trial was initiated for eloralintide incretin add-on for obesity.
+A Phase 3 trial was initiated for eloralintide for obstructive sleep apnea (OSA).
+A Phase 3 trial was initiated for eloralintide for osteoarthritis (OA) pain.
+Retatrutide
+Announced that Phase 3 trials for retatrutide for obesity met their primary endpoints.
+Announced that a Phase 3 trial for retatrutide for type 2 diabetes met the primary endpoint.
+Brenipatide
+A Phase 3 trial was initiated for brenipatide for major depressive disorder.
+Sofetabart mipitecan
+(1)
+A Phase 3 trial was initiated for sofetabart mipitecan for platinum-sensitive ovarian cancer.
+(1)
+The FDA granted Breakthrough Therapy designation for sofetabart mipitecan for the treatment of certain patients with platinum-resistant ovarian cancer. Breakthrough Therapy designation is designed to expedite the development and review of potential medicines that are intended to treat a serious condition when preliminary clinical evidence indicates that the treatment may demonstrate substantial improvement on a clinically significant endpoint(s) over already available therapies.
+Other Matters
+Trends Affecting Pharmaceutical Pricing, Reimbursement, and Access and Certain Other Regulatory Developments
+Global concern over access to, and affordability of, pharmaceutical products continues to drive debate and action, as well as cost containment efforts by governmental authorities and scrutiny of pricing and access disparities. Cost containment measures include the use of mandated discounts, price reporting requirements, mandated reference prices, restrictive formularies, changes to available intellectual property protections, as well as other efforts.
+Reforms, initiatives, and other actions, including those that may stem from political initiatives, periods of uneven economic growth or downturns, or as a result of inflation or deflation, trade and other global disputes and interruptions including related to tariffs, trade protection measures, and similar restrictions, the emergence or escalation of, and responses to, international tension and conflicts, or government budgeting priorities, are expected to continue to result in added pressure on cost, pricing, reimbursement, and access for our products.
+We have entered into voluntary agreements with the U.S. government in which, among other arrangements, we agreed to lower Medicaid and certain other drug prices for U.S. patients and to launch new medicines with a more balanced pricing approach across developed nations. Under the Medicare GLP-1 Bridge program (Bridge Program), Medicare beneficiaries obtained access to discounted Lilly obesity medicines effective July 1, 2026 through December 31, 2027, and individual state Medicaid programs separately have the option to expand access to these medicines. We continue to engage with the Centers for Medicare & Medicaid Services on long-term Medicare access to obesity medicines. The uptake from this expanded access is unknown. Moreover, the outcome of these arrangements and broader U.S. policy efforts to align domestic pharmaceutical pricing with international benchmarks from countries with competing healthcare cost containment priorities is uncertain and could negatively impact our pricing strategies, product demand or access, or competitive positioning across global markets, and may result in reduced revenue in certain markets.
+25
+Other policies, regulations, legislation, or enforcement, including those proposed or pursued by lawmakers, regulators, and other authorities in the U.S. and worldwide, have and may continue to adversely impact our business and consolidated results of operations.
+The Inflation Reduction Act of 2022 (IRA) requires HHS to effectively set prices for certain single-source drugs and biologics reimbursed under Medicare Part B and Part D. Currently, these government prices generally apply beginning at nine years (for medicines approved under a New Drug Application) or thirteen years (for medicines approved under a Biologics License Application) following FDA approval or licensure for the molecule. HHS selected Jardiance, which is part of our collaboration with Boehringer Ingelheim, in August 2023 (effective 2026), and selected Trulicity and Verzenio in January 2026 (to be effective 2028), as medicines subject to government-set prices. Given our product portfolio, we expect other significant products will be selected in future years. The IRA has, and will continue to, meaningfully influence our business strategies and those of our competitors and could significantly impact our business and consolidated results of operations.
+The U.S. and other countries have imposed or reached alignment on tariffs. In some cases, imposed tariffs have been paused but may come into effect quickly and unpredictably. While Lilly and pharmaceuticals are exempt from certain of these tariffs, such exemptions may expire, be terminated or may not apply to any future tariffs. The precise impact of tariffs, trade protection measures, and other restrictions depends on their ultimate scope, timing, and other factors. If enacted, additional restrictions could result in supply disruptions or delays, further increase costs, or otherwise have a negative impact on our business.
+Private payers and pharmacy benefit managers in the U.S. continue to significantly impact the market for pharmaceuticals through negotiation of access, manufacturer price or rebate concessions and pharmacy reimbursement rates. Restrictive or unfavorable pricing, coverage, or reimbursement determinations for our medicines or product candidates by governments, regulatory agencies, courts, or private actors have and may continue to adversely impact our business and consolidated results of operations. In addition, we are engaged in litigation, investigations, and discussions with government entities related to government programs (including the 340B program), access to medicine, pricing, product safety, and other matters that could negatively impact our business and consolidated results of operations. It is not currently possible to predict the overall potential adverse impact to us or the general pharmaceutical industry of continued cost containment efforts worldwide.
+In addition, regulatory issues concerning compliance with current Good Manufacturing Practices, quality assurance, safety signals, evolving standards, and increased scrutiny around excipients and potential impurities such as nitrosamines, and similar regulations and standards (and comparable foreign regulations and standards) for our products in some cases lead to regulatory and legal actions, product recalls and seizures, fines and penalties, interruption of production leading to product shortages, import bans or denials of import certifications, inability to realize the benefit of capital expenditures, or delays or denials in new product approvals, line extensions or supplemental approvals of current products pending resolution of the issues, or other negative impacts, any of which result in reputational harm or adversely affect our business.
+Incretin Medicines
+Mounjaro and Zepbound accounted for 65 percent of our total revenue for the six months ended June 30, 2026, and we expect cardiometabolic health products will continue to represent a significant and growing portion of our business, revenue, and prospects. In the first quarter of 2026, we finalized drug pricing agreements with the U.S. government, including Medicare access to discounted Lilly obesity medicines under the Bridge Program.
+In the second quarter of 2026, we launched Foundayo (orforglipron) in the U.S. for the treatment of obesity and submitted orforglipron to the FDA for type 2 diabetes. Internationally, we have launched Mounjaro and submitted orforglipron for the treatment of obesity and/or type 2 diabetes in all major markets. To support anticipated demand for our current and prospective products, we have undertaken significant manufacturing expansion initiatives. Additional capacity is expected to become operational over the next several years.
+We expect our near-term financial performance will be impacted by, among other factors, the timing of additional potential regulatory approvals for orforglipron, as well as the demand and pace of uptake in new incretin channels and markets, including in U.S. Medicare for Zepbound and Foundayo. More generally, incretin volume fluctuations due to channel dynamics or demand can have a disproportionate impact on our results of operations in any given period. Longer term, the durability of our cardiometabolic health product offerings and sustainability of our growth and prospects will depend on our ability to maintain or strengthen our competitive position as the therapeutic landscape evolves and to deliver further innovations that provide sufficient value to sustain our growth momentum.
+26
+We continue to see the production, marketing, and sale of counterfeit, misbranded, adulterated, and mass-compounded incretins. These practices may impact patient safety and undermine regulatory drug approval processes. While the FDA confirmed in late 2024 that the previous shortage of tirzepatide had ended and that compounding pharmacies are required to cease mass production, we cannot guarantee adequate regulation or compliance. Lilly will continue to consider all options, including filing lawsuits where appropriate, to address unlawful practices and the patient safety risks of unapproved, untested, and manipulated drugs.
+Tax Matters
+We are subject to income taxes and various other taxes in the U.S. and in many foreign jurisdictions; therefore, changes in both domestic and international tax laws or regulations have affected and may affect our effective tax rate, results of operations, and cash flows. The U.S. and countries around the world are actively proposing and enacting tax law changes. Further, actions taken with respect to tax-related matters by associations such as the Organisation for Economic Co-operation and Development and the European Commission could influence tax laws in countries in which we operate. Tax authorities in the U.S. and other jurisdictions in which we do business routinely examine our tax returns and are expected to increase their scrutiny of cross-border tax issues. Additionally, we are subject to increasing tax disclosure obligations globally that could heighten our audit risk. Changes to existing U.S. and foreign tax laws and increased scrutiny by tax authorities in the U.S. and other jurisdictions could have a material adverse impact on our future consolidated results of operations and cash flows.
+Acquisitions
+We invest in external research and technologies and manufacturing capabilities that we believe complement and strengthen our own efforts. These investments can take many forms, including acquisitions, collaborations, investments, and licensing arrangements. We view business development activity as an important component of our research and development strategy.
+Continued regulatory focus on business combinations in our industry, including by the Federal Trade Commission and competition authorities in Europe and other jurisdictions, could continue to delay, jeopardize, or increase the costs of our business development activities and may negatively impact our consolidated financial position or results of operations.
+Foreign Currency Exchange Rates
+As a global company, we face foreign currency risk exposure from fluctuating currency exchange rates, primarily the U.S. dollar against the euro, Japanese yen, and Chinese yuan. While we seek to manage a portion of these exposures through hedging and other risk management techniques, significant fluctuations in currency rates can have a material impact, either positive or negative, on our consolidated results of operations in any given period. There is uncertainty in the future movements in foreign currency exchange rates, and fluctuations in these rates have and could adversely impact our consolidated results of operations and cash flows.
+Other Factors
+Other factors have had, and may continue to have, an impact on our consolidated results of operations. See "Business" in Part I, Item 1 and "Risk Factors" in Part I, Item 1A of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025 and Notes 4 and 9 to the consolidated condensed financial statements for additional information and risks and uncertainties that could impact our business and operations, including the matters described within this Executive Overview.
+27
+RESULTS OF OPERATIONS
+Revenue
+The following table summarizes our revenue activity by region:
+Three Months Ended June 30,
+Percent Change
+Six Months Ended June 30,
+Percent Change
+2026
+2025
+2026
+2025
+U.S.
+$
+14,413
+$
+10,814
+33
+$
+26,532
+$
+19,304
+37
+Outside U.S.
+8,561
+4,743
+80
+16,241
+8,983
+81
+Revenue
+$
+22,974
+$
+15,558
+48
+$
+42,773
+$
+28,286
+51
+The following are components of the change in revenue compared with the prior year:
+Three Months Ended June 30,
+Six Months Ended June 30,
+2026 vs. 2025
+2026 vs. 2025
+U.S.
+Outside U.S.
+Consolidated
+U.S.
+Outside U.S.
+Consolidated
+Volume
+37
+%
+113
+%
+60
+%
+42
+%
+104
+%
+62
+%
+Price
+(3)
+(36)
+(13)
+(5)
+(31)
+(13)
+Foreign exchange rates
+—
+4
+1
+—
+7
+2
+Percent change
+33
+%
+80
+%
+48
+%
+37
+%
+81
+%
+51
+%
+In the U.S. for the three and six months ended June 30, 2026, the volume increase was primarily driven by Zepbound and Mounjaro. In the U.S. for the three and six months ended June 30, 2026, the lower realized prices were primarily driven by Zepbound and Mounjaro,
+partially offset by adjustments to estimates for rebates and discounts primarily driven by Trulicity, Mounjaro, and Zepbound
+.
+Outside the U.S. for the three and six months ended June 30, 2026, the volume increase was driven by Mounjaro, and the lower realized prices were primarily driven by the addition of Mounjaro to the National Reimbursement Drug List (NRDL) in China.
+28
+The following table summarizes our revenue, including net product revenue and collaboration and other revenue, by product for the three months ended June 30, 2026 and 2025:
+Three Months Ended June 30,
+Percent Change
+2026
+2025
+U.S.
+Outside U.S.
+Total
+Total
+Mounjaro
+$
+4,791
+$
+5,152
+$
+9,943
+$
+5,199
+91
+Zepbound
+(1)
+4,873
+55
+4,928
+3,381
+46
+Verzenio
+845
+629
+1,474
+1,489
+(1)
+Jardiance
+(2)
+616
+615
+1,232
+690
+79
+Trulicity
+908
+312
+1,219
+1,092
+12
+Taltz
+539
+317
+856
+848
+1
+Other
+1,842
+1,481
+3,322
+2,859
+16
+Revenue
+$
+14,413
+$
+8,561
+$
+22,974
+$
+15,558
+48
+(1)
+Tirzepatide is marketed for obesity under the brand name Zepbound in Canada, Japan, and the U.S.
+(2)
+Jardiance revenue includes Glyxambi,
+Synjardy,
+and Trijardy XR.
+The following table summarizes our revenue, including net product revenue and collaboration and other revenue, by product for the six months ended June 30, 2026 and 2025:
+Six Months Ended June 30,
+Percent Change
+2026
+2025
+U.S.
+Outside U.S.
+Total
+Total
+Mounjaro
+$
+9,024
+$
+9,582
+$
+18,605
+$
+9,041
+106
+Zepbound
+(1)
+9,006
+81
+9,088
+5,693
+60
+Verzenio
+1,551
+1,224
+2,776
+2,648
+5
+Jardiance
+(2)
+1,128
+1,218
+2,346
+1,704
+38
+Trulicity
+1,508
+630
+2,138
+2,187
+(2)
+Taltz
+956
+632
+1,588
+1,610
+(1)
+Other
+3,359
+2,873
+6,233
+5,403
+15
+Revenue
+$
+26,532
+$
+16,241
+$
+42,773
+$
+28,286
+51
+(1)
+Tirzepatide is marketed for obesity under the brand name Zepbound in Canada, Japan, and the U.S.
+(2)
+Jardiance revenue includes Glyxambi,
+Synjardy,
+and Trijardy XR.
+Revenue of Mounjaro increased 45 percent and 51 percent in the U.S. during the three and six months ended June 30, 2026, respectively, reflecting strong demand, partially offset by lower realized prices. Lower realized prices in the U.S. were partially offset by adjustments to estimates for rebates and discounts during the three and six months ended June 30, 2026. Revenue outside the U.S. during the three and six months ended June 30, 2026 was $5.2 billion and $9.6 billion, respectively, compared to $1.9 billion and $3.1 billion
+during the three and six months ended June 30, 2025, respectively, primarily driven by volume growth, partially offset by lower realized prices driven by the addition of Mounjaro to the NRDL in China.
+Revenue of Zepbound increased 44 percent and 58 percent in the U.S. during the three and six months ended June 30, 2026, respectively, primarily driven by strong demand, partially offset by lower realized prices, including previously announced reductions in cash-pay prices. Lower realized prices were partially offset by adjustments to estimates for rebates and discounts during the three and six months ended June 30, 2026.
+29
+Gross Margin, Costs, and Expenses
+The following table summarizes our gross margin, costs, and expenses:
+Three Months Ended June 30,
+Percent Change
+Six Months Ended June 30,
+Percent Change
+2026
+2025
+2026
+2025
+Gross margin
+$
+19,706
+$
+13,110
+50
+$
+35,928
+$
+23,614
+52
+Gross margin as a percent of revenue
+85.8
+%
+84.3
+%
+84.0
+%
+83.5
+%
+Research and development
+$
+3,819
+$
+3,336
+14
+$
+7,329
+$
+6,070
+21
+Marketing, selling, and administrative
+3,430
+2,753
+25
+6,364
+5,221
+22
+Acquired IPR&D
+2,776
+154
+NM
+3,360
+1,726
+95
+Asset impairment, restructuring, and other special charges
+703
+—
+NM
+982
+35
+NM
+Income taxes
+2,152
+1,116
+93
+3,606
+1,813
+99
+Effective tax rate
+23.3
+%
+16.5
+%
+19.9
+%
+17.7
+%
+NM - not meaningful
+Gross margin as a percent of revenue for the three months ended June 30, 2026 increased 1.5 percentage points, primarily driven by improved cost of production and favorable product mix, partially offset by lower realized prices. Gross margin as a percent of revenue for the six months ended June 30, 2026 increased 0.5 percentage points, primarily driven by improved cost of production, partially offset by lower realized prices.
+Research and development expenses increased 14 percent and 21 percent for the three and six months ended June 30, 2026, respectively, driven by continued investments in our early and late-stage portfolio.
+Marketing, selling, and administrative expenses increased 25 percent and 22 percent for the three and six months ended June 30, 2026, respectively, primarily driven by promotional efforts supporting ongoing and planned launches.
+Acquired IPR&D charges for the three and six months ended June 30, 2026 were primarily related to the acquisitions of Orna and Ajax. Acquired IPR&D charges for the six months ended June 30, 2025 were primarily related to the acquisition of Scorpion's PI3Kα inhibitor program, STX-478. See
+Note 4
+to the consolidated condensed financial statements for additional information.
+Asset impairment, restructuring, and other special charges for the three and six months ended June 30, 2026 were primarily related to the accelerated vesting of employee equity awards and other acquisition and integration costs associated with the closing of our acquisitions of business combinations. In addition, asset impairment, restructuring, and other special charges recognized during the six months ended June 30, 2026 included charges related to litigation matters. See
+Note 4
+and Note 9 to the consolidated condensed financial statements for additional information.
+The effective tax rates were 23.3 percent and 16.5 percent for the three months ended June 30, 2026 and 2025, respectively. The higher tax rate for the three months ended June 30, 2026 was primarily driven by the unfavorable tax impact of nondeductible acquired IPR&D charges and, to a lesser extent, a mix of earnings in higher tax jurisdictions and the unfavorable tax impact of asset impairment, restructuring, and other special charges.
+The effective tax rates were 19.9 percent and 17.7 percent for the six months ended June 30, 2026 and 2025, respectively. The higher tax rate for the six months ended June 30, 2026 was primarily driven by a mix of earnings in higher tax jurisdictions and the unfavorable tax impact of asset impairment, restructuring, and other special charges. The effective tax rates in both periods were unfavorably impacted by nondeductible acquired IPR&D charges.
+30
+FINANCIAL CONDITION AND LIQUIDITY
+We believe our available cash and cash equivalents, together with our ability to generate operating cash flow and our access to short-term and long-term borrowings, are sufficient to fund our existing and planned capital requirements. For a discussion of our capital requirements, see "Management's Discussion and Analysis of Results of Operations and Financial Condition" in Part II, Item 7 of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025.
+We are making investments in global facilities to manufacture existing and future products. These investments, and other capital investments that support our operations, have increased our capital expenditures and will result in meaningfully higher capital expenditures in the near term.
+Cash and cash equivalents increased to $9.0 billion as of June 30, 2026, compared with $7.3 billion as of December 31, 2025. Refer to the consolidated condensed statements of cash flows for additional information on the significant sources and uses of cash for the six months ended June 30, 2026 and 2025.
+In addition to our cash and cash equivalents, we held total investments of $3.9 billion and $2.9 billion as of June 30, 2026 and December 31, 2025, respectively. As of June 30, 2026, we had approximately $806 million of unfunded commitments to invest in venture capital funds, which we anticipate will be paid over a period of up to 10 years. See
+Note 8
+to the consolidated condensed financial statements for additional information.
+In May 2026, we issued long-term debt totaling $9.0 billion and used the net cash proceeds from this offering for general corporate purposes, including the repayment of outstanding commercial paper and the funding of a portion of the upfront cash consideration and related fees and expenses payable in connection with our acquisitions of Centessa and Kelonia. See Note 8 to the consolidated condensed financial statements for additional information.
+We paid $13.3 billion in 2026 related to business development activity, primarily driven by the acquisitions of Centessa, Kelonia, Orna, Ventyx, and Ajax. See Note 4 to the consolidated condensed financial statements for additional information.
+In July 2026, we paid approximately $2.0 billion to acquire companies to build an infectious disease portfolio. See Note 4 to the consolidated condensed financial statements for additional information. In addition, we have entered into an agreement to acquire AtaiBeckley Inc., subject to closing conditions. The potential amount payable at closing for this pending acquisition is approximately $2.8 billion.
+As of June 30, 2026, total debt was $54.9 billion, an increase of $12.4 billion compared with $42.5 billion as of December 31, 2025.
+As of June 30, 2026, we had a total of $10.1 billion of unused committed bank credit facilities, $10.0 billion of which is available to support our commercial paper program. We believe that amounts accessible through existing commercial paper markets or other sources should be adequate to fund short-term borrowing needs.
+During the six months ended June 30, 2026, we repurchased $4.0 billion of shares under our $15.0 billion share repurchase program authorized in December 2024. As of June 30, 2026, we had
+$7.0 billion
+remaining under this program.
+During the six months ended June 30, 2026, we paid dividends of $3.1 billion, or $3.46 per share, to our shareholders.
+Both domestically and abroad, we monitor the potential impacts of the economic environment and international tension and conflicts; the creditworthiness of our wholesalers and other customers, including foreign government-backed agencies and suppliers; the uncertain impact of healthcare legislation; various international government funding levels; and fluctuations in interest rates, foreign currency exchange rates (see "Executive Overview—Other Matters—Foreign Currency Exchange Rates"), and fair values of equity securities.
+CRITICAL ACCOUNTING ESTIMATES
+For a discussion of our critical accounting estimates, refer to "Management's Discussion and Analysis of Results of Operations and Financial Condition" in Part II, Item 7 and the notes to our consolidated financial statements in Part II, Item 8 of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025. See also Note 1 to the consolidated condensed financial statements. There have been no material changes to our critical accounting estimates since our Annual Report on
+Form 10-K
+for the year ended December 31, 2025.
+31
+AVAILABLE INFORMATION ON OUR WEBSITE
+We make available through our company website, free of charge, our company filings with the Securities and Exchange Commission (SEC) as soon as reasonably practicable after we electronically file them with, or furnish them to, the SEC. The reports we make available include annual reports on Form 10-K, quarterly reports on Form 10-Q, current reports on Form 8-K, proxy statements, registration statements, and any amendments to those documents.
+The website link to our SEC filings is
+investor.lilly.com/financial-information/sec-filings
+.
+We routinely post important information for investors in the “Investors” section of our website, www.lilly.com. We may use our website as a means of disclosing material, non-public information and for complying with our disclosure obligations under Regulation FD. Accordingly, investors should monitor the “Investors” section of our website, in addition to following our press releases, filings with the SEC, public conference calls, presentations, and webcasts. We and our executive officers may also use social media channels to communicate with investors and the public about our business, products and other matters, and those communications could be deemed to be material information. The information contained on, or that may be accessed through, our website or our or our executive officers' social media channels, is not incorporated by reference into, and is not a part of, this Quarterly Report on Form 10-Q.
+Item 3. Quantitative and Qualitative Disclosures About Market Risk
+For a discussion of our market risk, see “Quantitative and Qualitative Disclosures About Market Risk” in Part II, Item 7A of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025.
+Item 4. Controls and Procedures
+(a)
+Evaluation of Disclosure Controls and Procedures
+. Under applicable SEC regulations, management of a reporting company, with the participation of the principal executive officer and principal financial officer, must periodically evaluate the company's "disclosure controls and procedures," which are defined generally as controls and other procedures of a reporting company designed to ensure that information required to be disclosed by the reporting company in its periodic reports filed with the SEC (such as this Quarterly Report on Form 10-Q) is recorded, processed, summarized, and reported on a timely basis.
+Our management, with the participation of David Ricks, president and chief executive officer, and Lucas Montarce, executive vice president and chief financial officer, evaluated our disclosure controls and procedures (as such terms are defined in our Annual Report on
+Form 10-K
+for the year ended December 31, 2025) as of June 30, 2026, and concluded that they were effective.
+(b)
+Changes in Internal Controls.
+During the second quarter of 2026, there were no changes in our internal control over financial reporting that materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.
+32
+PART II. Other Information
+Item 1. Legal Proceedings
+We are a party to various currently pending legal actions, government investigations, and environmental proceedings. See Note 9 to the consolidated condensed financial statements for information on various legal proceedings.
+This Item should be read in conjunction with "Legal Proceedings" in Part I, Item 3 of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025.
+Item 1A. Risk Factors
+Our material risk factors are disclosed in "Risk Factors" in Part I, Item 1A of our Annual Report on
+Form 10-K
+for the year ended December 31, 2025. There have been no material changes from the risk factors previously disclosed in our Annual Report on
+Form 10-K
+for the year ended December 31, 2025.
+Item 2. Unregistered Sales of Equity Securities and Use of Proceeds
+The following table summarizes the activity related to repurchases of our equity securities during the three months ended June 30, 2026:
+Total Number of
+Shares Purchased
+(in thousands)
+Average Price Paid
+per Share
+Total Number of Shares
+Purchased as Part of
+Publicly Announced
+Plans or Programs
+(in thousands)
+Approximate Dollar Value of Shares that May Yet Be Purchased Under the Plans or Programs
+(in millions)
+April 2026
+1,435
+$
+970.21
+1,435
+$
+7,180
+May 2026
+34
+1,005.33
+34
+7,146
+June 2026
+154
+1,019.77
+154
+6,989
+Total
+1,623
+975.65
+1,623
+During the three months ended June 30, 2026, we repurchased
+$1.6 billion
+of shares under our $15.0 billion share repurchase program that our board authorized in December 2024.
+Item 5.
+Other Information
+On
+May 11, 2026
+,
+Donald Zakrowski
+,
+senior vice president, finance, and chief accounting officer
+,
+adopted
+a sales plan (Plan). The Plan was entered into during an open trading window and is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c) of the Exchange Act of 1934 and our policies regarding trading in our securities. The Plan calls for the sale of up to
+2,000
+shares of company common stock between August 10, 2026 and
+May 10, 2027
+subject to the terms and conditions of the Plan.
+33
+Item 6. Exhibits
+The following documents are filed as a part of this Quarterly Report:
+Exhibit
+Description
+3.1
+Amended Articles of Incorporation, incorporated by reference to Exhibit 3.1 to the Company's Current Report on Form 8-K filed on May 4, 2022
+3.2
+Bylaws, as amended, incorporated by reference to Exhibit 3.2 to the Company's Current Report on Form 8-K filed on May 4, 2022
+10.1
+The Lilly Directors' Deferral Plan, as amended
+(1)
+*
+31.1
+Rule 13a-14(a) Certification of David Ricks, Chair, President, and Chief Executive Officer*
+31.2
+Rule 13a-14(a) Certification of Lucas Montarce, Executive Vice President and Chief Financial Officer*
+32
+Section 1350 Certification*
+101
+Interactive Data Files (embedded within the Inline XBRL document)*
+104
+Cover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101)*
+(1)
+Indicates management contract or compensatory plan.
+* Filed herewith.
+Long-term debt instruments under which the total amount of securities authorized does not exceed 10 percent of our consolidated assets are not filed as exhibits to this Quarterly Report. We will furnish a copy of these agreements to the Securities and Exchange Commission upon request.
+Signatures
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this Report to be signed on its behalf by the undersigned thereunto duly authorized.
+ELI LILLY AND COMPANY
+(Registrant)
+Date:
+August 5, 2026
+/s/ Lucas Montarce
+Lucas Montarce
+Executive Vice President and Chief Financial Officer
+Date:
+August 5, 2026
+/s/ Donald Zakrowski
+Donald Zakrowski
+Senior Vice President, Finance, and Chief Accounting Officer
+34

@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "ticker": "TSLA",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "san-debt",
+      "url": "https://www.stock-analysis-on.net/NASDAQ/Company/Tesla-Inc/Ratios/Long-term-Debt-and-Solvency/Quarterly-Data",
+      "title": "Tesla quarterly debt aggregate, recovered actual page observation",
+      "publisher": "Stock Analysis on Net",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Recovered EvidenceGapReview actual page read: Tesla Inc debt to capital calculation quarterly data; Selected Financial Data US$ in millions, columnJun30,2026: Current portion of debt and finance leases1,418; Debt and finance leases net of current portion7,924; Total debt9,342; stockholders equity86,858; total capital96,200. Based on10-Q reporting date2026-06-30 accession000162828026049270. Directly displayed aggregate, not our sum. This is distinct publisher from StockAnalysis.com, but still underlying issuer filing data."
+    },
+    {
+      "id": "tsla-fy25",
+      "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q4-2025-Update.pdf",
+      "title": "Q4 and FY 2025 Update",
+      "publisher": "Tesla",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Annual financial summary, $ in millions except per share: 2021/2022/2023/2024/2025 revenue 53,823/81,462/96,773/97,690/94,827; operating margin 12.1%/16.8%/9.2%/7.2%/4.6%; GAAP net income attributable to common stockholders 5,519/12,556/14,997/7,091/3,794; diluted GAAP EPS 1.63/3.62/4.30/2.04/1.08; operating cash flow 11,497/14,724/13,256/14,923/14,747; capex 6,514/7,163/8,899/11,342/8,527. FY2025 automotive revenue 69,526; energy 12,771; services 12,530. Deliveries 2021-2025 936,222/1,313,851/1,808,581/1,789,226/1,636,129; storage deployed 4.0/6.5/14.7/31.4/46.7 GWh. Automotive gross margin excluding credits 27.0%/26.7%/17.7%/15.4%/15.4%. FY2025 SBC 2,825 million. FY2023 release of valuation allowance on deferred tax assets 5,927 million, per diluted share 1.70. Capex inclusive of purchases of energy generation and storage systems beginning Q1 2025; earlier periods adjusted. January16 2026 agreement approximately $2 billion investment in xAI, subject to regulatory conditions. All FY periods end December31."
+    },
+    {
+      "id": "tsla-q226",
+      "url": "https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q2-2026-Update.pdf",
+      "title": "Q2 2026 Update",
+      "publisher": "Tesla",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Q2-2025/Q1-2026/Q2-2026: revenue $22,496/$22,387/$28,236 million; operating income $923/$941/$398 million; operating margins 4.1%/4.2%/1.4%; GAAP common net income $1,172/$477/$1,114 million; GAAP diluted EPS $0.33/$0.13/$0.32; OCF $2,540/$3,937/$4,697 million; capex $2,394/$2,493/$5,789 million; FCF $146/$1,444/negative $1,092 million. Q2 automotive revenue20,516 million; energy3,139 million; services4,581 million. Deliveries384,122/358,023/480,126; Q2 production451,758; storage9.6/8.8/13.5 GWh; inventory days24/27/15. Q2 automotive gross margin excluding credits16.3% versus15.0% prior year and19.2% Q1. Lower ASP excluding FX inclusive of mix, lower regulatory credits, higher AI R&D/SBC and energy warranty charges affected profits. Q2 energy revenue3,139 million, cost2,499 million; services gross profit648 million and14% margin. FSD subscriptions1.48 million, includes upfront payment and monthly subscriptions, excludes free trials. Active driver supervision required; does not make vehicle autonomous. Bay Area Robotaxi safety driver, Texas/Florida ramping unsupervised; seven live metros as of July. Cybercab production begun but public-road engineering tests and campus employee rides precursors to fleet deployment. Optimus first builds for training data and functionality development, not reported external revenue. June30 debt and finance leases current1,418 and noncurrent7,924 million; cash/investments43,524 million. Q2 SBC1,151 million, SpaceX equity unrealized gain1,005 million, net of tax763 million; non-GAAP removes SBC, digital assets and SpaceX gains. Installed capacity is not current production rate."
+    },
+    {
+      "id": "tsla-10q",
+      "url": "https://ir.tesla.com/_flysystem/s3/sec/000162828026049270/tsla-20260630-gen.pdf",
+      "title": "Form 10-Q for quarter ended June 30 2026",
+      "publisher": "Tesla",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Cover: Nasdaq Global Select Market common stock TSLA; as of July16 2026, 3,949,547,394 common shares outstanding. June30 balance sheet in millions: cash/equivalents15,219; short-term investments28,305; current debt and finance leases1,418; noncurrent7,924; common issued/outstanding3,949 versus3,751 December31. Note1 restricted cash current496, noncurrent710. Note7 operating lease liabilities current1,022, noncurrent5,716. Note13 March2026 $2.00 billion investment in SpaceX common stock (formerly preferred investment in xAI), ownership less than1%; Q2 SpaceX Megapack revenue318 million and cost242 million. Q2 mark-to-market SpaceX gain1,005 million. H1 OCF8,634 million, capex8,282 million, SBC2,181 million; payable/accrued/other liabilities cash contribution3,341 million, inventory use1,663 million. Note9 2025 interim96 million share award forfeited April21 after reinstatement of2018 award. Q2 CEO exercised approximately304.0 million options, net-settled exercise price approximately17.5 million shares; additional service condition through January19 2028, then five-year hold. 2025 performance award423,743,904 restricted shares across12 tranches; unearned shares vote proportionately with other shares; earned shares directed by CEO. Milestones market cap$2.0T to$8.5T plus operating objectives; all achievement status dashes June30. Vesting7.5/10 years, offset$334.09 per share unless paid cash. Unrecognized expense9.82 billion for probable vehicle milestone over9.2 years;105.82-120.37 billion for not-probable milestones. Q2 award expense267 million; H1527 million. Last two tranches require board-approved succession framework. Q2 geographic revenue US13,208 million, China4,675 million, other10,353 million. Reportable automotive segment includes services; energy separate."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/tsla/",
+      "title": "Tesla Stock Price and Overview",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ TSLA USD 382.70 at close Oct9 2026 4:00 PM EDT; after-hours382.73 Oct9 7:59 PM EDT. Shares out3.95B; market cap1.51T; EPS TTM1.08. Earnings dateOct21 2026."
+    },
+    {
+      "id": "sa-income",
+      "url": "https://stockanalysis.com/stocks/tsla/financials/income-statement/",
+      "title": "Tesla annual income statement",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD except EPS, fiscal Jan-Dec. FY2025 ends Dec31 2025: revenue94,827; net income3794; net income to common3794; diluted EPS1.08; diluted weighted average shares3528 million. FY2024 operating income7659 and operating margin7.84% versus issuer7076/7.2% recast operating presentation; FY2023 tax expense negative5001. FY2021/FY2022/FY2023/FY2024/FY2025 gross margin25.28%/25.60%/18.25%/17.86%/18.03%. Do not use vendor basic/diluted weighted-average shares as actual outstanding shares."
+    },
+    {
+      "id": "sa-cashflow",
+      "url": "https://stockanalysis.com/stocks/tsla/financials/cash-flow-statement/",
+      "title": "Tesla cash flow statement",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials millions USD, FY ends Dec31. FY2025 operating cash flow14,747; capital expenditures negative8,527; free cash flow6,220; SBC2,825. OCF2021-2025 11,497/14,724/13,256/14,923/14,747. Capex2021-2025 negative6,514/7,163/8,899/11,342/8,527. Change accounts payableFY2025 4,376; change other net operating assets negative3,206. TTM ends June30 2026 OCF18,685 and capexnegative12,923; not FY2025."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/tsla/financials/balance-sheet/",
+      "title": "Tesla balance sheet",
+      "publisher": "StockAnalysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD; June30 2026 cash/equivalents15,219, short-term investments28,305; restricted cash496; current debt1,340, long-term debt7,721; current leases1,100, long-term leases5,919; total debt16,080. FY2025 cash16,513 and investments27,546. June30 total common shares3949 million; filing-date shares3950 million. Vendor total debt includes operating and finance leases, unlike issuer debt/finance-leases9342 million."
+    },
+    {
+      "id": "wsz-quote",
+      "url": "https://www.wallstreetzen.com/stocks/us/nasdaq/tsla?via=iz",
+      "title": "Tesla quote and capitalization",
+      "publisher": "WallStreetZen",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Updated Oct9 2026: TSLA price$382.70; market cap$1.51T. FAQ: Tesla currently has3,949,547,394 outstanding shares; market cap calculated by multiplying$382.70 by3,949,547,394. Filing share date not identified on page. P/E324.32x, operating margin5.3% are vendor displays and not relied upon because periods/definitions are not aligned with issuer annual data."
+    },
+    {
+      "id": "tsla-q3units",
+      "url": "https://ir.tesla.com/press-release/tesla-third-quarter-2026-production-deliveries-and-deployments",
+      "title": "Third Quarter 2026 Production Deliveries and Deployments",
+      "publisher": "Tesla",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed web-search excerpt from issuer release dated October2 2026: total production464,391, total deliveries486,532; Model3/Y production457,387 and deliveries478,237; other production7,004 and deliveries8,295; storage deployed13.7 GWh. Direct issuer HTML requests returned403; retained search observation is not a fetched full release. Q3 financial results not yet published as ofOctober11."
+    },
+    {
+      "id": "nhtsa-ea",
+      "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-EA26002-10023.pdf",
+      "title": "Engineering Analysis EA26002 FSD visibility",
+      "publisher": "NHTSA",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Date opened03/18/2026, prompted byPE24031. Subject FSD Collisions in Reduced Roadway Visibility Conditions. Estimated population3,203,754. Summary table9 crashes,2 injury incidents,1 fatality. Engineering analysis evaluates camera-only ADAS degradation detection and driver warnings under reduced visibility. Available incident data raise concerns detection/alerts fail appropriately under glare and airborne obscurants. Tesla internal data/labeling limitations could have led to under-reporting. Investigation opening is not a final defect/liability finding; ODI also examining six recent potentially related incidents."
+    },
+    {
+      "id": "reuters-europe",
+      "url": "https://live.euronext.com/en/financial-news/tesla-renames-full-self-driving-assisted-driving-europe-it-chases-clearance-software",
+      "title": "Tesla renames Full Self Driving in Europe",
+      "publisher": "Reuters",
+      "accessed_at": "2026-10-11",
+      "excerpt": "October9 2026 Reuters: Tesla European websites rename Full Self-Driving to Tesla Assisted Driving after German regulator pushback. Several regulators call previous name misleading because system requires constant supervision and drivers remain legally responsible. Eight EU countries allow system; Slovakia expected ninth. EU-wide vote pushed fromOctober to at leastDecember, France conducting more testing. Hosted byEuronext; publisherReuters."
+    },
+    {
+      "id": "reuters-china",
+      "url": "https://wtvbam.com/2026/10/09/teslas-china-made-ev-sales-quicken-in-september/",
+      "title": "Tesla China-made EV sales quicken in September",
+      "publisher": "Reuters",
+      "accessed_at": "2026-10-11",
+      "excerpt": "October9 2026: September Shanghai-built Model3/Y deliveries including exports95,366 versus90,812 year ago, up5%; August up3.6%. Q3 Shanghai-built sales up13.7% perReuters calculations fromCPCA; global Q3 deliveries down2.1% against record Q3 2025. China offers final-payment discounts7,000 yuan selected ModelY and5,000 yuan Model3 throughOctober amidst intense competition. Hosted byWTVB; publisherReuters."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "382.70",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "wsz-quote"
+      ],
+      "note": "Regular close, not after-hours; current post-split common-stock basis. Primary issuer EPS is on same split basis.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "382.70",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "wsz-quote",
+          "value": "382.70",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "3949547394",
+      "unit": "shares",
+      "period": "Estimated outstanding common shares at 2026-10-09",
+      "kind": "estimate",
+      "sources": [
+        "tsla-10q",
+        "wsz-quote",
+        "sa-quote"
+      ],
+      "note": "Exact July16 issuer count, independently repeated by current vendor without share measurement date; treated as quote-date approximation, not observed fresh actual shares. Includes restricted shares in issued/outstanding but not all potential weighted-average EPS dilution."
+    },
+    "market_cap": {
+      "value": "1510000000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "wsz-quote"
+      ],
+      "note": "Both publishers report rounded1.51T; rounding retained, no fabricated precision. Quote-date share estimate reconciles within policy tolerance.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "1510000000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "wsz-quote",
+          "value": "1510000000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "94827000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "tsla-fy25",
+        "sa-income"
+      ],
+      "note": "Consolidated annual revenue; millions normalized to dollars.",
+      "observations": [
+        {
+          "source": "tsla-fy25",
+          "value": "94827000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-income",
+          "value": "94827000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "3794000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "tsla-fy25",
+        "sa-income"
+      ],
+      "note": "GAAP consolidated income attributable to common stockholders, not total income including noncontrolling interests.",
+      "observations": [
+        {
+          "source": "tsla-fy25",
+          "value": "3794000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-income",
+          "value": "3794000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "14747000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "tsla-fy25",
+        "sa-cashflow"
+      ],
+      "note": "GAAP annual operating cash flow; SBC and working capital are included.",
+      "observations": [
+        {
+          "source": "tsla-fy25",
+          "value": "14747000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-cashflow",
+          "value": "14747000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "8527000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "tsla-fy25",
+        "sa-cashflow"
+      ],
+      "note": "Positive cash capital spend normalized from negative investing outflow; includes energy generation/storage capital purchases, excludes finance lease noncash additions.",
+      "observations": [
+        {
+          "source": "tsla-fy25",
+          "value": "8527000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-cashflow",
+          "value": "8527000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "eps": {
+      "value": "1.08",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "tsla-fy25",
+        "sa-income"
+      ],
+      "note": "GAAP annual diluted EPS, current split basis; not vendor forward or adjusted EPS.",
+      "observations": [
+        {
+          "source": "tsla-fy25",
+          "value": "1.08",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-income",
+          "value": "1.08",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "15219000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "tsla-10q",
+        "sa-balance"
+      ],
+      "note": "Consolidated cash/equivalents only, excludes28.305B short-term investments and1.206B restricted cash (496M current plus710M noncurrent). Not called unrestricted distributable owner cash.",
+      "observations": [
+        {
+          "source": "tsla-10q",
+          "value": "15219000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "sa-balance",
+          "value": "15219000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "9342000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "tsla-10q",
+        "tsla-q226",
+        "sa-balance",
+        "san-debt"
+      ],
+      "note": "Canonical9342m is explicit normalization of issuer current1418m plus noncurrent7924m debt and finance leases, excluding operating leases; not claimed quoted issuer aggregate. Independent StockAnalysisOnNet directly displays Total debt9342m inJun30,2026 column with matching component labels. Retain that direct observation alone: primary component sum is not manufactured second direct aggregate. StockAnalysis16080m includes6738m operating leases (issuer1022m current+5716m noncurrent) and is incompatible for this definition. Microtrends7.72B is narrower; Investing.com latest-quarter FAQ16080m is all-lease and unclocked. Required two-direct-publisher aggregate observation gap remains.",
+      "observations": [
+        {
+          "source": "san-debt",
+          "value": "9342000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.14",
+      "unit": "decimal",
+      "period": "Five-year conditional equity hurdle as of 2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "14% nominal price-only equity hurdle above5.24%10-year Treasury; reflects desired compensation for concentrated cyclical capital-intensive exposure. Explicit operational scenarios carry business assumptions; legal/safety catastrophe and governance veto remain unmodeled, not hidden in rate."
+    }
+  },
+  "valuation": {
+    "base_eps": "eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "15",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.20",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.35",
+        "exit_multiple": "50",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

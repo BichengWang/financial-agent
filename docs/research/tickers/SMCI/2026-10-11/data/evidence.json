@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "ticker": "SMCI",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-latest",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000023/smci-20261007.htm",
+      "title": "October 8, 2026 director transition 8-K",
+      "publisher": "Super Micro Computer, Inc.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "October 8, 2026 Board appointed Shesha Krishnapura independent director effective October 9, 2026. Most recently CTO of Intel IT and Intel Fellow over a 35-year career. Judy Lin notified retirement October 7, service concludes October 9; Chair of Nominating and Corporate Governance Committee; not result of disagreement. Depositary shares SMCIP each represent 1/20th interest in 7.00% Series A Mandatory Convertible Preferred Stock; ordinary common stock SMCI is separate security."
+    },
+    {
+      "id": "issuer-preliminary",
+      "url": "https://s204.q4cdn.com/707617056/files/doc_financials/2026/q4/FQ426-SMCI-Press-Release.pdf",
+      "title": "August 11, 2026 preliminary fiscal-year results",
+      "publisher": "Super Micro Computer, Inc.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "FY2026 net sales $39.1 billion, net income $2.2 billion, diluted EPS $3.26, gross margin 10.8% versus FY2025 11.1%. Q4 gross margin 17.5%. Cash $7.5 billion and bank debt/convertibles $8.7 billion. Board conducting independent review of certain transactions in connection with export-control issues; outcome could affect forecasts, preliminary results and prior period results. Company emphasizes preliminary data not audited or reviewed by independent auditor and not substitute for subsequently filed GAAP statements. FY2027 sales guidance $65-$72 billion is forecast, not actual. Annual statements show inventory $12,895.949 million and receivables $6,125.414 million."
+    },
+    {
+      "id": "issuer-annual",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm",
+      "title": "SMCI annual financial statements and economics",
+      "publisher": "Super Micro Computer, Inc.",
+      "accessed_at": "2026-10-11",
+      "excerpt": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n______________________________________________________________________\n\n\nForm 10-K\n______________________________________________________________________\n\t\t\n\n☒ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the fiscal year ended June 30, 2026\nor\n\t\t\n\n  ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934\nFor the transition period from___________to___________                     \nCommission File Number 001-33383\n\n\n______________________________________________________________________\n\n\nSuper Micro Computer, Inc.\n(Exact name of registrant as specified in its charter)\n______________________________________________________________________\n\n\n\t\t\t\t\t\t\t\t\nDelaware\t\t77-0353939\n(State or other jurisdiction of\nincorporation or organization)\t\t(I.R.S. Employer\nIdentification No.)\n980 Rock Avenue\nSan Jose, CA 95131\n(Address of principal executive offices, including zip code)\n(408) 503-8000\n(Registrant’s telephone number, including area code)\n__________________________________________________________________________\nSecurities registered pursuant to Section 12(b) of the Act:\n\n\n\t\t\t\t\t\t\t\t\nTitle of each class\tTrading Symbol\tName of each exchange on which registered\nCommon Stock, $0.001 par value per share\tSMCI\t\nNasdaq Global Select Market\n\nDepositary Shares, each representing a 1/20th interest in a share of 7.00% Series A Mandatory Convertible Preferred Stock, par value $0.001\tSMCIP\t\nNasdaq Global Select Market\n\n\nSecurities registered pursuant to section 12(g) of the Act: None\n\n\nIndicate by check mark if the registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act.    Yes  ☒    No  ☐\n\n\nIndicate by check mark if the registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act.    Yes  ☐    No  ☒\n\n\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.    Yes ☒     No ☐\n\n\nIndicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).    Yes  ☒    No  ☐\n\n\n\n\nIndicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\nLarge accelerated filer\t☒\t  \tAccelerated filer\t\n☐\n\nNon-accelerated filer\t\n☐\n\t  \tSmaller reporting company\t\n☐\n\n\t\t\tEmerging growth company\t\n☐\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ \n\n\nIndicate by check mark whether the registrant has filed a report on and attestation to its management’s assessment of the effectiveness of its internal control over financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit report. ☒\n\n\nIf securities are registered pursuant to Section 12(b) of the Act, indicate by check mark whether the financial statements of the registrant included in the filing reflect the correction of an error to previously issued financial statements. ☐ \n\n\nIndicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-based compensation received by any of the registrant’s executive officers during the relevant recovery period pursuant to §240.10D-1(b). ☐ \n\n\nIndicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act)    Yes  ☐    No  ☒\n\n\nThe aggregate market value of the registrant’s common stock held by non-affiliates, based upon the closing price of the common stock on December 31, 2025, as reported by the Nasdaq Global Select Market, was $15,104,749,459. Shares of common stock held by each executive officer and director and by each person who owns 5% or more of the outstanding common stock, based on filings with the Securities and Exchange Commission, have been excluded since such persons may be deemed affiliates. This determination of affiliate status is not necessarily a conclusive determination for other purposes.\n\n\nAs of July 31, 2026, there were 656,965,384 shares of the registrant’s common stock, $0.001 par value, outstanding, which is the only class of common stock of the registrant issued.\n\n\nDOCUMENTS INCORPORATED BY REFERENCE\n\n\nNone\n\n\n\n\nSUPER MICRO COMPUTER, INC.\n\n\nANNUAL REPORT ON FORM 10-K\nFOR THE FISCAL YEAR ENDED JUNE 30, 2026\n\n\nTABLE OF CONTENTS\n \n\t\t\t\t\t\t\t\t\n\t\tPage\n\tPART I\t\nItem 1.\t\nBusiness\n\t\n1\n\nItem 1A.\t\nRisk Factors\n\t\n12\n\nItem 1B.\t\nUnresolved Staff Comments\n\t\n34\n\nItem 1C.\t\nCybersecurity\n\t\n  35\n\nItem 2.\t\nProperties\n\t\n36\n\nItem 3.\t\nLegal Proceedi\nfraud, and performing procedures that respond to those risks. Such procedures included examining, on a test basis, evidence regarding the amounts and disclosures in the consolidated financial statements. Our audits also included evaluating the accounting principles used and significant estimates made by management, as well as evaluating the overall presentation of the consolidated financial statements. We believe that our audits provide a reasonable basis for our opinion.\n\n\nCritical Audit Matters\n\n\nThe critical audit matters communicated below are matters arising from the current period audit of the consolidated financial statements that were communicated or required to be communicated to the audit committee and that: (1) relate to accounts or disclosures that are material to the consolidated financial statements and (2) involved our especially challenging, subjective, or complex judgments. The communication of the critical audit matters does not alter in any way our opinion on the consolidated financial statements, taken as a whole, and we are not, by communicating the critical audit matters below, providing separate opinions on the critical audit matters or on the accounts or disclosures to which they relate.\n\n\nValuation of Inventories\n\n\nAs described in Notes 1 and 6 to the consolidated financial statements, the Company’s consolidated inventories balance, which is stated at lower of cost, using the weighted average cost method, or net realizable value, was $12.9 billion as of June 30, 2026. The Company evaluates inventories for excess and obsolescence and lower of cost or net realizable value and, as necessary, writes down the valuation of inventories based upon the Company’s inventory aging, forecasted usage and sales, anticipated selling price, product obsolescence and other factors.\n\n\nWe identified the valuation of inventories as a critical audit matter. Auditing the valuation of inventories, which includes write-down percentages for excess and obsolescence applied to the different inventory aging categories, involved especially challenging and subjective auditor judgments due to the nature and extent of effort required to address this matter.\nSMCI | 2026 Form 10-K | 56\nTable of Contents\n\n\nThe primary procedures we performed to address this critical audit matter included:\n\n\n•Inquiring of various personnel in the Company including but not limited to finance and operations personnel about the expected product lifecycles and product development plans to understand and evaluate the Company’s methodology for determining inventory that is excess or obsolete and the key assumptions and judgments made as part of the process, including the write-down percentages used to write down the valuation of inventories.\n•Assessing management’s estimate of write-down percentages by recalculating inventory turns and historical write-down percentages across multiple fiscal periods and comparing it with the write-down percentages used by management to evaluate management’s ability to accurately estimate excess and obsolete inventories.\n•Testing the completeness and accuracy of the underlying data utilized in management’s excess and obsolescence analysis, including the classification of inventory by aging category.\n•Assessing the existence of contradictory evidence based on reading the Company’s press releases and industry reports, as well as our observations and inquiries as to changes within the business.\n\n\nRevenue Recognition from Contracts with Customers\n\n\nAs described in Notes 1 and 2 to the consolidated financial statements, the Company’s net sales were $39.1 billion for the year ended June 30, 2026. The Company recognizes revenue upon transfer of control of promised goods or services in a contract. Transfer of control of promised goods generally occurs at the point of shipment or upon delivery to the customer. Transfer of control of services generally occurs ratably as the services are made available to the customer or when the Company performs the services and the customer receives and consumes the benefits.\n\n\nWe identified the auditing of revenue recognition from contracts with customers as a critical audit matter because it involved a high degree of auditor effort required in performing audit procedures.\n\n\nThe primary procedures we performed to address this critical audit matter included:\n\n\n•Evaluating revenue transactions on a sample basis by obtaining and inspecting source documents, such as purchase orders, sales quotations, contracts, invoices, and proof of shipment, proof of delivery, or evidence of customer acceptance, as applicable.\n•Inspecting a sample of credit memos and the related invoice to assess whether they were recorded in the appropriate period.\n•Evaluating the completeness and accuracy of information produced by the entity.\n•Evaluating the completeness and accuracy of the terms and conditions in certain customer contracts, including confirming the terms and conditions of contracts.\n\n\n\n\n/s/ BDO USA, P.C.\nWe have served as the Company’s auditor since 2024.\nSan Jose, California\nAugust 31, 2026\nSMCI | 2026 Form 10-K | 57\nTable of Contents\nSUPER MICRO COMPUTER, INC.\nCONSOLIDATED BALANCE SHEETS\n(in thousands, except par value per share amounts)\n\n\n\t\t\t\t\t\t\t\t\t\t\t\n\tJune 30,\n\t2026\t\t2025\n\nASSETS\n\t\t\t\nCurrent assets:\t\t\t\nCash and cash equivalents\t$\t7,521,474 \t\t\t$\t5,169,911 \t\n\nAccounts receivable, net of allowance for credit losses of $109 and $0 at June 30, 2026 and 2025, respectively (including amounts receivable from related parties of $624 and $393 at June 30, 2026 and 2025, respectively)\n\t6,125,414 \t\t\t2,203,942 \t\nInventories\t12,895,949 \t\t\t4,680,375 \t\n\nPrepaid expenses and other current assets (including receivables from related parties of $905 and $13,745 at June 30, 2026 and 2025, respectively)\n\t1,183,415 \t\t\t247,426 \t\nTotal current assets\t27,726,252 \t\t\t12,301,654 \t\n\n\nProperty, plant, and equipment, net\n\t625,553 \t\t\t504,488 \t\nDeferred income taxes, net\t697,441 \t\t\t607,416 \t\nOther assets\t896,221 \t\t\t604,871 \t\nTotal assets\t$\t29,945,467 \t\t\t$\t14,018,429 \t\nLIABILITIES AND STOCKHOLDERS’ EQUITY\t\t\t\nCurrent liabilities:\t\t\t\n\nAccounts payable (including amounts due to related parties of $117,062 and $129,752 at June 30, 2026 and 2025, respectively)\n\t$\t2,247,003 \t\t\t$\t1,281,977 \t\n\nAccrued liabilities (including amounts due to related parties of $1,213 and $1,044 at June 30, 2026 and 2025, respectively)\n\t1,032,716 \t\t\t565,637 \t\nIncome taxes payable\t262,608 \t\t\t53,381 \t\nLines of credit and term loans, current\t2,039,774 \t\t\t75,060 \t\nDeferred revenue\t1,578,005 \t\t\t368,737 \t\nTotal current liabilities\t7,160,106 \t\t\t2,344,792 \t\nDeferred revenue, non-current\t1,034,027 \t\t\t362,645 \t\nLines of credit and term loans, non-current\t2,016,374 \t\t\t37,415 \t\n\nConvertible notes\n\t4,664,139 \t\t\t4,645,178 \t\n\nOther long-term liabilities (including amounts due to related parties of $362 and $608 at June 30, 2026 and 2025, respectively)\n\t591,205 \t\t\t326,528 \t\nTotal liabilities\t15,465,851 \t\t\t7,716,558 \t\n\nCommitments and contingencies (Note 15)\n\t\t\t\nStockholders’ equity:\t\t\t\n\nPreferred Stock and additional paid-in capital, $0.001 par value\n\t\t\t\n\nAuthorized shares: 10,000; Issued and outstanding shares of Series A Mandatory Convertible Preferred Stock: 4,313 and 0 at June 30, 2026 and 2025, respectively\n\t4,226,258 \t\t\t— \t\n\nCommon stock and additional paid-in capital, $0.001 par value\n\t\t\t\n\nAuthorized shares: 1,000,000; Issued and outstanding shares: 656,882 and 594,137 at June 30, 2026 and 2025, respectively\n\t4,600,893 \t\t\t2,866,449 \t\nAccumulated other comprehensive income\t397 \t\t\t705 \t\nRetained earnings\t5,651,904 \t\t\t3,434,539 \t\nTotal Super Micro Computer, Inc. stockholders’ equity\t14,479,452 \t\t\t6,301,693 \t\n\nNon-controlling interest\n\t164 \t\t\t178 \t\nTotal stockholders’ equity\t14,479,616 \t\t\t6,301,871 \t\nTotal liabilities and stockholders’ equity\t$\t29,945,467 \t\t\t$\t14,018,429 \t\n\n\n\n\n\n\n\n\nSee accompanying notes to consolidated financial statements.\nSMCI | 2026 Form 10-K | 58\nTable of Contents\n\n\nSUPER MICRO COMPUTER, INC.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(in thousands, except per share amounts)\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tYears Ended June 30,\n\t2026\t\t2025\t\t2024\n\nNet sales (including related party sales of $29,781, $42,259, and $69,791 in fiscal years 2026, 2025, and 2024, respectively)\n\t$\t39,063,072 \t\t\t$\t21,972,042 \t\t\t$\t14,989,251 \t\n\nCost of sales (including related party purchases of $725,694, $650,658, and $552,136 in fiscal years 2026, 2025, and 2024, respectively)\n\t34,835,821 \t\t\t19,542,120 \t\t\t12,927,841 \t\nGross profit\t4,227,251 \t\t\t2,429,922 \t\t\t2,061,410 \t\nOperating expenses:\t\t\t\t\t\nResearch and development\t771,232 \t\t\t636,550 \t\t\t463,548 \t\nSales and marketing\t352,594 \t\t\t273,139 \t\t\t189,738 \t\nGeneral and administrative\t332,939 \t\t\t267,239 \t\t\t197,350 \t\nTotal operating expenses\t1,456,765 \t\t\t1,176,928 \t\t\t850,636 \t\nIncome from operations\t2,770,486 \t\t\t1,252,994 \t\t\t1,210,774 \t\nOther income (expense), net\t26,432 \t\t\t(41,339)\t\t\t(6,240)\t\nInterest income\t186,920 \t\t\t59,834 \t\t\t28,957 \t\nInterest expense\t(194,574)\t\t\t(59,573)\t\t\t(19,352)\t\nIncome before income tax provision\t2,789,264 \t\t\t1,211,916 \t\t\t1,214,139 \t\n\nIncome tax provision\n\t(556,329)\t\t\t(156,851)\t\t\t(63,294)\t\nShare of (loss) income from equity investees, net of taxes\t(2,482)\t\t\t(6,211)\t\t\t1,821 \t\nNet income\t$\t2,230,453 \t\t\t$\t1,048,854 \t\t\t$\t1,152,666 \t\n\n\n\t\t\t\t\t\nNet income per common share:\t\t\t\t\t\nBasic\t$\t3.65 \t\t\t$\t1.77 \t\t\t$\t2.07 \t\nDiluted\t$\t3.26 \t\t\t$\t1.68 \t\t\t$\t1.92 \t\nWeighted-average shares used in the calculation of net income per common share:\t\t\t\t\t\nBasic\t601,806 \t\t\t593,665 \t\t\t555,878 \t\nDiluted\t697,348 \t\t\t628,402 \t\t\t602,146 \t\n\n\n\n\n\n\nSee accompanying notes to consolidated financial statements.\n\n\nSMCI | 2026 Form 10-K | 59\nTable of Contents\nSUPER MICRO COMPUTER, INC.\nCONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME\n(in thousands)\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tYears Ended June 30,\n\t2026\t\t2025\t\t2024\nNet income\t$\t2,230,453 \t\t\t$\t1,048,854 \t\t\t$\t1,152,666 \t\nOther comprehensive (loss) income, net of tax:\t\t\t\t\t\nForeign currency translation (loss) gain, net of tax\t(13)\t\t\t15 \t\t\t24 \t\nNet change in defined benefit obligations\t(295)\t\t(16)\t\t43\n\nTotal other comprehensive (loss) income, net of tax\t(308)\t\t\t(1)\t\t\t67 \t\nTotal comprehensive income\t$\t2,230,145 \t\t\t$\t1,048,853 \t\t\t$\t1,152,733 \t\n\n\n\n\nSee accompanying notes to consolidated financial statements.\nSMCI | 2026 Form 10-K | 60\nTable of Contents\nSUPER MICRO COMPUTER, INC.\nCONSOLIDATED STATEMENTS OF STOCKHOLDERS’ EQUITY\n(in thousands, except share amounts)\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tPreferred Stock and Additional Paid-In Capital\t\tCommon Stock and Additional Paid-In Capital\t\tAccumulated Other Comprehensive Income (Loss)\t\tRetained Earnings\t\tNon-controlling Interest\t\tTotal Stockholders’ Equity\n\tShares\t\tAmount\t\tShares\t\tAmount\t\n\nBalance at June 30, 2023\n\t— \t\t\t$\t— \t\t\t529,013,580 \t\t\t$\t538,352 \t\t\t$\t639 \t\t\t$\t1,433,014 \t\t\t$\t165 \t\t\t$\t1,972,170 \t\nExercise of stock options\t— \t\t\t— \t\t\t8,725,220 \t\t\t29,453 \t\t\t— \t\t\t— \t\t\t— \t\t\t29,453 \t\nRelease of shares of common stock upon vesting of restricted stock units\t— \t\t\t— \t\t\t10,340,470 \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\nShares withheld for withholding taxes related to settlement of equity awards\t— \t\t\t— \t\t\t(3,142,910)\t\t\t(174,354)\t\t\t— \t\t\t— \t\t\t— \t\t\t(174,354)\t\nIssuances of common stock in public offerings, net of issuance costs\t— \t\t\t—\t\t43,151,050 \t\t\t2,313,983 \t\t\t—\t\t—\t\t—\t\t2,313,983 \t\nPurchase of capped calls, net of tax\t— \t\t\t— \t\t\t— \t\t\t(108,121)\t\t\t— \t\t\t— \t\t\t— \t\t\t(108,121)\t\nStock-based compensation\t— \t\t\t— \t\t\t— \t\t\t231,507 \t\t\t— \t\t\t— \t\t\t— \t\t\t231,507 \t\nOther comprehensive income\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t67 \t\t\t— \t\t\t— \t\t\t67 \t\nNet income (loss)\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t1,152,666 \t\t\t(1)\t\t\t1,152,665 \t\n\nBalance at June 30, 2024\n\t— \t\t\t$\t— \t\t\t588,087,410 \t\t\t$\t2,830,820 \t\t\t$\t706 \t\t\t$\t2,585,680 \t\t\t$\t164 \t\t\t$\t5,417,370 \t\nExercise of stock options\t— \t\t\t— \t\t\t4,786,860 \t\t\t20,898 \t\t\t— \t\t\t— \t\t\t— \t\t\t20,898 \t\nRelease of shares of common stock upon vesting of restricted stock units\t— \t\t\t— \t\t\t9,927,956 \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\nShares withheld for withholding taxes related to settlement of equity awards\t— \t\t\t— \t\t\t(3,774,203)\t\t\t(142,457)\t\t\t— \t\t\t— \t\t\t— \t\t\t(142,457)\t\nShare repurchase and retirement\t— \t\t\t—\t\t(4,891,171)\t\t\t(5)\t\t\t—\t\t(199,995)\t\t—\t\t(200,000)\t\nStock-based compensation\t— \t\t\t—\t\t— \t\t\t314,933 \t\t\t—\t\t—\t\t—\t\t314,933 \t\nPurchase of capped calls, net of tax\t— \t\t\t— \t\t\t— \t\t\t(157,740)\t\t\t— \t\t\t— \t\t\t— \t\t\t(157,740)\t\n\nOther comprehensive loss\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t(1)\t\t\t— \t\t\t— \t\t\t(1)\t\nNet income\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t1,048,854 \t\t\t14 \t\t\t1,048,868 \t\n\nBalance at June 30, 2025\n\t— \t\t\t$\t— \t\t\t594,136,852 \t\t\t$\t2,866,449 \t\t\t$\t705 \t\t\t$\t3,434,539 \t\t\t$\t178 \t\t\t$\t6,301,871 \t\nExercise of stock options\t— \t\t\t— \t\t\t3,315,140 \t\t\t46,260 \t\t\t— \t\t\t— \t\t\t— \t\t\t46,260 \t\nSMCI | 2026 Form 10-K | 61\nTable of Contents\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\nSeries A Mandatory Convertible Preferred Stock, net of issuance costs\t4,312,500 \t\t\t4,226,258 \t\t\t— \t\t\t— \t\t\t—\t\t—\t\t—\t\t4,226,258 \t\nRelease of shares of common stock upon vesting of restricted stock units\t— \t\t\t— \t\t\t10,314,138 \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\nShares withheld for withholding taxes related to settlement of equity awards\t— \t\t\t— \t\t\t(3,156,357)\t\t\t(129,881)\t\t\t— \t\t\t— \t\t\t— \t\t\t(129,881)\t\n\nIssuances of common stock in public offerings, net of issuance costs\t— \t\t\t— \t\t\t52,272,726 \t\t\t1,405,950 \t\t\t— \t\t\t— \t\t\t— \t\t\t1,405,950 \t\nStock-based compensation\t— \t\t\t— \t\t\t— \t\t\t412,115 \t\t\t— \t\t\t— \t\t\t— \t\t\t412,115 \t\n\n\nSeries A Mandatory Convertible Preferred Stock dividends\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t(13,088)\t\t\t\t\t(13,088)\t\n\nOther comprehensive loss\n\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t(308)\t\t\t— \t\t\t— \t\t\t(308)\t\nNet income (loss)\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t— \t\t\t2,230,453 \t\t\t(14)\t\t\t2,230,439 \t\n\nBalance at June 30, 2026\n\t4,312,500 \t\t\t$\t4,226,258 \t\t\t656,882,499 \t\t\t$\t4,600,893 \t\t\t$\t397 \t\t\t$\t5,651,904 \t\t\t$\t164 \t\t\t$\t14,479,616 \t\n\n\n\n\nSee accompanying notes to consolidated financial statements.\nSMCI | 2026 Form 10-K | 62\nTable of Contents\nSUPER MICRO COMPUTER, INC.\nCONSOLIDATED STATEMENTS OF CASH FLOWS\n(in thousands)\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tYears Ended June 30,\n\t2026\t\t2025\t\t2024\nOPERATING ACTIVITIES:\t\t\t\t\t\nNet income\t$\t2,230,453 \t\t\t$\t1,048,854 \t\t\t$\t1,152,666 \t\nReconciliation of net income to net cash (used in) provided by operating activities:\t\t\t\t\t\nDepreciation and amortization\t53,673 \t\t\t41,298 \t\t\t29,617 \t\nAmortization of right-of-use (“ROU”) assets\t36,594 \t\t\t17,046 \t\t\t9,076 \t\nAmortization of debt discount and issuance costs\t25,889 \t\t\t10,268 \t\t\t2,292 \t\nInventory valuation adjustment write-down\t188,110 \t\t\t232,083 \t\t\t83,004 \t\nStock-based compensation expense\t412,115 \t\t\t314,452 \t\t\t231,507 \t\nImpairment loss and gain on sale of investments, net\t414 \t\t\t— \t\t\t— \t\nShare of loss (income) from equity investees\t2,482 \t\t\t6,211 \t\t\t(1,821)\t\nUnrealized foreign currency exchange (gain) loss\t976 \t\t\t18,832 \t\t\t(531)\t\nLoss on extinguishment of convertible notes\t— \t\t\t30,251 \t\t\t— \t\nDeferred income taxes, net\t(95,367)\t\t\t(214,638)\t\t\t(168,499)\t\nOther non-cash (income) expense, net\t(16,956)\t\t\t(3,077)\t\t\t12,343 \t\nChanges in operating assets and liabilities:\t\t\t\t\t\n\nAccounts receivable, net (including changes in related party balances of $(231), $5,801, and $(721) in fiscal years 2026, 2025, and 2024, respectively)\n\t(3,921,872)\t\t\t533,341 \t\t\t(1,589,187)\t\n Inventories\t(8,876,747)\t\t\t(587,689)\t\t\t(2,983,000)\t\n\nPrepaid expenses and other assets (including changes in related party balances of $12,728, $(1,806), and $15,793 in fiscal years 2026, 2025, and 2024, respectively)\n\t(356,230)\t\t\t(229,107)\t\t\t(44,646)\t\n\nAccounts payable (including changes in related party balances of $(12,690), $(35,543), and $76,161 in fiscal years 2026, 2025, and 2024, respectively)\n\t963,258 \t\t\t(180,968)\t\t\t679,190 \t\n\nAccrued liabilities (including changes in related party balances of $169, $874, and $(13,847) in fiscal years 2026, 2025, and 2024, respectively)\n\t406,200 \t\t\t272,404 \t\t\t92,942 \t\n\n Income taxes payable\n\t213,532 \t\t\t32,043 \t\t\t(110,897)\t\n Deferred revenue\t1,880,650 \t\t\t315,006 \t\t\t111,927 \t\n\nOther long-term liabilities (including changes in related party balances of $(246), $608, and $(178) in fiscal years 2026, 2025, and 2024, respectively)\n\t42,940 \t\t\t2,914 \t\t\t8,045 \t\nNet cash (used in) provided by operating activities\t(6,809,886)\t\t\t1,659,524 \t\t\t(2,485,972)\t\nINVESTING ACTIVITIES:\t\t\t\t\t\n\nPurchases of property, plant, and equipment (including payments to related parties of $12,567, $17,677, and $10,625 in fiscal years 2026, 2025, and 2024, respectively)\n\t(161,999)\t\t\t(127,214)\t\t\t(124,279)\t\nInvestment in equity securities\t(51,613)\t\t\t(56,000)\t\t\t(69,673)\t\n\nAcquisition, net of cash acquired\n\t— \t\t\t— \t\t\t(296)\t\nProceeds from disposal of equity investment\t13,333 \t\t\t— \t\t\t— \t\nNet cash used in investing activities\t(200,279)\t\t\t(183,214)\t\t\t(194,248)\t\nFINANCING ACTIVITIES:\t\t\t\t\t\nProceeds from lines of credit and term loans\t4,468,808 \t\t\t1,387,991 \t\t\t2,156,529 \t\nRepayment of lines of credit and term loans\t(520,510)\t\t\t(1,768,650)\t\t\t(1,967,545)\t\n\nPayments of debt issuance costs\t(23,483)\t\t\t— \t\t\t— \t\nProceeds from exercise of stock options\t46,260 \t\t\t20,898 \t\t\t29,453 \t\n\n\nPayment for withholding taxes related to settlement of equity awards\n\t(129,881)\t\t\t(142,457)\t\t\t(174,354)\t\nStock repurchases\t— \t\t\t(200,000)\t\t\t— \t\n\nIssuances of common stock in public offerings, net of issuance costs of $42,575\n\t— \t\t\t— \t\t\t2,313,983 \t\nSMCI | 2026 Form 10-K | 63\nTable of Contents\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tYears Ended June 30,\n\t2026\t\t2025\t\t2024\nDebt issuance costs in connection with amended 2029 Convertibles Notes\t— \t\t\t(31,217)\t\t\t— \t\n\nProceeds from issuance of 2029 Convertible Notes, net of issuance costs of $29,232\n\t— \t\t\t— \t\t\t1,695,768 \t\n\nProceeds from issuance of 2028 Convertible Notes, net of issuance costs of $16,304\n\t— \t\t\t683,696 \t\t\t— \t\n\nProceeds from issuance of 2030 Convertible Notes, net of issuance costs of $44,027\n\t— \t\t\t2,255,973 \t\t\t— \t\nPurchase of capped calls\t— \t\t\t(182,215)\t\t\t(142,140)\t\n\n\nCommon stock issuance, net of underwriting discounts\t1,406,953 \t\t\t— \t\t\t— \t\nSeries A Mandatory Convertible Preferred Stock issuance, net of underwriting discounts\t4,231,640 \t\t\t— \t\t\t— \t\nPayments of equity issuance costs\t(996)\t\t\t— \t\t\t— \t\nOther\t(36)\t\t\t26 \t\t\t30 \t\nNet cash provided by financing activities\t9,478,755 \t\t\t2,024,045 \t\t\t3,911,724 \t\nEffect of exchange rate fluctuations on cash\t(9,355)\t\t\t1,673 \t\t\t(2,191)\t\nNet increase in cash, cash equivalents, and restricted cash\t2,459,235 \t\t\t3,502,028 \t\t\t1,229,313 \t\nCash, cash equivalents, and restricted cash at the beginning of year\t5,172,301 \t\t\t1,670,273 \t\t\t440,960 \t\nCash, cash equivalents, and restricted cash at the end of year\t$\t7,631,536 \t\t\t$\t5,172,301 \t\t\t$\t1,670,273 \t\n\t\t\t\t\t\nSupplemental disclosure of cash flow information:\t\t\t\t\t\nCash paid for interest\t$\t109,306 \t\t\t$\t25,490 \t\t\t$\t16,015 \t\nCash paid for income taxes, net of refunds\t$\t399,276 \t\t\t$\t327,158 \t\t\t$\t392,020 \t\n\t\t\t\t\t\n\t\t\t\t\t\nNon-cash investing and financing activities:\t\t\t\t\t\n\nUnpaid property, plant, and equipment purchases (including due to related parties of $4,658, $3,879, and $2,339 as of June 30, 2026, 2025, and 2024, respectively)\n\t$\t21,142 \t\t\t$\t16,208 \t\t\t$\t19,613 \t\nROU assets obtained in exchange for operating lease commitments\t$\t266,753 \t\t\t$\t276,170 \t\t\t$\t32,581 \t\nSeries A Mandatory Convertible Preferred Stock accrued dividends\t$\t13,088 \t\t\t$\t— \t\t\t$\t— \t\n\nTransfer of inventory to property, plant, and equipment, net\n\t$\t7,304 \t\t\t$\t8,260 \t\t\t$\t12,535 \t\n\n\n\n\n\nSee accompanying notes to consolidated financial statements.\nSMCI | 2026 Form 10-K | 64\nTable of Contents\n\n\nSUPER MICRO COMPUTER, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n\n\nNote 1. Organization and Summary of Significant Accounting Policies\n\n\nOrganization\n\n\nSuper Micro Computer, Inc. (“Super Micro Computer” or the “Company”) was incorporated in 1993. All references to “Super Micro Computer,” “we,” “us,” “our” or the “Company” mean Super Micro Computer, Inc. and its subsidiaries. Super Micro Computer is a global leader in server technology and green computing innovation. Super Micro Computer develops and provides high performance server and storage solutions based upon an innovative, modular and open-standard architecture. Super Micro Computer has operations primarily in the United States, Taiwan, Malaysia, and the Netherlands.\n\n\nBasis of Presentation\n\n\nThe accompanying consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States (\"U.S. GAAP\") and include the accounts of Super Micro Computer, Inc. and our wholly-owned subsidiaries where we have controlling financial interests, and any variable interest entities for which we are deemed to be the primary beneficiary. All intercompany balances and transactions have been eliminated.\n\n\nUse of Estimates\n\n\nPreparation of consolidated financial statements in conformity with U.S. GAAP requires the use of estimates and judgments that affect the reported amounts in the consolidated financial statements and accompanying notes. These estimates form the basis for judgments we make about the carrying values of our assets and liabilities, which are not readily apparent from other sources. We base our estimates and judgme\ne financial statement areas.\n\n\nTo address the above noted three material weaknesses, during the fiscal year ended June 30, 2026, we successfully implemented new controls and processes, and enhanced and redesigned certain controls and procedures, across various areas. These changes included:\n\n\n•a full redesign of our Enterprise Resource Planning system security role structure and segregation of duties rulesets;\n•re-evaluating the risk of employee circumvention of controls;\n•enhancing our accounting organization’s competencies by adding additional qualified leadership personnel with strong technical accounting, external reporting and governance experience;\n•validating the reliability of underlying information to support the execution of these controls; and\n•establishing additional control procedures, and a more comprehensive review of transactions as part of our close process, to achieve timely, complete and accurate recording and disclosures across multiple financial statement areas.\n\n\nAs a result of these efforts, we remediated three material weaknesses in internal control over financial reporting that were previously reported in our Annual Report on Form 10-K for the fiscal year ended June 30, 2025. Additionally, we concluded the one remaining material weakness relating to information technology general controls (\"ITGC\"), remains unremediated as of June 30, 2026. Specifically, our information technology controls for certain systems that support some of the financial reporting processes did not operate for a sufficient period of time, and we did not perform controls in a consistent and timely manner to monitor user access to certain financial applications, system infrastructure and programs. This material weakness could have increased the risk of unauthorized access to certain information technology systems that support our financial reporting processes, manipulation of data that we use to produce our financial statements, and/or lack of complete and accurate information, which could lead to financial misstatements and affect our ability to report our information on a timely basis.\n\n\nNotwithstanding the material weakness in internal control over financial reporting described above, management believes and has concluded that the consolidated financial statements included in this Annual Report fairly present, in all material respects, our financial condition, results of operations, and cash flows for the periods presented in conformity with U.S. GAAP.\n\n\n(c) Inherent Limitations on Effectiveness of Controls\n\n\nBecause of inherent limitations, internal control over financial reporting may not prevent or detect misstatements and projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate.\n\n\nOur independent registered public accounting firm, BDO USA, P.C., has audited our consolidated financial statements as of June 30, 2026, and for the three fiscal years then ended, included in this Annual Report which is contained in Item 8, “Financial Statements and Supplementary Data” and also as part of its audit, has issued an attestation report on our internal control over financial reporting, which is contained below.\n\n\nSMCI | 2026 Form 10-K | 123\nTable of Contents\n(d) Remediation Plan and Status\n\n\nWe have identified and implemented specific actions intended to improve the effectiveness of our internal control over financial reporting and will continue to do so until the r\nTransactions with Ablecom and Compuware\n\n\nWe have entered into a series of agreements with Ablecom, a Taiwan corporation, and one of its affiliates, Compuware. Ablecom’s ownership of Compuware is below 50% but Compuware remains a related party as Ablecom still has significant influence over the operations. Ablecom’s Chief Executive Officer, Steve Liang, is the brother of Charles Liang, our President, Chief Executive Officer and Chairman of the Board. Steve Liang and his family members owned approximately 35.5% of Ablecom’s stock. Charles Liang and his spouse, Sara Liu, an officer and director of our company, collectively owned approximately 10.5% of Ablecom’s capital stock as of June 30, 2026. Bill Liang, a brother of both Charles Liang and Steve Liang, is a member of the board of directors of Ablecom.\n\n\nBill Liang and his family members owned approximately 16.0% of Compuware’s stock. Ablecom owned approximately 15.0% of Compuware’s stock. Bill Liang serves as the Chief Executive Officer and Chairman of the board of directors of Compuware, and Steve Liang is also a member of Compuware’s board of directors. Neither Charles Liang nor Sara Liu own any capital stock of Compuware, and we do not own any of Ablecom or Compuware’s capital stock.\n\n\nWe have entered into a series of agreements with Ablecom, including multiple product development, production and service agreements, credit agreements, product manufacturing agreements, manufacturing services agreements and lease agreements for warehouse space.\n\n\nUnder these agreements, we outsource a portion of our design activities and a significant part of our server chassis manufacturing of components such as server chassis to Ablecom. Ablecom agrees to design products according to our specifications. Additionally, Ablecom agrees to build the tools needed to manufacture the products. We have agreed to pay for the cost of chassis and related product tooling and engineering services and will pay for those items when the work has been completed.\n\n\nWe have appointed Compuware as a non-exclusive authorized distributor of our products in Taiwan, China, Australia, Malaysia, and U.S. We believe that the pricing and terms under the distribution agreement are similar to the pricing and terms of distribution arrangements we have with similar third-party distributors.\n\n\nWe have also entered into a series of agreements with Compuware, including multiple product development, production and service agreements, product manufacturing agreements, and lease agreements for office space. We have credit agreements with Compuware that outline the terms and conditions governing their business dealings. Under these agreements, we outsource to Compuware a portion of our design activities and a significant part of our manufacturing of components, particularly power supplies. With respect to design activities, Compuware generally agrees to design certain agreed-upon products according to our specifications, and further agrees to build the tools needed to manufacture the products. We pay Compuware for the design and engineering services, and further agree to pay Compuware for the tooling.\n\n\nWe retain full ownership of any intellectual property resulting from the design of these products and tooling. With respect to the manufacturing aspects of the relationship, Compuware purchases most of the materials needed to manufacture the power supplies from outside markets and uses these materials to manufacture the products and then sell to us. We review and frequently negotiate with Compuware the prices of the power supplies that we purchase from Compuware. Compuware also manufactures motherboards, backplanes and other components used on our printed circuit boards. We sell to Compuware most of the components needed to manufacture the above products. Compuware uses these components to manufacture and then sells back the products to us at a purchase price equal to the price at which we sold the components to Compuware, plus a “manufacturing value added” fee and other miscellaneous material charges and costs. We frequently review and negotiate with Compuware the amount of the “manufacturing value added” fee that will be included in the price of the products we purchase from Compuware.\n\n\nAblecom’s sales to us comprise a majority of Ablecom’s net sales. For the fiscal years ended June 30, 2026, 2025, and 2024, we purchased products from Ablecom totaling $390.5 million, $321.9 million, and $269.3 million, respectively. Amounts owed to Ablecom by us as of June 30, 2026 and 2025 were $64.3 million and $55.5 million, respectively. For the fiscal years ended June 30, 2026, 2025, and 2024, we paid Ablecom $18.1 million, $23.7 million, and $16.5 million, respectively, for design services, tooling assets and miscellaneous costs.\n\n\nSMCI | 2026 Form 10-K | 167\nTable of Contents\nCompuware’s sales of our products to others comprise a majority of Compuware’s net sales. For the fiscal years ended June 30, 2026, 2025, and 2024, we sold products to Compuware totaling $20.0 million, $30.2 million, and $46.6 million, respectively. Amounts owed to us by Compuware as of June 30, 2026 and 2025 were $0.6 million and $13.0 million, respectively. The price at which Compuware purchases the products from us is at a discount from our standard price for purchasers who purchase specified volumes from us. In exchange for this discount, Compuware assumes the responsibility of installing our products at the site of the end customer and administers first-level customer support. For the fiscal years ended June 30, 2026, 2025, and 2024, we purchased products from Compuware totaling $335.2 million, $328.3 million, and $280.8 million, respectively. Amounts we owed to Compuware as of June 30, 2026 and 2025 were $52.7 million and $74.3 million, respectively. For the fiscal years ended June 30, 2026, 2025, and 2024, we paid Compuware $3.8 million, $3.9 million, and $1.5 million, respectively, for design services, tooling assets \nin a few large customers, and if we lose or experience a significant reduction in sales to any key customer, or any key customer experiences a significant decline in market share or, significant financial difficulties, our revenue may decrease substantially and our results of operations and financial condition may be harmed.\n\n\nWe have become increasingly dependent upon larger sales to grow our business. In recent years, we have completed larger sales to leading internet data center and cloud customers, large enterprise customers and OEMs. We had one customer account for 10% or more of our net sales in fiscal year 2026, four customers account for 10% or more of our net sales in fiscal year 2025, and one customer account for 10% or more of net sales in fiscal year 2024. We anticipate we may continue to have customers account for 10% or more of net sales in the future, and any subsequent loss of such customers could have a material adverse effect on our business and results of operations. If customers buy our products in greater volumes and their business becomes a larger percentage of our net sales, we may grow increasingly dependent on those customers to maintain our growth. If our largest customers do not purchase our products, or we are unable to supply such customers with products, at the levels, in the timeframes or within the geographies that we expect, including as a result of a global economic downturn, excessive credit risk, or a desire by such customers to limit their dependency upon us as a supplier, our ability to maintain or grow our net sales will be adversely affected.\n\n\nIncreased sales to larger customers may also cause fluctuations in the results of operations. Large orders are generally subject to intense competition and pricing pressure which can have an adverse impact on our margins and results of operations. Accordingly, a significant increase in revenue during the period in which we recognize the revenue from a large customer may be followed by a period during which the customer either does not purchase any products or only a small number of our products.\n\n\nAdditionally, as we and our partners focus increasingly on selling to larger customers and attracting larger orders, we expect greater costs of sales. Our sales cycle may become longer, and more expensive, as larger customers typically spend more time negotiating contracts than smaller customers. Such larger orders may require greater commitments of working capital, which may require increased borrowings under our credit facilities to fund purchases of key components (such as CPUs, memory, solid-state drives (\"SSDs\") and GPUs) necessary for such orders, which could adversely affect our cash flow and expose us to the risk of holding excess and obsolete inventory, if there are delays or cancellations. Furthermore, larger customers also often seek greater levels of support in the implementation and use of our server solutions. An actual or perceived inability to meet customer support demands may adversely affect our relationship with such customers, which may affect the likelihood of future purchases of our products. Larger customers may also request larger amounts of credit or longer payment terms, which, if granted, increases our risks in the event customers do not pay or make timely payment, which risk is exacerbated in the event our payment terms with major suppliers of necessary components for such orders do not match the payment terms of our customers.\n\n\nAs a result of the above factors, our quarter-to-quarter results of operations may be subject to greater fluctuation and our stock price may be adversely affected.\n\n\nWe may be unable to secure additional financing on favorable terms, or at all, which in turn could impair the rate of our growth, and any financing that we do obtain may dilute our stockholders, restrict our growth, or contain other unfavorable terms.\n\n\nWe had net income of $2,230.5 million, $1,048.9 million, and $1,152.7 million in fiscal years 2026, 2025, and 2024, respectively. During fiscal year 2025, we issued $700.0 million aggregate principal amount of our 2028 Convertible Notes in a private placement, and we issued $2.3 billio"
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/smci/history/",
+      "title": "SMCI observed daily quote",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ SMCI USD. At close: Oct9,2026,4:00PM EDT. Close 41.86 USD/share. Regular-session unadjusted close, not after-hours or analyst target."
+    },
+    {
+      "id": "sa-stat",
+      "url": "https://stockanalysis.com/stocks/smci/statistics/",
+      "title": "SMCI statistics snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Stock Analysis October9,2026 regular close41.86; shares outstanding656.97 million; market cap27.50 billion. TTM revenue39.06 billion; profits2.20 billion; diluted EPS3.26; OCF -6.81 billion; capex -162.00 million. Cash7.54 billion and debt9.26 billion standardized definitions. 10:1 split October1,2024. Standardized profit is common-attributable, not consolidated net income; cash/debt differ in scope."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "41.86",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; post-split basis. No invented current timestamp.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "41.86",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "656965384",
+      "unit": "shares",
+      "period": "2026-07-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Actual common shares outstanding, not EPS weighted-average shares; filing date differs from quote date.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "656965384",
+          "period": "2026-07-31"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "27500000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-stat"
+      ],
+      "note": "Rounded vendor snapshot; billion USD multiplied by 1,000,000,000.",
+      "observations": [
+        {
+          "source": "sa-stat",
+          "value": "27500000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "39063072000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-stat"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "39063072000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-stat",
+          "value": "39060000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "2230453000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Consolidated GAAP net income, not necessarily common-attributable earnings.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "2230453000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "-6809886000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-stat"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "-6809886000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-stat",
+          "value": "-6810000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "161999000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-stat"
+      ],
+      "note": "Positive cash PP&E purchases; excludes acquisitions, investments and noncash leases.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "161999000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-stat",
+          "value": "162000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "cash": {
+      "value": "7521474000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Consolidated cash and equivalents only; excludes restricted cash and investments.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "7521474000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "8720287000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "estimate",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Narrow interest-bearing debt carrying value; excludes operating leases and preferred stock; sums disclosed current/noncurrent borrowing components. $2,039.774m current loans +$2,016.374m noncurrentloans+$4,664.139m convertible notes. Not native FX or aggregation verification."
+    },
+    "eps": {
+      "value": "3.26",
+      "unit": "USD/share",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-stat"
+      ],
+      "note": "Annual GAAP diluted EPS; not adjusted or forward EPS.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "3.26",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-stat",
+          "value": "3.26",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.14",
+      "unit": "decimal",
+      "period": "2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Analyst equity hurdle above sourced 5.24% 10-year Treasury; not observed cost of capital."
+    },
+    "normalized_eps": {
+      "value": "3.26",
+      "unit": "USD/share",
+      "period": "2026-10-11 earning-capacity assumption",
+      "kind": "assumption",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Assumes annualhistoricalGAAPEPS representscurrentearningcapacity, not statementofcurrentFY2027earnings; no annualizedbestquarter, no analysttarget."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://finance.yahoo.com/quote/SMCI/history/",
+      "attempt": "Independent dated quote corroboration after observed Stock Analysis quote",
+      "result": "Static read returned HTTP 429; no Yahoo observation fabricated. Fiscal.ai exact dated search also failed to expose a directly indexed source."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm",
+      "attempt": "Static reader and alternatives",
+      "result": "SEC reader returned issuer metadata, not filing; actual2026and2025filings recoveredinbrowser. Currentannualrelease PDFwasfetched butpreliminary; auditedfilingused."
+    }
+  ],
+  "valuation": {
+    "base_eps": "normalized_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2029-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2026 ended 2026-06-30 historical GAAP EPS remains the reported anchor. The 3.26 USD/share capacity proxy is explicitly assumed at October11,2026 using annual GAAP EPS without a factual fiscal-to-current earnings bridge. 3 annual growth periods begin on valuation date and end at the calendar anniversary; exit P/E applies to hypothetical trailing twelve-month EPS at terminal date, not remote forward fiscal EPS. Dividends, interim distributions and incremental dilution are excluded; growth is per-share."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.10",
+        "exit_multiple": "8",
+        "years": 3,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "12",
+        "years": 3,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.20",
+        "exit_multiple": "18",
+        "years": 3,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

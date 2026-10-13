@@ -43,6 +43,9 @@ dev = [
     "pytest-cov",
     "pytest-custom-exit-code",
 ]
+research = [
+    "openpyxl>=3.1,<4",
+]
 
 [build-system]
 requires = ["hatchling"]

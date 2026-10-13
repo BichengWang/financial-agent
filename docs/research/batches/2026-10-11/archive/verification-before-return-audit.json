@@ -1,0 +1,159 @@
+{
+  "as_of": "2026-10-11",
+  "layout": {
+    "root": "docs/research",
+    "run_guidance": "README.md",
+    "generated_dates_tickers_model_targets": "index.md",
+    "report": "tickers/TICKER/YYYY-MM-DD/report.md",
+    "machine_artifacts": "tickers/TICKER/YYYY-MM-DD/data/",
+    "shared_materials": "batches/YYYY-MM-DD/"
+  },
+  "runtime_discovery": {
+    "omp": {
+      "command": "omp read skill://equity-investment-research:14-22",
+      "observed": "loaded current local ticker namespace and authored-guide/single-index instructions"
+    },
+    "claude_code": {
+      "project_link": ".claude/skills/equity-investment-research",
+      "canonical": "skills/equity-investment-research",
+      "observed": "link remains checkout-local; earlier actual runtime smoke is archived"
+    }
+  },
+  "checks": {
+    "preservation": {
+      "source_numeric_audit_context_and_baseline_files": 29,
+      "byte_identical": true,
+      "previous_verification_receipt": "docs/research/batches/2026-10-11/archive/verification-before-central-index.json"
+    },
+    "cli_smoke": {
+      "commands": [
+        "plan",
+        "calculate",
+        "audit",
+        "index"
+      ],
+      "actual_packages": 9,
+      "index": {
+        "generated_files": 1,
+        "research_runs": 9,
+        "date_batches": 1
+      },
+      "authored_guide_bytes_unchanged": true,
+      "source_numeric_audit_bytes_unchanged": true
+    },
+    "links": {
+      "pages": 25,
+      "local_links_and_anchors": 136,
+      "broken": 0,
+      "all_within_checkout": true
+    },
+    "pytest": {
+      "command": "uv run --python 3.12 pytest -q skills/equity-investment-research/scripts/test_research.py",
+      "passed": 27,
+      "failed": 0
+    },
+    "mypy": {
+      "command": "uv run --python 3.12 mypy skills/equity-investment-research/scripts/research.py",
+      "observed": "Success: no issues found in 1 source file"
+    },
+    "flake8": {
+      "command": "uv run --python 3.12 flake8 --max-line-length 88 skills/equity-investment-research/scripts/research.py skills/equity-investment-research/scripts/test_research.py",
+      "exit_code": 0
+    },
+    "black": {
+      "command": "uv run --python 3.12 black --check skills/equity-investment-research/scripts/research.py skills/equity-investment-research/scripts/test_research.py",
+      "exit_code": 0
+    },
+    "skill_registry": {
+      "command": "uv run --python 3.12 python -m financial_agent.harness skills validate --root skills",
+      "observed": [
+        "OK skills/equity-investment-research",
+        "OK skills/equity-publish-gate"
+      ]
+    }
+  },
+  "scan_audits": [
+    {
+      "ticker": "AAPL",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "report": "docs/research/tickers/AAPL/2026-10-11/report.md",
+      "audit": "docs/research/tickers/AAPL/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "AMZN",
+      "status": "PROVISIONAL",
+      "findings": [
+        "fact debt: needs observations from two distinct publishers"
+      ],
+      "report": "docs/research/tickers/AMZN/2026-10-11/report.md",
+      "audit": "docs/research/tickers/AMZN/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "CRM",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "report": "docs/research/tickers/CRM/2026-10-11/report.md",
+      "audit": "docs/research/tickers/CRM/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "GOOGL",
+      "status": "PASS",
+      "findings": [],
+      "report": "docs/research/tickers/GOOGL/2026-10-11/report.md",
+      "audit": "docs/research/tickers/GOOGL/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "INTC",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data",
+        "fact process_yield: unavailable"
+      ],
+      "report": "docs/research/tickers/INTC/2026-10-11/report.md",
+      "audit": "docs/research/tickers/INTC/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "META",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "report": "docs/research/tickers/META/2026-10-11/report.md",
+      "audit": "docs/research/tickers/META/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "MSFT",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact debt: estimate, not verified reported data"
+      ],
+      "report": "docs/research/tickers/MSFT/2026-10-11/report.md",
+      "audit": "docs/research/tickers/MSFT/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "NFLX",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "report": "docs/research/tickers/NFLX/2026-10-11/report.md",
+      "audit": "docs/research/tickers/NFLX/2026-10-11/data/audit.json"
+    },
+    {
+      "ticker": "TSLA",
+      "status": "PROVISIONAL",
+      "findings": [
+        "required fact shares: estimate, not verified reported data",
+        "fact debt: needs observations from two distinct publishers"
+      ],
+      "report": "docs/research/tickers/TSLA/2026-10-11/report.md",
+      "audit": "docs/research/tickers/TSLA/2026-10-11/data/audit.json"
+    }
+  ],
+  "scope": "Requested documentation structure and navigation only. Raw evidence, numeric inputs, calculations, audit results and original imported baseline preserved unchanged. Model targets are conditional earnings-multiple scenarios, not certified fair values or investment approval."
+}

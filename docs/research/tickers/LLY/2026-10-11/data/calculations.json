@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "LLY",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "1051154107200.00",
+    "market_cap_deviation": "0.001099149714285714285714285714285714285714",
+    "free_cash_flow": "8972000000",
+    "free_cash_flow_yield": "0.008544761904761904761904761904761904761905",
+    "pe": "51.38431372549019607843137254901960784314"
+  },
+  "valuation": {
+    "base_eps_fact": "eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.06",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "675.670094130240",
+        "total_return": "-0.4270437693401511104327253300770815843700",
+        "annualized_return": "-0.1054094847764277489840400325706829888562",
+        "present_target": "400.9773146910423803924415664815769182470"
+      },
+      {
+        "name": "base",
+        "growth": "0.18",
+        "exit_multiple": "32",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "1680.129296593920",
+        "total_return": "0.424719781385026329848126383271006639701",
+        "annualized_return": "0.073361196419466998856114078412124164920",
+        "present_target": "997.0749623737540997584291623597745110251"
+      },
+      {
+        "name": "bull",
+        "growth": "0.28",
+        "exit_multiple": "40",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "3154.223982182400",
+        "total_return": "1.674725874636342822254445546821338624742",
+        "annualized_return": "0.217463236548214474876944703059066371454",
+        "present_target": "1871.878411220301271369456013144575653346"
+      }
+    ],
+    "weighted_present_target": "993.2063578382500182708382537532754616559"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "required fact shares: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact process_yield: unavailable"
+    },
+    {
+      "severity": "warning",
+      "message": "valuation timing unverified: no explicit valuation/terminal dates and EPS alignment basis; returns are conditional period CAGR, not verified dated or YoY returns"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

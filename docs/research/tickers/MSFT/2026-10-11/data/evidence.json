@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "ticker": "MSFT",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "fh-cap",
+      "url": "https://www.finhacker.cz/en/stocks/microsoft-market-cap/",
+      "title": "Microsoft dated capitalization, recovered actual page observation",
+      "publisher": "FinHacker",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Recovered October11 EvidenceGapReview page read: As of October9,2026 Microsoft had market cap $3.974 trillion. Data updated Oct9,2026,4:00PM ET; metadata updated_time2026-10-09T16:00:00-04:00. Source data compiled from EDGAR filings, Bloomberg and Yahoo Finance. Capitalization represents total outstanding equity value; aggregate upstream data, not new issuer measurement."
+    },
+    {
+      "id": "public-cap",
+      "url": "https://public.com/stocks/msft/market-cap",
+      "title": "Microsoft dated capitalization, recovered actual page observation",
+      "publisher": "Public",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Recovered October11 EvidenceGapReview page read: Market Cap: $3.98T as of Oct9,2026. Body and FAQ repeat same date/value. Formula current stock price times total outstanding shares. Trend percentages differ between page sections and are not relied upon."
+    },
+    {
+      "id": "te-debt",
+      "url": "https://tradingeconomics.com/msft:us:debt",
+      "title": "Microsoft narrow debt, observed page metadata",
+      "publisher": "Trading Economics",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Fetched page metadata: Microsoft reported $40.29B in Debt for its fiscal quarter ending in June of2026. Data last updated by Trading Economics this October2026. No lease breakdown or complete debt note in fetched content; rounded narrow-debt support, not proof of lease-inclusive definition or exact issuer aggregate."
+    },
+    {
+      "id": "msft-fy26",
+      "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q4/press-release-webcast",
+      "title": "FY26 Q4 earnings release and consolidated statements",
+      "publisher": "Microsoft",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July 29, 2026. Tables in millions, except per share amounts. Twelve months ended June 30 2026: revenue 331,839; operating income 155,237; net income 133,749; diluted EPS 17.95; diluted weighted-average shares 7,453. Net cash from operations 182,935; additions to property and equipment (115,948); stock-based compensation expense 12,405; common stock repurchased (22,271); cash dividends paid (26,445); depreciation amortization and other 38,534; deferred income taxes 14,189; accounts receivable (12,737); unearned revenue 9,361. June 30 2026 balance sheet: cash and equivalents 20,935; short-term investments 55,908; current portion long-term debt 9,227; long-term debt 31,067; operating lease liabilities noncurrent 16,532; common stock outstanding 7,427 million, versus 7,434 in 2025. FY2026 segment revenue / operating income: Productivity and Business Processes 139,996 /83,879; Intelligent Cloud 137,791 /56,972; More Personal Computing 54,052 /14,386. Quarter ended June30 2026: revenue90,007; net income35,766; GAAP diluted EPS4.81; adjusted EPS4.74; Azure and other cloud services grew43%; M365 Commercial cloud grew14% reported and16% normalized for prior-year in-period recognition; Microsoft Cloud59.3 billion, up27%; commercial RPO678 billion up84%; over30 million paid M365 Copilot seats. FY2026 adjusted EPS17.28 excludes OpenAI investment gains of0.67 per diluted share /4,963 million. Q4 discrete items benefited EPS0.27, including Anthropic gain3.2 billion and retirement/severance/Xbox items. Statements labeled unaudited."
+    },
+    {
+      "id": "msft-call",
+      "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+      "title": "FY26 Q4 earnings conference call transcript",
+      "publisher": "Microsoft",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July29 2026 Nadella/Hood: Azure annual revenue surpassed100 billion up41%; 88 new datacenters this year; added1GW this quarter; GPU dock-to-live reduced nearly50%. M365 Copilot over30 million paid seats; net seat adds more than doubled quarter over quarter; M365 Commercial paid seats grew6%; Copilot/E5/E7 drove ARPU. Capital expenditures41 billion this quarter; roughly two thirds short-lived assets primarily CPUs/GPUs; total finance leases5.6 billion primarily large datacenter sites; cash paid for PP&E35.8 billion. CFO: demand continues to exceed available capacity and additional in-quarter capacity quickly monetized. Cloud gross margin65%, down year over year; Intelligent Cloud operating margin41%. RPO678 billion; excluding OpenAI increased25%; weighted average duration2.3 years; roughly30% recognized next12 months; nearly90% full-year cloud revenue from customers outside frontier-model companies. From FY27 datacenter/office building useful life extends15 to25 years; minimal FY27 operating-income benefit; more future leases classify operating rather than finance, operating leases excluded from capex; calendar2026 capex expectation approximately175 billion with investment expectations unchanged outside reclassification. FY27 capex grows, operating margins down less than1 point and free cash flow positive expected. FY27 Q1 Azure growth approximately45% constant currency; company revenue89.85 to90.95 billion; capex over50 billion. Q4 company operating margin45%; PBP58%; company headcount down2%. Management asserts model choice, substitutable models and capacity fungibility, not independently measured economics."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/msft/",
+      "title": "Microsoft stock price and overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ: MSFT Real-Time Price USD. 535.07 +12.46(2.38%) At close: Oct9,2026,4:00 PM EDT. After-hours535.00 Oct9,2026,7:59PM EDT. Market Cap3.97T; Shares Out7.43B; revenue TTM331.84B; net income133.75B; EPS17.95. Fiscal2026 revenue331.84 billion versus281.72 billion; earnings133.75 billion. Earnings dateOct28,2026."
+    },
+    {
+      "id": "sa-cap",
+      "url": "https://stockanalysis.com/stocks/msft/market-cap/",
+      "title": "Microsoft dated market capitalization",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Microsoft has a market cap or net worth of $3.97 trillion as of October9,2026. Market Cap History: Oct9,2026 3.97T. Quote535.07 At close Oct9,2026 4:00 PM EDT."
+    },
+    {
+      "id": "cmc-cap",
+      "url": "https://companiesmarketcap.com/microsoft/marketcap/",
+      "title": "Microsoft market capitalization",
+      "publisher": "CompaniesMarketCap",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Microsoft MSFT marketcap $3.973T; share price $535.07; change1 day2.38%. As of October2026 Microsoft has marketcap $3.973 trillion. End of Day market cap section: On Oct10th,2026 market cap reported $3.973 trillion by Nasdaq and CompaniesMarketCap. Disclaimer: prices delayed minutes to several hours. No exact quote clock provided; Oct10 is a non-session publication date, not directly confirmed Oct9 observation."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/msft/financials/",
+      "title": "Microsoft annual financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD; fiscal year July-June. Columns FY2026/FY2025/FY2024/FY2023/FY2022, periods June30 of each year. Revenue331,839/281,724/245,122/211,915/198,270; net income133,749/101,832/88,136/72,361/72,738; EPS17.95/13.64/11.80/9.68/9.65; operating income155,237/128,528/109,433/88,523/83,383; operating cash flow182,935/136,162/118,548/87,582/89,035; capital expenditures -115,948/-64,551/-44,477/-28,107/-23,886; FCF66,987/71,611/74,071/59,475/65,149; gross margin67.94%/68.82%/69.76%/68.92%/68.40%; operating margin46.78%/45.62%/44.64%/41.77%/42.05%."
+    },
+    {
+      "id": "sa-balance",
+      "url": "https://stockanalysis.com/stocks/msft/financials/balance-sheet/",
+      "title": "Microsoft annual balance sheet",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "In millions USD. June30 2026: cash and equivalents20,935; short-term investments55,908; current portion long-term debt9,227; long-term debt31,067; current leases9,683; long-term leases78,836; Total Debt128,813; total common shares outstanding7,427; filing date shares7,426. 2025 common shares7,434. Standardized PP&E337,253, while issuer property/equipment313,076 and operating lease ROU24,177; standardized row combines them. Total debt includes leases, unlike bond-only debt components."
+    },
+    {
+      "id": "sa-forecast",
+      "url": "https://stockanalysis.com/stocks/msft/forecast/",
+      "title": "Microsoft analyst financial forecasts",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Oct11,2026. FY2027 ending Jun30,2027: revenue391.27B; net income147.10B; EPS19.77; FCF32.90B; 50 analysts. FY2026 EPS17.28 comparative; text explicitly: EPS and Forward PE are based on non-GAAP adjusted numbers. FY2027 EPS range19.21-20.70. Average price target587.63 from56 analysts, consensusStrong Buy. No individual EPS-estimate refresh timestamp displayed."
+    },
+    {
+      "id": "cnbc-q4",
+      "url": "https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html",
+      "title": "Microsoft boosts capital spending plans citing demand",
+      "publisher": "CNBC",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Published July29 2026; updated Aug6 2026. Q4 revenue90.01 billion; GAAP net income35.77 billion/EPS4.81, adjusted EPS4.74. Capex and finance leases41 billion up69%; quarter FCF19.64 billion down23%. Azure grew43%, versus40% prior quarter; FY2026 Azure above100 billion up41%, smaller than AWS but larger than Google Cloud. CFO guided45% Azure growth in FY27Q1; useful life buildings changes15 to25 years; future leases more operating rather than finance; calendar2026 capex/finance leases175 billion. M365 Copilot over30 million paid seats versus over20 million April; RPO678 billion. Article recounts January approximately45% of625 billion RPO tied to OpenAI; that is not June30 concentration."
+    },
+    {
+      "id": "msft-openai",
+      "url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/",
+      "title": "April2026 amended OpenAI partnership",
+      "publisher": "Microsoft",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Apr27,2026: Microsoft remains OpenAI primary cloud partner; OpenAI products ship first on Azure unless Microsoft cannot and chooses not to support necessary capabilities. OpenAI can now serve all products across any cloud provider. Microsoft model/product IP license through2032 now non-exclusive. Microsoft no longer pays revenue share to OpenAI. OpenAI revenue-share payments to Microsoft through2030 at same percentage subject to total cap, independent of technology progress. Microsoft remains major shareholder."
+    },
+    {
+      "id": "sec-filings",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526323660/msft-20260630.htm",
+      "title": "Microsoft SEC filing chronology returned by EDGAR reader",
+      "publisher": "Microsoft / SEC filing",
+      "accessed_at": "2026-10-11",
+      "excerpt": "EDGAR reader returned company submissions metadata rather than requested filing text. Latest10-K listed July29,2026, accession000119312526323660, fiscal year endedJune30,2026. Latest10-Q April29,2026 for March31. September2,2026 8-K listed. This source establishes filing chronology only, not financial statement corroboration."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    },
+    {
+      "id": "fc-close",
+      "url": "https://www.financecharts.com/stocks/MSFT",
+      "title": "Microsoft closing price, observed search-result excerpt",
+      "publisher": "FinanceCharts",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed search result: The closing share price for Microsoft (MSFT) stock was $535.07 for Friday, October 09 2026, up +2.38% from the previous day. A direct page fetch returned HTTP 403; this retained observation is the dated search-result excerpt, not a claim that the full page was fetched."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "535.07",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "cmc-cap",
+        "fc-close"
+      ],
+      "note": "Regular-session close, not later after-hours quote. Ordinary Nasdaq common stock, no split normalization applied. FinanceCharts dated closing-price search excerpt independently matches Oct9; its full page returned403. CMC agrees numerically but lacks exact quote date/time and is not counted as period-matched observation.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "535.07",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fc-close",
+          "value": "535.07",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "7427000000",
+      "unit": "shares",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-balance"
+      ],
+      "note": "Actual consolidated common shares outstanding, millions converted to shares, not 7.453 billion FY diluted weighted-average denominator. Historical balance-date count, not a claimed Oct9 exact count; rounded millions. Vendor filing-date7.426 billion is a different snapshot.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "7427000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "sa-balance",
+          "value": "7427000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "3970000000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-cap",
+        "cmc-cap",
+        "fh-cap",
+        "public-cap"
+      ],
+      "note": "StockAnalysis rounded3.97T; FinHacker3.974T explicitly updated Oct9 at4PM ET and Public3.98T explicitly dated Oct9 are independently observed rounded snapshots within1% policy. CMC3.973T labels Oct10 publication and is not counted as matched observation. Historical actual June30 shares only diagnostic, not exact October register. Public trend percentages are not adopted.",
+      "observations": [
+        {
+          "source": "sa-cap",
+          "value": "3970000000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fh-cap",
+          "value": "3974000000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "public-cap",
+          "value": "3980000000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "331839000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-fin"
+      ],
+      "note": "Consolidated annual revenue, millions converted to USD.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "331839000000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "331839000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "133749000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-fin"
+      ],
+      "note": "Consolidated GAAP annual net income; includes OpenAI investment gains, not adjusted earnings.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "133749000000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "133749000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "182935000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-fin"
+      ],
+      "note": "Consolidated annual net cash from operations. Includes SBC addback, deferred taxes and working capital; not owner earnings.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "182935000000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "182935000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "115948000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-fin"
+      ],
+      "note": "Positive cash additions to property/equipment, sign-normalized from reported investing outflow; same fiscal period as OCF. Excludes noncash finance lease additions and acquisitions.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "115948000000",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "115948000000",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "eps": {
+      "value": "17.95",
+      "unit": "USD/share",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-fin"
+      ],
+      "note": "Consolidated GAAP diluted annual EPS; no split conversion, distinct from adjusted EPS17.28 and forecast19.77.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "17.95",
+          "period": "FY2026 ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "17.95",
+          "period": "FY2026 ended 2026-06-30"
+        }
+      ]
+    },
+    "cash": {
+      "value": "20935000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-balance"
+      ],
+      "note": "Consolidated cash and equivalents only; excludes55.908 billion short-term investments. No claim every dollar is freely distributable.",
+      "observations": [
+        {
+          "source": "msft-fy26",
+          "value": "20935000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "sa-balance",
+          "value": "20935000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "40294000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "estimate",
+      "sources": [
+        "msft-fy26",
+        "sa-balance",
+        "te-debt"
+      ],
+      "note": "Explicit normalization of directly observed current9,227m plus noncurrent31,067m debt gives40,294m, excluding finance/operating leases; retained as estimate, not relabeled quoted issuer aggregate. TradingEconomics directly fetched metadata reports40.29B for quarter ending June2026, compatible rounded narrow debt but without lease definition. Vendor128,813m includes leases and cannot corroborate this exclusion basis. SEC R20 returned chronology, Last10K wrapper lacked debt-note body and issuer annual hub lacked current note; full finance-lease maturity disclosure remains unavailable."
+    },
+    "short_term_investments": {
+      "value": "55908000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26",
+        "sa-balance"
+      ],
+      "note": "Excluded from required cash fact."
+    },
+    "lease_inclusive_vendor_debt": {
+      "value": "128813000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "sa-balance"
+      ],
+      "note": "Secondary standardized total debt including finance and operating lease obligations; no primary all-in reconciliation claimed."
+    },
+    "stock_based_compensation": {
+      "value": "12405000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26"
+      ],
+      "note": "GAAP expense added back in operating cash flow; economically dilutive."
+    },
+    "cash_repurchases": {
+      "value": "22271000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26"
+      ],
+      "note": "Cash flow statement repurchases, may include settlement/tax-withholding differences versus program buybacks. Do not equate with capital-return press-release definition."
+    },
+    "cash_dividends": {
+      "value": "26445000000",
+      "unit": "USD",
+      "period": "FY2026 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-fy26"
+      ],
+      "note": "Cash flow statement dividends paid, different from declared quarterly dividends."
+    },
+    "q4_finance_lease_additions": {
+      "value": "5600000000",
+      "unit": "USD",
+      "period": "FY2026 Q4 ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "msft-call"
+      ],
+      "note": "Finance leases reported by CFO; primarily datacenter sites; not cash PP&E or full-year lease additions.41 billion headline rounded capex and35.8 billion cash PP&E/5.6 billion leases do not exactly sum; rounding/timing definitions unreconciled, not forced."
+    },
+    "forward_eps": {
+      "value": "19.77",
+      "unit": "USD/share",
+      "period": "FY2027 forecast ended 2027-06-30 observed 2026-10-11",
+      "kind": "estimate",
+      "sources": [
+        "sa-forecast"
+      ],
+      "note": "Analyst adjusted non-GAAP EPS estimate, not issuer guidance or GAAP actual. Vendor displays50 analysts for FY27; individual refresh dates unavailable. No manual conversion from historical GAAP17.95."
+    },
+    "required_return": {
+      "value": "0.105",
+      "unit": "decimal",
+      "period": "Five-year conditional model as of 2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "10.5% nominal USD price-only hurdle exceeds observed5.24%10Y par yield; compensation for equity duration, execution and multiple/capital intensity risk, not a hidden fix for catastrophic risks."
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    }
+  },
+  "valuation": {
+    "base_eps": "forward_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.03",
+        "exit_multiple": "20",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.11",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.17",
+        "exit_multiple": "34",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

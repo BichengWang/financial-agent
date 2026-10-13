@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "JD",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "37223471386.395",
+    "market_cap_deviation": null,
+    "free_cash_flow": "216000000",
+    "free_cash_flow_yield": null,
+    "pe": "14.72282608695652173913043478260869565217"
+  },
+  "valuation": null
+}

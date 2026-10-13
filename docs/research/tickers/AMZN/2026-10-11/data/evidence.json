@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "ticker": "AMZN",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "trefis-debt",
+      "url": "https://www.trefis.com/data/companies/AMZN?from=AMZN-2026-06-02",
+      "title": "Amazon debt display with different scope and snapshot",
+      "publisher": "Trefis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Actual page read: Valuation & Metrics, Now10/11/26, Debt ($Bil)223.2 and Cash($Bil)123.0. Historical2025 debt135.4,2024 debt134.7. No compatibleJune30,2026 total251.635B directly displayed in retained table; current page date is not silently assigned to balance-sheet measurement. Research ignores trade-action promotions."
+    },
+    {
+      "id": "amzn-q2",
+      "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q2/earnings-result/AMZN-Q2-2026-Earnings-Release.pdf",
+      "title": "Second-quarter 2026 earnings release",
+      "publisher": "Amazon",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July 30, 2026; quarter ended June 30, 2026. Tables in millions USD except per share. TTM revenue 775,680; net income 135,281; diluted EPS 12.44; operating cash flow 161,403; purchases of property and equipment (173,028); proceeds from property/equipment sales and incentives 4,021; net purchases 169,007; issuer FCF (7,604). June 30 cash and equivalents 78,213; marketable securities 44,775; long-term debt 128,894; long-term lease liabilities 94,338. Common shares outstanding 10,783 million June 30 versus 10,731 million December 31, 2025. Q2 revenue 200,606; operating income 27,461; GAAP net income 62,647 and EPS 5.75; other income 53,415 primarily Anthropic investments. AWS sales 42,232, growth 37%, operating income 16,621, margin 39.4%; North America sales 116,177, operating income 9,123, margin 7.9%; International sales 42,197, operating income 1,717, margin 4.1%. Advertising 19,809, growth 26%; third-party services 46,780, growth 16%; online stores 70,432, growth 15%; subscriptions 13,730, growth 12%. TTM SBC 19,314; H1 SBC 10,070. TTM finance-lease principal repayments 1,599, financing-obligation principal 308, assets acquired under finance leases 4,048, assets acquired under operating leases 24,897, PP&E acquired not yet paid increase 29,267. H1 long-term debt proceeds 66,998. Shipping costs Q2 27,873, growth 19%, paid units growth 17%; third-party unit mix 61%. Q3 guidance revenue 197-202 billion, operating income 22.5-26.5 billion; Prime Day moved to June; excluding event timing growth nearly 400bp higher. AI business and chips business each over 25 billion annual revenue run rates, not additive independent segment sales. Prime first-half same-day/overnight items over 40% higher. Quarterly AWS growth sequence Q1/Q2/Q3/Q4 2025 17%/17%/20%/24%, Q1/Q2 2026 28%/37%."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/amzn/",
+      "title": "Amazon stock overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ AMZN, USD. 262.43 at close Oct 9, 2026 4:00 PM EDT; after-hours 262.53 Oct 9 7:59 PM EDT. Shares Out 10.79B; market cap 2.83T; TTM revenue 775.68B, net income 135.28B, EPS 12.44, PE 21.10. No dividend. Estimated earnings Oct 29, 2026."
+    },
+    {
+      "id": "gf-quote",
+      "url": "https://www.gurufocus.com/news/9117895/a-look-at-amazoncom-inc-amzn-after-33-gain-gf-value-25052-vs-price-26243",
+      "title": "October 9 Amazon price alert",
+      "publisher": "GuruFocus",
+      "accessed_at": "2026-10-11",
+      "excerpt": "10/09/2026 16:00: Amazon shares rose 3.3% to current price $262.43. TTM PE 21.1x. The automated article calls Amazon unprofitable or cash-flow-negative; this conflates negative cash flow and GAAP profitability, so that characterization is not adopted. Quote provider disclosed as QuoteMedia; fundamentals FactSet."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/amzn/financials/",
+      "title": "Amazon annual and TTM financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD, fiscal January-December. TTM ending Jun 30 2026: revenue 775,680; net income 135,281; EPS 12.44; operating cash flow 161,403; capex -173,028; FCF -11,625. FY2021/2022/2023/2024/2025 ending respective Dec31: revenue 469,822/513,983/574,785/637,959/716,924; net income 33,364/-2,722/30,425/59,248/77,670; EPS 3.24/-0.27/2.90/5.53/7.17; OCF 46,327/46,752/84,946/115,877/139,514; gross capex 61,053/63,645/52,729/82,999/131,819; gross-spend FCF -14,726/-16,893/32,217/32,878/7,695. Gross margins 42.03%/43.80%/46.98%/48.85%/50.29%; operating margins 5.29%/2.60%/6.41%/10.75%/11.15%; net margins 7.10%/-0.53%/5.29%/9.29%/10.83%. FY2021-2025 AWS revenues 62,202/80,096/90,757/107,556/128,725; advertising 31,160/37,739/46,906/56,214/68,635."
+    },
+    {
+      "id": "sa-bs",
+      "url": "https://stockanalysis.com/stocks/amzn/financials/balance-sheet/",
+      "title": "Amazon standardized balance sheet",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Millions USD; period Jun 30, 2026. Cash & Equivalents 78,213; Short-Term Investments 44,775; Restricted Cash 283; Short-Term Debt 325; Current Portion of Long-Term Debt 3,745; Current Portion of Leases 15,433; Long-Term Debt 137,794; Long-Term Leases 94,338; Total Debt 251,635. Total Common Shares Outstanding 10,783 million; Filing Date Shares Outstanding 10,786 million. Dec31 2025 common shares 10,731 million. Vendor standardized long-term debt differs from issuer balance-sheet line 128,894, so total-debt canonical observation has no matching primary definition."
+    },
+    {
+      "id": "sa-cap",
+      "url": "https://stockanalysis.com/stocks/amzn/market-cap/",
+      "title": "Amazon October 9 market capitalization",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Amazon market cap $2.83 trillion as of October 9, 2026; price 262.43 at 4 PM EDT. Market Cap = Stock Price * Shares Outstanding."
+    },
+    {
+      "id": "fh-cap",
+      "url": "https://www.finhacker.cz/en/stocks/amazon-market-cap/",
+      "title": "Amazon historical market capitalization",
+      "publisher": "FinHacker",
+      "accessed_at": "2026-10-11",
+      "excerpt": "As of October 9, 2026 Amazon had a market cap $2.83 trillion; data updated Oct9 2026 4 PM ET. Basic outstanding shares, not diluted options/RSUs. Source data compiled from EDGAR filings, Bloomberg and Yahoo Finance; minor inaccuracies possible. Independent publisher observation but upstream aggregation rather than new primary measurement."
+    },
+    {
+      "id": "sa-forecast",
+      "url": "https://stockanalysis.com/stocks/amzn/forecast/",
+      "title": "Amazon analyst financial forecast",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed October11 2026. FY2026 period ending Dec31 2026 EPS average 8.31, low 7.65, high 9.49; FY2027 EPS Next Year 10.47. Explicit footer: EPS and Forward PE based on non-GAAP adjusted numbers. FY2026 revenue forecast 828.43B, operating income 110.02B, GAAP net income row 140.27B; 56 financial analysts. Price target consensus 331.36 from 60 analysts, Strong Buy. Adjusted EPS is not directly comparable to the GAAP income row; underlying adjustment bridge absent."
+    },
+    {
+      "id": "cnbc-q2",
+      "url": "https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html",
+      "title": "Amazon hikes 2026 capex to $220 billion",
+      "publisher": "CNBC",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July30 updated July31 2026. Q2 EPS $1.97 adjusted, revenue $200.61B, AWS $42.2B and ads $19.81B. CEO conference call cash capex forecast increased from $200B to $220B driven by higher memory costs; insufficient capacity to meet 2026 and 2027 demand. Quarter capex $54.2B; issuer TTM FCF outflow $7.6B; AWS backlog $496B. Q2 net income $62.6B, EPS $5.75 includes $53.4B pretax primarily Anthropic investment income. Article reports rival Google Cloud growth 82% and Azure 43%, with different bases; not treated as share comparison."
+    },
+    {
+      "id": "sec-buybacks",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+      "title": "Amazon June 2026 10-Q repurchases search excerpt",
+      "publisher": "Amazon",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed live web-search excerpt: There were no repurchases of our common stock during the six months ended June 30, 2025 or 2026. As of June 30, 2026, we have $6.1 billion remaining under the repurchase program. Direct read returned company filing index rather than document body; retained observation is search excerpt only, not full proxy or filing review."
+    },
+    {
+      "id": "ftc-antitrust",
+      "url": "https://search.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon-illegally-maintaining-monopoly-power",
+      "title": "FTC e-commerce antitrust complaint announcement",
+      "publisher": "Federal Trade Commission",
+      "accessed_at": "2026-10-11",
+      "excerpt": "September26 2023: FTC and 17 state attorneys general sued Amazon, alleging exclusionary anti-discounting conduct and conditioning Prime eligibility on costly fulfillment service; allegations also concern paid search ads, own-product preference and seller fees. Seeks permanent injunction. FTC states complaint issued on reason-to-believe standard: allegations are not adjudicated conclusions. This source does not establish October2026 litigation schedule or outcome."
+    },
+    {
+      "id": "ftc-prime",
+      "url": "https://search.ftc.gov/news-events/news/press-releases/2026/09/ftc-announces-additional-payments-consumers-stemming-ftcs-amazon-prime-settlement",
+      "title": "FTC expands Amazon Prime settlement redress",
+      "publisher": "Federal Trade Commission",
+      "accessed_at": "2026-10-11",
+      "excerpt": "September17 2026: Amazon accelerates/expands payments under 2025 $2.5B Prime settlement ($1.5B consumer redress plus $1B civil penalty). More than $845M redress paid as of September2026. Federal court approved revised order; automatic expanded eligibility payments start October1 2026; further supplemental payments could begin April2027. Resolves allegations of nonconsensual enrollment and difficult cancellation, separate from e-commerce monopoly case."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "262.43",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "gf-quote"
+      ],
+      "note": "Regular-session close, 16:00 EDT; not the separately quoted 262.53 after-hours. Post-2022 split share basis; no ADR.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "262.43",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "gf-quote",
+          "value": "262.43",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "10783000000",
+      "unit": "shares",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-bs"
+      ],
+      "note": "Actual single-class common shares outstanding at June30, not Q2 diluted weighted average 10,903m or vendor filing-date 10,786m. Millions multiplied by 1000000. Not current Oct9 exact outstanding shares; current quote shares 10.79B broadly consistent but not an observation for June30.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "10783000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "sa-bs",
+          "value": "10783000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "2830000000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-cap",
+        "fh-cap"
+      ],
+      "note": "Rounded 2.83 trillion regular-session snapshot across common equity. FinHacker independent publisher aggregates upstream data; not issuer audit assurance.",
+      "observations": [
+        {
+          "source": "sa-cap",
+          "value": "2830000000000",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fh-cap",
+          "value": "2830000000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "775680000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-fin"
+      ],
+      "note": "Consolidated sales; original millions USD converted to dollars.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "775680000000",
+          "period": "TTM ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "775680000000",
+          "period": "TTM ended 2026-06-30"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "135281000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-fin"
+      ],
+      "note": "Consolidated GAAP net income; includes large noncash/non-operating Anthropic marks. Not normalized income. Original millions converted.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "135281000000",
+          "period": "TTM ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "135281000000",
+          "period": "TTM ended 2026-06-30"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "161403000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-fin"
+      ],
+      "note": "Consolidated same-period reported OCF; includes SBC addback and working-capital timing. Original millions converted.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "161403000000",
+          "period": "TTM ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "161403000000",
+          "period": "TTM ended 2026-06-30"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "173028000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-fin"
+      ],
+      "note": "Positive gross cash purchases of PP&E. Same TTM as OCF. Original negative spending sign changed to positive; millions converted. Does not net 4,021m proceeds/incentives and excludes noncash lease additions, finance lease principal and acquisitions.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "173028000000",
+          "period": "TTM ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "173028000000",
+          "period": "TTM ended 2026-06-30"
+        }
+      ]
+    },
+    "eps": {
+      "value": "12.44",
+      "unit": "USD/share",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-fin"
+      ],
+      "note": "GAAP diluted TTM per-share earnings on current split basis. Investment marks materially boost denominator; not forward or normalized.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "12.44",
+          "period": "TTM ended 2026-06-30"
+        },
+        {
+          "source": "sa-fin",
+          "value": "12.44",
+          "period": "TTM ended 2026-06-30"
+        }
+      ]
+    },
+    "cash": {
+      "value": "78213000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-bs"
+      ],
+      "note": "Consolidated cash/equivalents only. Excludes 44,775m marketable securities and vendor 283m restricted cash. No assertion all balances distributable. Original millions converted.",
+      "observations": [
+        {
+          "source": "amzn-q2",
+          "value": "78213000000",
+          "period": "2026-06-30"
+        },
+        {
+          "source": "sa-bs",
+          "value": "78213000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "debt": {
+      "value": "251635000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "sa-bs",
+        "amzn-q2",
+        "trefis-debt"
+      ],
+      "note": "Vendor standardized251635m includes current/noncurrent borrowings and operating/finance lease liabilities. Sole directly matching observation StockAnalysis; primary noncurrent128894m differs from standardized137794m by8900m, bridge unobserved. Trefis actually displays223.2B in Now10/11/26 table with cash123.0B; no compatible balance period/scope, not canonical observation. WallStSmart header223.23B plus visible historical65650m long-term line also lacks matchingJune2026 aggregate. Finbox/Yahoo failed; search-linked FastEDGAR note actually belonged to Jazz Pharmaceuticals and was rejected, not Amazon evidence. No false corroboration or net debt metric.",
+      "observations": [
+        {
+          "source": "sa-bs",
+          "value": "251635000000",
+          "period": "2026-06-30"
+        }
+      ]
+    },
+    "forward_eps": {
+      "value": "8.31",
+      "unit": "USD/share",
+      "period": "FY2026 ending 2026-12-31 forecast observed 2026-10-11",
+      "kind": "estimate",
+      "sources": [
+        "sa-forecast"
+      ],
+      "note": "Analyst consensus non-GAAP adjusted forecast, not reported EPS and not author-verified normalized owner earnings. Vendor adjustment bridge unavailable; must retain SBC economics and dilution in scenario judgment, not assume marks recur."
+    },
+    "required_return": {
+      "value": "0.11",
+      "unit": "decimal",
+      "period": "Five-year annual required price-only return assumption as of 2026-10-11",
+      "kind": "assumption",
+      "sources": [],
+      "note": "11% nominal USD equity hurdle versus observed 5.24% Treasury, reflecting ordinary equity opportunity cost and volatile capital-intensive reinvestment; operating downside separately in scenarios, unmodeled regulatory tails not hidden in rate."
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "marketable_securities": {
+      "value": "44775000000",
+      "unit": "USD",
+      "period": "2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2",
+        "sa-bs"
+      ],
+      "note": "Separate from cash; original millions converted."
+    },
+    "issuer_free_cash_flow": {
+      "value": "-7604000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2"
+      ],
+      "note": "Issuer net-spend FCF nets sale/incentive proceeds. Not engine gross-capex FCF."
+    },
+    "stock_based_compensation": {
+      "value": "19314000000",
+      "unit": "USD",
+      "period": "TTM ended 2026-06-30",
+      "kind": "reported",
+      "sources": [
+        "amzn-q2"
+      ],
+      "note": "Reported SBC noncash expense added back to OCF; still economic compensation and possible dilution."
+    }
+  },
+  "valuation": {
+    "base_eps": "forward_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.02",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.25"
+      },
+      {
+        "name": "base",
+        "growth": "0.13",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "36",
+        "years": 5,
+        "probability": "0.25"
+      }
+    ]
+  }
+}

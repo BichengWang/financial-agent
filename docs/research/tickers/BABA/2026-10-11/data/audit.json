@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "required fact market_cap: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact debt: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "fact eps: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact revenue: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact net_income: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact operating_cash_flow: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact capital_expenditure: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact cash: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact shares: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "valuation omitted; no valuation decision can be verified"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "BE",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "82615665000.00",
+    "market_cap_deviation": "0.00006857523302263648468708388814913448735020",
+    "free_cash_flow": "57190000",
+    "free_cash_flow_yield": "0.0006922890691199612637695194286406004115724",
+    "pe": null
+  },
+  "valuation": null
+}

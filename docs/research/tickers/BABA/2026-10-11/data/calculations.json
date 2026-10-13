@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "BABA",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "277311300000.00",
+    "market_cap_deviation": "0.0009070237493683678625568468923698837796867",
+    "free_cash_flow": "-7226000000",
+    "free_cash_flow_yield": "-0.02608099328665271060420125604562188695589",
+    "pe": "17.45611285266457680250783699059561128527"
+  },
+  "valuation": null
+}

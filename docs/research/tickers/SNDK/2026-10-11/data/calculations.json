@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "SNDK",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "231608504161.82",
+    "market_cap_deviation": "0.000006458435214368982341004274426838219420578",
+    "free_cash_flow": "11494000000",
+    "free_cash_flow_yield": "0.04962652735201416173740339363585337420664",
+    "pe": "21.44549891540130151843817787418655097614"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.25",
+        "exit_multiple": "10",
+        "years": 3,
+        "probability": "0.30",
+        "target_price": "311.17500000",
+        "total_return": "-0.8032803985282775537039612598146438912139",
+        "annualized_return": "-0.4184114086803654238913764270303315199013",
+        "present_target": "215.6598842467618963792980372126354133386"
+      },
+      {
+        "name": "base",
+        "growth": "0.05",
+        "exit_multiple": "16",
+        "years": 3,
+        "probability": "0.50",
+        "target_price": "1366.18272000",
+        "total_return": "-0.1363222616985497717818715150902125399856",
+        "annualized_return": "-0.0476777998779269100973597592603590677922",
+        "present_target": "946.8331557969834298636701025783545187217"
+      },
+      {
+        "name": "bull",
+        "growth": "0.25",
+        "exit_multiple": "22",
+        "years": 3,
+        "probability": "0.20",
+        "target_price": "3169.37500000",
+        "total_return": "1.003625570545321212274468650036034441340",
+        "annualized_return": "0.260681912427772578064342531759184359166",
+        "present_target": "2196.535858068871166826183712350916246967"
+      }
+    ],
+    "weighted_present_target": "977.4217147862945172108612049231511327558"
+  }
+}

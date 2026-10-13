@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "CARR",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "45799774800.00",
+    "market_cap_deviation": "0.000004917030567685589519650655021834061135371",
+    "free_cash_flow": "2121000000",
+    "free_cash_flow_yield": "0.04631004366812227074235807860262008733624",
+    "pe": "32.30232558139534883720930232558139534884"
+  },
+  "valuation": {
+    "base_eps_fact": "continuing_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "16",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "24.442018345472",
+        "total_return": "-0.5600788634724262059035277177825773938085",
+        "annualized_return": "-0.1514548300473505134485024193749147811210",
+        "present_target": "15.17657036930661715853984141669409069177"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "54.629617895424",
+        "total_return": "-0.0167455382393088552915766738660907127430",
+        "annualized_return": "-0.0033717687600725277272979047363531841839",
+        "present_target": "33.92069462184277030257496072672631650844"
+      },
+      {
+        "name": "bull",
+        "growth": "0.14",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "91.110618039168",
+        "total_return": "0.639859935910151187904967602591792656587",
+        "annualized_return": "0.103980369725650747123395908442864381609",
+        "present_target": "56.57252549761752488342202159564361599742"
+      }
+    ],
+    "weighted_present_target": "32.82782352123687527553383710750010866123"
+  }
+}

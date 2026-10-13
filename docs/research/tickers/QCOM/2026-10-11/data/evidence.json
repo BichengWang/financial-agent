@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "ticker": "QCOM",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-annual",
+      "url": "http://s204.q4cdn.com/645488518/files/doc_financials/2025/q4/FY2025-4th-Quarter-Earnings-Release.pdf",
+      "title": "QCOM annual financial statements and economics",
+      "publisher": "Qualcomm Incorporated",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Qualcomm Announces Fourth Quarter and Fiscal 2025 Results. November 5, 2025. Fiscal year ended September 28, 2025. In millions except per share: Revenue 44,284 (2024 38,962); net income 5,541 (2024 10,142); diluted EPS 5.01 (2024 8.97), non-GAAP EPS 12.03. Non-cash $5.7 billion charge, or $5.29 per share, to establish valuation allowance against U.S. federal deferred tax assets because corporate alternative minimum tax expected beginning fiscal 2026; excluded from non-GAAP. QCT revenue 38,367; EBT11,670; EBT margin30%; QTL revenue5,582; EBT4,043; EBT margin72%. QCT Handsets27,793; Automotive3,957; IoT6,617. Annual stock repurchases56 million shares/$8,791 million; dividends$3,805 million/$3.48 per share. Balance sheet September28,2025 in millions: Cash and cash equivalents5,520; restricted cash2,323; marketable securities4,635; short-term debt0; long-term debt14,811; common shares issued and outstanding1,074 million (2024 1,113). Cash flow FY2025: operating cash flow14,012; capital expenditures(1,192); share-based compensation2,783; acquisitions and investments net(743). Risks: dependence on small number of customers/licensees, particularly premium handsets; customers vertically integrating; China concentration and U.S./China trade/national security tensions; patent-license renewal/renegotiation; attempts to avoid royalties; investigations/legal challenges; limited third-party suppliers; debt. Qualcomm Incorporated includes QTL and vast majority of patent portfolio; Qualcomm Technologies subsidiary operates QCT and engineering."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/qcom/history/",
+      "title": "QCOM observed daily quote",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "NASDAQ QCOM USD. At close: Oct9,2026,4:00PM EDT. Close 175.50 USD/share. Regular-session unadjusted close, not after-hours or analyst target."
+    },
+    {
+      "id": "sa-stat",
+      "url": "https://stockanalysis.com/stocks/qcom/statistics/",
+      "title": "QCOM statistics snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Stock Analysis October9,2026 close175.50; sharesoutstanding1.07 billion; marketcap187.41 billion. Financials millionsUSD FY2025 September28,2025: revenue44,284; netincome5,541; EPS5.01; OCF14,012; capex(1,192). FY2021/22/23/24/25 revenue33,566/44,200/35,820/38,962/44,284; EPS7.87/11.37/6.42/8.97/5.01; OCF10,536/9,096/11,299/12,202/14,012; capex1,888/2,262/1,450/1,041/1,192. LatestTTM June28,2026 revenue44,069; netincome9,260; EPS8.59; OCF12,401; capex1,985. FY2025 cashand investments10,155 and standardizeddebt15,643 are different scopes from issuer cash5,520 and bonddebt14,811."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/qcom/financials/",
+      "title": "QCOM annual and TTM histories",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Stock Analysis October9,2026 close175.50; sharesoutstanding1.07 billion; marketcap187.41 billion. Financials millionsUSD FY2025 September28,2025: revenue44,284; netincome5,541; EPS5.01; OCF14,012; capex(1,192). FY2021/22/23/24/25 revenue33,566/44,200/35,820/38,962/44,284; EPS7.87/11.37/6.42/8.97/5.01; OCF10,536/9,096/11,299/12,202/14,012; capex1,888/2,262/1,450/1,041/1,192. LatestTTM June28,2026 revenue44,069; netincome9,260; EPS8.59; OCF12,401; capex1,985. FY2025 cashand investments10,155 and standardizeddebt15,643 are different scopes from issuer cash5,520 and bonddebt14,811."
+    },
+    {
+      "id": "issuer-update",
+      "url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+      "title": "Q3FY2026 latest results",
+      "publisher": "Qualcomm Incorporated",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July29,2026 results for quarter ended June28,2026: Revenues$9.9billion GAAP EPS$1.87 non-GAAP EPS$2.21. CombinedQCT Automotive/IoT revenue grew28% YoY.23consecutive quarters double-digit automotive revenue growth. Completed Modular acquisition. Management target nonhandset revenues$40billion FY2029; FY2027 nonhandset growth greater than60% is forward-looking, not actual."
+    },
+    {
+      "id": "fi-close",
+      "url": "https://fiscal.ai/company/NasdaqGS-QCOM",
+      "title": "Dated quote search observation",
+      "publisher": "Fiscal.ai",
+      "accessed_at": "2026-10-11",
+      "excerpt": "QUALCOMM Incorporated — 2026-10-09 (USD). Open176.40; Close175.50. Change-0.51(-0.29%) versus176.01close2026-10-08. Prices split-adjusted. Observed search result; fullread429."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "175.50",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote",
+        "fi-close"
+      ],
+      "note": "Observed regular close; post-split basis. No invented current timestamp.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "175.50",
+          "period": "2026-10-09"
+        },
+        {
+          "source": "fi-close",
+          "value": "175.50",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "1074000000",
+      "unit": "shares",
+      "period": "2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Actual common shares outstanding, not EPS weighted-average shares; filing date differs from quote date.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "1074000000",
+          "period": "2025-09-28"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "187410000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-stat"
+      ],
+      "note": "Rounded vendor snapshot; billion USD multiplied by 1,000,000,000.",
+      "observations": [
+        {
+          "source": "sa-stat",
+          "value": "187410000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "44284000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "44284000000",
+          "period": "FY2025 ended 2025-09-28"
+        },
+        {
+          "source": "sa-fin",
+          "value": "44284000000",
+          "period": "FY2025 ended 2025-09-28"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "5541000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Consolidated GAAP net income, not necessarily common-attributable earnings.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "5541000000",
+          "period": "FY2025 ended 2025-09-28"
+        },
+        {
+          "source": "sa-fin",
+          "value": "5541000000",
+          "period": "FY2025 ended 2025-09-28"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "14012000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Reported consolidated fiscal period.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "14012000000",
+          "period": "FY2025 ended 2025-09-28"
+        },
+        {
+          "source": "sa-fin",
+          "value": "14012000000",
+          "period": "FY2025 ended 2025-09-28"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "1192000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Positive cash PP&E purchases; excludes acquisitions, investments and noncash leases.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "1192000000",
+          "period": "FY2025 ended 2025-09-28"
+        },
+        {
+          "source": "sa-fin",
+          "value": "1192000000",
+          "period": "FY2025 ended 2025-09-28"
+        }
+      ]
+    },
+    "cash": {
+      "value": "5520000000",
+      "unit": "USD",
+      "period": "2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Consolidated cash and equivalents only; excludes restricted cash and investments.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "5520000000",
+          "period": "2025-09-28"
+        }
+      ]
+    },
+    "debt": {
+      "value": "14811000000",
+      "unit": "USD",
+      "period": "2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual"
+      ],
+      "note": "Narrow interest-bearing debt carrying value; excludes operating leases and preferred stock; sums disclosed current/noncurrent borrowing components.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "14811000000",
+          "period": "2025-09-28"
+        }
+      ]
+    },
+    "eps": {
+      "value": "5.01",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-09-28",
+      "kind": "reported",
+      "sources": [
+        "issuer-annual",
+        "sa-fin"
+      ],
+      "note": "Annual GAAP diluted EPS; not adjusted or forward EPS.",
+      "observations": [
+        {
+          "source": "issuer-annual",
+          "value": "5.01",
+          "period": "FY2025 ended 2025-09-28"
+        },
+        {
+          "source": "sa-fin",
+          "value": "5.01",
+          "period": "FY2025 ended 2025-09-28"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.10",
+      "unit": "decimal",
+      "period": "2026-10-11",
+      "kind": "assumption",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Analyst equity hurdle above sourced 5.24% 10-year Treasury; not observed cost of capital."
+    },
+    "normalized_eps": {
+      "value": "8.59",
+      "unit": "USD/share",
+      "period": "2026-10-11 earning-capacity assumption",
+      "kind": "assumption",
+      "sources": [
+        "sa-fin"
+      ],
+      "note": "Uses vendor GAAPTTM June28,2026EPS8.59 as assumedcurrentearningcapacity; annualFY2025EPS5.01 remains requiredhistoricalfact. Doesnot addback all nonGAAPexclusions or automaticallyextend distantFY2029targets."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "http://s204.q4cdn.com/645488518/files/doc_financials/2025/q4/FY2025-4th-Quarter-Earnings-Release.pdf",
+      "attempt": "Static reader and alternatives",
+      "result": "AnnualPDFandofficialnewsroomfetchedsuccessfully; Fiscal.ai fullquote429 butdatedsearchsnippetretained."
+    }
+  ],
+  "valuation": {
+    "base_eps": "normalized_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 ended 2025-09-28 historical GAAP EPS remains the reported anchor. The 8.59 USD/share capacity proxy is explicitly assumed at October11,2026 using vendor latest TTM rather than the older annual tax/cycle-distorted figure. 5 annual growth periods begin on valuation date and end at the calendar anniversary; exit P/E applies to hypothetical trailing twelve-month EPS at terminal date, not remote forward fiscal EPS. Dividends, interim distributions and incremental dilution are excluded; growth is per-share."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.03",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.07",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.15",
+        "exit_multiple": "24",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

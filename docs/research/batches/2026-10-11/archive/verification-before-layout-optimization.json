@@ -1,0 +1,269 @@
+{
+  "as_of": "2026-10-11",
+  "skill": "skills/equity-investment-research",
+  "layout": "docs/TICKER/YYYY-MM-DD",
+  "runtime_discovery": {
+    "omp": {
+      "command": "omp read skill://equity-investment-research:14-24",
+      "loaded_path": ".omp/skills/equity-investment-research/SKILL.md",
+      "observed": "current ticker/date instructions and index command loaded by actual omp CLI"
+    },
+    "claude_code": {
+      "verification_phase": "Retained earlier read-only discovery smoke; canonical skill symlink unchanged by docs reorganization",
+      "command": "claude -p /equity-investment-research (read-only discovery smoke)",
+      "loaded_path": ".claude/skills/equity-investment-research",
+      "graph_version": 1,
+      "node_ids": [
+        "grounding",
+        "business",
+        "moat",
+        "management",
+        "inversion",
+        "industry",
+        "valuation",
+        "synthesis",
+        "audit"
+      ],
+      "is_error": false,
+      "permission_denials": [],
+      "observed": "loaded skill and graph; read-only, no company research or writes"
+    }
+  },
+  "checks": {
+    "plan": {
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py plan --tickers INTC CRM MSFT META AAPL GOOGL AMZN TSLA NFLX --as-of 2026-10-11",
+      "exit_code": 0,
+      "directories": [
+        "docs/INTC/2026-10-11",
+        "docs/CRM/2026-10-11",
+        "docs/MSFT/2026-10-11",
+        "docs/META/2026-10-11",
+        "docs/AAPL/2026-10-11",
+        "docs/GOOGL/2026-10-11",
+        "docs/AMZN/2026-10-11",
+        "docs/TSLA/2026-10-11",
+        "docs/NFLX/2026-10-11"
+      ]
+    },
+    "project_skill_links": {
+      "omp": ".omp/skills/equity-investment-research",
+      "claude_code": ".claude/skills/equity-investment-research",
+      "canonical": "skills/equity-investment-research",
+      "within_checkout": true
+    },
+    "omp_discovery": {
+      "command": "omp read skill://equity-investment-research:14-24",
+      "loaded_path": ".omp/skills/equity-investment-research/SKILL.md",
+      "observed": "current ticker/date instructions and index command loaded by actual omp CLI"
+    },
+    "clean_cutover": {
+      "old_date_first_tree_removed": true,
+      "artifact_root": "docs",
+      "layout": "TICKER/YYYY-MM-DD"
+    },
+    "pytest": {
+      "command": "uv run --python 3.12 pytest -q skills/equity-investment-research/scripts/test_research.py",
+      "passed": 25,
+      "failed": 0
+    },
+    "mypy": {
+      "command": "uv run --python 3.12 mypy skills/equity-investment-research/scripts/research.py",
+      "observed": "Success: no issues found in 1 source file"
+    },
+    "flake8": {
+      "command": "uv run --python 3.12 flake8 --max-line-length 88 skills/equity-investment-research/scripts/research.py skills/equity-investment-research/scripts/test_research.py",
+      "exit_code": 0
+    },
+    "skill_registry": {
+      "command": "uv run --python 3.12 python -m financial_agent.harness skills validate --root skills",
+      "observed": [
+        "OK skills/equity-investment-research",
+        "OK skills/equity-publish-gate"
+      ]
+    },
+    "index_smoke": {
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py index",
+      "exit_code": 0,
+      "generated_files": 21,
+      "research_runs": 9,
+      "date_batches": 1
+    },
+    "calculate_smoke": {
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py calculate docs/INTC/2026-10-11/evidence.json --output docs/INTC/2026-10-11/calculations.json",
+      "exit_code": 0,
+      "observed": "actual native output exactly matches saved Intel calculations; saved bytes unchanged"
+    },
+    "batch_audit": {
+      "runs": 9,
+      "PASS": 1,
+      "PROVISIONAL": 8,
+      "BLOCKED": 0
+    },
+    "black": {
+      "command": "uv run --python 3.12 black --check skills/equity-investment-research/scripts/research.py skills/equity-investment-research/scripts/test_research.py",
+      "exit_code": 0,
+      "observed": "2 files would be left unchanged"
+    },
+    "navigation_links": {
+      "pages": 21,
+      "links_and_anchors_checked": 287,
+      "broken": 0,
+      "all_within_checkout": true
+    },
+    "native_graph_coverage": {
+      "tickers": [
+        "AAPL",
+        "AMZN",
+        "CRM",
+        "GOOGL",
+        "INTC",
+        "META",
+        "MSFT",
+        "NFLX",
+        "TSLA"
+      ],
+      "complete_packages": 9,
+      "graph_sections_per_report": 9
+    }
+  },
+  "scan_audits": [
+    {
+      "ticker": "AAPL",
+      "price": "336.64",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "232.3463060072298448938534998230374229281",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "sources": 18,
+      "report_lines": 249,
+      "report": "docs/AAPL/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/AAPL/2026-10-11 --output docs/AAPL/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "AMZN",
+      "price": "262.43",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "271.6651366219390133379735482578657026672",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "fact debt: needs observations from two distinct publishers"
+      ],
+      "sources": 14,
+      "report_lines": 244,
+      "report": "docs/AMZN/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/AMZN/2026-10-11 --output docs/AMZN/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "CRM",
+      "price": "229.13",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "226.1594981038268966127377682697480905009",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "sources": 17,
+      "report_lines": 270,
+      "report": "docs/CRM/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/CRM/2026-10-11 --output docs/CRM/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": "351.66",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "289.2888404779634165753548104990250664483",
+      "status": "PASS",
+      "exit_code": 0,
+      "findings": [],
+      "sources": 17,
+      "report_lines": 233,
+      "report": "docs/GOOGL/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/GOOGL/2026-10-11 --output docs/GOOGL/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "INTC",
+      "price": "104.70",
+      "quote_time": "2026-10-09T16:00:01-04:00",
+      "weighted_present_target": "47.95517066690124123144839203903135598264",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data",
+        "fact process_yield: unavailable"
+      ],
+      "sources": 17,
+      "report_lines": 290,
+      "report": "docs/INTC/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/INTC/2026-10-11 --output docs/INTC/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "META",
+      "price": "718.67",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "578.2614148272490088137492792458697498634",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "sources": 17,
+      "report_lines": 260,
+      "report": "docs/META/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/META/2026-10-11 --output docs/META/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "MSFT",
+      "price": "535.07",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "545.4788886464068053616127612516408057943",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact debt: estimate, not verified reported data"
+      ],
+      "sources": 16,
+      "report_lines": 263,
+      "report": "docs/MSFT/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/MSFT/2026-10-11 --output docs/MSFT/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "NFLX",
+      "price": "70.30",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "96.71964856689675208468417803154786797067",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data"
+      ],
+      "sources": 18,
+      "report_lines": 265,
+      "report": "docs/NFLX/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/NFLX/2026-10-11 --output docs/NFLX/2026-10-11/audit.json"
+    },
+    {
+      "ticker": "TSLA",
+      "price": "382.70",
+      "quote_time": "2026-10-09T16:00:00-04:00",
+      "weighted_present_target": "48.04104078507159851039881684859934921826",
+      "status": "PROVISIONAL",
+      "exit_code": 1,
+      "findings": [
+        "required fact shares: estimate, not verified reported data",
+        "fact debt: needs observations from two distinct publishers"
+      ],
+      "sources": 14,
+      "report_lines": 251,
+      "report": "docs/TSLA/2026-10-11/report.md",
+      "command": "uv run --python 3.12 python skills/equity-investment-research/scripts/research.py audit docs/TSLA/2026-10-11 --output docs/TSLA/2026-10-11/audit.json"
+    }
+  ],
+  "legacy_intel_trial": "docs/INTC/2026-10-11/claude-trial.md",
+  "corroboration_review": "docs/runs/2026-10-11/corroboration-review.md",
+  "scope": "Offline evidence-contract, citation-presence, graph structure and arithmetic consistency; no independent source-truth certification, investment approval, execution or order placement."
+}

@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "ticker": "CARR",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-fy25",
+      "url": "https://s205.q4cdn.com/164393362/files/doc_financials/2025/q4/Q42025-Earnings-Press-Release.pdf",
+      "title": "2025 results and 2026 outlook",
+      "publisher": "Carrier Global",
+      "accessed_at": "2026-10-11",
+      "excerpt": "February5,2026. Tables in millions USD except EPS and actual shares. FY2025 sales21,747; net earnings1,587, attributable common1,484; diluted total EPS1.72, continuing EPS1.69, adjusted continuing2.59. OCF consolidated2,513, continuing OCF2,089, discontinued OCF424; cash capex392 continuing, none discontinued; release FCF2,121. Cash1,555 excluding restricted2. Short/current long debt468, long debt11,365; operating lease noncurrent418, current embedded in accrued liabilities. Actual December31 common outstanding836,141,122. FY2024 revenue22,486, attributed net5,604, total EPS6.15, OCF563 (continuing1,571, discontinued -1,008), continuing capex519 plus discontinued14. FY2025 GAAP operating margin10.0%, adjusted15.1%; product sales19,173/service2,574. Repurchases2,892, dividends772. FY2025 receivable cash change(98), inventories(81), payables/accruals(219). Q4 Americas residential down38%, commercial up double digits; commercial HVAC orders up nearly50% driven by data centers. Reportable segments recast in2025; segment operating profit excludes restructuring, acquired-intangible amortization and significant items. Annual segment sales Americas10,470, Europe5,044, AsiaPacific/MiddleEast/Africa3,339, Transportation2,894. Orders may be cancelled without penalty. Prior year commercial refrigeration disposal gain and discontinued disposal gains distort comparisons. Initial2026 guidance expected Riello sale byQ1; not an observed closure."
+    },
+    {
+      "id": "issuer-q226",
+      "url": "https://www.prnewswire.com/news-releases/carrier-reports-second-quarter-2026-results-302836318.html",
+      "title": "Second quarter 2026 results",
+      "publisher": "Carrier Global",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July28,2026 issuer release distributed by PR Newswire; not an independent publisher. Millions USD. Q2 sales6,351 +4%, organic+3%, GAAP operating825 margin13.0% versus14.8%, adjusted margin17.2% versus19.1%; continuing common net501 EPS0.60 adjusted0.86. Total company orders up~40%, commercial HVAC~65%, data centers>300%; exclusions NORESCO and Riello. Americas commercial sales down8% delivery timing; residential+9%, light commercial+10%, segment margin24.4% versus27.0%, unfavorable mix/input cost. Q2 OCF927/capex117; H1 OCF1,006/capex211/FCF795 versus988 prior H1. June30 cash1,344, inventories2,759 versus2,483, receivables3,246 versus2,639; current borrowings1,638. Raised guidance sales~23B, adjusted EPS2.90 (prior2.80), FCF~2B. Riello exit completedJuly1; NORESCO exit announced; sales headwinds225M/125M. VCS acquisition and portfolio transformation integration risks disclosed.2026 orders may cancel without penalty."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/carr/",
+      "title": "Dated regular-session quote and snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "CARR ordinary common stock, NYSE, USD. At close October9,2026,4:00PM EDT: $55.56. Shares Out 824.33M; market cap 45.8B. Vendor displayed actual shares outstanding, not weighted-average EPS shares; underlying share effective date not supplied in quote snapshot. After-hours separately displayed and not used. No split normalization needed for displayed USD price/EPS basis."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/carr/financials/",
+      "title": "Annual and trailing financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD; FY2025 December31 revenue21,747; common net1,484; diluted total EPS1.72; OCF2,513; capex-392; cash/investments1,555; standardized debt12,393. FY2021-25 revenue20,613/17,288/18,951/22,486/21,747 and OCF2,237/1,743/2,607/563/2,513. Vendor FY2024 capex519 omits discontinued14; not accepted as full consolidated capex. FY2025 operating2,104 differs issuer2,172, not GAAP corroboration."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    },
+    {
+      "id": "issuer-noresco",
+      "url": "https://www.prnewswire.com/news-releases/carrier-completes-sale-of-noresco-to-opterra-energy-services-302841200.html",
+      "title": "Carrier completes sale of NORESCO",
+      "publisher": "Carrier Global",
+      "accessed_at": "2026-10-11",
+      "excerpt": "PALM BEACH GARDENS, Fla., Aug. 3, 2026 /PRNewswire/ -- Carrier Global Corporation (NYSE: CARR) today announced it has completed the sale of its NORESCO business to OPTERRA Energy Services, a subsidiary of LS Power. News provided by Carrier Global Corporation; this is an issuer-origin release, not independent PR Newswire reporting. Sale price is not disclosed in the observed release."
+    },
+    {
+      "id": "issuer-refrigerant",
+      "url": "https://www.carrier.com/commercial/en/us/news/news-article/carrier-launches-updated-line-of-applied-rooftop-units.html",
+      "title": "Updated applied rooftop units",
+      "publisher": "Carrier Global",
+      "accessed_at": "2026-10-11",
+      "excerpt": "February17,2025. New K-Series WeatherMaker applied rooftop usesR-454B/PuronAdvance in20-60ton sizes; designed to fit most legacy Carrier curbs; includes refrigerant leak detection/dissipation control. R-454B GWP100466 (IPCC4th Assessment),75% reduction fromR410A; exceeds EPA lowerGWP2025 requirements. Efficient controls, service and retrofit compatibility are product features, not observed pricing power."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "55.56",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; no split or ADR conversion. Yahoo historical alternate429 and FinanceCharts alternate403; single dated publisher retained.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "55.56",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "824330000",
+      "unit": "shares",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "824330000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "45800000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "45800000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "21747000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "21747000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "21747000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "1484000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. Attributable to common shareholders, not pre-noncontrolling-interest consolidated income.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "1484000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "1484000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "2513000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "2513000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "2513000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "392000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. Positive gross cash capital spend for same annual period as OCF; proceeds and acquisitions not netted.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "392000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "392000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "1555000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. Cash and equivalents only; excludes restricted cash and separately identified investments.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "1555000000",
+          "period": "2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "1555000000",
+          "period": "2025-12-31"
+        }
+      ]
+    },
+    "debt": {
+      "value": "11833000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-fy25"
+      ],
+      "note": "Explicit component aggregation estimate; borrowings exclude operating leases. Short/current debt468M plus long11,365M =11,833M; excludes all lease liabilities. Vendor12,393M standardized wider scope, not corroboration."
+    },
+    "eps": {
+      "value": "1.72",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. GAAP diluted total annual EPS, not adjusted/forward or quarterly annualized.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "1.72",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "1.72",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    },
+    "required_return": {
+      "value": "0.10",
+      "unit": "decimal",
+      "period": "2026-10-11 nominal USD equity hurdle",
+      "kind": "assumption",
+      "sources": [],
+      "note": "Assumed return hurdle above sourced5.24% Treasury; diversified HVAC but leverage and residential/refrigerant cycle require equity premium."
+    },
+    "continuing_eps": {
+      "value": "1.69",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25"
+      ],
+      "note": "Reported GAAP diluted continuing operations EPS; not adjusted2.59. Used as assumed current earning-capacity proxy; total required EPS remains1.72.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "1.69",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://finance.yahoo.com/quote/CARR/history/",
+      "result": "HTTP429",
+      "alternative": "https://stockanalysis.com/stocks/carr/"
+    },
+    {
+      "url": "https://www.financecharts.com/stocks/CARR",
+      "result": "HTTP403",
+      "alternative": "https://stockanalysis.com/stocks/carr/"
+    },
+    {
+      "url": "https://corporate.carrier.com/news/news-articles/carrier-completes-acquisition-of-viessmann-climate-solutions.html",
+      "result": "HTTP500",
+      "alternative": "2026Q2 issuer disclosure references VCS acquisition/integration risks; no transaction-dollar claim made."
+    },
+    {
+      "url": "https://www.carrier.com/us/en/news/carriercompletes-acquisition-of-viessmann-climate-solutions",
+      "result": "HTTP404",
+      "alternative": "2026Q2 issuer disclosure; standalone acquisition announcement not used."
+    },
+    {
+      "url": "https://fiscal.ai/company/NYSE-CARR",
+      "result": "HTTP429",
+      "alternative": "Stock Analysis current dated quote"
+    }
+  ],
+  "valuation": {
+    "base_eps": "continuing_eps",
+    "discount_rate": "required_return",
+    "risk_free_rate": "risk_free_rate",
+    "timing": {
+      "kind": "assumption",
+      "valuation_date": "2026-10-11",
+      "terminal_date": "2031-10-11",
+      "eps_basis": "normalized_run_rate",
+      "alignment_note": "FY2025 GAAP diluted continuing EPS1.69 is assumed to approximate initial October11,2026 earning capacity, not an observed October run rate or forecast. Five annual growth periods end October11,2031; exit PE is applied to trailing earnings capacity at that anniversary.2026 adjusted guidance2.90 is not substituted; divestiture/refrigerant/volume normalization is uncertain."
+    },
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.02",
+        "exit_multiple": "16",
+        "years": 5,
+        "probability": "0.30"
+      },
+      {
+        "name": "base",
+        "growth": "0.08",
+        "exit_multiple": "22",
+        "years": 5,
+        "probability": "0.50"
+      },
+      {
+        "name": "bull",
+        "growth": "0.14",
+        "exit_multiple": "28",
+        "years": 5,
+        "probability": "0.20"
+      }
+    ]
+  }
+}

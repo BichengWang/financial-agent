@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "ticker": "NBIS",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "60595287000.00",
+    "market_cap_deviation": "0.00007777227722772277227722772277227722772277",
+    "free_cash_flow": "-3626200000",
+    "free_cash_flow_yield": "-0.05983828382838283828382838283828382838284",
+    "pe": null
+  },
+  "valuation": null
+}

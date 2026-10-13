@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "ORCL",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "428442000000.00",
+    "market_cap_deviation": "0.0004852443718651580543567012714335705120728",
+    "free_cash_flow": "-23686000000",
+    "free_cash_flow_yield": "-0.05525720284614487343986935728449784206229",
+    "pe": "24.25385934819897084048027444253859348199"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-0.05",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "44.105513437500",
+        "total_return": "-0.6880798201025459688826025459688826025460",
+        "annualized_return": "-0.2078476871974999542383480071803737227522",
+        "present_target": "25.02665280969505925149305348961742131255"
+      },
+      {
+        "name": "base",
+        "growth": "0.12",
+        "exit_multiple": "20",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "167.422459904000",
+        "total_return": "0.184034369900990099009900990099009900990",
+        "annualized_return": "0.034362725508106719191253601905563378513",
+        "present_target": "95.00"
+      },
+      {
+        "name": "bull",
+        "growth": "0.22",
+        "exit_multiple": "26",
+        "years": 5,
+        "probability": "0.25",
+        "target_price": "333.784458155200",
+        "total_return": "1.360569010998585572842998585572842998586",
+        "annualized_return": "0.187417213164182003565085465504320872074",
+        "present_target": "189.3982655787415469558814779556137323734"
+      }
+    ],
+    "weighted_present_target": "101.1062295971091515518436328613077884215"
+  }
+}

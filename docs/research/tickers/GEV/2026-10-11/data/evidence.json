@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "ticker": "GEV",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "quote_time": "2026-10-09T16:00:00-04:00",
+  "sources": [
+    {
+      "id": "issuer-fy25",
+      "url": "https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_01282026.pdf",
+      "title": "Fourth quarter and full year 2025 results",
+      "publisher": "GE Vernova",
+      "accessed_at": "2026-10-11",
+      "excerpt": "January 28, 2026. Tables in millions USD except per share and share data. FY2025 total revenues 38,068; net income 4,879 and attributable to GE Vernova 4,884 (rounded table); diluted EPS 17.69; OCF 4,987; gross additions to PP&E/internal-use software (1,277); FCF 3,710. FY2024 revenue 34,935, attributed net income 1,552, diluted EPS 5.58, OCF 2,583, capex 883. FY2025 includes $2.9B U.S. tax valuation-allowance release. Cash including restricted 8,848. Actual common shares outstanding December31 269,529,464. Power revenue19,767, EBITDA2,902, margin14.7%; Wind revenue9,110 EBITDA(598), margin(6.6)%; Electrification revenue9,642 EBITDA1,433 margin14.9%. Equipment sales20,934, services17,134; equipment cost18,759, service cost11,774. Total RPO backlog approximately $150B. Gas equipment backlog40GW plus slot reservations43GW. FY2025 working-capital cash changes: receivables(1,928), inventories(1,433), contract assets(456), payables(105), contract liabilities/deferred income8,019. Repurchased8.2M shares average $406; cash repurchases3,316, dividends275. Acquisition remaining50% Prolec GE planned for February2,2026 for $5.275B."
+    },
+    {
+      "id": "issuer-q226",
+      "url": "https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_07222026.pdf",
+      "title": "Second quarter 2026 results",
+      "publisher": "GE Vernova",
+      "accessed_at": "2026-10-11",
+      "excerpt": "July22,2026. Millions USD. Q2 revenue11,104, net649, diluted EPS2.47, OCF5,492, capex386, FCF5,107; H1 revenue20,442/net5,398/EPS19.96/OCF10,680/capex783/FCF9,897. H1 pre-tax Prolec step-acquisition remeasurement gain3,992 plus Proficy disposal330. Q2 Power revenue5,477/EBITDA1,031/margin18.8%; Electrification3,637/671/18.4%; Wind2,026/(275)/(13.6)%; H1 Wind EBITDA(657). Total RPO176B; gas backlog53GW/reservations63GW, combined116GW. Gas annual output targets20GW2026Q3,24GW2028,30GW2030. Data-center electrification orders over5B YTD, above double2025. Q2 cash13.1B includes restricted; YTD capital returned3.9B;4.3M shares repurchased average854. Prolec acquisition completed included in results; grid equipment backlog40.6B includes5B Prolec.2026 guidance revenue45.5-46.5B, EBITDA margin12-14%, FCF11.5-12.5B; Wind loss400M. Strong cash flow primarily working-capital benefits. Segment units realigned January1,2026; quarterly2025 comparisons recast."
+    },
+    {
+      "id": "sa-quote",
+      "url": "https://stockanalysis.com/stocks/gev/",
+      "title": "Dated regular-session quote and snapshot",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "GEV ordinary common stock, NYSE, USD. At close October9,2026,4:00PM EDT: $1004.73. Shares Out 266.33M; market cap 267.59B. Vendor displayed actual shares outstanding, not weighted-average EPS shares; underlying share effective date not supplied in quote snapshot. After-hours separately displayed and not used. No split normalization needed for displayed USD price/EPS basis."
+    },
+    {
+      "id": "sa-fin",
+      "url": "https://stockanalysis.com/stocks/gev/financials/",
+      "title": "Annual and trailing financial overview",
+      "publisher": "Stock Analysis",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Financials in millions USD; FY2025 December31 revenue38,068; common net4,884; EPS17.69; OCF4,987; capex-1,277; cash/investments8,935; standardized debt1,196. FY2021-25 revenue33,006/29,654/33,239/34,935/38,068 and OCF-1,660/-114/1,186/2,583/4,987. Vendor gross profit7,645 and operating2,142 differ from release7,535/1,388; not accepted as same GAAP line. TTM EPS34.94 includes acquisition/tax effects."
+    },
+    {
+      "id": "treasury-20261009",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+      "title": "Daily Treasury Par Yield Curve Rates, October 2026",
+      "publisher": "U.S. Department of the Treasury",
+      "accessed_at": "2026-10-11",
+      "excerpt": "Observed Treasury table columns: Date | 1 Mo | 1.5 Mo | 2 Mo | 3 Mo | 4 Mo | 6 Mo | 1 Yr | 2 Yr | 3 Yr | 5 Yr | 7 Yr | 10 Yr | 20 Yr | 30 Yr. Row 10/09/2026: 4.13 | 4.13 | 4.13 | 4.25 | 4.29 | 4.32 | 4.47 | 4.80 | 4.89 | 5.02 | 5.13 | 5.24 | 5.65 | 5.60. Treasury states these are interpolated par yields based on indicative bid-side market prices at or near 3:30 PM each trading day, not actual transactions."
+    },
+    {
+      "id": "issuer-10k",
+      "url": "https://www.gevernova.com/sites/default/files/gevernova_2025_form10-k.pdf",
+      "title": "2025 Form 10-K",
+      "publisher": "GE Vernova",
+      "accessed_at": "2026-10-11",
+      "excerpt": "April2,2024 GE completed spin-off and distributed all GEV shares; became independent. Before separation EPS uses274M issued shares; historical cash pooling with GE ended. December31,2025 cash incl restricted8,848M; Note2 restricted379M. Note7 current finance leases24M/noncurrent254M; operating leases843M total. Note14 short borrowings63M, long finance leases/other borrowings265M. Revolving3B and tradefinance3B facilities undrawn. Power RPO94.4B, installed gas turbines approx7,000 with1,800 under LTSA averaging10year remaining life. Wind installed59,000 onshore turbines,24,000 service agreements. Key Power competitors Siemens Energy/Mitsubishi Power/Westinghouse/Framatome/Rolls-Royce; Wind Vestas/SiemensGamesa/Nordex/Envision/Goldwind; Electrification HitachiEnergy/SiemensEnergy/Siemens/Schneider/MitsubishiElectric/ABB. Equipment fixed-price contracts expose cost overruns; long-service revenues reflect estimates. Onshore U.S. approx60% equipment RPO; offshore project costs and timelines remain pressured. December22,2025 government offshore lease pause affected Vineyard. Significant pensions, legal/warranty guarantees and spin-related indemnities persist."
+    }
+  ],
+  "facts": {
+    "price": {
+      "value": "1004.73",
+      "unit": "USD/share",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Observed regular close; no split or ADR conversion. Yahoo historical alternate429 and FinanceCharts alternate403; single dated publisher retained.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "1004.73",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "shares": {
+      "value": "266330000",
+      "unit": "shares",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "266330000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "market_cap": {
+      "value": "267590000000",
+      "unit": "USD",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "sa-quote"
+      ],
+      "note": "Regular close snapshot. Shares are vendor outstanding; effective filing date unavailable, not an exact issuer-certified October9 count. Second independently fetched dated quote/cap/share publisher unavailable after Yahoo429 and FinanceCharts403.",
+      "observations": [
+        {
+          "source": "sa-quote",
+          "value": "267590000000",
+          "period": "2026-10-09"
+        }
+      ]
+    },
+    "revenue": {
+      "value": "38068000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "38068000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "38068000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "net_income": {
+      "value": "4884000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. Attributable to common shareholders, not pre-noncontrolling-interest consolidated income.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "4884000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "4884000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "operating_cash_flow": {
+      "value": "4987000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "4987000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "4987000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "capital_expenditure": {
+      "value": "1277000000",
+      "unit": "USD",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. Positive gross cash capital spend for same annual period as OCF; proceeds and acquisitions not netted.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "1277000000",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "1277000000",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "cash": {
+      "value": "8469000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-fy25",
+        "issuer-10k"
+      ],
+      "note": "Reported cash including restricted8,848M less restricted379M from10-K note2 =8,469M; component-normalization estimate. Vendor8,935M cash/investments not same definition; no corroboration."
+    },
+    "debt": {
+      "value": "352000000",
+      "unit": "USD",
+      "period": "2025-12-31",
+      "kind": "estimate",
+      "sources": [
+        "issuer-fy25",
+        "issuer-10k"
+      ],
+      "note": "Explicit component aggregation estimate; borrowings exclude operating leases. Short borrowings63M plus current finance lease24M plus long finance lease/other borrowings265M =352M; includes finance leases, excludes operating leases843M; vendor1,196M standardized includes operating leases/rounding."
+    },
+    "eps": {
+      "value": "17.69",
+      "unit": "USD/share",
+      "period": "FY2025 ended 2025-12-31",
+      "kind": "reported",
+      "sources": [
+        "issuer-fy25",
+        "sa-fin"
+      ],
+      "note": "Issuer and vendor millions converted to USD; reported GAAP annual, not TTM. GAAP diluted total annual EPS, not adjusted/forward or quarterly annualized.",
+      "observations": [
+        {
+          "source": "issuer-fy25",
+          "value": "17.69",
+          "period": "FY2025 ended 2025-12-31"
+        },
+        {
+          "source": "sa-fin",
+          "value": "17.69",
+          "period": "FY2025 ended 2025-12-31"
+        }
+      ]
+    },
+    "risk_free_rate": {
+      "value": "0.0524",
+      "unit": "decimal",
+      "period": "2026-10-09",
+      "kind": "reported",
+      "sources": [
+        "treasury-20261009"
+      ],
+      "note": "Observed 10-year USD Treasury par yield 5.24%; percent converted to decimal. Current common reference, not a hardcoded tool default."
+    }
+  },
+  "source_access_failures": [
+    {
+      "url": "https://finance.yahoo.com/quote/GEV/history/",
+      "result": "HTTP429",
+      "alternative": "https://stockanalysis.com/stocks/gev/"
+    },
+    {
+      "url": "https://www.financecharts.com/stocks/GEV",
+      "result": "HTTP403",
+      "alternative": "https://stockanalysis.com/stocks/gev/"
+    }
+  ]
+}

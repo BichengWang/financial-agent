@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "UBER",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "147175873944.33",
+    "market_cap_deviation": "0.007639832564220183486238532110091743119266",
+    "free_cash_flow": "9763000000",
+    "free_cash_flow_yield": "0.06684239353690264274955497740654525537450",
+    "pe": "15.11839323467230443974630021141649048626"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.00",
+        "exit_multiple": "16",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "39.200000000000",
+        "total_return": "-0.4518249195916655013284855264997902391274",
+        "annualized_return": "-0.1132854030746422875716230180095909096542",
+        "present_target": "22.74635066581500899204450540335033372200"
+      },
+      {
+        "name": "base",
+        "growth": "0.13",
+        "exit_multiple": "24",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "108.335188542840",
+        "total_return": "0.514965578839882533911341071178856104041",
+        "annualized_return": "0.086627152906180570180611836117755693910",
+        "present_target": "62.86301500108732570933294587960238639773"
+      },
+      {
+        "name": "bull",
+        "growth": "0.23",
+        "exit_multiple": "30",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "206.924967796050",
+        "total_return": "1.893650787247238148510697804502866731926",
+        "annualized_return": "0.236770801679617404316892370073871052545",
+        "present_target": "120.0711193622814084516722053886892352347"
+      }
+    ],
+    "weighted_present_target": "62.26963657274444724261426563854414036240"
+  }
+}

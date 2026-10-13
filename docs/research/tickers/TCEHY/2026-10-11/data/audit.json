@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "PROVISIONAL",
+  "findings": [
+    {
+      "severity": "warning",
+      "message": "fact price: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "fact market_cap: needs observations from two distinct publishers"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact revenue: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact net_income: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact operating_cash_flow: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact capital_expenditure: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact cash: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact debt: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact eps: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "required fact shares: estimate, not verified reported data"
+    },
+    {
+      "severity": "warning",
+      "message": "price times shares disagrees with reported market cap beyond tolerance"
+    }
+  ],
+  "scope": "Offline structural, citation-presence and arithmetic consistency audit only; not independent verification of source truth, investment advice, or authorization to trade."
+}

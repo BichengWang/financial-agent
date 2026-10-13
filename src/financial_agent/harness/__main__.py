@@ -72,7 +72,7 @@ from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
 
 DEFAULT_SKILL_ROOTS = (
     Path("skills"),
-    Path(".claude/skills"),
+    Path(".agents/skills"),
     Path("agents/equity/turtle-trader"),
 )
 

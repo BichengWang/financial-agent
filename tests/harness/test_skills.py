@@ -150,6 +150,24 @@ def test_duplicate_names_keep_the_first(tmp_path: Path) -> None:
     assert any("duplicate" in e for r in registry.results for e in r.errors)
 
 
+@pytest.mark.parametrize("direct_root", [False, True])
+def test_discovery_alias_does_not_conflict_with_canonical_skill(
+    tmp_path: Path, direct_root: bool
+) -> None:
+    canonical = write_skill(
+        tmp_path / "canonical", "s", "name: s\ndescription: Canonical instructions."
+    )
+    alias_root = tmp_path / "agent" / "skills"
+    alias_root.mkdir(parents=True)
+    alias = alias_root / "s"
+    alias.symlink_to(canonical, target_is_directory=True)
+    registry = SkillRegistry.discover(
+        [canonical.parent, alias if direct_root else alias_root]
+    )
+    assert all(result.ok for result in registry.results)
+    assert registry.get("s").root == canonical
+
+
 def test_repository_skills_validate_and_route() -> None:
     registry = SkillRegistry.discover(
         [REPO / "skills", REPO / "agents" / "equity" / "turtle-trader"],

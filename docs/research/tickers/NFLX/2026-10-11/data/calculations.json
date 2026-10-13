@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "NFLX",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "292729200000.00",
+    "market_cap_deviation": "0.00003142935228204427439191035802131729980869",
+    "free_cash_flow": "9461053000",
+    "free_cash_flow_yield": "0.03232117040174911177917463787920196775075",
+    "pe": "27.78656126482213438735177865612648221344"
+  },
+  "valuation": {
+    "base_eps_fact": "forward_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "0.02",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": "0.30",
+        "target_price": "75.717861483456",
+        "total_return": "0.077067730916870554765291607396870554765",
+        "annualized_return": "0.014959242931067789513869297323753106677",
+        "present_target": "44.93486545511096230057941458402784830984"
+      },
+      {
+        "name": "base",
+        "growth": "0.11",
+        "exit_multiple": "26",
+        "years": 5,
+        "probability": "0.50",
+        "target_price": "166.921860844206",
+        "total_return": "1.374421918125263157894736842105263157895",
+        "annualized_return": "0.188807615490958246920391007058999287217",
+        "present_target": "99.06"
+      },
+      {
+        "name": "bull",
+        "growth": "0.17",
+        "exit_multiple": "34",
+        "years": 5,
+        "probability": "0.20",
+        "target_price": "284.009718544578",
+        "total_return": "3.039967546864551920341394025604551920341",
+        "annualized_return": "0.322134309288381831443214481222492048322",
+        "present_target": "168.5459446518173169725517682816975673886"
+      }
+    ],
+    "weighted_present_target": "96.71964856689675208468417803154786797067"
+  }
+}

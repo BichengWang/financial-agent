@@ -10,6 +10,7 @@ on:
       - "src/financial_agent/harness/**"
       - "tests/harness/**"
       - "skills/**"
+      - "docs/research/**"
       - "agents/equity/**"
       - "pyproject.toml"
       - "uv.lock"
@@ -21,6 +22,7 @@ on:
       - "tests/harness/**"
       - "skills/**"
       - "agents/equity/**"
+      - "docs/research/**"
       - "pyproject.toml"
       - "uv.lock"
       - ".github/workflows/harness.yml"
@@ -45,16 +47,19 @@ jobs:
           python-version: "3.12"
 
       - name: Install
-        run: uv sync --locked
+        run: uv sync --locked --extra research
 
       - name: Tests
-        run: uv run pytest tests/harness agents/equity/daily_investment_system/tests -q
+        run: uv run pytest tests/harness agents/equity/daily_investment_system/tests skills/equity-investment-research/scripts/test_research.py -q
 
       - name: Type-check harness
-        run: uv run mypy src/financial_agent/harness
+        run: uv run mypy src/financial_agent/harness skills/equity-investment-research/scripts/research.py skills/equity-investment-research/scripts/test_research.py
 
       - name: Validate skills
         run: uv run python -m financial_agent.harness skills validate
+
+      - name: Validate research graph
+        run: uv run python skills/equity-investment-research/scripts/research.py graph
 
       - name: Publish gate
         run: |

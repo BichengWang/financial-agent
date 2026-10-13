@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ticker": "TCEHY",
+  "as_of": "2026-10-11",
+  "currency": "USD",
+  "metrics": {
+    "implied_market_cap": "497964885545.40",
+    "market_cap_deviation": "0.02230524644918907821802504619174707452269",
+    "free_cash_flow": "30669531072.16025495105850216",
+    "free_cash_flow_yield": "0.06296352098575293564167214567850544036132",
+    "pe": "15.88922618308284685132281704061504830944"
+  },
+  "valuation": {
+    "base_eps_fact": "normalized_eps",
+    "discount_rate_fact": "required_return",
+    "risk_free_rate_fact": "risk_free_rate",
+    "scenarios": [
+      {
+        "name": "bear",
+        "growth": "-.03",
+        "exit_multiple": "12",
+        "years": 5,
+        "probability": ".30",
+        "target_price": "35.4103168496450603232415206026191916892",
+        "total_return": "-0.3514593983581490783289098790729085771209",
+        "annualized_return": "-0.0829617850648428402386901331339650915146",
+        "present_target": "18.39100896675802610938069137302654703796"
+      },
+      {
+        "name": "base",
+        "growth": ".05",
+        "exit_multiple": "18",
+        "years": 5,
+        "probability": ".50",
+        "target_price": "78.9421401125547746414750739850416356250",
+        "total_return": "0.445826741988182685741301721337758894231",
+        "annualized_return": "0.076522845429939180419394063013492699597",
+        "present_target": "41.00007387196299165282309954164063550670"
+      },
+      {
+        "name": "bull",
+        "growth": ".10",
+        "exit_multiple": "24",
+        "years": 5,
+        "probability": ".20",
+        "target_price": "132.8203324493512406100614614221271200000",
+        "total_return": "1.432606821416689388462664128610386813187",
+        "annualized_return": "0.194577647280387313312131439712131344197",
+        "present_target": "68.98271866404622105663629642100248798864"
+      }
+    ],
+    "weighted_present_target": "39.81388335881814787055301646692877946247"
+  }
+}
