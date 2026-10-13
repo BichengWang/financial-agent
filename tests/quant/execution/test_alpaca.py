@@ -241,3 +241,77 @@ def test_from_env_and_nonduplicate_rejection(monkeypatch: pytest.MonkeyPatch) ->
         )
     assert "test-secret" not in str(error.value)
     assert len(transport.calls) == 2
+
+
+@pytest.mark.parametrize(
+    "qty,tif,encoded",
+    [
+        (12.0, "opg", "12"),
+        (0.5, "day", "0.5"),
+        (0.1234567894, "day", "0.123456789"),
+        (1e-9, "day", "0.000000001"),
+        (1e20, "opg", "100000000000000000000"),
+    ],
+)
+def test_canonical_quantity_body(qty: float, tif: str, encoded: str) -> None:
+    transport = Transport(Response(200, order_json()))
+    AlpacaBroker("key", "secret", session=transport).submit(
+        Order("SPY", "buy", qty, time_in_force=tif, client_order_id="client-123")
+    )
+    assert transport.calls[0][2]["json"]["qty"] == encoded
+
+
+@pytest.mark.parametrize(
+    "price,encoded", [(12.0, "12"), (0.5, "0.5"), (1e-7, "0.0000001")]
+)
+def test_plain_decimal_limit_price(price: float, encoded: str) -> None:
+    transport = Transport(Response(200, order_json()))
+    AlpacaBroker("key", "secret", session=transport).submit(
+        Order(
+            "SPY",
+            "buy",
+            12.0,
+            order_type="limit",
+            limit_price=price,
+            client_order_id="client-123",
+        )
+    )
+    assert transport.calls[0][2]["json"]["limit_price"] == encoded
+
+
+@pytest.mark.parametrize(
+    "qty,tif,kind",
+    [
+        (0.5, "opg", "market"),
+        (0.5, "gtc", "market"),
+        (0.5, "day", "limit"),
+        (12.0000000001, "opg", "market"),
+    ],
+)
+def test_fractional_unsupported_orders_rejected_before_http(
+    qty: float, tif: str, kind: str
+) -> None:
+    transport = Transport()
+    with pytest.raises(BrokerError, match="fractional quantities"):
+        AlpacaBroker("key", "secret", session=transport).submit(
+            Order(
+                "SPY",
+                "buy",
+                qty,
+                order_type=kind,
+                time_in_force=tif,
+                client_order_id="client-123",
+            )
+        )
+    assert transport.calls == []
+
+
+def test_quantity_below_precision_rejected_before_http() -> None:
+    transport = Transport()
+    with pytest.raises(BrokerError, match="decimal precision"):
+        AlpacaBroker("key", "secret", session=transport).submit(
+            Order(
+                "SPY", "buy", 1e-12, time_in_force="day", client_order_id="client-123"
+            )
+        )
+    assert transport.calls == []

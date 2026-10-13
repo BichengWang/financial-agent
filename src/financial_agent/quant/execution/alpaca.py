@@ -28,6 +28,18 @@ def _timestamp(value: str) -> datetime:
     return parsed
 
 
+def _decimal_string(value: float) -> str:
+    """Encode positive values in plain decimal with at most nine decimal places."""
+    if float(value).is_integer():
+        return str(int(value))
+    encoded = f"{value:.9f}".rstrip("0").rstrip(".")
+    if encoded == "0":
+        raise BrokerError(
+            "order quantity or price is below supported decimal precision"
+        )
+    return encoded
+
+
 class AlpacaBroker:
     """Credentials stay in memory; transport error messages exclude server text."""
 
@@ -186,16 +198,24 @@ class AlpacaBroker:
     def submit(self, order: Order) -> OrderAck:
         """Every ambiguous POST is followed by a client-ID lookup before retrying."""
         validate_order(order)
+        # Alpaca permits fractional qty only for market/day orders, excluding OPG:
+        # https://docs.alpaca.markets/us/reference/postorder (qty field).
+        if not float(order.qty).is_integer() and (
+            order.order_type != "market" or order.time_in_force != "day"
+        ):
+            raise BrokerError(
+                "fractional quantities require market orders with day TIF"
+            )
         body = dict(
             symbol=order.symbol,
-            qty=str(order.qty),
+            qty=_decimal_string(order.qty),
             side=order.side,
             type=order.order_type,
             time_in_force=order.time_in_force,
             client_order_id=order.client_order_id,
         )
         if order.limit_price is not None:
-            body["limit_price"] = str(order.limit_price)
+            body["limit_price"] = _decimal_string(order.limit_price)
         for attempt in range(self.max_retries + 1):
             try:
                 response = self._request("POST", "/v2/orders", json=body)
