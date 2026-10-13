@@ -69,14 +69,12 @@ def render_markdown(report: SessionReport) -> str:
         "",
     ]
     lines.extend(f"- {reason}" for reason in report.reasons)
-    lines += ["", "| Symbol | Target | Actual |", "|---|---:|---:|"]
+    lines += ["", "| Symbol | Target (last plan) | Actual |", "|---|---:|---:|"]
     actual = account.weights() if account and account.equity > 0 else {}
     targets = report.targets or {}
     for symbol in sorted(targets.keys() | actual.keys()):
-        lines.append(
-            f"| {symbol} | {targets.get(symbol, 0):.2%} | "
-            f"{actual.get(symbol, 0):.2%} |"
-        )
+        target_weight = f"{targets[symbol]:.2%}" if symbol in targets else "—"
+        lines.append(f"| {symbol} | {target_weight} | {actual.get(symbol, 0):.2%} |")
     lines += ["", "## Planned orders" if report.dry_run else "## Orders", ""]
     lines.extend(
         f"- {o.side} {o.qty:g} {o.symbol} ({o.client_order_id})" for o in report.orders
@@ -98,10 +96,15 @@ def render_markdown(report: SessionReport) -> str:
 
 
 def write_report(report: SessionReport, state_dir: Path) -> None:
-    """Atomically publish JSON; preview files never replace execution evidence."""
+    """Preserve each attempt; callers serialize writes with the session lock."""
     root = state_dir / "reports"
     root.mkdir(parents=True, exist_ok=True)
     name = report.session + (".preview" if report.dry_run else "")
+    base = name
+    attempt = 2
+    while (root / f"{name}.json").exists() or (root / f"{name}.md").exists():
+        name = f"{base}.{attempt}"
+        attempt += 1
     _atomic_json(root / f"{name}.json", report.to_dict())
     target = root / f"{name}.md"
     temporary = target.with_suffix(".md.tmp")

@@ -1,249 +1,164 @@
 # financial-agent
 
-A Python research repository for reinforcement learning in financial markets,
-portfolio simulation, and evidence-backed equity research. It combines a small
-generic RL framework with trading experiments, historical notebooks, and
-deterministic tools for checking equity-research reports.
+A Python platform for systematic ETF research, cost-aware portfolio backtesting,
+statistical certification, paper trading and explicitly gated Alpaca execution.
+It also retains an equity-research harness and separate RL/deep-learning research
+stacks. Version **1.0.0 is beta**: live performance is unproven, and neither a
+historical gate pass nor paper results guarantee profit.
 
-**Status:** the package is version `0.1.0` and classified as alpha. The components
-have different levels of completeness; this is not a verified live-trading
-system, and neither saved notebook outputs nor published reports establish
-investment performance. Use it for research and education, not investment advice.
-
-## What is here
-
-- **Generic RL:** tabular Q-learning and a random baseline, a GridWorld
-  environment, a Gymnasium wrapper, and training/evaluation loops. Examples
-  cover GridWorld, CartPole, Acrobot, and MountainCar.
-- **Financial RL experiments:** Yahoo Finance data loading, technical-feature
-  preprocessing, stock/portfolio simulation environments (including cash-penalty
-  and stop-loss variants), Stable-Baselines3 model wrappers for A2C, DDPG, PPO,
-  SAC, and TD3, and backtest utilities.
-- **Equity research:** a prompt-driven daily research workflow with source and
-  prediction ledgers; deterministic universe, indicator, scoring, diagnostic,
-  and settlement helpers; and a Python harness for schema validation,
-  publication gates, status replay, audits, and risk/portfolio calculations.
-- **Turtle strategy research:** a rule-based breakout scanner and
-  per-instrument backtester, with offline CSV input as well as online data.
-
-The `src/financial_agent/agents/{claude,gpt,grok}/` packages are empty placeholders,
-not implemented model agents. The equity prompt workflow lives separately under
-`agents/equity/` and requires an agent runtime and sourced inputs.
-
-## Setup
-
-Run commands from the repository root. Install
-[uv](https://docs.astral.sh/uv/getting-started/installation/) first; the project
-requires **Python ≥3.12**, with 3.12 a practical starting point for the scientific
-dependency stack. The committed `.python-version` selects 3.12 for `uv` commands;
-the optional TensorFlow stack is locked for Python 3.12.
-
-```sh
-uv sync --locked --python 3.12
+```mermaid
+flowchart LR
+  R[Research: data + Strategy] --> B[Backtest: next-bar fills + costs]
+  B --> V[Validate + certify: OOS, DSR, CSCV, bootstrap, stress]
+  V --> P[Paper: journal + reconciliation]
+  P --> L[Live: fresh certificate + paper evidence + human opt-in]
+  K[Risk limits + persistent kill switch] --- P
+  K --- L
 ```
 
-This uses the committed `uv.lock` and installs the local package in editable mode;
-a separate `uv pip install -e .` or `uv lock` is not needed for normal setup.
-Core runtime dependencies are NumPy `>=1.24,<2`, pandas `>=2,<3`, yfinance,
-and Gymnasium. The default `dev` dependency group adds Black, flake8, mypy,
-pytest, pytest-cov, and pytest-custom-exit-code; use `--no-dev` for runtime only.
+## Five-minute offline quickstart
 
-Choose optional stacks as needed:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/); Python 3.12
+is selected by `.python-version`. From the repository root:
 
 ```sh
-uv sync --locked --python 3.12 --extra rl    # financial trading experiments
-uv sync --locked --python 3.12 --extra dl    # TensorFlow prediction baselines
-uv sync --locked --python 3.12 --extra notebooks
-uv sync --locked --python 3.12 --all-extras  # full development and research setup
+uv sync --locked
+uv run fa-quant demo
+uv run fa-quant --help
 ```
 
-The `rl` extra includes Stable-Baselines3, stockstats, pyfolio-reloaded,
-matplotlib, Beautiful Soup, scikit-learn, and TensorFlow for the trading GPU
-utilities. The `dl` extra includes TensorFlow, keras-nightly, scikit-learn,
-IPython, matplotlib, and seaborn. The `notebooks` extra adds notebook, IPython,
-seaborn, and matplotlib; combine it with `rl` or `dl` for the corresponding
-notebooks. The `all` extra combines `rl`, `dl`, and `notebooks`.
-The `dev` extra matches the default `dev` dependency group, and the existing
-`research` extra adds openpyxl for research workbooks.
-
-Run the same checks used by the Python quality workflow:
+The demo uses seeded synthetic data with a planted trend. It runs backtest,
+validation/certificate creation, 25 local paper sessions and status without
+network access after dependencies are installed. Its printed numbers demonstrate
+software behavior, not market performance. To keep the artifacts, use a fresh
+state directory:
 
 ```sh
-uv run pytest tests agents/equity/daily_investment_system/tests -q
-uv run black --check src/financial_agent/rl tests/rl
-uv run flake8 src/financial_agent/rl tests/rl
-uv run mypy src/financial_agent/rl src/financial_agent/harness
+uv run fa-quant demo --sessions 25 --state-dir /tmp/fa-quant-demo-release
 ```
 
-Tests cover the RL core, harness, and daily equity helpers. Formatting and lint
-checks currently cover the RL core and its tests; type checks cover RL and the
-harness. The separate Harness workflow also checks report publication gates.
+Core dependencies include NumPy `<2`, pandas `>=2,<3`, yfinance, Gymnasium and
+requests. Default development tools are installed by `uv sync`; optional `rl`,
+`dl`, `notebooks` and `research` extras add the heavier research stacks. Full
+release verification uses `uv sync --locked --all-extras`.
 
-## Try a bounded RL example
+## Real-data research
 
-This uses the public RL API to train on a local 5×5 GridWorld, without fetching
-market data or opening a graphical window. Training stops after 20 episodes,
-with at most 50 steps per episode.
+The example uses SPY, QQQ, IWM, EFA, EEM, TLT, IEF, LQD, GLD, DBC and VNQ,
+weekly next-open fills, whole shares and a 2% cash buffer. Downloads are cached
+under gitignored `var/`. Use the latest completed session as the inclusive end:
 
 ```sh
-uv run python - <<'PY'
-from financial_agent.rl import QLearningAgent, SimpleGridWorld, Trainer
-
-env = SimpleGridWorld(grid_size=5, goal_reward=10.0, step_penalty=-0.1)
-agent = QLearningAgent(
-    state_dim=env.get_state_dim(),
-    action_dim=env.get_action_dim(),
-    learning_rate=0.1,
-    epsilon=0.9,
-)
-history = Trainer(agent, env).train(
-    num_episodes=20, max_steps_per_episode=50, log_interval=10
-)
-print("Episodes:", len(history["episode_rewards"]))
-print("Last episode reward:", history["episode_rewards"][-1])
-PY
+uv run fa-quant backtest --config examples/quant/paper.toml --end 2026-10-12 --json
+uv run fa-quant validate --config examples/quant/paper.toml --end 2026-10-12 --json
+uv run fa-quant certify --config examples/quant/paper.toml --end 2026-10-12 \
+  --output var/quant-paper/certificate.json
 ```
 
-The loop logs average rewards and episode lengths. Rewards vary; this short run
-demonstrates the API, not convergence or financial returns. For a longer,
-time-limited Gymnasium task:
+`validate`/`certify` return 2 when any gate fails; failed certificates can be saved
+but cannot authorize live trading. With `--config`, settings come from the TOML;
+standalone strategy/provider/start flags do not override it. See
+[strategy research](docs/quant/strategy-research.md) for grids and interpretation.
+
+The [committed real-data evidence](reports/quant/2026-10-default-strategy-evidence.md)
+uses the earliest common ETF date, **2006-02-06 through 2026-10-12**, unchanged
+default costs and the disclosed four-variant trend grid. All four full-period
+default comparisons are shown here:
+
+| Strategy | CAGR | Net Sharpe | Max drawdown | Turnover/year |
+|---|---:|---:|---:|---:|
+| Trend vol target | 5.625% | 0.740 | 16.533% | 14.375× |
+| Dual momentum | 11.100% | 0.754 | 26.397% | 10.550× |
+| SPY buy-and-hold | 11.122% | 0.652 | 54.299% | 0.048× |
+| 60/40 SPY/IEF | 8.212% | 0.785 | 31.979% | 0.206× |
+
+Trend passes all eight historical checks: OOS Sharpe 0.729, DSR 0.996, OOS
+maximum drawdown 17.114%. PBO 0.650 warns that in-sample parameter selection adds
+no reliable value. Single-default dual momentum and 60/40 also pass all eight
+statistical checks; SPY fails the OOS drawdown limit. For a single pre-registered
+variant, CSCV computes absolute OOS loss frequency; PBO and degradation slope
+are not applicable. Warmup/OOS windows differ; read the report for dates, exact
+checks, costs, bootstrap intervals, stress results and data caveats. No parameters
+or thresholds were tuned to pass. Statistical passes do not override execution
+limits: default dual momentum's three slots allocate 33.3% each versus the 30%
+per-name cap, and concentrated SPY/60-40 benchmarks also exceed runtime caps.
+
+The dated equity `research_forecast` strategy also [fails its real-ledger gate](reports/quant/research-forecast-validation.md):
+there is too little history to support promotion. This is the retained result
+for the LLM research signal, not an implied trading edge.
+
+## Paper trading and live gate
+
+Load Alpaca **paper** keys into the process environment as `APCA_API_KEY_ID` and
+`APCA_API_SECRET_KEY`; keep them out of TOML, git and command history. With keys
+loaded, preview and run before the opening auction (around 08:45 New York time):
 
 ```sh
-uv run python example/rl/cartpole_example.py
+uv run fa-quant run --config examples/quant/paper.toml --dry-run
+uv run fa-quant run --config examples/quant/paper.toml
+uv run fa-quant status --config examples/quant/paper.toml
 ```
 
-That script trains for 1,000 episodes (up to 500 steps each), evaluates five
-episodes, and prints reward/length statistics.
+The release verifies execution through local paper and fake Alpaca transports;
+a real credentialed paper run is still an owner step. A dry run suppresses new
+orders but journals observations and can synchronize earlier fills.
 
-Training and evaluation both have a `max_steps_per_episode` limit (default:
-1,000). Time-limit truncation ends an episode while preserving the Q-learning
-bootstrap; only terminal states suppress it. The Gymnasium wrapper accepts
-zero-based discrete actions, flattens numeric observations, and requires
-`reset()` before the first step and after an episode ends. To render, configure
-the mode at creation, such as `GymEnvironmentWrapper("FrozenLake-v1",
-render_mode="ansi")`.
+Live needs `mode = "live"`, `FA_QUANT_ALLOW_LIVE=1`, a passing certificate no older
+than 90 days matching the exact strategy/params, at least 20 distinct clean
+Alpaca-paper sessions, no recent risk halts/reconciliation breaks, and observed
+paper slippage within twice modeled allowance. Runtime risk limits cannot be
+loosened by config. MCP exposes research and paper previews only. Read
+[safety and go-live steps](docs/quant/safety.md) before changing mode, and
+[operations](docs/quant/operations.md) for scheduling, kill/unkill and incidents.
+Kill stops new submissions; it does not cancel orders or liquidate positions.
 
-## Explore the research workflows
+## Research harness, equity workflow and RL
 
-### Notebooks and financial simulation
-
-```sh
-uv run jupyter notebook
-```
-
-Start with [`notebooks/rl_portfolio_trading.ipynb`](notebooks/rl_portfolio_trading.ipynb)
-for portfolio RL or [`notebooks/LSTM_prediction.ipynb`](notebooks/LSTM_prediction.ipynb)
-for prediction experiments. These are historical notebooks with saved outputs;
-inspect their imports, data requirements, and assumptions before rerunning.
-The [`notebook notes`](notebooks/README.md) link to the original write-up and
-video, rather than serving as a current performance benchmark.
-
-### Repository-native ticker research
-
-Browse [the dated research index](docs/research/index.md) for the retained 50-security
-scan, conditional model targets, declared horizons and source gaps. Read
-[run guidance](docs/research/README.md) before collecting or changing evidence.
-
-The [native skill graph](skills/equity-investment-research/README.md) separates nine
-analytical nodes from Decimal arithmetic and the structural/evidence audit.
-Optional earnings, cash-flow DCF and peer-comparison skills share the ticker/date
-workspace; they do not replace the core EPS/exit-multiple model or its audit.
-
-```sh
-uv sync --locked --python 3.12 --extra research
-uv run --python 3.12 --extra research python \
-  skills/equity-investment-research/scripts/research.py plan \
-  --tickers INTC CRM --as-of 2026-10-12 \
-  --skills earnings-analysis dcf-model comps-analysis
-```
-
-`plan` prints instructions, prerequisites and destinations; it does not perform
-research. Canonical source lives in `skills/`, with shared discovery links under
-`.agents/skills/`. Reports remain in
-`docs/research/tickers/TICKER/DATE/`; inputs, calculations and audits remain in
-that run's `data/` folder. Shared verification belongs in `batches/DATE/`.
-
-Existing reports are provisional research, not investment approval. Source
-coverage and model timing gaps remain explicit. Openpyxl writes formulas but
-cannot recalculate them; actual Excel/LibreOffice recalculation is required before
-relying on workbook values. No orders, broker actions or autonomous trading.
-### Daily equity research and report checks
-
-Read the [`workflow entrypoint`](agents/equity/daily_investment_system/main.md),
-then its linked rules, agent stages, and runbook. The workflow covers regime
-analysis, factor scoring, portfolio construction, risk review, and prediction
-settlement. Durable dated packages live under
-[`agents/equity/output/`](agents/equity/output/); temporary computations belong
-under the gitignored `agents/equity/.work/`.
-
-The harness can inspect the contract and audit existing ledgers locally:
+The [native ticker workflow](docs/research/README.md) combines sourced evidence,
+Decimal arithmetic, optional earnings/DCF/comps models and structural audits;
+[retained research](docs/research/index.md) remains provisional. The
+[daily equity workflow](agents/equity/daily_investment_system/main.md) produces
+dated source/prediction packages. The harness provides deterministic report
+checks and ledger audits, not autonomous completion of every prompt stage:
 
 ```sh
 uv run python -m financial_agent.harness --help
-uv run python -m financial_agent.harness schema --json-schema
 uv run python -m financial_agent.harness audit --output-dir agents/equity/output
 ```
 
-See the [`publication-gate guide`](skills/equity-publish-gate/SKILL.md) for
-checking a finished package with `gate`, generating manifest sections, and
-replaying status. Passing a gate checks the report's contract and formulas; it
-does not independently verify market-data provenance or make a trade safe.
-The harness `run` command currently registers only precheck and reflection
-handlers and halts at missing later stages; it does **not** autonomously complete
-the prompt workflow. The runbook describes manual operation, with no active
-scheduler.
-
-### Offline Turtle scanner
-
-Use the bundled `DEMO.csv` fixture for a finite, network-free scan:
-
-```sh
-uv run python agents/equity/turtle-trader/turtle.py \
-  --mode scan --tickers DEMO \
-  --history-dir agents/equity/turtle-trader/fixtures \
-  --account 100000 --pretty
-```
-
-This prints JSON signals and sizing calculations for fixture data, not today's
-market. The [`Turtle operating guide`](agents/equity/turtle-trader/SKILL.md)
-documents live scans, historical backtests, rules, and flags. Online fetching
-and universe refresh have additional requirements in
-[`requirements.txt`](agents/equity/turtle-trader/requirements.txt), including
-`lxml`. Its backtests are per-instrument, not portfolio simulations, and the
-tool does not place orders.
+Generic RL supplies tabular Q-learning, GridWorld, Gymnasium wrappers and bounded
+training/evaluation loops. [Examples](example/rl/) demonstrate learning APIs;
+[notebooks](notebooks/README.md) retain historical experiment outputs. Install
+`--extra rl`, `--extra dl` or `--extra notebooks` as needed. The FinRL-derived
+`trading/` and TensorFlow `dl/` stacks are experimental; they do not feed capital
+unless adapted to `Strategy` and passed through the same gates. The historical
+autotrain entrypoint has unresolved signature/name issues and is not turnkey.
 
 ## Repository map
 
 | Path | Purpose |
-| --- | --- |
-| [`src/financial_agent/rl/`](src/financial_agent/rl/) | Agent/environment interfaces and training loops |
-| [`example/rl/`](example/rl/) | Runnable generic RL examples |
-| [`src/financial_agent/trading/`](src/financial_agent/trading/) | Market data, preprocessing, financial environments, model wrappers, backtesting |
-| [`src/financial_agent/dl/`](src/financial_agent/dl/) | TensorFlow baseline and data-windowing utilities |
-| [`src/financial_agent/harness/`](src/financial_agent/harness/) | Research CLI, deterministic checks, kernels, and `equity_policy.toml` |
-| [`agents/equity/daily_investment_system/`](agents/equity/daily_investment_system/) | Prompt workflow, compute helpers, and helper tests |
-| [`agents/equity/turtle-trader/`](agents/equity/turtle-trader/) | Turtle scanner/backtester, fixtures, and universe caches |
-| [`tests/harness/`](tests/harness/) | Harness tests |
-| [`tests/rl/`](tests/rl/) | RL learning, trainer, and environment regression tests |
-| [`notebooks/`](notebooks/) / [`archive/`](archive/) | Current experiment notebooks / older notebooks |
-| [`pure_prompt_coding/equity/`](pure_prompt_coding/equity/) | Prompt-based research material and outputs |
+|---|---|
+| [src/financial_agent/quant](src/financial_agent/quant/) | Data, strategies, backtest, validation, risk, execution, runner and CLI/MCP |
+| [docs/quant](docs/quant/) | [Architecture](docs/quant/architecture.md), safety, operations, strategy guide |
+| [examples/quant](examples/quant/) / [deploy/quant](deploy/quant/) | Paper TOML and cron/launchd/systemd templates |
+| [reports/quant](reports/quant/) | Computed default and research-forecast evidence |
+| [tests/quant](tests/quant/) | Deterministic offline regression coverage |
+| [src/financial_agent/harness](src/financial_agent/harness/) | Equity schemas, gates, kernels and policy |
+| [agents/equity](agents/equity/) / [skills](skills/) | Daily/native equity workflows and Turtle research |
+| [src/financial_agent/rl](src/financial_agent/rl/) / [example/rl](example/rl/) | Generic RL APIs and examples |
+| [src/financial_agent/trading](src/financial_agent/trading/) / [src/financial_agent/dl](src/financial_agent/dl/) | Financial RL and prediction research |
+| [notebooks](notebooks/) / [archive](archive/) | Saved research outputs; avoid incidental reruns |
 
 ## Limitations
 
-- Training/evaluation is stochastic; no reproducible return or outperformance
-  guarantee is provided here. Historical results require scrutiny of data
-  splits, costs, leakage, and market assumptions.
-- The generic Q-learning agent uses a tabular state key rounded to three decimal
-  places; the Gymnasium examples are learning demonstrations, not deep-RL
-  baselines.
-- Financial training code is experimental. In particular,
-  `trading/autotrain/training.py` currently calls `DRL_prediction` with a
-  mismatched signature and references an undefined `BackTestStats`; it is not a
-  turnkey training entrypoint.
-- Online workflows depend on external data availability and freshness. Missing
-  research inputs must be disclosed rather than replaced with fabricated data.
+Yahoo's retrospectively adjusted OHLCV can change and is not raw auction
+execution data. The fixed ETF universe retains selection bias. Simulations omit
+taxes, cash interest, capacity/market impact and exact live corporate-action
+accounting. Statistics measure this historical sample, not future profitability.
+The scheduled runner does not continuously monitor intraday loss or guarantee
+fills; reference-price limits do not eliminate gap risk. State/journal hashes
+are integrity checks, not signatures. The POSIX runner targets macOS/Linux.
 
 ## License
 
-[MIT](LICENSE), copyright © 2025 Kenneth. The software is provided “as is,”
-without warranty.
+[MIT](LICENSE). Software is provided as is, without warranty.

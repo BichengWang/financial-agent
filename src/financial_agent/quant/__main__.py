@@ -55,49 +55,182 @@ def build_parser() -> argparse.ArgumentParser:
     """Expose research, explicit operator controls, and paper-only MCP."""
     parser = Parser(prog="fa-quant")
     sub = parser.add_subparsers(dest="command", required=True)
-    data = sub.add_parser("data").add_subparsers(dest="action", required=True)
+    data = sub.add_parser(
+        "data", help="Fetch or check adjusted market data"
+    ).add_subparsers(dest="action", required=True)
     for action in ("fetch", "check"):
-        item = data.add_parser(action)
-        item.add_argument("--config", type=Path, required=True)
-        item.add_argument("--end", type=date.fromisoformat, default=date.today())
-        item.add_argument("--expected-last-session", type=date.fromisoformat)
-        item.add_argument("--output-dir", type=Path)
-        item.add_argument("--json", action="store_true")
+        item = data.add_parser(
+            action,
+            help={
+                "fetch": "Fetch and optionally export bars",
+                "check": "Check bar quality and freshness",
+            }[action],
+        )
+        item.add_argument(
+            "--config",
+            type=Path,
+            required=True,
+            help="Trading TOML; relative paths resolve from its directory",
+        )
+        item.add_argument(
+            "--end",
+            type=date.fromisoformat,
+            default=date.today(),
+            help="Inclusive final data session (YYYY-MM-DD)",
+        )
+        item.add_argument(
+            "--expected-last-session",
+            type=date.fromisoformat,
+            help="Required last close for freshness (YYYY-MM-DD)",
+        )
+        item.add_argument(
+            "--output-dir", type=Path, help="Export per-symbol CSV bars here"
+        )
+        item.add_argument(
+            "--json", action="store_true", help="Emit machine-readable JSON"
+        )
     for command in ("backtest", "validate", "certify"):
-        item = sub.add_parser(command)
-        item.add_argument("--config", type=Path)
-        item.add_argument("--strategy", default="trend_vol_target")
+        item = sub.add_parser(
+            command,
+            help={
+                "backtest": "Simulate net portfolio returns",
+                "validate": "Evaluate statistical promotion gates",
+                "certify": "Save a hashed validation certificate",
+                "kill": "Engage the persistent trading stop",
+                "unkill": "Release a stop with operator justification",
+            }[command],
+        )
+        item.add_argument(
+            "--config",
+            type=Path,
+            help="Trading TOML; relative paths resolve from its directory",
+        )
+        item.add_argument(
+            "--strategy",
+            default="trend_vol_target",
+            help="Registered strategy name (without --config)",
+        )
         item.add_argument("--params", default="{}", help="JSON parameter object")
-        item.add_argument("--universe", nargs="+", default=list(ETF_UNIVERSE))
-        item.add_argument("--provider", choices=("csv", "yahoo"), default="yahoo")
-        item.add_argument("--csv-dir", type=Path)
-        item.add_argument("--cache-dir", type=Path, default=Path(".quant-cache"))
-        item.add_argument("--start", type=date.fromisoformat, default=date(2006, 3, 1))
-        item.add_argument("--end", type=date.fromisoformat, default=date.today())
-        item.add_argument("--json", action="store_true")
+        item.add_argument(
+            "--universe",
+            nargs="+",
+            default=list(ETF_UNIVERSE),
+            help="Ordered ETF symbols (without --config)",
+        )
+        item.add_argument(
+            "--provider",
+            choices=("csv", "yahoo"),
+            default="yahoo",
+            help="Market data source (without --config)",
+        )
+        item.add_argument(
+            "--csv-dir", type=Path, help="Directory containing one SYMBOL.csv per asset"
+        )
+        item.add_argument(
+            "--cache-dir",
+            type=Path,
+            default=Path(".quant-cache"),
+            help="Local adjusted-bar cache (without --config)",
+        )
+        item.add_argument(
+            "--start",
+            type=date.fromisoformat,
+            default=date(2006, 3, 1),
+            help="Inclusive first data session (YYYY-MM-DD)",
+        )
+        item.add_argument(
+            "--end",
+            type=date.fromisoformat,
+            default=date.today(),
+            help="Inclusive final data session (YYYY-MM-DD)",
+        )
+        item.add_argument(
+            "--json", action="store_true", help="Emit machine-readable JSON"
+        )
         if command != "backtest":
             item.add_argument("--grid", help="JSON array of parameter objects")
-            item.add_argument("--policy", type=Path)
+            item.add_argument(
+                "--policy",
+                type=Path,
+                help="TOML promotion policy; defaults to packaged thresholds",
+            )
         if command == "certify":
-            item.add_argument("--output", type=Path, required=True)
-    run = sub.add_parser("run")
-    run.add_argument("--config", type=Path, required=True)
-    run.add_argument("--today", type=date.fromisoformat, default=date.today())
-    run.add_argument("--dry-run", action="store_true")
-    run.add_argument("--json", action="store_true")
-    status = sub.add_parser("status")
-    status.add_argument("--config", type=Path, required=True)
-    status.add_argument("--json", action="store_true")
+            item.add_argument(
+                "--output",
+                type=Path,
+                required=True,
+                help="Certificate JSON destination (also saves failed verdicts)",
+            )
+    run = sub.add_parser("run", help="Run one fail-closed trading session")
+    run.add_argument(
+        "--config",
+        type=Path,
+        required=True,
+        help="Trading TOML; relative paths resolve from its directory",
+    )
+    run.add_argument(
+        "--today",
+        type=date.fromisoformat,
+        default=date.today(),
+        help="Trading session date (YYYY-MM-DD)",
+    )
+    run.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview orders without submission; still journals observations",
+    )
+    run.add_argument("--json", action="store_true", help="Emit machine-readable JSON")
+    status = sub.add_parser("status", help="Read persisted account and journal status")
+    status.add_argument(
+        "--config",
+        type=Path,
+        required=True,
+        help="Trading TOML; relative paths resolve from its directory",
+    )
+    status.add_argument(
+        "--json", action="store_true", help="Emit machine-readable JSON"
+    )
     for command in ("kill", "unkill"):
-        item = sub.add_parser(command)
-        item.add_argument("--config", type=Path, required=True)
-        item.add_argument("--reason", required=True)
+        item = sub.add_parser(
+            command,
+            help={
+                "backtest": "Simulate net portfolio returns",
+                "validate": "Evaluate statistical promotion gates",
+                "certify": "Save a hashed validation certificate",
+                "kill": "Engage the persistent trading stop",
+                "unkill": "Release a stop with operator justification",
+            }[command],
+        )
+        item.add_argument(
+            "--config",
+            type=Path,
+            required=True,
+            help="Trading TOML; relative paths resolve from its directory",
+        )
+        item.add_argument(
+            "--reason", required=True, help="Nonempty operator justification"
+        )
         if command == "unkill":
-            item.add_argument("--operator", required=True)
-    sub.add_parser("mcp")
-    demo = sub.add_parser("demo")
-    demo.add_argument("--sessions", type=int, default=25)
-    demo.add_argument("--state-dir", type=Path)
+            item.add_argument(
+                "--operator",
+                required=True,
+                help="Operator identity recorded with stop release",
+            )
+    sub.add_parser("mcp", help="Serve research and paper previews over stdio")
+    demo = sub.add_parser(
+        "demo", help="Run the offline synthetic research-to-paper demo"
+    )
+    demo.add_argument(
+        "--sessions",
+        type=int,
+        default=25,
+        help="Synthetic paper sessions, 1 through 252 (default: 25)",
+    )
+    demo.add_argument(
+        "--state-dir",
+        type=Path,
+        help="Fresh directory for demo data, journal and reports",
+    )
     return parser
 
 
@@ -295,7 +428,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             else:
                 print(f"Passed: {report.passed}")
                 print("\n".join(c.detail for c in report.checks))
-                print(f"Diagnostics: {json_value(report.diagnostics)}")
+                diagnostics = json_value(report.diagnostics)
+                if len(report.grid) == 1:
+                    for key in ("pbo", "degradation_slope"):
+                        diagnostics[key] = "n/a: single pre-registered variant"
+                print(f"Diagnostics: {diagnostics}")
                 if args.command == "certify":
                     print("Selected strategy parameters (copy into your config):")
                     print(strategy_toml(report.strategy, report.selected_params))

@@ -35,10 +35,19 @@ def test_multiple_sessions_settle_reconcile_and_retry(
     assert first.decision_session == "2020-06-05"
     assert first.orders and not first.fills
     assert first.account and not first.account.positions
+    first_path = config.state_dir / "reports/2020-06-08.json"
+    first_bytes = first_path.read_bytes()
     broker = paper(config)
     count = len(broker.open_orders())
     again = run_session(config, today=first_day)
     assert again.status == "NO_CHANGE"
+    assert first_path.read_bytes() == first_bytes
+    rerun = json.loads((config.state_dir / "reports/2020-06-08.2.json").read_text())
+    assert rerun["status"] == "NO_CHANGE"
+    assert (config.state_dir / "reports/2020-06-08.2.md").exists()
+    run_session(config, today=first_day)
+    assert (config.state_dir / "reports/2020-06-08.3.json").exists()
+    assert first_path.read_bytes() == first_bytes
     assert len(broker.open_orders()) == count
     second = run_session(config, today=first_day + timedelta(days=1))
     assert second.status in ("TRADED", "NO_CHANGE"), second.reasons
@@ -295,6 +304,11 @@ def test_off_cadence_skips_bad_price_band_but_preview_reports_it(
     report = run_session(weekly, today=tuesday, broker=broker)
     assert report.status == "NO_CHANGE", report.reasons
     assert report.reasons == ["outside rebalance calendar"]
+    assert report.targets == first.targets
+    rendered = (config.state_dir / "reports/2020-06-09.md").read_text()
+    assert "Target (last plan)" in rendered
+    assert first.targets
+    assert all(f"{weight:.2%}" in rendered for weight in first.targets.values())
     assert not report.orders and report.fills
     journal = Journal(config.state_dir / "journal.jsonl")
     assert not [
@@ -396,3 +410,27 @@ def test_off_cadence_still_checks_drawdown(config: TradingConfig) -> None:
     assert report.status == "HALTED"
     assert any("max_drawdown_pct" in r for r in report.reasons)
     assert KillSwitch(config.state_dir).engaged()
+
+
+def test_off_cadence_without_a_plan_has_unknown_targets(
+    config: TradingConfig,
+) -> None:
+    from financial_agent.quant.risk import AccountSnapshot, Position
+    from financial_agent.quant.runner.report import SessionReport, render_markdown
+    from datetime import datetime, timezone
+
+    weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
+    report = run_session(weekly, today=date(2020, 6, 9))
+    assert report.targets == {}
+    held = AccountSnapshot(
+        75000,
+        100000,
+        {"SPY": Position("SPY", 250, 100, 100)},
+        datetime.now(timezone.utc),
+    )
+    rendered = render_markdown(
+        SessionReport(
+            "NO_CHANGE", "2020-06-09", [], [], [], held, {}, targets=report.targets
+        )
+    )
+    assert "| SPY | — | 25.00% |" in rendered

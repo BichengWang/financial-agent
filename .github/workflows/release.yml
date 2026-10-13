@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Install all stacks
+        run: uv sync --locked --all-extras
+      - name: Full tests
+        run: uv run pytest tests agents/equity/daily_investment_system/tests -q
+      - name: Formatting and lint
+        run: |
+          uv run black --check src/financial_agent/rl tests/rl src/financial_agent/quant tests/quant
+          uv run flake8 src/financial_agent/rl tests/rl src/financial_agent/quant tests/quant
+      - name: Types
+        run: uv run mypy src/financial_agent/quant src/financial_agent/rl src/financial_agent/harness
+      - name: Extract release notes and verify tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          uv run python - <<'PY'
+          import os
+          from pathlib import Path
+          import re
+          import tomllib
+          version = tomllib.loads(Path("pyproject.toml").read_text())["project"]["version"]
+          if os.environ["RELEASE_TAG"] != f"v{version}":
+              raise SystemExit("tag must match package version")
+          text = Path("CHANGELOG.md").read_text()
+          match = re.search(rf"^## \[{re.escape(version)}\][^\n]*\n(.*?)(?=^## |^\[Unreleased\]:|\Z)", text, re.M | re.S)
+          if match is None or not match[1].strip():
+              raise SystemExit("missing CHANGELOG release section")
+          Path("release-notes.md").write_text(match[1].strip() + "\n")
+          PY
+      - name: Build wheel and sdist
+        run: uv build
+      - name: Install wheel in clean environment
+        run: |
+          uv venv /tmp/fa-wheel
+          uv pip install --python /tmp/fa-wheel dist/*.whl
+          /tmp/fa-wheel/bin/fa-quant --help
+          /tmp/fa-wheel/bin/python - <<'PY'
+          from importlib.resources import files
+          policy = files("financial_agent.quant").joinpath("quant_policy.toml")
+          assert policy.is_file(), "wheel is missing quant_policy.toml"
+          print("Wheel policy resource verified")
+          PY
+      - name: Create GitHub release with distributions
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" dist/*.whl dist/*.tar.gz --verify-tag --title "$RELEASE_TAG" --notes-file release-notes.md

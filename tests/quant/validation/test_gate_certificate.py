@@ -252,3 +252,36 @@ def test_certificate_undefined_diagnostics_roundtrip_as_null(tmp_path: Path) -> 
     cert = verify_certificate(path)
     assert cert.diagnostics["pbo"] == 0.5
     assert math.isnan(cert.diagnostics["degradation_slope"])
+
+
+def test_single_registered_variant_can_pass_and_noise_fails(tmp_path: Path) -> None:
+    import math
+
+    policy = loaded_policy(tmp_path)
+    grid = [{"weights": {"SPY": 1.0}}]
+    config = BacktestConfig(cash_buffer=0.02)
+    edge = evaluate_promotion(
+        "buy_and_hold",
+        grid,
+        synthetic_market(["SPY"], 650, seed=15, annual_drift=0.4, annual_vol=0.08),
+        config,
+        policy,
+    )
+    noise = evaluate_promotion(
+        "buy_and_hold",
+        grid,
+        synthetic_market(["SPY"], 650, seed=15, annual_drift=0.0),
+        config,
+        policy,
+    )
+    assert edge.passed, [c.detail for c in edge.checks]
+    assert not noise.passed
+    assert next(c for c in edge.checks if c.name == "prob_oos_loss").value == 0
+    loss = next(c for c in noise.checks if c.name == "prob_oos_loss")
+    assert loss.value > policy.max_prob_oos_loss and not loss.passed
+    assert math.isnan(edge.diagnostics["pbo"])
+    assert math.isnan(edge.diagnostics["degradation_slope"])
+    path = write_certificate(edge, tmp_path / "single.json")
+    certificate = verify_certificate(path)
+    assert certificate.passed and certificate.grid_size == 1
+    assert math.isnan(certificate.diagnostics["pbo"])

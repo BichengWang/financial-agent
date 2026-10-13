@@ -4,6 +4,7 @@ from collections.abc import Mapping
 from functools import partial
 from datetime import date, datetime, timedelta, timezone
 import json
+from importlib.metadata import version
 from pathlib import Path
 from typing import IO, Any
 
@@ -46,7 +47,7 @@ class QuantServer(HarnessServer):
         ):
             response["result"]["serverInfo"] = {
                 "name": "financial-agent-quant",
-                "version": "0.1.0",
+                "version": version("financial-agent"),
             }
             response["result"]["instructions"] = (
                 "Research and paper previews only. No submission, cancellation, "
