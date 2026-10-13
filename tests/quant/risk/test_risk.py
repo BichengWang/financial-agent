@@ -391,3 +391,44 @@ def test_invalid_mark_and_position_fail_closed(tmp_path: Path) -> None:
             permissive(),
             kill_switch=switch,
         ).halt
+
+
+@pytest.mark.parametrize("buffer,halt", [(0, True), (0.02, False)])
+@pytest.mark.parametrize("diversified", [False, True])
+def test_cash_buffer_allows_fully_invested_strategy(
+    tmp_path: Path, buffer: float, halt: bool, diversified: bool
+) -> None:
+    targets = (
+        {"SPY": 0.3, "QQQ": 0.3, "IEF": 0.2, "TLT": 0.2}
+        if diversified
+        else {"SPY": 0.6, "IEF": 0.4}
+    )
+    limits = (
+        RiskLimits.load()
+        if diversified
+        else RiskLimits(max_weight=0.6, max_order_notional_pct=0.6)
+    )
+    acc = replace(account(), cash=100_000, equity=100_000)
+    prices = {symbol: 100.0 for symbol in targets}
+    config = BacktestConfig(
+        cash_buffer=buffer, fractional_shares=True, drift_threshold=0
+    )
+    orders = plan_orders(
+        targets, acc, prices, session="day1", strategy="60/40", config=config
+    )
+    result = check_orders(orders, acc, prices, limits, kill_switch=KillSwitch(tmp_path))
+    assert result.halt == halt
+    if halt:
+        assert not result.approved and any("min_cash_pct" in r for r in result.reasons)
+    else:
+        assert result.approved == orders and not result.rejected
+    deltas = rebalance_deltas(
+        config.buffered_targets(targets),
+        {},
+        prices,
+        acc.equity,
+        drift_threshold=0,
+        fractional=True,
+        min_trade_notional=0,
+    )
+    assert {o.symbol: o.qty for o in orders} == deltas

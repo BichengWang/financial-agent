@@ -14,7 +14,14 @@ class RiskConfigError(ValueError):
 
 @dataclass(frozen=True)
 class RiskLimits:
-    """Exposure/loss limits are equity fractions; symbols empty means unrestricted."""
+    """Equity-fraction limits; empty symbols means unrestricted.
+
+    Live BacktestConfig.cash_buffer must exceed min_cash_pct; the runner enforces
+    this to leave room for costs between decision-price planning and execution.
+    Defaults suit diversified ETF strategies. Concentrated benchmarks such as
+    sixty_forty and buy_and_hold exceed max_weight and are backtest-only unless
+    the owner edits quant_policy.toml.
+    """
 
     max_weight: float = 0.30
     max_gross: float = 1.0

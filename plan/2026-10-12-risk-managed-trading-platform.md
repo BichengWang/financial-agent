@@ -167,6 +167,7 @@ class CostModel:
 @dataclass(frozen=True)
 class BacktestConfig:
     initial_cash: float = 100_000.0
+    cash_buffer: float = 0.0           # [0, 1); scale target gross to <= 1 - buffer
     rebalance: Literal["daily", "weekly", "monthly"] = "weekly"
     drift_threshold: float = 0.02     # min |target - actual| weight to trade a name
     execution: Literal["next_open", "next_close"] = "next_open"
@@ -186,6 +187,11 @@ def performance_summary(returns, *, benchmark=None, periods_per_year=252) -> dic
 #   total_return, cagr, ann_vol, sharpe, sortino, max_drawdown, calmar, hit_rate,
 #   skew, kurtosis, var95, cvar95 (historical), beta/alpha vs benchmark when given
 ```
+
+Backtest and live planning proportionally scale targets only when gross exceeds
+`1 - cash_buffer`. A live config must set `cash_buffer > min_cash_pct`; the
+runner enforces this reserve for execution costs. The reserve applies at
+decision prices; gaps and subsequent price moves can consume it.
 
 The engine calls `strategy.target_weights(data.upto(decision_session))` and never
 passes later rows. Signals are computed on the rebalance calendar; fills apply

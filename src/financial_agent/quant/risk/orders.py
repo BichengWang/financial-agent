@@ -70,7 +70,7 @@ def plan_orders(
 ) -> list[Order]:
     """Use shared drift, rounding and notional rules; sorted sells precede buys."""
     deltas = rebalance_deltas(
-        targets,
+        config.buffered_targets(dict(targets)),
         {s: p.qty for s, p in account.positions.items()},
         prices,
         account.equity,
