@@ -21,11 +21,17 @@ Python 3.12 reinforcement-learning framework for financial / portfolio trading. 
 ## Setup & run
 
 ```shell
-uv lock
-uv sync --locked
-uv pip install -e .
-uv run jupyter notebook   # for the .ipynb work in notebooks/
+uv sync --locked                       # core + default dev tools
+uv sync --locked --no-dev               # core runtime only
+uv sync --locked --extra rl             # financial trading experiments
+uv sync --locked --extra dl             # TensorFlow prediction baselines
+uv sync --locked --all-extras           # all research stacks + dev tools
+uv run --extra notebooks jupyter notebook
 ```
+
+The `all` extra combines `rl`, `dl`, and `notebooks`; the `dev` extra matches
+uv's default `dev` dependency group. Sync installs the package in editable mode.
+Run `uv lock` after changing dependencies, not as part of normal setup.
 
 Run a script: `uv run python example/rl/cartpole_example.py`.
 

@@ -14,34 +14,46 @@ classifiers = [
 ]
 dependencies = [
     "numpy>=1.24.0,<2.0",
-    "matplotlib",
-    "gymnasium",
-    "black",
-    "click",
-    "mypy",
-    "pyparsing",
     "pandas>=2.0,<3",
-    "seaborn",
-    "scikit-learn",
-    "keras-nightly",
-    "tensorflow",
-    "ipython",
-    "notebook",
     "yfinance",
-    "beautifulsoup4",
-    "stockstats",
-    "stable-baselines3",
-    "pyfolio-reloaded",
+    "gymnasium",
 ]
 
 [project.optional-dependencies]
+rl = [
+    "stable-baselines3",
+    "stockstats",
+    "pyfolio-reloaded",
+    "matplotlib",
+    "beautifulsoup4",
+    "scikit-learn",
+    # trading/utils/gpu_config.py imports TensorFlow at module load.
+    "tensorflow",
+]
+dl = [
+    "tensorflow",
+    "keras-nightly",
+    "scikit-learn",
+    "ipython",
+    "matplotlib",
+    "seaborn",
+]
+notebooks = [
+    "notebook",
+    "ipython",
+    "seaborn",
+    "matplotlib",
+]
 dev = [
-    "black",
-    "flake8",
-    "mypy",
-    "pytest",
+    "black>=22.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "pytest>=7.0.0",
     "pytest-cov",
     "pytest-custom-exit-code",
+]
+all = [
+    "financial-agent[rl,dl,notebooks]",
 ]
 research = [
     "openpyxl>=3.1,<4",
@@ -56,10 +68,12 @@ packages = ["src/financial_agent"]
 
 [dependency-groups]
 dev = [
-    "pytest>=7.0.0",
     "black>=22.0.0",
     "flake8>=6.0.0",
     "mypy>=1.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov",
+    "pytest-custom-exit-code",
 ]
 
 [tool.black]

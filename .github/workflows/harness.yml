@@ -47,7 +47,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install
-        run: uv sync --locked --extra research
+        run: uv sync --locked --group dev --extra research
 
       - name: Tests
         run: uv run pytest tests/harness agents/equity/daily_investment_system/tests skills/equity-investment-research/scripts/test_research.py -q
