@@ -35,7 +35,8 @@ not implemented model agents. The equity prompt workflow lives separately under
 Run commands from the repository root. Install
 [uv](https://docs.astral.sh/uv/getting-started/installation/) first; the project
 requires **Python ≥3.12**, with 3.12 a practical starting point for the scientific
-dependency stack.
+dependency stack. The committed `.python-version` selects 3.12 for `uv` commands;
+the locked TensorFlow version does not support newer Python versions.
 
 ```sh
 uv sync --locked --python 3.12
@@ -56,8 +57,21 @@ uv sync --locked --python 3.12 --extra dev
 ```
 
 The `dev` extra contains Black, flake8, mypy, pytest, pytest-cov, and
-pytest-custom-exit-code. The separate uv development dependencies contain only
+pytest-custom-exit-code. The default uv `dev` dependency group contains only
 Black, flake8, mypy, and pytest; Black and mypy are also main dependencies.
+
+Run the same checks used by the Python quality workflow:
+
+```sh
+uv run pytest tests agents/equity/daily_investment_system/tests -q
+uv run black --check src/financial_agent/rl tests/rl
+uv run flake8 src/financial_agent/rl tests/rl
+uv run mypy src/financial_agent/rl src/financial_agent/harness
+```
+
+Tests cover the RL core, harness, and daily equity helpers. Formatting and lint
+checks currently cover the RL core and its tests; type checks cover RL and the
+harness. The separate Harness workflow also checks report publication gates.
 
 ## Try a bounded RL example
 
@@ -94,6 +108,14 @@ uv run python example/rl/cartpole_example.py
 
 That script trains for 1,000 episodes (up to 500 steps each), evaluates five
 episodes, and prints reward/length statistics.
+
+Training and evaluation both have a `max_steps_per_episode` limit (default:
+1,000). Time-limit truncation ends an episode while preserving the Q-learning
+bootstrap; only terminal states suppress it. The Gymnasium wrapper accepts
+zero-based discrete actions, flattens numeric observations, and requires
+`reset()` before the first step and after an episode ends. To render, configure
+the mode at creation, such as `GymEnvironmentWrapper("FrozenLake-v1",
+render_mode="ansi")`.
 
 ## Explore the research workflows
 
@@ -167,6 +189,7 @@ tool does not place orders.
 | [`agents/equity/daily_investment_system/`](agents/equity/daily_investment_system/) | Prompt workflow, compute helpers, and helper tests |
 | [`agents/equity/turtle-trader/`](agents/equity/turtle-trader/) | Turtle scanner/backtester, fixtures, and universe caches |
 | [`tests/harness/`](tests/harness/) | Harness tests |
+| [`tests/rl/`](tests/rl/) | RL learning, trainer, and environment regression tests |
 | [`notebooks/`](notebooks/) / [`archive/`](archive/) | Current experiment notebooks / older notebooks |
 | [`pure_prompt_coding/equity/`](pure_prompt_coding/equity/) | Prompt-based research material and outputs |
 
@@ -178,8 +201,6 @@ tool does not place orders.
 - The generic Q-learning agent uses a tabular state key rounded to three decimal
   places; the Gymnasium examples are learning demonstrations, not deep-RL
   baselines.
-- `Trainer.evaluate()` has no independent step cap. Prefer environments with a
-  time limit, such as CartPole, or use the bounded training example above.
 - Financial training code is experimental. In particular,
   `trading/autotrain/training.py` currently calls `DRL_prediction` with a
   mismatched signature and references an undefined `BackTestStats`; it is not a
