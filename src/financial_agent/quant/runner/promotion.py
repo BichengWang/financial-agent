@@ -106,6 +106,7 @@ def authorize_live(
             continue
         if (
             payload.get("mode") != "paper"
+            or payload.get("broker_kind") != "alpaca"
             or payload.get("strategy") != config.strategy_name
             or _canonical(payload.get("params")) != identity
         ):
@@ -137,7 +138,9 @@ def authorize_live(
     fills = [
         e.payload
         for e in records
-        if e.type == "fill" and e.payload.get("session", "")[:10] in recent_days
+        if e.type == "fill"
+        and e.payload.get("broker_kind") == "alpaca"
+        and e.payload.get("session", "")[:10] in recent_days
     ]
     # Evidence without fills cannot establish realized execution quality.
     if not fills:

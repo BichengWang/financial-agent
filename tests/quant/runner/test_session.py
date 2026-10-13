@@ -201,7 +201,7 @@ def test_external_error_is_redacted(config: TradingConfig, first_day: date) -> N
     )
 
 
-def test_partial_submission_is_not_silently_retried(
+def test_partial_submission_recovers_without_duplicate_orders(
     config: TradingConfig, first_day: date
 ) -> None:
     from financial_agent.quant.execution import BrokerError, OrderAck
@@ -221,13 +221,19 @@ def test_partial_submission_is_not_silently_retried(
     report = run_session(config, today=first_day, broker=broker)
     assert report.status == "HALTED"
     assert len(broker.open_orders()) == 1
-    retry = run_session(config, today=first_day, broker=broker)
-    assert retry.status == "HALTED"
-    assert len(broker.open_orders()) == 1
+    retry = run_session(config, today=first_day, broker=paper(config))
+    assert retry.status == "TRADED", retry.reasons
+    assert len(broker.open_orders()) == len(report.orders)
+    assert run_session(config, today=first_day).status == "NO_CHANGE"
 
 
 @pytest.mark.parametrize(
-    "day,expected", [(date(2020, 6, 9), "NO_CHANGE"), (date(2020, 6, 8), "TRADED")]
+    "day,expected",
+    [
+        (date(2020, 6, 9), "NO_CHANGE"),
+        (date(2020, 6, 8), "TRADED"),
+        (date(2020, 5, 26), "TRADED"),
+    ],
 )
 def test_weekly_calendar(config: TradingConfig, day: date, expected: str) -> None:
     weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
@@ -259,3 +265,134 @@ def test_risk_anchors_cannot_be_reset_by_file_loss_or_rewrite(
     report = run_session(config, today=first_day)
     assert report.status == "HALTED"
     assert report.reasons == ["risk state disagrees with journal"]
+
+
+def test_off_cadence_skips_bad_price_band_but_preview_reports_it(
+    config: TradingConfig, first_day: date
+) -> None:
+    from financial_agent.quant.risk import AccountSnapshot
+
+    class MismarkedPaper(PaperBroker):
+        def account(self) -> AccountSnapshot:
+            observed = super().account()
+            return replace(
+                observed,
+                positions={
+                    symbol: replace(position, market_price=position.market_price * 1.1)
+                    for symbol, position in observed.positions.items()
+                },
+            )
+
+    weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
+    first = run_session(weekly, today=first_day)
+    assert first.status == "TRADED" and first.orders
+    broker = MismarkedPaper(
+        config.state_dir / "paper.json",
+        costs=config.backtest.costs,
+        initial_cash=config.initial_cash,
+    )
+    tuesday = date(2020, 6, 9)
+    report = run_session(weekly, today=tuesday, broker=broker)
+    assert report.status == "NO_CHANGE", report.reasons
+    assert report.reasons == ["outside rebalance calendar"]
+    assert not report.orders and report.fills
+    journal = Journal(config.state_dir / "journal.jsonl")
+    assert not [
+        e for e in journal.events(["plan"]) if e.payload["session"] == str(tuesday)
+    ]
+    preview = run_session(weekly, today=tuesday, dry_run=True, broker=broker)
+    assert preview.status == "NO_CHANGE", preview.reasons
+    assert preview.dry_run and not preview.risk["rebalance_due"]
+    assert any("price_band_pct" in r for r in preview.reasons)
+    assert not broker.open_orders()
+
+
+@pytest.mark.parametrize("broker_observed", [False, True])
+def test_crash_during_submission_recovers_same_day(
+    config: TradingConfig, first_day: date, broker_observed: bool
+) -> None:
+    from financial_agent.quant.execution import BrokerError, OrderAck
+    from financial_agent.quant.risk import Order
+
+    class CrashedPaper(PaperBroker):
+        def submit(self, order: Order) -> OrderAck:
+            if broker_observed:
+                super().submit(order)
+            raise BrokerError("process interrupted before journal acknowledgement")
+
+    broker = CrashedPaper(
+        config.state_dir / "paper.json",
+        costs=config.backtest.costs,
+        initial_cash=config.initial_cash,
+    )
+    original = run_session(config, today=first_day, broker=broker)
+    assert original.status == "HALTED" and original.orders
+    assert len(broker.open_orders()) == int(broker_observed)
+    preview = run_session(config, today=first_day, dry_run=True)
+    assert preview.status == "NO_CHANGE" and preview.orders
+    assert len(broker.open_orders()) == int(broker_observed)
+    recovered = run_session(config, today=first_day)
+    assert recovered.status == "TRADED", recovered.reasons
+    assert {o.client_order_id for o in recovered.orders} == {
+        o.client_order_id for o in original.orders
+    }
+    assert len(broker.open_orders()) == len(original.orders)
+    assert run_session(config, today=first_day).status == "NO_CHANGE"
+
+
+@pytest.mark.parametrize("observed", [False, True])
+def test_prior_session_intent_is_observed_or_abandoned(
+    config: TradingConfig, first_day: date, observed: bool
+) -> None:
+    from financial_agent.quant.risk import Order
+    from financial_agent.quant.runner.report import json_value
+
+    broker = paper(config)
+    broker.settle(
+        csv(config).fetch(config.symbols, config.data_start, date(2020, 6, 5))
+    )
+    order = Order("SPY", "buy", 10, client_order_id="interrupted-order")
+    journal = Journal(config.state_dir / "journal.jsonl")
+    journal.append(
+        "submission_intent",
+        {"session": str(first_day), "order": json_value(order), "reference_price": 100},
+    )
+    if observed:
+        broker.submit(order)
+    recovered = run_session(config, today=date(2020, 6, 9), broker=broker)
+    assert recovered.status != "HALTED", recovered.reasons
+    submitted = journal.events(["submitted"])
+    abandoned = journal.events(["submission_abandoned"])
+    if observed:
+        assert any(
+            e.payload["client_order_id"] == order.client_order_id for e in submitted
+        )
+        assert not abandoned
+        assert any(f.client_order_id == order.client_order_id for f in recovered.fills)
+    else:
+        assert (
+            len(abandoned) == 1
+            and abandoned[0].payload["client_order_id"] == order.client_order_id
+        )
+        assert not any(
+            e.payload["client_order_id"] == order.client_order_id for e in submitted
+        )
+        assert (
+            order.client_order_id
+            not in json.loads(broker.state_path.read_text())["orders"]
+        )
+    assert (
+        run_session(config, today=date(2020, 6, 9), broker=broker).status == "NO_CHANGE"
+    )
+    assert journal.verify().ok
+
+
+def test_off_cadence_still_checks_drawdown(config: TradingConfig) -> None:
+    weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
+    config.state_dir.mkdir()
+    day = date(2020, 6, 9)
+    RiskState(200000, 100000, str(day)).save(config.state_dir / "risk_state.json")
+    report = run_session(weekly, today=day)
+    assert report.status == "HALTED"
+    assert any("max_drawdown_pct" in r for r in report.reasons)
+    assert KillSwitch(config.state_dir).engaged()

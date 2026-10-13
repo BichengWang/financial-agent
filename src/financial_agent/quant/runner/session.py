@@ -14,7 +14,15 @@ import pandas as pd  # type: ignore[import-untyped]
 
 from financial_agent.harness.market_calendar import session as calendar_session
 from ..data import BarProvider, MarketData, check_quality
-from ..execution import AlpacaBroker, Broker, BrokerError, Fill, Journal, PaperBroker
+from ..execution import (
+    AlpacaBroker,
+    Broker,
+    BrokerError,
+    Fill,
+    Journal,
+    OrderAck,
+    PaperBroker,
+)
 from ..execution.alpaca import LIVE_URL
 from ..risk import (
     AccountSnapshot,
@@ -82,11 +90,47 @@ def configured_broker(
     )
 
 
+def _recover_prior_intents(broker: Broker, journal: Journal, today: date) -> None:
+    """Observe earlier intents without placing stale orders at a later auction."""
+    resolved = {
+        e.payload["client_order_id"]
+        for e in journal.events(["submitted", "submission_abandoned"])
+    }
+    for event in journal.events(["submission_intent"]):
+        intent = event.payload
+        client_id = intent["order"]["client_order_id"]
+        if client_id in resolved or intent["session"] >= today.isoformat():
+            continue
+        ack: OrderAck | None
+        if isinstance(broker, PaperBroker):
+            state = json.loads(broker.state_path.read_text())
+            record = state["orders"].get(client_id)
+            ack = broker._ack(record) if record is not None else None
+        elif isinstance(broker, AlpacaBroker):
+            ack = broker._lookup(client_id)
+        else:
+            raise BrokerError("broker does not support submission recovery lookup")
+        if ack is None:
+            journal.append(
+                "submission_abandoned",
+                {
+                    "client_order_id": client_id,
+                    "session": intent["session"],
+                    "reason": "broker never observed this earlier-session intent",
+                },
+            )
+        else:
+            journal.append("submitted", json_value(ack))
+        resolved.add(client_id)
+
+
 def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
     """Recover fills only for recorded intents, including interrupted settlement."""
+    submitted = {e.payload["client_order_id"] for e in journal.events(["submitted"])}
     intents = {
         e.payload["order"]["client_order_id"]: e.payload
         for e in journal.events(["submission_intent"])
+        if e.payload["order"]["client_order_id"] in submitted
     }
     known: dict[str, float] = {}
     for event in journal.events(["fill"]):
@@ -162,7 +206,7 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
             continue
         # Journal incremental quantities; reconstruct cumulative fills on replay.
         incremental = replace(fill, qty=delta)
-        journal.append("fill", json_value(incremental))
+        journal.append("fill", {**json_value(incremental), "broker_kind": broker.name})
         known[fill.client_order_id] = fill.qty
         new.append(incremental)
     return new
@@ -254,6 +298,7 @@ def _run_locked(
                 strategy=config.strategy_name,
                 params=config.strategy_params,
                 reconciliation_breaks=breaks_count,
+                broker_kind=broker.name if broker is not None else config.broker_kind,
             )
             journal.append("session_outcome", payload)
         write_report(report, config.state_dir)
@@ -307,6 +352,7 @@ def _run_locked(
             broker = configured_broker(config, environ, authorization=authorization)
         if broker.is_live != (config.mode == "live"):
             return finish("HALTED", ["broker mode does not match config.mode"])
+        _recover_prior_intents(broker, journal, today)
         fills.extend(_sync(broker, data, journal))
         account = broker.account()
         from ..execution import reconcile
@@ -358,13 +404,75 @@ def _run_locked(
         if reasons:
             kill.engage("; ".join(reasons), source="runner")
             return finish("HALTED", reasons)
+        # Daily account safety runs above; hypothetical off-cadence plans cannot halt.
+        due = config.backtest.rebalance == "daily"
+        if config.backtest.rebalance == "weekly":
+            due = (
+                pd.Timestamp(decision).isocalendar()[:2]
+                != pd.Timestamp(today).isocalendar()[:2]
+            )
+        elif config.backtest.rebalance == "monthly":
+            due = decision[:7] != today.isoformat()[:7]
+        if (
+            config.backtest.start is not None
+            and pd.Timestamp(decision) < config.backtest.start
+        ):
+            due = False
+        risk["rebalance_due"] = due
+        if not due and not dry_run:
+            return finish("NO_CHANGE", ["outside rebalance calendar"])
         intents = journal.events(["submission_intent"])
         same = [e for e in intents if e.payload["session"] == today.isoformat()]
         submitted = {
             e.payload["client_order_id"] for e in journal.events(["submitted"])
         }
-        if any(e.payload["order"]["client_order_id"] not in submitted for e in intents):
-            return finish("HALTED", ["incomplete submission requires operator review"])
+        abandoned = {
+            e.payload["client_order_id"]
+            for e in journal.events(["submission_abandoned"])
+        }
+        missing = [
+            e
+            for e in same
+            if e.payload["order"]["client_order_id"] not in submitted | abandoned
+        ]
+        if missing:
+            # Include already pending orders in the risk plan: their cash is unspent.
+            recovery_plan = [Order(**e.payload["order"]) for e in same]
+            checked = check_orders(
+                recovery_plan,
+                account,
+                data.close.iloc[-1],
+                config.risk,
+                kill_switch=kill,
+            )
+            orders.extend(Order(**e.payload["order"]) for e in missing)
+            journal.append(
+                "submission_recovery",
+                {
+                    "session": today.isoformat(),
+                    "orders": json_value(recovery_plan),
+                    "halt": checked.halt,
+                    "reasons": checked.reasons,
+                    "dry_run": dry_run,
+                },
+            )
+            if checked.halt and due:
+                return finish("HALTED", checked.reasons)
+            if dry_run:
+                return finish(
+                    "NO_CHANGE",
+                    [
+                        "dry run: interrupted submission preview",
+                        *(["outside rebalance calendar"] if not due else []),
+                        *checked.reasons,
+                    ],
+                )
+            for order in orders:
+                ack = broker.submit(order)
+                journal.append("submitted", json_value(ack))
+                if ack.status == "rejected":
+                    return finish("HALTED", ["broker rejected order"])
+            return finish("TRADED", ["recovered interrupted submission"])
         if same:
             previous_plans = [
                 e.payload
@@ -445,27 +553,22 @@ def _run_locked(
                 "halt": checked.halt,
                 "reasons": checked.reasons,
                 "dry_run": dry_run,
+                "rebalance_due": due,
             },
         )
+        if not due:
+            return finish(
+                "NO_CHANGE",
+                [
+                    "outside rebalance calendar",
+                    "dry run: preview only, not due",
+                    *checked.reasons,
+                ],
+            )
         if checked.halt:
             return finish("HALTED", checked.reasons)
         if not orders:
             return finish("NO_CHANGE", [])
-        # Calendar boundaries match the backtest's period-end decision convention.
-        due = config.backtest.rebalance == "daily"
-        if config.backtest.rebalance == "weekly":
-            due = (
-                pd.Timestamp(decision).isocalendar()[:2]
-                != pd.Timestamp(today).isocalendar()[:2]
-            )
-        elif config.backtest.rebalance == "monthly":
-            due = decision[:7] != today.isoformat()[:7]
-        if not due or (
-            config.backtest.start is not None
-            and pd.Timestamp(decision) < config.backtest.start
-        ):
-            orders.clear()
-            return finish("NO_CHANGE", ["outside rebalance calendar"])
         if dry_run:
             return finish("NO_CHANGE", ["dry run: planned orders, no submission"])
         for order in orders:

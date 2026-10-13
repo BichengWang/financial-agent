@@ -1,5 +1,8 @@
 # Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.
 # Run near 08:45 America/New_York; previous close decides today's OPG orders.
+# Live mode requires [strategy.params] equal to the certificate's selected params.
+# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper
+# sessions with those params. Local PaperBroker sessions do not count for live.
 mode = "paper"
 state_dir = "../../var/quant-paper"
 

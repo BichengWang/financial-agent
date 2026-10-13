@@ -169,3 +169,42 @@ def test_emergency_stop_survives_broken_journal(config_path: Path) -> None:
         == 1
     )
     assert KillSwitch(config.state_dir).engaged()
+
+
+def test_certify_prints_selected_parameters_as_copyable_toml(
+    config_path: Path, tmp_path: Path, capsys: Any
+) -> None:
+    import tomllib
+
+    policy = tmp_path / "policy.toml"
+    policy.write_text(
+        "[promotion]\ntrain_sessions = 126\ntest_sessions = 63\n"
+        "min_oos_sessions = 100\nembargo_sessions = 0\npbo_splits = 4\n"
+    )
+    cert = tmp_path / "certificate.json"
+    result = main(
+        [
+            "certify",
+            "--config",
+            str(config_path),
+            "--end",
+            "2020-06-05",
+            "--policy",
+            str(policy),
+            "--grid",
+            '[{"lookbacks":[3,10],"cov_lookback":10,"max_weight":0.25},'
+            '{"lookbacks":[3,12],"cov_lookback":10,"max_weight":0.25}]',
+            "--output",
+            str(cert),
+        ]
+    )
+    assert result in (0, 2)
+    output = capsys.readouterr().out
+    selected_toml = output.split(
+        "Selected strategy parameters (copy into your config):\n"
+    )[1]
+    strategy = tomllib.loads(selected_toml)["strategy"]
+    certificate = json.loads(cert.read_text())
+    assert strategy["name"] == certificate["strategy"]
+    assert strategy["params"] == certificate["params"]
+    assert strategy["params"]["lookbacks"] in ([3, 10], [3, 12])

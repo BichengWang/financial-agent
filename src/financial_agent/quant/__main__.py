@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Sequence
-from dataclasses import replace
 from datetime import date
 import json
 from pathlib import Path
@@ -150,6 +149,39 @@ def _print(value: Any) -> None:
     print(json.dumps(json_value(value), indent=2, allow_nan=False))
 
 
+def strategy_toml(name: str, params: dict[str, Any]) -> str:
+    """Copyable strategy identity; reject parameter types TOML cannot represent."""
+
+    def value(item: Any) -> str:
+        if isinstance(item, bool):
+            return "true" if item else "false"
+        if isinstance(item, (str, int, float)):
+            return json.dumps(item, ensure_ascii=False, allow_nan=False)
+        if isinstance(item, (list, tuple)):
+            return "[" + ", ".join(value(v) for v in item) + "]"
+        if isinstance(item, dict):
+            return (
+                "{ "
+                + ", ".join(
+                    f"{json.dumps(str(k))} = {value(v)}" for k, v in item.items()
+                )
+                + " }"
+            )
+        raise ConfigError(
+            "strategy.params: selected value is not representable in TOML"
+        )
+
+    lines = ["[strategy]", f"name = {value(name)}", "", "[strategy.params]"]
+    lines.extend(f"{json.dumps(key)} = {value(item)}" for key, item in params.items())
+    return "\n".join(lines)
+
+
+SYNTHETIC_NOTICE = (
+    "SYNTHETIC DATA with a planted trend: these numbers demonstrate the pipeline, "
+    "not market performance."
+)
+
+
 def _demo(state_dir: Path | None, count: int) -> int:
     """Generate offline evidence under the real policy; never fabricate a pass."""
     if count < 1 or count > 252:
@@ -158,13 +190,14 @@ def _demo(state_dir: Path | None, count: int) -> int:
     root.mkdir(parents=True, exist_ok=True)
     if (root / "journal.jsonl").exists():
         raise ConfigError("state-dir: demo requires a fresh directory")
-    # Long seeded history supplies default-policy OOS coverage, with no network.
+    print(SYNTHETIC_NOTICE, flush=True)
+    # A mild planted edge illustrates the gate under the production paper settings.
     data = synthetic_market(
         ETF_UNIVERSE,
         4500 + count,
-        seed=42,
-        annual_drift=0.20,
-        annual_vol=0.08,
+        seed=1,
+        annual_drift=0.12,
+        annual_vol=0.18,
         correlation=0.1,
     )
     trading = [s for s in data.sessions if session(s.date()).trading_day]
@@ -184,23 +217,21 @@ def _demo(state_dir: Path | None, count: int) -> int:
         "[universe]\nsymbols = " + json.dumps(ETF_UNIVERSE) + "\n"
         '[data]\nprovider = "csv"\ncsv_dir = "csv"\n'
         'cache_dir = "cache"\nstart = "2005-01-03"\n'
-        # Large synthetic prices after 17 years of drift need finer share granularity.
-        "[backtest]\ninitial_cash = 10000000.0\ncash_buffer = 0.02\n"
-        'rebalance = "daily"\ndrift_threshold = 0.0\n'
-        '[broker]\nkind = "paper"\ninitial_cash = 10000000.0\n'
+        "[backtest]\ninitial_cash = 100000.0\ncash_buffer = 0.02\n"
+        'rebalance = "weekly"\ndrift_threshold = 0.02\n'
+        '[broker]\nkind = "paper"\ninitial_cash = 100000.0\n'
     )
     config = TradingConfig.load(config_path)
     history = data.upto(data.sessions[-count - 1])
     strategy = build_strategy(config.strategy_name, config.strategy_params)
-    research_config = replace(config.backtest, rebalance="weekly")
-    result = run_backtest(strategy, history, research_config)
+    result = run_backtest(strategy, history, config.backtest)
     print("Offline backtest:")
     _print(result.summary())
     promotion = evaluate_promotion(
         strategy.name,
         [{**strategy.params(), "target_vol": v} for v in (0.08, 0.12)],
         history,
-        research_config,
+        config.backtest,
         PromotionPolicy.load(),
     )
     cert_path = write_certificate(promotion, root / "certificate.json")
@@ -215,9 +246,11 @@ def _demo(state_dir: Path | None, count: int) -> int:
         )
         if report.status == "HALTED":
             print("; ".join(report.reasons))
+            print(SYNTHETIC_NOTICE)
             return 2
     print(f"Config: {config_path}")
     print(render_status(status_summary(config)))
+    print(SYNTHETIC_NOTICE)
     return 0
 
 
@@ -263,6 +296,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 print(f"Passed: {report.passed}")
                 print("\n".join(c.detail for c in report.checks))
                 print(f"Diagnostics: {json_value(report.diagnostics)}")
+                if args.command == "certify":
+                    print("Selected strategy parameters (copy into your config):")
+                    print(strategy_toml(report.strategy, report.selected_params))
             return 0 if report.passed else 2
         config = TradingConfig.load(args.config)
         if args.command == "data":

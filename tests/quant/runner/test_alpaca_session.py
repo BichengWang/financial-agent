@@ -3,7 +3,7 @@
 from dataclasses import replace
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import pytest
 
@@ -86,6 +86,8 @@ class Exchange:
                 "current_price": float(data.close.iloc[-1][symbol]),
             }
             order.update(status="filled", filled_qty=qty, filled_avg_price=price)
+        for symbol, position in self.positions.items():
+            position["current_price"] = float(data.close.iloc[-1][symbol])
 
 
 def test_alpaca_paper_round_trip_and_no_repeat_lookups(
@@ -140,3 +142,129 @@ def test_live_authorization_with_real_gate_and_fake_transport(
     journal = Journal(config.state_dir / "journal.jsonl")
     assert journal.events(["live_authorized"])
     assert "secret" not in journal.path.read_text()
+
+
+@pytest.mark.parametrize("observed", [False, True])
+def test_alpaca_prior_intent_recovery(
+    config: TradingConfig, first_day: date, observed: bool
+) -> None:
+    from financial_agent.quant.risk import Order
+    from financial_agent.quant.runner.report import json_value
+
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    order = Order("SPY", "buy", 10, client_order_id="old-intent")
+    journal = Journal(config.state_dir / "journal.jsonl")
+    journal.append(
+        "submission_intent",
+        {"session": str(first_day), "order": json_value(order), "reference_price": 100},
+    )
+    if observed:
+        broker.submit(order)
+        exchange.fill(config, first_day)
+    report = run_session(config, today=date(2020, 6, 9), broker=broker)
+    assert report.status != "HALTED", report.reasons
+    if observed:
+        assert any(f.client_order_id == order.client_order_id for f in report.fills)
+        assert not journal.events(["submission_abandoned"])
+    else:
+        assert (
+            journal.events(["submission_abandoned"])[0].payload["client_order_id"]
+            == "old-intent"
+        )
+        assert "old-intent" not in exchange.orders
+
+
+def test_alpaca_lookup_failure_halts_then_recovers(
+    config: TradingConfig, first_day: date
+) -> None:
+    from financial_agent.quant.execution import BrokerError
+    from financial_agent.quant.risk import Order
+    from financial_agent.quant.runner.report import json_value
+
+    class BrokenLookup(Exchange):
+        def request(self, method: str, url: str, **kwargs: Any) -> Response:
+            if url.endswith("/v2/orders:by_client_order_id"):
+                raise BrokerError("lookup interrupted")
+            return super().request(method, url, **kwargs)
+
+    config = replace(config, broker_kind="alpaca")
+    journal = Journal(config.state_dir / "journal.jsonl")
+    journal.append(
+        "submission_intent",
+        {
+            "session": str(first_day),
+            "order": json_value(Order("SPY", "buy", 10, client_order_id="old-intent")),
+            "reference_price": 100,
+        },
+    )
+    broken = AlpacaBroker("key", "secret", session=BrokenLookup())
+    report = run_session(config, today=date(2020, 6, 9), broker=broken)
+    assert report.status == "HALTED"
+    assert not journal.events(["submission_abandoned", "submitted"])
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    assert run_session(config, today=date(2020, 6, 9), broker=broker).status == "TRADED"
+    assert journal.events(["submission_abandoned"])
+
+
+@pytest.mark.parametrize("kind", ["paper", "alpaca"])
+def test_live_requires_twenty_broker_backed_paper_sessions(
+    config: TradingConfig, tmp_path: Path, kind: Literal["paper", "alpaca"]
+) -> None:
+    from datetime import timedelta
+    from financial_agent.harness.market_calendar import session
+    from financial_agent.quant.execution import PaperBroker
+    from financial_agent.quant.runner import PromotionError
+
+    config = replace(
+        config,
+        broker_kind=kind,
+        backtest=replace(config.backtest, cash_buffer=0.10, drift_threshold=0),
+    )
+    cert = certificate(config, tmp_path)
+    exchange = Exchange()
+    broker = (
+        AlpacaBroker("key", "secret", session=exchange)
+        if kind == "alpaca"
+        else PaperBroker(
+            config.state_dir / "paper.json",
+            costs=config.backtest.costs,
+            initial_cash=config.initial_cash,
+        )
+    )
+    day = date(2020, 6, 8)
+    previous: date | None = None
+    completed = 0
+    while completed < 20:
+        if session(day).trading_day:
+            if kind == "alpaca" and previous is not None:
+                exchange.fill(config, previous)
+            report = run_session(config, today=day, broker=broker)
+            assert report.status in ("TRADED", "NO_CHANGE"), report.reasons
+            previous = day
+            completed += 1
+        day += timedelta(days=1)
+    journal = Journal(config.state_dir / "journal.jsonl")
+    assert {e.payload["broker_kind"] for e in journal.events(["session_outcome"])} == {
+        kind
+    }
+    if kind == "paper":
+        with pytest.raises(PromotionError, match="paper sessions 0"):
+            authorize_live(
+                config,
+                certificate_path=cert,
+                paper_journal_path=journal.path,
+                environ={"FA_QUANT_ALLOW_LIVE": "1"},
+            )
+    else:
+        assert (
+            authorize_live(
+                config,
+                certificate_path=cert,
+                paper_journal_path=journal.path,
+                environ={"FA_QUANT_ALLOW_LIVE": "1"},
+            ).strategy
+            == config.strategy_name
+        )

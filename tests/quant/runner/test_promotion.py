@@ -45,6 +45,7 @@ def paper_evidence(config: TradingConfig, path: Path, count: int = 20) -> Journa
                 "session": day,
                 "status": "TRADED",
                 "mode": "paper",
+                "broker_kind": "alpaca",
                 "strategy": config.strategy_name,
                 "params": config.strategy_params,
                 "dry_run": False,
@@ -61,6 +62,7 @@ def paper_evidence(config: TradingConfig, path: Path, count: int = 20) -> Journa
                 "qty": 1,
                 "price": 100.05,
                 "reference_price": 100,
+                "broker_kind": "alpaca",
                 "commission": 0,
             },
         )
@@ -129,13 +131,20 @@ def test_aggregates_unmet_conditions(config: TradingConfig, tmp_path: Path) -> N
             "session": "2020-06-02",
             "status": "HALTED",
             "mode": "paper",
+            "broker_kind": "alpaca",
             "strategy": config.strategy_name,
             "params": config.strategy_params,
             "reconciliation_breaks": 1,
         },
     )
     paper.append(
-        "fill", {"session": "2020-06-02", "price": 102, "reference_price": 100}
+        "fill",
+        {
+            "session": "2020-06-02",
+            "price": 102,
+            "reference_price": 100,
+            "broker_kind": "alpaca",
+        },
     )
     with pytest.raises(PromotionError) as caught:
         authorize_live(
@@ -213,7 +222,15 @@ def test_zero_cost_model_and_invalid_fill_fail_closed(
             paper_journal_path=paper.path,
             environ={"FA_QUANT_ALLOW_LIVE": "1"},
         )
-    paper.append("fill", {"session": "2020-06-20", "price": 0, "reference_price": 0})
+    paper.append(
+        "fill",
+        {
+            "session": "2020-06-20",
+            "price": 0,
+            "reference_price": 0,
+            "broker_kind": "alpaca",
+        },
+    )
     with pytest.raises(PromotionError, match="invalid"):
         authorize_live(
             config,
