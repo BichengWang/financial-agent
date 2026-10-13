@@ -58,7 +58,8 @@ def run_backtest(
     """Run next-bar execution; positions/cash persist and cash earns zero.
 
     Strategies receive independent inclusive history copies. Pending sells are
-    capped at actual holdings. Missing reference prices are recorded and skipped.
+    capped at actual holdings. Planning includes all still-pending share deltas.
+    Missing reference prices are recorded and skipped.
     Closing marks carry only previously observed valid closes forward.
     """
     if (
@@ -208,9 +209,16 @@ def run_backtest(
             targets = validate_weights(
                 strategy, history, strategy.target_weights(history)
             )
+            projected = positions.copy()
+            for _, queued_deltas in pending.values():
+                for symbol, delta in queued_deltas.items():
+                    projected[lookup[symbol]] += delta
+            # Earlier underfilled buys can leave outstanding sells above holdings.
+            # Those sells are capped at execution, so projected holdings cannot short.
+            projected = np.maximum(projected, 0.0)
             deltas = rebalance_deltas(
                 targets.to_dict(),
-                dict(zip(symbols, positions)),
+                dict(zip(symbols, projected)),
                 dict(zip(symbols, closes[i])),
                 nav,
                 drift_threshold=config.drift_threshold,
@@ -235,5 +243,6 @@ def run_backtest(
         params=strategy.params(),
         data_fingerprint=data.fingerprint(),
         config=config,
+        active_start=sessions[min(decisions)] if decisions else None,
         skipped_trades=pd.DataFrame(skipped, columns=SKIP_COLUMNS),
     )

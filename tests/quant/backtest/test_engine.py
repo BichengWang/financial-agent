@@ -256,3 +256,89 @@ def test_pending_delayed_exits_cannot_create_shorts() -> None:
         assert quantity >= 0
     assert quantity == 0
     assert result.weights.iloc[-1].sum() == 0
+
+
+@pytest.mark.parametrize("delay", [1, 3])
+def test_pending_fixed_weight_buys_do_not_duplicate(delay: int) -> None:
+    data = bars()
+    constant = data.close * 0 + 10.0
+    data = replace(data, open=constant.copy(), close=constant.copy())
+    result = run_backtest(
+        buy_and_hold({"A": 0.5}),
+        data,
+        BacktestConfig(
+            initial_cash=100,
+            rebalance="daily",
+            extra_delay=delay,
+            drift_threshold=0,
+            costs=CostModel.zero(),
+        ),
+    )
+    assert len(result.trades) == 1
+    trade = result.trades.iloc[0]
+    assert trade.side == "buy"
+    assert trade.shares == 5
+    assert trade.fill_session == data.sessions[1 + delay]
+    assert result.weights["A"].max() == 0.5
+    assert result.weights["A"].iloc[-1] == 0.5
+
+
+def test_summary_excludes_warmup_and_keeps_full_histories() -> None:
+    data = synthetic_market(["A"], 30, seed=7)
+    strategy = replace(buy_and_hold({"A": 0.5}), warmup=15)
+    config = BacktestConfig(rebalance="daily", costs=CostModel.zero())
+    long = run_backtest(strategy, data, config)
+    short = run_backtest(
+        buy_and_hold({"A": 0.5}), data.window(data.sessions[14], None), config
+    )
+    assert long.active_start == data.sessions[14]
+    assert short.active_start == long.active_start
+    assert len(long.returns) == 30
+    assert (long.returns.iloc[:15] == 0).all()
+    pd.testing.assert_series_equal(long.returns.iloc[15:], short.returns.iloc[1:])
+    assert long.summary() == pytest.approx(short.summary(), nan_ok=True)
+    assert long.summary()["average_annual_turnover"] == pytest.approx(
+        long.turnover.iloc[15:].mean() * 252
+    )
+
+
+def test_summary_without_an_active_fill_period() -> None:
+    result = run_backtest(
+        replace(buy_and_hold({"A": 1}), warmup=20), bars(), BacktestConfig()
+    )
+    assert result.active_start is None
+    assert np.isnan(result.summary()["cagr"])
+    assert np.isnan(result.summary()["average_annual_turnover"])
+    result = run_backtest(
+        buy_and_hold({"A": 1}), bars(), BacktestConfig(rebalance="monthly")
+    )
+    assert result.active_start == bars().sessions[-1]
+    assert np.isnan(result.summary()["cagr"])
+
+
+@pytest.mark.parametrize("reference", [20.0, float("nan")])
+def test_pending_exit_after_underfilled_or_skipped_buy(reference: float) -> None:
+    class Exit(Recording):
+        def target_weights(self, data: MarketData) -> pd.Series:
+            return pd.Series({"A": 1.0 if len(data.sessions) == 1 else 0.0})
+
+    data = bars()
+    constant = data.close * 0 + 10.0
+    opening = constant.copy()
+    opening.iloc[2, 0] = reference
+    data = replace(data, open=opening, close=constant)
+    result = run_backtest(
+        Exit(warmup=1),
+        data,
+        BacktestConfig(
+            initial_cash=100, rebalance="daily", extra_delay=1, costs=CostModel.zero()
+        ),
+    )
+    assert (result.weights >= 0).all().all()
+    assert result.weights.iloc[-1].sum() == 0
+    if np.isfinite(reference):
+        assert result.trades.shares.tolist() == [5.0, 5.0]
+        assert result.trades.side.tolist() == ["buy", "sell"]
+    else:
+        assert result.trades.empty
+        assert len(result.skipped_trades) == 1
