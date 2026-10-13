@@ -146,7 +146,7 @@ def build_strategy(name: str, params: Mapping[str, Any] | None = None) -> Strate
 ```
 
 Built-ins: `trend_vol_target` (multi-lookback trend signal, inverse-vol sizing,
-EWMA-covariance portfolio vol target, per-asset cap), `dual_momentum`
+sample-covariance portfolio vol target, per-asset cap), `dual_momentum`
 (top-k 12-1 momentum with an absolute filter into a defensive asset),
 `buy_and_hold` (fixed weights, e.g. SPY), `sixty_forty` (SPY/IEF, rebalanced),
 `research_forecast` (PR9).
@@ -174,12 +174,13 @@ class BacktestConfig:
     fractional_shares: bool = False
     min_trade_notional: float = 0.0
     costs: CostModel = CostModel()
+    start: pd.Timestamp | None = None  # optional earliest decision session
 
 def rebalance_deltas(targets, positions, prices, nav, *, drift_threshold,
                      fractional, min_trade_notional) -> dict[str, float]   # share deltas
 def run_backtest(strategy, data, config) -> BacktestResult
 #   BacktestResult: equity, returns (net daily), weights, trades, costs, turnover,
-#   strategy_name, params, data_fingerprint, config; .summary() -> dict
+#   strategy_name, params, data_fingerprint, config, skipped_trades; .summary() -> dict
 def performance_summary(returns, *, benchmark=None, periods_per_year=252) -> dict[str, float]
 #   total_return, cagr, ann_vol, sharpe, sortino, max_drawdown, calmar, hit_rate,
 #   skew, kurtosis, var95, cvar95 (historical), beta/alpha vs benchmark when given
