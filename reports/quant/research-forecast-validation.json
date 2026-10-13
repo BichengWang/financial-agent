@@ -1,0 +1,974 @@
+{
+  "generated_at": "2026-10-13T07:30:11.568601+00:00",
+  "requested_start": "2025-06-14",
+  "requested_end": "2026-10-12",
+  "data_start": "2025-06-16",
+  "data_end": "2026-10-12",
+  "sessions": 333,
+  "symbols": [
+    "A",
+    "AAPL",
+    "ABBV",
+    "ABNB",
+    "ABT",
+    "ACGL",
+    "ADP",
+    "AIZ",
+    "ALL",
+    "AMAT",
+    "AMCR",
+    "AMD",
+    "AME",
+    "AMGN",
+    "AMP",
+    "AMT",
+    "AMZN",
+    "ANET",
+    "AON",
+    "APD",
+    "ARES",
+    "ARM",
+    "AVGO",
+    "AWK",
+    "AXON",
+    "BAC",
+    "BAX",
+    "BBY",
+    "BDX",
+    "BEN",
+    "BIIB",
+    "BKNG",
+    "BLK",
+    "BMY",
+    "BNY",
+    "BRO",
+    "BX",
+    "BXP",
+    "CAT",
+    "CB",
+    "CCEP",
+    "CDW",
+    "CFG",
+    "CHRW",
+    "CNC",
+    "COF",
+    "COO",
+    "CPAY",
+    "CRL",
+    "CRM",
+    "CRWD",
+    "CSCO",
+    "CSX",
+    "CTAS",
+    "CVS",
+    "CVX",
+    "DAL",
+    "DASH",
+    "DDOG",
+    "DE",
+    "DELL",
+    "DG",
+    "DGX",
+    "DHR",
+    "DOC",
+    "DUK",
+    "DVA",
+    "DXCM",
+    "EFX",
+    "EG",
+    "ELV",
+    "EMR",
+    "EQIX",
+    "EQR",
+    "ESS",
+    "ETN",
+    "EXPD",
+    "EXPE",
+    "EXR",
+    "F",
+    "FAST",
+    "FCX",
+    "FFIV",
+    "FICO",
+    "FITB",
+    "FLEX",
+    "FRT",
+    "FTNT",
+    "GD",
+    "GE",
+    "GEHC",
+    "GEN",
+    "GILD",
+    "GIS",
+    "GM",
+    "GOOGL",
+    "GPC",
+    "GPN",
+    "GRMN",
+    "GS",
+    "HD",
+    "HIG",
+    "HOOD",
+    "HPE",
+    "HPQ",
+    "HSIC",
+    "HUM",
+    "ICE",
+    "IEX",
+    "IFF",
+    "INCY",
+    "INSM",
+    "INTC",
+    "IQV",
+    "ITW",
+    "IVZ",
+    "J",
+    "JBHT",
+    "JCI",
+    "JNJ",
+    "JPM",
+    "KDP",
+    "KEY",
+    "KHC",
+    "KKR",
+    "KLAC",
+    "KMB",
+    "KO",
+    "LH",
+    "LII",
+    "LIN",
+    "LLY",
+    "LMT",
+    "LRCX",
+    "LYV",
+    "MA",
+    "MAS",
+    "MCK",
+    "MCO",
+    "MDT",
+    "MELI",
+    "MET",
+    "META",
+    "MMM",
+    "MNST",
+    "MPC",
+    "MRK",
+    "MRNA",
+    "MRSH",
+    "MRVL",
+    "MS",
+    "MSFT",
+    "MTB",
+    "MTD",
+    "MU",
+    "NDAQ",
+    "NDSN",
+    "NEM",
+    "NOW",
+    "NSC",
+    "NTAP",
+    "NTRS",
+    "NUE",
+    "NVDA",
+    "NWS",
+    "NWSA",
+    "OMC",
+    "PANW",
+    "PAYX",
+    "PCAR",
+    "PCG",
+    "PFE",
+    "PFG",
+    "PG",
+    "PH",
+    "PKG",
+    "PLD",
+    "PLTR",
+    "PM",
+    "PRU",
+    "PSX",
+    "REGN",
+    "RF",
+    "RJF",
+    "RMD",
+    "ROST",
+    "RTX",
+    "RVTY",
+    "SCHW",
+    "SHOP",
+    "SHW",
+    "SJM",
+    "SNA",
+    "SNDK",
+    "SO",
+    "SOLV",
+    "SPGI",
+    "SPY",
+    "STT",
+    "STX",
+    "SWK",
+    "SYF",
+    "SYK",
+    "SYY",
+    "TECH",
+    "TGT",
+    "TMO",
+    "TPR",
+    "TRI",
+    "TROW",
+    "TRV",
+    "TSCO",
+    "TSLA",
+    "TTWO",
+    "TXN",
+    "UAL",
+    "UNH",
+    "UNP",
+    "UPS",
+    "URI",
+    "USB",
+    "V",
+    "VEEV",
+    "VLO",
+    "VLTO",
+    "VRSK",
+    "VRTX",
+    "VTRS",
+    "WAB",
+    "WDC",
+    "WELL",
+    "WFC",
+    "WRB",
+    "WSM",
+    "WST",
+    "WTW",
+    "XYZ",
+    "ZBRA",
+    "ZS"
+  ],
+  "adjusted": true,
+  "data_source": "yahoo",
+  "data_fingerprint": "44028e81fa8a643d18d6dc622c4cd6ffe9cc5996666b8b6165026a413b26cc07",
+  "first_forecast": "2026-06-14",
+  "last_forecast": "2026-09-03",
+  "packages_loaded": 83,
+  "forecasts_accepted": 1608,
+  "skipped_reasons": {
+    "missing_identity_or_type": 29,
+    "type_filter": 240
+  },
+  "forecasts_with_historical_active_session": 1608,
+  "policy": {
+    "min_oos_sessions": 2520,
+    "min_oos_sharpe": 0.5,
+    "min_dsr": 0.95,
+    "max_prob_oos_loss": 0.1,
+    "max_oos_drawdown": 0.25,
+    "min_sharpe_2x_costs": 0.3,
+    "min_sharpe_delay_1": 0.3,
+    "min_bootstrap_sharpe_p05": 0.0,
+    "train_sessions": 1260,
+    "test_sessions": 252,
+    "embargo_sessions": 5,
+    "pbo_splits": 16
+  },
+  "grid": [
+    {
+      "output_dir": "agents/equity/output",
+      "kelly_fraction": 0.25,
+      "max_weight": 0.05
+    },
+    {
+      "output_dir": "agents/equity/output",
+      "kelly_fraction": 0.25,
+      "max_weight": 0.1
+    },
+    {
+      "output_dir": "agents/equity/output",
+      "kelly_fraction": 0.5,
+      "max_weight": 0.05
+    },
+    {
+      "output_dir": "agents/equity/output",
+      "kelly_fraction": 0.5,
+      "max_weight": 0.1
+    }
+  ],
+  "runs": {
+    "weekly": {
+      "config": {
+        "initial_cash": 100000.0,
+        "rebalance": "weekly",
+        "drift_threshold": 0.02,
+        "execution": "next_open",
+        "extra_delay": 0,
+        "fractional_shares": false,
+        "min_trade_notional": 0.0,
+        "costs": {
+          "commission_per_share": 0.0,
+          "commission_min": 0.0,
+          "commission_bps": 0.0,
+          "half_spread_bps": 2.0,
+          "slippage_bps": 3.0
+        },
+        "start": null
+      },
+      "summary": {
+        "total_return": 0.009383438682244376,
+        "cagr": 0.007179452922071656,
+        "ann_vol": 0.021103363013068387,
+        "sharpe": 0.34951544331514883,
+        "sortino": 0.5071998833714246,
+        "max_drawdown": 0.013851004436685632,
+        "calmar": 0.5183344612219045,
+        "hit_rate": 0.11854103343465046,
+        "skew": -0.25397622024193733,
+        "kurtosis": 18.668955996400335,
+        "var95": 0.0009740727595878961,
+        "cvar95": 0.003332712782666499,
+        "total_costs": 196.7619481153743,
+        "average_annual_turnover": 2.9764053818410092,
+        "trade_count": 161.0
+      },
+      "spy_summary": {
+        "total_return": 0.32426692419542785,
+        "cagr": 0.24001822165994763,
+        "ann_vol": 0.120973025032649,
+        "sharpe": 1.839369785789651,
+        "sortino": 2.7671156337134533,
+        "max_drawdown": 0.08873642148656513,
+        "calmar": 2.7048445005897253,
+        "hit_rate": 0.541033434650456,
+        "skew": -0.1862302229576361,
+        "kurtosis": 1.3026323854544213,
+        "var95": 0.012473169350782997,
+        "cvar95": 0.01683275228905638,
+        "total_costs": 49.900201614227626,
+        "average_annual_turnover": 0.7586870216384366,
+        "trade_count": 1.0
+      },
+      "research_span_start": "2026-06-15",
+      "research_span_end": "2026-10-12",
+      "research_span_summary": {
+        "total_return": 0.009383438682244376,
+        "cagr": 0.028762519098777087,
+        "ann_vol": 0.042176301803282024,
+        "sharpe": 0.6932140376731761,
+        "sortino": 1.0098062347633983,
+        "max_drawdown": 0.013851004436685632,
+        "calmar": 2.0765655826805576,
+        "hit_rate": 0.46987951807228917,
+        "skew": -0.23001853450792206,
+        "kurtosis": 2.6584444569618473,
+        "var95": 0.00421133288036597,
+        "cvar95": 0.005993929552012478,
+        "beta": 0.17381783252817948,
+        "alpha": 0.00019063695393651625,
+        "correlation": 0.4785760400364904
+      },
+      "research_span_spy_summary": {
+        "total_return": 0.054255056699575054,
+        "cagr": 0.1739955228861471,
+        "ann_vol": 0.11612483717472578,
+        "sharpe": 1.4390482982935096,
+        "sortino": 2.391911132085576,
+        "max_drawdown": 0.0337243370633572,
+        "calmar": 5.159345980894017,
+        "hit_rate": 0.4578313253012048,
+        "skew": 0.3786664118363371,
+        "kurtosis": -0.008073651150419359,
+        "var95": 0.0097360377145003,
+        "cvar95": 0.012913477429864751
+      },
+      "forecasts_at_executed_decisions": 664,
+      "packages_at_executed_decisions": 67,
+      "skipped_trades": 0,
+      "gate": {
+        "passed": false,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 0.0,
+            "threshold": 2520.0,
+            "passed": false,
+            "detail": "oos_sessions 0 fails >= 2520: insufficient out-of-sample sessions"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": null,
+            "threshold": 0.5,
+            "passed": false,
+            "detail": "oos_sharpe nan fails >= 0.5: net out-of-sample risk-adjusted return is insufficient"
+          },
+          {
+            "name": "dsr",
+            "value": null,
+            "threshold": 0.95,
+            "passed": false,
+            "detail": "dsr nan fails >= 0.95: returns must be one-dimensional, finite, and length >= 4"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": null,
+            "threshold": 0.1,
+            "passed": false,
+            "detail": "prob_oos_loss nan fails <= 0.1: CSCV half-sample Sharpe requires positive variance"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": null,
+            "threshold": 0.25,
+            "passed": false,
+            "detail": "oos_drawdown nan fails <= 0.25: out-of-sample drawdown exceeds the loss budget"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": null,
+            "threshold": 0.3,
+            "passed": false,
+            "detail": "sharpe_2x_costs nan fails >= 0.3: insufficient evidence or the edge does not survive doubled costs"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": null,
+            "threshold": 0.3,
+            "passed": false,
+            "detail": "sharpe_delay_1 nan fails >= 0.3: insufficient evidence or the edge does not survive an extra session of delay"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": null,
+            "threshold": 0.0,
+            "passed": false,
+            "detail": "bootstrap_sharpe_p05 nan fails > 0: returns must be one-dimensional, finite, and length >= 2"
+          }
+        ],
+        "oos_summary": {
+          "total_return": null,
+          "cagr": null,
+          "ann_vol": null,
+          "sharpe": null,
+          "sortino": null,
+          "max_drawdown": null,
+          "calmar": null,
+          "hit_rate": null,
+          "skew": null,
+          "kurtosis": null,
+          "var95": null,
+          "cvar95": null
+        },
+        "diagnostics": {
+          "pbo": null,
+          "n_combinations": 0.0,
+          "degradation_slope": null
+        },
+        "selected_params": {}
+      }
+    },
+    "daily": {
+      "config": {
+        "initial_cash": 100000.0,
+        "rebalance": "daily",
+        "drift_threshold": 0.02,
+        "execution": "next_open",
+        "extra_delay": 0,
+        "fractional_shares": false,
+        "min_trade_notional": 0.0,
+        "costs": {
+          "commission_per_share": 0.0,
+          "commission_min": 0.0,
+          "commission_bps": 0.0,
+          "half_spread_bps": 2.0,
+          "slippage_bps": 3.0
+        },
+        "start": null
+      },
+      "summary": {
+        "total_return": -0.013799315149234178,
+        "cagr": -0.010491693181768668,
+        "ann_vol": 0.026761872835273193,
+        "sharpe": -0.3807580659444538,
+        "sortino": -0.5179213496254479,
+        "max_drawdown": 0.029400305729290865,
+        "calmar": -0.3568566013691493,
+        "hit_rate": 0.11144578313253012,
+        "skew": -0.13244868358149564,
+        "kurtosis": 21.137680394236636,
+        "var95": 0.0017590184784538386,
+        "cvar95": 0.004743798787109654,
+        "total_costs": 243.84488939393816,
+        "average_annual_turnover": 3.714110031538942,
+        "trade_count": 196.0
+      },
+      "spy_summary": {
+        "total_return": 0.3148122264155784,
+        "cagr": 0.2308974453271639,
+        "ann_vol": 0.12002022247091318,
+        "sharpe": 1.7914553665822057,
+        "sortino": 2.695338354749189,
+        "max_drawdown": 0.08827068374169156,
+        "calmar": 2.6157885669362684,
+        "hit_rate": 0.536144578313253,
+        "skew": -0.17546358357885772,
+        "kurtosis": 1.3093525935152734,
+        "var95": 0.012409427671377227,
+        "cvar95": 0.01674368998924434,
+        "total_costs": 49.59498913386142,
+        "average_annual_turnover": 0.7569923219392213,
+        "trade_count": 1.0
+      },
+      "research_span_start": "2026-06-15",
+      "research_span_end": "2026-10-12",
+      "research_span_summary": {
+        "total_return": -0.013799315149234175,
+        "cagr": -0.041310926374280625,
+        "ann_vol": 0.053721401993237924,
+        "sharpe": -0.7587142973738966,
+        "sortino": -1.0358426992508958,
+        "max_drawdown": 0.029400305729290865,
+        "calmar": -1.405118938376327,
+        "hit_rate": 0.4457831325301205,
+        "skew": 0.042916272191889746,
+        "kurtosis": 3.2324957280244506,
+        "var95": 0.005779898840994146,
+        "cvar95": 0.008440181910950261,
+        "beta": 0.23447720020389912,
+        "alpha": -0.07974745893672834,
+        "correlation": 0.5043960681668492
+      },
+      "research_span_spy_summary": {
+        "total_return": 0.053988670108027464,
+        "cagr": 0.1730951055810871,
+        "ann_vol": 0.1155628944658021,
+        "sharpe": 1.4388478036878813,
+        "sortino": 2.3915325187886327,
+        "max_drawdown": 0.03356204753816294,
+        "calmar": 5.157465598136199,
+        "hit_rate": 0.4578313253012048,
+        "skew": 0.3786186920771459,
+        "kurtosis": -0.008435674022515105,
+        "var95": 0.009689019435427692,
+        "cvar95": 0.012850581531665028
+      },
+      "forecasts_at_executed_decisions": 897,
+      "packages_at_executed_decisions": 69,
+      "skipped_trades": 0,
+      "gate": {
+        "passed": false,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 0.0,
+            "threshold": 2520.0,
+            "passed": false,
+            "detail": "oos_sessions 0 fails >= 2520: insufficient out-of-sample sessions"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": null,
+            "threshold": 0.5,
+            "passed": false,
+            "detail": "oos_sharpe nan fails >= 0.5: net out-of-sample risk-adjusted return is insufficient"
+          },
+          {
+            "name": "dsr",
+            "value": null,
+            "threshold": 0.95,
+            "passed": false,
+            "detail": "dsr nan fails >= 0.95: returns must be one-dimensional, finite, and length >= 4"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": null,
+            "threshold": 0.1,
+            "passed": false,
+            "detail": "prob_oos_loss nan fails <= 0.1: CSCV half-sample Sharpe requires positive variance"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": null,
+            "threshold": 0.25,
+            "passed": false,
+            "detail": "oos_drawdown nan fails <= 0.25: out-of-sample drawdown exceeds the loss budget"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": null,
+            "threshold": 0.3,
+            "passed": false,
+            "detail": "sharpe_2x_costs nan fails >= 0.3: insufficient evidence or the edge does not survive doubled costs"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": null,
+            "threshold": 0.3,
+            "passed": false,
+            "detail": "sharpe_delay_1 nan fails >= 0.3: insufficient evidence or the edge does not survive an extra session of delay"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": null,
+            "threshold": 0.0,
+            "passed": false,
+            "detail": "bootstrap_sharpe_p05 nan fails > 0: returns must be one-dimensional, finite, and length >= 2"
+          }
+        ],
+        "oos_summary": {
+          "total_return": null,
+          "cagr": null,
+          "ann_vol": null,
+          "sharpe": null,
+          "sortino": null,
+          "max_drawdown": null,
+          "calmar": null,
+          "hit_rate": null,
+          "skew": null,
+          "kurtosis": null,
+          "var95": null,
+          "cvar95": null
+        },
+        "diagnostics": {
+          "pbo": null,
+          "n_combinations": 0.0,
+          "degradation_slope": null
+        },
+        "selected_params": {}
+      }
+    }
+  },
+  "package_manifest": [
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-06-10/15_predictions.json",
+      "sha256": "7782392a3faeca59e9c13031fda39959a8bd2fa42dc6eaa01ff80075bb81c6e2"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-01/15_predictions.json",
+      "sha256": "eca8073394972d54a8e7c2996ac21573a193ad33c442d9323e8be341b34416dd"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-02/15_predictions.json",
+      "sha256": "12040978c54f2693c3fdf0d63b9970d2304971180507f7cb3006cc6630de7116"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-03/15_predictions.json",
+      "sha256": "647b316bd121611e5241e4db2d045ae29604a1fbe04cace75fff7f5d655e3225"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-04/15_predictions.json",
+      "sha256": "4065bc035c117b9a08607139629ca175b439900ffab5e5c6f5c0d67b70fdc23a"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-05/15_predictions.json",
+      "sha256": "c1c834e5f675ed7717050bb1c1fea1770d8faf2a91fae2bde104cfd1147717e2"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-06/15_predictions.json",
+      "sha256": "11463c3927188170b3c57dbf60717908c84b59aff3f6ef7f0afbd5fc56745f8e"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-07/15_predictions.json",
+      "sha256": "4004eab5ebe1e25d0f35ebf705cea388265f8a2e4858765e9edc692a094e4fe0"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-08/15_predictions.json",
+      "sha256": "54b1eab79db50dc929be9124d97b00c12263b7a9b21d70f47c750439b62eb2b5"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-09/15_predictions.json",
+      "sha256": "99f6316b8f1ec66f89336269b4102863df3c94f402bcbbd01f0e1b8ede9ba1d6"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-10/15_predictions.json",
+      "sha256": "7366a03604574d6a18d785040e49265e153514925d8c115accbc1dc80c45e2bb"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-11/15_predictions.json",
+      "sha256": "d15b7d2dcc73099c9f40f08aec13a33e6b9823d42122c8d007c1f749f3b72b39"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-12/15_predictions.json",
+      "sha256": "8dda8b4a327eb5386f7934e0a81fb3475ca193e4a4e949b819c5dd604b69b0e4"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-13/15_predictions.json",
+      "sha256": "ec3a87d59e4f3346793fc905a85347a2c191be1dafb55aecf165ab50a14bd25e"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-14/15_predictions.json",
+      "sha256": "818e39eb9aae4ee6dc83c62a39a4372f0312f332cca3fa2129365f9a2ed510a8"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-15/15_predictions.json",
+      "sha256": "5abac0f6c9586ca13b7c2be63f2f3962ba4f207a2dfbb86454e891621493d58c"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-17/15_predictions.json",
+      "sha256": "9dafcace00a510c0317b86abba99d5681bb2a17054e102a8d23238be8daa735c"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-20/15_predictions.json",
+      "sha256": "9f916459383f98f0ce7f0870a68a883e8af0481be7d6df92e089669289545a64"
+    },
+    {
+      "path": "agents/equity/output/claude-fable-5-2026-07-21/15_predictions.json",
+      "sha256": "cb3be126bffaf646b857d16db4cc23652f201b0b3456348c95116678920ed714"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-4-8-2026-06-30/15_predictions.json",
+      "sha256": "b7af0a554641631573382e320e71deea79d3329fb32f737bec0860397cc0667d"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-24/15_predictions.json",
+      "sha256": "980cfedda8df88be1e0eb0e3a237b1278688fd73ca17212599d1dff522dbde7b"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-26/15_predictions.json",
+      "sha256": "f371c8693f5b9388664f29b019c1e9304f6333647539acafd44a9ab1d079d679"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-27/15_predictions.json",
+      "sha256": "613aa75f2ac35e99ce60ce40927e2dc186d880affbefe8104e0ecee967b1227b"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-28/15_predictions.json",
+      "sha256": "c3e84b774a305e716f540bec0fe3e9c8941feb0cf29a989641439b723e56c60f"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-29/15_predictions.json",
+      "sha256": "267816aa4b590301a888e00c915c435b55e38f6f0814c0b0c4faf3bc3aa74984"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-07-30/15_predictions.json",
+      "sha256": "1633d8c71249144983db9eb85b4730e2eaffa9fdf5f794e843aeb5450c54b78c"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-01/15_predictions.json",
+      "sha256": "f4ee952d039b8ea9e11e43100ff87bc999298f14dc32d63c4dac23c869394d1d"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-03/15_predictions.json",
+      "sha256": "3ea993310ad510e534c49cd8f52f0a00e2c4d8886e41cea4ad59bfb464acd49f"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-04/15_predictions.json",
+      "sha256": "698145243e7372acc29e7cc4244752eea3b88fb797bcd0ad0ca565a744bc69dd"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-06/15_predictions.json",
+      "sha256": "db940f35a34d3c4573f6cd9143a0db6bd5e6eeb1ebf2084a342f82f21febb9e5"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-07/15_predictions.json",
+      "sha256": "dda3b193a736603f2bec3200693f5f3d1a4d9837212bb998a2ea46b8640a2d99"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-14/15_predictions.json",
+      "sha256": "675b38624af89433f907f2c217f24c490deffeff6f66034ab23932889b4b6af6"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-22/15_predictions.json",
+      "sha256": "188a27683cbb09aadd259fb716bc7100617f70f41ffdd64af333ecef1794ec62"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-27/15_predictions.json",
+      "sha256": "93fff83a1d57d4c7c8199c272bfa7e9bad16298c0ff22ea9bb2691e60a6945d1"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-08-28/15_predictions.json",
+      "sha256": "33b00acc952866bdb403956b942173e06f6175d79c90a39a2711b1a8a7624fce"
+    },
+    {
+      "path": "agents/equity/output/claude-opus-5-2026-09-03/15_predictions.json",
+      "sha256": "da0603f465f1d17bdf27a192a54fcc36a5699f3290a2fc79abbfbb6b5ccae87d"
+    },
+    {
+      "path": "agents/equity/output/claude-sonnet-5-2026-07-02/15_predictions.json",
+      "sha256": "b8b59cae4b4b155cf67f614a685865c322a6b724e94d125c01555b7b36720283"
+    },
+    {
+      "path": "agents/equity/output/claude-sonnet-5-2026-07-03/15_predictions.json",
+      "sha256": "fd8e9754a15c6d6dd0440f5697c160e326d9e52c33b7120395f7fe1a8efeefcd"
+    },
+    {
+      "path": "agents/equity/output/claude-sonnet-5-2026-07-22/15_predictions.json",
+      "sha256": "be26171d746166cba019b517363e6d6cc9aa205314edf012a63b6e8fda6cb56b"
+    },
+    {
+      "path": "agents/equity/output/gemini-3.5-flash-2026-06-21/15_predictions.json",
+      "sha256": "ee8fc998b3863d856a90b763b3f2451c0af1856cbdd8f63ea8cffc351cc64ff9"
+    },
+    {
+      "path": "agents/equity/output/gemini-3.5-flash-2026-06-29/15_predictions.json",
+      "sha256": "6d74ccabec2ef5ea480b9a13e57fa7fecdaf9948c624026ed59c6c7d9fb2d962"
+    },
+    {
+      "path": "agents/equity/output/gemini-3.5-flash-2026-07-13/15_predictions.json",
+      "sha256": "0c648641549812f30eb19ffc0b27a7ca1a70747eb8c7c7e50e8219b4644c6334"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-11/15_predictions.json",
+      "sha256": "438c28b0017ce2324ba1b7cac5e9b42445bec000fc6297874091f741383ca337"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-14/15_predictions.json",
+      "sha256": "0905db66dbce904fb56add26b19f804bcca9a69a7621c43e1d7500f0ce83b5c4"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-15/15_predictions.json",
+      "sha256": "fc73b129535549bdbc36d3d7c9c08fcb00e2132e6338ce4696b74b8172d7742e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-16/15_predictions.json",
+      "sha256": "9d0ee1c796d1b03b9ca2534fb7f312d57584cc6633055c6aad300d3544e757c3"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-17/15_predictions.json",
+      "sha256": "dfbcbffc8fa4f4a9e71d173625e4bc841901dd0b2687f6109b9deff91743e5e8"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-18/15_predictions.json",
+      "sha256": "b424814f87a6d81acd6955591ddf095fd744bbdade8269557d2d9a6c45f0d566"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-19/15_predictions.json",
+      "sha256": "65073eb824a67bed60b9b71f92bcbba41dd1d67dc161dc4f10374d24297ae67a"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-20/15_predictions.json",
+      "sha256": "5246d1b845c7c1465d62dc7c3778260a714653b88573446b68dd24bc06d76dd5"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-21/15_predictions.json",
+      "sha256": "f159b745907f2aa87bfa4c43051f92c8e515074d2930c7794a0821d8f5a6ee1b"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-22/15_predictions.json",
+      "sha256": "69f9409c6816d006eaad14a3ecf2b3fe7a4839f8eb40afe0b56ee277d83f8cbe"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-24/15_predictions.json",
+      "sha256": "257c2d96632160c7deab26a033be27e447b2fde0b7f17c4e9793180e2191684e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-28/15_predictions.json",
+      "sha256": "e21bbab9a09435833cc96bd0b8d525d2b0a68778fa492e283f8e0177e0bf51d3"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-29/15_predictions.json",
+      "sha256": "4fe3e116e8d624b4ca6bf48200a54df07ed2f36205927916fea4da94045c0a38"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-06-30/15_predictions.json",
+      "sha256": "d82e08808d88987a03b2fae25718fecac940f80910f52db45e7a6df285f0c15e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-01/15_predictions.json",
+      "sha256": "1f9e135520d3b812b46e670d647392d785d755ca14bbcb3625ae7e632fb58a7e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-02/15_predictions.json",
+      "sha256": "1f1bc7a2bd7ac24416701c2dfacee7f7c986a9f50120f3628d3bd8d5300a73d6"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-03/15_predictions.json",
+      "sha256": "c2202ab96be77d076dde396df142d9d0d9e0f6241b367e5a95bf7bcc240e352b"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-04/15_predictions.json",
+      "sha256": "e2c2bcd714887943499cf27d98c9d71962973d4406a5169fad810150428490b4"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-05/15_predictions.json",
+      "sha256": "2763cc2324f27d8a3f27d5a83b213e731d8bfec5daf1ccc092876153753dc43a"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-06/15_predictions.json",
+      "sha256": "953d73db31988d270a3b917371080c597d95a77b221c52a5fbc7ce5883b16203"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-07/15_predictions.json",
+      "sha256": "a82fdfc261686d44f37f164acdf970f2960198e6315488d64dcaa77ffa5429b5"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-08/15_predictions.json",
+      "sha256": "9e226f81b49e6e5fa24dc25e8010e5b957199afb19e89ed72919920d9ed525dd"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-09/15_predictions.json",
+      "sha256": "bf3c2e2a98f68a82797028849b7b9196e645931aea68a1e33d038d41f871fa29"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-10/15_predictions.json",
+      "sha256": "09d6647dcd80bc56b2a98d6a093c009ddc58ae1a058b4f9397e07583792ff0dc"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-11/15_predictions.json",
+      "sha256": "8d3df7c510a1a6618e79a121b5cea89534eb3f6132c6ab7c37a052fc4cf358fe"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-12/15_predictions.json",
+      "sha256": "319a4f6ee0b712f19eb07b38590b83da4656fee0d0778772c6605f0ee8d28edf"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-13/15_predictions.json",
+      "sha256": "765d0a54de3050cf636108de9ae9a2bdb836efcbbf6a6f6c8991be976f5657cb"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-14/15_predictions.json",
+      "sha256": "2579d963389ae160f45089f7c31b66df577aaf306b2a89cff815614526e2105e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-15/15_predictions.json",
+      "sha256": "f1a8e2b68256b58f35ad637288679aa81847160f8a85fed1a51e8772579c9c19"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-17/15_predictions.json",
+      "sha256": "20607609673015d0e149759610aef6f2c9945c0000095cb6e4fa3763c539dcbf"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-20/15_predictions.json",
+      "sha256": "22a720a6b17a9f8e1d2cd2b27bc5d5ec628318b6f5d68cf0cb5aa0aa63981995"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-21/15_predictions.json",
+      "sha256": "990472fab3f19a5ab15a1fb2e9481a6d851e4af297c1b375e645bca7ea09e274"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-22/15_predictions.json",
+      "sha256": "f7eb03628323e7744bf9c2f8b667813a7882ee4a4f01281f44dff24e582ace5c"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-24/15_predictions.json",
+      "sha256": "f15545d43ef079531a2629340f1f6779ad788d6148219767e9cedbc2b27e4692"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-27/15_predictions.json",
+      "sha256": "f771ed98235468bccee23029f62ce52abfb682c8d6af71bcba2b1549dd893fce"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-28/15_predictions.json",
+      "sha256": "61915a67bea49f3633c402f8b9080c2b58e2b7ad1cf9a1d43117de393f0e64fc"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-29/15_predictions.json",
+      "sha256": "15c1a14c235ccf25047642e0f2ecbbda621b5abd6047f3fda8f21a5a5fdc87bf"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-07-30/15_predictions.json",
+      "sha256": "e7e78b42f3439f27b220a1a325cf2d3f7f24a9476a6e87c005f1833ffcb1059e"
+    },
+    {
+      "path": "agents/equity/output/gpt-5-2026-08-03/15_predictions.json",
+      "sha256": "bfbaa991f202942ae37444324423f22c83566d3c31db3d843b8b83bc66c90493"
+    },
+    {
+      "path": "agents/equity/output/gpt-5.6-sol-2026-08-10/15_predictions.json",
+      "sha256": "48b0b8d96e7fec98ed588d9ce2b50ac9459f09013af1c28f6cd2e944360f8964"
+    },
+    {
+      "path": "agents/equity/output/gpt-5.6-sol-2026-08-28/15_predictions.json",
+      "sha256": "80629e93bfd7534f5858dd1eee8e67b86b39f35993318daf86714d4ffe5017d4"
+    }
+  ],
+  "reproduce_python": "import datetime as dt\nimport hashlib\nimport itertools\nimport json\nimport math\nfrom dataclasses import asdict\nfrom pathlib import Path\n\nimport pandas as pd\nfrom financial_agent.harness.market_calendar import session\nfrom financial_agent.quant.backtest import BacktestConfig, run_backtest, performance_summary\nfrom financial_agent.quant.data import CachedProvider, YahooProvider\nfrom financial_agent.quant.strategies import build_strategy\nfrom financial_agent.quant.strategies.research import ResearchForecastStrategy\nfrom financial_agent.quant.validation import evaluate_promotion, PromotionPolicy\n\nroot = 'agents/equity/output'\nstrategy = ResearchForecastStrategy(root)\nfirst = min(f.run_date for f in strategy.forecasts)\nstart = first - dt.timedelta(days=365)\nend = dt.date.fromisoformat(session(dt.date.today() - dt.timedelta(days=1)).basis_date)\nsymbols = sorted({f.ticker for f in strategy.forecasts} | {'SPY'})\nprint('Loading adjusted Yahoo cache', len(symbols), start, end, flush=True)\ndata = CachedProvider(YahooProvider(), cache_dir='.cache/quant').fetch(symbols, start, end)\npolicy = PromotionPolicy.load()\ngrid = [dict(output_dir=root, kelly_fraction=k, max_weight=w)\n        for k, w in itertools.product((.25, .5), (.05, .10))]\nreport = dict(\n    generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),\n    requested_start=str(start), requested_end=str(end),\n    data_start=str(data.sessions[0].date()), data_end=str(data.sessions[-1].date()),\n    sessions=len(data.sessions), symbols=symbols, adjusted=data.adjusted,\n    data_source=data.source, data_fingerprint=data.fingerprint(),\n    first_forecast=str(first), last_forecast=str(max(f.run_date for f in strategy.forecasts)),\n    packages_loaded=strategy.package_count, forecasts_accepted=strategy.forecast_count,\n    skipped_reasons=dict(strategy.skipped_reasons),\n    forecasts_with_historical_active_session=sum(any(f.run_date < d.date() <= f.target_date\n                                                   for d in data.sessions) for f in strategy.forecasts),\n    policy={k:v for k,v in asdict(policy).items() if not k.startswith('_')},\n    grid=grid, runs={},\n    package_manifest=[dict(path=str(p), sha256=hashlib.sha256(p.read_bytes()).hexdigest())\n                      for p in sorted(Path(root).glob('*/15_predictions.json'))],\n)\nfor cadence in ('weekly', 'daily'):\n    config=BacktestConfig(rebalance=cadence)\n    baseline=run_backtest(build_strategy('buy_and_hold'), data, config)\n    result=run_backtest(strategy,data,config)\n    active_start=pd.Timestamp(first)\n    active=result.returns.loc[result.returns.index > active_start]\n    spy=baseline.returns.reindex(active.index)\n    used=set()\n    decisions=set(result.trades['decision_session']) if len(result.trades) else set()\n    for day in decisions:\n        for symbol in symbols:\n            candidates=[(i,f) for i,f in enumerate(strategy.forecasts)\n                        if f.ticker==symbol and f.run_date < day.date() <= f.target_date]\n            if candidates:\n                latest=max(f.run_date for _,f in candidates)\n                used.update(i for i,f in candidates if f.run_date==latest)\n    print('Evaluating gate',cadence,flush=True)\n    gate=evaluate_promotion('research_forecast', grid, data, config, policy)\n    report['runs'][cadence]=dict(\n        config=asdict(config), summary=result.summary(), spy_summary=baseline.summary(),\n        research_span_start=str(active.index[0].date()),research_span_end=str(active.index[-1].date()),\n        research_span_summary=performance_summary(active,benchmark=spy),\n        research_span_spy_summary=performance_summary(spy),\n        forecasts_at_executed_decisions=len(used),\n        packages_at_executed_decisions=len({(strategy.forecasts[i].model,strategy.forecasts[i].run_date) for i in used}),\n        skipped_trades=len(result.skipped_trades),\n        gate=dict(passed=gate.passed,checks=[asdict(c) for c in gate.checks],\n                  oos_summary=gate.oos_summary,diagnostics=gate.diagnostics,\n                  selected_params=gate.selected_params),\n    )\n\ndef clean(value):\n    if isinstance(value,dict): return {k:clean(v) for k,v in value.items()}\n    if isinstance(value,(list,tuple)): return [clean(v) for v in value]\n    if isinstance(value,float) and not math.isfinite(value): return None\n    return value\n\nreport=clean(report)\nreport['reproduce_python']=Path('/tmp/research_report.py').read_text()\npath=Path('reports/quant/research-forecast-validation.json');path.parent.mkdir(parents=True,exist_ok=True)\npath.write_text(json.dumps(report,indent=2,allow_nan=False)+'\\n')\n\ndef num(v): return 'undefined' if v is None else f'{v:.6g}'\nlines=['# Research forecast validation', '',\n       f\"Generated {report['generated_at']}. Adjusted Yahoo daily bars: {report['data_start']}\u2013{report['data_end']} \"\n       f\"({report['sessions']} sessions, {len(symbols)} symbols including SPY). Requested span: {start}\u2013{end}; \"\n       'the end is the latest completed NYSE session, never an intraday bar.', '',\n       f\"Loaded {strategy.package_count} packages; accepted {strategy.forecast_count} forecasts; \"\n       f\"{report['forecasts_with_historical_active_session']} have an active session in the fetched history. \"\n       f\"Forecast vintages span {first}\u2013{report['last_forecast']}. All eligible historical tickers were fetched, \"\n       'including forecasts now expired; selecting only currently unexpired names would bias history.', '',\n       'Skipped reasons (records unless marked as packages):', '', '| Reason | Count |', '|---|---:|']\nlines += [f'| {k} | {v} |' for k,v in sorted(strategy.skipped_reasons.items())]\nlines += ['', 'Most recent active run date wins per ticker. Same-date forecasts average mu and sigma equally across models (within-model means) before sizing. '\n          'Only run_date < decision_session <= target_date is eligible; a package date also bounds row dates from below. '\n          'Mu and sigma are decimal returns over the same forecast horizon. We use fractional Kelly mu/sigma\u00b2, '\n          'clip each name, then scale gross exposure to one. Default type is explicit EQUITY_ALPHA; missing types '\n          'are skipped rather than invented. No model or sleeve filter is applied; monitoring forecasts are included. '\n          'Status, confidence, scores and entry prices are metadata, not hindsight selection inputs.', '',\n          'The coordinator-approved warmup is one observed close to match the existing backtester; no price lookback '\n          'is used. The default 5% cap reads equity policy risk.max_single_name_weight. Fills use next open, whole '\n          'shares, 2 bps half-spread plus 3 bps slippage, zero commission and a 2% drift threshold. '\n          'That threshold can leave small residual holdings after a target expires. Cash earns zero. '\n          'The data cache is gitignored under .cache/quant; no raw price data is committed.', '',\n          '## Net performance versus SPY', '',\n          'Full fetched history includes roughly one year of cash before the first forecast. The second span '\n          'starts strictly after the first forecast date, with SPY returns on exactly the same sessions. '\n          'Both summaries are descriptive in-sample evidence, not promotion evidence.', '',\n          '| Cadence / span | Net return | SPY return | Sharpe | SPY Sharpe | Max drawdown | Costs ($) | Trades |',\n          '|---|---:|---:|---:|---:|---:|---:|---:|']\nnotes=[]\nfor cadence,run in report['runs'].items():\n    for span,key,bkey in [('full','summary','spy_summary'),('research','research_span_summary','research_span_spy_summary')]:\n        a,b=run[key],run[bkey]\n        lines.append(f\"| {cadence} / {span} | {num(a['total_return'])} | {num(b['total_return'])} | \"\n                     f\"{num(a['sharpe'])} | {num(b['sharpe'])} | {num(a['max_drawdown'])} | \"\n                     f\"{num(run['summary']['total_costs'])} | {num(run['summary']['trade_count'])} |\")\n    notes += ['',f\"{cadence.title()} research span: {run['research_span_start']}\u2013{run['research_span_end']}. \"\n              f\"{run['forecasts_at_executed_decisions']} forecast rows from {run['packages_at_executed_decisions']} \"\n              f\"model/date vintages were active at executed decision dates; skipped fills: {run['skipped_trades']}.\", '']\nlines += notes\nlines += ['## Unchanged promotion gate', '',\n          'Predeclared grid: Kelly fraction {0.25, 0.5} \u00d7 per-name cap {0.05, 0.10}. '\n          'The packaged policy remains unchanged: 1260 train sessions, 252 test sessions, five-session embargo '\n          'and at least 2520 OOS sessions. Undefined statistics are shown explicitly and fail closed.', '',\n          '| Cadence | Check | Value | Threshold | Verdict |', '|---|---|---:|---:|---|']\nfor cadence,run in report['runs'].items():\n    for c in run['gate']['checks']:\n        lines.append(f\"| {cadence} | {c['name']} | {num(c['value'])} | {num(c['threshold'])} | {'PASS' if c['passed'] else 'FAIL'} |\")\nlines += ['', 'Both cadences fail promotion. This short history cannot produce an OOS fold under the unchanged '\n          'training window, and contains nowhere near ten years of OOS sessions. Net backtest performance does '\n          'not establish a tradable edge. Continue collecting forecasts and independent outcomes; do not promote '\n          'this strategy or relax the gate to accommodate the available sample.', '',\n          'The companion JSON contains all checks and failure details, diagnostic PBO, the input manifest hashes, '\n          'data fingerprint, configuration and generation code. Null means mathematically undefined, not zero. '\n          'Ticker histories can be incomplete around listings; Yahoo adjustments and historical coverage can change. '\n          'No missing bar is backfilled; the existing engine skips invalid execution prices and carries only prior marks.', '',\n          '## Reproduce', '', '```sh',\n          \"uv run python - <<'PY'\", \"import json\", \"from pathlib import Path\",\n          \"report = json.loads(Path('reports/quant/research-forecast-validation.json').read_text())\",\n          \"Path('/tmp/research_report.py').write_text(report['reproduce_python'])\", 'PY',\n          'uv run python /tmp/research_report.py', '```', '',\n          'Reproduction fetches through the latest completed session at execution time and overwrites the report. '\n          'The committed snapshot records its own dates and hashes; later runs can differ.']\nPath('reports/quant/research-forecast-validation.md').write_text('\\n'.join(lines)+'\\n')\nprint('Report saved',report['data_start'],report['data_end'],flush=True)\nfor cadence,run in report['runs'].items():\n    print(cadence,'net return',run['summary']['total_return'],'passed',run['gate']['passed'],flush=True)\n"
+}

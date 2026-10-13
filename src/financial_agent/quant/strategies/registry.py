@@ -7,8 +7,10 @@ from .base import Strategy
 from .benchmarks import buy_and_hold, sixty_forty
 from .momentum import dual_momentum
 from .trend import trend_vol_target
+from .research import ResearchForecastStrategy
 
 STRATEGIES: dict[str, Callable[..., Strategy]] = {
+    "research_forecast": ResearchForecastStrategy,
     "trend_vol_target": trend_vol_target,
     "dual_momentum": dual_momentum,
     "buy_and_hold": buy_and_hold,
@@ -47,7 +49,7 @@ def build_strategy(name: str, params: Mapping[str, Any] | None = None) -> Strate
     factory = STRATEGIES[name]
     supplied = dict(params or {})
     valid = list(inspect.signature(factory).parameters)
-    hints = get_type_hints(factory)
+    hints = get_type_hints(factory.__init__ if inspect.isclass(factory) else factory)
     invalid = [
         key
         for key, value in supplied.items()
