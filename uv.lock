@@ -668,29 +668,27 @@ name = "financial-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "black" },
-    { name = "click" },
     { name = "gymnasium" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "yfinance" },
+]
+
+[package.optional-dependencies]
+all = [
+    { name = "beautifulsoup4" },
     { name = "ipython" },
     { name = "keras-nightly" },
     { name = "matplotlib" },
-    { name = "mypy" },
     { name = "notebook" },
-    { name = "numpy" },
-    { name = "pandas" },
     { name = "pyfolio-reloaded" },
-    { name = "pyparsing" },
     { name = "scikit-learn" },
     { name = "seaborn" },
     { name = "stable-baselines3" },
     { name = "stockstats" },
     { name = "tensorflow", version = "2.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
     { name = "tensorflow", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
-    { name = "yfinance" },
 ]
-
-[package.optional-dependencies]
 dev = [
     { name = "black" },
     { name = "flake8" },
@@ -699,8 +697,33 @@ dev = [
     { name = "pytest-cov" },
     { name = "pytest-custom-exit-code" },
 ]
+dl = [
+    { name = "ipython" },
+    { name = "keras-nightly" },
+    { name = "matplotlib" },
+    { name = "scikit-learn" },
+    { name = "seaborn" },
+    { name = "tensorflow", version = "2.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
+    { name = "tensorflow", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
+]
+notebooks = [
+    { name = "ipython" },
+    { name = "matplotlib" },
+    { name = "notebook" },
+    { name = "seaborn" },
+]
 research = [
     { name = "openpyxl" },
+]
+rl = [
+    { name = "beautifulsoup4" },
+    { name = "matplotlib" },
+    { name = "pyfolio-reloaded" },
+    { name = "scikit-learn" },
+    { name = "stable-baselines3" },
+    { name = "stockstats" },
+    { name = "tensorflow", version = "2.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
+    { name = "tensorflow", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
 ]
 
 [package.dev-dependencies]
@@ -709,38 +732,43 @@ dev = [
     { name = "flake8" },
     { name = "mypy" },
     { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-custom-exit-code" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "beautifulsoup4" },
-    { name = "black" },
-    { name = "black", marker = "extra == 'dev'" },
-    { name = "click" },
-    { name = "flake8", marker = "extra == 'dev'" },
+    { name = "beautifulsoup4", marker = "extra == 'rl'" },
+    { name = "black", marker = "extra == 'dev'", specifier = ">=22.0.0" },
+    { name = "financial-agent", extras = ["rl", "dl", "notebooks"], marker = "extra == 'all'" },
+    { name = "flake8", marker = "extra == 'dev'", specifier = ">=6.0.0" },
     { name = "gymnasium" },
-    { name = "ipython" },
-    { name = "keras-nightly" },
-    { name = "matplotlib" },
-    { name = "mypy" },
-    { name = "mypy", marker = "extra == 'dev'" },
-    { name = "notebook" },
+    { name = "ipython", marker = "extra == 'dl'" },
+    { name = "ipython", marker = "extra == 'notebooks'" },
+    { name = "keras-nightly", marker = "extra == 'dl'" },
+    { name = "matplotlib", marker = "extra == 'dl'" },
+    { name = "matplotlib", marker = "extra == 'notebooks'" },
+    { name = "matplotlib", marker = "extra == 'rl'" },
+    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.0.0" },
+    { name = "notebook", marker = "extra == 'notebooks'" },
     { name = "numpy", specifier = ">=1.24.0,<2.0" },
     { name = "openpyxl", marker = "extra == 'research'", specifier = ">=3.1,<4" },
     { name = "pandas", specifier = ">=2.0,<3" },
-    { name = "pyfolio-reloaded" },
-    { name = "pyparsing" },
-    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pyfolio-reloaded", marker = "extra == 'rl'" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "pytest-custom-exit-code", marker = "extra == 'dev'" },
-    { name = "scikit-learn" },
-    { name = "seaborn" },
-    { name = "stable-baselines3" },
-    { name = "stockstats" },
-    { name = "tensorflow" },
+    { name = "scikit-learn", marker = "extra == 'dl'" },
+    { name = "scikit-learn", marker = "extra == 'rl'" },
+    { name = "seaborn", marker = "extra == 'dl'" },
+    { name = "seaborn", marker = "extra == 'notebooks'" },
+    { name = "stable-baselines3", marker = "extra == 'rl'" },
+    { name = "stockstats", marker = "extra == 'rl'" },
+    { name = "tensorflow", marker = "extra == 'dl'" },
+    { name = "tensorflow", marker = "extra == 'rl'" },
     { name = "yfinance" },
 ]
-provides-extras = ["dev", "research"]
+provides-extras = ["rl", "dl", "notebooks", "dev", "all", "research"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -748,6 +776,8 @@ dev = [
     { name = "flake8", specifier = ">=6.0.0" },
     { name = "mypy", specifier = ">=1.0.0" },
     { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest-cov" },
+    { name = "pytest-custom-exit-code" },
 ]
 
 [[package]]

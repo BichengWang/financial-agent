@@ -36,7 +36,7 @@ Run commands from the repository root. Install
 [uv](https://docs.astral.sh/uv/getting-started/installation/) first; the project
 requires **Python ≥3.12**, with 3.12 a practical starting point for the scientific
 dependency stack. The committed `.python-version` selects 3.12 for `uv` commands;
-the locked TensorFlow version does not support newer Python versions.
+the optional TensorFlow stack is locked for Python 3.12.
 
 ```sh
 uv sync --locked --python 3.12
@@ -44,21 +44,27 @@ uv sync --locked --python 3.12
 
 This uses the committed `uv.lock` and installs the local package in editable mode;
 a separate `uv pip install -e .` or `uv lock` is not needed for normal setup.
-Dependencies are defined in [`pyproject.toml`](pyproject.toml): NumPy
-`>=1.24,<2`, pandas `>=2,<3`, Gymnasium, Stable-Baselines3, TensorFlow,
-`keras-nightly`, notebook/plotting tools, yfinance, stockstats, and
-`pyfolio-reloaded`, among others. Even the small RL example installs this full
-stack; there is no lightweight RL-only extra.
+Core runtime dependencies are NumPy `>=1.24,<2`, pandas `>=2,<3`, yfinance,
+and Gymnasium. The default `dev` dependency group adds Black, flake8, mypy,
+pytest, pytest-cov, and pytest-custom-exit-code; use `--no-dev` for runtime only.
 
-For the complete development extra:
+Choose optional stacks as needed:
 
 ```sh
-uv sync --locked --python 3.12 --extra dev
+uv sync --locked --python 3.12 --extra rl    # financial trading experiments
+uv sync --locked --python 3.12 --extra dl    # TensorFlow prediction baselines
+uv sync --locked --python 3.12 --extra notebooks
+uv sync --locked --python 3.12 --all-extras  # full development and research setup
 ```
 
-The `dev` extra contains Black, flake8, mypy, pytest, pytest-cov, and
-pytest-custom-exit-code. The default uv `dev` dependency group contains only
-Black, flake8, mypy, and pytest; Black and mypy are also main dependencies.
+The `rl` extra includes Stable-Baselines3, stockstats, pyfolio-reloaded,
+matplotlib, Beautiful Soup, scikit-learn, and TensorFlow for the trading GPU
+utilities. The `dl` extra includes TensorFlow, keras-nightly, scikit-learn,
+IPython, matplotlib, and seaborn. The `notebooks` extra adds notebook, IPython,
+seaborn, and matplotlib; combine it with `rl` or `dl` for the corresponding
+notebooks. The `all` extra combines `rl`, `dl`, and `notebooks`.
+The `dev` extra matches the default `dev` dependency group, and the existing
+`research` extra adds openpyxl for research workbooks.
 
 Run the same checks used by the Python quality workflow:
 
