@@ -1,0 +1,2190 @@
+{
+  "generated_at": "2026-10-13T08:56:58.194528+00:00",
+  "package_version": "1.0.0",
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "TLT",
+    "IEF",
+    "LQD",
+    "GLD",
+    "DBC",
+    "VNQ"
+  ],
+  "data_start": "2006-02-06",
+  "data_end": "2026-10-12",
+  "sessions": 5203,
+  "fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+  "quality": {
+    "ok": true,
+    "issues": []
+  },
+  "cache_metadata": {
+    "SPY": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:04.743183+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "QQQ": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:05.032531+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "IWM": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:05.313863+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "EFA": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:05.622000+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "EEM": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:05.873260+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "TLT": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:06.128466+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "IEF": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:06.479138+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "LQD": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:06.747837+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "GLD": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:06.957819+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "DBC": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:07.192976+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    },
+    "VNQ": {
+      "source": "yahoo",
+      "adjusted": true,
+      "retrieved_at": "2026-10-13T08:53:07.508424+00:00",
+      "first_session": "2006-02-06",
+      "last_session": "2026-10-12",
+      "covered_start": "2006-02-06",
+      "covered_end": "2026-10-12"
+    }
+  },
+  "backtest_config": {
+    "initial_cash": 100000.0,
+    "cash_buffer": 0.02,
+    "rebalance": "weekly",
+    "drift_threshold": 0.02,
+    "execution": "next_open",
+    "extra_delay": 0,
+    "fractional_shares": false,
+    "min_trade_notional": 0.0,
+    "costs": {
+      "commission_per_share": 0.0,
+      "commission_min": 0.0,
+      "commission_bps": 0.0,
+      "half_spread_bps": 2.0,
+      "slippage_bps": 3.0
+    },
+    "start": null
+  },
+  "strategies": {
+    "trend_vol_target": {
+      "default_params": {
+        "lookbacks": [
+          21,
+          63,
+          126,
+          252
+        ],
+        "vol_halflife": 42,
+        "cov_lookback": 126,
+        "target_vol": 0.1,
+        "max_weight": 0.3
+      },
+      "grid_size": 4,
+      "grid": [
+        {
+          "target_vol": 0.08,
+          "max_weight": 0.25
+        },
+        {
+          "target_vol": 0.08,
+          "max_weight": 0.35
+        },
+        {
+          "target_vol": 0.12,
+          "max_weight": 0.25
+        },
+        {
+          "target_vol": 0.12,
+          "max_weight": 0.35
+        }
+      ],
+      "full_period": {
+        "total_return": 1.9287677734171904,
+        "cagr": 0.05625337384725436,
+        "ann_vol": 0.07815158213328374,
+        "sharpe": 0.7394935522724374,
+        "sortino": 1.018811091870271,
+        "max_drawdown": 0.16530687787362386,
+        "calmar": 0.3402966323655313,
+        "hit_rate": 0.5442603071948262,
+        "skew": -0.5817993588372734,
+        "kurtosis": 3.16766304160854,
+        "var95": 0.007971139298322194,
+        "cvar95": 0.011874327353506735,
+        "total_costs": 25370.964047914145,
+        "average_annual_turnover": 14.369202451159168,
+        "trade_count": 3935.0
+      },
+      "validation": {
+        "strategy": "trend_vol_target",
+        "selected_params": {
+          "lookbacks": [
+            21,
+            63,
+            126,
+            252
+          ],
+          "vol_halflife": 42,
+          "cov_lookback": 126,
+          "target_vol": 0.12,
+          "max_weight": 0.25
+        },
+        "grid": [
+          {
+            "target_vol": 0.08,
+            "max_weight": 0.25
+          },
+          {
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          {
+            "target_vol": 0.12,
+            "max_weight": 0.25
+          },
+          {
+            "target_vol": 0.12,
+            "max_weight": 0.35
+          }
+        ],
+        "passed": true,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 3528.0,
+            "threshold": 2520.0,
+            "passed": true,
+            "detail": "oos_sessions 3528 >= 2520: passed"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": 0.7290294558351013,
+            "threshold": 0.5,
+            "passed": true,
+            "detail": "oos_sharpe 0.729029 >= 0.5: passed"
+          },
+          {
+            "name": "dsr",
+            "value": 0.9955142000693893,
+            "threshold": 0.95,
+            "passed": true,
+            "detail": "dsr 0.995514 >= 0.95: passed"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": 0.0,
+            "threshold": 0.1,
+            "passed": true,
+            "detail": "prob_oos_loss 0 <= 0.1: passed"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": 0.1711440857894333,
+            "threshold": 0.25,
+            "passed": true,
+            "detail": "oos_drawdown 0.171144 <= 0.25: passed"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": 0.6664843337459602,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_2x_costs 0.666484 >= 0.3: passed"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": 0.8887755825936235,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_delay_1 0.888776 >= 0.3: passed"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": 0.33814131573643924,
+            "threshold": 0.0,
+            "passed": true,
+            "detail": "bootstrap_sharpe_p05 0.338141 > 0: passed"
+          }
+        ],
+        "oos_summary": {
+          "total_return": 1.0580756303157557,
+          "cagr": 0.05290719883977244,
+          "ann_vol": 0.07454308470073068,
+          "sharpe": 0.7290294558351013,
+          "sortino": 0.9952284060083852,
+          "max_drawdown": 0.1711440857894333,
+          "calmar": 0.30913834150755687,
+          "hit_rate": 0.5436507936507936,
+          "skew": -0.7548193762553042,
+          "kurtosis": 4.780185368165262,
+          "var95": 0.007495271486967691,
+          "cvar95": 0.011583962102767643
+        },
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "data_end": "2026-10-12",
+        "policy": {
+          "min_oos_sessions": 2520,
+          "min_oos_sharpe": 0.5,
+          "min_dsr": 0.95,
+          "max_prob_oos_loss": 0.1,
+          "max_oos_drawdown": 0.25,
+          "min_sharpe_2x_costs": 0.3,
+          "min_sharpe_delay_1": 0.3,
+          "min_bootstrap_sharpe_p05": 0.0,
+          "train_sessions": 1260,
+          "test_sessions": 252,
+          "embargo_sessions": 5,
+          "pbo_splits": 16
+        },
+        "diagnostics": {
+          "pbo": 0.64996114996115,
+          "n_combinations": 12870.0,
+          "degradation_slope": -0.977382100835425
+        }
+      },
+      "certificate": {
+        "checks": [
+          {
+            "detail": "oos_sessions 3528 >= 2520: passed",
+            "name": "oos_sessions",
+            "passed": true,
+            "threshold": 2520.0,
+            "value": 3528.0
+          },
+          {
+            "detail": "oos_sharpe 0.729029 >= 0.5: passed",
+            "name": "oos_sharpe",
+            "passed": true,
+            "threshold": 0.5,
+            "value": 0.7290294558351013
+          },
+          {
+            "detail": "dsr 0.995514 >= 0.95: passed",
+            "name": "dsr",
+            "passed": true,
+            "threshold": 0.95,
+            "value": 0.9955142000693893
+          },
+          {
+            "detail": "prob_oos_loss 0 <= 0.1: passed",
+            "name": "prob_oos_loss",
+            "passed": true,
+            "threshold": 0.1,
+            "value": 0.0
+          },
+          {
+            "detail": "oos_drawdown 0.171144 <= 0.25: passed",
+            "name": "oos_drawdown",
+            "passed": true,
+            "threshold": 0.25,
+            "value": 0.1711440857894333
+          },
+          {
+            "detail": "sharpe_2x_costs 0.666484 >= 0.3: passed",
+            "name": "sharpe_2x_costs",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.6664843337459602
+          },
+          {
+            "detail": "sharpe_delay_1 0.888776 >= 0.3: passed",
+            "name": "sharpe_delay_1",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.8887755825936235
+          },
+          {
+            "detail": "bootstrap_sharpe_p05 0.338141 > 0: passed",
+            "name": "bootstrap_sharpe_p05",
+            "passed": true,
+            "threshold": 0.0,
+            "value": 0.33814131573643924
+          }
+        ],
+        "created_at": "2026-10-13T08:54:26.675325+00:00",
+        "data_end": "2026-10-12",
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "diagnostics": {
+          "degradation_slope": -0.977382100835425,
+          "n_combinations": 12870.0,
+          "pbo": 0.64996114996115
+        },
+        "grid_size": 4,
+        "hash": "2ff422beccd593936a73c585560826da0cc16c140b431c47bb080293c926ee15",
+        "package_version": "1.0.0",
+        "params": {
+          "cov_lookback": 126,
+          "lookbacks": [
+            21,
+            63,
+            126,
+            252
+          ],
+          "max_weight": 0.25,
+          "target_vol": 0.12,
+          "vol_halflife": 42
+        },
+        "passed": true,
+        "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
+        "schema_version": 1,
+        "strategy": "trend_vol_target"
+      },
+      "bootstrap_sharpe_ci90": [
+        0.33814131573643924,
+        1.1580317852420212
+      ],
+      "folds": [
+        {
+          "train_start": "2007-02-12 00:00:00",
+          "train_end": "2012-02-09 00:00:00",
+          "test_start": "2012-02-17 00:00:00",
+          "test_end": "2013-02-20 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.8881914641709201,
+          "oos_sharpe": 0.5617607037919459,
+          "variant": 1
+        },
+        {
+          "train_start": "2008-02-12 00:00:00",
+          "train_end": "2013-02-12 00:00:00",
+          "test_start": "2013-02-21 00:00:00",
+          "test_end": "2014-02-20 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.8141296919561847,
+          "oos_sharpe": 1.2072787539903913,
+          "variant": 1
+        },
+        {
+          "train_start": "2009-02-11 00:00:00",
+          "train_end": "2014-02-12 00:00:00",
+          "test_start": "2014-02-21 00:00:00",
+          "test_end": "2015-02-20 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.9799847669954315,
+          "oos_sharpe": 1.9763721797604026,
+          "variant": 3
+        },
+        {
+          "train_start": "2010-02-11 00:00:00",
+          "train_end": "2015-02-12 00:00:00",
+          "test_start": "2015-02-23 00:00:00",
+          "test_end": "2016-02-22 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 1.2263787296982214,
+          "oos_sharpe": -0.7150659176779306,
+          "variant": 1
+        },
+        {
+          "train_start": "2011-02-10 00:00:00",
+          "train_end": "2016-02-12 00:00:00",
+          "test_start": "2016-02-23 00:00:00",
+          "test_end": "2017-02-21 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.6681246296955737,
+          "oos_sharpe": 0.9347571664852004,
+          "variant": 1
+        },
+        {
+          "train_start": "2012-02-10 00:00:00",
+          "train_end": "2017-02-13 00:00:00",
+          "test_start": "2017-02-22 00:00:00",
+          "test_end": "2018-02-21 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.7020683713870158,
+          "oos_sharpe": 1.083505909251408,
+          "variant": 1
+        },
+        {
+          "train_start": "2013-02-13 00:00:00",
+          "train_end": "2018-02-13 00:00:00",
+          "test_start": "2018-02-22 00:00:00",
+          "test_end": "2019-02-22 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.7831179363394541,
+          "oos_sharpe": -0.4876742036286688,
+          "variant": 0
+        },
+        {
+          "train_start": "2014-02-13 00:00:00",
+          "train_end": "2019-02-14 00:00:00",
+          "test_start": "2019-02-25 00:00:00",
+          "test_end": "2020-02-24 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.48914080066488713,
+          "oos_sharpe": 1.9288675105990867,
+          "variant": 0
+        },
+        {
+          "train_start": "2015-02-13 00:00:00",
+          "train_end": "2020-02-14 00:00:00",
+          "test_start": "2020-02-25 00:00:00",
+          "test_end": "2021-02-23 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.08,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.5261291734472864,
+          "oos_sharpe": 0.8083840001607452,
+          "variant": 0
+        },
+        {
+          "train_start": "2016-02-16 00:00:00",
+          "train_end": "2021-02-16 00:00:00",
+          "test_start": "2021-02-24 00:00:00",
+          "test_end": "2022-02-22 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.8728439628585611,
+          "oos_sharpe": 0.6648076717661147,
+          "variant": 2
+        },
+        {
+          "train_start": "2017-02-14 00:00:00",
+          "train_end": "2022-02-14 00:00:00",
+          "test_start": "2022-02-23 00:00:00",
+          "test_end": "2023-02-23 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.35
+          },
+          "is_sharpe": 0.7900039069888952,
+          "oos_sharpe": -0.4808097325989335,
+          "variant": 3
+        },
+        {
+          "train_start": "2018-02-14 00:00:00",
+          "train_end": "2023-02-15 00:00:00",
+          "test_start": "2023-02-24 00:00:00",
+          "test_end": "2024-02-26 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.5293648022666242,
+          "oos_sharpe": 0.7077518316985665,
+          "variant": 2
+        },
+        {
+          "train_start": "2019-02-15 00:00:00",
+          "train_end": "2024-02-16 00:00:00",
+          "test_start": "2024-02-27 00:00:00",
+          "test_end": "2025-02-27 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.6973594291888419,
+          "oos_sharpe": 1.1513201521817287,
+          "variant": 2
+        },
+        {
+          "train_start": "2020-02-18 00:00:00",
+          "train_end": "2025-02-20 00:00:00",
+          "test_start": "2025-02-28 00:00:00",
+          "test_end": "2026-03-02 00:00:00",
+          "chosen_params": {
+            "lookbacks": [
+              21,
+              63,
+              126,
+              252
+            ],
+            "vol_halflife": 42,
+            "cov_lookback": 126,
+            "target_vol": 0.12,
+            "max_weight": 0.25
+          },
+          "is_sharpe": 0.6634011915519143,
+          "oos_sharpe": 1.7270032851460773,
+          "variant": 2
+        }
+      ],
+      "oos_total_costs": 13728.824840293575,
+      "oos_average_annual_turnover": 14.213470670986652,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"trend_vol_target\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]\n"
+    },
+    "dual_momentum": {
+      "default_params": {
+        "risk_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "EFA",
+          "EEM",
+          "VNQ",
+          "GLD",
+          "DBC"
+        ],
+        "defensive": "IEF",
+        "lookback": 252,
+        "skip": 21,
+        "top_k": 3
+      },
+      "grid_size": 1,
+      "grid": [
+        {}
+      ],
+      "full_period": {
+        "total_return": 6.898990263596292,
+        "cagr": 0.11099734987796264,
+        "ann_vol": 0.15582201399279905,
+        "sharpe": 0.7536784955476082,
+        "sortino": 1.061713722030442,
+        "max_drawdown": 0.2639738293472207,
+        "calmar": 0.4204861904395876,
+        "hit_rate": 0.5499191592562651,
+        "skew": -0.2890019060819092,
+        "kurtosis": 5.1934993446680915,
+        "var95": 0.016049510939810375,
+        "cvar95": 0.023616319449867897,
+        "total_costs": 29329.56103542596,
+        "average_annual_turnover": 10.549907598572258,
+        "trade_count": 715.0
+      },
+      "validation": {
+        "strategy": "dual_momentum",
+        "selected_params": {
+          "risk_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "EFA",
+            "EEM",
+            "VNQ",
+            "GLD",
+            "DBC"
+          ],
+          "defensive": "IEF",
+          "lookback": 252,
+          "skip": 21,
+          "top_k": 3
+        },
+        "grid": [
+          {}
+        ],
+        "passed": false,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 3528.0,
+            "threshold": 2520.0,
+            "passed": true,
+            "detail": "oos_sessions 3528 >= 2520: passed"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": 0.8725538696245618,
+            "threshold": 0.5,
+            "passed": true,
+            "detail": "oos_sharpe 0.872554 >= 0.5: passed"
+          },
+          {
+            "name": "dsr",
+            "value": 0.9993509941438616,
+            "threshold": 0.95,
+            "passed": true,
+            "detail": "dsr 0.999351 >= 0.95: passed"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": null,
+            "threshold": 0.1,
+            "passed": false,
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": 0.23421852080420258,
+            "threshold": 0.25,
+            "passed": true,
+            "detail": "oos_drawdown 0.234219 <= 0.25: passed"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": 0.8387364586239535,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_2x_costs 0.838736 >= 0.3: passed"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": 0.8736993402548585,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_delay_1 0.873699 >= 0.3: passed"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": 0.4566505229627286,
+            "threshold": 0.0,
+            "passed": true,
+            "detail": "bootstrap_sharpe_p05 0.456651 > 0: passed"
+          }
+        ],
+        "oos_summary": {
+          "total_return": 3.8394623342797796,
+          "cagr": 0.11921643680631118,
+          "ann_vol": 0.14043258087604676,
+          "sharpe": 0.8725538696245618,
+          "sortino": 1.225806571936913,
+          "max_drawdown": 0.23421852080420258,
+          "calmar": 0.50899662587303,
+          "hit_rate": 0.5541383219954649,
+          "skew": -0.4123166534973439,
+          "kurtosis": 7.7353834617545765,
+          "var95": 0.013849693454065136,
+          "cvar95": 0.02123540601447718
+        },
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "data_end": "2026-10-12",
+        "policy": {
+          "min_oos_sessions": 2520,
+          "min_oos_sharpe": 0.5,
+          "min_dsr": 0.95,
+          "max_prob_oos_loss": 0.1,
+          "max_oos_drawdown": 0.25,
+          "min_sharpe_2x_costs": 0.3,
+          "min_sharpe_delay_1": 0.3,
+          "min_bootstrap_sharpe_p05": 0.0,
+          "train_sessions": 1260,
+          "test_sessions": 252,
+          "embargo_sessions": 5,
+          "pbo_splits": 16
+        },
+        "diagnostics": {
+          "pbo": null,
+          "n_combinations": 0.0,
+          "degradation_slope": null
+        }
+      },
+      "certificate": {
+        "checks": [
+          {
+            "detail": "oos_sessions 3528 >= 2520: passed",
+            "name": "oos_sessions",
+            "passed": true,
+            "threshold": 2520.0,
+            "value": 3528.0
+          },
+          {
+            "detail": "oos_sharpe 0.872554 >= 0.5: passed",
+            "name": "oos_sharpe",
+            "passed": true,
+            "threshold": 0.5,
+            "value": 0.8725538696245618
+          },
+          {
+            "detail": "dsr 0.999351 >= 0.95: passed",
+            "name": "dsr",
+            "passed": true,
+            "threshold": 0.95,
+            "value": 0.9993509941438616
+          },
+          {
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "name": "prob_oos_loss",
+            "passed": false,
+            "threshold": 0.1,
+            "value": null
+          },
+          {
+            "detail": "oos_drawdown 0.234219 <= 0.25: passed",
+            "name": "oos_drawdown",
+            "passed": true,
+            "threshold": 0.25,
+            "value": 0.23421852080420258
+          },
+          {
+            "detail": "sharpe_2x_costs 0.838736 >= 0.3: passed",
+            "name": "sharpe_2x_costs",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.8387364586239535
+          },
+          {
+            "detail": "sharpe_delay_1 0.873699 >= 0.3: passed",
+            "name": "sharpe_delay_1",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.8736993402548585
+          },
+          {
+            "detail": "bootstrap_sharpe_p05 0.456651 > 0: passed",
+            "name": "bootstrap_sharpe_p05",
+            "passed": true,
+            "threshold": 0.0,
+            "value": 0.4566505229627286
+          }
+        ],
+        "created_at": "2026-10-13T08:54:40.013938+00:00",
+        "data_end": "2026-10-12",
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "diagnostics": {
+          "degradation_slope": null,
+          "n_combinations": 0.0,
+          "pbo": null
+        },
+        "grid_size": 1,
+        "hash": "370802ee1a36a7675a6c084bc50d172736b6c2c295bd431aeb88b90e8ae9357d",
+        "package_version": "1.0.0",
+        "params": {
+          "defensive": "IEF",
+          "lookback": 252,
+          "risk_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "EFA",
+            "EEM",
+            "VNQ",
+            "GLD",
+            "DBC"
+          ],
+          "skip": 21,
+          "top_k": 3
+        },
+        "passed": false,
+        "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
+        "schema_version": 1,
+        "strategy": "dual_momentum"
+      },
+      "bootstrap_sharpe_ci90": [
+        0.4566505229627286,
+        1.2982325028806392
+      ],
+      "folds": [
+        {
+          "train_start": "2007-02-12 00:00:00",
+          "train_end": "2012-02-09 00:00:00",
+          "test_start": "2012-02-17 00:00:00",
+          "test_end": "2013-02-20 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.6015776449844712,
+          "oos_sharpe": 0.8742928545962871,
+          "variant": 0
+        },
+        {
+          "train_start": "2008-02-12 00:00:00",
+          "train_end": "2013-02-12 00:00:00",
+          "test_start": "2013-02-21 00:00:00",
+          "test_end": "2014-02-20 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.5598731038261925,
+          "oos_sharpe": 1.6888243011496227,
+          "variant": 0
+        },
+        {
+          "train_start": "2009-02-11 00:00:00",
+          "train_end": "2014-02-12 00:00:00",
+          "test_start": "2014-02-21 00:00:00",
+          "test_end": "2015-02-20 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.9208284742162127,
+          "oos_sharpe": 1.3441220152507638,
+          "variant": 0
+        },
+        {
+          "train_start": "2010-02-11 00:00:00",
+          "train_end": "2015-02-12 00:00:00",
+          "test_start": "2015-02-23 00:00:00",
+          "test_end": "2016-02-22 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 1.0654971838629133,
+          "oos_sharpe": -0.8146119033637751,
+          "variant": 0
+        },
+        {
+          "train_start": "2011-02-10 00:00:00",
+          "train_end": "2016-02-12 00:00:00",
+          "test_start": "2016-02-23 00:00:00",
+          "test_end": "2017-02-21 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.570159803320471,
+          "oos_sharpe": 0.8421805071049708,
+          "variant": 0
+        },
+        {
+          "train_start": "2012-02-10 00:00:00",
+          "train_end": "2017-02-13 00:00:00",
+          "test_start": "2017-02-22 00:00:00",
+          "test_end": "2018-02-21 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.6708659581259337,
+          "oos_sharpe": 1.4950381113608726,
+          "variant": 0
+        },
+        {
+          "train_start": "2013-02-13 00:00:00",
+          "train_end": "2018-02-13 00:00:00",
+          "test_start": "2018-02-22 00:00:00",
+          "test_end": "2019-02-22 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.75649874961316,
+          "oos_sharpe": -0.44592747385389636,
+          "variant": 0
+        },
+        {
+          "train_start": "2014-02-13 00:00:00",
+          "train_end": "2019-02-14 00:00:00",
+          "test_start": "2019-02-25 00:00:00",
+          "test_end": "2020-02-24 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.3288212281472444,
+          "oos_sharpe": 2.1572128694180166,
+          "variant": 0
+        },
+        {
+          "train_start": "2015-02-13 00:00:00",
+          "train_end": "2020-02-14 00:00:00",
+          "test_start": "2020-02-25 00:00:00",
+          "test_end": "2021-02-23 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.4371234867436956,
+          "oos_sharpe": 1.0402627099974884,
+          "variant": 0
+        },
+        {
+          "train_start": "2016-02-16 00:00:00",
+          "train_end": "2021-02-16 00:00:00",
+          "test_start": "2021-02-24 00:00:00",
+          "test_end": "2022-02-22 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.8795905576677222,
+          "oos_sharpe": 0.5400584136059935,
+          "variant": 0
+        },
+        {
+          "train_start": "2017-02-14 00:00:00",
+          "train_end": "2022-02-14 00:00:00",
+          "test_start": "2022-02-23 00:00:00",
+          "test_end": "2023-02-23 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.8110293590049098,
+          "oos_sharpe": -0.5067487452237207,
+          "variant": 0
+        },
+        {
+          "train_start": "2018-02-14 00:00:00",
+          "train_end": "2023-02-15 00:00:00",
+          "test_start": "2023-02-24 00:00:00",
+          "test_end": "2024-02-26 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.5264429607854504,
+          "oos_sharpe": 1.517527962253831,
+          "variant": 0
+        },
+        {
+          "train_start": "2019-02-15 00:00:00",
+          "train_end": "2024-02-16 00:00:00",
+          "test_start": "2024-02-27 00:00:00",
+          "test_end": "2025-02-27 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.8223930162183206,
+          "oos_sharpe": 1.4471017764647498,
+          "variant": 0
+        },
+        {
+          "train_start": "2020-02-18 00:00:00",
+          "train_end": "2025-02-20 00:00:00",
+          "test_start": "2025-02-28 00:00:00",
+          "test_end": "2026-03-02 00:00:00",
+          "chosen_params": {
+            "risk_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "EFA",
+              "EEM",
+              "VNQ",
+              "GLD",
+              "DBC"
+            ],
+            "defensive": "IEF",
+            "lookback": 252,
+            "skip": 21,
+            "top_k": 3
+          },
+          "is_sharpe": 0.8129839063329591,
+          "oos_sharpe": 2.338904685260985,
+          "variant": 0
+        }
+      ],
+      "oos_total_costs": 13637.065425322904,
+      "oos_average_annual_turnover": 9.946277870890107,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"dual_momentum\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+    },
+    "buy_and_hold": {
+      "default_params": {
+        "weights": {
+          "SPY": 1.0
+        }
+      },
+      "grid_size": 1,
+      "grid": [
+        {}
+      ],
+      "full_period": {
+        "total_return": 7.805224954906556,
+        "cagr": 0.11122292314328336,
+        "ann_vol": 0.18933087573822413,
+        "sharpe": 0.6518655103823869,
+        "sortino": 0.9207956590979502,
+        "max_drawdown": 0.5429897105853688,
+        "calmar": 0.20483431080743636,
+        "hit_rate": 0.5500192381685264,
+        "skew": -0.018210014620385753,
+        "kurtosis": 14.75761615600051,
+        "var95": 0.01759585398550143,
+        "cvar95": 0.029052583293553615,
+        "total_costs": 48.951712616620554,
+        "average_annual_turnover": 0.04758069439463062,
+        "trade_count": 1.0
+      },
+      "validation": {
+        "strategy": "buy_and_hold",
+        "selected_params": {
+          "weights": {
+            "SPY": 1.0
+          }
+        },
+        "grid": [
+          {}
+        ],
+        "passed": false,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 3780.0,
+            "threshold": 2520.0,
+            "passed": true,
+            "detail": "oos_sessions 3780 >= 2520: passed"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": 0.8273450879143505,
+            "threshold": 0.5,
+            "passed": true,
+            "detail": "oos_sharpe 0.827345 >= 0.5: passed"
+          },
+          {
+            "name": "dsr",
+            "value": 0.9992106140332282,
+            "threshold": 0.95,
+            "passed": true,
+            "detail": "dsr 0.999211 >= 0.95: passed"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": null,
+            "threshold": 0.1,
+            "passed": false,
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": 0.3353259922622547,
+            "threshold": 0.25,
+            "passed": false,
+            "detail": "oos_drawdown 0.335326 fails <= 0.25: out-of-sample drawdown exceeds the loss budget"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": 0.8221591707519835,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_2x_costs 0.822159 >= 0.3: passed"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": 0.8221404766112014,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_delay_1 0.82214 >= 0.3: passed"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": 0.45378324687491006,
+            "threshold": 0.0,
+            "passed": true,
+            "detail": "bootstrap_sharpe_p05 0.453783 > 0: passed"
+          }
+        ],
+        "oos_summary": {
+          "total_return": 5.644764324101069,
+          "cagr": 0.13457176667970971,
+          "ann_vol": 0.1701899479680958,
+          "sharpe": 0.8273450879143505,
+          "sortino": 1.1640321893945842,
+          "max_drawdown": 0.3353259922622547,
+          "calmar": 0.40131624086707435,
+          "hit_rate": 0.5507936507936508,
+          "skew": -0.34411799500619794,
+          "kurtosis": 12.952252686126108,
+          "var95": 0.016180046812758864,
+          "cvar95": 0.02600707308988609
+        },
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "data_end": "2026-10-12",
+        "policy": {
+          "min_oos_sessions": 2520,
+          "min_oos_sharpe": 0.5,
+          "min_dsr": 0.95,
+          "max_prob_oos_loss": 0.1,
+          "max_oos_drawdown": 0.25,
+          "min_sharpe_2x_costs": 0.3,
+          "min_sharpe_delay_1": 0.3,
+          "min_bootstrap_sharpe_p05": 0.0,
+          "train_sessions": 1260,
+          "test_sessions": 252,
+          "embargo_sessions": 5,
+          "pbo_splits": 16
+        },
+        "diagnostics": {
+          "pbo": null,
+          "n_combinations": 0.0,
+          "degradation_slope": null
+        }
+      },
+      "certificate": {
+        "checks": [
+          {
+            "detail": "oos_sessions 3780 >= 2520: passed",
+            "name": "oos_sessions",
+            "passed": true,
+            "threshold": 2520.0,
+            "value": 3780.0
+          },
+          {
+            "detail": "oos_sharpe 0.827345 >= 0.5: passed",
+            "name": "oos_sharpe",
+            "passed": true,
+            "threshold": 0.5,
+            "value": 0.8273450879143505
+          },
+          {
+            "detail": "dsr 0.999211 >= 0.95: passed",
+            "name": "dsr",
+            "passed": true,
+            "threshold": 0.95,
+            "value": 0.9992106140332282
+          },
+          {
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "name": "prob_oos_loss",
+            "passed": false,
+            "threshold": 0.1,
+            "value": null
+          },
+          {
+            "detail": "oos_drawdown 0.335326 fails <= 0.25: out-of-sample drawdown exceeds the loss budget",
+            "name": "oos_drawdown",
+            "passed": false,
+            "threshold": 0.25,
+            "value": 0.3353259922622547
+          },
+          {
+            "detail": "sharpe_2x_costs 0.822159 >= 0.3: passed",
+            "name": "sharpe_2x_costs",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.8221591707519835
+          },
+          {
+            "detail": "sharpe_delay_1 0.82214 >= 0.3: passed",
+            "name": "sharpe_delay_1",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.8221404766112014
+          },
+          {
+            "detail": "bootstrap_sharpe_p05 0.453783 > 0: passed",
+            "name": "bootstrap_sharpe_p05",
+            "passed": true,
+            "threshold": 0.0,
+            "value": 0.45378324687491006
+          }
+        ],
+        "created_at": "2026-10-13T08:54:52.862677+00:00",
+        "data_end": "2026-10-12",
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "diagnostics": {
+          "degradation_slope": null,
+          "n_combinations": 0.0,
+          "pbo": null
+        },
+        "grid_size": 1,
+        "hash": "6d8949a45f9bdcafe1db426059c08ec394e5ac30bdd7775ade2ec6b72479990f",
+        "package_version": "1.0.0",
+        "params": {
+          "weights": {
+            "SPY": 1.0
+          }
+        },
+        "passed": false,
+        "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
+        "schema_version": 1,
+        "strategy": "buy_and_hold"
+      },
+      "bootstrap_sharpe_ci90": [
+        0.45378324687491006,
+        1.2504677642000377
+      ],
+      "folds": [
+        {
+          "train_start": "2006-02-13 00:00:00",
+          "train_end": "2011-02-11 00:00:00",
+          "test_start": "2011-02-22 00:00:00",
+          "test_end": "2012-02-21 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.24417959192864805,
+          "oos_sharpe": 0.31983638498379796,
+          "variant": 0
+        },
+        {
+          "train_start": "2007-02-14 00:00:00",
+          "train_end": "2012-02-13 00:00:00",
+          "test_start": "2012-02-22 00:00:00",
+          "test_end": "2013-02-22 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.15869957741419316,
+          "oos_sharpe": 1.0674794133793506,
+          "variant": 0
+        },
+        {
+          "train_start": "2008-02-14 00:00:00",
+          "train_end": "2013-02-14 00:00:00",
+          "test_start": "2013-02-25 00:00:00",
+          "test_end": "2014-02-24 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.2964838882744539,
+          "oos_sharpe": 1.9395541139127752,
+          "variant": 0
+        },
+        {
+          "train_start": "2009-02-13 00:00:00",
+          "train_end": "2014-02-14 00:00:00",
+          "test_start": "2014-02-25 00:00:00",
+          "test_end": "2015-02-24 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 1.0587665293394923,
+          "oos_sharpe": 1.4140616435662263,
+          "variant": 0
+        },
+        {
+          "train_start": "2010-02-16 00:00:00",
+          "train_end": "2015-02-17 00:00:00",
+          "test_start": "2015-02-25 00:00:00",
+          "test_end": "2016-02-24 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 1.0502297197514723,
+          "oos_sharpe": -0.3488789015032153,
+          "variant": 0
+        },
+        {
+          "train_start": "2011-02-14 00:00:00",
+          "train_end": "2016-02-17 00:00:00",
+          "test_start": "2016-02-25 00:00:00",
+          "test_end": "2017-02-23 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.6822913718740394,
+          "oos_sharpe": 2.2060066945511556,
+          "variant": 0
+        },
+        {
+          "train_start": "2012-02-14 00:00:00",
+          "train_end": "2017-02-15 00:00:00",
+          "test_start": "2017-02-24 00:00:00",
+          "test_end": "2018-02-23 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 1.0896751494534425,
+          "oos_sharpe": 1.7489684390277014,
+          "variant": 0
+        },
+        {
+          "train_start": "2013-02-15 00:00:00",
+          "train_end": "2018-02-15 00:00:00",
+          "test_start": "2018-02-26 00:00:00",
+          "test_end": "2019-02-26 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 1.181110248591075,
+          "oos_sharpe": 0.2985477236913949,
+          "variant": 0
+        },
+        {
+          "train_start": "2014-02-18 00:00:00",
+          "train_end": "2019-02-19 00:00:00",
+          "test_start": "2019-02-27 00:00:00",
+          "test_end": "2020-02-26 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.8375809010470809,
+          "oos_sharpe": 1.0629490436691305,
+          "variant": 0
+        },
+        {
+          "train_start": "2015-02-18 00:00:00",
+          "train_end": "2020-02-19 00:00:00",
+          "test_start": "2020-02-27 00:00:00",
+          "test_end": "2021-02-25 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.9301411733248144,
+          "oos_sharpe": 0.8371208698405634,
+          "variant": 0
+        },
+        {
+          "train_start": "2016-02-18 00:00:00",
+          "train_end": "2021-02-18 00:00:00",
+          "test_start": "2021-02-26 00:00:00",
+          "test_end": "2022-02-24 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.9534362093660255,
+          "oos_sharpe": 0.9769844773577598,
+          "variant": 0
+        },
+        {
+          "train_start": "2017-02-16 00:00:00",
+          "train_end": "2022-02-16 00:00:00",
+          "test_start": "2022-02-25 00:00:00",
+          "test_end": "2023-02-27 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.8622308776712416,
+          "oos_sharpe": -0.12513279216786796,
+          "variant": 0
+        },
+        {
+          "train_start": "2018-02-16 00:00:00",
+          "train_end": "2023-02-17 00:00:00",
+          "test_start": "2023-02-28 00:00:00",
+          "test_end": "2024-02-28 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.5600337174551646,
+          "oos_sharpe": 2.1468642004838654,
+          "variant": 0
+        },
+        {
+          "train_start": "2019-02-20 00:00:00",
+          "train_end": "2024-02-21 00:00:00",
+          "test_start": "2024-02-29 00:00:00",
+          "test_end": "2025-03-03 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.7400969745390353,
+          "oos_sharpe": 1.2648396569685643,
+          "variant": 0
+        },
+        {
+          "train_start": "2020-02-20 00:00:00",
+          "train_end": "2025-02-24 00:00:00",
+          "test_start": "2025-03-04 00:00:00",
+          "test_end": "2026-03-04 00:00:00",
+          "chosen_params": {
+            "weights": {
+              "SPY": 1.0
+            }
+          },
+          "is_sharpe": 0.7191822931682156,
+          "oos_sharpe": 0.9899987206068431,
+          "variant": 0
+        }
+      ],
+      "oos_total_costs": 49.149492373951986,
+      "oos_average_annual_turnover": 0.06543777282014757,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"buy_and_hold\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+    },
+    "sixty_forty": {
+      "default_params": {
+        "equity": "SPY",
+        "bonds": "IEF",
+        "equity_weight": 0.6
+      },
+      "grid_size": 1,
+      "grid": [
+        {}
+      ],
+      "full_period": {
+        "total_return": 4.0930967904417175,
+        "cagr": 0.08211798342830709,
+        "ann_vol": 0.10792770346656852,
+        "sharpe": 0.785287992466151,
+        "sortino": 1.1230890632648916,
+        "max_drawdown": 0.31979448774872365,
+        "calmar": 0.25678361126984384,
+        "hit_rate": 0.5525202000769527,
+        "skew": 0.05689324969545919,
+        "kurtosis": 13.613985263758918,
+        "var95": 0.00997443675345319,
+        "cvar95": 0.016254976491336493,
+        "total_costs": 394.9863756552745,
+        "average_annual_turnover": 0.20560446552790584,
+        "trade_count": 141.0
+      },
+      "validation": {
+        "strategy": "sixty_forty",
+        "selected_params": {
+          "equity": "SPY",
+          "bonds": "IEF",
+          "equity_weight": 0.6
+        },
+        "grid": [
+          {}
+        ],
+        "passed": false,
+        "checks": [
+          {
+            "name": "oos_sessions",
+            "value": 3780.0,
+            "threshold": 2520.0,
+            "passed": true,
+            "detail": "oos_sessions 3780 >= 2520: passed"
+          },
+          {
+            "name": "oos_sharpe",
+            "value": 0.9566513794159559,
+            "threshold": 0.5,
+            "passed": true,
+            "detail": "oos_sharpe 0.956651 >= 0.5: passed"
+          },
+          {
+            "name": "dsr",
+            "value": 0.9998736662492688,
+            "threshold": 0.95,
+            "passed": true,
+            "detail": "dsr 0.999874 >= 0.95: passed"
+          },
+          {
+            "name": "prob_oos_loss",
+            "value": null,
+            "threshold": 0.1,
+            "passed": false,
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+          },
+          {
+            "name": "oos_drawdown",
+            "value": 0.20803830809343737,
+            "threshold": 0.25,
+            "passed": true,
+            "detail": "oos_drawdown 0.208038 <= 0.25: passed"
+          },
+          {
+            "name": "sharpe_2x_costs",
+            "value": 0.9510892180119851,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_2x_costs 0.951089 >= 0.3: passed"
+          },
+          {
+            "name": "sharpe_delay_1",
+            "value": 0.9499397592572296,
+            "threshold": 0.3,
+            "passed": true,
+            "detail": "sharpe_delay_1 0.94994 >= 0.3: passed"
+          },
+          {
+            "name": "bootstrap_sharpe_p05",
+            "value": 0.5643548854526599,
+            "threshold": 0.0,
+            "passed": true,
+            "detail": "bootstrap_sharpe_p05 0.564355 > 0: passed"
+          }
+        ],
+        "oos_summary": {
+          "total_return": 2.766055260801098,
+          "cagr": 0.09242705139770807,
+          "ann_vol": 0.09738288749576098,
+          "sharpe": 0.9566513794159559,
+          "sortino": 1.3632313867826351,
+          "max_drawdown": 0.20803830809343737,
+          "calmar": 0.4442789995974963,
+          "hit_rate": 0.5521164021164021,
+          "skew": -0.21650211440978337,
+          "kurtosis": 10.922544545568286,
+          "var95": 0.009105128387735811,
+          "cvar95": 0.014687388505141107
+        },
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "data_end": "2026-10-12",
+        "policy": {
+          "min_oos_sessions": 2520,
+          "min_oos_sharpe": 0.5,
+          "min_dsr": 0.95,
+          "max_prob_oos_loss": 0.1,
+          "max_oos_drawdown": 0.25,
+          "min_sharpe_2x_costs": 0.3,
+          "min_sharpe_delay_1": 0.3,
+          "min_bootstrap_sharpe_p05": 0.0,
+          "train_sessions": 1260,
+          "test_sessions": 252,
+          "embargo_sessions": 5,
+          "pbo_splits": 16
+        },
+        "diagnostics": {
+          "pbo": null,
+          "n_combinations": 0.0,
+          "degradation_slope": null
+        }
+      },
+      "certificate": {
+        "checks": [
+          {
+            "detail": "oos_sessions 3780 >= 2520: passed",
+            "name": "oos_sessions",
+            "passed": true,
+            "threshold": 2520.0,
+            "value": 3780.0
+          },
+          {
+            "detail": "oos_sharpe 0.956651 >= 0.5: passed",
+            "name": "oos_sharpe",
+            "passed": true,
+            "threshold": 0.5,
+            "value": 0.9566513794159559
+          },
+          {
+            "detail": "dsr 0.999874 >= 0.95: passed",
+            "name": "dsr",
+            "passed": true,
+            "threshold": 0.95,
+            "value": 0.9998736662492688
+          },
+          {
+            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "name": "prob_oos_loss",
+            "passed": false,
+            "threshold": 0.1,
+            "value": null
+          },
+          {
+            "detail": "oos_drawdown 0.208038 <= 0.25: passed",
+            "name": "oos_drawdown",
+            "passed": true,
+            "threshold": 0.25,
+            "value": 0.20803830809343737
+          },
+          {
+            "detail": "sharpe_2x_costs 0.951089 >= 0.3: passed",
+            "name": "sharpe_2x_costs",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.9510892180119851
+          },
+          {
+            "detail": "sharpe_delay_1 0.94994 >= 0.3: passed",
+            "name": "sharpe_delay_1",
+            "passed": true,
+            "threshold": 0.3,
+            "value": 0.9499397592572296
+          },
+          {
+            "detail": "bootstrap_sharpe_p05 0.564355 > 0: passed",
+            "name": "bootstrap_sharpe_p05",
+            "passed": true,
+            "threshold": 0.0,
+            "value": 0.5643548854526599
+          }
+        ],
+        "created_at": "2026-10-13T08:55:05.727615+00:00",
+        "data_end": "2026-10-12",
+        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_start": "2006-02-06",
+        "diagnostics": {
+          "degradation_slope": null,
+          "n_combinations": 0.0,
+          "pbo": null
+        },
+        "grid_size": 1,
+        "hash": "73faada9c2a8c6c57bb94fb298410dc9767bd5eea07f95c341266e8cd4d17601",
+        "package_version": "1.0.0",
+        "params": {
+          "bonds": "IEF",
+          "equity": "SPY",
+          "equity_weight": 0.6
+        },
+        "passed": false,
+        "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
+        "schema_version": 1,
+        "strategy": "sixty_forty"
+      },
+      "bootstrap_sharpe_ci90": [
+        0.5643548854526599,
+        1.383997089033897
+      ],
+      "folds": [
+        {
+          "train_start": "2006-02-13 00:00:00",
+          "train_end": "2011-02-11 00:00:00",
+          "test_start": "2011-02-22 00:00:00",
+          "test_end": "2012-02-21 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.41354440829488287,
+          "oos_sharpe": 0.8271270766947704,
+          "variant": 0
+        },
+        {
+          "train_start": "2007-02-14 00:00:00",
+          "train_end": "2012-02-13 00:00:00",
+          "test_start": "2012-02-22 00:00:00",
+          "test_end": "2013-02-22 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.3838406061950774,
+          "oos_sharpe": 1.437393445765434,
+          "variant": 0
+        },
+        {
+          "train_start": "2008-02-14 00:00:00",
+          "train_end": "2013-02-14 00:00:00",
+          "test_start": "2013-02-25 00:00:00",
+          "test_end": "2014-02-24 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.48133419726892424,
+          "oos_sharpe": 1.7629695346885659,
+          "variant": 0
+        },
+        {
+          "train_start": "2009-02-13 00:00:00",
+          "train_end": "2014-02-14 00:00:00",
+          "test_start": "2014-02-25 00:00:00",
+          "test_end": "2015-02-24 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.316943556743475,
+          "oos_sharpe": 2.1091397676776897,
+          "variant": 0
+        },
+        {
+          "train_start": "2010-02-16 00:00:00",
+          "train_end": "2015-02-17 00:00:00",
+          "test_start": "2015-02-25 00:00:00",
+          "test_end": "2016-02-24 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.4475882530865112,
+          "oos_sharpe": -0.19032366119948116,
+          "variant": 0
+        },
+        {
+          "train_start": "2011-02-14 00:00:00",
+          "train_end": "2016-02-17 00:00:00",
+          "test_start": "2016-02-25 00:00:00",
+          "test_end": "2017-02-23 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.0247591619429417,
+          "oos_sharpe": 2.1528401414402807,
+          "variant": 0
+        },
+        {
+          "train_start": "2012-02-14 00:00:00",
+          "train_end": "2017-02-15 00:00:00",
+          "test_start": "2017-02-24 00:00:00",
+          "test_end": "2018-02-23 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.2754260182627433,
+          "oos_sharpe": 1.7196276567197797,
+          "variant": 0
+        },
+        {
+          "train_start": "2013-02-15 00:00:00",
+          "train_end": "2018-02-15 00:00:00",
+          "test_start": "2018-02-26 00:00:00",
+          "test_end": "2019-02-26 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.3191309172069519,
+          "oos_sharpe": 0.5426556973236244,
+          "variant": 0
+        },
+        {
+          "train_start": "2014-02-18 00:00:00",
+          "train_end": "2019-02-19 00:00:00",
+          "test_start": "2019-02-27 00:00:00",
+          "test_end": "2020-02-26 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.0437966339124716,
+          "oos_sharpe": 1.8371612311207808,
+          "variant": 0
+        },
+        {
+          "train_start": "2015-02-18 00:00:00",
+          "train_end": "2020-02-19 00:00:00",
+          "test_start": "2020-02-27 00:00:00",
+          "test_end": "2021-02-25 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.1758851336666538,
+          "oos_sharpe": 0.9146302029013778,
+          "variant": 0
+        },
+        {
+          "train_start": "2016-02-18 00:00:00",
+          "train_end": "2021-02-18 00:00:00",
+          "test_start": "2021-02-26 00:00:00",
+          "test_end": "2022-02-24 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.1488485729338642,
+          "oos_sharpe": 0.8551595800738576,
+          "variant": 0
+        },
+        {
+          "train_start": "2017-02-16 00:00:00",
+          "train_end": "2022-02-16 00:00:00",
+          "test_start": "2022-02-25 00:00:00",
+          "test_end": "2023-02-27 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 1.0208575418692392,
+          "oos_sharpe": -0.4465501692519512,
+          "variant": 0
+        },
+        {
+          "train_start": "2018-02-16 00:00:00",
+          "train_end": "2023-02-17 00:00:00",
+          "test_start": "2023-02-28 00:00:00",
+          "test_end": "2024-02-28 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.5891476930319344,
+          "oos_sharpe": 1.9817503988270697,
+          "variant": 0
+        },
+        {
+          "train_start": "2019-02-20 00:00:00",
+          "train_end": "2024-02-21 00:00:00",
+          "test_start": "2024-02-29 00:00:00",
+          "test_end": "2025-03-03 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.7274746672782957,
+          "oos_sharpe": 1.4255557611722327,
+          "variant": 0
+        },
+        {
+          "train_start": "2020-02-20 00:00:00",
+          "train_end": "2025-02-24 00:00:00",
+          "test_start": "2025-03-04 00:00:00",
+          "test_end": "2026-03-04 00:00:00",
+          "chosen_params": {
+            "equity": "SPY",
+            "bonds": "IEF",
+            "equity_weight": 0.6
+          },
+          "is_sharpe": 0.6613297149300994,
+          "oos_sharpe": 1.2097967846139837,
+          "variant": 0
+        }
+      ],
+      "oos_total_costs": 262.3309685297247,
+      "oos_average_annual_turnover": 0.20546004832635278,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"sixty_forty\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+    }
+  }
+}

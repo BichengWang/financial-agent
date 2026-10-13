@@ -1,6 +1,6 @@
 # Risk-Managed Systematic Trading Platform (`financial_agent.quant` v1)
 
-**Date:** 2026-10-12 · **Status:** approved by the owner, in delivery · **Target:**
+**Date:** 2026-10-12 · **Status:** Delivered in v1.0.0 · **Target:**
 release `v1.0.0`
 
 ## TL;DR
@@ -324,18 +324,18 @@ the latest `main` and merged before dependent work branches. PRs in the same wav
 touch disjoint files and are developed in parallel; each rebases onto the latest
 `main` before it opens.
 
-| # | Branch | Wave | Depends on | Scope | Acceptance |
-|---|---|---|---|---|---|
-| 1 | `docs/trading-platform-plan` | 0 | — | this plan | merged |
-| 2 | `chore/split-dependency-extras` | 1 | 1 | core deps vs `rl`/`dl`/`notebooks`/`dev` extras; CI installs the extras it needs | `uv sync --locked` (core) imports `financial_agent.harness`; full suite passes with all extras |
-| 3 | `feat/quant-data` | 1 | 1 | `quant.data` + CI lint/type/test for `quant` | offline tests for slicing, fingerprint, CSV/cache round trip, quality issues, deterministic synthetic data |
-| 4 | `feat/quant-backtest` | 2 | 3 | `quant.strategies` (built-ins except research), `quant.backtest`, `quant.portfolio` | lookahead test (a peeking strategy gains nothing), next-open fills, costs hand-computed, metrics vs hand-computed values |
-| 5 | `feat/quant-validation` | 3 | 4 | `quant.validation`, `quant_policy.toml [promotion]` | PSR/DSR vs published worked examples, PBO high for noise and low for a planted edge, certificate tamper detection |
-| 6 | `feat/quant-risk` | 3 | 4 | `quant.risk`, `quant_policy.toml [risk]` | every limit rejects at the boundary; tighten-only enforcement; kill switch persistence |
-| 7 | `feat/quant-execution` | 4 | 6 | `quant.execution`, `requests` dependency | paper fills at next open with costs; idempotent resubmit; Alpaca via fake transport (paper default, live refused without authorization); journal tamper detection |
-| 8 | `feat/quant-runner` | 5 | 5, 7 | `quant.runner`, CLI, MCP tools, example config, launchd/cron/GitHub Actions templates | offline multi-session paper run on synthetic data: TRADED, then NO_CHANGE on rerun, HALTED on injected bad data, kill switch, live refused until gates pass |
-| 9 | `feat/quant-research-signal` | 3 | 4 | `research_forecast` strategy over `agents/equity/output/*/15_predictions.json`, point-in-time by package date | point-in-time test; validation report on the real ledger history, whatever the verdict |
-| 10 | `docs/quant-release` | 6 | all | README, `docs/`, AGENTS.md, CHANGELOG, `1.0.0` metadata, release workflow, real-data evidence report | fresh-clone quickstart works; evidence report committed; tag `v1.0.0` |
+| Step | PR | Branch | Wave | Depends on | Scope | Acceptance |
+|---|---|---|---|---|---|---|
+| 1 | [#91](https://github.com/BichengWang/financial-agent/pull/91) | `docs/trading-platform-plan` | 0 | — | this plan | merged |
+| 2 | [#96](https://github.com/BichengWang/financial-agent/pull/96) | `chore/split-dependency-extras` | 1 | 1 | core deps vs `rl`/`dl`/`notebooks`/`dev` extras; CI installs the extras it needs | `uv sync --locked` (core) imports `financial_agent.harness`; full suite passes with all extras |
+| 3 | [#92](https://github.com/BichengWang/financial-agent/pull/92) | `feat/quant-data` | 1 | 1 | `quant.data` + CI lint/type/test for `quant` | offline tests for slicing, fingerprint, CSV/cache round trip, quality issues, deterministic synthetic data |
+| 4 | [#93](https://github.com/BichengWang/financial-agent/pull/93) | `feat/quant-backtest` | 2 | 3 | `quant.strategies` (built-ins except research), `quant.backtest`, `quant.portfolio` | lookahead test (a peeking strategy gains nothing), next-open fills, costs hand-computed, metrics vs hand-computed values |
+| 5 | [#95](https://github.com/BichengWang/financial-agent/pull/95) | `feat/quant-validation` | 3 | 4 | `quant.validation`, `quant_policy.toml [promotion]` | PSR/DSR vs published worked examples, PBO high for noise and low for a planted edge, certificate tamper detection |
+| 6 | [#94](https://github.com/BichengWang/financial-agent/pull/94) | `feat/quant-risk` | 3 | 4 | `quant.risk`, `quant_policy.toml [risk]` | every limit rejects at the boundary; tighten-only enforcement; kill switch persistence |
+| 7 | [#98](https://github.com/BichengWang/financial-agent/pull/98) | `feat/quant-execution` | 4 | 6 | `quant.execution`, `requests` dependency | paper fills at next open with costs; idempotent resubmit; Alpaca via fake transport (paper default, live refused without authorization); journal tamper detection |
+| 8 | [#99](https://github.com/BichengWang/financial-agent/pull/99) | `feat/quant-runner` | 5 | 5, 7 | `quant.runner`, CLI, MCP tools, example config, launchd/cron/GitHub Actions templates | offline multi-session paper run on synthetic data: TRADED, then NO_CHANGE on rerun, HALTED on injected bad data, kill switch, live refused until gates pass |
+| 9 | [#97](https://github.com/BichengWang/financial-agent/pull/97) | `feat/quant-research-signal` | 3 | 4 | `research_forecast` strategy over `agents/equity/output/*/15_predictions.json`, point-in-time by package date | point-in-time test; validation report on the real ledger history, whatever the verdict |
+| 10 | Release PR (this change) | `docs/quant-release` | 6 | all | README, `docs/`, AGENTS.md, CHANGELOG, `1.0.0` metadata, release workflow, real-data evidence report | fresh-clone quickstart works; evidence report committed; tag `v1.0.0` |
 
 ## 5. Release criteria (v1.0.0)
 

@@ -420,6 +420,13 @@ def _run_locked(
             due = False
         risk["rebalance_due"] = due
         if not due and not dry_run:
+            previous_plans = [
+                e.payload
+                for e in journal.events(["plan"])
+                if not e.payload.get("dry_run") and e.payload.get("rebalance_due", True)
+            ]
+            if previous_plans:
+                targets.update(previous_plans[-1]["targets"])
             return finish("NO_CHANGE", ["outside rebalance calendar"])
         intents = journal.events(["submission_intent"])
         same = [e for e in intents if e.payload["session"] == today.isoformat()]

@@ -1,14 +1,17 @@
 [project]
 name = "financial-agent"
-version = "0.1.0"
-description = "A reinforcement learning framework for financial agents"
-authors = [{name = "Your Name", email = "your.email@example.com"}]
+version = "1.0.0"
+description = "Risk-managed systematic ETF trading, statistical validation, and financial research"
+authors = [{name = "Bicheng (Kenneth)", email = "31808103+BichengWang@users.noreply.github.com"}]
+keywords = ["systematic-trading", "portfolio", "backtesting", "risk-management", "reinforcement-learning"]
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.12"
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Office/Business :: Financial :: Investment",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
 ]
@@ -19,6 +22,13 @@ dependencies = [
     "gymnasium",
     "requests>=2.32,<3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/BichengWang/financial-agent"
+Repository = "https://github.com/BichengWang/financial-agent"
+Documentation = "https://github.com/BichengWang/financial-agent/tree/main/docs/quant"
+Issues = "https://github.com/BichengWang/financial-agent/issues"
+Changelog = "https://github.com/BichengWang/financial-agent/blob/main/CHANGELOG.md"
 
 [project.scripts]
 fa-quant = "financial_agent.quant.__main__:main"

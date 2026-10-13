@@ -220,3 +220,6 @@ agents/equity/output/.locks/
 
 # Harness run journals (one JSON per (model, date) run attempt).
 agents/equity/output/.runs/
+
+# Quant research downloads (never commit market data).
+.quant-cache/
