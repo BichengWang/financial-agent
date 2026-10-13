@@ -71,13 +71,15 @@ def test_gate_planted_edge_clears_more_policy_checks_than_noise(tmp_path: Path) 
         "oos_sessions": "min_oos_sessions",
         "oos_sharpe": "min_oos_sharpe",
         "dsr": "min_dsr",
-        "pbo": "max_pbo",
+        "prob_oos_loss": "max_prob_oos_loss",
         "oos_drawdown": "max_oos_drawdown",
         "sharpe_2x_costs": "min_sharpe_2x_costs",
         "sharpe_delay_1": "min_sharpe_delay_1",
         "bootstrap_sharpe_p05": "min_bootstrap_sharpe_p05",
     }
     assert len(edge.checks) == 8
+    assert next(c for c in edge.checks if c.name == "prob_oos_loss").passed
+    assert not next(c for c in noise.checks if c.name == "prob_oos_loss").passed
     for report in (edge, noise):
         assert report.passed == all(c.passed for c in report.checks)
         for check in report.checks:
@@ -88,6 +90,7 @@ def test_gate_planted_edge_clears_more_policy_checks_than_noise(tmp_path: Path) 
     path = write_certificate(edge, tmp_path / "edge.json")
     certificate = verify_certificate(path, require_passed=False)
     assert certificate.passed == edge.passed
+    assert certificate.diagnostics == edge.diagnostics
     assert (
         certificate.policy_sha256
         == hashlib.sha256((tmp_path / "policy.toml").read_bytes()).hexdigest()
@@ -119,12 +122,14 @@ def test_insufficient_data_records_failures_and_serializes_nulls(
     [
         "unknown = 1",
         "min_dsr = 1.1",
-        "max_pbo = -0.1",
+        "max_prob_oos_loss = -0.1",
         "pbo_splits = 3",
         "train_sessions = 1",
         "min_oos_sessions = true",
         "min_oos_sharpe = inf",
         "min_oos_sharpe = -1",
+        "max_pbo = 0.2",
+        "max_prob_oos_loss = 1.1",
     ],
 )
 def test_policy_rejects_unknown_illtyped_and_out_of_range(
@@ -148,6 +153,7 @@ def report_fixture() -> PromotionReport:
         "2005-01-03",
         "2025-01-03",
         PromotionPolicy.load(),
+        {"pbo": 0.5, "n_combinations": 70.0, "degradation_slope": -0.8},
     )
 
 
@@ -171,6 +177,7 @@ def test_certificate_roundtrip_canonical_hash_identity_and_expiry(
     )
     assert cert.hash == claimed
     assert cert.params == report.selected_params
+    assert cert.diagnostics == report.diagnostics
     created = datetime.fromisoformat(cert.created_at)
     assert created.utcoffset() == timedelta(0)
     verify_certificate(path, now=created + timedelta(days=90))
@@ -192,6 +199,7 @@ def test_certificate_roundtrip_canonical_hash_identity_and_expiry(
         ("params", {"target_vol": 0.3}),
         ("data_fingerprint", "changed"),
         ("passed", False),
+        ("diagnostics", {"pbo": 0.0}),
     ],
 )
 def test_certificate_detects_tampering(tmp_path: Path, field: str, value: Any) -> None:
@@ -230,3 +238,17 @@ def test_certificate_rejects_malformed_json_and_bad_age_limit(tmp_path: Path) ->
     path = write_certificate(report, path)
     with pytest.raises(CertificateError, match="failed promotion"):
         verify_certificate(path, now=datetime.now(timezone.utc))
+
+
+def test_certificate_undefined_diagnostics_roundtrip_as_null(tmp_path: Path) -> None:
+    import math
+
+    report = replace(
+        report_fixture(),
+        diagnostics={"pbo": 0.5, "degradation_slope": float("nan")},
+    )
+    path = write_certificate(report, tmp_path / "undefined.json")
+    assert json.loads(path.read_text())["diagnostics"]["degradation_slope"] is None
+    cert = verify_certificate(path)
+    assert cert.diagnostics["pbo"] == 0.5
+    assert math.isnan(cert.diagnostics["degradation_slope"])

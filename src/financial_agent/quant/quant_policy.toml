@@ -2,7 +2,7 @@
 min_oos_sessions = 2520
 min_oos_sharpe = 0.5
 min_dsr = 0.95
-max_pbo = 0.20
+max_prob_oos_loss = 0.10
 max_oos_drawdown = 0.25
 min_sharpe_2x_costs = 0.3
 min_sharpe_delay_1 = 0.3

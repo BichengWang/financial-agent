@@ -98,14 +98,27 @@ def test_cscv_matches_independent_rank_calculation() -> None:
     values = np.random.default_rng(7).normal(size=(24, 4))
     blocks = np.arange(24).reshape(4, 6)
     expected = []
+    selected_is, selected_oos = [], []
     for chosen in combinations(range(4), 2):
         train = values[blocks[list(chosen)].ravel()]
         test = values[blocks[[i for i in range(4) if i not in chosen]].ravel()]
-        winner = int(np.argmax(train.mean(axis=0) / train.std(axis=0, ddof=1)))
-        ranks = pd.Series(test.mean(axis=0) / test.std(axis=0, ddof=1)).rank()
+        ins = train.mean(axis=0) / train.std(axis=0, ddof=1)
+        oos = test.mean(axis=0) / test.std(axis=0, ddof=1)
+        winner = int(np.argmax(ins))
+        selected_is.append(ins[winner])
+        selected_oos.append(oos[winner])
+        ranks = pd.Series(oos).rank()
         omega = ranks[winner] / 5
         expected.append(math.log(omega / (1 - omega)))
-    assert pbo_cscv(pd.DataFrame(values), 4).logits == pytest.approx(expected)
+    result = pbo_cscv(pd.DataFrame(values), 4)
+    assert result.logits == pytest.approx(expected)
+    assert result.prob_oos_loss == np.mean(np.asarray(selected_oos) <= 0)
+    slope, _ = np.linalg.lstsq(
+        np.column_stack([selected_is, np.ones(len(selected_is))]),
+        selected_oos,
+        rcond=None,
+    )[0]
+    assert result.degradation_slope == pytest.approx(slope)
 
 
 def test_circular_bootstrap_matches_independent_draws_and_seed() -> None:
@@ -161,3 +174,21 @@ def test_bootstrap_rejects_invalid_controls(n: int, block: int, alpha: float) ->
 def test_bootstrap_rejects_undefined_statistic() -> None:
     with pytest.raises(ValueError, match="statistic"):
         block_bootstrap_ci([1, 2, 3], lambda x: float("nan"), n=2, block=2, seed=0)
+
+
+def test_near_identical_profitable_family_has_rank_reversals_without_losses() -> None:
+    rng = np.random.default_rng(7)
+    base = rng.normal(0.004, 0.01, (2000, 1))
+    variants = base + rng.normal(0, 0.0001, (2000, 12))
+    result = pbo_cscv(pd.DataFrame(variants), 8)
+    assert 0.3 < result.pbo < 0.7
+    assert result.prob_oos_loss == 0.0
+    noise = pbo_cscv(pd.DataFrame(rng.normal(0, 0.01, (2000, 12))), 8)
+    assert noise.prob_oos_loss > 0.10
+
+
+def test_cscv_zero_sharpe_counts_as_loss_and_constant_is_has_undefined_slope() -> None:
+    values = np.tile([-0.01, 0.01], 8)
+    result = pbo_cscv(pd.DataFrame({"a": values, "b": values}), 4)
+    assert result.prob_oos_loss == 1.0
+    assert math.isnan(result.degradation_slope)

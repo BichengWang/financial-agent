@@ -27,7 +27,7 @@ class PromotionPolicy:
     min_oos_sessions: int = 2520
     min_oos_sharpe: float = 0.5
     min_dsr: float = 0.95
-    max_pbo: float = 0.20
+    max_prob_oos_loss: float = 0.10
     max_oos_drawdown: float = 0.25
     min_sharpe_2x_costs: float = 0.3
     min_sharpe_delay_1: float = 0.3
@@ -65,7 +65,7 @@ class PromotionPolicy:
                 or not math.isfinite(value)
             ):
                 raise ValueError(f"{item.name} must be finite and numeric")
-            elif item.name in ("min_dsr", "max_pbo", "max_oos_drawdown"):
+            elif item.name in ("min_dsr", "max_prob_oos_loss", "max_oos_drawdown"):
                 if not 0 <= value <= 1:
                     raise ValueError(f"{item.name} must be in [0, 1]")
             elif value < 0:
@@ -129,6 +129,7 @@ class PromotionReport:
     data_start: str
     data_end: str
     policy: PromotionPolicy = field(repr=False)
+    diagnostics: dict[str, float] = field(default_factory=dict)
 
 
 def evaluate_promotion(
@@ -219,18 +220,29 @@ def evaluate_promotion(
         "evidence does not clear the multiple-trial Sharpe benchmark",
         error=dsr_error,
     )
-    pbo, pbo_error = float("nan"), ""
+    loss, cscv_error = float("nan"), ""
+    diagnostics = {
+        "pbo": float("nan"),
+        "n_combinations": 0.0,
+        "degradation_slope": float("nan"),
+    }
     try:
-        pbo = pbo_cscv(result.variant_returns, policy.pbo_splits).pbo
+        cscv = pbo_cscv(result.variant_returns, policy.pbo_splits)
+        loss = cscv.prob_oos_loss
+        diagnostics.update(
+            pbo=cscv.pbo,
+            n_combinations=float(cscv.n_combinations),
+            degradation_slope=cscv.degradation_slope,
+        )
     except ValueError as exc:
-        pbo_error = str(exc)
+        cscv_error = str(exc)
     check(
-        "pbo",
-        pbo,
-        policy.max_pbo,
-        "in-sample winner usually underperforms out of sample",
+        "prob_oos_loss",
+        loss,
+        policy.max_prob_oos_loss,
+        "in-sample-selected variant too often loses money out of sample",
         maximum=True,
-        error=pbo_error,
+        error=cscv_error,
     )
     check(
         "oos_drawdown",
@@ -288,4 +300,5 @@ def evaluate_promotion(
         str(data.sessions[0].date()) if len(data.sessions) else "",
         str(data.sessions[-1].date()) if len(data.sessions) else "",
         policy,
+        diagnostics,
     )

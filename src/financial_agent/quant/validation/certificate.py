@@ -31,6 +31,7 @@ class Certificate:
     created_at: str
     passed: bool
     checks: tuple[Check, ...]
+    diagnostics: dict[str, float]
     hash: str
 
 
@@ -71,6 +72,10 @@ def write_certificate(report: PromotionReport, path: str | Path) -> Path:
         "created_at": datetime.now(timezone.utc).isoformat(),
         "passed": report.passed,
         "checks": checks,
+        "diagnostics": {
+            key: value if math.isfinite(value) else None
+            for key, value in report.diagnostics.items()
+        },
     }
     payload["hash"] = hashlib.sha256(_canonical(payload)).hexdigest()
     target = Path(path)
@@ -115,10 +120,23 @@ def verify_certificate(
         or type(payload["grid_size"]) is not int
         or payload["grid_size"] < 1
         or not isinstance(payload["checks"], list)
+        or not isinstance(payload["diagnostics"], dict)
     ):
         raise CertificateError("invalid certificate field types")
     checks: list[Check] = []
     try:
+        diagnostics: dict[str, float] = {}
+        for key, value in payload["diagnostics"].items():
+            if not isinstance(key, str) or (
+                value is not None
+                and (
+                    isinstance(value, bool)
+                    or not isinstance(value, (int, float))
+                    or not math.isfinite(value)
+                )
+            ):
+                raise ValueError("invalid diagnostic")
+            diagnostics[key] = float("nan") if value is None else float(value)
         for row in payload["checks"]:
             if (
                 not isinstance(row, dict)
@@ -167,4 +185,5 @@ def verify_certificate(
     if require_passed and not payload["passed"]:
         raise CertificateError("certificate failed promotion gate")
     payload["checks"] = tuple(checks)
+    payload["diagnostics"] = diagnostics
     return Certificate(**payload, hash=claimed)

@@ -12,11 +12,13 @@ import pandas as pd  # type: ignore[import-untyped]
 
 @dataclass(frozen=True)
 class PBOResult:
-    """CSCV loss probability and one OOS rank logit per partition."""
+    """CSCV relative ranks, absolute OOS loss probability and OLS degradation."""
 
     pbo: float
     logits: tuple[float, ...]
     n_combinations: int
+    prob_oos_loss: float
+    degradation_slope: float
 
 
 def _returns(returns: ArrayLike, minimum: int = 4) -> np.ndarray:
@@ -76,7 +78,10 @@ def pbo_cscv(variant_returns: pd.DataFrame, n_splits: int = 16) -> PBOResult:
     """Enumerate equal-block half-sample partitions; discard leading remainder.
 
     Ascending OOS ranks use average ties (worst=1, best=N). IS ties choose the
-    first column deterministically. Nonfinite inputs/undefined Sharpe fail.
+    first column deterministically. Loss means selected OOS Sharpe <= 0.
+    Degradation is OLS OOS-on-IS slope with an intercept, in per-period Sharpe
+    units; constant selected IS Sharpe yields NaN. Nonfinite inputs/undefined
+    Sharpe fail.
     """
     if (
         isinstance(n_splits, bool)
@@ -109,14 +114,29 @@ def pbo_cscv(variant_returns: pd.DataFrame, n_splits: int = 16) -> PBOResult:
         return np.asarray((s / count) / np.sqrt(variance), dtype=float)
 
     logits: list[float] = []
+    selected_is: list[float] = []
+    selected_oos: list[float] = []
     for selected in combinations(range(n_splits), n_splits // 2):
         s, q = sums[list(selected)].sum(axis=0), squares[list(selected)].sum(axis=0)
-        winner = int(np.argmax(sharpe(s, q)))
+        ins = sharpe(s, q)
+        winner = int(np.argmax(ins))
         oos = sharpe(total - s, total_squares - q)
         score = oos[winner]
+        selected_is.append(float(ins[winner]))
+        selected_oos.append(float(score))
         rank = 1 + int((oos < score).sum()) + (int((oos == score).sum()) - 1) / 2
         omega = rank / (values.shape[1] + 1)
         logits.append(math.log(omega / (1 - omega)))
+    x, y = np.asarray(selected_is), np.asarray(selected_oos)
+    centered = x - x.mean()
+    variance = float(centered @ centered)
+    slope = (
+        float(centered @ (y - y.mean()) / variance) if variance > 0 else float("nan")
+    )
     return PBOResult(
-        float(np.mean(np.asarray(logits) <= 0)), tuple(logits), len(logits)
+        float(np.mean(np.asarray(logits) <= 0)),
+        tuple(logits),
+        len(logits),
+        float(np.mean(y <= 0)),
+        slope,
     )
