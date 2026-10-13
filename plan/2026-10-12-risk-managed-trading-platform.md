@@ -335,7 +335,7 @@ touch disjoint files and are developed in parallel; each rebases onto the latest
 | 7 | [#98](https://github.com/BichengWang/financial-agent/pull/98) | `feat/quant-execution` | 4 | 6 | `quant.execution`, `requests` dependency | paper fills at next open with costs; idempotent resubmit; Alpaca via fake transport (paper default, live refused without authorization); journal tamper detection |
 | 8 | [#99](https://github.com/BichengWang/financial-agent/pull/99) | `feat/quant-runner` | 5 | 5, 7 | `quant.runner`, CLI, MCP tools, example config, launchd/cron/GitHub Actions templates | offline multi-session paper run on synthetic data: TRADED, then NO_CHANGE on rerun, HALTED on injected bad data, kill switch, live refused until gates pass |
 | 9 | [#97](https://github.com/BichengWang/financial-agent/pull/97) | `feat/quant-research-signal` | 3 | 4 | `research_forecast` strategy over `agents/equity/output/*/15_predictions.json`, point-in-time by package date | point-in-time test; validation report on the real ledger history, whatever the verdict |
-| 10 | Release PR (this change) | `docs/quant-release` | 6 | all | README, `docs/`, AGENTS.md, CHANGELOG, `1.0.0` metadata, release workflow, real-data evidence report | fresh-clone quickstart works; evidence report committed; tag `v1.0.0` |
+| 10 | [#100](https://github.com/BichengWang/financial-agent/pull/100) | `docs/quant-release` | 6 | all | README, `docs/`, AGENTS.md, CHANGELOG, `1.0.0` metadata, release workflow, real-data evidence report | fresh-clone quickstart works; evidence report committed; tag `v1.0.0` |
 
 ## 5. Release criteria (v1.0.0)
 
