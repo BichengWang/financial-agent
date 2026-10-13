@@ -222,19 +222,20 @@ profitable variants, so the gate measures absolute loss rather than rank reversa
 @dataclass(frozen=True)
 class RiskLimits:  # quant_policy.toml [risk]; a run config may tighten, never loosen
     max_weight: float = 0.30; max_gross: float = 1.0; allow_short: bool = False
-    max_order_notional_pct: float = 0.25; max_turnover_pct: float = 0.50
+    max_order_notional_pct: float = 0.35; max_turnover_pct: float = 1.0
     max_daily_loss_pct: float = 0.03; max_drawdown_pct: float = 0.20
     min_cash_pct: float = 0.01; price_band_pct: float = 0.05; max_orders: int = 50
     allowed_symbols: tuple[str, ...] = ()   # empty = the configured universe
 
-Order(symbol, side, qty, order_type="market", time_in_force="opg", limit_price=None, client_order_id)
+Order(symbol, side, qty, order_type="market", time_in_force="opg", limit_price=None, *, client_order_id)
 Position(symbol, qty, avg_price, market_price); AccountSnapshot(cash, equity, positions, as_of)
 def plan_orders(targets, account, prices, *, session, strategy, config) -> list[Order]
 #   wraps rebalance_deltas; sells before buys; deterministic client_order_id
 #   = hash(strategy, session, symbol, side, qty)
-def check_orders(orders, account, prices, limits, state) -> RiskDecision
+def check_orders(orders, account, prices, limits, *, kill_switch) -> RiskDecision
 #   RiskDecision.approved, .rejected[(order, reason)], .halt, .reasons
-RiskState(high_water_mark, day_start_equity, killed, kill_reason); update_risk_state(...)
+RiskState(high_water_mark, day_start_equity, session)  # KillSwitch alone owns killed status
+def update_risk_state(state, account, limits, *, session) -> tuple[RiskState, list[str]]
 KillSwitch(state_dir)   # KILL file or persisted breach; released only by an explicit operator command
 ```
 

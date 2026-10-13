@@ -11,3 +11,16 @@ train_sessions = 1260
 test_sessions = 252
 embargo_sessions = 5
 pbo_splits = 16
+
+[risk]
+max_weight = 0.30
+max_gross = 1.0
+allow_short = false
+max_order_notional_pct = 0.35
+max_turnover_pct = 1.0
+max_daily_loss_pct = 0.03
+max_drawdown_pct = 0.20
+min_cash_pct = 0.01
+price_band_pct = 0.05
+max_orders = 50
+allowed_symbols = []
