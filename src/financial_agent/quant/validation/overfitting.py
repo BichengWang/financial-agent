@@ -81,7 +81,8 @@ def pbo_cscv(variant_returns: pd.DataFrame, n_splits: int = 16) -> PBOResult:
     first column deterministically. Loss means selected OOS Sharpe <= 0.
     Degradation is OLS OOS-on-IS slope with an intercept, in per-period Sharpe
     units; constant selected IS Sharpe yields NaN. Nonfinite inputs/undefined
-    Sharpe fail.
+    Sharpe fail. A single pre-registered variant has a defined loss probability;
+    rank-based PBO/logits and degradation are not applicable (NaN/empty).
     """
     if (
         isinstance(n_splits, bool)
@@ -93,12 +94,12 @@ def pbo_cscv(variant_returns: pd.DataFrame, n_splits: int = 16) -> PBOResult:
     values = variant_returns.to_numpy(dtype=float)
     if (
         values.ndim != 2
-        or values.shape[1] < 2
+        or values.shape[1] < 1
         or len(values) < n_splits
         or not np.isfinite(values).all()
         or not variant_returns.columns.is_unique
     ):
-        raise ValueError("need >= 2 unique variants, finite returns and enough rows")
+        raise ValueError("need >= 1 unique variants, finite returns and enough rows")
     block = len(values) // n_splits
     count = block * (n_splits // 2)
     if count < 2:
@@ -124,10 +125,15 @@ def pbo_cscv(variant_returns: pd.DataFrame, n_splits: int = 16) -> PBOResult:
         score = oos[winner]
         selected_is.append(float(ins[winner]))
         selected_oos.append(float(score))
-        rank = 1 + int((oos < score).sum()) + (int((oos == score).sum()) - 1) / 2
-        omega = rank / (values.shape[1] + 1)
-        logits.append(math.log(omega / (1 - omega)))
+        if values.shape[1] > 1:
+            rank = 1 + int((oos < score).sum()) + (int((oos == score).sum()) - 1) / 2
+            omega = rank / (values.shape[1] + 1)
+            logits.append(math.log(omega / (1 - omega)))
     x, y = np.asarray(selected_is), np.asarray(selected_oos)
+    if values.shape[1] == 1:
+        return PBOResult(
+            float("nan"), (), len(selected_oos), float(np.mean(y <= 0)), float("nan")
+        )
     centered = x - x.mean()
     variance = float(centered @ centered)
     slope = (

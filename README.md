@@ -67,18 +67,21 @@ default comparisons are shown here:
 
 | Strategy | CAGR | Net Sharpe | Max drawdown | Turnover/year |
 |---|---:|---:|---:|---:|
-| Trend vol target | 5.625% | 0.739 | 16.531% | 14.369× |
+| Trend vol target | 5.625% | 0.740 | 16.533% | 14.375× |
 | Dual momentum | 11.100% | 0.754 | 26.397% | 10.550× |
 | SPY buy-and-hold | 11.122% | 0.652 | 54.299% | 0.048× |
 | 60/40 SPY/IEF | 8.212% | 0.785 | 31.979% | 0.206× |
 
 Trend passes all eight historical checks: OOS Sharpe 0.729, DSR 0.996, OOS
 maximum drawdown 17.114%. PBO 0.650 warns that in-sample parameter selection adds
-no reliable value. The single-default momentum and benchmark runs fail the
-undefined CSCV loss-probability check; SPY additionally fails OOS drawdown.
-Warmup/OOS windows differ; read the report for dates, exact checks, costs,
-bootstrap intervals, stress results and data caveats. No parameters were tuned
-to pass. Concentrated benchmarks and default momentum can exceed runtime caps.
+no reliable value. Single-default dual momentum and 60/40 also pass all eight
+statistical checks; SPY fails the OOS drawdown limit. For a single pre-registered
+variant, CSCV computes absolute OOS loss frequency; PBO and degradation slope
+are not applicable. Warmup/OOS windows differ; read the report for dates, exact
+checks, costs, bootstrap intervals, stress results and data caveats. No parameters
+or thresholds were tuned to pass. Statistical passes do not override execution
+limits: default dual momentum's three slots allocate 33.3% each versus the 30%
+per-name cap, and concentrated SPY/60-40 benchmarks also exceed runtime caps.
 
 The dated equity `research_forecast` strategy also [fails its real-ledger gate](reports/quant/research-forecast-validation.md):
 there is too little history to support promotion. This is the retained result

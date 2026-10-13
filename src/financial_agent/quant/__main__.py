@@ -428,7 +428,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             else:
                 print(f"Passed: {report.passed}")
                 print("\n".join(c.detail for c in report.checks))
-                print(f"Diagnostics: {json_value(report.diagnostics)}")
+                diagnostics = json_value(report.diagnostics)
+                if len(report.grid) == 1:
+                    for key in ("pbo", "degradation_slope"):
+                        diagnostics[key] = "n/a: single pre-registered variant"
+                print(f"Diagnostics: {diagnostics}")
                 if args.command == "certify":
                     print("Selected strategy parameters (copy into your config):")
                     print(strategy_toml(report.strategy, report.selected_params))

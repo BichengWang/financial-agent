@@ -112,6 +112,8 @@ def test_cscv_matches_independent_rank_calculation() -> None:
         expected.append(math.log(omega / (1 - omega)))
     result = pbo_cscv(pd.DataFrame(values), 4)
     assert result.logits == pytest.approx(expected)
+    assert result.pbo == np.mean(np.asarray(expected) <= 0)
+    assert result.n_combinations == math.comb(4, 2)
     assert result.prob_oos_loss == np.mean(np.asarray(selected_oos) <= 0)
     slope, _ = np.linalg.lstsq(
         np.column_stack([selected_is, np.ones(len(selected_is))]),
@@ -156,7 +158,7 @@ def test_expected_max_rejects_invalid_trials(trials: int, variance: float) -> No
 
 
 @pytest.mark.parametrize(
-    "splits,rows,columns", [(3, 20, 3), (4, 3, 3), (4, 20, 1), (2, 2, 2)]
+    "splits,rows,columns", [(3, 20, 3), (4, 3, 3), (4, 20, 0), (4, 20, 1), (2, 2, 2)]
 )
 def test_pbo_rejects_invalid_dimensions(splits: int, rows: int, columns: int) -> None:
     with pytest.raises(ValueError):
@@ -192,3 +194,27 @@ def test_cscv_zero_sharpe_counts_as_loss_and_constant_is_has_undefined_slope() -
     result = pbo_cscv(pd.DataFrame({"a": values, "b": values}), 4)
     assert result.prob_oos_loss == 1.0
     assert math.isnan(result.degradation_slope)
+
+
+def test_single_variant_cscv_loss_matches_independent_partitions() -> None:
+    from itertools import combinations
+
+    values = np.random.default_rng(18).normal(0, 0.01, 2000)
+    blocks = values.reshape(8, 250)
+    for drift in (0.0, 0.006):
+        sample = blocks + drift
+        losses = []
+        for selected in combinations(range(8), 4):
+            oos = sample[[i for i in range(8) if i not in selected]].ravel()
+            losses.append(oos.mean() / oos.std(ddof=1) <= 0)
+        result = pbo_cscv(pd.DataFrame({"registered": sample.ravel()}), 8)
+        assert result.prob_oos_loss == np.mean(losses)
+        assert result.n_combinations == math.comb(8, 4)
+        assert math.isnan(result.pbo) and math.isnan(result.degradation_slope)
+        assert result.logits == ()
+        if drift:
+            assert result.prob_oos_loss == 0
+        else:
+            assert result.prob_oos_loss > 0.1
+    zero_mean = pbo_cscv(pd.DataFrame({"registered": np.tile([-0.01, 0.01], 8)}), 4)
+    assert zero_mean.prob_oos_loss == 1

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T08:56:58.194528+00:00",
+  "generated_at": "2026-10-13T09:18:17.958727+00:00",
   "package_version": "1.0.0",
   "universe": [
     "SPY",
@@ -17,7 +17,7 @@
   "data_start": "2006-02-06",
   "data_end": "2026-10-12",
   "sessions": 5203,
-  "fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+  "fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
   "quality": {
     "ok": true,
     "issues": []
@@ -26,7 +26,7 @@
     "SPY": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:04.743183+00:00",
+      "retrieved_at": "2026-10-13T09:16:55.585071+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -35,7 +35,7 @@
     "QQQ": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:05.032531+00:00",
+      "retrieved_at": "2026-10-13T09:16:55.884276+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -44,7 +44,7 @@
     "IWM": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:05.313863+00:00",
+      "retrieved_at": "2026-10-13T09:16:56.203829+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -53,7 +53,7 @@
     "EFA": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:05.622000+00:00",
+      "retrieved_at": "2026-10-13T09:16:56.490206+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -62,7 +62,7 @@
     "EEM": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:05.873260+00:00",
+      "retrieved_at": "2026-10-13T09:16:56.821999+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -71,7 +71,7 @@
     "TLT": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:06.128466+00:00",
+      "retrieved_at": "2026-10-13T09:16:57.167580+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -80,7 +80,7 @@
     "IEF": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:06.479138+00:00",
+      "retrieved_at": "2026-10-13T09:16:57.515011+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -89,7 +89,7 @@
     "LQD": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:06.747837+00:00",
+      "retrieved_at": "2026-10-13T09:16:57.793783+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -98,7 +98,7 @@
     "GLD": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:06.957819+00:00",
+      "retrieved_at": "2026-10-13T09:16:58.081628+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -107,7 +107,7 @@
     "DBC": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:07.192976+00:00",
+      "retrieved_at": "2026-10-13T09:16:58.399524+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -116,7 +116,7 @@
     "VNQ": {
       "source": "yahoo",
       "adjusted": true,
-      "retrieved_at": "2026-10-13T08:53:07.508424+00:00",
+      "retrieved_at": "2026-10-13T09:16:58.836238+00:00",
       "first_session": "2006-02-06",
       "last_session": "2026-10-12",
       "covered_start": "2006-02-06",
@@ -175,21 +175,21 @@
         }
       ],
       "full_period": {
-        "total_return": 1.9287677734171904,
-        "cagr": 0.05625337384725436,
-        "ann_vol": 0.07815158213328374,
-        "sharpe": 0.7394935522724374,
-        "sortino": 1.018811091870271,
-        "max_drawdown": 0.16530687787362386,
-        "calmar": 0.3402966323655313,
-        "hit_rate": 0.5442603071948262,
-        "skew": -0.5817993588372734,
-        "kurtosis": 3.16766304160854,
-        "var95": 0.007971139298322194,
-        "cvar95": 0.011874327353506735,
-        "total_costs": 25370.964047914145,
-        "average_annual_turnover": 14.369202451159168,
-        "trade_count": 3935.0
+        "total_return": 1.928706810311565,
+        "cagr": 0.05625225408610677,
+        "ann_vol": 0.07814738040179177,
+        "sharpe": 0.7395154972906545,
+        "sortino": 1.0188495761613192,
+        "max_drawdown": 0.1653279702936501,
+        "calmar": 0.34024644460458425,
+        "hit_rate": 0.5440582053354891,
+        "skew": -0.5815368391852688,
+        "kurtosis": 3.1667938780517817,
+        "var95": 0.007971887917656639,
+        "cvar95": 0.01187370400513841,
+        "total_costs": 25379.946991275807,
+        "average_annual_turnover": 14.375007710888566,
+        "trade_count": 3938.0
       },
       "validation": {
         "strategy": "trend_vol_target",
@@ -234,17 +234,17 @@
           },
           {
             "name": "oos_sharpe",
-            "value": 0.7290294558351013,
+            "value": 0.7290278802534116,
             "threshold": 0.5,
             "passed": true,
-            "detail": "oos_sharpe 0.729029 >= 0.5: passed"
+            "detail": "oos_sharpe 0.729028 >= 0.5: passed"
           },
           {
             "name": "dsr",
-            "value": 0.9955142000693893,
+            "value": 0.995502714917564,
             "threshold": 0.95,
             "passed": true,
-            "detail": "dsr 0.995514 >= 0.95: passed"
+            "detail": "dsr 0.995503 >= 0.95: passed"
           },
           {
             "name": "prob_oos_loss",
@@ -255,48 +255,48 @@
           },
           {
             "name": "oos_drawdown",
-            "value": 0.1711440857894333,
+            "value": 0.17114452522560997,
             "threshold": 0.25,
             "passed": true,
-            "detail": "oos_drawdown 0.171144 <= 0.25: passed"
+            "detail": "oos_drawdown 0.171145 <= 0.25: passed"
           },
           {
             "name": "sharpe_2x_costs",
-            "value": 0.6664843337459602,
+            "value": 0.6665039128762271,
             "threshold": 0.3,
             "passed": true,
-            "detail": "sharpe_2x_costs 0.666484 >= 0.3: passed"
+            "detail": "sharpe_2x_costs 0.666504 >= 0.3: passed"
           },
           {
             "name": "sharpe_delay_1",
-            "value": 0.8887755825936235,
+            "value": 0.8887765795119295,
             "threshold": 0.3,
             "passed": true,
-            "detail": "sharpe_delay_1 0.888776 >= 0.3: passed"
+            "detail": "sharpe_delay_1 0.888777 >= 0.3: passed"
           },
           {
             "name": "bootstrap_sharpe_p05",
-            "value": 0.33814131573643924,
+            "value": 0.33814002296345197,
             "threshold": 0.0,
             "passed": true,
-            "detail": "bootstrap_sharpe_p05 0.338141 > 0: passed"
+            "detail": "bootstrap_sharpe_p05 0.33814 > 0: passed"
           }
         ],
         "oos_summary": {
-          "total_return": 1.0580756303157557,
-          "cagr": 0.05290719883977244,
-          "ann_vol": 0.07454308470073068,
-          "sharpe": 0.7290294558351013,
-          "sortino": 0.9952284060083852,
-          "max_drawdown": 0.1711440857894333,
-          "calmar": 0.30913834150755687,
+          "total_return": 1.0580733774369706,
+          "cagr": 0.05290711651343872,
+          "ann_vol": 0.074543144717611,
+          "sharpe": 0.7290278802534116,
+          "sortino": 0.9952259384194779,
+          "max_drawdown": 0.17114452522560997,
+          "calmar": 0.3091370667200386,
           "hit_rate": 0.5436507936507936,
-          "skew": -0.7548193762553042,
-          "kurtosis": 4.780185368165262,
-          "var95": 0.007495271486967691,
-          "cvar95": 0.011583962102767643
+          "skew": -0.7548219087061057,
+          "kurtosis": 4.780179070451543,
+          "var95": 0.007495365579483614,
+          "cvar95": 0.011583976493907418
         },
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "data_end": "2026-10-12",
         "policy": {
@@ -314,9 +314,9 @@
           "pbo_splits": 16
         },
         "diagnostics": {
-          "pbo": 0.64996114996115,
+          "pbo": 0.6503496503496503,
           "n_combinations": 12870.0,
-          "degradation_slope": -0.977382100835425
+          "degradation_slope": -0.976373613021024
         }
       },
       "certificate": {
@@ -329,18 +329,18 @@
             "value": 3528.0
           },
           {
-            "detail": "oos_sharpe 0.729029 >= 0.5: passed",
+            "detail": "oos_sharpe 0.729028 >= 0.5: passed",
             "name": "oos_sharpe",
             "passed": true,
             "threshold": 0.5,
-            "value": 0.7290294558351013
+            "value": 0.7290278802534116
           },
           {
-            "detail": "dsr 0.995514 >= 0.95: passed",
+            "detail": "dsr 0.995503 >= 0.95: passed",
             "name": "dsr",
             "passed": true,
             "threshold": 0.95,
-            "value": 0.9955142000693893
+            "value": 0.995502714917564
           },
           {
             "detail": "prob_oos_loss 0 <= 0.1: passed",
@@ -350,45 +350,45 @@
             "value": 0.0
           },
           {
-            "detail": "oos_drawdown 0.171144 <= 0.25: passed",
+            "detail": "oos_drawdown 0.171145 <= 0.25: passed",
             "name": "oos_drawdown",
             "passed": true,
             "threshold": 0.25,
-            "value": 0.1711440857894333
+            "value": 0.17114452522560997
           },
           {
-            "detail": "sharpe_2x_costs 0.666484 >= 0.3: passed",
+            "detail": "sharpe_2x_costs 0.666504 >= 0.3: passed",
             "name": "sharpe_2x_costs",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.6664843337459602
+            "value": 0.6665039128762271
           },
           {
-            "detail": "sharpe_delay_1 0.888776 >= 0.3: passed",
+            "detail": "sharpe_delay_1 0.888777 >= 0.3: passed",
             "name": "sharpe_delay_1",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.8887755825936235
+            "value": 0.8887765795119295
           },
           {
-            "detail": "bootstrap_sharpe_p05 0.338141 > 0: passed",
+            "detail": "bootstrap_sharpe_p05 0.33814 > 0: passed",
             "name": "bootstrap_sharpe_p05",
             "passed": true,
             "threshold": 0.0,
-            "value": 0.33814131573643924
+            "value": 0.33814002296345197
           }
         ],
-        "created_at": "2026-10-13T08:54:26.675325+00:00",
+        "created_at": "2026-10-13T09:17:37.682257+00:00",
         "data_end": "2026-10-12",
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "diagnostics": {
-          "degradation_slope": -0.977382100835425,
+          "degradation_slope": -0.976373613021024,
           "n_combinations": 12870.0,
-          "pbo": 0.64996114996115
+          "pbo": 0.6503496503496503
         },
         "grid_size": 4,
-        "hash": "2ff422beccd593936a73c585560826da0cc16c140b431c47bb080293c926ee15",
+        "hash": "bd6e8ffc8c5b185f3eba1431ede1eea6b960d7bf6ffa44fb3dc3ac1815b18afe",
         "package_version": "1.0.0",
         "params": {
           "cov_lookback": 126,
@@ -408,8 +408,8 @@
         "strategy": "trend_vol_target"
       },
       "bootstrap_sharpe_ci90": [
-        0.33814131573643924,
-        1.1580317852420212
+        0.33814002296345197,
+        1.1580333038165023
       ],
       "folds": [
         {
@@ -429,8 +429,8 @@
             "target_vol": 0.08,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.8881914641709201,
-          "oos_sharpe": 0.5617607037919459,
+          "is_sharpe": 0.8881827370370401,
+          "oos_sharpe": 0.5617365414720115,
           "variant": 1
         },
         {
@@ -450,8 +450,8 @@
             "target_vol": 0.08,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.8141296919561847,
-          "oos_sharpe": 1.2072787539903913,
+          "is_sharpe": 0.8140874541046925,
+          "oos_sharpe": 1.2072770699693633,
           "variant": 1
         },
         {
@@ -471,8 +471,8 @@
             "target_vol": 0.12,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.9799847669954315,
-          "oos_sharpe": 1.9763721797604026,
+          "is_sharpe": 0.9799969833394361,
+          "oos_sharpe": 1.9763697544668104,
           "variant": 3
         },
         {
@@ -492,8 +492,8 @@
             "target_vol": 0.08,
             "max_weight": 0.35
           },
-          "is_sharpe": 1.2263787296982214,
-          "oos_sharpe": -0.7150659176779306,
+          "is_sharpe": 1.2263780802192448,
+          "oos_sharpe": -0.7150596420719754,
           "variant": 1
         },
         {
@@ -513,8 +513,8 @@
             "target_vol": 0.08,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.6681246296955737,
-          "oos_sharpe": 0.9347571664852004,
+          "is_sharpe": 0.6681009948507565,
+          "oos_sharpe": 0.9347563345789224,
           "variant": 1
         },
         {
@@ -534,8 +534,8 @@
             "target_vol": 0.08,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.7020683713870158,
-          "oos_sharpe": 1.083505909251408,
+          "is_sharpe": 0.7020551200459048,
+          "oos_sharpe": 1.0834960211006186,
           "variant": 1
         },
         {
@@ -555,8 +555,8 @@
             "target_vol": 0.08,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.7831179363394541,
-          "oos_sharpe": -0.4876742036286688,
+          "is_sharpe": 0.7831350927563206,
+          "oos_sharpe": -0.48767121019274096,
           "variant": 0
         },
         {
@@ -576,8 +576,8 @@
             "target_vol": 0.08,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.48914080066488713,
-          "oos_sharpe": 1.9288675105990867,
+          "is_sharpe": 0.48915483215635763,
+          "oos_sharpe": 1.9288648367436285,
           "variant": 0
         },
         {
@@ -597,8 +597,8 @@
             "target_vol": 0.08,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.5261291734472864,
-          "oos_sharpe": 0.8083840001607452,
+          "is_sharpe": 0.5261427147877534,
+          "oos_sharpe": 0.8083877526590866,
           "variant": 0
         },
         {
@@ -618,8 +618,8 @@
             "target_vol": 0.12,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.8728439628585611,
-          "oos_sharpe": 0.6648076717661147,
+          "is_sharpe": 0.8728432337394983,
+          "oos_sharpe": 0.6648102886441316,
           "variant": 2
         },
         {
@@ -639,8 +639,8 @@
             "target_vol": 0.12,
             "max_weight": 0.35
           },
-          "is_sharpe": 0.7900039069888952,
-          "oos_sharpe": -0.4808097325989335,
+          "is_sharpe": 0.7898848987586563,
+          "oos_sharpe": -0.4808107566082248,
           "variant": 3
         },
         {
@@ -660,8 +660,8 @@
             "target_vol": 0.12,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.5293648022666242,
-          "oos_sharpe": 0.7077518316985665,
+          "is_sharpe": 0.5293665329280919,
+          "oos_sharpe": 0.7077481799723363,
           "variant": 2
         },
         {
@@ -681,8 +681,8 @@
             "target_vol": 0.12,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.6973594291888419,
-          "oos_sharpe": 1.1513201521817287,
+          "is_sharpe": 0.6973598158945175,
+          "oos_sharpe": 1.151319249371306,
           "variant": 2
         },
         {
@@ -702,14 +702,14 @@
             "target_vol": 0.12,
             "max_weight": 0.25
           },
-          "is_sharpe": 0.6634011915519143,
-          "oos_sharpe": 1.7270032851460773,
+          "is_sharpe": 0.6634018776968962,
+          "oos_sharpe": 1.7270021560228506,
           "variant": 2
         }
       ],
-      "oos_total_costs": 13728.824840293575,
-      "oos_average_annual_turnover": 14.213470670986652,
-      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"trend_vol_target\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]\n"
+      "oos_total_costs": 13728.824923177272,
+      "oos_average_annual_turnover": 14.213488488903252,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"trend_vol_target\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-release-followup-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]\n"
     },
     "dual_momentum": {
       "default_params": {
@@ -733,20 +733,20 @@
         {}
       ],
       "full_period": {
-        "total_return": 6.898990263596292,
-        "cagr": 0.11099734987796264,
-        "ann_vol": 0.15582201399279905,
-        "sharpe": 0.7536784955476082,
-        "sortino": 1.061713722030442,
-        "max_drawdown": 0.2639738293472207,
-        "calmar": 0.4204861904395876,
+        "total_return": 6.89898970386854,
+        "cagr": 0.11099734586847249,
+        "ann_vol": 0.15582212479498495,
+        "sharpe": 0.7536780478706185,
+        "sortino": 1.0617130045502592,
+        "max_drawdown": 0.2639742686145201,
+        "calmar": 0.4204854755391374,
         "hit_rate": 0.5499191592562651,
-        "skew": -0.2890019060819092,
-        "kurtosis": 5.1934993446680915,
-        "var95": 0.016049510939810375,
-        "cvar95": 0.023616319449867897,
-        "total_costs": 29329.56103542596,
-        "average_annual_turnover": 10.549907598572258,
+        "skew": -0.2890025256457243,
+        "kurtosis": 5.19349490625967,
+        "var95": 0.016049453730733836,
+        "cvar95": 0.023616334514511606,
+        "total_costs": 29329.560989886246,
+        "average_annual_turnover": 10.549913092538553,
         "trade_count": 715.0
       },
       "validation": {
@@ -770,7 +770,7 @@
         "grid": [
           {}
         ],
-        "passed": false,
+        "passed": true,
         "checks": [
           {
             "name": "oos_sessions",
@@ -781,69 +781,69 @@
           },
           {
             "name": "oos_sharpe",
-            "value": 0.8725538696245618,
+            "value": 0.8725546471206952,
             "threshold": 0.5,
             "passed": true,
-            "detail": "oos_sharpe 0.872554 >= 0.5: passed"
+            "detail": "oos_sharpe 0.872555 >= 0.5: passed"
           },
           {
             "name": "dsr",
-            "value": 0.9993509941438616,
+            "value": 0.9993510003442374,
             "threshold": 0.95,
             "passed": true,
             "detail": "dsr 0.999351 >= 0.95: passed"
           },
           {
             "name": "prob_oos_loss",
-            "value": null,
+            "value": 0.0,
             "threshold": 0.1,
-            "passed": false,
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+            "passed": true,
+            "detail": "prob_oos_loss 0 <= 0.1: passed"
           },
           {
             "name": "oos_drawdown",
-            "value": 0.23421852080420258,
+            "value": 0.23421799476183114,
             "threshold": 0.25,
             "passed": true,
-            "detail": "oos_drawdown 0.234219 <= 0.25: passed"
+            "detail": "oos_drawdown 0.234218 <= 0.25: passed"
           },
           {
             "name": "sharpe_2x_costs",
-            "value": 0.8387364586239535,
+            "value": 0.8387372196702967,
             "threshold": 0.3,
             "passed": true,
-            "detail": "sharpe_2x_costs 0.838736 >= 0.3: passed"
+            "detail": "sharpe_2x_costs 0.838737 >= 0.3: passed"
           },
           {
             "name": "sharpe_delay_1",
-            "value": 0.8736993402548585,
+            "value": 0.8736992062253578,
             "threshold": 0.3,
             "passed": true,
             "detail": "sharpe_delay_1 0.873699 >= 0.3: passed"
           },
           {
             "name": "bootstrap_sharpe_p05",
-            "value": 0.4566505229627286,
+            "value": 0.4566507806890856,
             "threshold": 0.0,
             "passed": true,
             "detail": "bootstrap_sharpe_p05 0.456651 > 0: passed"
           }
         ],
         "oos_summary": {
-          "total_return": 3.8394623342797796,
-          "cagr": 0.11921643680631118,
-          "ann_vol": 0.14043258087604676,
-          "sharpe": 0.8725538696245618,
-          "sortino": 1.225806571936913,
-          "max_drawdown": 0.23421852080420258,
-          "calmar": 0.50899662587303,
+          "total_return": 3.8394637280904442,
+          "cagr": 0.1192164598309409,
+          "ann_vol": 0.14043245983334587,
+          "sharpe": 0.8725546471206952,
+          "sortino": 1.2258077929065132,
+          "max_drawdown": 0.23421799476183114,
+          "calmar": 0.5089978673592879,
           "hit_rate": 0.5541383219954649,
-          "skew": -0.4123166534973439,
-          "kurtosis": 7.7353834617545765,
-          "var95": 0.013849693454065136,
-          "cvar95": 0.02123540601447718
+          "skew": -0.41231748716199457,
+          "kurtosis": 7.735384367237536,
+          "var95": 0.0138497240683092,
+          "cvar95": 0.02123538210882253
         },
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "data_end": "2026-10-12",
         "policy": {
@@ -862,7 +862,7 @@
         },
         "diagnostics": {
           "pbo": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "degradation_slope": null
         }
       },
@@ -876,66 +876,66 @@
             "value": 3528.0
           },
           {
-            "detail": "oos_sharpe 0.872554 >= 0.5: passed",
+            "detail": "oos_sharpe 0.872555 >= 0.5: passed",
             "name": "oos_sharpe",
             "passed": true,
             "threshold": 0.5,
-            "value": 0.8725538696245618
+            "value": 0.8725546471206952
           },
           {
             "detail": "dsr 0.999351 >= 0.95: passed",
             "name": "dsr",
             "passed": true,
             "threshold": 0.95,
-            "value": 0.9993509941438616
+            "value": 0.9993510003442374
           },
           {
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "detail": "prob_oos_loss 0 <= 0.1: passed",
             "name": "prob_oos_loss",
-            "passed": false,
+            "passed": true,
             "threshold": 0.1,
-            "value": null
+            "value": 0.0
           },
           {
-            "detail": "oos_drawdown 0.234219 <= 0.25: passed",
+            "detail": "oos_drawdown 0.234218 <= 0.25: passed",
             "name": "oos_drawdown",
             "passed": true,
             "threshold": 0.25,
-            "value": 0.23421852080420258
+            "value": 0.23421799476183114
           },
           {
-            "detail": "sharpe_2x_costs 0.838736 >= 0.3: passed",
+            "detail": "sharpe_2x_costs 0.838737 >= 0.3: passed",
             "name": "sharpe_2x_costs",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.8387364586239535
+            "value": 0.8387372196702967
           },
           {
             "detail": "sharpe_delay_1 0.873699 >= 0.3: passed",
             "name": "sharpe_delay_1",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.8736993402548585
+            "value": 0.8736992062253578
           },
           {
             "detail": "bootstrap_sharpe_p05 0.456651 > 0: passed",
             "name": "bootstrap_sharpe_p05",
             "passed": true,
             "threshold": 0.0,
-            "value": 0.4566505229627286
+            "value": 0.4566507806890856
           }
         ],
-        "created_at": "2026-10-13T08:54:40.013938+00:00",
+        "created_at": "2026-10-13T09:17:51.584988+00:00",
         "data_end": "2026-10-12",
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "diagnostics": {
           "degradation_slope": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "pbo": null
         },
         "grid_size": 1,
-        "hash": "370802ee1a36a7675a6c084bc50d172736b6c2c295bd431aeb88b90e8ae9357d",
+        "hash": "b2f51b76eef10a735feec0ed1aa096c460fe8c9acb76237108635433b6e4d9b2",
         "package_version": "1.0.0",
         "params": {
           "defensive": "IEF",
@@ -953,14 +953,14 @@
           "skip": 21,
           "top_k": 3
         },
-        "passed": false,
+        "passed": true,
         "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
         "schema_version": 1,
         "strategy": "dual_momentum"
       },
       "bootstrap_sharpe_ci90": [
-        0.4566505229627286,
-        1.2982325028806392
+        0.4566507806890856,
+        1.2982354020240017
       ],
       "folds": [
         {
@@ -984,8 +984,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.6015776449844712,
-          "oos_sharpe": 0.8742928545962871,
+          "is_sharpe": 0.6015749224713107,
+          "oos_sharpe": 0.8743000183431686,
           "variant": 0
         },
         {
@@ -1009,8 +1009,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.5598731038261925,
-          "oos_sharpe": 1.6888243011496227,
+          "is_sharpe": 0.5598713970973217,
+          "oos_sharpe": 1.6888205296173708,
           "variant": 0
         },
         {
@@ -1034,8 +1034,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.9208284742162127,
-          "oos_sharpe": 1.3441220152507638,
+          "is_sharpe": 0.9208265165726862,
+          "oos_sharpe": 1.344124896837523,
           "variant": 0
         },
         {
@@ -1059,8 +1059,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 1.0654971838629133,
-          "oos_sharpe": -0.8146119033637751,
+          "is_sharpe": 1.0654969575671411,
+          "oos_sharpe": -0.8146105052116468,
           "variant": 0
         },
         {
@@ -1084,8 +1084,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.570159803320471,
-          "oos_sharpe": 0.8421805071049708,
+          "is_sharpe": 0.5701612781162418,
+          "oos_sharpe": 0.8421808892212526,
           "variant": 0
         },
         {
@@ -1109,8 +1109,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.6708659581259337,
-          "oos_sharpe": 1.4950381113608726,
+          "is_sharpe": 0.6708677414212951,
+          "oos_sharpe": 1.4950374420339545,
           "variant": 0
         },
         {
@@ -1134,8 +1134,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.75649874961316,
-          "oos_sharpe": -0.44592747385389636,
+          "is_sharpe": 0.7564988592806706,
+          "oos_sharpe": -0.44592565028887293,
           "variant": 0
         },
         {
@@ -1159,8 +1159,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.3288212281472444,
-          "oos_sharpe": 2.1572128694180166,
+          "is_sharpe": 0.3288230179319406,
+          "oos_sharpe": 2.1572089261657363,
           "variant": 0
         },
         {
@@ -1184,8 +1184,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.4371234867436956,
-          "oos_sharpe": 1.0402627099974884,
+          "is_sharpe": 0.4371248560157696,
+          "oos_sharpe": 1.0402629477679852,
           "variant": 0
         },
         {
@@ -1209,8 +1209,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.8795905576677222,
-          "oos_sharpe": 0.5400584136059935,
+          "is_sharpe": 0.8795906518352911,
+          "oos_sharpe": 0.5400572664526208,
           "variant": 0
         },
         {
@@ -1234,8 +1234,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.8110293590049098,
-          "oos_sharpe": -0.5067487452237207,
+          "is_sharpe": 0.8110299245114916,
+          "oos_sharpe": -0.5067478848223907,
           "variant": 0
         },
         {
@@ -1259,8 +1259,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.5264429607854504,
-          "oos_sharpe": 1.517527962253831,
+          "is_sharpe": 0.5264436677175763,
+          "oos_sharpe": 1.5175284072946351,
           "variant": 0
         },
         {
@@ -1284,8 +1284,8 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.8223930162183206,
-          "oos_sharpe": 1.4471017764647498,
+          "is_sharpe": 0.8223927165003023,
+          "oos_sharpe": 1.4471025651482166,
           "variant": 0
         },
         {
@@ -1309,14 +1309,18 @@
             "skip": 21,
             "top_k": 3
           },
-          "is_sharpe": 0.8129839063329591,
-          "oos_sharpe": 2.338904685260985,
+          "is_sharpe": 0.8129837558955232,
+          "oos_sharpe": 2.3389039009146413,
           "variant": 0
         }
       ],
-      "oos_total_costs": 13637.065425322904,
-      "oos_average_annual_turnover": 9.946277870890107,
-      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"dual_momentum\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+      "oos_total_costs": 13637.065412583757,
+      "oos_average_annual_turnover": 9.946270187275605,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"dual_momentum\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-release-followup-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n",
+      "diagnostic_notes": {
+        "pbo": "n/a: single pre-registered variant",
+        "degradation_slope": "n/a: single pre-registered variant"
+      }
     },
     "buy_and_hold": {
       "default_params": {
@@ -1329,18 +1333,18 @@
         {}
       ],
       "full_period": {
-        "total_return": 7.805224954906556,
-        "cagr": 0.11122292314328336,
-        "ann_vol": 0.18933087573822413,
-        "sharpe": 0.6518655103823869,
-        "sortino": 0.9207956590979502,
-        "max_drawdown": 0.5429897105853688,
-        "calmar": 0.20483431080743636,
+        "total_return": 7.805224954906627,
+        "cagr": 0.11122292314328379,
+        "ann_vol": 0.18933079136452596,
+        "sharpe": 0.6518657158337299,
+        "sortino": 0.9207961712060975,
+        "max_drawdown": 0.5429897251745586,
+        "calmar": 0.2048343053038954,
         "hit_rate": 0.5500192381685264,
-        "skew": -0.018210014620385753,
-        "kurtosis": 14.75761615600051,
-        "var95": 0.01759585398550143,
-        "cvar95": 0.029052583293553615,
+        "skew": -0.01821039451588349,
+        "kurtosis": 14.7574888894304,
+        "var95": 0.017595877784290448,
+        "cvar95": 0.029052554764763244,
         "total_costs": 48.951712616620554,
         "average_annual_turnover": 0.04758069439463062,
         "trade_count": 1.0
@@ -1366,69 +1370,69 @@
           },
           {
             "name": "oos_sharpe",
-            "value": 0.8273450879143505,
+            "value": 0.8273453291697495,
             "threshold": 0.5,
             "passed": true,
             "detail": "oos_sharpe 0.827345 >= 0.5: passed"
           },
           {
             "name": "dsr",
-            "value": 0.9992106140332282,
+            "value": 0.9992106169723454,
             "threshold": 0.95,
             "passed": true,
             "detail": "dsr 0.999211 >= 0.95: passed"
           },
           {
             "name": "prob_oos_loss",
-            "value": null,
+            "value": 0.0,
             "threshold": 0.1,
-            "passed": false,
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+            "passed": true,
+            "detail": "prob_oos_loss 0 <= 0.1: passed"
           },
           {
             "name": "oos_drawdown",
-            "value": 0.3353259922622547,
+            "value": 0.3353261069019713,
             "threshold": 0.25,
             "passed": false,
             "detail": "oos_drawdown 0.335326 fails <= 0.25: out-of-sample drawdown exceeds the loss budget"
           },
           {
             "name": "sharpe_2x_costs",
-            "value": 0.8221591707519835,
+            "value": 0.8221593250070016,
             "threshold": 0.3,
             "passed": true,
             "detail": "sharpe_2x_costs 0.822159 >= 0.3: passed"
           },
           {
             "name": "sharpe_delay_1",
-            "value": 0.8221404766112014,
+            "value": 0.8221406255956742,
             "threshold": 0.3,
             "passed": true,
-            "detail": "sharpe_delay_1 0.82214 >= 0.3: passed"
+            "detail": "sharpe_delay_1 0.822141 >= 0.3: passed"
           },
           {
             "name": "bootstrap_sharpe_p05",
-            "value": 0.45378324687491006,
+            "value": 0.4537811646174324,
             "threshold": 0.0,
             "passed": true,
-            "detail": "bootstrap_sharpe_p05 0.453783 > 0: passed"
+            "detail": "bootstrap_sharpe_p05 0.453781 > 0: passed"
           }
         ],
         "oos_summary": {
-          "total_return": 5.644764324101069,
-          "cagr": 0.13457176667970971,
-          "ann_vol": 0.1701899479680958,
-          "sharpe": 0.8273450879143505,
-          "sortino": 1.1640321893945842,
-          "max_drawdown": 0.3353259922622547,
-          "calmar": 0.40131624086707435,
+          "total_return": 5.644764472579715,
+          "cagr": 0.13457176836985923,
+          "ann_vol": 0.17018988732671816,
+          "sharpe": 0.8273453291697495,
+          "sortino": 1.1640328057980784,
+          "max_drawdown": 0.3353261069019713,
+          "calmar": 0.40131610870727624,
           "hit_rate": 0.5507936507936508,
-          "skew": -0.34411799500619794,
-          "kurtosis": 12.952252686126108,
-          "var95": 0.016180046812758864,
-          "cvar95": 0.02600707308988609
+          "skew": -0.3441157288022084,
+          "kurtosis": 12.95225354527551,
+          "var95": 0.016180281724743277,
+          "cvar95": 0.02600704357427274
         },
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "data_end": "2026-10-12",
         "policy": {
@@ -1447,7 +1451,7 @@
         },
         "diagnostics": {
           "pbo": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "degradation_slope": null
         }
       },
@@ -1465,62 +1469,62 @@
             "name": "oos_sharpe",
             "passed": true,
             "threshold": 0.5,
-            "value": 0.8273450879143505
+            "value": 0.8273453291697495
           },
           {
             "detail": "dsr 0.999211 >= 0.95: passed",
             "name": "dsr",
             "passed": true,
             "threshold": 0.95,
-            "value": 0.9992106140332282
+            "value": 0.9992106169723454
           },
           {
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "detail": "prob_oos_loss 0 <= 0.1: passed",
             "name": "prob_oos_loss",
-            "passed": false,
+            "passed": true,
             "threshold": 0.1,
-            "value": null
+            "value": 0.0
           },
           {
             "detail": "oos_drawdown 0.335326 fails <= 0.25: out-of-sample drawdown exceeds the loss budget",
             "name": "oos_drawdown",
             "passed": false,
             "threshold": 0.25,
-            "value": 0.3353259922622547
+            "value": 0.3353261069019713
           },
           {
             "detail": "sharpe_2x_costs 0.822159 >= 0.3: passed",
             "name": "sharpe_2x_costs",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.8221591707519835
+            "value": 0.8221593250070016
           },
           {
-            "detail": "sharpe_delay_1 0.82214 >= 0.3: passed",
+            "detail": "sharpe_delay_1 0.822141 >= 0.3: passed",
             "name": "sharpe_delay_1",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.8221404766112014
+            "value": 0.8221406255956742
           },
           {
-            "detail": "bootstrap_sharpe_p05 0.453783 > 0: passed",
+            "detail": "bootstrap_sharpe_p05 0.453781 > 0: passed",
             "name": "bootstrap_sharpe_p05",
             "passed": true,
             "threshold": 0.0,
-            "value": 0.45378324687491006
+            "value": 0.4537811646174324
           }
         ],
-        "created_at": "2026-10-13T08:54:52.862677+00:00",
+        "created_at": "2026-10-13T09:18:04.734872+00:00",
         "data_end": "2026-10-12",
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "diagnostics": {
           "degradation_slope": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "pbo": null
         },
         "grid_size": 1,
-        "hash": "6d8949a45f9bdcafe1db426059c08ec394e5ac30bdd7775ade2ec6b72479990f",
+        "hash": "ffc43a0a68bf0ff01a983b0b601672c43e14e111671d514c7ed027f010a439f4",
         "package_version": "1.0.0",
         "params": {
           "weights": {
@@ -1533,8 +1537,8 @@
         "strategy": "buy_and_hold"
       },
       "bootstrap_sharpe_ci90": [
-        0.45378324687491006,
-        1.2504677642000377
+        0.4537811646174324,
+        1.2504659552758257
       ],
       "folds": [
         {
@@ -1547,8 +1551,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.24417959192864805,
-          "oos_sharpe": 0.31983638498379796,
+          "is_sharpe": 0.24417983914679417,
+          "oos_sharpe": 0.3198372899384676,
           "variant": 0
         },
         {
@@ -1561,8 +1565,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.15869957741419316,
-          "oos_sharpe": 1.0674794133793506,
+          "is_sharpe": 0.15869960919336443,
+          "oos_sharpe": 1.0674818953777565,
           "variant": 0
         },
         {
@@ -1575,8 +1579,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.2964838882744539,
-          "oos_sharpe": 1.9395541139127752,
+          "is_sharpe": 0.29648402288862286,
+          "oos_sharpe": 1.9395635927651023,
           "variant": 0
         },
         {
@@ -1589,8 +1593,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 1.0587665293394923,
-          "oos_sharpe": 1.4140616435662263,
+          "is_sharpe": 1.0587689318695397,
+          "oos_sharpe": 1.4140639255011578,
           "variant": 0
         },
         {
@@ -1603,8 +1607,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 1.0502297197514723,
-          "oos_sharpe": -0.3488789015032153,
+          "is_sharpe": 1.0502309144599742,
+          "oos_sharpe": -0.3488793988296574,
           "variant": 0
         },
         {
@@ -1617,8 +1621,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.6822913718740394,
-          "oos_sharpe": 2.2060066945511556,
+          "is_sharpe": 0.6822912398551558,
+          "oos_sharpe": 2.2060028246093046,
           "variant": 0
         },
         {
@@ -1631,8 +1635,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 1.0896751494534425,
-          "oos_sharpe": 1.7489684390277014,
+          "is_sharpe": 1.0896758844445649,
+          "oos_sharpe": 1.7489739463362004,
           "variant": 0
         },
         {
@@ -1645,8 +1649,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 1.181110248591075,
-          "oos_sharpe": 0.2985477236913949,
+          "is_sharpe": 1.1811122262074851,
+          "oos_sharpe": 0.29854949906720685,
           "variant": 0
         },
         {
@@ -1659,8 +1663,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.8375809010470809,
-          "oos_sharpe": 1.0629490436691305,
+          "is_sharpe": 0.8375814691665948,
+          "oos_sharpe": 1.0629421074056962,
           "variant": 0
         },
         {
@@ -1673,8 +1677,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.9301411733248144,
-          "oos_sharpe": 0.8371208698405634,
+          "is_sharpe": 0.9301409688879151,
+          "oos_sharpe": 0.8371218496783277,
           "variant": 0
         },
         {
@@ -1687,8 +1691,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.9534362093660255,
-          "oos_sharpe": 0.9769844773577598,
+          "is_sharpe": 0.9534369652471819,
+          "oos_sharpe": 0.9769813161666234,
           "variant": 0
         },
         {
@@ -1701,8 +1705,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.8622308776712416,
-          "oos_sharpe": -0.12513279216786796,
+          "is_sharpe": 0.8622311663228254,
+          "oos_sharpe": -0.12513135094296565,
           "variant": 0
         },
         {
@@ -1715,8 +1719,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.5600337174551646,
-          "oos_sharpe": 2.1468642004838654,
+          "is_sharpe": 0.5600337907482401,
+          "oos_sharpe": 2.1468592904313013,
           "variant": 0
         },
         {
@@ -1729,8 +1733,8 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.7400969745390353,
-          "oos_sharpe": 1.2648396569685643,
+          "is_sharpe": 0.7400970834159747,
+          "oos_sharpe": 1.2648386226257258,
           "variant": 0
         },
         {
@@ -1743,14 +1747,18 @@
               "SPY": 1.0
             }
           },
-          "is_sharpe": 0.7191822931682156,
-          "oos_sharpe": 0.9899987206068431,
+          "is_sharpe": 0.7191821387227763,
+          "oos_sharpe": 0.9899983099599865,
           "variant": 0
         }
       ],
-      "oos_total_costs": 49.149492373951986,
-      "oos_average_annual_turnover": 0.06543777282014757,
-      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"buy_and_hold\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+      "oos_total_costs": 49.14948495373288,
+      "oos_average_annual_turnover": 0.065437762960074,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"buy_and_hold\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-release-followup-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n",
+      "diagnostic_notes": {
+        "pbo": "n/a: single pre-registered variant",
+        "degradation_slope": "n/a: single pre-registered variant"
+      }
     },
     "sixty_forty": {
       "default_params": {
@@ -1763,20 +1771,20 @@
         {}
       ],
       "full_period": {
-        "total_return": 4.0930967904417175,
-        "cagr": 0.08211798342830709,
-        "ann_vol": 0.10792770346656852,
-        "sharpe": 0.785287992466151,
-        "sortino": 1.1230890632648916,
-        "max_drawdown": 0.31979448774872365,
-        "calmar": 0.25678361126984384,
+        "total_return": 4.093096868800615,
+        "cagr": 0.0821179842354404,
+        "ann_vol": 0.10792766530376939,
+        "sharpe": 0.7852882387164573,
+        "sortino": 1.12308937258531,
+        "max_drawdown": 0.31979411462149954,
+        "calmar": 0.2567839134020125,
         "hit_rate": 0.5525202000769527,
-        "skew": 0.05689324969545919,
-        "kurtosis": 13.613985263758918,
-        "var95": 0.00997443675345319,
-        "cvar95": 0.016254976491336493,
-        "total_costs": 394.9863756552745,
-        "average_annual_turnover": 0.20560446552790584,
+        "skew": 0.05689362323891498,
+        "kurtosis": 13.613911158648373,
+        "var95": 0.009974922564700206,
+        "cvar95": 0.016254965392819475,
+        "total_costs": 394.9863703147605,
+        "average_annual_turnover": 0.2056044558852783,
         "trade_count": 141.0
       },
       "validation": {
@@ -1789,7 +1797,7 @@
         "grid": [
           {}
         ],
-        "passed": false,
+        "passed": true,
         "checks": [
           {
             "name": "oos_sessions",
@@ -1800,69 +1808,69 @@
           },
           {
             "name": "oos_sharpe",
-            "value": 0.9566513794159559,
+            "value": 0.9566515175236906,
             "threshold": 0.5,
             "passed": true,
-            "detail": "oos_sharpe 0.956651 >= 0.5: passed"
+            "detail": "oos_sharpe 0.956652 >= 0.5: passed"
           },
           {
             "name": "dsr",
-            "value": 0.9998736662492688,
+            "value": 0.9998736666044623,
             "threshold": 0.95,
             "passed": true,
             "detail": "dsr 0.999874 >= 0.95: passed"
           },
           {
             "name": "prob_oos_loss",
-            "value": null,
+            "value": 0.0,
             "threshold": 0.1,
-            "passed": false,
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows"
+            "passed": true,
+            "detail": "prob_oos_loss 0 <= 0.1: passed"
           },
           {
             "name": "oos_drawdown",
-            "value": 0.20803830809343737,
+            "value": 0.20803841260072675,
             "threshold": 0.25,
             "passed": true,
             "detail": "oos_drawdown 0.208038 <= 0.25: passed"
           },
           {
             "name": "sharpe_2x_costs",
-            "value": 0.9510892180119851,
+            "value": 0.9510894196807593,
             "threshold": 0.3,
             "passed": true,
             "detail": "sharpe_2x_costs 0.951089 >= 0.3: passed"
           },
           {
             "name": "sharpe_delay_1",
-            "value": 0.9499397592572296,
+            "value": 0.9499399489762289,
             "threshold": 0.3,
             "passed": true,
             "detail": "sharpe_delay_1 0.94994 >= 0.3: passed"
           },
           {
             "name": "bootstrap_sharpe_p05",
-            "value": 0.5643548854526599,
+            "value": 0.5643553154293949,
             "threshold": 0.0,
             "passed": true,
             "detail": "bootstrap_sharpe_p05 0.564355 > 0: passed"
           }
         ],
         "oos_summary": {
-          "total_return": 2.766055260801098,
-          "cagr": 0.09242705139770807,
-          "ann_vol": 0.09738288749576098,
-          "sharpe": 0.9566513794159559,
-          "sortino": 1.3632313867826351,
-          "max_drawdown": 0.20803830809343737,
-          "calmar": 0.4442789995974963,
+          "total_return": 2.7660549124514686,
+          "cagr": 0.092427044661277,
+          "ann_vol": 0.09738286461269895,
+          "sharpe": 0.9566515175236906,
+          "sortino": 1.3632316829919175,
+          "max_drawdown": 0.20803841260072675,
+          "calmar": 0.44427874403495676,
           "hit_rate": 0.5521164021164021,
-          "skew": -0.21650211440978337,
-          "kurtosis": 10.922544545568286,
-          "var95": 0.009105128387735811,
-          "cvar95": 0.014687388505141107
+          "skew": -0.21649979955748463,
+          "kurtosis": 10.922573826367362,
+          "var95": 0.009105066120858641,
+          "cvar95": 0.014687367122803661
         },
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "data_end": "2026-10-12",
         "policy": {
@@ -1881,7 +1889,7 @@
         },
         "diagnostics": {
           "pbo": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "degradation_slope": null
         }
       },
@@ -1895,80 +1903,80 @@
             "value": 3780.0
           },
           {
-            "detail": "oos_sharpe 0.956651 >= 0.5: passed",
+            "detail": "oos_sharpe 0.956652 >= 0.5: passed",
             "name": "oos_sharpe",
             "passed": true,
             "threshold": 0.5,
-            "value": 0.9566513794159559
+            "value": 0.9566515175236906
           },
           {
             "detail": "dsr 0.999874 >= 0.95: passed",
             "name": "dsr",
             "passed": true,
             "threshold": 0.95,
-            "value": 0.9998736662492688
+            "value": 0.9998736666044623
           },
           {
-            "detail": "prob_oos_loss nan fails <= 0.1: need >= 2 unique variants, finite returns and enough rows",
+            "detail": "prob_oos_loss 0 <= 0.1: passed",
             "name": "prob_oos_loss",
-            "passed": false,
+            "passed": true,
             "threshold": 0.1,
-            "value": null
+            "value": 0.0
           },
           {
             "detail": "oos_drawdown 0.208038 <= 0.25: passed",
             "name": "oos_drawdown",
             "passed": true,
             "threshold": 0.25,
-            "value": 0.20803830809343737
+            "value": 0.20803841260072675
           },
           {
             "detail": "sharpe_2x_costs 0.951089 >= 0.3: passed",
             "name": "sharpe_2x_costs",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.9510892180119851
+            "value": 0.9510894196807593
           },
           {
             "detail": "sharpe_delay_1 0.94994 >= 0.3: passed",
             "name": "sharpe_delay_1",
             "passed": true,
             "threshold": 0.3,
-            "value": 0.9499397592572296
+            "value": 0.9499399489762289
           },
           {
             "detail": "bootstrap_sharpe_p05 0.564355 > 0: passed",
             "name": "bootstrap_sharpe_p05",
             "passed": true,
             "threshold": 0.0,
-            "value": 0.5643548854526599
+            "value": 0.5643553154293949
           }
         ],
-        "created_at": "2026-10-13T08:55:05.727615+00:00",
+        "created_at": "2026-10-13T09:18:17.811582+00:00",
         "data_end": "2026-10-12",
-        "data_fingerprint": "c7f175ef39729a8e46d5222fd58b96678c9e9092128d0a03e9e57cb01e228595",
+        "data_fingerprint": "0eadd19f828b291020379d2d2a34d4a1435f64a8d579b3da62184e661bf76fcc",
         "data_start": "2006-02-06",
         "diagnostics": {
           "degradation_slope": null,
-          "n_combinations": 0.0,
+          "n_combinations": 12870.0,
           "pbo": null
         },
         "grid_size": 1,
-        "hash": "73faada9c2a8c6c57bb94fb298410dc9767bd5eea07f95c341266e8cd4d17601",
+        "hash": "97c60ec353bdf92488eacd63c06f9935d3a04e71cadc447c55d4f9a45f8303d9",
         "package_version": "1.0.0",
         "params": {
           "bonds": "IEF",
           "equity": "SPY",
           "equity_weight": 0.6
         },
-        "passed": false,
+        "passed": true,
         "policy_sha256": "dc9a7088ab2afb3adc9df91f34999e09ded99498a743adf0f1ffabb85f33af72",
         "schema_version": 1,
         "strategy": "sixty_forty"
       },
       "bootstrap_sharpe_ci90": [
-        0.5643548854526599,
-        1.383997089033897
+        0.5643553154293949,
+        1.3839962284411713
       ],
       "folds": [
         {
@@ -1981,8 +1989,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.41354440829488287,
-          "oos_sharpe": 0.8271270766947704,
+          "is_sharpe": 0.41354505274909104,
+          "oos_sharpe": 0.8271255734096619,
           "variant": 0
         },
         {
@@ -1995,8 +2003,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.3838406061950774,
-          "oos_sharpe": 1.437393445765434,
+          "is_sharpe": 0.38384053143041375,
+          "oos_sharpe": 1.4374012454374292,
           "variant": 0
         },
         {
@@ -2009,8 +2017,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.48133419726892424,
-          "oos_sharpe": 1.7629695346885659,
+          "is_sharpe": 0.481334758766327,
+          "oos_sharpe": 1.7629878707088333,
           "variant": 0
         },
         {
@@ -2023,8 +2031,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.316943556743475,
-          "oos_sharpe": 2.1091397676776897,
+          "is_sharpe": 1.3169508545125581,
+          "oos_sharpe": 2.1091514183403075,
           "variant": 0
         },
         {
@@ -2037,8 +2045,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.4475882530865112,
-          "oos_sharpe": -0.19032366119948116,
+          "is_sharpe": 1.4475956072216205,
+          "oos_sharpe": -0.19031864841385554,
           "variant": 0
         },
         {
@@ -2051,8 +2059,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.0247591619429417,
-          "oos_sharpe": 2.1528401414402807,
+          "is_sharpe": 1.0247611797339915,
+          "oos_sharpe": 2.1528316804994425,
           "variant": 0
         },
         {
@@ -2065,8 +2073,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.2754260182627433,
-          "oos_sharpe": 1.7196276567197797,
+          "is_sharpe": 1.2754290389194949,
+          "oos_sharpe": 1.7196326673368443,
           "variant": 0
         },
         {
@@ -2079,8 +2087,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.3191309172069519,
-          "oos_sharpe": 0.5426556973236244,
+          "is_sharpe": 1.3191364601398357,
+          "oos_sharpe": 0.5426599706298101,
           "variant": 0
         },
         {
@@ -2093,8 +2101,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.0437966339124716,
-          "oos_sharpe": 1.8371612311207808,
+          "is_sharpe": 1.0437980353442349,
+          "oos_sharpe": 1.8371515270675767,
           "variant": 0
         },
         {
@@ -2107,8 +2115,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.1758851336666538,
-          "oos_sharpe": 0.9146302029013778,
+          "is_sharpe": 1.1758852354806786,
+          "oos_sharpe": 0.9146306936209673,
           "variant": 0
         },
         {
@@ -2121,8 +2129,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.1488485729338642,
-          "oos_sharpe": 0.8551595800738576,
+          "is_sharpe": 1.1488487749753016,
+          "oos_sharpe": 0.8551541283709704,
           "variant": 0
         },
         {
@@ -2135,8 +2143,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 1.0208575418692392,
-          "oos_sharpe": -0.4465501692519512,
+          "is_sharpe": 1.0208578248570546,
+          "oos_sharpe": -0.44654788971624054,
           "variant": 0
         },
         {
@@ -2149,8 +2157,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.5891476930319344,
-          "oos_sharpe": 1.9817503988270697,
+          "is_sharpe": 0.5891476162642666,
+          "oos_sharpe": 1.981746601510818,
           "variant": 0
         },
         {
@@ -2163,8 +2171,8 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.7274746672782957,
-          "oos_sharpe": 1.4255557611722327,
+          "is_sharpe": 0.7274741806782765,
+          "oos_sharpe": 1.425553160639045,
           "variant": 0
         },
         {
@@ -2177,14 +2185,18 @@
             "bonds": "IEF",
             "equity_weight": 0.6
           },
-          "is_sharpe": 0.6613297149300994,
-          "oos_sharpe": 1.2097967846139837,
+          "is_sharpe": 0.6613286706432242,
+          "oos_sharpe": 1.2097958666098703,
           "variant": 0
         }
       ],
-      "oos_total_costs": 262.3309685297247,
-      "oos_average_annual_turnover": 0.20546004832635278,
-      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"sixty_forty\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n"
+      "oos_total_costs": 262.3309693982204,
+      "oos_average_annual_turnover": 0.20546005848591747,
+      "config_toml": "# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.\n# Run near 08:45 America/New_York; previous close decides today's OPG orders.\n# Live mode requires [strategy.params] equal to the certificate's selected params.\n# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper\n# sessions with those params. Local PaperBroker sessions do not count for live.\nmode = \"paper\"\nstate_dir = \"../quant-paper\"\n\n[strategy]\nname = \"sixty_forty\"\n\n[universe]\nsymbols = [\"SPY\", \"QQQ\", \"IWM\", \"EFA\", \"EEM\", \"TLT\", \"IEF\", \"LQD\", \"GLD\", \"DBC\", \"VNQ\"]\n\n[data]\nprovider = \"yahoo\"\nstart = \"2006-02-06\"\ncache_dir = \"../quant-release-followup-cache\"\n\n[backtest]\ncash_buffer = 0.02\nrebalance = \"weekly\"\nexecution = \"next_open\"\n\n[broker]\nkind = \"alpaca\"\ninitial_cash = 100000.0\n\n[promotion]\ncertificate = \"../quant-paper/certificate.json\"\npaper_journal = \"../quant-paper/journal.jsonl\"\ngrid = [{}]\n",
+      "diagnostic_notes": {
+        "pbo": "n/a: single pre-registered variant",
+        "degradation_slope": "n/a: single pre-registered variant"
+      }
     }
   }
 }

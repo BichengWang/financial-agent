@@ -38,5 +38,12 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   and show last planned targets on off-cadence days.
 - MCP initialization reports the installed package version.
 
+### Fixed
+
+- A single pre-registered parameter set can clear the promotion gate: CSCV now
+  computes its absolute OOS loss frequency instead of rejecting one-column input.
+  PBO and degradation slope remain not applicable; multi-variant calculations
+  and every promotion threshold are unchanged.
+
 [Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/BichengWang/financial-agent/releases/tag/v1.0.0

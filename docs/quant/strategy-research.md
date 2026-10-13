@@ -67,9 +67,11 @@ fold's winner. The JSON evidence contains fold dates and selected identities.
   loss measures its absolute negative Sharpe. Only the latter blocks promotion.
   High PBO means choosing the in-sample winner adds no reliable value even if
   the variants have positive returns.
-- One-variant validation cannot estimate CSCV selection statistics. Undefined
-  values become JSON `null` and fail the loss-probability check. Do not fabricate
-  duplicate variants to obtain a passing certificate.
+- A single pre-registered variant still has a defined CSCV loss probability:
+  the fraction of partitions where its OOS-half Sharpe is ≤ 0. There is no
+  parameter selection, so PBO and degradation slope are `n/a: single pre-registered
+  variant` (JSON `null`), not blocking checks. Keep the original single variant;
+  adding a grid merely to certify introduces unnecessary multiple testing.
 - The 90% circular block-bootstrap Sharpe interval uses 21-session blocks, 2,000
   draws and seed 0. Its lower endpoint is the blocking 5th percentile. It models
   sampling uncertainty under the historical process, not regime-change risk.
