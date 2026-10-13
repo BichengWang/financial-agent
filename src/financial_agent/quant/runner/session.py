@@ -139,6 +139,7 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
         client = event.payload["client_order_id"]
         known[client] = known.get(client, 0) + float(event.payload["qty"])
     observed: list[Fill] = []
+    final: dict[str, str] = {}
     if isinstance(broker, PaperBroker):
         broker.settle(data)
         # Persisted fills also recover a crash between settlement and journaling.
@@ -151,7 +152,17 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
             e.payload["client_order_id"]: e.payload
             for e in journal.events(["order_observed"])
         }
+        finalized = {
+            e.payload["client_order_id"] for e in journal.events(["order_final"])
+        }
         for client_id, intent in intents.items():
+            if client_id in finalized:
+                continue
+            auction_complete = pd.Timestamp(intent["session"]) in data.sessions
+            if auction_complete:
+                final[client_id] = (
+                    "opening auction complete; unfilled remainder canceled"
+                )
             previous = terminal.get(client_id, {})
             recovered = known.get(client_id, 0)
             if recovered >= intent["order"]["qty"] or (
@@ -161,6 +172,11 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
                 continue
             ack = broker.lookup(client_id)
             if ack is None:
+                if auction_complete:
+                    final[client_id] = (
+                        "not reported by broker after the opening auction"
+                    )
+                    continue
                 raise BrokerError("recorded order is missing at broker")
             journal.append("order_observed", json_value(ack))
             if ack.filled_qty <= known.get(client_id, 0):
@@ -211,6 +227,20 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
         journal.append("fill", {**json_value(incremental), "broker_kind": broker.name})
         known[fill.client_order_id] = fill.qty
         new.append(incremental)
+    # Persist finality only after incremental fills, so restart recovery cannot
+    # skip executions that were observed but not yet journaled.
+    for client_id, reason in final.items():
+        qty = known.get(client_id, 0)
+        filled = qty >= intents[client_id]["order"]["qty"]
+        journal.append(
+            "order_final",
+            {
+                "client_order_id": client_id,
+                "filled_qty": qty,
+                "status": "filled" if filled else "canceled",
+                "reason": "opening auction filled" if filled else reason,
+            },
+        )
     return new
 
 

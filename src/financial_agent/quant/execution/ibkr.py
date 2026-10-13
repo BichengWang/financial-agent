@@ -149,6 +149,8 @@ class IBKRBroker:
         self._submitted: dict[str, OrderAck] = {}
         self._last_request = 0.0
         self._last_slow: dict[str, float] = {}
+        self._authenticated_at: float | None = None
+        self._account_validated = False
         self._ready()
 
     def _guard_live(self) -> None:
@@ -208,6 +210,10 @@ class IBKRBroker:
                         return response.json()
                     except (ValueError, TypeError):
                         raise BrokerError("invalid IBKR JSON response") from None
+                if response.status_code == 401:
+                    self._authenticated_at = None
+                    if path != "/iserver/auth/status":
+                        self._check_auth(force=True)
                 if (
                     response.status_code != 429 and response.status_code < 500
                 ) or attempt == retries:
@@ -217,14 +223,29 @@ class IBKRBroker:
             time.sleep(min(0.25 * 2**attempt, 2.0))
         raise BrokerError("IBKR retry budget exhausted")
 
-    def _ready(self) -> None:
-        """Verify session, tradable account, environment and USD before any use."""
+    def _check_auth(self, *, force: bool = False) -> None:
+        """Check gateway authentication at most once/minute, except after 401."""
+        if (
+            not force
+            and self._authenticated_at is not None
+            and time.monotonic() - self._authenticated_at < 60
+        ):
+            return
+        self._authenticated_at = None
         # OpenAPI: auth/status is POST; accounts must precede order queries.
         status = self._request("POST", "/iserver/auth/status")
         if not isinstance(status, dict) or not (
             status.get("authenticated") is True and status.get("connected") is True
         ):
             raise BrokerError("log in to the Client Portal Gateway before trading")
+        self._authenticated_at = time.monotonic()
+
+    def _ready(self) -> None:
+        """Guard live requests; validate account identity/type/USD once per instance."""
+        self._guard_live()
+        self._check_auth()
+        if self._account_validated:
+            return
         accounts = self._request("GET", "/iserver/accounts")
         if (
             not isinstance(accounts, dict)
@@ -268,6 +289,7 @@ class IBKRBroker:
                 raise BrokerError("IBKR account type disagrees with account ID")
         if record.get("currency") != "USD":
             raise BrokerError("IBKR requires USD account base currency")
+        self._account_validated = True
 
     def _conid(self, symbol: str) -> int:
         if symbol not in self._conids:

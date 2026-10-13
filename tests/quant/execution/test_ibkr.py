@@ -454,7 +454,7 @@ def test_account_positions_pagination_and_contract_mapping() -> None:
     assert any(p.endswith("/positions/2") for _, p, _ in transport.calls)
     transport.currency = "EUR"
     with pytest.raises(BrokerError, match="USD"):
-        broker.submit(order())
+        broker.account()
 
 
 def test_idempotent_backoff_and_sanitized_errors(
@@ -562,3 +562,43 @@ def test_gateway_pacing(monkeypatch: pytest.MonkeyPatch) -> None:
     _PACE(broker, "/iserver/auth/status")
     _PACE(broker, "/iserver/account/orders")
     assert sleeps == pytest.approx([0.1, 4.9])
+
+
+def test_authentication_refresh_interval(monkeypatch: pytest.MonkeyPatch) -> None:
+    now = [10.0]
+    monkeypatch.setattr(
+        "financial_agent.quant.execution.ibkr.time.monotonic", lambda: now[0]
+    )
+    transport = Gateway()
+    broker = IBKRBroker("DU123456", session=transport)
+    broker.account()
+    now[0] = 69.0
+    broker.lookup("missing")
+    assert sum(p == "/iserver/auth/status" for _, p, _ in transport.calls) == 1
+    now[0] = 70.0
+    broker.open_orders()
+    assert sum(p == "/iserver/auth/status" for _, p, _ in transport.calls) == 2
+    assert sum(p == "/portfolio/accounts" for _, p, _ in transport.calls) == 1
+    assert sum(p == "/iserver/accounts" for _, p, _ in transport.calls) == 1
+
+
+@pytest.mark.parametrize("authenticated", [True, False])
+def test_unauthorized_request_refreshes_auth_immediately(authenticated: bool) -> None:
+    class Unauthorized(Gateway):
+        def request(self, method: str, url: str, **kwargs: Any) -> Response:
+            if url.endswith("/summary"):
+                self.calls.append((method, "/summary", kwargs))
+                self.authenticated = authenticated
+                return Response({"error": "private-account-data"}, 401)
+            return super().request(method, url, **kwargs)
+
+    transport = Unauthorized()
+    broker = IBKRBroker("DU123456", session=transport)
+    with pytest.raises(BrokerError, match="HTTP 401" if authenticated else "log in"):
+        broker.account()
+    assert [p for _, p, _ in transport.calls][-2:] == [
+        "/summary",
+        "/iserver/auth/status",
+    ]
+    assert sum(p == "/iserver/auth/status" for _, p, _ in transport.calls) == 2
+    assert sum(p == "/portfolio/accounts" for _, p, _ in transport.calls) == 1

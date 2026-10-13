@@ -61,6 +61,11 @@ IBKR requires [daily browser reauthentication](https://www.interactivebrokers.co
 Log out of competing trading platforms and confirm the gateway is authenticated
 and connected before the scheduled run. Use a dedicated persistent host and one
 adapter per gateway session; the adapter paces its reads and requests.
+Account membership, type and USD currency are validated once per adapter instance;
+authentication is checked at most once per minute and immediately after HTTP 401.
+An 11-order plan normally takes about **one minute** at the documented five-second
+order/trade polling pace, plus network latency; replies or retries can extend it.
+Allow several minutes of margin before the cutoff rather than starting at 09:27.
 **This gateway workflow cannot run from GitHub Actions**: it depends on the local
 interactive login, gateway process and durable trading state.
 
@@ -83,8 +88,14 @@ Current-session orders are recovered by cOID; previous-session executions are
 aggregated from `/iserver/account/trades?days=7`. IBKR supplies at most seven days
 of history and trades do not prove the original order quantity or terminal status.
 The journal supplies intended quantities and the runner reconciles recovered fills.
-An unresolved order outside that history window halts; preserve state, inspect
-broker records and resolve the incident instead of submitting a replacement.
+Once the data includes the intent session's opening bar, the runner records the
+next execution observation as `order_final`: filled, or canceled with any unfilled
+remainder. A missing order finalizes with the fills already journaled; final orders
+are never polled again. This applies to all broker-backed OPG adapters and avoids
+permanent halts when unfilled/partial auction orders leave the history window.
+Broker-position reconciliation remains mandatory: an unreported real fill causes
+a position break and halts. Before the auction, missing orders still fail closed.
+Preserve state and inspect broker records when reconciliation is uncertain.
 The implementation follows the [Web API documentation](https://www.interactivebrokers.com/campus/ibkr-api-page/webapi-doc/)
 and [current OpenAPI schemas](https://api.ibkr.com/gw/api/v3/api-docs).
 

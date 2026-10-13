@@ -19,6 +19,15 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Live evidence must come from the same broker as the live configuration;
   local simulation never authorizes live execution.
 
+### Fixed
+
+- Finalize broker-backed opening-auction intents after observing their auction
+  session, preventing vanished zero-fill or partial orders from halting later runs.
+  Reconciliation still halts on unreported fills.
+- Validate IBKR account metadata once per adapter and cache authentication status
+  for 60 seconds, refreshing immediately after HTTP 401, to reduce gateway pacing
+  delays without bypassing live guards.
+
 ## [1.0.1] - 2026-10-13
 
 ### Fixed
