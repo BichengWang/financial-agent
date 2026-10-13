@@ -20,6 +20,9 @@ dependencies = [
     "requests>=2.32,<3",
 ]
 
+[project.scripts]
+fa-quant = "financial_agent.quant.__main__:main"
+
 [project.optional-dependencies]
 rl = [
     "stable-baselines3",

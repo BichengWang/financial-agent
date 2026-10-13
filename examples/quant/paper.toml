@@ -1,0 +1,29 @@
+# Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.
+# Run near 08:45 America/New_York; previous close decides today's OPG orders.
+mode = "paper"
+state_dir = "../../var/quant-paper"
+
+[strategy]
+name = "trend_vol_target"
+
+[universe]
+symbols = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "IEF", "LQD", "GLD", "DBC", "VNQ"]
+
+[data]
+provider = "yahoo"
+start = "2006-03-01"
+cache_dir = "../../var/quant-cache"
+
+[backtest]
+cash_buffer = 0.02
+rebalance = "weekly"
+execution = "next_open"
+
+[broker]
+kind = "alpaca"
+initial_cash = 100000.0
+
+[promotion]
+certificate = "../../var/quant-paper/certificate.json"
+paper_journal = "../../var/quant-paper/journal.jsonl"
+grid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]

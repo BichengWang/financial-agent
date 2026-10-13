@@ -1,0 +1,38 @@
+name: Quant paper session
+# Dispatch near 08:45 America/New_York on a trading day: OPG needs pre-open.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: quant-paper-session
+  cancel-in-progress: false
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --no-dev
+      # Restore the last audit chain and broker/risk observations before running.
+      - uses: actions/cache/restore@v4
+        with:
+          path: var/quant-paper
+          key: quant-paper-${{ github.run_id }}
+          restore-keys: quant-paper-
+      - name: Run Alpaca paper session
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: uv run --no-dev fa-quant run --config examples/quant/paper.toml
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: var/quant-paper
+          key: quant-paper-${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quant-paper-${{ github.run_id }}
+          path: var/quant-paper/
+          if-no-files-found: warn

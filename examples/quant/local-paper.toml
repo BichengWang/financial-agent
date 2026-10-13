@@ -1,0 +1,24 @@
+# Offline CSV source: date,open,high,low,close,volume in one SYMBOL.csv per ETF.
+mode = "paper"
+state_dir = "../../var/quant-local-paper"
+
+[strategy]
+name = "trend_vol_target"
+
+[universe]
+symbols = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "IEF", "LQD", "GLD", "DBC", "VNQ"]
+
+[data]
+provider = "csv"
+csv_dir = "../../var/quant-csv"
+cache_dir = "../../var/quant-local-cache"
+start = "2006-03-01"
+
+[backtest]
+cash_buffer = 0.02
+rebalance = "weekly"
+execution = "next_open"
+
+[broker]
+kind = "paper"
+initial_cash = 100000.0

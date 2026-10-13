@@ -1,0 +1,13 @@
+# Run ~08:45 America/New_York on trading days; the runner skips holidays.
+# Previous close is the decision, today's open is the fill (next_open).
+# Avoid Persistent catch-up: Alpaca OPG orders need the pre-open window.
+[Unit]
+Description=Quant paper pre-open timer
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 08:45:00 America/New_York
+Persistent=false
+Unit=quant-paper.service
+
+[Install]
+WantedBy=timers.target

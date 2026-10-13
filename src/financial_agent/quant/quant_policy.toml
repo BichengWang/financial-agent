@@ -24,3 +24,11 @@ min_cash_pct = 0.01
 price_band_pct = 0.05
 max_orders = 50
 allowed_symbols = []
+
+[live]
+max_certificate_age_days = 90
+min_paper_sessions = 20
+max_halted_sessions = 0
+max_reconciliation_breaks = 0
+max_slippage_multiple = 2.0
+authorization_minutes = 15

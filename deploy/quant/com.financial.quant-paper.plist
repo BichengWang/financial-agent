@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Template: replace paths; supply paper credentials through a protected wrapper.
+     launchd uses the host timezone: set it to America/New_York or adjust hour.
+     Run ~08:45 America/New_York on trading days; holidays/weekends skip.
+     Previous close decides today's open (next_open); avoid late catch-up runs. -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.financial.quant-paper</string>
+  <key>WorkingDirectory</key><string>/path/to/repo</string>
+  <key>ProgramArguments</key><array>
+    <string>/path/to/uv</string><string>run</string><string>fa-quant</string>
+    <string>run</string><string>--config</string>
+    <string>examples/quant/paper.toml</string>
+  </array>
+  <key>StartCalendarInterval</key><dict>
+    <key>Hour</key><integer>8</integer><key>Minute</key><integer>45</integer>
+  </dict>
+  <key>StandardOutPath</key><string>/path/to/quant-session.log</string>
+  <key>StandardErrorPath</key><string>/path/to/quant-session.log</string>
+</dict></plist>
