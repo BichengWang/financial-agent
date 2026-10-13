@@ -1,6 +1,6 @@
 [project]
 name = "financial-agent"
-version = "1.0.0"
+version = "1.0.1"
 description = "Risk-managed systematic ETF trading, statistical validation, and financial research"
 authors = [{name = "Bicheng (Kenneth)", email = "31808103+BichengWang@users.noreply.github.com"}]
 keywords = ["systematic-trading", "portfolio", "backtesting", "risk-management", "reinforcement-learning"]
@@ -79,6 +79,10 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/financial_agent"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"agents/equity/daily_investment_system/settlement_ledger.py" = "financial_agent/harness/_system/settlement_ledger.py"
+"agents/equity/daily_investment_system/factor_scoring.py" = "financial_agent/harness/_system/factor_scoring.py"
 
 [dependency-groups]
 dev = [
