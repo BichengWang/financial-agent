@@ -1,0 +1,6 @@
+# Template: replace /path/to/repo and /path/to/uv; configure paper credentials
+# in the process environment. CRON_TZ needs a cron implementation supporting it.
+# Run ~08:45 America/New_York on trading days, before the OPG cutoff.
+# Decision = previous close, fill = today's open (next_open); holidays skip.
+CRON_TZ=America/New_York
+45 8 * * 1-5 cd /path/to/repo && /path/to/uv run fa-quant run --config examples/quant/paper.toml >> /path/to/quant-session.log 2>&1

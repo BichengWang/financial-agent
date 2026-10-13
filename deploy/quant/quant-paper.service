@@ -1,0 +1,12 @@
+# Template: use absolute paths and a chmod 600 environment file with paper keys.
+# Previous close decides today's open; timer runs ~08:45 America/New_York.
+[Unit]
+Description=Quant paper trading session
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/path/to/repo
+EnvironmentFile=/path/to/paper.env
+ExecStart=/path/to/uv run fa-quant run --config examples/quant/paper.toml
