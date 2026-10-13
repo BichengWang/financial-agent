@@ -1,0 +1,14 @@
+{
+  "run_date": "2026-01-07",
+  "model": "two",
+  "predictions": [
+    {
+      "ticker": "AAA",
+      "mu": 0.06,
+      "sigma": 1.5,
+      "type": "EQUITY_ALPHA",
+      "target_date": "2026-01-09",
+      "sleeve": "CORE"
+    }
+  ]
+}
