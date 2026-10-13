@@ -5,6 +5,7 @@ from dataclasses import dataclass, field, fields
 from datetime import date
 from pathlib import Path
 import tomllib
+import re
 from typing import Any, Literal
 
 from ..backtest import BacktestConfig, CostModel
@@ -41,13 +42,19 @@ class TradingConfig:
     cache_dir: Path
     state_dir: Path
     backtest: BacktestConfig
-    broker_kind: Literal["paper", "alpaca"] = "paper"
+    broker_kind: Literal["paper", "alpaca", "ibkr"] = "paper"
     initial_cash: float = 100_000.0
     mode: Literal["paper", "live"] = "paper"
     risk: RiskLimits = field(default_factory=RiskLimits.load)
     certificate_path: Path | None = None
     paper_journal_path: Path | None = None
     grid: tuple[dict[str, Any], ...] = ()
+
+    account_id: str | None = None
+    base_url: str = "https://localhost:5000/v1/api"
+    verify: bool | str = True
+    conids: dict[str, int] = field(default_factory=dict)
+    confirm_message_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         try:
@@ -58,10 +65,40 @@ class TradingConfig:
             raise ConfigError(f"risk: {exc}") from None
         if self.mode not in ("paper", "live"):
             raise ConfigError("mode: expected paper or live")
-        if self.broker_kind not in ("paper", "alpaca"):
-            raise ConfigError("broker.kind: expected paper or alpaca")
-        if self.mode == "live" and self.broker_kind != "alpaca":
-            raise ConfigError("broker.kind: live mode requires alpaca")
+        if self.broker_kind not in ("paper", "alpaca", "ibkr"):
+            raise ConfigError("broker.kind: expected paper, alpaca or ibkr")
+        if self.mode == "live" and self.broker_kind not in ("alpaca", "ibkr"):
+            raise ConfigError("broker.kind: live mode requires alpaca or ibkr")
+        if self.broker_kind == "ibkr":
+            from ..execution.ibkr import validate_gateway
+            from ..execution import BrokerError
+
+            if not isinstance(self.account_id, str) or not re.fullmatch(
+                r"[A-Z]+\d+", self.account_id
+            ):
+                raise ConfigError("broker.account_id: required for ibkr")
+            if self.account_id.startswith("D") != (self.mode == "paper"):
+                raise ConfigError(
+                    "broker.account_id: paper/live prefix disagrees with mode"
+                )
+            try:
+                validate_gateway(self.base_url, self.verify)
+            except (BrokerError, ValueError, TypeError) as exc:
+                raise ConfigError(f"broker: {exc}") from None
+            if (
+                not isinstance(self.conids, dict)
+                or any(
+                    not isinstance(s, str) or not s or type(c) is not int or c <= 0
+                    for s, c in self.conids.items()
+                )
+                or len(set(self.conids.values())) != len(self.conids)
+            ):
+                raise ConfigError("broker.conids: require unique positive integer IDs")
+            if not isinstance(self.confirm_message_ids, (tuple, list)) or any(
+                not isinstance(i, str) or not re.fullmatch(r"[A-Za-z0-9]+", i)
+                for i in self.confirm_message_ids
+            ):
+                raise ConfigError("broker.confirm_message_ids: expected message IDs")
         if self.data_provider not in ("yahoo", "csv"):
             raise ConfigError("data.provider: expected yahoo or csv")
         if self.data_provider == "csv" and self.csv_dir is None:
@@ -123,7 +160,19 @@ class TradingConfig:
         universe = _table(raw, "universe", {"symbols"})
         data = _table(raw, "data", {"provider", "csv_dir", "cache_dir", "start"})
         backtest = _table(raw, "backtest", {f.name for f in fields(BacktestConfig)})
-        broker = _table(raw, "broker", {"kind", "initial_cash"})
+        broker = _table(
+            raw,
+            "broker",
+            {
+                "kind",
+                "initial_cash",
+                "account_id",
+                "base_url",
+                "verify",
+                "conids",
+                "confirm_message_ids",
+            },
+        )
         promotion = _table(raw, "promotion", {"certificate", "paper_journal", "grid"})
         risk = _table(raw, "risk", {f.name for f in fields(RiskLimits)})
         params = strategy.get("params", {})
@@ -183,6 +232,15 @@ class TradingConfig:
                 else None
             ),
             tuple(grid),
+            account_id=broker.get("account_id"),
+            base_url=broker.get("base_url", "https://localhost:5000/v1/api"),
+            verify=(
+                str(resolve(broker["verify"], "broker.verify"))
+                if isinstance(broker.get("verify"), str)
+                else broker.get("verify", True)
+            ),
+            conids=broker.get("conids", {}),
+            confirm_message_ids=broker.get("confirm_message_ids", ()),
         )
 
     def provider(self, inner: BarProvider | None = None) -> CachedProvider:

@@ -54,7 +54,7 @@ uv build
 - Preserve the binding names/signatures in plan section 3.2; update it alongside any minimal deviation.
 - Strategies see only decision prefixes; fills occur later; modeled costs stay enabled.
 - Disclose every grid, failure and undefined statistic. Never tune policy or parameters to make an evidence report pass. Live performance is unproven.
-- Run configs may only tighten risk. Certificate, Alpaca-paper evidence and explicit live opt-in are independent gates. MCP cannot submit orders or accept live config.
+- Run configs may only tighten risk. Certificate, same-broker paper evidence and explicit live opt-in are independent gates. MCP cannot submit orders or accept live config.
 - Keep credentials in the environment only. Preserve journals, deterministic client IDs and persistent kill state. Kill does not cancel or liquidate.
 - Tests under `tests/quant/` use seeded synthetic data or tiny fixtures; no network in normal CI. Exercise observable boundaries and failures.
 - Never commit raw market downloads or operational state (`var/`, `.quant-cache/`); retain dated aggregate evidence in `reports/quant/`.

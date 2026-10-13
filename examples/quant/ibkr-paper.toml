@@ -1,0 +1,36 @@
+# Start and log in to the CP Gateway daily; set listenPort to 5001.
+# Run around 08:45 America/New_York, before the opening auction.
+mode = "paper"
+state_dir = "../../var/quant-ibkr-paper"
+
+[strategy]
+name = "trend_vol_target"
+
+[universe]
+symbols = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "IEF", "LQD", "GLD", "DBC", "VNQ"]
+
+[data]
+provider = "yahoo"
+start = "2006-03-01"
+cache_dir = "../../var/quant-cache"
+
+[backtest]
+cash_buffer = 0.02
+rebalance = "weekly"
+execution = "next_open"
+
+[broker]
+kind = "ibkr"
+account_id = "DU123456" # Replace with your USD paper account ID.
+base_url = "https://localhost:5001/v1/api"
+verify = false # Permitted only on localhost / 127.0.0.1 / ::1.
+confirm_message_ids = [] # Unknown precautions halt; review IDs before allowing.
+
+# Optional explicit US-equity contract IDs; these override symbol search.
+# [broker.conids]
+# SPY = 756733
+
+[promotion]
+certificate = "../../var/quant-ibkr-paper/certificate.json"
+paper_journal = "../../var/quant-ibkr-paper/journal.jsonl"
+grid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]

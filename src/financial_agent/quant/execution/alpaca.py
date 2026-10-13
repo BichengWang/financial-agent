@@ -185,7 +185,7 @@ class AlpacaBroker:
         except (KeyError, TypeError, ValueError):
             raise BrokerError("invalid broker order response") from None
 
-    def _lookup(self, client_order_id: str) -> OrderAck | None:
+    def lookup(self, client_order_id: str) -> OrderAck | None:
         response = self._request(
             "GET",
             "/v2/orders:by_client_order_id",
@@ -221,7 +221,7 @@ class AlpacaBroker:
                 response = self._request("POST", "/v2/orders", json=body)
             except BrokerError:
                 # If lookup fails, stop: it is not safe to blindly place again.
-                existing = self._lookup(order.client_order_id)
+                existing = self.lookup(order.client_order_id)
                 if existing is not None:
                     return existing
                 if attempt == self.max_retries:
@@ -233,7 +233,7 @@ class AlpacaBroker:
                     return self._ack(self._json(response))
                 retryable = response.status_code == 429 or response.status_code >= 500
                 if response.status_code in (409, 422) or retryable:
-                    existing = self._lookup(order.client_order_id)
+                    existing = self.lookup(order.client_order_id)
                     if existing is not None:
                         return existing
                 if not retryable or attempt == self.max_retries:

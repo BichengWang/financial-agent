@@ -110,6 +110,12 @@ class PaperBroker:
             self._save()
             return ack
 
+    def lookup(self, client_order_id: str) -> OrderAck | None:
+        """Observe persisted orders without submitting or settling them."""
+        with self._locked():
+            record = self._state["orders"].get(client_order_id)
+            return self._ack(record) if record is not None else None
+
     def open_orders(self) -> list[OrderAck]:
         with self._locked():
             return self._pending()

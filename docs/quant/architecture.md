@@ -13,7 +13,7 @@ runner. The historical RL and deep-learning stacks remain research code.
 | [portfolio](../../src/financial_agent/quant/portfolio.py) | `rebalance_deltas` converts weights into share deltas; the runner and backtester share drift, rounding and minimum-notional behavior. Targets are scaled proportionally only above the configured cash-buffer ceiling. |
 | [validation](../../src/financial_agent/quant/validation/) | Rolling training selection, embargoed disjoint OOS windows and one cash-continuous switching portfolio. Eight promotion checks, DSR, CSCV loss/PBO, bootstrap and execution stress. Certificates bind parameters, data fingerprint, policy bytes and package version. |
 | [risk](../../src/financial_agent/quant/risk/) | Tighten-only `RiskLimits`, deterministic `plan_orders`, whole-plan `check_orders`, persisted `RiskState` and `KillSwitch`. Rejected plans approve no orders. |
-| [execution](../../src/financial_agent/quant/execution/) | `Broker.account/submit/open_orders/cancel_all`; persisted local `PaperBroker` and Alpaca REST adapter. Client IDs make submission idempotent. `Journal` is hash-chained JSONL; `reconcile` compares expected and observed quantities. |
+| [execution](../../src/financial_agent/quant/execution/) | `Broker.account/submit/lookup/open_orders/cancel_all`; persisted local `PaperBroker` and Alpaca REST / IBKR CP Gateway adapters. Client IDs make submission idempotent. `Journal` is hash-chained JSONL; `reconcile` compares expected and observed quantities. |
 | [runner](../../src/financial_agent/quant/runner/) | `TradingConfig.load` validates TOML and resolves paths from its directory. `run_session(config, today=..., dry_run=...)` locks state, validates data and journal, authorizes live, synchronizes/reconciles, checks risk, journals intents, submits and writes reports. |
 | [CLI](../../src/financial_agent/quant/__main__.py) / [MCP](../../src/financial_agent/quant/mcp.py) | Operator commands and research tools reuse these modules. MCP accepts paper configurations only and cannot submit, cancel, kill, unkill or reach live mode. |
 
@@ -28,7 +28,7 @@ orders for today's opening auction. Local paper settlement is observed on the
 following invocation, once today's bar is available. Weekly/monthly cadence
 controls planning, while journal integrity, synchronization, reconciliation and
 account loss checks still run daily. Restart recovery looks up persisted intents
-before resubmitting; an unresolved earlier-day intent is observed or abandoned,
+through public `lookup(client_order_id)` before resubmitting; an unresolved earlier-day intent is observed or abandoned,
 never blindly sent at a later auction.
 
 State lives under the configured `state_dir`: `journal.jsonl`, `risk_state.json`,

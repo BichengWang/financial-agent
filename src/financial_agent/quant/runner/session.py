@@ -19,8 +19,8 @@ from ..execution import (
     Broker,
     BrokerError,
     Fill,
+    IBKRBroker,
     Journal,
-    OrderAck,
     PaperBroker,
 )
 from ..execution.alpaca import LIVE_URL
@@ -82,6 +82,16 @@ def configured_broker(
             costs=config.backtest.costs,
             initial_cash=config.initial_cash,
         )
+    if config.broker_kind == "ibkr":
+        assert config.account_id is not None
+        return IBKRBroker(
+            config.account_id,
+            base_url=config.base_url,
+            verify=config.verify,
+            conids=config.conids,
+            confirm_message_ids=config.confirm_message_ids,
+            live_authorization=authorization,
+        )
     return AlpacaBroker(
         environ.get("APCA_API_KEY_ID", ""),
         environ.get("APCA_API_SECRET_KEY", ""),
@@ -101,15 +111,7 @@ def _recover_prior_intents(broker: Broker, journal: Journal, today: date) -> Non
         client_id = intent["order"]["client_order_id"]
         if client_id in resolved or intent["session"] >= today.isoformat():
             continue
-        ack: OrderAck | None
-        if isinstance(broker, PaperBroker):
-            state = json.loads(broker.state_path.read_text())
-            record = state["orders"].get(client_id)
-            ack = broker._ack(record) if record is not None else None
-        elif isinstance(broker, AlpacaBroker):
-            ack = broker._lookup(client_id)
-        else:
-            raise BrokerError("broker does not support submission recovery lookup")
+        ack = broker.lookup(client_id)
         if ack is None:
             journal.append(
                 "submission_abandoned",
@@ -144,7 +146,7 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
         observed = [
             Fill(**f) for f in state["fills"] if f["client_order_id"] in intents
         ]
-    elif isinstance(broker, AlpacaBroker):
+    else:
         terminal = {
             e.payload["client_order_id"]: e.payload
             for e in journal.events(["order_observed"])
@@ -157,7 +159,7 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
                 and recovered >= previous.get("filled_qty", 0)
             ):
                 continue
-            ack = broker._lookup(client_id)
+            ack = broker.lookup(client_id)
             if ack is None:
                 raise BrokerError("recorded order is missing at broker")
             journal.append("order_observed", json_value(ack))
@@ -437,6 +439,13 @@ def _run_locked(
             e.payload["client_order_id"]
             for e in journal.events(["submission_abandoned"])
         }
+        declined = [
+            e.payload
+            for e in journal.events(["broker_question"])
+            if e.payload["session"] == today.isoformat()
+        ]
+        if declined:
+            return finish("HALTED", [declined[-1]["detail"]])
         missing = [
             e
             for e in same
@@ -597,9 +606,19 @@ def _run_locked(
         # Providers/transports may embed credentials in errors: expose type only.
         from .promotion import PromotionError
 
+        from ..execution.ibkr import IBKRQuestion
+
+        if isinstance(exc, IBKRQuestion):
+            journal.append(
+                "broker_question", {"session": today.isoformat(), "detail": exc.detail}
+            )
         reasons = (
-            exc.reasons
-            if isinstance(exc, PromotionError)
-            else [f"session failed ({type(exc).__name__})"]
+            [exc.detail]
+            if isinstance(exc, IBKRQuestion)
+            else (
+                exc.reasons
+                if isinstance(exc, PromotionError)
+                else [f"session failed ({type(exc).__name__})"]
+            )
         )
         return finish("HALTED", reasons)

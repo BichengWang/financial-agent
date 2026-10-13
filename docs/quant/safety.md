@@ -1,6 +1,6 @@
 # Safety and live authorization
 
-Version 1.0.0 is beta. Historical evidence and simulated fills do not establish
+Version 1.1.0 is beta. Historical evidence and simulated fills do not establish
 live performance. Risk checks bound proposed exposure at reference prices; they
 cannot guarantee an execution price or prevent losses during gaps or outages.
 
@@ -29,15 +29,15 @@ writing a file does not authorize capital.
 ## Live gate
 
 The [authorization implementation](../../src/financial_agent/quant/runner/promotion.py)
-requires a live Alpaca configuration, `FA_QUANT_ALLOW_LIVE=1`, and:
+requires a live Alpaca or IBKR configuration, `FA_QUANT_ALLOW_LIVE=1`, and:
 
 - A verified, passing certificate no older than 90 days with exactly the same
   normalized strategy name and parameters. Future timestamps fail verification.
-- At least 20 distinct successful Alpaca-paper sessions for that identity.
+- At least 20 distinct successful paper sessions from the configured live broker for that identity.
   Local `PaperBroker`, previews and repeated same-day runs do not count.
 - Zero halted sessions and zero reconciliation breaks in the most recent
   20-session evidence window; a successful retry cannot erase that day's halt.
-- Observed Alpaca-paper fills in that window with valid positive prices and
+- Observed same-broker paper fills in that window with valid positive prices and
   mean absolute slippage no greater than twice modeled spread plus slippage.
   References are the adjusted opening prices, not the prior close.
 
@@ -48,6 +48,26 @@ does not independently demand equality to today's installed version, policy or
 universe. Review those explicitly before promotion; recreate evidence after a
 material change. The paper history is filtered by identity and date, but there
 is no separate maximum paper-history age check.
+
+## IBKR account and precaution gates
+
+Account IDs starting with `D` (including `DU…` and `DF…`) are treated as paper;
+all other IDs require a valid live grant and `FA_QUANT_ALLOW_LIVE=1` at construction
+and before every request. The configured account must be in `/iserver/accounts`.
+The documented `isPaper` flag and portfolio account `type` (`DEMO` environments
+versus production) must agree with the prefix. Only USD base-currency accounts
+and USD stock/ETF positions are supported; mismatches fail before submission.
+
+`confirm_message_ids` defaults to empty. A question is confirmed only if **every**
+message ID is allowed; otherwise the adapter declines it and halts with the IDs
+and redacted prompt text in the report. The runner preserves that halt on same-day
+reruns so it cannot inadvertently continue submitting the rest of a plan.
+Review the broker precaution and allow-list deliberately before a future session;
+never broadly suppress questions. General server error bodies are never reported.
+
+Alpaca paper evidence cannot authorize IBKR live, nor can IBKR paper evidence
+authorize Alpaca live. The local simulator never counts. Preserve a separate
+journal/state directory for each account and broker.
 
 ## Runtime gates and limits
 
@@ -113,11 +133,11 @@ agents and the equity harness produce evidence; the operator CLI owns execution.
 2. Copy the normalized `[strategy]` and `[strategy.params]` printed by `certify`
    into your paper TOML. Review the selected allocation against runtime caps.
    Revalidate if you change the strategy; do not edit policy to make it pass.
-3. Use Alpaca paper keys and collect at least 20 distinct clean sessions with
+3. Use Alpaca paper keys or an authenticated IBKR paper gateway and collect at least 20 distinct clean sessions with
    fills. Read the journal and broker account daily. Local demo sessions are
    useful for learning but do not establish broker execution quality.
 4. Preserve the paper journal and certificate. Create a separate live TOML and
-   state directory; set `mode = "live"`, `broker.kind = "alpaca"`, and point
+   state directory; set `mode = "live"`, `broker.kind = "alpaca"` or `"ibkr"`, and point
    `[promotion]` at that evidence. Use a clean/dedicated broker account: unexplained
    existing holdings cause reconciliation breaks.
 5. Review certificate age, params, universe, policy/version, paper slippage,
@@ -130,4 +150,4 @@ agents and the equity harness produce evidence; the operator CLI owns execution.
    Follow the [incident runbook](operations.md) if any condition is uncertain.
 
 This release verifies the live path with deterministic fake transports. It does
-not include a real Alpaca-paper or live account run; those need owner credentials.
+not include a real Alpaca/IBKR paper or live account run; those need owner credentials.

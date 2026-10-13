@@ -1,7 +1,7 @@
 # financial-agent
 
 A Python platform for systematic ETF research, cost-aware portfolio backtesting,
-statistical certification, paper trading and explicitly gated Alpaca execution.
+statistical certification, paper trading and explicitly gated Alpaca and IBKR execution.
 It also retains an equity-research harness and separate RL/deep-learning research
 stacks. Version **1.0.0 is beta**: live performance is unproven, and neither a
 historical gate pass nor paper results guarantee profit.
@@ -99,13 +99,20 @@ uv run fa-quant run --config examples/quant/paper.toml
 uv run fa-quant status --config examples/quant/paper.toml
 ```
 
-The release verifies execution through local paper and fake Alpaca transports;
+IBKR uses the locally running **Client Portal Gateway**, with daily browser login.
+Copy [ibkr-paper.toml](examples/quant/ibkr-paper.toml), set your USD paper account
+ID (`DU…`/`DF…`) and gateway port, then use the same `fa-quant run` command.
+TLS verification can be disabled only on loopback; remote gateways require a
+trusted certificate or CA path. Order questions halt unless every message ID is
+explicitly allowed. Follow the [gateway setup](docs/quant/operations.md#ibkr-client-portal-gateway).
+
+The release verifies execution through local paper and fake Alpaca/IBKR transports;
 a real credentialed paper run is still an owner step. A dry run suppresses new
 orders but journals observations and can synchronize earlier fills.
 
 Live needs `mode = "live"`, `FA_QUANT_ALLOW_LIVE=1`, a passing certificate no older
 than 90 days matching the exact strategy/params, at least 20 distinct clean
-Alpaca-paper sessions, no recent risk halts/reconciliation breaks, and observed
+paper sessions from the same broker (Alpaca or IBKR), no recent risk halts/reconciliation breaks, and observed
 paper slippage within twice modeled allowance. Runtime risk limits cannot be
 loosened by config. MCP exposes research and paper previews only. Read
 [safety and go-live steps](docs/quant/safety.md) before changing mode, and

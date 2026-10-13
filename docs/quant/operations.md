@@ -41,6 +41,53 @@ fake Alpaca transport, not owner credentials. A dry run journals observations
 and can synchronize prior fills; it does not submit new orders and cannot count
 as live-promotion paper evidence.
 
+## IBKR Client Portal Gateway
+
+Install a Java runtime and download/extract the gateway using IBKR's
+[installation guide](https://ibkrcampus.com/docs/web-api/authentication/cpgw/installation-authentication).
+From its extracted directory run `bin/run.sh root/conf.yaml` (Windows:
+`bin\run.bat root\conf.yaml`) and leave that process running. Open
+`https://localhost:5000` in a browser and log in with the paper account credentials.
+Keep passwords and two-factor authentication in the gateway login flow, never TOML.
+
+On macOS, AirPlay Receiver often occupies port 5000. Set `listenPort: 5001` in
+`root/conf.yaml`, restart the gateway, log in at `https://localhost:5001`, and set
+`broker.base_url = "https://localhost:5001/v1/api"`. The example uses this port.
+The gateway certificate is self-signed: `verify = false` is allowed only for
+`localhost`, `127.0.0.1` and `::1`; otherwise use `verify = true` or a CA-bundle
+path (relative TOML paths resolve from the configuration directory).
+
+IBKR requires [daily browser reauthentication](https://www.interactivebrokers.com/docs/web-api/authentication/cpgw/client-portal-gateway-faq).
+Log out of competing trading platforms and confirm the gateway is authenticated
+and connected before the scheduled run. Use a dedicated persistent host and one
+adapter per gateway session; the adapter paces its reads and requests.
+**This gateway workflow cannot run from GitHub Actions**: it depends on the local
+interactive login, gateway process and durable trading state.
+
+Copy [ibkr-paper.toml](../../examples/quant/ibkr-paper.toml), replace `account_id`
+with your USD paper account, and run around **08:45 New York time**:
+
+```sh
+uv run fa-quant run --config examples/quant/ibkr-paper.toml --dry-run
+uv run fa-quant run --config examples/quant/ibkr-paper.toml
+```
+
+The order body is whole-share `MKT` with `tif = "OPG"`. Nasdaq MOO orders must
+arrive before **09:28 Eastern**, per [IBKR's order guide](https://www.interactivebrokers.com/en/trading/ordertypes.php).
+The runner does not enforce a wall-clock cutoff; do not submit a late catch-up.
+Keep `confirm_message_ids = []` until you have reviewed a specific precaution.
+A declined question appears in the halt report with its IDs and redacted text;
+same-day reruns remain halted. Inspect all earlier acknowledgements before retrying.
+
+Current-session orders are recovered by cOID; previous-session executions are
+aggregated from `/iserver/account/trades?days=7`. IBKR supplies at most seven days
+of history and trades do not prove the original order quantity or terminal status.
+The journal supplies intended quantities and the runner reconciles recovered fills.
+An unresolved order outside that history window halts; preserve state, inspect
+broker records and resolve the incident instead of submitting a replacement.
+The implementation follows the [Web API documentation](https://www.interactivebrokers.com/campus/ibkr-api-page/webapi-doc/)
+and [current OpenAPI schemas](https://api.ibkr.com/gw/api/v3/api-docs).
+
 ## Reports and journal
 
 Exit code 0 means completed/skip, 2 means halted trading or failed validation,

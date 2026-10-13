@@ -5,6 +5,20 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-13
+
+### Added
+
+- IBKR Client Portal Gateway execution with guarded paper/live accounts, USD
+  portfolio observation, whole-share opening-auction orders, contract resolution,
+  precaution allow-lists, order recovery and gateway operations guidance.
+
+### Changed
+
+- Public broker `lookup(client_order_id)` supports runner recovery across adapters.
+- Live evidence must come from the same broker as the live configuration;
+  local simulation never authorizes live execution.
+
 ## [1.0.1] - 2026-10-13
 
 ### Fixed
