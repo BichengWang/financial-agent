@@ -1,0 +1,13 @@
+[promotion]
+min_oos_sessions = 2520
+min_oos_sharpe = 0.5
+min_dsr = 0.95
+max_prob_oos_loss = 0.10
+max_oos_drawdown = 0.25
+min_sharpe_2x_costs = 0.3
+min_sharpe_delay_1 = 0.3
+min_bootstrap_sharpe_p05 = 0.0
+train_sessions = 1260
+test_sessions = 252
+embargo_sessions = 5
+pbo_splits = 16

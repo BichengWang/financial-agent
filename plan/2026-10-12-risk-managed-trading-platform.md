@@ -210,8 +210,11 @@ def write_certificate(report, path) -> Path; def verify_certificate(path, *, max
 
 Thresholds live in `quant_policy.toml [promotion]`, mirroring the
 `harness/equity_policy.toml` policy-as-data pattern. Defaults: ≥ 2,520 OOS sessions,
-OOS net Sharpe ≥ 0.5, DSR ≥ 0.95, PBO ≤ 0.20, OOS max drawdown ≤ 25%, Sharpe ≥ 0.3
+OOS net Sharpe ≥ 0.5, DSR ≥ 0.95, OOS max drawdown ≤ 25%, Sharpe ≥ 0.3
 at 2× costs and with one extra session of delay, bootstrap 5th-percentile Sharpe > 0.
+PBO is reported as a diagnostic; the blocking selection check is CSCV probability
+of out-of-sample loss ≤ 0.10. Relative ranks can reverse among near-identical
+profitable variants, so the gate measures absolute loss rather than rank reversal.
 
 **Risk (`quant.risk`)**
 
