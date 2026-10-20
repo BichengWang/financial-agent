@@ -121,9 +121,10 @@ jobs:
 
   github-release:
     needs: [build, pypi]
-    # Publishing is optional, but a failed PyPI upload must not leave a release.
+    # Publishing is optional, but a failed PyPI upload or a cancelled run must
+    # not leave a release.
     if: >-
-      always() && github.event_name == 'push' &&
+      !cancelled() && github.event_name == 'push' &&
       needs.build.result == 'success' &&
       contains(fromJSON('["success", "skipped"]'), needs.pypi.result)
     runs-on: ubuntu-latest
