@@ -16,6 +16,7 @@ from financial_agent.quant.runner import (
     PromotionError,
 )
 from ..execution.test_ibkr import Gateway
+from .conftest import ny_clock
 from .test_promotion import certificate, paper_evidence
 
 
@@ -78,15 +79,17 @@ def test_ibkr_paper_round_trip(config: TradingConfig, first_day: date) -> None:
     broker = IBKRBroker(
         config.account_id or "", session=transport, conids=config.conids
     )
-    first = run_session(config, today=first_day, broker=broker)
+    first = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert first.status == "TRADED", first.reasons
-    assert run_session(config, today=first_day, broker=broker).status == "NO_CHANGE"
+    rerun = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
+    assert rerun.status == "NO_CHANGE"
     fill(transport, config, first_day)
     # A fresh adapter has no in-memory original order quantities; the journal does.
     broker = IBKRBroker(
         config.account_id or "", session=transport, conids=config.conids
     )
-    second = run_session(config, today=date(2020, 6, 9), broker=broker)
+    day = date(2020, 6, 9)
+    second = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert second.status != "HALTED", second.reasons
     assert len(second.fills) == len(first.orders)
     assert second.account is not None
@@ -107,13 +110,15 @@ def test_question_halts_without_double_submission(
     broker = IBKRBroker(
         config.account_id or "", session=transport, conids=config.conids
     )
-    report = run_session(config, today=first_day, broker=broker)
+    report = run_session(
+        config, today=first_day, broker=broker, now=ny_clock(first_day)
+    )
     assert report.status == "HALTED" and "o354" in str(report.reasons)
     assert not transport.orders
     assert (
         sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
     )
-    again = run_session(config, today=first_day, broker=broker)
+    again = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert again.status == "HALTED" and "o354" in str(again.reasons)
     assert (
         sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
@@ -193,7 +198,7 @@ def test_opening_auction_is_final(
         config = replace(config, broker_kind="alpaca")
         transport = Exchange()
         broker = AlpacaBroker("key", "secret", session=transport)
-    first = run_session(config, today=first_day, broker=broker)
+    first = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert first.status == "TRADED", first.reasons
     initial = {o.client_order_id: o.qty for o in first.orders}
     if execution != "none":
@@ -241,7 +246,8 @@ def test_opening_auction_is_final(
                     "broker_kind": kind,
                 },
             )
-    next_day = run_session(config, today=date(2020, 6, 9), broker=broker)
+    day = date(2020, 6, 9)
+    next_day = run_session(config, today=day, broker=broker, now=ny_clock(day))
     journal = Journal(config.state_dir / "journal.jsonl")
     finals = journal.events(["order_final"])
     assert len(finals) == len(first.orders)
@@ -273,7 +279,8 @@ def test_opening_auction_is_final(
         before = len(transport.calls)
         if kind == "ibkr":
             transport.trades = []  # History disappears after seven days.
-        later = run_session(config, today=date(2020, 6, 18), broker=broker)
+        day = date(2020, 6, 18)
+        later = run_session(config, today=day, broker=broker, now=ny_clock(day))
         assert later.status == "NO_CHANGE", later.reasons
         calls = transport.calls[before:]
         assert not any(
@@ -293,9 +300,14 @@ def test_missing_order_before_auction_still_halts(
     broker = IBKRBroker(
         config.account_id or "", session=transport, conids=config.conids
     )
-    assert run_session(config, today=first_day, broker=broker).status == "TRADED"
+    clock = ny_clock(first_day)
+    assert run_session(config, today=first_day, broker=broker, now=clock).status == (
+        "TRADED"
+    )
     transport.orders = []
-    assert run_session(config, today=first_day, broker=broker).status == "HALTED"
+    assert run_session(config, today=first_day, broker=broker, now=clock).status == (
+        "HALTED"
+    )
     assert not Journal(config.state_dir / "journal.jsonl").events(["order_final"])
 
 
@@ -333,8 +345,29 @@ def test_eleven_order_session_validates_account_once(tmp_path: Path) -> None:
     broker = IBKRBroker(
         config.account_id or "", session=transport, conids=config.conids
     )
-    report = run_session(config, today=date(2020, 6, 8), broker=broker)
+    day = date(2020, 6, 8)
+    report = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert report.status == "TRADED", report.reasons
     assert len(report.orders) == 11
     assert sum(p == "/portfolio/accounts" for _, p, _ in transport.calls) == 1
     assert sum(p == "/iserver/auth/status" for _, p, _ in transport.calls) == 1
+
+
+def test_ibkr_late_run_halts_before_any_intent(
+    config: TradingConfig, first_day: date
+) -> None:
+    from datetime import time
+
+    config = ibkr_config(config)
+    transport = Gateway()
+    broker = IBKRBroker(
+        config.account_id or "", session=transport, conids=config.conids
+    )
+    clock = ny_clock(first_day, time(9, 26))
+    report = run_session(config, today=first_day, broker=broker, now=clock)
+    assert report.status == "HALTED"
+    assert report.reasons[0].startswith("submission window closed")
+    assert not Journal(config.state_dir / "journal.jsonl").events(
+        ["submission_intent", "submitted"]
+    )
+    assert not any(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls)

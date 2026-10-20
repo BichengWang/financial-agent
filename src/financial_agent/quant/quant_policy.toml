@@ -32,3 +32,9 @@ max_halted_sessions = 0
 max_reconciliation_breaks = 0
 max_slippage_multiple = 2.0
 authorization_minutes = 15
+
+[execution]
+# America/New_York wall clock. Broker-backed opening-auction orders are submitted
+# only on the session date and before this time, 3 minutes before the 09:28
+# Alpaca/Nasdaq cutoffs. Local paper simulation is exempt.
+opening_auction_cutoff = "09:25"

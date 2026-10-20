@@ -270,8 +270,9 @@ def reconcile(expected: Mapping[str, float], account: AccountSnapshot) -> list[B
 
 ```python
 TradingConfig.load(path)   # TOML: strategy, universe, data, backtest, broker, mode, state_dir, risk overrides
-def run_session(config, *, today, dry_run=False) -> SessionReport
+def run_session(config, *, today, dry_run=False, now=None) -> SessionReport
 #   status in {"TRADED", "NO_CHANGE", "NO_SESSION", "HALTED"}
+#   now: submission clock returning aware datetimes (default: system clock)
 def authorize_live(config, *, certificate, journal, environ) -> LiveAuthorization
 ```
 
@@ -285,6 +286,8 @@ def authorize_live(config, *, certificate, journal, environ) -> LiveAuthorizatio
 6. Strategy targets from data ≤ the last close; plan orders; pre-trade check;
    any hard-limit breach → `HALTED` with nothing submitted.
 7. Submit market-on-open orders with idempotent IDs (a rerun never duplicates);
+   broker-backed adapters submit only on `today` before the packaged New York
+   opening-auction cutoff, checked before intents and before each submission;
    journal every step; write `reports/<date>.json` and `.md` in the state dir.
 
 CLI (`python -m financial_agent.quant`, console script `fa-quant`):

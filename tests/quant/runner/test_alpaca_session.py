@@ -1,7 +1,7 @@
 """REST transport integration: paper settlement and an authorized live session."""
 
 from dataclasses import replace
-from datetime import date, datetime, timezone
+from datetime import date, datetime, time, timezone
 from pathlib import Path
 from typing import Any, Literal
 
@@ -11,6 +11,7 @@ from financial_agent.quant.data import CsvProvider
 from financial_agent.quant.execution import AlpacaBroker, Journal
 from financial_agent.quant.execution.alpaca import LIVE_URL
 from financial_agent.quant.runner import TradingConfig, authorize_live, run_session
+from .conftest import ny_clock
 from .test_promotion import certificate, paper_evidence
 
 
@@ -96,17 +97,19 @@ def test_alpaca_paper_round_trip_and_no_repeat_lookups(
     config = replace(config, broker_kind="alpaca")
     transport = Exchange()
     broker = AlpacaBroker("key", "secret", session=transport)
-    first = run_session(config, today=first_day, broker=broker)
+    first = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert first.status == "TRADED", first.reasons
-    assert run_session(config, today=first_day, broker=broker).status == "NO_CHANGE"
+    rerun = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
+    assert rerun.status == "NO_CHANGE"
     assert sum(method == "POST" for method, _ in transport.calls) == len(first.orders)
     transport.fill(config, first_day)
-    second = run_session(config, today=date(2020, 6, 9), broker=broker)
+    day = date(2020, 6, 9)
+    second = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert second.status != "HALTED", second.reasons
     assert second.fills
     assert all(abs(f.price / f.reference_price - 1) < 0.000501 for f in second.fills)
     before = sum(url.endswith("by_client_order_id") for _, url in transport.calls)
-    again = run_session(config, today=date(2020, 6, 9), broker=broker)
+    again = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert again.status != "HALTED", again.reasons
     after = sum(url.endswith("by_client_order_id") for _, url in transport.calls)
     # Filled orders are not polled forever; only today's pending orders are read.
@@ -135,7 +138,9 @@ def test_live_authorization_with_real_gate_and_fake_transport(
     broker = AlpacaBroker(
         "key", "secret", session=transport, base_url=LIVE_URL, live_authorization=grant
     )
-    report = run_session(live, today=first_day, broker=broker, environ=environ)
+    report = run_session(
+        live, today=first_day, broker=broker, environ=environ, now=ny_clock(first_day)
+    )
     assert report.status == "TRADED", report.reasons
     assert any(method == "POST" for method, _ in transport.calls)
     assert all(url.startswith(LIVE_URL) for _, url in transport.calls)
@@ -163,7 +168,8 @@ def test_alpaca_prior_intent_recovery(
     if observed:
         broker.submit(order)
         exchange.fill(config, first_day)
-    report = run_session(config, today=date(2020, 6, 9), broker=broker)
+    day = date(2020, 6, 9)
+    report = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert report.status != "HALTED", report.reasons
     if observed:
         assert any(f.client_order_id == order.client_order_id for f in report.fills)
@@ -200,12 +206,14 @@ def test_alpaca_lookup_failure_halts_then_recovers(
         },
     )
     broken = AlpacaBroker("key", "secret", session=BrokenLookup())
-    report = run_session(config, today=date(2020, 6, 9), broker=broken)
+    day = date(2020, 6, 9)
+    report = run_session(config, today=day, broker=broken, now=ny_clock(day))
     assert report.status == "HALTED"
     assert not journal.events(["submission_abandoned", "submitted"])
     exchange = Exchange()
     broker = AlpacaBroker("key", "secret", session=exchange)
-    assert run_session(config, today=date(2020, 6, 9), broker=broker).status == "TRADED"
+    report = run_session(config, today=day, broker=broker, now=ny_clock(day))
+    assert report.status == "TRADED", report.reasons
     assert journal.events(["submission_abandoned"])
 
 
@@ -241,7 +249,7 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
         if session(day).trading_day:
             if kind == "alpaca" and previous is not None:
                 exchange.fill(config, previous)
-            report = run_session(config, today=day, broker=broker)
+            report = run_session(config, today=day, broker=broker, now=ny_clock(day))
             assert report.status in ("TRADED", "NO_CHANGE"), report.reasons
             previous = day
             completed += 1
@@ -268,3 +276,134 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
             ).strategy
             == config.strategy_name
         )
+
+
+@pytest.mark.parametrize(
+    ("at", "status"),
+    [
+        (time(8, 45), "TRADED"),
+        (time(9, 24, 59), "TRADED"),
+        (time(9, 25), "HALTED"),
+        (time(9, 26), "HALTED"),
+    ],
+)
+def test_opening_auction_submission_window(
+    config: TradingConfig, first_day: date, at: time, status: str
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    clock = ny_clock(first_day, at)
+    report = run_session(config, today=first_day, broker=broker, now=clock)
+    assert report.status == status, report.reasons
+    journal = Journal(config.state_dir / "journal.jsonl")
+    assert journal.events(["reconcile"])
+    if status == "HALTED":
+        assert report.reasons == [
+            f"submission window closed: observed 2020-06-08 {at:%H:%M:%S} "
+            "America/New_York; orders for 2020-06-08 must be submitted that day "
+            "before 09:25"
+        ]
+        assert not journal.events(["submission_intent", "submitted"])
+        assert not exchange.orders
+    else:
+        assert report.orders and len(exchange.orders) == len(report.orders)
+
+
+def test_replayed_session_against_broker_halts(
+    config: TradingConfig, first_day: date
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    # The default clock is the system clock, never 2020-06-08 in New York.
+    report = run_session(config, today=first_day, broker=broker)
+    assert report.status == "HALTED"
+    assert report.reasons[0].startswith("submission window closed")
+    assert not Journal(config.state_dir / "journal.jsonl").events(["submission_intent"])
+    assert not exchange.orders
+
+
+def test_naive_clock_fails_closed(config: TradingConfig, first_day: date) -> None:
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    naive = datetime.combine(first_day, time(8, 45))
+    report = run_session(config, today=first_day, broker=broker, now=lambda: naive)
+    assert report.status == "HALTED"
+    assert report.reasons == ["session failed (ValueError)"]
+    assert not exchange.orders
+
+
+def test_cutoff_crossed_mid_plan_stops_before_next_submit(
+    config: TradingConfig, first_day: date
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    early = ny_clock(first_day, time(9, 24, 59))()
+    late = ny_clock(first_day, time(9, 25))()
+    # One read before journaling intents, one before the first submission.
+    reads = iter([early, early])
+    report = run_session(
+        config, today=first_day, broker=broker, now=lambda: next(reads, late)
+    )
+    assert report.status == "HALTED"
+    assert "observed 2020-06-08 09:25:00" in report.reasons[0]
+    assert len(report.orders) > 1
+    journal = Journal(config.state_dir / "journal.jsonl")
+    intents = journal.events(["submission_intent"])
+    assert len(intents) == len(report.orders)
+    assert len(journal.events(["submitted"])) == len(exchange.orders) == 1
+    # A same-day retry after the cutoff cannot submit the remaining intents.
+    retry = run_session(
+        config, today=first_day, broker=broker, now=ny_clock(first_day, time(9, 40))
+    )
+    assert retry.status == "HALTED"
+    assert retry.reasons[0].startswith("submission window closed")
+    assert len(exchange.orders) == 1
+    # The next session abandons them instead of sending them to a later auction.
+    exchange.fill(config, first_day)
+    day = date(2020, 6, 9)
+    report = run_session(config, today=day, broker=broker, now=ny_clock(day))
+    assert report.status != "HALTED", report.reasons
+    abandoned = {
+        e.payload["client_order_id"] for e in journal.events(["submission_abandoned"])
+    }
+    assert len(abandoned) == len(intents) - 1
+    assert not abandoned & set(exchange.orders)
+
+
+def test_late_run_on_off_cadence_day_is_no_change(config: TradingConfig) -> None:
+    config = replace(
+        config,
+        broker_kind="alpaca",
+        backtest=replace(config.backtest, rebalance="weekly"),
+    )
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    day = date(2020, 6, 9)
+    report = run_session(
+        config, today=day, broker=broker, now=ny_clock(day, time(11, 45))
+    )
+    assert report.status == "NO_CHANGE"
+    assert report.reasons == ["outside rebalance calendar"]
+    assert not exchange.orders
+
+
+@pytest.mark.parametrize(
+    ("moment", "status"),
+    [
+        (datetime(2020, 1, 6, 14, 24, 59, tzinfo=timezone.utc), "TRADED"),  # EST
+        (datetime(2020, 1, 6, 14, 25, tzinfo=timezone.utc), "HALTED"),
+        (datetime(2020, 6, 8, 13, 24, 59, tzinfo=timezone.utc), "TRADED"),  # EDT
+        (datetime(2020, 6, 8, 14, 24, 59, tzinfo=timezone.utc), "HALTED"),
+    ],
+)
+def test_submission_window_follows_new_york_daylight_saving(
+    config: TradingConfig, moment: datetime, status: str
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    broker = AlpacaBroker("key", "secret", session=Exchange())
+    report = run_session(config, today=moment.date(), broker=broker, now=lambda: moment)
+    assert report.status == status, report.reasons

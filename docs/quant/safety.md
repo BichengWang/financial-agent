@@ -1,6 +1,6 @@
 # Safety and live authorization
 
-Version 1.1.0 is beta. Historical evidence and simulated fills do not establish
+Version 1.1.1 is beta. Historical evidence and simulated fills do not establish
 live performance. Risk checks bound proposed exposure at reference prices; they
 cannot guarantee an execution price or prevent losses during gaps or outages.
 
@@ -101,9 +101,11 @@ create exposure before the next observation.
 State locking prevents concurrent sessions. Bad/stale data, corrupt journal,
 invalid live evidence, broker-mode mismatch, reconciliation breaks, risk-state
 mismatch, warmup failure, unresolved open orders on a planning day, rejected
-plans and broker errors halt further submission. Exchange non-sessions return
-`NO_SESSION`. Hard pre-trade rejection approves no part of a plan; a transport
-failure during a submission loop can still leave earlier orders at the broker.
+plans, broker errors and broker-backed submissions outside the opening-auction
+window (New York date other than the session, or at/after 09:25 ET) halt further
+submission. Exchange non-sessions return `NO_SESSION`. Hard pre-trade rejection
+approves no part of a plan; a transport failure during a submission loop can
+still leave earlier orders at the broker.
 Recover using durable intents and client IDs, then reconcile.
 
 The kill switch is a `KILL` file or persisted breach. Loss/drawdown breaches
