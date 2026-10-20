@@ -389,3 +389,21 @@ def test_late_run_on_off_cadence_day_is_no_change(config: TradingConfig) -> None
     assert report.status == "NO_CHANGE"
     assert report.reasons == ["outside rebalance calendar"]
     assert not exchange.orders
+
+
+@pytest.mark.parametrize(
+    ("moment", "status"),
+    [
+        (datetime(2020, 1, 6, 14, 24, 59, tzinfo=timezone.utc), "TRADED"),  # EST
+        (datetime(2020, 1, 6, 14, 25, tzinfo=timezone.utc), "HALTED"),
+        (datetime(2020, 6, 8, 13, 24, 59, tzinfo=timezone.utc), "TRADED"),  # EDT
+        (datetime(2020, 6, 8, 14, 24, 59, tzinfo=timezone.utc), "HALTED"),
+    ],
+)
+def test_submission_window_follows_new_york_daylight_saving(
+    config: TradingConfig, moment: datetime, status: str
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    broker = AlpacaBroker("key", "secret", session=Exchange())
+    report = run_session(config, today=moment.date(), broker=broker, now=lambda: moment)
+    assert report.status == status, report.reasons
