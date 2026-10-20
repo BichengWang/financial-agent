@@ -2,7 +2,7 @@
 
 from collections.abc import Mapping
 from dataclasses import dataclass, fields, is_dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 import json
 import math
 from pathlib import Path
@@ -12,6 +12,7 @@ from ..execution import Fill, Journal
 from ..risk import AccountSnapshot, KillSwitch, Order, RiskState
 from ..risk.state import _atomic_json
 from .config import TradingConfig
+from .promotion import live_readiness
 
 Status = Literal["TRADED", "NO_CHANGE", "NO_SESSION", "HALTED"]
 
@@ -112,8 +113,14 @@ def write_report(report: SessionReport, state_dir: Path) -> None:
     temporary.replace(target)
 
 
-def status_summary(config: TradingConfig) -> dict[str, Any]:
-    """Read persisted observations only; never connect to or initialize a broker."""
+def status_summary(
+    config: TradingConfig, *, now: datetime | None = None
+) -> dict[str, Any]:
+    """Read persisted observations only; never connect to or initialize a broker.
+
+    Broker-backed paper configs also report live readiness from their own journal
+    (or `[promotion] paper_journal`) and `[promotion] certificate`; nothing is granted.
+    """
     root = config.state_dir
     journal = Journal(root / "journal.jsonl")
     check = journal.verify()
@@ -137,6 +144,14 @@ def status_summary(config: TradingConfig) -> dict[str, Any]:
     nav = account["equity"] if account else None
     drawdown = 1 - nav / risk.high_water_mark if risk and nav is not None else None
     kill = KillSwitch(root)
+    readiness = None
+    if config.mode == "paper" and config.broker_kind in ("alpaca", "ibkr"):
+        evaluated = live_readiness(
+            config,
+            now=now or datetime.now(timezone.utc),
+            journal=config.paper_journal_path or journal.path,
+        )
+        readiness = {**json_value(evaluated), "ready": evaluated.ready}
     return {
         "mode": config.mode,
         "account": account,
@@ -146,7 +161,54 @@ def status_summary(config: TradingConfig) -> dict[str, Any]:
         "kill_switch": {"engaged": kill.engaged(), "reason": kill.reason()},
         "last_sessions": [e.payload for e in records[-10:]],
         "journal": json_value(check),
+        "live_readiness": readiness,
     }
+
+
+def _bps(value: float | None) -> str:
+    return "n/a" if value is None else f"{value * 10000:.1f} bps"
+
+
+def _render_readiness(readiness: Mapping[str, Any]) -> list[str]:
+    window = readiness["window"]
+    span = f"{window[0]}..{window[-1]}" if window else "none"
+    fills = readiness["fills"]
+    allowance = readiness["slippage_allowance"]
+    measured = [f for f in fills if f["slippage"] is not None]
+    above = [f for f in measured if f["slippage"] > allowance + 1e-12]
+    worst = max(measured, key=lambda f: f["slippage"], default=None)
+    slippage = (
+        f"Slippage: {len(fills)} fills, mean {_bps(readiness['mean_slippage'])}"
+        f" vs allowance {_bps(allowance)}; {len(above)} fills above allowance"
+    )
+    if worst is not None:
+        slippage += (
+            f"; worst {worst['symbol']} {worst['session']} {_bps(worst['slippage'])}"
+        )
+    if readiness["certificate_sha256"] is None:
+        certificate = "Certificate: unavailable"
+    else:
+        certificate = (
+            f"Certificate: {'passed' if readiness['certificate_passed'] else 'failed'}"
+            ", identity "
+            f"{'match' if readiness['certificate_identity_match'] else 'MISMATCH'}"
+            f", age {readiness['certificate_age_days']:.1f} of "
+            f"{readiness['max_certificate_age_days']} days, expires "
+            f"{str(readiness['certificate_expires_at'])[:10]}"
+        )
+    lines = [
+        f"Live readiness: {'READY' if readiness['ready'] else 'NOT READY'}",
+        f"  Paper sessions: {readiness['clean_sessions']} clean of "
+        f"{readiness['min_paper_sessions']} required; window {span}: "
+        f"{readiness['halted_in_window']} halted "
+        f"(max {readiness['max_halted_sessions']}), "
+        f"{readiness['breaks_in_window']} breaks "
+        f"(max {readiness['max_reconciliation_breaks']})",
+        f"  {slippage}",
+        f"  {certificate}",
+    ]
+    lines.extend(f"  Unmet: {reason}" for reason in readiness["reasons"])
+    return lines
 
 
 def render_status(summary: dict[str, Any]) -> str:
@@ -164,4 +226,6 @@ def render_status(summary: dict[str, Any]) -> str:
         for s, p in account.get("positions", {}).items()
     )
     lines.extend(f"{p['session']}: {p['status']}" for p in summary["last_sessions"])
+    if summary.get("live_readiness"):
+        lines.extend(_render_readiness(summary["live_readiness"]))
     return "\n".join(lines)

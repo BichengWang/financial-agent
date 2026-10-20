@@ -35,7 +35,9 @@ State lives under the configured `state_dir`: `journal.jsonl`, `risk_state.json`
 `paper.json` for local paper, kill-switch files, `session.lock`, and reports.
 Reports preserve the first attempt as `DATE.json/.md`; later attempts use
 `DATE.2`, `DATE.3`, and so on. Previews have a separate `DATE.preview` stem.
-`status` reads persisted observations and does not refresh the broker.
+`status` reads persisted observations and does not refresh the broker. For Alpaca
+or IBKR paper configs it adds `live_readiness`, the certificate and evidence half
+of `authorize_live`, without the opt-in or a grant.
 
 Hash chains and certificate hashes detect accidental alteration; they are not
 signatures or protection against an operator able to rewrite files and hashes.

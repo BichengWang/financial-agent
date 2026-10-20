@@ -5,6 +5,20 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- `fa-quant status` shows live readiness for Alpaca and IBKR paper configs:
+  clean sessions, halts and breaks in the evidence window, mean and per-fill
+  slippage against the allowance, certificate verdict, identity match, age and
+  expiry, and every unmet reason. It reads only the journal and certificate,
+  makes no broker call and grants nothing.
+
+### Changed
+
+- `live_readiness(config, *, now)` holds the certificate and paper-evidence
+  evaluation; `authorize_live` adds the `FA_QUANT_ALLOW_LIVE` opt-in and the
+  grant. Thresholds and reasons are unchanged.
+
 ## [1.1.1] - 2026-10-19
 
 ### Fixed

@@ -274,6 +274,8 @@ def run_session(config, *, today, dry_run=False, now=None) -> SessionReport
 #   status in {"TRADED", "NO_CHANGE", "NO_SESSION", "HALTED"}
 #   now: submission clock returning aware datetimes (default: system clock)
 def authorize_live(config, *, certificate, journal, environ) -> LiveAuthorization
+def live_readiness(config, *, now) -> LiveReadiness
+#   certificate + paper-evidence checks of authorize_live without the opt-in or a grant
 ```
 
 `run_session` order, failing closed at each step:
