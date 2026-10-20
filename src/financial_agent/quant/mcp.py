@@ -47,7 +47,7 @@ class QuantServer(HarnessServer):
         ):
             response["result"]["serverInfo"] = {
                 "name": "financial-agent-quant",
-                "version": version("financial-agent"),
+                "version": version("fa-quant"),
             }
             response["result"]["instructions"] = (
                 "Research and paper previews only. No submission, cancellation, "

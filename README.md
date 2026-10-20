@@ -3,7 +3,7 @@
 A Python platform for systematic ETF research, cost-aware portfolio backtesting,
 statistical certification, paper trading and explicitly gated Alpaca and IBKR execution.
 It also retains an equity-research harness and separate RL/deep-learning research
-stacks. Version **1.0.0 is beta**: live performance is unproven, and neither a
+stacks. The platform is **beta**: live performance is unproven, and neither a
 historical gate pass nor paper results guarantee profit.
 
 ```mermaid
@@ -41,6 +41,12 @@ Core dependencies include NumPy `<2`, pandas `>=2,<3`, yfinance, Gymnasium and
 requests. Default development tools are installed by `uv sync`; optional `rl`,
 `dl`, `notebooks` and `research` extras add the heavier research stacks. Full
 release verification uses `uv sync --locked --all-extras`.
+
+Once a release is published to PyPI, `pip install fa-quant` installs the
+`fa-quant` command and the `financial_agent` import package. The PyPI project
+`financial-agent` is unrelated. Python 3.12 is the tested version; on 3.13+ the
+NumPy `<2` pin builds NumPy from source. Examples, docs and evidence stay in this
+repository; see [releasing](docs/releasing.md).
 
 ## Real-data research
 

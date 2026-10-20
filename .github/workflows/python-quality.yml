@@ -8,6 +8,7 @@ on:
       - "example/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
+      - "README.md"
       - "uv.lock"
       - ".python-version"
       - ".flake8"
@@ -20,6 +21,7 @@ on:
       - "example/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
+      - "README.md"
       - "uv.lock"
       - ".python-version"
       - ".flake8"
@@ -56,6 +58,7 @@ jobs:
       - name: Build and smoke-test installed wheel outside checkout
         run: |
           uv build
+          uvx twine check --strict dist/*
           uv venv /tmp/fa-wheel
           uv pip install --python /tmp/fa-wheel dist/*.whl
           cd /tmp

@@ -4,7 +4,7 @@ Guidance for AI coding agents working in this repository.
 
 ## Project
 
-Python 3.12 risk-managed systematic ETF platform plus financial/RL research. Managed with `uv`. Build backend is `hatchling`; the wheel packages `src/`.
+Python 3.12 risk-managed systematic ETF platform plus financial/RL research. Managed with `uv`. Build backend is `hatchling`; the wheel packages `src/`. The distribution is `fa-quant` (import `financial_agent`); PyPI's `financial-agent` is an unrelated project. Releases: `docs/releasing.md`.
 
 ## Layout
 

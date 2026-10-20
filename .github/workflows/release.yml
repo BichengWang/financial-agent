@@ -1,14 +1,18 @@
 name: Release
 
+# Tag pushes create the GitHub release; they also publish to PyPI once the
+# repository variable PYPI_PUBLISH is "true". Manual dispatch uploads the
+# current ref's build to TestPyPI as a rehearsal. See docs/releasing.md.
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +30,7 @@ jobs:
       - name: Types
         run: uv run mypy src/financial_agent/quant src/financial_agent/rl src/financial_agent/harness
       - name: Extract release notes and verify tag
+        if: github.event_name == 'push'
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
@@ -45,6 +50,8 @@ jobs:
           PY
       - name: Build wheel and sdist
         run: uv build
+      - name: Check distribution metadata
+        run: uvx twine check --strict dist/*
       - name: Install wheel in clean environment
         run: |
           uv venv /tmp/fa-wheel
@@ -64,8 +71,74 @@ jobs:
           assert scoring.read_tickers(["SPY", "SPY"], None) == ["SPY"]
           print("Wheel policy and helper resources verified")
           PYCODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'push'
+        with:
+          name: release-notes
+          path: release-notes.md
+          if-no-files-found: error
+
+  pypi:
+    needs: build
+    if: github.event_name == 'push' && vars.PYPI_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/fa-quant/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  testpypi:
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/project/fa-quant/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          # A version can be uploaded only once; reruns of a rehearsal pass.
+          skip-existing: true
+
+  github-release:
+    needs: [build, pypi]
+    # Publishing is optional, but a failed PyPI upload must not leave a release.
+    if: >-
+      always() && github.event_name == 'push' &&
+      needs.build.result == 'success' &&
+      contains(fromJSON('["success", "skipped"]'), needs.pypi.result)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-notes
       - name: Create GitHub release with distributions
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
-        run: gh release create "$RELEASE_TAG" dist/*.whl dist/*.tar.gz --verify-tag --title "$RELEASE_TAG" --notes-file release-notes.md
+        run: gh release create "$RELEASE_TAG" dist/*.whl dist/*.tar.gz -R "$GITHUB_REPOSITORY" --verify-tag --title "$RELEASE_TAG" --notes-file release-notes.md
