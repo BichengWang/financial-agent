@@ -40,14 +40,15 @@ uv run --no-dev python deploy/quant/run-session.py \
 Any further arguments (`--dry-run`, `--today`) go to `fa-quant run`, which the
 wrapper runs with `--json`; stdout and stderr pass through unchanged and the
 wrapper exits with the session's exit code (0 completed or skipped, 2 `HALTED`,
-1 usage/config error), so the scheduler still sees failures.
+1 usage/config error, 128 + N if killed by signal N), so the scheduler still sees
+failures.
 
 The env file holds `KEY=VALUE` lines (optional `export `, `#` comments, optional
 matching quotes, no variable expansion) with the paper keys and, optionally,
 `FA_QUANT_ALERT_WEBHOOK`. The wrapper refuses it, exiting 1 without running the
-session, unless it is a regular file owned by the current user with mode 600 or
-400. Its values override the inherited environment for the session only; never put
-credentials in the plist, crontab, unit or TOML.
+session, unless it is a regular file (not a symlink) owned by the current user
+with mode 600 or 400. Its values override the inherited environment for the
+session only; never put credentials in the plist, crontab, unit or TOML.
 
 On a non-zero exit with `FA_QUANT_ALERT_WEBHOOK` set (env file or inherited), the
 wrapper makes one attempt with a 10-second timeout to POST one JSON object:

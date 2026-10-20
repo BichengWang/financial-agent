@@ -67,7 +67,7 @@ def stub_child(
 
 
 @pytest.mark.usefixtures("clean_environment")
-def test_halted_session_posts_one_alert_without_secrets(
+def test_halted_session_posts_one_alert(
     wrapper: ModuleType,
     alerts: list[Any],
     config_path: Path,
@@ -88,8 +88,6 @@ def test_halted_session_posts_one_alert_without_secrets(
         "exit_code": 2,
         "reasons": ["kill switch engaged"],
     }
-    encoded = json.dumps(payload)
-    assert SECRET not in encoded and WEBHOOK not in encoded
 
 
 @pytest.mark.usefixtures("clean_environment")
@@ -213,21 +211,57 @@ def test_delivery_failure_keeps_exit_code_and_hides_url(
 
 
 @pytest.mark.usefixtures("clean_environment")
-def test_inherited_webhook_is_used_and_redacted(
+def test_halted_report_reasons_are_redacted_with_inherited_webhook(
     wrapper: ModuleType,
     alerts: list[Any],
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
     monkeypatch.setenv("FA_QUANT_ALERT_WEBHOOK", WEBHOOK)
+    report = {
+        "status": "HALTED",
+        "session": SESSION_DAY,
+        "reasons": [f"broker said {SECRET}", f"posting to {WEBHOOK}"],
+    }
     stub_child(
         wrapper,
         monkeypatch,
-        f"import sys; print('error: {WEBHOOK}', file=sys.stderr); sys.exit(1)",
+        f"import sys, json; print(json.dumps({report!r})); sys.exit(2)",
     )
-    assert run(wrapper, write_env(tmp_path, webhook=False), "ignored.toml") == 1
-    assert alerts[0][0] == WEBHOOK
-    assert alerts[0][1]["reasons"] == ["error: [redacted]"]
+    assert run(wrapper, write_env(tmp_path, webhook=False), "ignored.toml") == 2
+    assert len(alerts) == 1 and alerts[0][0] == WEBHOOK
+    payload = alerts[0][1]
+    assert payload["status"] == "HALTED"
+    assert payload["reasons"] == ["broker said [redacted]", "posting to [redacted]"]
+    assert SECRET not in json.dumps(payload) and WEBHOOK not in json.dumps(payload)
+
+
+@pytest.mark.usefixtures("clean_environment")
+def test_signal_killed_child_exits_like_a_shell(
+    wrapper: ModuleType,
+    alerts: list[Any],
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    stub_child(
+        wrapper, monkeypatch, "import os, signal; os.kill(os.getpid(), signal.SIGKILL)"
+    )
+    assert run(wrapper, write_env(tmp_path), "ignored.toml") == 137
+    assert len(alerts) == 1
+    assert alerts[0][1]["status"] == "ERROR" and alerts[0][1]["exit_code"] == 137
+
+
+def test_env_file_symlink_is_refused(wrapper: ModuleType, tmp_path: Path) -> None:
+    target = write_env(tmp_path)
+    link = tmp_path / "linked.env"
+    link.symlink_to(target)
+    with pytest.raises(wrapper.WrapperError):
+        wrapper.parse_env_file(link)
+
+
+def test_webhook_must_be_http(wrapper: ModuleType) -> None:
+    with pytest.raises(ValueError):
+        wrapper.post_alert("file:///etc/passwd", {"text": "x"})
 
 
 def test_env_file_values_override_the_inherited_environment(

@@ -39,30 +39,35 @@ class WrapperError(Exception):
     """A refusal that is safe to print: it never carries file contents."""
 
 
-def check_env_file(path: Path) -> None:
-    """Require a user-owned regular file without group/other permission bits."""
+def read_env_file(path: Path) -> str:
+    """Open without following symlinks, then check and read that same file.
+
+    It must be a regular file owned by the current user with no group/other bits.
+    """
     try:
-        info = path.stat()
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
     except OSError as exc:
         raise WrapperError(f"env file {path}: {type(exc).__name__}") from None
-    if not stat.S_ISREG(info.st_mode):
-        raise WrapperError(f"env file {path}: not a regular file")
-    if info.st_uid != os.getuid():
-        raise WrapperError(f"env file {path}: not owned by the current user")
-    if info.st_mode & 0o077:
-        raise WrapperError(
-            f"env file {path}: permissions must be 600 or 400 "
-            f"(found {stat.S_IMODE(info.st_mode):03o})"
-        )
+    with os.fdopen(fd, "rb") as handle:
+        info = os.fstat(handle.fileno())
+        if not stat.S_ISREG(info.st_mode):
+            raise WrapperError(f"env file {path}: not a regular file")
+        if info.st_uid != os.getuid():
+            raise WrapperError(f"env file {path}: not owned by the current user")
+        if info.st_mode & 0o077:
+            raise WrapperError(
+                f"env file {path}: permissions must be 600 or 400 "
+                f"(found {stat.S_IMODE(info.st_mode):03o})"
+            )
+        try:
+            return handle.read().decode("utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            raise WrapperError(f"env file {path}: {type(exc).__name__}") from None
 
 
 def parse_env_file(path: Path) -> dict[str, str]:
     """Parse KEY=VALUE lines; no expansion. Errors name only the line number."""
-    check_env_file(path)
-    try:
-        text = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError) as exc:
-        raise WrapperError(f"env file {path}: {type(exc).__name__}") from None
+    text = read_env_file(path)
     values: dict[str, str] = {}
     for number, raw in enumerate(text.splitlines(), start=1):
         line = raw.strip()
@@ -189,15 +194,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     sys.stdout.flush()
     sys.stderr.write(result.stderr)
     sys.stderr.flush()
-    if result.returncode != 0 and webhook:
+    # A signal-killed child reports -N; schedulers expect the shell's 128 + N.
+    code = result.returncode if result.returncode >= 0 else 128 - result.returncode
+    if code != 0 and webhook:
         secrets = [v for v in file_values.values() if len(v) >= MIN_SECRET_LENGTH]
         redact = redactor([*secrets, webhook])
-        payload = build_alert(result.returncode, result.stdout, result.stderr, redact)
+        payload = build_alert(code, result.stdout, result.stderr, redact)
         try:
             post_alert(webhook, payload)
         except Exception as exc:  # alerting must never mask the exit code
             print(f"alert: delivery failed ({type(exc).__name__})", file=sys.stderr)
-    return result.returncode
+    return code
 
 
 if __name__ == "__main__":
