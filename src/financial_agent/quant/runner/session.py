@@ -1,14 +1,17 @@
 """Exclusive, fail-closed sessions; durable intents precede all submissions."""
 
-from collections.abc import Iterator, Mapping
+from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
 from dataclasses import replace
-from datetime import date, timedelta
+from datetime import date, datetime, time, timedelta, timezone
 import fcntl
+from functools import cache
 import json
 import os
 from pathlib import Path
+import tomllib
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import pandas as pd  # type: ignore[import-untyped]
 
@@ -37,6 +40,8 @@ from ..strategies import build_strategy
 from .config import TradingConfig
 from .promotion import authorize_live
 from .report import SessionReport, Status, json_value, write_report
+
+EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 
 class SessionLocked(RuntimeError):
@@ -98,6 +103,34 @@ def configured_broker(
         base_url=LIVE_URL if config.mode == "live" else None,
         live_authorization=authorization,
     )
+
+
+@cache
+def _opening_auction_cutoff() -> time:
+    """Packaged policy only: a run configuration cannot move the cutoff."""
+    path = Path(__file__).parents[1] / "quant_policy.toml"
+    policy = tomllib.loads(path.read_text())["execution"]
+    return time.fromisoformat(policy["opening_auction_cutoff"])
+
+
+def _submission_closed(
+    broker: Broker, today: date, now: Callable[[], datetime]
+) -> list[str]:
+    """Broker-backed opening-auction orders go out only before today's cutoff."""
+    if isinstance(broker, PaperBroker):
+        return []
+    observed = now()
+    if observed.tzinfo is None:
+        raise ValueError("now: clock must return timezone-aware datetimes")
+    local = observed.astimezone(EXCHANGE_TZ)
+    cutoff = _opening_auction_cutoff()
+    if local.date() == today and local.time() < cutoff:
+        return []
+    return [
+        f"submission window closed: observed {local:%Y-%m-%d %H:%M:%S} "
+        f"America/New_York; orders for {today} must be submitted that day "
+        f"before {cutoff:%H:%M}"
+    ]
 
 
 def _recover_prior_intents(broker: Broker, journal: Journal, today: date) -> None:
@@ -259,14 +292,22 @@ def run_session(
     *,
     today: date,
     dry_run: bool = False,
+    now: Callable[[], datetime] | None = None,
     provider: BarProvider | None = None,
     broker: Broker | None = None,
     environ: Mapping[str, str] = os.environ,
 ) -> SessionReport:
-    """Previous-close decisions; no duplicate session submissions, even on retry."""
+    """Previous-close decisions; no duplicate session submissions, even on retry.
+
+    `now` is the submission clock (default: system time); it must return aware
+    datetimes. Only broker-backed adapters are bound to the opening-auction window.
+    """
+    clock = now or (lambda: datetime.now(timezone.utc))
     try:
         with session_lock(config.state_dir) as stale:
-            return _run_locked(config, today, dry_run, provider, broker, environ, stale)
+            return _run_locked(
+                config, today, dry_run, provider, broker, environ, stale, clock
+            )
     except SessionLocked:
         return SessionReport(
             "HALTED",
@@ -299,6 +340,7 @@ def _run_locked(
     broker: Broker | None,
     environ: Mapping[str, str],
     stale: bool,
+    now: Callable[[], datetime],
 ) -> SessionReport:
     journal = Journal(config.state_dir / "journal.jsonl")
     account: AccountSnapshot | None = None
@@ -514,6 +556,9 @@ def _run_locked(
                     ],
                 )
             for order in orders:
+                closed = _submission_closed(broker, today, now)
+                if closed:
+                    return finish("HALTED", closed)
                 ack = broker.submit(order)
                 journal.append("submitted", json_value(ack))
                 if ack.status == "rejected":
@@ -617,6 +662,9 @@ def _run_locked(
             return finish("NO_CHANGE", [])
         if dry_run:
             return finish("NO_CHANGE", ["dry run: planned orders, no submission"])
+        closed = _submission_closed(broker, today, now)
+        if closed:
+            return finish("HALTED", closed)
         for order in orders:
             journal.append(
                 "submission_intent",
@@ -627,6 +675,9 @@ def _run_locked(
                 },
             )
         for order in checked.approved:
+            closed = _submission_closed(broker, today, now)
+            if closed:
+                return finish("HALTED", closed)
             ack = broker.submit(order)
             journal.append("submitted", json_value(ack))
             if ack.status == "rejected":

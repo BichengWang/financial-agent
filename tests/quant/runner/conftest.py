@@ -1,13 +1,21 @@
 """Seeded CSV fixtures keep every session test offline."""
 
-from datetime import date
+from collections.abc import Callable
+from datetime import date, datetime, time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pytest
 
 from financial_agent.quant.data import synthetic_market
 from financial_agent.quant.data.providers import write_csv
 from financial_agent.quant.runner import TradingConfig
+
+
+def ny_clock(day: date, at: time = time(8, 45)) -> Callable[[], datetime]:
+    """Fixed New York submission clock for broker-backed sessions."""
+    moment = datetime.combine(day, at, ZoneInfo("America/New_York"))
+    return lambda: moment
 
 
 @pytest.fixture

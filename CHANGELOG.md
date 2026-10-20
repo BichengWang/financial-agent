@@ -5,6 +5,28 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-10-19
+
+### Fixed
+
+- Broker-backed (Alpaca, IBKR) sessions submit opening-auction orders only when
+  the New York date equals the session date and the time is before the packaged
+  09:25 ET `[execution] opening_auction_cutoff`. The check runs before journaling
+  submission intents and before every submission, including interrupted-submission
+  recovery; otherwise the session halts with the observed time. Late or replayed
+  runs can no longer queue orders for a later auction. Local paper and the demo
+  are unchanged.
+- `fa-quant run --today` defaults to the current New York date instead of the
+  host-local date.
+- CHANGELOG link references cover every release.
+
+### Changed
+
+- `run_session` accepts `now`, an injectable clock returning timezone-aware
+  datetimes. Adding the policy section changes `quant_policy.toml` bytes, so new
+  certificates record a different `policy_sha256`; thresholds are unchanged and
+  existing certificates still verify.
+
 ## [1.1.0] - 2026-10-13
 
 ### Added
@@ -75,6 +97,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   PBO and degradation slope remain not applicable; multi-variant calculations
   and every promotion threshold are unchanged.
 
-[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/BichengWang/financial-agent/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/BichengWang/financial-agent/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/BichengWang/financial-agent/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/BichengWang/financial-agent/releases/tag/v1.0.0

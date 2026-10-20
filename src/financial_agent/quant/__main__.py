@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Sequence
-from datetime import date
+from datetime import date, datetime
 import json
 from pathlib import Path
 import sys
@@ -24,7 +24,7 @@ from .runner import (
     status_summary,
 )
 from .runner.report import json_value
-from .runner.session import session_lock
+from .runner.session import EXCHANGE_TZ, session_lock
 from .execution import Journal
 from .risk import KillSwitch
 from .strategies import build_strategy
@@ -171,8 +171,8 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument(
         "--today",
         type=date.fromisoformat,
-        default=date.today(),
-        help="Trading session date (YYYY-MM-DD)",
+        default=datetime.now(EXCHANGE_TZ).date(),
+        help="Trading session date (YYYY-MM-DD; default: current New York date)",
     )
     run.add_argument(
         "--dry-run",

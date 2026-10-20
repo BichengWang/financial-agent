@@ -15,8 +15,18 @@ still synchronize fills and check account safety. Weekends/holidays skip.
 Alpaca OPG orders participate only in the opening auction. Orders submitted after
 09:28 and before 19:00 ET are rejected; after 19:00 they queue for the following
 auction. See [Alpaca's order documentation](https://docs.alpaca.markets/us/docs/orders-at-alpaca).
-The runner does not enforce a wall-clock OPG cutoff. Do not catch up a missed run
-late or use `--today` to replay old sessions against an actual broker.
+For broker-backed adapters (`alpaca`, `ibkr`) the runner submits only when the
+New York date equals the session date and the time is before **09:25 ET**, the
+packaged `[execution] opening_auction_cutoff` in
+[quant_policy.toml](../../src/financial_agent/quant/quant_policy.toml). It checks
+before journaling any `submission_intent` and again before every submission.
+Otherwise the session is `HALTED` with the observed New York time; synchronization
+and reconciliation still run first. A late run on an off-cadence day is still
+`NO_CHANGE`, and `--dry-run` previews at any time. `--today` defaults to the
+current New York date, so a replayed `--today` against a broker halts. Intents
+left unsubmitted when the cutoff passes mid-plan are abandoned at the next
+session, never sent to a later auction. Local paper and `fa-quant demo` are exempt.
+A window halt counts toward the live gate's halted-session limit.
 
 Templates under [deploy/quant](../../deploy/quant/) cover cron, launchd and
 systemd. Replace absolute paths and supply credentials through a protected
@@ -65,7 +75,8 @@ Account membership, type and USD currency are validated once per adapter instanc
 authentication is checked at most once per minute and immediately after HTTP 401.
 An 11-order plan normally takes about **one minute** at the documented five-second
 order/trade polling pace, plus network latency; replies or retries can extend it.
-Allow several minutes of margin before the cutoff rather than starting at 09:27.
+Start well before the 09:25 ET runner cutoff: an order still unsent at 09:25 halts
+the session mid-plan.
 **This gateway workflow cannot run from GitHub Actions**: it depends on the local
 interactive login, gateway process and durable trading state.
 
@@ -79,7 +90,7 @@ uv run fa-quant run --config examples/quant/ibkr-paper.toml
 
 The order body is whole-share `MKT` with `tif = "OPG"`. Nasdaq MOO orders must
 arrive before **09:28 Eastern**, per [IBKR's order guide](https://www.interactivebrokers.com/en/trading/ordertypes.php).
-The runner does not enforce a wall-clock cutoff; do not submit a late catch-up.
+The runner's 09:25 ET submission cutoff applies; do not start a late catch-up.
 Keep `confirm_message_ids = []` until you have reviewed a specific precaution.
 A declined question appears in the halt report with its IDs and redacted text;
 same-day reruns remain halted. Inspect all earlier acknowledgements before retrying.
