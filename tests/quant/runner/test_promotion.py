@@ -243,3 +243,80 @@ def test_zero_cost_model_and_invalid_fill_fail_closed(
             paper_journal_path=paper.path,
             environ={"FA_QUANT_ALLOW_LIVE": "1"},
         )
+
+
+def test_status_reports_authorize_live_reasons_without_broker_or_grant(
+    config: TradingConfig, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from financial_agent.quant.execution import AlpacaBroker
+    from financial_agent.quant.runner import render_status, status_summary
+
+    def no_broker(*args: Any, **kwargs: Any) -> None:
+        raise AssertionError("status must not construct a broker")
+
+    monkeypatch.setattr(AlpacaBroker, "__init__", no_broker)
+    cert = certificate(config, tmp_path)
+    rewrite_certificate(cert, {"params": {**config.strategy_params, "max_weight": 0.2}})
+    config = replace(config, certificate_path=cert)
+    config.state_dir.mkdir(parents=True)
+    paper = paper_evidence(config, config.state_dir / "journal.jsonl", 19)
+    outcome = dict(paper.events(["session_outcome"])[-1].payload)
+    paper.append("session_outcome", {**outcome, "session": "2020-06-20"})
+    paper.append(
+        "session_outcome", {**outcome, "session": "2020-06-20", "status": "HALTED"}
+    )
+    paper.append(
+        "fill",
+        {
+            "session": "2020-06-20",
+            "client_order_id": "late",
+            "symbol": "QQQ",
+            "price": 102,
+            "reference_price": 100,
+            "broker_kind": "alpaca",
+        },
+    )
+    before = paper.path.read_bytes()
+    summary = status_summary(config)
+    with pytest.raises(PromotionError) as caught:
+        authorize_live(
+            config, paper_journal_path=paper.path, environ={"FA_QUANT_ALLOW_LIVE": "1"}
+        )
+    readiness = summary["live_readiness"]
+    assert readiness["reasons"] == caught.value.reasons
+    assert not readiness["ready"]
+    assert paper.path.read_bytes() == before
+    text = render_status(summary)
+    for line in (
+        "Live readiness: NOT READY",
+        "19 clean of 20 required; window 2020-06-01..2020-06-20: 1 halted (max 0)",
+        "worst QQQ 2020-06-20 200.0 bps",
+        "Certificate: passed, identity MISMATCH, age 0.0 of 90 days",
+        "Unmet: certificate params mismatch",
+    ):
+        assert line in text, text
+
+
+def test_cli_status_shows_ready_broker_paper_evidence(
+    config_path: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from financial_agent.quant.__main__ import main
+
+    config_path.write_text(
+        config_path.read_text().replace('kind = "paper"', 'kind = "alpaca"')
+        + '[promotion]\ncertificate = "certificate.json"\n'
+    )
+    config = TradingConfig.load(config_path)
+    certificate(config, tmp_path)
+    config.state_dir.mkdir(parents=True)
+    paper_evidence(config, config.state_dir / "journal.jsonl")
+    assert main(["status", "--config", str(config_path), "--json"]) == 0
+    readiness = json.loads(capsys.readouterr().out)["live_readiness"]
+    assert readiness["ready"] and readiness["reasons"] == []
+    assert readiness["clean_sessions"] == 20 and len(readiness["fills"]) == 20
+    assert main(["status", "--config", str(config_path)]) == 0
+    assert "Live readiness: READY" in capsys.readouterr().out
+    local = config_path.read_text().replace('kind = "alpaca"', 'kind = "paper"')
+    config_path.write_text(local)
+    assert main(["status", "--config", str(config_path), "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["live_readiness"] is None

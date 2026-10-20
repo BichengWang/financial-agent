@@ -124,6 +124,16 @@ On off-cadence days, `Target (last plan)` retains the last execution plan; `—`
 means no target is known. `status` reads persisted observations and shows their
 age; it does not call the broker. Broker account/fill observations may be stale.
 
+For an Alpaca or IBKR paper config, `status` also shows **live readiness**: the
+same certificate and paper-evidence checks `authorize_live` applies, except the
+`FA_QUANT_ALLOW_LIVE` opt-in. It lists clean sessions against the 20 required,
+halts and reconciliation breaks in the evidence window, fill count, mean and
+worst per-fill slippage against the allowance, certificate verdict, identity
+match, age and expiry, and every unmet reason. Evidence comes from
+`[promotion] paper_journal` (default: this state's journal) and the certificate
+from `[promotion] certificate`. It reads only those files and grants nothing.
+`status --json` includes per-fill slippage under `live_readiness.fills`.
+
 `journal.jsonl` records session starts/outcomes, quality results, reconciliation,
 risk state, plans, submission intents/acks, fill observations and stop actions.
 Each event contains sequence, timestamp, predecessor and hash. Do not hand-edit

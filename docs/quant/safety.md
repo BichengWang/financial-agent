@@ -49,6 +49,10 @@ universe. Review those explicitly before promotion; recreate evidence after a
 material change. The paper history is filtered by identity and date, but there
 is no separate maximum paper-history age check.
 
+`fa-quant status` on an Alpaca or IBKR paper config evaluates the same
+certificate and evidence conditions (everything above except the opt-in) without
+a broker call or grant, so progress toward this gate is visible during paper.
+
 ## IBKR account and precaution gates
 
 Account IDs starting with `D` (including `DU…` and `DF…`) are treated as paper;
