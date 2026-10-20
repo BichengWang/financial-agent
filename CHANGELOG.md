@@ -17,11 +17,11 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `deploy/quant/run-session.py`, a stdlib-only scheduler wrapper. It loads
   credentials from a chmod 600 env file (refused when a symlink,
   group/other-accessible or not user-owned), runs `fa-quant run --json`, passes
-  output and the exit code (128 + N after signal N)
-  through, and on a non-zero exit posts one sanitized JSON alert (status, session,
-  reasons) to `FA_QUANT_ALERT_WEBHOOK` when set. The launchd, cron and systemd
-  templates call it; the launchd template gives a Pacific-host example
-  (`Hour=5`, `Minute=45`) and the `pmset` wake command.
+  output and the exit code through (128 + N after signal N), and on a non-zero
+  exit posts one sanitized JSON alert (status, session, reasons) to
+  `FA_QUANT_ALERT_WEBHOOK` when set. The launchd, cron and systemd templates call
+  it; the launchd template gives a Pacific-host example (`Hour=5`, `Minute=45`)
+  and the `pmset` wake command.
 
 ### Changed
 
