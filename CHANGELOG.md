@@ -5,6 +5,23 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- The Release workflow can publish to PyPI through trusted publishing once the
+  `PYPI_PUBLISH` repository variable is `true`. Manual dispatch rehearses the
+  upload on TestPyPI. Pull requests and releases run `twine check --strict`. See
+  `docs/releasing.md`.
+
+### Changed
+
+- The distribution is renamed `fa-quant`, because `financial-agent` on PyPI is an
+  unrelated project. The `financial_agent` import package (declared as PEP 794
+  `import-names`) and the `fa-quant` command are unchanged. Certificates and MCP
+  report the `fa-quant` version. Run `uv sync` after pulling.
+- Packaging uses the SPDX license expression `MIT`. The sdist holds only what
+  building the wheel needs (31.7 MB to 0.2 MB). The PyPI description links to the
+  tagged repository files.
+
 ## [1.2.0] - 2026-10-19
 
 ### Added

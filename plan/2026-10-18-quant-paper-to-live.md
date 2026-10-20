@@ -158,4 +158,5 @@ and work Phase 1, or pause the track while quant paper evidence accumulates.
 - GitHub Actions paper workflow. It stays manual: it keeps state in an evictable
   cache and runs factory-default params, so its sessions don't count toward live.
 - Intraday monitoring, stop orders, shorting, leverage, RL policies in the live
-  path, PyPI publication, and any gate or threshold change.
+  path, and any gate or threshold change. (PyPI publication was later prepared
+  as `fa-quant` on owner request; see `docs/releasing.md`.)

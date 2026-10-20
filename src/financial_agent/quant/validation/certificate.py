@@ -52,7 +52,7 @@ def write_certificate(report: PromotionReport, path: str | Path) -> Path:
     verifier rejects them by default. Policy bytes must match report.policy.
     """
     try:
-        package_version = version("financial-agent")
+        package_version = version("fa-quant")
     except PackageNotFoundError:
         package_version = "0+unknown"
     checks = [asdict(check) for check in report.checks]

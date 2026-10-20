@@ -146,7 +146,7 @@ def test_mcp_reuses_protocol_and_suppresses_notifications() -> None:
     assert responses[1]["result"]["serverInfo"]["name"] == "financial-agent-quant"
     from importlib.metadata import version
 
-    assert responses[1]["result"]["serverInfo"]["version"] == version("financial-agent")
+    assert responses[1]["result"]["serverInfo"]["version"] == version("fa-quant")
     assert responses[1]["result"]["protocolVersion"] == "2025-03-26"
     assert len(responses[2]["result"]["tools"]) == 5
 

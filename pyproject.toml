@@ -1,16 +1,20 @@
 [project]
-name = "financial-agent"
+name = "fa-quant"
 version = "1.2.0"
 description = "Risk-managed systematic ETF trading, statistical validation, and financial research"
 authors = [{name = "Bicheng (Kenneth)", email = "31808103+BichengWang@users.noreply.github.com"}]
 keywords = ["systematic-trading", "portfolio", "backtesting", "risk-management", "reinforcement-learning"]
-readme = "README.md"
-license = {file = "LICENSE"}
+# PyPI's `financial-agent` is an unrelated project; this distribution provides
+# the `financial_agent` import package and the `fa-quant` command.
+import-names = ["financial_agent"]
+dynamic = ["readme"]
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
     "Topic :: Office/Business :: Financial :: Investment",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
@@ -67,15 +71,40 @@ dev = [
     "pytest-custom-exit-code",
 ]
 all = [
-    "financial-agent[rl,dl,notebooks]",
+    "fa-quant[rl,dl,notebooks]",
 ]
 research = [
     "openpyxl>=3.1,<4",
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.30", "hatch-fancy-pypi-readme>=25.1"]
 build-backend = "hatchling.build"
+
+# PyPI cannot render Mermaid or resolve repository-relative links: drop the
+# diagram and point links at the release tag.
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.md"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '(?s)```mermaid\n.*?```\n\n'
+replacement = ''
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\(((?!https?://|#)[^)\s]+)\)'
+replacement = '](https://github.com/BichengWang/financial-agent/blob/v$HFPR_VERSION/\1)'
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "src/financial_agent",
+    "agents/equity/daily_investment_system/settlement_ledger.py",
+    "agents/equity/daily_investment_system/factor_scoring.py",
+    "README.md",
+    "CHANGELOG.md",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/financial_agent"]
