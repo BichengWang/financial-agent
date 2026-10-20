@@ -1,6 +1,7 @@
 # Quant Next Steps: Paper Evidence to a Live Decision
 
-**Date:** 2026-10-18 · **Status:** proposal · **Baseline:** v1.1.0 (`c54b9a3`);
+**Date:** 2026-10-18 · **Status:** PR1 delivered in v1.1.1, PR2–PR3 in v1.2.0;
+PR4 awaits D2; owner actions O1–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
 `pytest tests agents/equity/daily_investment_system/tests` 690 passed, 1 skipped;
 `fa-quant demo` runs end to end offline.
 

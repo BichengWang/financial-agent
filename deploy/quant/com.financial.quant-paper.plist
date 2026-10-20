@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- Template: replace paths; supply paper credentials through a protected wrapper.
-     launchd uses the host timezone: set it to America/New_York or adjust hour.
-     Run ~08:45 America/New_York on trading days; holidays/weekends skip.
-     Previous close decides today's open (next_open); avoid late catch-up runs. -->
+<!-- Template: replace paths. The wrapper loads the credentials and the optional
+     FA_QUANT_ALERT_WEBHOOK from a chmod 600 env file; never put them in this
+     plist or the TOML. It exits with the session's exit code and posts one alert
+     on a non-zero exit.
+     launchd uses the host timezone. This example is for a Pacific host: 05:45 PT
+     is 08:45 ET, and PT and ET change DST on the same dates. On an Eastern host
+     use Hour 8, Minute 45.
+     Keep the Mac awake first, for example: sudo pmset repeat wakeorpoweron MTWRF 05:40:00
+     Weekdays only; holidays skip. The runner refuses broker-backed submissions at
+     or after 09:25 ET, so a late wake-up run halts instead of trading. -->
 <plist version="1.0"><dict>
   <key>Label</key><string>com.financial.quant-paper</string>
   <key>WorkingDirectory</key><string>/path/to/repo</string>
   <key>ProgramArguments</key><array>
-    <string>/path/to/uv</string><string>run</string><string>fa-quant</string>
-    <string>run</string><string>--config</string>
-    <string>examples/quant/paper.toml</string>
+    <string>/path/to/uv</string><string>run</string><string>--no-dev</string>
+    <string>python</string><string>deploy/quant/run-session.py</string>
+    <string>--env-file</string><string>/path/to/quant-paper.env</string>
+    <string>--config</string><string>/path/to/host.toml</string>
   </array>
-  <key>StartCalendarInterval</key><dict>
-    <key>Hour</key><integer>8</integer><key>Minute</key><integer>45</integer>
-  </dict>
+  <key>StartCalendarInterval</key><array>
+    <dict><key>Weekday</key><integer>1</integer>
+      <key>Hour</key><integer>5</integer><key>Minute</key><integer>45</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>5</integer><key>Minute</key><integer>45</integer></dict>
+    <dict><key>Weekday</key><integer>3</integer>
+      <key>Hour</key><integer>5</integer><key>Minute</key><integer>45</integer></dict>
+    <dict><key>Weekday</key><integer>4</integer>
+      <key>Hour</key><integer>5</integer><key>Minute</key><integer>45</integer></dict>
+    <dict><key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>5</integer><key>Minute</key><integer>45</integer></dict>
+  </array>
   <key>StandardOutPath</key><string>/path/to/quant-session.log</string>
   <key>StandardErrorPath</key><string>/path/to/quant-session.log</string>
 </dict></plist>

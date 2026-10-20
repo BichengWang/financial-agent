@@ -29,11 +29,53 @@ session, never sent to a later auction. Local paper and `fa-quant demo` are exem
 A window halt counts toward the live gate's halted-session limit.
 
 Templates under [deploy/quant](../../deploy/quant/) cover cron, launchd and
-systemd. Replace absolute paths and supply credentials through a protected
-environment file/wrapper. The cron template requires `CRON_TZ` support; launchd
-uses the host timezone; systemd names the exchange timezone and disables
-persistent catch-up. Test daylight-saving behavior and scheduler logs on your
-host. The [paper Actions workflow](../../.github/workflows/quant-paper.yml) is
+systemd. Each calls the wrapper [run-session.py](../../deploy/quant/run-session.py)
+(stdlib only) instead of `fa-quant` directly. Replace the absolute paths, then:
+
+```sh
+uv run --no-dev python deploy/quant/run-session.py \
+  --env-file /abs/quant-paper.env --config /abs/host.toml
+```
+
+Any further arguments (`--dry-run`, `--today`) go to `fa-quant run`, which the
+wrapper runs with `--json`; stdout and stderr pass through unchanged and the
+wrapper exits with the session's exit code (0 completed or skipped, 2 `HALTED`,
+1 usage/config error), so the scheduler still sees failures.
+
+The env file holds `KEY=VALUE` lines (optional `export `, `#` comments, optional
+matching quotes, no variable expansion) with the paper keys and, optionally,
+`FA_QUANT_ALERT_WEBHOOK`. The wrapper refuses it, exiting 1 without running the
+session, unless it is a regular file owned by the current user with mode 600 or
+400. Its values override the inherited environment for the session only; never put
+credentials in the plist, crontab, unit or TOML.
+
+On a non-zero exit with `FA_QUANT_ALERT_WEBHOOK` set (env file or inherited), the
+wrapper makes one attempt with a 10-second timeout to POST one JSON object:
+
+```json
+{"text": "fa-quant HALTED 2026-10-20 (exit 2): kill switch engaged",
+ "status": "HALTED", "session": "2026-10-20", "exit_code": 2,
+ "reasons": ["kill switch engaged"]}
+```
+
+`status`, `session` and `reasons` come from the session report. When stdout is not
+a report (a config or usage error), `status` is `ERROR`, `session` is `null` and
+the single reason is the last non-empty stderr line. Env-file values of eight or
+more characters and the webhook URL are replaced with `[redacted]`; reasons are
+capped at 10 entries of 500 characters. A delivery failure prints
+`alert: delivery failed (<ExceptionType>)` to stderr, never the URL, and does not
+change the exit code. Nothing is posted on exit 0. Treat the webhook URL as a
+secret: it authorizes anyone holding it to post to your channel.
+
+The cron template requires `CRON_TZ` support; systemd names the exchange timezone,
+drops `EnvironmentFile=` because the wrapper loads and checks the file, and
+disables persistent catch-up. launchd uses the host timezone: for a Pacific host
+the template uses `Hour=5`, `Minute=45` on weekdays (PT and ET change daylight
+saving on the same dates, so 05:45 PT is 08:45 ET; Eastern hosts use 8 and 45).
+Wake the Mac first with `sudo pmset repeat wakeorpoweron MTWRF 05:40:00`. A late
+catch-up run (for example launchd running a missed job on wake) halts at or after
+09:25 ET rather than trading. Test daylight-saving behavior and scheduler logs on
+your host. The [paper Actions workflow](../../.github/workflows/quant-paper.yml) is
 manual dispatch, not a precise clock. It restores state from Actions cache and
 uploads reports; cache eviction/loss must halt operations until state is restored.
 A dedicated persistent host is preferable for ongoing execution.

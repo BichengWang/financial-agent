@@ -1,4 +1,8 @@
-# Template: use absolute paths and a chmod 600 environment file with paper keys.
+# Template: use absolute paths. The wrapper loads and permission-checks the chmod
+# 600 env file (paper keys, optional FA_QUANT_ALERT_WEBHOOK); do not add
+# EnvironmentFile=. The service fails on a halted session (exit 2) and the
+# wrapper posts one alert. The runner refuses broker-backed submissions at or
+# after 09:25 ET, so a late start halts instead of trading.
 # Previous close decides today's open; timer runs ~08:45 America/New_York.
 [Unit]
 Description=Quant paper trading session
@@ -8,5 +12,4 @@ After=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=/path/to/repo
-EnvironmentFile=/path/to/paper.env
-ExecStart=/path/to/uv run fa-quant run --config examples/quant/paper.toml
+ExecStart=/path/to/uv run --no-dev python deploy/quant/run-session.py --env-file /path/to/quant-paper.env --config /path/to/host.toml

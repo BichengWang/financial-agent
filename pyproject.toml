@@ -1,6 +1,6 @@
 [project]
 name = "financial-agent"
-version = "1.1.1"
+version = "1.2.0"
 description = "Risk-managed systematic ETF trading, statistical validation, and financial research"
 authors = [{name = "Bicheng (Kenneth)", email = "31808103+BichengWang@users.noreply.github.com"}]
 keywords = ["systematic-trading", "portfolio", "backtesting", "risk-management", "reinforcement-learning"]
