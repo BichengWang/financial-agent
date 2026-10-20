@@ -5,6 +5,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-19
+
 ### Added
 
 - `fa-quant status` shows live readiness for Alpaca and IBKR paper configs:
@@ -12,6 +14,14 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   slippage against the allowance, certificate verdict, identity match, age and
   expiry, and every unmet reason. It reads only the journal and certificate,
   makes no broker call and grants nothing.
+- `deploy/quant/run-session.py`, a stdlib-only scheduler wrapper. It loads
+  credentials from a chmod 600 env file (refused when a symlink,
+  group/other-accessible or not user-owned), runs `fa-quant run --json`, passes
+  output and the exit code through (128 + N after signal N), and on a non-zero
+  exit posts one sanitized JSON alert (status, session, reasons) to
+  `FA_QUANT_ALERT_WEBHOOK` when set. The launchd, cron and systemd templates call
+  it; the launchd template gives a Pacific-host example (`Hour=5`, `Minute=45`)
+  and the `pmset` wake command.
 
 ### Changed
 
@@ -111,7 +121,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   PBO and degradation slope remain not applicable; multi-variant calculations
   and every promotion threshold are unchanged.
 
-[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/BichengWang/financial-agent/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/BichengWang/financial-agent/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/BichengWang/financial-agent/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/BichengWang/financial-agent/compare/v1.0.0...v1.0.1

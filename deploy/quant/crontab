@@ -1,6 +1,9 @@
-# Template: replace /path/to/repo and /path/to/uv; configure paper credentials
-# in the process environment. CRON_TZ needs a cron implementation supporting it.
-# Run ~08:45 America/New_York on trading days, before the OPG cutoff.
+# Template: replace /path/to/repo, /path/to/uv and the file paths. Keep paper
+# credentials and FA_QUANT_ALERT_WEBHOOK in a chmod 600 env file read by the
+# wrapper, never in the crontab. CRON_TZ needs a cron implementation supporting it.
+# Run ~08:45 America/New_York on trading days, before the 09:25 ET cutoff: the
+# runner refuses broker-backed submissions at or after it, so a late run halts.
 # Decision = previous close, fill = today's open (next_open); holidays skip.
+# The wrapper exits with the session's exit code and posts one alert if non-zero.
 CRON_TZ=America/New_York
-45 8 * * 1-5 cd /path/to/repo && /path/to/uv run fa-quant run --config examples/quant/paper.toml >> /path/to/quant-session.log 2>&1
+45 8 * * 1-5 cd /path/to/repo && /path/to/uv run --no-dev python deploy/quant/run-session.py --env-file /path/to/quant-paper.env --config /path/to/host.toml >> /path/to/quant-session.log 2>&1
