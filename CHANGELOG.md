@@ -5,6 +5,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-10-20
+
 ### Added
 
 - The Release workflow can publish to PyPI through trusted publishing once the
@@ -138,7 +140,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   PBO and degradation slope remain not applicable; multi-variant calculations
   and every promotion threshold are unchanged.
 
-[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/BichengWang/financial-agent/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/BichengWang/financial-agent/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/BichengWang/financial-agent/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/BichengWang/financial-agent/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/BichengWang/financial-agent/compare/v1.0.1...v1.1.0
