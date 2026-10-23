@@ -163,7 +163,7 @@ autotrain entrypoint has unresolved signature/name issues and is not turnkey.
 | [agents/equity](agents/equity/) / [skills](skills/) | Daily/native equity workflows and Turtle research |
 | [src/financial_agent/rl](src/financial_agent/rl/) / [example/rl](example/rl/) | Generic RL APIs and examples |
 | [src/financial_agent/trading](src/financial_agent/trading/) / [src/financial_agent/dl](src/financial_agent/dl/) | Financial RL and prediction research |
-| [notebooks](notebooks/) / [archive](archive/) | Saved research outputs; avoid incidental reruns |
+| [notebooks](notebooks/) | Saved research outputs; avoid incidental reruns |
 
 ## Limitations
 
