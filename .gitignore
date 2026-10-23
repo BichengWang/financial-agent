@@ -223,3 +223,4 @@ agents/equity/output/.runs/
 
 # Quant research downloads (never commit market data).
 .quant-cache/
+_site/

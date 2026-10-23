@@ -41,6 +41,11 @@ Run `uv lock` after changing dependencies, not as part of normal setup.
 Offline quickstart: `uv run fa-quant demo` and `uv run fa-quant --help`.
 See `docs/quant/strategy-research.md` for dated real-data CLI commands.
 
+Docs site (GitHub Pages, deployed from `main` by `.github/workflows/pages.yml`):
+`uv run --only-group docs mkdocs build --strict`, or `mkdocs serve` to preview.
+`docs/mkdocs_hooks.py` publishes README, CHANGELOG, `docs/` and `reports/quant/`
+at their repository paths and sends other repo links to GitHub.
+
 ```shell
 uv run pytest tests agents/equity/daily_investment_system/tests -q
 uv run black --check src/financial_agent/rl tests/rl src/financial_agent/quant tests/quant

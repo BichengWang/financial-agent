@@ -1,0 +1,97 @@
+site_name: fa-quant
+site_description: Risk-managed systematic ETF research, certification and gated execution
+site_url: https://bichengwang.github.io/financial-agent/
+repo_url: https://github.com/BichengWang/financial-agent
+repo_name: BichengWang/financial-agent
+edit_uri: edit/main/
+# Pages come from docs/mkdocs_hooks.py, which publishes README.md, CHANGELOG.md
+# and the Markdown under docs/ and reports/ at their repository paths.
+docs_dir: docs
+# The hook replaces MkDocs' own docs_dir scan, where research/README.md would
+# collide with research/index.md. Patterns here are relative to docs_dir.
+exclude_docs: |
+  /research/README.md
+site_dir: _site
+hooks:
+  - docs/mkdocs_hooks.py
+
+nav:
+  - Home: README.md
+  - Quant platform:
+      - Architecture: docs/quant/architecture.md
+      - Strategy research: docs/quant/strategy-research.md
+      - Operations: docs/quant/operations.md
+      - Safety and go-live: docs/quant/safety.md
+  - Evidence:
+      - Default strategy (2026-10): reports/quant/2026-10-default-strategy-evidence.md
+      - Research forecast validation: reports/quant/research-forecast-validation.md
+  - Equity research:
+      - Research index: docs/research/index.md
+      - Run guidance: docs/research/README.md
+  - Releasing: docs/releasing.md
+  - Changelog: CHANGELOG.md
+
+# Dated ticker reports and batch notes are reached from the research index.
+not_in_nav: |
+  /docs/research/tickers/
+  /docs/research/batches/
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.view
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+copyright: >
+  MIT licensed. Research and backtests only: live performance is unproven, and
+  nothing here is investment advice.

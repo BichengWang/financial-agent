@@ -30,7 +30,7 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/BichengWang/financial-agent"
 Repository = "https://github.com/BichengWang/financial-agent"
-Documentation = "https://github.com/BichengWang/financial-agent/tree/main/docs/quant"
+Documentation = "https://bichengwang.github.io/financial-agent/"
 Issues = "https://github.com/BichengWang/financial-agent/issues"
 Changelog = "https://github.com/BichengWang/financial-agent/blob/main/CHANGELOG.md"
 
@@ -121,6 +121,10 @@ dev = [
     "pytest>=7.0.0",
     "pytest-cov",
     "pytest-custom-exit-code",
+]
+docs = [
+    "mkdocs>=1.6.1,<2",
+    "mkdocs-material>=9.5,<10",
 ]
 
 [tool.black]
