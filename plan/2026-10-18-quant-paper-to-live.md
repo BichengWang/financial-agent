@@ -1,7 +1,7 @@
 # Quant Next Steps: Paper Evidence to a Live Decision
 
 **Date:** 2026-10-18 · **Status:** PR1 delivered in v1.1.1, PR2–PR3 in v1.2.0;
-PR4 awaits D2; owner actions O1–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
+PR4 awaits D2; O1 done 2026-10-23, O2–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
 `pytest tests agents/equity/daily_investment_system/tests` 690 passed, 1 skipped;
 `fa-quant demo` runs end to end offline.
 
@@ -22,6 +22,16 @@ the clock.
   halt alerts. PR4 is conditional on decision D2.
 - **Decisions:** D1 evidence broker, D2 identity at re-certification, D3 live
   capital, D4 the equity research track.
+
+**Update 2026-10-23.** D1 defaults to Alpaca paper. O1 is done on the host:
+`certify --end 2026-10-22` (fa-quant 1.2.1) passed and selected the same identity
+as 10-13 (`target_vol=0.12, max_weight=0.25`), certificate `aa342c46…`, valid
+until **2027-01-21**. PBO rose to 0.764 (from 0.650), which strengthens the case
+for D2 (b). The host config, a mode-600 env file and the launchd job are staged
+but not loaded: a scheduled run without keys halts, and that halt would count
+against the evidence window. Once the paper keys are in the env file and the job
+is loaded, the first session is Mon 2026-10-26 and the earliest live decision is
+Fri **2026-11-20** (20 sessions, no exchange holidays in between).
 
 ## 1. Where things stand
 
