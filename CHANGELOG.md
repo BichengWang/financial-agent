@@ -8,8 +8,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - A documentation site at <https://bichengwang.github.io/financial-agent/>, built
-  with MkDocs Material and deployed by the Pages workflow on every push to
-  `main`. It serves the README, `docs/` (quant guides, releasing, equity research
+  with MkDocs Material and deployed from `main` by the Pages workflow: on push,
+  and within 30 minutes of an auto-merge, whose `GITHUB_TOKEN` push starts no
+  workflows. It serves the README, `docs/` (quant guides, releasing, equity research
   reports), the quant evidence reports and this changelog. Repository links that
   aren't site pages open on GitHub. Pull requests that touch these files run a
   strict build. Preview locally with

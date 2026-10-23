@@ -1,7 +1,9 @@
 name: Pages
 
 # Builds the MkDocs site (mkdocs.yml, docs/mkdocs_hooks.py) on every pull request
-# that touches published content, and deploys it from main.
+# that touches published content, and deploys it from main. Merges made by the
+# auto-merge workflow push with GITHUB_TOKEN, which starts no push workflows, so
+# a schedule also deploys main whenever its commit isn't the deployed one.
 on:
   pull_request:
     paths: &site
@@ -17,9 +19,12 @@ on:
     branches: [main]
     paths: *site
   workflow_dispatch:
+  schedule:
+    - cron: "17,47 * * * *"
 
 permissions:
   contents: read
+  deployments: read
 
 concurrency:
   group: pages-${{ github.ref }}
@@ -28,25 +33,44 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      stale: ${{ steps.stale.outputs.stale }}
     env:
       NO_MKDOCS_2_WARNING: "1"
     steps:
+      - name: Check whether main is already deployed
+        id: stale
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          stale=true
+          if [ "$GITHUB_EVENT_NAME" = schedule ]; then
+            deployed=$(gh api "repos/$GITHUB_REPOSITORY/deployments?environment=github-pages&per_page=1" --jq '.[0].sha // ""')
+            [ "$deployed" = "$GITHUB_SHA" ] && stale=false
+          fi
+          echo "stale=$stale" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
+        if: steps.stale.outputs.stale == 'true'
 
       - uses: astral-sh/setup-uv@v6
+        if: steps.stale.outputs.stale == 'true'
         with:
           python-version: "3.12"
 
       - name: Build
+        if: steps.stale.outputs.stale == 'true'
         run: uv run --locked --only-group docs mkdocs build --strict
 
       - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && steps.stale.outputs.stale == 'true'
         with:
           path: _site
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: >
+      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
+      needs.build.outputs.stale == 'true'
     needs: build
     runs-on: ubuntu-latest
     permissions:
