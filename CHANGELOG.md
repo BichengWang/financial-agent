@@ -5,6 +5,20 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- A documentation site at <https://bichengwang.github.io/financial-agent/>, built
+  with MkDocs Material and deployed by the Pages workflow on every push to
+  `main`. It serves the README, `docs/` (quant guides, releasing, equity research
+  reports), the quant evidence reports and this changelog. Repository links that
+  aren't site pages open on GitHub. Pull requests that touch these files run a
+  strict build. Preview locally with
+  `uv run --only-group docs mkdocs serve`.
+
+### Changed
+
+- The `Documentation` project URL points to the site.
+
 ## [1.2.1] - 2026-10-20
 
 ### Added
