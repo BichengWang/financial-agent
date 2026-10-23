@@ -18,7 +18,7 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- The `Documentation` project URL points to the site.
+- The `Documentation` project URL and the README link to the site.
 
 ## [1.2.1] - 2026-10-20
 
