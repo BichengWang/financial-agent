@@ -6,6 +6,9 @@ It also retains an equity-research harness and separate RL/deep-learning researc
 stacks. The platform is **beta**: live performance is unproven, and neither a
 historical gate pass nor paper results guarantee profit.
 
+**Docs:** <https://bichengwang.github.io/financial-agent/> has the quant guides,
+evidence reports, equity research and changelog.
+
 ```mermaid
 flowchart LR
   R[Research: data + Strategy] --> B[Backtest: next-bar fills + costs]
