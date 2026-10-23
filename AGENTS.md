@@ -18,7 +18,6 @@ Python 3.12 risk-managed systematic ETF platform plus financial/RL research. Man
 - `src/financial_agent/trading/` — trading-specific code (`env/`, `model/`, `preprocessing/`, `marketdata/`, `autotrain/`, `config/`, `backtest.py`, `utils/`).
 - `src/financial_agent/agents/{claude,gpt,grok}/` — placeholders for LLM-agent variants (currently empty).
 - `notebooks/` — Jupyter notebooks (committed with outputs).
-- `archive/` — frozen old notebooks.
 - `assets/img/` — images referenced by notebooks/READMEs.
 - `example/rl/` — runnable Gymnasium examples (CartPole, Acrobot, MountainCar).
 - `pyproject.toml` is the source of truth for dependencies.

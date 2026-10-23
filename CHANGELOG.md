@@ -20,6 +20,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - The `Documentation` project URL and the README link to the site.
 
+### Removed
+
+- Six research notebooks: the three AI4Finance FinRL tutorial copies in
+  `archive/`, the upstream `Crypto_Binance_Historical_Data` tutorial, and
+  `multistock_variant_2` and `this_works_1_18`, which largely duplicate
+  `multistock_docker`. They remain in git history.
+
 ## [1.2.1] - 2026-10-20
 
 ### Added
