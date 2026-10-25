@@ -1,0 +1,3 @@
+# Saved notebooks are research records, not source code; keep them out of
+# GitHub's language statistics.
+*.ipynb linguist-documentation
