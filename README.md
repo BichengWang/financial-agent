@@ -1,5 +1,11 @@
 # financial-agent
 
+[![Python quality](https://github.com/BichengWang/financial-agent/actions/workflows/python-quality.yml/badge.svg?branch=main)](https://github.com/BichengWang/financial-agent/actions/workflows/python-quality.yml)
+[![PyPI](https://img.shields.io/pypi/v/fa-quant)](https://pypi.org/project/fa-quant/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue)](https://www.python.org/)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://bichengwang.github.io/financial-agent/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 A Python platform for systematic ETF research, cost-aware portfolio backtesting,
 statistical certification, paper trading and explicitly gated Alpaca and IBKR execution.
 It also retains an equity-research harness and separate RL/deep-learning research
@@ -174,6 +180,12 @@ accounting. Statistics measure this historical sample, not future profitability.
 The scheduled runner does not continuously monitor intraday loss or guarantee
 fills; reference-price limits do not eliminate gap risk. State/journal hashes
 are integrity checks, not signatures. The POSIX runner targets macOS/Linux.
+
+## Contributing and security
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, checks and pull request rules,
+and the [code of conduct](CODE_OF_CONDUCT.md). Report vulnerabilities privately as
+described in [SECURITY.md](SECURITY.md).
 
 ## License
 

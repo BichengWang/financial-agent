@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a strategy, data source, check or workflow improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What you're trying to do and why the current tools fall short.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The behaviour you'd like. For strategies, include the signal, rebalance schedule and the evidence you'd expect it to pass.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
