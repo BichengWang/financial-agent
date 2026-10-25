@@ -24,6 +24,12 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - The `Documentation` project URL and the README link to the site.
+- Saved notebooks shrank from 10.9 MB to 3.1 MB without re-execution: training
+  logs keep their first and last 40 lines, very long printed lines are clipped,
+  and plots are 256-colour PNGs. Each cut is marked in the output.
+- GitHub language statistics exclude `.ipynb` files (`linguist-documentation`),
+  so the repository reports as Python rather than Jupyter Notebook.
+- The notebooks README lists each notebook and how to run it.
 
 ### Removed
 
