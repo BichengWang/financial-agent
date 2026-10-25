@@ -1,0 +1,59 @@
+name: Bug report
+description: Something in fa-quant or the research harness behaves incorrectly.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security problems, such as a way around the live gate or a credential leak, go to
+        [private vulnerability reporting](https://github.com/BichengWang/financial-agent/security/advisories/new), not here.
+        Remove account IDs and API keys from anything you paste.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you ran, what you expected and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands and config (TOML) that trigger it. `fa-quant demo` or synthetic data is ideal.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or traceback
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The installed version (`uv pip show fa-quant`) or the commit hash.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Backtest / validation / certificate
+        - Paper or live execution (Alpaca)
+        - Paper or live execution (IBKR)
+        - Risk limits / kill switch
+        - Data download
+        - Equity research harness
+        - RL / deep-learning research
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and Python version.
+      placeholder: macOS 15, Python 3.12.7

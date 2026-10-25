@@ -20,6 +20,10 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   eight promotion checks, write dated evidence) and `quant-paper-operations`
   (dry-run and scheduled paper sessions, status and live readiness, and the
   kill/unkill incident runbook). Neither can enable live trading.
+- Contributor and security docs: `CONTRIBUTING.md` (setup, checks, quant and
+  pull request rules), `SECURITY.md` (private vulnerability reporting, now enabled),
+  `CODE_OF_CONDUCT.md`, issue forms for bugs and features, and a pull request
+  template. The README shows CI, PyPI, Python, docs and license badges.
 
 ### Changed
 
