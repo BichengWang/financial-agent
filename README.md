@@ -160,7 +160,7 @@ autotrain entrypoint has unresolved signature/name issues and is not turnkey.
 | [reports/quant](reports/quant/) | Computed default and research-forecast evidence |
 | [tests/quant](tests/quant/) | Deterministic offline regression coverage |
 | [src/financial_agent/harness](src/financial_agent/harness/) | Equity schemas, gates, kernels and policy |
-| [agents/equity](agents/equity/) / [skills](skills/) | Daily/native equity workflows and Turtle research |
+| [agents/equity](agents/equity/) / [skills](skills/) | Daily/native equity workflows, Turtle research, and agent skills for quant research and paper operations |
 | [src/financial_agent/rl](src/financial_agent/rl/) / [example/rl](example/rl/) | Generic RL APIs and examples |
 | [src/financial_agent/trading](src/financial_agent/trading/) / [src/financial_agent/dl](src/financial_agent/dl/) | Financial RL and prediction research |
 | [notebooks](notebooks/) | Saved research outputs; avoid incidental reruns |

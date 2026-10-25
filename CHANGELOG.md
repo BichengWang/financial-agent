@@ -15,6 +15,11 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   aren't site pages open on GitHub. Pull requests that touch these files run a
   strict build. Preview locally with
   `uv run --only-group docs mkdocs serve`.
+- Two agent skills for the quant platform, discoverable through `.agents/skills/`:
+  `quant-strategy-research` (backtest, validate and certify a strategy, read the
+  eight promotion checks, write dated evidence) and `quant-paper-operations`
+  (dry-run and scheduled paper sessions, status and live readiness, and the
+  kill/unkill incident runbook). Neither can enable live trading.
 
 ### Changed
 
