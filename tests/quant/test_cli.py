@@ -7,7 +7,8 @@ from typing import Any
 
 import pytest
 
-from financial_agent.quant.__main__ import main
+from financial_agent.quant.__main__ import build_parser, main, research_inputs
+from financial_agent.quant.data import YahooProvider, synthetic_market
 from financial_agent.quant.mcp import QuantServer, serve
 from financial_agent.quant.risk import KillSwitch
 from financial_agent.quant.runner import TradingConfig
@@ -76,6 +77,37 @@ def test_cli_research_data_and_failed_certificate(
 def test_usage_errors_return_one(args: list[str], capsys: Any) -> None:
     assert main(args) == 1
     assert "error:" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("command", ["backtest", "validate", "certify"])
+def test_explicit_yahoo_provider_ignores_csv_directory(
+    command: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    data = synthetic_market(["SPY"], 20, seed=1, start="2020-01-02")
+    monkeypatch.setattr(YahooProvider, "fetch", lambda *args: data)
+    args = build_parser().parse_args(
+        [
+            command,
+            "--provider",
+            "yahoo",
+            "--csv-dir",
+            str(tmp_path / "unused-csv"),
+            "--cache-dir",
+            str(tmp_path / "cache"),
+            "--universe",
+            "SPY",
+            "--start",
+            "2020-01-02",
+            "--end",
+            "2020-01-31",
+            *(
+                ["--output", str(tmp_path / "certificate.json")]
+                if command == "certify"
+                else []
+            ),
+        ]
+    )
+    assert research_inputs(args)[2].fingerprint() == data.fingerprint()
 
 
 def call(server: QuantServer, name: str, args: dict[str, Any]) -> dict[str, Any]:

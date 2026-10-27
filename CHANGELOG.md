@@ -5,6 +5,10 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Research CLI commands honor `--provider yahoo` when `--csv-dir` is also set.
+
 ### Added
 
 - A documentation site at <https://bichengwang.github.io/financial-agent/>, built
