@@ -59,6 +59,10 @@ class CachedProvider:
             metadata: dict[str, Any] = (
                 json.loads(meta_path.read_text()) if meta_path.exists() else {}
             )
+            if not isinstance(metadata, dict) or any(
+                not isinstance(record, dict) for record in metadata.values()
+            ):
+                raise ValueError("expected an object of symbol metadata objects")
         except (OSError, ValueError) as exc:
             raise DataError(f"cache: invalid metadata: {exc}") from exc
         frames = {}

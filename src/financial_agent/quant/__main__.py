@@ -253,7 +253,7 @@ def research_inputs(
 
     if args.provider == "csv" and args.csv_dir is None:
         raise ConfigError("csv-dir: required for csv provider")
-    provider = CsvProvider(args.csv_dir) if args.csv_dir else YahooProvider()
+    provider = CsvProvider(args.csv_dir) if args.provider == "csv" else YahooProvider()
     data = CachedProvider(provider, args.cache_dir).fetch(
         args.universe, args.start, args.end
     )
