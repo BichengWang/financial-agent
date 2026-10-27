@@ -211,6 +211,21 @@ def test_cache_extends_start_and_individual_symbols(tmp_path: Path) -> None:
 
 
 @pytest.mark.parametrize(
+    "metadata", ["[]", "null", '"text"', "42", '{"A": []}', '{"A": null}']
+)
+def test_cache_rejects_nonobject_metadata(tmp_path: Path, metadata: str) -> None:
+    (tmp_path / "_meta.json").write_text(metadata)
+    data = market(2)
+    inner = CountingProvider(data)
+    with pytest.raises(DataError, match="invalid metadata"):
+        CachedProvider(inner, tmp_path).fetch(
+            ["A"], data.sessions[0].date(), data.sessions[-1].date()
+        )
+    assert not inner.calls
+    assert (tmp_path / "_meta.json").read_text() == metadata
+
+
+@pytest.mark.parametrize(
     "code,severity",
     [
         ("MISSING_SYMBOL", "error"),

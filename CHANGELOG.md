@@ -8,6 +8,7 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Fixed
 
 - Research CLI commands honor `--provider yahoo` when `--csv-dir` is also set.
+- Non-object cache metadata raises a data error instead of an uncaught attribute error.
 
 ### Added
 
