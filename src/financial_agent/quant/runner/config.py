@@ -49,6 +49,7 @@ class TradingConfig:
     certificate_path: Path | None = None
     paper_journal_path: Path | None = None
     grid: tuple[dict[str, Any], ...] = ()
+    disclosed_trials: tuple[dict[str, Any], ...] = ()
 
     account_id: str | None = None
     base_url: str = "https://localhost:5000/v1/api"
@@ -173,7 +174,11 @@ class TradingConfig:
                 "confirm_message_ids",
             },
         )
-        promotion = _table(raw, "promotion", {"certificate", "paper_journal", "grid"})
+        promotion = _table(
+            raw,
+            "promotion",
+            {"certificate", "paper_journal", "grid", "disclosed_trials"},
+        )
         risk = _table(raw, "risk", {f.name for f in fields(RiskLimits)})
         params = strategy.get("params", {})
         if not isinstance(params, dict):
@@ -182,8 +187,14 @@ class TradingConfig:
         if not isinstance(symbols, list):
             raise ConfigError("universe.symbols: expected an array")
         grid = promotion.get("grid", [])
-        if not isinstance(grid, list) or any(not isinstance(p, dict) for p in grid):
-            raise ConfigError("promotion.grid: expected an array of parameter tables")
+        trials = promotion.get("disclosed_trials", [])
+        for key, value in (("grid", grid), ("disclosed_trials", trials)):
+            if not isinstance(value, list) or any(
+                not isinstance(p, dict) for p in value
+            ):
+                raise ConfigError(
+                    f"promotion.{key}: expected an array of parameter tables"
+                )
         if "costs" in backtest:
             costs = _table(backtest, "costs", {f.name for f in fields(CostModel)})
             try:
@@ -232,6 +243,7 @@ class TradingConfig:
                 else None
             ),
             tuple(grid),
+            tuple(trials),
             account_id=broker.get("account_id"),
             base_url=broker.get("base_url", "https://localhost:5000/v1/api"),
             verify=(

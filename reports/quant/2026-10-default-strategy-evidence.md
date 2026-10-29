@@ -98,3 +98,21 @@ done
 ```
 
 These commands were run with real network retrieval. Expected exit statuses: backtests 0; trend, dual momentum and 60/40 validate/certify 0; SPY validate/certify 2. Certificates carry the computed verdict and identity. CLI reports the bootstrap lower endpoint; the companion adds the upper endpoint and fold detail using `walk_forward` and `block_bootstrap_ci` with the same packaged policy/default seed, asserting the lower endpoint equals CLI output.
+
+## Protocol change — 2026-10-28: frozen trend identity
+
+Owner decision D2 (`plan/2026-10-18-quant-paper-to-live.md`) froze the trend identity this grid selected, `target_vol=0.12, max_weight=0.25`, as the only certified variant. The walk-forward choice switched 6 times in 13 folds here and PBO was 0.650 (0.764 on the 2026-10-22 host re-certification), so a re-certification could have switched parameters and restarted the 20-session paper evidence; half the past choices (`max_weight=0.35`) also exceed the 30% runtime cap. No threshold changed. The freeze came after the four-variant search, so the four variants stay disclosed through `[promotion] disclosed_trials`, and DSR deflates by four trials and their full-period Sharpe variance on the certified data.
+
+Computed 2026-10-28 with `examples/quant/paper.toml` (start 2006-03-01, end 2026-10-27, fingerprint `04ddf9794ddd87d8…`), all other settings as above. Values are rounded to four decimals:
+
+| Run | Grid | OOS Sharpe | DSR | OOS max drawdown | Bootstrap p05 | PBO | Selected |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Frozen, four trials disclosed (certified) | 1 | 0.7044 | 0.9943 | 0.1372 | 0.2838 | n/a | 0.12 / 0.25 |
+| Frozen, no disclosure (comparison only) | 1 | 0.7044 | 0.9952 | 0.1372 | 0.2838 | n/a | 0.12 / 0.25 |
+| Four-variant search, old protocol | 4 | 0.6578 | 0.9908 | 0.1633 | 0.2250 | 0.7047 | 0.12 / 0.25 |
+
+All eight checks pass in each run; `prob_oos_loss` is 0 and cost/delay stress Sharpes are 0.6187/0.8482. The certificate records `n_trials` 4 and trial Sharpe variance 1.04e-6 per session. That variance is small because the four variants scale similar trend signals, so the disclosure lowers DSR only from 0.9952 to 0.9943.
+
+Read the frozen row with care. Its walk-forward returns are not out-of-sample for the choice of identity, which used this history; the frozen OOS Sharpe (0.704) exceeds the switching portfolio's (0.658) partly for that reason. Disclosing the trials in DSR is the only correction applied. The frozen protocol buys a stable identity for paper and live evidence; it does not strengthen the statistical case.
+
+Reproduce: `uv run fa-quant certify --config examples/quant/paper.toml --end 2026-10-27 --output var/quant-paper/certificate.json`. Add the four-variant `--grid` from `docs/quant/strategy-research.md` to rerun the old protocol; the disclosure then equals the grid and changes nothing.

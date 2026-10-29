@@ -1,13 +1,19 @@
 # Alpaca paper keys come only from APCA_API_KEY_ID / APCA_API_SECRET_KEY.
 # Run near 08:45 America/New_York; previous close decides today's OPG orders.
-# Live mode requires [strategy.params] equal to the certificate's selected params.
-# Copy the TOML printed by fa-quant certify; then collect 20 clean Alpaca-paper
-# sessions with those params. Local PaperBroker sessions do not count for live.
+# Live mode requires [strategy.params] equal to the certificate's selected params,
+# then 20 clean Alpaca-paper sessions with them. Local PaperBroker sessions do not
+# count for live.
 mode = "paper"
 state_dir = "../../var/quant-paper"
 
 [strategy]
 name = "trend_vol_target"
+
+# Frozen identity (owner decision D2, 2026-10-28): selected by the 2026-10
+# certifications and certified alone since. Strategy defaults fill the rest.
+[strategy.params]
+target_vol = 0.12
+max_weight = 0.25
 
 [universe]
 symbols = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "IEF", "LQD", "GLD", "DBC", "VNQ"]
@@ -29,4 +35,6 @@ initial_cash = 100000.0
 [promotion]
 certificate = "../../var/quant-paper/certificate.json"
 paper_journal = "../../var/quant-paper/journal.jsonl"
-grid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]
+# Certify only the frozen variant. DSR still deflates by every variant tried.
+grid = [{target_vol = 0.12, max_weight = 0.25}]
+disclosed_trials = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]

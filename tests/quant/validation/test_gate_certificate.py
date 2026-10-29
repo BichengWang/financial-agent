@@ -4,6 +4,7 @@ from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -11,15 +12,20 @@ import pytest
 
 from financial_agent.quant.backtest import BacktestConfig
 from financial_agent.quant.data import synthetic_market
+from financial_agent.quant.strategies import build_strategy
 from financial_agent.quant.validation import (
     CertificateError,
     Check,
     PromotionPolicy,
     PromotionReport,
+    check_disclosed_trials,
+    deflated_sharpe_ratio,
     evaluate_promotion,
     verify_certificate,
+    walk_forward,
     write_certificate,
 )
+from financial_agent.quant.validation.walkforward import annual_sharpe
 
 
 def loaded_policy(tmp_path: Path) -> PromotionPolicy:
@@ -115,6 +121,85 @@ def test_insufficient_data_records_failures_and_serializes_nulls(
     with pytest.raises(CertificateError, match="failed promotion"):
         verify_certificate(path)
     assert not verify_certificate(path, require_passed=False).passed
+
+
+def test_disclosed_trials_deflate_a_frozen_variant_by_every_trial(
+    tmp_path: Path,
+) -> None:
+    policy = loaded_policy(tmp_path)
+    trials = [
+        {"lookbacks": lb, "cov_lookback": 21, "target_vol": 0.1, "max_weight": 0.5}
+        for lb in ([3, 10], [5, 20], [10, 40], [2, 5])
+    ]
+    frozen = trials[0]
+    # A modest edge keeps DSR below saturation at 1.0.
+    data = synthetic_market(
+        ["A", "B"], 650, seed=15, annual_drift=0.1, autocorrelation=0.3
+    )
+    config = BacktestConfig(rebalance="weekly", fractional_shares=True)
+
+    def walk(grid: list[dict[str, Any]]) -> Any:
+        return walk_forward(
+            lambda p: build_strategy("trend_vol_target", p),
+            grid,
+            data,
+            config,
+            train_sessions=policy.train_sessions,
+            test_sessions=policy.test_sessions,
+            embargo_sessions=policy.embargo_sessions,
+        )
+
+    searched = walk(trials).variant_returns
+    scores = [annual_sharpe(searched[i].to_numpy()) / math.sqrt(252) for i in range(4)]
+    mean = sum(scores) / 4
+    expected = deflated_sharpe_ratio(
+        walk([frozen]).oos_returns.to_numpy(),
+        n_trials=4,
+        trials_sharpe_variance=sum((s - mean) ** 2 for s in scores) / 3,
+    )
+    disclosed = evaluate_promotion(
+        "trend_vol_target", [frozen], data, config, policy, disclosed_trials=trials
+    )
+    alone = evaluate_promotion("trend_vol_target", [frozen], data, config, policy)
+
+    def dsr(report: PromotionReport) -> float:
+        return next(c.value for c in report.checks if c.name == "dsr")
+
+    assert dsr(disclosed) == pytest.approx(expected)
+    # Without the disclosure a lone variant faces a zero benchmark.
+    assert dsr(disclosed) < dsr(alone)
+    assert (
+        disclosed.selected_params == build_strategy("trend_vol_target", frozen).params()
+    )
+    assert "n_trials" not in alone.diagnostics
+    certificate = verify_certificate(
+        write_certificate(disclosed, tmp_path / "frozen.json"), require_passed=False
+    )
+    assert certificate.grid_size == 1
+    assert certificate.diagnostics["n_trials"] == 4
+    assert certificate.diagnostics["trial_sharpe_variance"] == pytest.approx(
+        sum((s - mean) ** 2 for s in scores) / 3
+    )
+
+
+@pytest.mark.parametrize(
+    ("trials", "match"),
+    [
+        ([{"target_vol": 0.08}], "every grid variant"),
+        ([{"target_vol": 0.12}, {"target_vol": 0.12, "max_weight": 0.3}], "duplicate"),
+    ],
+)
+def test_disclosure_must_list_each_grid_variant_once(
+    trials: list[dict[str, Any]], match: str
+) -> None:
+    with pytest.raises(ValueError, match=match):
+        check_disclosed_trials("trend_vol_target", [{"target_vol": 0.12}], trials)
+    # Variants compare with defaults filled in.
+    check_disclosed_trials(
+        "trend_vol_target",
+        [{"target_vol": 0.12}],
+        [{"target_vol": 0.12, "max_weight": 0.3}, {"target_vol": 0.08}],
+    )
 
 
 @pytest.mark.parametrize(

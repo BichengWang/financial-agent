@@ -28,7 +28,12 @@ from .runner.session import EXCHANGE_TZ, session_lock
 from .execution import Journal
 from .risk import KillSwitch
 from .strategies import build_strategy
-from .validation import PromotionPolicy, evaluate_promotion, write_certificate
+from .validation import (
+    PromotionPolicy,
+    check_disclosed_trials,
+    evaluate_promotion,
+    write_certificate,
+)
 
 ETF_UNIVERSE = (
     "SPY",
@@ -414,12 +419,19 @@ def main(argv: Sequence[str] | None = None) -> int:
                     print("\n".join(f"{k}: {v}" for k, v in backtest_summary.items()))
                 return 0
             config = TradingConfig.load(args.config) if args.config else None
+            grid = parameter_grid(args.grid, config, params)
+            disclosed = config.disclosed_trials if config else ()
+            try:
+                check_disclosed_trials(name, grid, disclosed)
+            except ValueError as exc:
+                raise ConfigError(str(exc)) from None
             report = evaluate_promotion(
                 name,
-                parameter_grid(args.grid, config, params),
+                grid,
                 data,
                 backtest,
                 PromotionPolicy.load(args.policy),
+                disclosed_trials=disclosed,
             )
             if args.command == "certify":
                 write_certificate(report, args.output)

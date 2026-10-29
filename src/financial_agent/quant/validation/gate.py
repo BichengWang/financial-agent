@@ -1,7 +1,9 @@
 """Policy-driven promotion checks; missing statistical evidence fails closed."""
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field, fields
 import hashlib
+import json
 import math
 from pathlib import Path
 import tomllib
@@ -15,7 +17,7 @@ from ..strategies import build_strategy
 from .bootstrap import block_bootstrap_ci
 from .overfitting import deflated_sharpe_ratio, pbo_cscv
 from .stress import stress_test
-from .walkforward import ParameterGrid, annual_sharpe, walk_forward
+from .walkforward import ParameterGrid, annual_sharpe, full_period_returns, walk_forward
 
 POLICY_PATH = Path(__file__).resolve().parents[1] / "quant_policy.toml"
 
@@ -132,19 +134,48 @@ class PromotionReport:
     diagnostics: dict[str, float] = field(default_factory=dict)
 
 
+def _identity(name: str, params: Mapping[str, Any]) -> str:
+    return json.dumps(build_strategy(name, dict(params)).params(), sort_keys=True)
+
+
+def check_disclosed_trials(
+    name: str, grid: ParameterGrid, disclosed_trials: ParameterGrid
+) -> None:
+    """Raise ValueError unless the disclosure lists each grid variant, once each.
+
+    Variants compare after defaults are filled in; an empty disclosure passes.
+    """
+    if not disclosed_trials:
+        return
+    tried = [_identity(name, p) for p in disclosed_trials]
+    if len(set(tried)) != len(tried):
+        raise ValueError("disclosed_trials: duplicate variants")
+    if not {_identity(name, p) for p in grid} <= set(tried):
+        raise ValueError("disclosed_trials: must include every grid variant")
+
+
 def evaluate_promotion(
     name: str,
     grid: ParameterGrid,
     data: MarketData,
     config: BacktestConfig,
     policy: PromotionPolicy,
+    *,
+    disclosed_trials: ParameterGrid = (),
 ) -> PromotionReport:
     """Evaluate eight registered checks; insufficient evidence records failures.
 
     Trial variance uses full-period per-session Sharpes. DSR uses stitched OOS
     returns. Bootstrap is circular (21 sessions, 2000 draws, seed=0), and the
     lower endpoint of its 90% interval is the 5th percentile.
+
+    `disclosed_trials` lists every variant ever tried when `grid` is narrower,
+    e.g. a frozen pre-registered identity. DSR then deflates by all of them:
+    their count and the variance of their full-period Sharpes on this data. It
+    must contain each grid variant once; diagnostics record `n_trials` and
+    `trial_sharpe_variance`.
     """
+    check_disclosed_trials(name, grid, disclosed_trials)
     result = walk_forward(
         lambda params: build_strategy(name, params),
         grid,
@@ -195,12 +226,19 @@ def evaluate_promotion(
         policy.min_oos_sharpe,
         "net out-of-sample risk-adjusted return is insufficient",
     )
-    dsr, dsr_error = float("nan"), ""
+    trial_returns = (
+        full_period_returns(
+            [build_strategy(name, dict(p)) for p in disclosed_trials], data, config
+        )
+        if disclosed_trials
+        else result.variant_returns
+    )
+    dsr, dsr_error, variance = float("nan"), "", float("nan")
     try:
         scores = np.asarray(
             [
-                annual_sharpe(result.variant_returns[i].to_numpy()) / np.sqrt(252)
-                for i in result.variant_returns.columns
+                annual_sharpe(trial_returns[i].to_numpy()) / np.sqrt(252)
+                for i in trial_returns.columns
             ]
         )
         if not np.isfinite(scores).all():
@@ -208,7 +246,7 @@ def evaluate_promotion(
         variance = float(scores.var(ddof=1)) if len(scores) > 1 else 0.0
         dsr = deflated_sharpe_ratio(
             result.oos_returns.to_numpy(),
-            n_trials=len(grid),
+            n_trials=len(trial_returns.columns),
             trials_sharpe_variance=variance,
         )
     except ValueError as exc:
@@ -226,6 +264,10 @@ def evaluate_promotion(
         "n_combinations": 0.0,
         "degradation_slope": float("nan"),
     }
+    if disclosed_trials:
+        diagnostics.update(
+            n_trials=float(len(disclosed_trials)), trial_sharpe_variance=variance
+        )
     try:
         cscv = pbo_cscv(result.variant_returns, policy.pbo_splits)
         loss = cscv.prob_oos_loss

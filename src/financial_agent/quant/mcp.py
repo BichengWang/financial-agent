@@ -126,6 +126,7 @@ class QuantServer(HarnessServer):
                         data,
                         config.backtest,
                         PromotionPolicy.load(),
+                        disclosed_trials=config.disclosed_trials,
                     )
                 )
             summary = status_summary(config)

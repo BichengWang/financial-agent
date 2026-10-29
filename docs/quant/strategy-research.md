@@ -30,7 +30,10 @@ Run from the repository root. The example supplies the 11-ETF universe, weekly
 next-open execution, whole shares, 2% cash buffer and default modeled costs.
 `--end` is inclusive; use only the latest completed session. These dated commands
 were executed for the release (the evidence report uses the earlier common
-February 6 start rather than the example's March 1 start).
+February 6 start rather than the example's March 1 start). The example then held
+the four-variant grid; it now certifies the frozen identity (see below). Add
+`--grid '[{"target_vol":0.08,"max_weight":0.25},{"target_vol":0.08,"max_weight":0.35},{"target_vol":0.12,"max_weight":0.25},{"target_vol":0.12,"max_weight":0.35}]'`
+to rerun the four-variant search.
 
 ```sh
 uv run fa-quant backtest --config examples/quant/paper.toml --end 2026-10-12 --json
@@ -50,6 +53,16 @@ The release trend grid is target volatility `{0.08, 0.12}` × cap `{0.25, 0.35}`
 four trials. No parameters or thresholds were tuned after evaluation. Default
 backtests and the walk-forward switching portfolio are distinct experiments.
 
+Since 2026-10-28 the examples freeze the identity those four trials selected
+(`target_vol=0.12, max_weight=0.25`) as the only grid variant, so a
+re-certification cannot switch parameters and restart the paper evidence. The
+freeze came after the search, so `[promotion] disclosed_trials` lists all four
+variants: DSR deflates by their count and the variance of their full-period
+Sharpes on the data being certified, and the certificate records `n_trials` and
+`trial_sharpe_variance` in its diagnostics. The disclosure must list each grid
+variant once. Walk-forward OOS returns of a variant chosen with hindsight are not
+out-of-sample for that choice; the deflation is the only correction for it.
+
 Rolling validation uses 1,260 training sessions, 252 test sessions and a five
 session embargo, selecting by training Sharpe. It stitches complete disjoint
 OOS windows into one cash-continuous portfolio, including switching costs.
@@ -60,8 +73,9 @@ fold's winner. The JSON evidence contains fold dates and selected identities.
 ## Read statistics without overclaiming
 
 - DSR is the probability that observed OOS Sharpe exceeds a benchmark corrected
-  for grid size and trial Sharpe variance, using sample skew/kurtosis. It does
-  not account for unreported experiments performed outside the disclosed grid.
+  for the number of trials and their Sharpe variance, using sample
+  skew/kurtosis. Trials are the grid, or `disclosed_trials` when set. It does not
+  account for unreported experiments performed outside them.
 - CSCV partitions variant returns into 16 blocks and evaluates 12,870 splits.
   PBO measures relative rank reversal of an in-sample winner; probability of OOS
   loss measures its absolute negative Sharpe. Only the latter blocks promotion.

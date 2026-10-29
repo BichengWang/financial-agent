@@ -7,7 +7,13 @@ from .certificate import (
     verify_certificate,
     write_certificate,
 )
-from .gate import Check, PromotionPolicy, PromotionReport, evaluate_promotion
+from .gate import (
+    Check,
+    PromotionPolicy,
+    PromotionReport,
+    check_disclosed_trials,
+    evaluate_promotion,
+)
 from .overfitting import (
     PBOResult,
     deflated_sharpe_ratio,
@@ -16,7 +22,7 @@ from .overfitting import (
     probabilistic_sharpe_ratio,
 )
 from .stress import StressResult, stress_test
-from .walkforward import Fold, WalkForwardResult, walk_forward
+from .walkforward import Fold, WalkForwardResult, full_period_returns, walk_forward
 
 __all__ = [
     "block_bootstrap_ci",
@@ -27,6 +33,7 @@ __all__ = [
     "Check",
     "PromotionPolicy",
     "PromotionReport",
+    "check_disclosed_trials",
     "evaluate_promotion",
     "PBOResult",
     "deflated_sharpe_ratio",
@@ -37,5 +44,6 @@ __all__ = [
     "stress_test",
     "Fold",
     "WalkForwardResult",
+    "full_period_returns",
     "walk_forward",
 ]
