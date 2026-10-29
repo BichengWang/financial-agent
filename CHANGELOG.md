@@ -45,6 +45,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   only grid variant, with the four searched variants disclosed. A
   re-certification can no longer switch parameters and restart paper evidence.
   Pass the four-variant `--grid` to rerun the original search.
+- The README opens with the current paper-to-live status, installs from PyPI,
+  compares the four-variant and frozen-identity gate results, lists the live
+  gate's conditions and documents the scheduler wrapper.
 - Saved notebooks shrank from 10.9 MB to 3.1 MB without re-execution: training
   logs keep their first and last 40 lines, very long printed lines are clipped,
   and plots are 256-colour PNGs. Each cut is marked in the output.
