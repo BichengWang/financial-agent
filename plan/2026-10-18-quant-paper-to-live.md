@@ -1,7 +1,7 @@
 # Quant Next Steps: Paper Evidence to a Live Decision
 
-**Date:** 2026-10-18 · **Status:** PR1 delivered in v1.1.1, PR2–PR3 in v1.2.0;
-PR4 awaits D2; O1 done 2026-10-23, O2–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
+**Date:** 2026-10-18 · **Status:** PR1 delivered in v1.1.1, PR2–PR3 in v1.2.0,
+PR4 after D2 = (b); O1 done 2026-10-23, O2 loaded 2026-10-28 (wake pending), O3–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
 `pytest tests agents/equity/daily_investment_system/tests` 690 passed, 1 skipped;
 `fa-quant demo` runs end to end offline.
 
@@ -33,13 +33,27 @@ against the evidence window. Once the paper keys are in the env file and the job
 is loaded, the first session is Mon 2026-10-26 and the earliest live decision is
 Fri **2026-11-20** (20 sessions, no exchange holidays in between).
 
+**Update 2026-10-28.** D2 = (b): the owner approved freezing the identity. PR4
+adds `[promotion] disclosed_trials`; the examples certify only
+`target_vol=0.12, max_weight=0.25` with the four searched variants disclosed
+(evidence report addendum: DSR 0.9943, all eight checks pass, data to
+2026-10-27). O2: a new, empty Alpaca paper account ($100,000) has keys in
+the host env file, `--dry-run` through the wrapper returns `NO_CHANGE` with the
+certified targets, and the launchd job is loaded. The `pmset` wake still needs
+the owner's sudo. Paper starts Thu 2026-10-29 (`NO_CHANGE`, mid-week); the first
+orders go out Mon 2026-11-02, the first weekly rebalance. With no halts the 20th
+session is Wed **2026-11-25** (11-26 is a market holiday), so the earliest live
+decision moves to 2026-11-25. Only the week's first session submits orders, so
+only a late run on that day halts; a weekday the Mac sleeps through is skipped,
+not counted.
+
 ## 1. Where things stand
 
 | Item | State | Evidence |
 |---|---|---|
 | Default certificate | `trend_vol_target` PASS, params `target_vol=0.12, max_weight=0.25` (lookbacks 21/63/126/252, halflife 42, cov 126), created 2026-10-13, hash `bd6e8ffc…` | `reports/quant/2026-10-default-strategy-evidence.json` → `strategies.trend_vol_target.certificate` |
 | Parameter selection | PBO 0.650; the walk-forward choice changed 6 times in 13 annual folds; 7 of 14 folds picked `max_weight=0.35` | same JSON, `folds[*].chosen_params` |
-| Example configs | Run factory defaults (`target_vol=0.10, max_weight=0.30`), which are not the certified identity. Their sessions never count toward live | `examples/quant/paper.toml`, `ibkr-paper.toml`; identity filter in `runner/promotion.py:102-113` |
+| Example configs | Ran factory defaults (`target_vol=0.10, max_weight=0.30`) until PR4; since 2026-10-28 they run and certify the frozen identity | `examples/quant/paper.toml`, `ibkr-paper.toml`; identity filter in `runner/promotion.py:102-113` |
 | Real broker sessions | None. Live path verified only with fake transports | `docs/quant/safety.md:152-153` |
 | Submission timing | The runner submits whenever it is invoked. `--today` defaults to the host-local `date.today()` | `runner/session.py:618-634`, `__main__.py:172-175` |
 | Host scheduler | Host TZ is America/Los_Angeles, so the launchd template's 08:45 fires at 11:45 ET, after the OPG cutoff. launchd runs missed jobs on wake (`man launchd.plist`) | `deploy/quant/com.financial.quant-paper.plist`; cutoffs in `docs/quant/operations.md:15-19,80-82` |
@@ -166,7 +180,7 @@ and work Phase 1, or pause the track while quant paper evidence accumulates.
   the 30% cap. It needs a new pre-registered variant, a separate account and state,
   and its own evidence.
 - GitHub Actions paper workflow. It stays manual: it keeps state in an evictable
-  cache and runs factory-default params, so its sessions don't count toward live.
+  cache, so its sessions don't count toward live.
 - Intraday monitoring, stop orders, shorting, leverage, RL policies in the live
   path, and any gate or threshold change. (PyPI publication was later prepared
   as `fa-quant` on owner request; see `docs/releasing.md`.)

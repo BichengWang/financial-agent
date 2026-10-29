@@ -23,6 +23,7 @@ def test_relative_paths_and_normalized_identity(config_path: Path) -> None:
         ('\n[risk]\nallowed_symbols = ["UNKNOWN"]\n', "allowed_symbols"),
         ('\n[risk]\nmax_orders = "oops"\n', "max_orders"),
         ('\n[promotion]\ngrid = "oops"\n', "promotion.grid"),
+        ("\n[promotion]\ndisclosed_trials = [1]\n", "promotion.disclosed_trials"),
         ("\n[unknown]\na = 1\n", "unknown"),
     ],
 )

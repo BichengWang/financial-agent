@@ -79,8 +79,10 @@ The default limits are for diversified ETF portfolios. SPY buy-and-hold and
 60/40 exceed the per-name cap; default dual momentum can also exceed it (one
 slot is 33.3%, or multiple slots may enter IEF). These are backtest comparisons,
 not ready-to-run live configurations. Passing statistics does not override risk.
-The trend grid includes a 35% cap variant; any selected identity must still obey
-the 30% execution cap. Configuration overrides can tighten limits, never loosen.
+The searched trend grid included a 35% cap variant; any selected identity must
+still obey the 30% execution cap. The examples now certify only the frozen
+`max_weight=0.25` identity, with all four searched variants disclosed to DSR.
+Configuration overrides can tighten limits, never loosen.
 
 | Limit | Default | Meaning |
 |---|---:|---|

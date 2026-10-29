@@ -72,8 +72,10 @@ uv run fa-quant certify --config examples/quant/paper.toml --end 2026-10-12 \
 
 `validate`/`certify` return 2 when any gate fails; failed certificates can be saved
 but cannot authorize live trading. With `--config`, settings come from the TOML;
-standalone strategy/provider/start flags do not override it. See
-[strategy research](docs/quant/strategy-research.md) for grids and interpretation.
+standalone strategy/provider/start flags do not override it. The examples certify
+one frozen identity (`target_vol=0.12, max_weight=0.25`) while DSR still deflates
+by all four disclosed trials. See [strategy research](docs/quant/strategy-research.md)
+for grids, disclosed trials and interpretation.
 
 The [committed real-data evidence](reports/quant/2026-10-default-strategy-evidence.md)
 uses the earliest common ETF date, **2006-02-06 through 2026-10-12**, unchanged

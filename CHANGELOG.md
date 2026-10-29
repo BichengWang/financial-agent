@@ -29,10 +29,22 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   pull request rules), `SECURITY.md` (private vulnerability reporting, now enabled),
   `CODE_OF_CONDUCT.md`, issue forms for bugs and features, and a pull request
   template. The README shows CI, PyPI, Python, docs and license badges.
+- `[promotion] disclosed_trials` lists every variant tried when the certified
+  grid is narrower, e.g. one frozen identity. DSR then deflates by all of them:
+  their count and the variance of their full-period Sharpes on the certified
+  data. The certificate records `n_trials` and `trial_sharpe_variance` in its
+  diagnostics; certificates without a disclosure are unchanged. The disclosure
+  must list each grid variant once. `evaluate_promotion` takes it as the
+  keyword `disclosed_trials`.
 
 ### Changed
 
 - The `Documentation` project URL and the README link to the site.
+- The Alpaca and IBKR example configs freeze the certified identity
+  (`target_vol=0.12, max_weight=0.25`): it is the configured strategy and the
+  only grid variant, with the four searched variants disclosed. A
+  re-certification can no longer switch parameters and restart paper evidence.
+  Pass the four-variant `--grid` to rerun the original search.
 - Saved notebooks shrank from 10.9 MB to 3.1 MB without re-execution: training
   logs keep their first and last 40 lines, very long printed lines are clipped,
   and plots are 256-colour PNGs. Each cut is marked in the output.

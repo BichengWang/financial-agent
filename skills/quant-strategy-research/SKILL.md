@@ -65,7 +65,11 @@ Report all eight checks against the policy value, not a subset:
   adds nothing, even when every variant is profitable.
 - A single pre-registered variant has `null` PBO and degradation slope. Do not
   add a grid just to certify; that adds multiple testing.
-- DSR corrects only for the disclosed grid, not for experiments run outside it.
+- DSR corrects only for the disclosed trials: the grid, or
+  `[promotion] disclosed_trials` when a variant was frozen after a wider search
+  (the examples freeze `target_vol=0.12, max_weight=0.25` out of four). Never
+  drop a tried variant from that list. Experiments run outside it are not
+  corrected for.
 - Costs default to 2 bps half-spread plus 3 bps slippage per side; taxes,
   impact, capacity and real auction fills are not modeled. Say so.
 

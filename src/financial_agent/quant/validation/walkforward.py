@@ -65,6 +65,23 @@ class _SwitchingStrategy:
         return pd.Series(0.0, index=data.symbols)
 
 
+def full_period_returns(
+    strategies: Sequence[Strategy], data: MarketData, config: BacktestConfig
+) -> pd.DataFrame:
+    """Net returns per strategy, strictly after the latest first decision.
+
+    Columns are positional variant indices; empty if any strategy never trades.
+    """
+    results = [run_backtest(strategy, data, config) for strategy in strategies]
+    returns = pd.concat([r.returns for r in results], axis=1)
+    returns.columns = pd.RangeIndex(len(results), name="variant")
+    active = [result.active_start for result in results]
+    if any(start is None for start in active):
+        return returns.iloc[:0]
+    latest = max(start for start in active if start is not None)
+    return returns.loc[returns.index > latest]
+
+
 def walk_forward(
     factory: StrategyFactory,
     grid: ParameterGrid,
@@ -93,15 +110,7 @@ def walk_forward(
     if not grid:
         raise ValueError("grid must contain at least one variant")
     variants = tuple(factory(dict(params)) for params in grid)
-    results = [run_backtest(strategy, data, config) for strategy in variants]
-    active = [result.active_start for result in results]
-    variant_returns = pd.concat([r.returns for r in results], axis=1)
-    variant_returns.columns = pd.RangeIndex(len(variants), name="variant")
-    if any(start is None for start in active):
-        variant_returns = variant_returns.iloc[:0]
-    else:
-        latest = max(start for start in active if start is not None)
-        variant_returns = variant_returns.loc[variant_returns.index > latest]
+    variant_returns = full_period_returns(variants, data, config)
     sessions = variant_returns.index
 
     def choose(training: pd.DataFrame) -> tuple[int, float]:

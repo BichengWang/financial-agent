@@ -208,8 +208,10 @@ def block_bootstrap_ci(returns, statistic, *, n: int, block: int, seed: int, alp
 def walk_forward(factory, grid, data, config, *, train_sessions, test_sessions,
                  embargo_sessions) -> WalkForwardResult
 #   stitched OOS returns, per-fold chosen params, full-period returns per variant
-def evaluate_promotion(name, grid, data, config, policy) -> PromotionReport
+def evaluate_promotion(name, grid, data, config, policy, *, disclosed_trials=()) -> PromotionReport
 #   PromotionReport.passed, .checks[Check(name, value, threshold, passed, detail)]
+#   disclosed_trials (2026-10-28): every variant tried when grid is narrower; DSR
+#   deflates by their count and full-period Sharpe variance
 def write_certificate(report, path) -> Path; def verify_certificate(path, *, max_age_days, ...) -> Certificate
 #   certificate hash covers strategy name + params, data fingerprint, policy hash, package version
 ```

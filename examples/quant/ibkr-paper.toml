@@ -6,6 +6,11 @@ state_dir = "../../var/quant-ibkr-paper"
 [strategy]
 name = "trend_vol_target"
 
+# Frozen identity (owner decision D2, 2026-10-28); see paper.toml.
+[strategy.params]
+target_vol = 0.12
+max_weight = 0.25
+
 [universe]
 symbols = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "IEF", "LQD", "GLD", "DBC", "VNQ"]
 
@@ -33,4 +38,5 @@ confirm_message_ids = [] # Unknown precautions halt; review IDs before allowing.
 [promotion]
 certificate = "../../var/quant-ibkr-paper/certificate.json"
 paper_journal = "../../var/quant-ibkr-paper/journal.jsonl"
-grid = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]
+grid = [{target_vol = 0.12, max_weight = 0.25}]
+disclosed_trials = [{target_vol = 0.08, max_weight = 0.25}, {target_vol = 0.08, max_weight = 0.35}, {target_vol = 0.12, max_weight = 0.25}, {target_vol = 0.12, max_weight = 0.35}]
