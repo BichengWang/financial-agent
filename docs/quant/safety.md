@@ -1,6 +1,6 @@
 # Safety and live authorization
 
-Version 1.2.1 is beta. Historical evidence and simulated fills do not establish
+Version 1.3.0 is beta. Historical evidence and simulated fills do not establish
 live performance. Risk checks bound proposed exposure at reference prices; they
 cannot guarantee an execution price or prevent losses during gaps or outages.
 
