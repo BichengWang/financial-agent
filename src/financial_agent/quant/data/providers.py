@@ -85,7 +85,8 @@ class CsvProvider:
 
 
 class YahooProvider:
-    def __init__(self, *, retries: int = 2, backoff: float = 0.5) -> None:
+    # Retries span about 30 s, so DNS that is still down just after a wake can recover.
+    def __init__(self, *, retries: int = 4, backoff: float = 2.0) -> None:
         if retries < 0 or backoff < 0:
             raise DataError("retries and backoff must be nonnegative")
         self.retries = retries

@@ -5,6 +5,16 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Yahoo downloads retry four times over about 30 seconds (2 s backoff, doubling)
+  instead of twice over 1.5 seconds. A scheduled session that starts just after
+  the host wakes no longer halts because DNS is not resolving yet. The 2026-10-30
+  paper session halted that way. Callers can still pass `retries` and `backoff`.
+- The launchd template runs the session wrapper under `/usr/bin/caffeinate -i`, so
+  the Mac doesn't idle-sleep in the middle of a session. The operations guide says
+  to keep a laptop host on power.
+
 ## [1.3.0] - 2026-10-28
 
 ### Fixed

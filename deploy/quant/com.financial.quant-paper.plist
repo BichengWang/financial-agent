@@ -8,12 +8,16 @@
      is 08:45 ET, and PT and ET change DST on the same dates. On an Eastern host
      use Hour 8, Minute 45.
      Keep the Mac awake first, for example: sudo pmset repeat wakeorpoweron MTWRF 05:40:00
+     and keep a laptop on power: on battery, macOS may run the job in maintenance
+     wakes of a few seconds and pause it in between. caffeinate -i keeps the Mac
+     from idle-sleeping until the session exits.
      Weekdays only; holidays skip. The runner refuses broker-backed submissions at
      or after 09:25 ET, so a late wake-up run halts instead of trading. -->
 <plist version="1.0"><dict>
   <key>Label</key><string>com.financial.quant-paper</string>
   <key>WorkingDirectory</key><string>/path/to/repo</string>
   <key>ProgramArguments</key><array>
+    <string>/usr/bin/caffeinate</string><string>-i</string>
     <string>/path/to/uv</string><string>run</string><string>--no-dev</string>
     <string>python</string><string>deploy/quant/run-session.py</string>
     <string>--env-file</string><string>/path/to/quant-paper.env</string>
