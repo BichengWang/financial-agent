@@ -26,13 +26,13 @@ flowchart LR
   K --- L
 ```
 
-## Status (2026-10-28)
+## Status (2026-11-07)
 
 | Stage | State |
 |---|---|
 | Research gate | `trend_vol_target` passes all eight checks with its frozen identity `target_vol=0.12, max_weight=0.25` (data through 2026-10-27, DSR 0.994) |
-| Paper evidence | Alpaca paper sessions scheduled weekdays before the open: first session 2026-10-29, first orders 2026-11-02; 0 of 20 clean sessions |
-| Live | Not authorized. Earliest decision 2026-11-25, if no paper session halts |
+| Paper evidence | Alpaca paper sessions run weekdays before the open, starting 2026-10-29. Of 20 sessions required, 6 are clean; the 2026-10-30 session halted on a market-data download |
+| Live | Not authorized. Earliest decision 2026-11-30, if no later session halts or is skipped |
 
 The [paper-to-live plan](plan/2026-10-18-quant-paper-to-live.md) tracks the
 remaining steps and decisions.

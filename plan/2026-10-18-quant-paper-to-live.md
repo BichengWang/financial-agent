@@ -1,7 +1,8 @@
 # Quant Next Steps: Paper Evidence to a Live Decision
 
 **Date:** 2026-10-18 · **Status:** PR1 delivered in v1.1.1, PR2–PR3 in v1.2.0,
-PR4 after D2 = (b); O1 done 2026-10-23, O2 loaded 2026-10-28 (wake pending), O3–O4 open · **Baseline:** v1.1.0 (`c54b9a3`);
+PR4 after D2 = (b); O1 done 2026-10-23, O2 loaded 2026-10-28 (wake pending), O3–O4 open;
+PR5 and D5 added 2026-11-07 · **Baseline:** v1.1.0 (`c54b9a3`);
 `pytest tests agents/equity/daily_investment_system/tests` 690 passed, 1 skipped;
 `fa-quant demo` runs end to end offline.
 
@@ -46,6 +47,38 @@ session is Wed **2026-11-25** (11-26 is a market holiday), so the earliest live
 decision moves to 2026-11-25. Only the week's first session submits orders, so
 only a late run on that day halts; a weekday the Mac sleeps through is skipped,
 not counted.
+
+**Update 2026-11-07.** Seven paper sessions ran from 10-29 to 11-06: six clean
+and one halt. `fa-quant status` reports 6 of 20 clean sessions, with the halt
+inside the evidence window.
+
+- *The 10-30 halt.* The session failed with `DataError` because Yahoo's host did
+  not resolve on any of the three download attempts, which span about 1.5 seconds.
+  The host is a MacBook. On battery and without the `pmset` wake, it ran the job
+  only during macOS maintenance wakes that last 2–5 seconds. From 11-04 to 11-06
+  each session took 6 to 17 minutes, paused between those wakes (`pmset -g log`,
+  journal timestamps). The power log starts on 10-31, so it can't show the 10-30
+  wake. [INFERENCE: on 10-30 the job most likely ran in such a wake, before the
+  network was back]
+- *Earliest live decision.* The halt leaves the window once 20 later sessions
+  exist. With no further halt and no skipped weekday, that is Mon **2026-11-30**.
+- *No alert went out.* The host env file has `FA_QUANT_ALERT_WEBHOOK` only in a
+  comment.
+- *Under-fills on the first rebalance.* On 11-02 the runner sent three OPG buys
+  at 08:45 ET. DBC (743 shares) and IWM (89) were canceled unfilled, and EFA filled
+  191 of 241, which is 26.5% of the planned notional. The account holds about
+  20% EFA against 75% targeted until the 11-09 rebalance.
+- *Why the orders under-filled.* Alpaca paper appears to fill OPG orders as
+  market orders against the opening quote and to cancel the remainder, while live
+  OPG orders take part in the real auction ([Alpaca forum](https://forum.alpaca.markets/t/recently-seeing-partial-fills-on-market-opg-order-s-p500-stocks/13906))
+  [INFERENCE: from forum reports, not Alpaca's documentation].
+- *How readiness counts it.* Readiness counts 11-02 as clean and measures
+  slippage on its one fill (1.0 bps). It doesn't measure fill rate.
+
+Before the 11-09 rebalance the owner finishes O2: keep the Mac on power and run
+the `pmset` wake. The owner also sets the alert webhook (O3). PR5 hardens the
+data download and keeps the Mac awake for the length of a session. D5 decides
+how the go-live review treats paper under-fills.
 
 ## 1. Where things stand
 
@@ -123,8 +156,11 @@ Each PR is opened from the latest `main` and merged before the next branches
 | PR2 | `feat/quant-live-readiness` | PR1 | Extract the certificate and paper-evidence evaluation from `authorize_live` into one `live_readiness(config, *, now) -> LiveReadiness`: clean sessions, halts and breaks in the window, fills, mean and per-fill slippage against the allowance, certificate age, verdict and identity match, and reasons. `authorize_live` adds only the environment/mode checks and the grant. `status_summary`/`render_status` show readiness for broker-backed paper configs, reading only the journal and certificate. Thresholds are unchanged | Existing promotion tests pass unchanged. On journal fixtures, `status` reports the same unmet reasons `authorize_live` would raise. `status` makes no broker call and grants nothing |
 | PR3 | `chore/quant-scheduler-alerts` | PR1 | Add a `deploy/quant` wrapper that loads credentials from a `chmod 600` env file, runs `fa-quant run --json`, and on a non-zero exit posts status and sanitized reasons to `FA_QUANT_ALERT_WEBHOOK`. The launchd/cron/systemd templates call the wrapper. The launchd template gives a Pacific-host example and the `pmset` wake. Update the operations schedule section | A halted session on the fake transport posts exactly one alert carrying status and reasons and no credential values. Exit codes pass through. Templates reference the wrapper |
 | PR4 | `feat/quant-disclosed-trials` | D2 = (b) | Certification carries disclosed prior trials (count and trial Sharpe variance) into DSR when the evaluated grid is smaller than what was tried (`validation/gate.py:211` uses `len(grid)` today). Freeze the single variant in the example configs and re-certify. Note the protocol change in the evidence report | DSR for a one-variant grid with disclosed trials of 4 equals the 4-trial computation from the 2026-10 evidence. A certificate without a disclosure is unchanged |
+| PR5 | `fix/quant-session-resilience` | — | `YahooProvider` spreads its default retries over about 30 seconds (4 retries, 2 s backoff doubling) instead of 1.5 seconds, so a DNS failure just after a wake doesn't halt the session. The launchd template runs the wrapper under `/usr/bin/caffeinate -i`, so the Mac stays awake until the session exits. The operations guide says to keep a laptop host on power. No policy, threshold or order change | Existing provider tests pass. With backoff patched to zero, the default provider recovers from four failed downloads and gives up after the fifth. The template's first program argument is `caffeinate` |
 
-Release: PR1 ships as `1.1.1`; PR2 and PR3 ship together as `1.2.0`.
+Release: PR1 ships as `1.1.1`; PR2 and PR3 ship together as `1.2.0`. PR5 ships
+as `1.3.1`. The host runs from the `~/my-code/financial-agent` checkout, so pulling
+`main` takes effect without a release.
 
 ## 5. Decisions needed
 
@@ -162,6 +198,23 @@ Phase 1 needs 10 consecutive gated runs, and 8 decisions in §6 of
 gate, `research_forecast` can't reach capital for about 15 years, and the gate
 must not be relaxed to change that. Options: resume daily runs as decision support
 and work Phase 1, or pause the track while quant paper evidence accumulates.
+
+**D5. Paper under-fills of opening-auction orders.** Alpaca paper can leave
+most of a weekly rebalance unfilled for a week: on 11-02 only 26.5% of the planned
+notional filled. Live OPG orders take part in the real auction. The evidence gate
+checks slippage on the fills it has. It doesn't check what share of the plan
+filled.
+
+- *(a) Keep OPG and disclose (recommended):* paper and live keep the same order
+  type, and the gate is unchanged. Show the filled share of planned notional for
+  each rebalance in `status` readiness, display only, and in the O4 review. The
+  review then sees how much of the plan the evidence covers.
+- *(b) Resubmit unfilled remainders at the next session's open:* brings paper
+  closer to the backtest's full fills. It is a runner policy change that live
+  would inherit, so it needs its own tests and owner approval.
+- *(c) Use day market orders at the open for Alpaca paper only:* these fill
+  more, but the paper evidence would no longer describe the order type live uses.
+  Not recommended.
 
 ## 6. Risks
 
