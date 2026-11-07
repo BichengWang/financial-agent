@@ -378,6 +378,35 @@ def test_yahoo_flat_single_symbol_and_exhausted_exception(
     assert attempts == 3
 
 
+def test_yahoo_default_retries_outlast_a_brief_outage(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    data = synthetic_market(["A"], 3, seed=1)
+    raw = pd.DataFrame({name.title(): getattr(data, name)["A"] for name in FIELDS})
+    raw.index = raw.index.tz_localize("UTC")
+    sleeps: list[float] = []
+    failures = 4
+
+    def flaky(*args: Any, **kwargs: Any) -> pd.DataFrame:
+        nonlocal failures
+        if failures:
+            failures -= 1
+            raise OSError("Could not resolve host")
+        return raw
+
+    monkeypatch.setattr("financial_agent.quant.data.providers.yf.download", flaky)
+    monkeypatch.setattr(
+        "financial_agent.quant.data.providers.time.sleep", sleeps.append
+    )
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    assert YahooProvider().fetch(["A"], start, end).fingerprint() == data.fingerprint()
+    assert sleeps == [2.0, 4.0, 8.0, 16.0]
+    failures, sleeps[:] = 5, []
+    with pytest.raises(DataError, match="no data for A"):
+        YahooProvider().fetch(["A"], start, end)
+    assert sleeps == [2.0, 4.0, 8.0, 16.0]
+
+
 def test_cache_retries_same_end_when_last_session_published_later(
     tmp_path: Path,
 ) -> None:

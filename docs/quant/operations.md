@@ -73,7 +73,12 @@ drops `EnvironmentFile=` because the wrapper loads and checks the file, and
 disables persistent catch-up. launchd uses the host timezone: for a Pacific host
 the template uses `Hour=5`, `Minute=45` on weekdays (PT and ET change daylight
 saving on the same dates, so 05:45 PT is 08:45 ET; Eastern hosts use 8 and 45).
-Wake the Mac first with `sudo pmset repeat wakeorpoweron MTWRF 05:40:00`. A late
+Wake the Mac first with `sudo pmset repeat wakeorpoweron MTWRF 05:40:00`, and
+keep a laptop host on power. On battery, macOS can run the job during maintenance
+wakes that last a few seconds and pause it in between; one session took 17 minutes
+this way. The template runs the wrapper under `/usr/bin/caffeinate -i`, so the Mac
+doesn't idle-sleep until the session exits. Market-data downloads retry for about
+30 seconds, which covers a network that is still coming up after a wake. A late
 catch-up run (for example launchd running a missed job on wake) halts at or after
 09:25 ET rather than trading. Test daylight-saving behavior and scheduler logs on
 your host. The [paper Actions workflow](../../.github/workflows/quant-paper.yml) is

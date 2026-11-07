@@ -2,6 +2,7 @@
 
 import importlib.util
 import json
+import plistlib
 import sys
 from pathlib import Path
 from types import ModuleType
@@ -12,6 +13,7 @@ import pytest
 from financial_agent.quant.risk import KillSwitch
 
 SCRIPT = Path(__file__).parents[3] / "deploy/quant/run-session.py"
+LAUNCHD = Path(__file__).parents[3] / "deploy/quant/com.financial.quant-paper.plist"
 SECRET = "paper-secret-0123456789"
 WEBHOOK = "https://hooks.example.test/services/T000/B000/webhook-token"
 SESSION_DAY = "2020-06-08"
@@ -313,3 +315,9 @@ def test_malformed_env_line_reports_only_its_number(
     message = str(caught.value)
     assert "line 2" in message
     assert SECRET not in message and bad not in message
+
+
+def test_launchd_template_keeps_the_mac_awake_for_the_wrapper() -> None:
+    arguments = plistlib.loads(LAUNCHD.read_bytes())["ProgramArguments"]
+    assert arguments[:2] == ["/usr/bin/caffeinate", "-i"]
+    assert "deploy/quant/run-session.py" in arguments
