@@ -12,8 +12,20 @@ import datetime as dt
 import hashlib
 from collections import defaultdict
 from pathlib import Path
+from typing import Iterator
 
 ARTIFACT_SUFFIXES = {".md", ".json"}
+
+
+def dated_packages(output_dir: Path) -> Iterator[tuple[Path, str]]:
+    """Every ``{model}-{YYYY-MM-DD}`` package directory with its date, in order."""
+    for package_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
+        run_date = package_dir.name[-10:]
+        try:
+            dt.date.fromisoformat(run_date)
+        except ValueError:
+            continue
+        yield package_dir, run_date
 
 
 def artifact_digests(package_dir: Path) -> dict[str, str]:
@@ -42,12 +54,8 @@ def find_clones(
     compared. Empty files are ignored: they carry no content to clone.
     """
     seen: dict[tuple[str, str], list[str]] = defaultdict(list)
-    for package_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
-        try:
-            dt.date.fromisoformat(package_dir.name[-10:])
-        except ValueError:
-            continue
-        if since is not None and package_dir.name[-10:] < since:
+    for package_dir, run_date in dated_packages(output_dir):
+        if since is not None and run_date < since:
             continue
         for name, digest in artifact_digests(package_dir).items():
             if digest != hashlib.sha256(b"").hexdigest():

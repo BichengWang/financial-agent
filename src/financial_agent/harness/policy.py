@@ -15,6 +15,7 @@ from typing import Any, Mapping
 
 DEFAULT_POLICY_PATH = Path(__file__).with_name("equity_policy.toml")
 FAMILIES = ("fund_z", "tech_z", "sent_z", "macro_z")
+KELLY_GATES = ("BLOCKED", "PENALTY", "OK", "CAP_BINDING")
 _MISSING = object()
 
 

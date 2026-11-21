@@ -13,10 +13,16 @@ from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-from financial_agent.harness.audit import audit_record
+from financial_agent.harness.audit import (
+    PREDICTIONS_FILE,
+    _num,
+    audit_record,
+    missing_core_etfs,
+)
+from financial_agent.harness.fingerprint import dated_packages
 from financial_agent.harness.lifecycle import RunStatus
 from financial_agent.harness.market_calendar import HOLIDAY, Session, session
-from financial_agent.harness.policy import FAMILIES, Policy
+from financial_agent.harness.policy import FAMILIES, KELLY_GATES, Policy
 
 # runbook.md § Artifact Table
 ALWAYS_ARTIFACTS = (
@@ -39,7 +45,6 @@ CHECKPOINT_ARTIFACTS = (
     "14_weekly_review.md",
     "16_monthly_review.md",
 )
-PREDICTIONS_FILE = "15_predictions.json"
 # rules.md § Input Classification: only these may block GO.
 REQUIRED_INPUTS = (
     "grounded_entry_price",
@@ -48,12 +53,6 @@ REQUIRED_INPUTS = (
     "next_earnings_date",
     "index_union_universe",
 )
-
-
-def _num(value: Any) -> float | None:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        return None
-    return float(value)
 
 
 def _family_z(record: Mapping[str, Any], policy: Policy) -> dict[str, float | None]:
@@ -71,12 +70,7 @@ def _kelly_gate(record: Mapping[str, Any], policy: Policy) -> str | None:
     otherwise the ``mu / sigma^2`` fallback. ``None`` when unsettleable."""
     explain = record.get("score_explainability")
     metrics = explain.get("metrics") if isinstance(explain, Mapping) else None
-    if isinstance(metrics, Mapping) and metrics.get("kelly_gate") in {
-        "BLOCKED",
-        "PENALTY",
-        "OK",
-        "CAP_BINDING",
-    }:
+    if isinstance(metrics, Mapping) and metrics.get("kelly_gate") in set(KELLY_GATES):
         return str(metrics["kelly_gate"])
     mu, sigma = _num(record.get("mu")), _num(record.get("sigma"))
     if mu is None or sigma is None or sigma <= 0:
@@ -394,12 +388,8 @@ def publish_gate(package_dir: Path, policy: Policy) -> list[str]:
 
         failures += [f"schema v1: {f}" for f in validate_payload(payload, policy)]
     if any(p.get("type", "EQUITY_ALPHA") == "EQUITY_ALPHA" for p in predictions):
-        forecast = {
-            p.get("ticker") for p in predictions if p.get("type") == "MARKET_FORECAST"
-        }
-        for etf in policy.get("market_forecast.tickers"):
-            if etf not in forecast:
-                failures.append(f"ranked names but no MARKET_FORECAST record for {etf}")
+        for etf in missing_core_etfs(predictions, policy):
+            failures.append(f"ranked names but no MARKET_FORECAST record for {etf}")
     for record in predictions:
         for finding in audit_record(record, policy, package=package_dir.name).findings:
             if finding.severity == "error":
@@ -508,12 +498,7 @@ def replay_history(
 ) -> list[tuple[str, StatusReplay]]:
     """``replay_status`` for every dated package with a ledger, oldest first."""
     replays: list[tuple[str, StatusReplay]] = []
-    for package_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
-        run_date = package_dir.name[-10:]
-        try:
-            dt.date.fromisoformat(run_date)
-        except ValueError:
-            continue
+    for package_dir, run_date in dated_packages(output_dir):
         if (since and run_date < since) or (as_of and run_date > as_of):
             continue
         replay = replay_status(package_dir, policy)

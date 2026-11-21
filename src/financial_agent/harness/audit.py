@@ -19,10 +19,12 @@ import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Iterable, Mapping
 
+from financial_agent.harness.fingerprint import dated_packages
 from financial_agent.harness.policy import FAMILIES, Policy
 
+PREDICTIONS_FILE = "15_predictions.json"
 REQUIRED_FIELDS = (
     "run_date",
     "model",
@@ -43,15 +45,14 @@ REQUIRED_FIELDS = (
     "status",
     "thesis",
 )
+PRICE_TAGS = ("LIVE", "DELAYED", "OFFICIAL_FILING", "HISTORICAL", "ILLUSTRATIVE_REF")
+SIGMA_SOURCES = ("REALIZED_VOL_30D", "IV30", "SECTOR_MEDIAN", "SECTOR_MEDIAN_ILLUS")
+CONFIDENCE = ("HIGH", "MEDIUM", "LOW")
 ENUMS: dict[str, frozenset[str]] = {
     "type": frozenset({"EQUITY_ALPHA", "MARKET_FORECAST"}),
-    "price_tag": frozenset(
-        {"LIVE", "DELAYED", "OFFICIAL_FILING", "HISTORICAL", "ILLUSTRATIVE_REF"}
-    ),
-    "sigma_source": frozenset(
-        {"REALIZED_VOL_30D", "IV30", "SECTOR_MEDIAN", "SECTOR_MEDIAN_ILLUS"}
-    ),
-    "confidence": frozenset({"HIGH", "MEDIUM", "LOW"}),
+    "price_tag": frozenset(PRICE_TAGS),
+    "sigma_source": frozenset(SIGMA_SOURCES),
+    "confidence": frozenset(CONFIDENCE),
 }
 # settlement_ledger.py: first name canonical, the rest legacy spellings.
 SETTLEMENT_LEGACY_KEYS = {
@@ -299,7 +300,7 @@ class AuditReport:
     def to_markdown(self) -> str:
         lines = [
             f"Packages audited: {self.packages} "
-            f"({len(self.packages_without_ledger)} without 15_predictions.json); "
+            f"({len(self.packages_without_ledger)} without {PREDICTIONS_FILE}); "
             f"prediction records: {self.records}; settlement rows: "
             f"{self.settlement_rows}.",
             "",
@@ -335,21 +336,26 @@ class AuditReport:
         return "\n".join(lines)
 
 
+def missing_core_etfs(
+    predictions: Iterable[Mapping[str, Any]], policy: Policy
+) -> list[str]:
+    """Core ETFs without a ``MARKET_FORECAST`` record, in policy order."""
+    forecast = {
+        p.get("ticker") for p in predictions if p.get("type") == "MARKET_FORECAST"
+    }
+    return [t for t in policy.get("market_forecast.tickers") if t not in forecast]
+
+
 def audit_output_dir(
     output_dir: Path, policy: Policy, *, as_of: str | None = None
 ) -> AuditReport:
     """Audit every ``{model}-{YYYY-MM-DD}`` package, optionally up to ``as_of``."""
     report = AuditReport()
-    for package_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
-        run_date = package_dir.name[-10:]
-        try:
-            dt.date.fromisoformat(run_date)
-        except ValueError:
-            continue
+    for package_dir, run_date in dated_packages(output_dir):
         if as_of is not None and run_date > as_of:
             continue
         report.packages += 1
-        path = package_dir / "15_predictions.json"
+        path = package_dir / PREDICTIONS_FILE
         if not path.exists():
             report.packages_without_ledger.append(package_dir.name)
             continue
@@ -367,12 +373,7 @@ def audit_output_dir(
             p.get("type", "EQUITY_ALPHA") == "EQUITY_ALPHA" for p in predictions
         )
         if ranked and run_date >= CORE_ETF_RULE_EFFECTIVE:
-            etfs = {
-                p.get("ticker")
-                for p in predictions
-                if p.get("type") == "MARKET_FORECAST"
-            }
-            missing = sorted(set(policy.get("market_forecast.tickers")) - etfs)
+            missing = sorted(set(missing_core_etfs(predictions, policy)))
             report.checked["package.core_etf_forecasts"] += 1
             if missing:
                 report.findings.append(

@@ -23,17 +23,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import IO, Any, Callable, Mapping
 
-from financial_agent.harness.gates import go_reachability, replay_history
+from financial_agent.harness.gates import (
+    PREDICTIONS_FILE,
+    go_reachability,
+    replay_history,
+)
 from financial_agent.harness.kernels import (
     EquityInputs,
-    Holding,
     KernelError,
     MarketInputs,
     PriceRisk,
-    equity_record,
-    market_forecast_records,
-    portfolio_feasibility,
-    price_risk,
 )
 from financial_agent.harness.manifest import (
     gate_report,
@@ -43,7 +42,7 @@ from financial_agent.harness.manifest import (
 from financial_agent.harness.market_calendar import session
 from financial_agent.harness.policy import FAMILIES, Policy, load_policy
 from financial_agent.harness.schema import validate_payload
-from financial_agent.harness.scoring import score_request
+from financial_agent.harness.scoring import run_kernel
 
 SERVER_INFO = {"name": "financial-agent-harness", "version": "0.1.0"}
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
@@ -215,15 +214,7 @@ class HarnessServer:
                     },
                     ("run_date", "model", "names"),
                 ),
-                lambda a: [
-                    equity_record(
-                        a["run_date"],
-                        a["model"],
-                        EquityInputs.from_mapping(item),
-                        policy,
-                    )
-                    for item in a["names"]
-                ],
+                lambda a: run_kernel("equity", a, policy),
             ),
             Tool(
                 "build_market_forecasts",
@@ -243,13 +234,7 @@ class HarnessServer:
                     },
                     ("run_date", "model", "regime", "etfs"),
                 ),
-                lambda a: market_forecast_records(
-                    a["run_date"],
-                    a["model"],
-                    a["regime"],
-                    [MarketInputs.from_mapping(item) for item in a["etfs"]],
-                    policy,
-                ),
+                lambda a: run_kernel("market", a, policy),
             ),
             Tool(
                 "price_risk",
@@ -259,11 +244,7 @@ class HarnessServer:
                     {"closes": SERIES, "spy_closes": SERIES, "tlt_closes": SERIES},
                     ("closes", "spy_closes"),
                 ),
-                lambda a: vars(
-                    price_risk(
-                        a["closes"], a["spy_closes"], tlt_closes=a.get("tlt_closes")
-                    )
-                ),
+                lambda a: run_kernel("risk", a, policy),
             ),
             Tool(
                 "portfolio_feasibility",
@@ -290,13 +271,7 @@ class HarnessServer:
                     },
                     ("holdings", "spy_closes"),
                 ),
-                lambda a: vars(
-                    portfolio_feasibility(
-                        [Holding.from_mapping(h) for h in a["holdings"]],
-                        a["spy_closes"],
-                        policy,
-                    )
-                ),
+                lambda a: run_kernel("portfolio", a, policy),
             ),
             Tool(
                 "score_universe",
@@ -341,7 +316,7 @@ class HarnessServer:
                     },
                     ("indicators", "data_quality"),
                 ),
-                lambda a: score_request(a, policy),
+                lambda a: run_kernel("score", a, policy),
             ),
             Tool(
                 "policy",
@@ -353,7 +328,7 @@ class HarnessServer:
         ]
 
     def _schema_check(self, args: Mapping[str, Any]) -> list[str]:
-        path = self._package(args) / "15_predictions.json"
+        path = self._package(args) / PREDICTIONS_FILE
         if not path.exists():
             raise ToolError(f"{path.name} not found in {path.parent.name}")
         return validate_payload(
