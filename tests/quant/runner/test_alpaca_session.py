@@ -12,7 +12,8 @@ from financial_agent.quant.execution import AlpacaBroker, Journal
 from financial_agent.quant.execution.alpaca import LIVE_URL
 from financial_agent.quant.runner import TradingConfig, authorize_live, run_session
 from .conftest import journal_clock, ny_clock
-from .test_promotion import certificate, paper_evidence
+from .test_promotion import authorize, certificate, paper_evidence
+from .test_session import paper
 
 
 class Response:
@@ -270,7 +271,6 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
 ) -> None:
     from datetime import timedelta
     from financial_agent.harness.market_calendar import session
-    from financial_agent.quant.execution import PaperBroker
     from financial_agent.quant.runner import PromotionError
 
     config = replace(
@@ -283,11 +283,7 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
     broker = (
         AlpacaBroker("key", "secret", session=exchange)
         if kind == "alpaca"
-        else PaperBroker(
-            config.state_dir / "paper.json",
-            costs=config.backtest.costs,
-            initial_cash=config.initial_cash,
-        )
+        else paper(config)
     )
     day = date(2020, 6, 8)
     previous: date | None = None
@@ -310,22 +306,9 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
     }
     if kind == "paper":
         with pytest.raises(PromotionError, match="paper sessions 0"):
-            authorize_live(
-                config,
-                certificate_path=cert,
-                paper_journal_path=journal.path,
-                environ={"FA_QUANT_ALLOW_LIVE": "1"},
-            )
+            authorize(config, cert, journal.path)
     else:
-        assert (
-            authorize_live(
-                config,
-                certificate_path=cert,
-                paper_journal_path=journal.path,
-                environ={"FA_QUANT_ALLOW_LIVE": "1"},
-            ).strategy
-            == config.strategy_name
-        )
+        assert authorize(config, cert, journal.path).strategy == config.strategy_name
 
 
 @pytest.mark.parametrize(

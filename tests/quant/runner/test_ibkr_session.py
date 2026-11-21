@@ -73,21 +73,21 @@ def ibkr_config(config: TradingConfig) -> TradingConfig:
     )
 
 
+def ibkr_broker(config: TradingConfig, transport: Gateway) -> IBKRBroker:
+    return IBKRBroker(config.account_id or "", session=transport, conids=config.conids)
+
+
 def test_ibkr_paper_round_trip(config: TradingConfig, first_day: date) -> None:
     config = ibkr_config(config)
     transport = Gateway()
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     first = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert first.status == "TRADED", first.reasons
     rerun = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert rerun.status == "NO_CHANGE"
     fill(transport, config, first_day)
     # A fresh adapter has no in-memory original order quantities; the journal does.
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     day = date(2020, 6, 9)
     second = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert second.status != "HALTED", second.reasons
@@ -107,9 +107,7 @@ def test_question_halts_without_double_submission(
     config = ibkr_config(config)
     transport = Gateway()
     transport.questions = [["o354"]]
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     report = run_session(
         config, today=first_day, broker=broker, now=ny_clock(first_day)
     )
@@ -192,9 +190,7 @@ def test_opening_auction_is_final(
     broker: Broker
     if kind == "ibkr":
         transport = Gateway()
-        broker = IBKRBroker(
-            config.account_id or "", session=transport, conids=config.conids
-        )
+        broker = ibkr_broker(config, transport)
     else:
         config = replace(config, broker_kind="alpaca")
         transport = Exchange()
@@ -298,9 +294,7 @@ def test_missing_order_before_auction_still_halts(
 ) -> None:
     config = ibkr_config(config)
     transport = Gateway()
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     clock = ny_clock(first_day)
     assert run_session(config, today=first_day, broker=broker, now=clock).status == (
         "TRADED"
@@ -343,9 +337,7 @@ def test_eleven_order_session_validates_account_once(tmp_path: Path) -> None:
     )
     config = TradingConfig.load(path)
     transport = Gateway()
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     day = date(2020, 6, 8)
     report = run_session(config, today=day, broker=broker, now=ny_clock(day))
     assert report.status == "TRADED", report.reasons
@@ -361,9 +353,7 @@ def test_ibkr_late_run_halts_before_any_intent(
 
     config = ibkr_config(config)
     transport = Gateway()
-    broker = IBKRBroker(
-        config.account_id or "", session=transport, conids=config.conids
-    )
+    broker = ibkr_broker(config, transport)
     clock = ny_clock(first_day, time(9, 26))
     report = run_session(config, today=first_day, broker=broker, now=clock)
     assert report.status == "HALTED"
