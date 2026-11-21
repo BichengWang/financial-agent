@@ -326,8 +326,6 @@ def test_certificate_rejects_malformed_json_and_bad_age_limit(tmp_path: Path) ->
 
 
 def test_certificate_undefined_diagnostics_roundtrip_as_null(tmp_path: Path) -> None:
-    import math
-
     report = replace(
         report_fixture(),
         diagnostics={"pbo": 0.5, "degradation_slope": float("nan")},
@@ -340,8 +338,6 @@ def test_certificate_undefined_diagnostics_roundtrip_as_null(tmp_path: Path) -> 
 
 
 def test_single_registered_variant_can_pass_and_noise_fails(tmp_path: Path) -> None:
-    import math
-
     policy = loaded_policy(tmp_path)
     grid = [{"weights": {"SPY": 1.0}}]
     config = BacktestConfig(cash_buffer=0.02)
