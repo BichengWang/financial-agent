@@ -91,6 +91,34 @@ def run_backtest(
         if i in pending:
             decision, deltas = pending.pop(i)
             buys: list[tuple[str, float, float, float]] = []
+
+            def record(
+                symbol: str,
+                side: str,
+                shares: float,
+                reference: float,
+                price: float,
+                commission: float,
+            ) -> None:
+                nonlocal traded
+                slip = shares * abs(price - reference)
+                daily_costs[i] += commission + slip
+                traded += shares * price
+                trades.append(
+                    dict(
+                        decision_session=decision,
+                        fill_session=session,
+                        symbol=symbol,
+                        side=side,
+                        shares=shares,
+                        reference_price=reference,
+                        fill_price=price,
+                        notional=shares * price,
+                        commission=commission,
+                        slippage_cost=slip,
+                    )
+                )
+
             for symbol, delta in sorted(
                 deltas.items(), key=lambda item: (item[1] > 0, item[0])
             ):
@@ -117,23 +145,7 @@ def run_backtest(
                     continue
                 cash += shares * price - commission
                 positions[j] -= shares
-                slip = shares * abs(price - reference)
-                daily_costs[i] += commission + slip
-                traded += shares * price
-                trades.append(
-                    dict(
-                        decision_session=decision,
-                        fill_session=session,
-                        symbol=symbol,
-                        side=side,
-                        shares=shares,
-                        reference_price=reference,
-                        fill_price=price,
-                        notional=shares * price,
-                        commission=commission,
-                        slippage_cost=slip,
-                    )
-                )
+                record(symbol, side, shares, reference, price, commission)
 
             def quantities(factor: float) -> list[float]:
                 return [
@@ -179,23 +191,7 @@ def run_backtest(
                 commission = config.costs.commission(shares, price)
                 cash -= shares * price + commission
                 positions[lookup[symbol]] += shares
-                slip = shares * abs(price - reference)
-                daily_costs[i] += commission + slip
-                traded += shares * price
-                trades.append(
-                    dict(
-                        decision_session=decision,
-                        fill_session=session,
-                        symbol=symbol,
-                        side="buy",
-                        shares=shares,
-                        reference_price=reference,
-                        fill_price=price,
-                        notional=shares * price,
-                        commission=commission,
-                        slippage_cost=slip,
-                    )
-                )
+                record(symbol, "buy", shares, reference, price, commission)
         valid = np.isfinite(closes[i]) & (closes[i] > 0)
         marks[valid] = closes[i, valid]
         nav = cash + float(positions @ marks)
