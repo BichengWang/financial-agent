@@ -57,6 +57,8 @@ def write_csv(data: MarketData, directory: str | Path) -> None:
 
 
 class CsvProvider:
+    source = "csv"
+
     def __init__(self, directory: str | Path, *, adjusted: bool = True) -> None:
         self.directory = Path(directory)
         self.adjusted = adjusted
@@ -72,7 +74,9 @@ class CsvProvider:
                     raise DataError(f"{symbol}: expected date,{','.join(FIELDS)}")
                 frame.index = pd.DatetimeIndex(pd.to_datetime(frame.pop("date")))
                 # Validate before slicing, so invalid source rows cannot be hidden.
-                bars = assemble({symbol: frame}, adjusted=self.adjusted, source="csv")
+                bars = assemble(
+                    {symbol: frame}, adjusted=self.adjusted, source=self.source
+                )
                 # assemble sorts; enforce the original ordering as well.
                 if not frame.index.is_monotonic_increasing:
                     raise DataError(f"{symbol}: sessions must be ascending")
@@ -81,10 +85,12 @@ class CsvProvider:
                 )
             except (OSError, ValueError, KeyError) as exc:
                 raise DataError(f"{symbol}: cannot read {path}: {exc}") from exc
-        return assemble(frames, adjusted=self.adjusted, source="csv")
+        return assemble(frames, adjusted=self.adjusted, source=self.source)
 
 
 class YahooProvider:
+    source = "yahoo"
+
     # Retries span about 30 s, so DNS that is still down just after a wake can recover.
     def __init__(self, *, retries: int = 4, backoff: float = 2.0) -> None:
         if retries < 0 or backoff < 0:
@@ -128,7 +134,7 @@ class YahooProvider:
                     frame.index = pd.DatetimeIndex(frame.index).tz_localize(None)
                     frames[symbol] = frame[list(FIELDS)]
                 if not missing:
-                    return assemble(frames, adjusted=True, source="yahoo").window(
+                    return assemble(frames, adjusted=True, source=self.source).window(
                         pd.Timestamp(start), pd.Timestamp(end)
                     )
             except Exception as exc:

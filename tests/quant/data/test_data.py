@@ -516,3 +516,38 @@ def test_cache_trusts_a_last_bar_retrieved_on_a_later_new_york_date(
     path.write_text(json.dumps(metadata))
     CachedProvider(inner, tmp_path).fetch(["A"], start, end)
     assert len(inner.calls) == (2 if refetched else 1)
+
+
+def test_cache_refetches_a_symbol_cached_from_another_source(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    fixture = market(20)
+    write_csv(fixture, tmp_path / "csv")
+    yahoo = synthetic_market(["A", "B"], 20, seed=7)
+    raw = pd.concat(
+        {
+            symbol: pd.DataFrame(
+                {name.title(): getattr(yahoo, name)[symbol] for name in FIELDS}
+            )
+            for symbol in yahoo.symbols
+        },
+        axis=1,
+    )
+    downloads: list[list[str]] = []
+
+    def download(symbols: list[str], **kwargs: Any) -> pd.DataFrame:
+        downloads.append(symbols)
+        return raw
+
+    monkeypatch.setattr("financial_agent.quant.data.providers.yf.download", download)
+    start, end = fixture.sessions[0].date(), fixture.sessions[-1].date()
+    csv, cache = CsvProvider(tmp_path / "csv"), tmp_path / "cache"
+    CachedProvider(csv, cache).fetch(["A", "B"], start, end)
+    served = CachedProvider(YahooProvider(), cache).fetch(["A", "B"], start, end)
+    assert served.source == "yahoo"
+    assert served.fingerprint() == yahoo.fingerprint()
+    assert downloads == [["A"], ["B"]]
+    CachedProvider(YahooProvider(), cache).fetch(["A", "B"], start, end)
+    assert len(downloads) == 2
+    back = CachedProvider(csv, cache).fetch(["A", "B"], start, end)
+    assert back.source == "csv" and back.fingerprint() == fixture.fingerprint()

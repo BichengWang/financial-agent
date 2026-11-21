@@ -33,6 +33,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   New York date, or with no readable retrieval time. A bar cached while the market
   was open used to be served for that end date forever, so the next session could
   decide on an intraday price.
+- The market-data cache fetches a symbol again in full when its cached bars came
+  from another provider. A cache filled by `--provider csv` used to be served for
+  `--provider yahoo` without contacting Yahoo, labelled `csv`.
 
 ## [1.3.0] - 2026-10-28
 

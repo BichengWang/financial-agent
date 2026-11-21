@@ -85,8 +85,11 @@ class CachedProvider:
             raise DataError(f"cache: invalid metadata: {exc}") from exc
         frames = {}
         conventions: set[tuple[bool, str]] = set()
+        inner_source = getattr(self.inner, "source", None)
         for symbol in symbols:
             record: dict[str, Any] = metadata.get(symbol, {})
+            if inner_source is not None and record.get("source") != inner_source:
+                record = {}  # bars from another provider are not a cache hit
             cached = None
             if (
                 record.get("first_session") is not None
