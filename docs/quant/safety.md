@@ -46,7 +46,8 @@ requires a live Alpaca or IBKR configuration, `FA_QUANT_ALLOW_LIVE=1`, and:
 The grant expires after 15 minutes. Authorization runs before constructing the
 live broker; its endpoint cannot be selected without a grant. Certificate hashes
 include package version and policy/data identifiers for audit, but the verifier
-does not independently demand equality to today's installed version or universe. Review those explicitly before promotion; recreate evidence after a
+does not independently demand equality to today's installed version or
+universe. Review those explicitly before promotion; recreate evidence after a
 material change. The paper history is filtered by identity and date, but there
 is no separate maximum paper-history age check.
 
