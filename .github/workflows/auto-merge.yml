@@ -22,6 +22,11 @@ jobs:
   automerge:
     if: github.event.action != 'closed' && github.event.pull_request.merged == false
     runs-on: ubuntu-latest
+    # Opening a PR that already has the label fires `opened` and `labeled` together. One run per PR
+    # at a time: the later run sees the PR already merged and skips instead of failing.
+    concurrency:
+      group: automerge-${{ github.event.pull_request.number }}
+      cancel-in-progress: false
     steps:
       - name: Check if PR is mergeable and has "auto-merge" label
         id: check
@@ -33,6 +38,11 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.payload.pull_request.number,
             });
+            if (pr.data.state !== 'open') {
+              core.info(`PR is ${pr.data.merged ? 'already merged' : 'closed'}. Skipping automerge.`);
+              core.setOutput('should_automerge', 'false');
+              return;
+            }
             const labels = pr.data.labels.map(l => l.name);
             if (!labels.includes('auto-merge')) {
               core.info('PR does not have the "auto-merge" label. Skipping automerge.');
@@ -42,15 +52,22 @@ jobs:
             if (!pr.data.mergeable) {
               core.setFailed('PR is not mergeable.');
             }
-            if (pr.data.state !== 'open') {
-              core.setFailed('PR is not open.');
-            }
             core.setOutput('should_automerge', 'true')
 
       - name: Enable automerge
         if: steps.check.outputs.should_automerge == 'true'
         shell: bash
-        run: gh pr merge -R "${{ github.repository }}" --auto --squash ${{ github.event.pull_request.number }} --delete-branch
+        # Another run may have started the merge between the check and this step; that is success.
+        run: |
+          if ! out=$(gh pr merge -R "${{ github.repository }}" --auto --squash ${{ github.event.pull_request.number }} --delete-branch 2>&1); then
+            echo "$out"
+            if grep -qiE 'merge already in progress|already merged' <<<"$out"; then
+              echo "::notice::PR is already being merged by another run."
+              exit 0
+            fi
+            exit 1
+          fi
+          echo "$out"
         env:
           GH_TOKEN: ${{ github.token }}
 
