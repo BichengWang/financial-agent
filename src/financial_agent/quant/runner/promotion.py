@@ -9,14 +9,13 @@ import math
 from pathlib import Path
 import tomllib
 from typing import Any
-from zoneinfo import ZoneInfo
 
 from ..backtest import CostModel
+from ..data.cache import EXCHANGE_TZ
 from ..execution import Journal, LiveAuthorization
 from ..validation import CertificateError, PromotionPolicy, verify_certificate
+from ..validation.gate import POLICY_PATH
 from .config import TradingConfig
-
-EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 
 class PromotionError(ValueError):
@@ -39,8 +38,7 @@ class LivePolicy:
     @classmethod
     def load(cls) -> "LivePolicy":
         """Thresholds are packaged policy data, never per-run overrides."""
-        path = Path(__file__).parents[1] / "quant_policy.toml"
-        return cls(**tomllib.loads(path.read_text())["live"])
+        return cls(**tomllib.loads(POLICY_PATH.read_text())["live"])
 
 
 def _canonical(value: Any) -> bytes:

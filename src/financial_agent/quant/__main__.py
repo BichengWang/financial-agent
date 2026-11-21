@@ -48,6 +48,15 @@ ETF_UNIVERSE = (
     "DBC",
     "VNQ",
 )
+COMMAND_HELP = {
+    "backtest": "Simulate net portfolio returns",
+    "validate": "Evaluate statistical promotion gates",
+    "certify": "Save a hashed validation certificate",
+    "kill": "Engage the persistent trading stop",
+    "unkill": "Release a stop with operator justification",
+}
+CONFIG_HELP = "Trading TOML; relative paths resolve from its directory"
+JSON_HELP = "Emit machine-readable JSON"
 
 
 class Parser(argparse.ArgumentParser):
@@ -71,12 +80,7 @@ def build_parser() -> argparse.ArgumentParser:
                 "check": "Check bar quality and freshness",
             }[action],
         )
-        item.add_argument(
-            "--config",
-            type=Path,
-            required=True,
-            help="Trading TOML; relative paths resolve from its directory",
-        )
+        item.add_argument("--config", type=Path, required=True, help=CONFIG_HELP)
         item.add_argument(
             "--end",
             type=date.fromisoformat,
@@ -91,25 +95,10 @@ def build_parser() -> argparse.ArgumentParser:
         item.add_argument(
             "--output-dir", type=Path, help="Export per-symbol CSV bars here"
         )
-        item.add_argument(
-            "--json", action="store_true", help="Emit machine-readable JSON"
-        )
+        item.add_argument("--json", action="store_true", help=JSON_HELP)
     for command in ("backtest", "validate", "certify"):
-        item = sub.add_parser(
-            command,
-            help={
-                "backtest": "Simulate net portfolio returns",
-                "validate": "Evaluate statistical promotion gates",
-                "certify": "Save a hashed validation certificate",
-                "kill": "Engage the persistent trading stop",
-                "unkill": "Release a stop with operator justification",
-            }[command],
-        )
-        item.add_argument(
-            "--config",
-            type=Path,
-            help="Trading TOML; relative paths resolve from its directory",
-        )
+        item = sub.add_parser(command, help=COMMAND_HELP[command])
+        item.add_argument("--config", type=Path, help=CONFIG_HELP)
         item.add_argument(
             "--strategy",
             default="trend_vol_target",
@@ -149,9 +138,7 @@ def build_parser() -> argparse.ArgumentParser:
             default=date.today(),
             help="Inclusive final data session (YYYY-MM-DD)",
         )
-        item.add_argument(
-            "--json", action="store_true", help="Emit machine-readable JSON"
-        )
+        item.add_argument("--json", action="store_true", help=JSON_HELP)
         if command != "backtest":
             item.add_argument("--grid", help="JSON array of parameter objects")
             item.add_argument(
@@ -167,12 +154,7 @@ def build_parser() -> argparse.ArgumentParser:
                 help="Certificate JSON destination (also saves failed verdicts)",
             )
     run = sub.add_parser("run", help="Run one fail-closed trading session")
-    run.add_argument(
-        "--config",
-        type=Path,
-        required=True,
-        help="Trading TOML; relative paths resolve from its directory",
-    )
+    run.add_argument("--config", type=Path, required=True, help=CONFIG_HELP)
     run.add_argument(
         "--today",
         type=date.fromisoformat,
@@ -184,34 +166,13 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Preview orders without submission; still journals observations",
     )
-    run.add_argument("--json", action="store_true", help="Emit machine-readable JSON")
+    run.add_argument("--json", action="store_true", help=JSON_HELP)
     status = sub.add_parser("status", help="Read persisted account and journal status")
-    status.add_argument(
-        "--config",
-        type=Path,
-        required=True,
-        help="Trading TOML; relative paths resolve from its directory",
-    )
-    status.add_argument(
-        "--json", action="store_true", help="Emit machine-readable JSON"
-    )
+    status.add_argument("--config", type=Path, required=True, help=CONFIG_HELP)
+    status.add_argument("--json", action="store_true", help=JSON_HELP)
     for command in ("kill", "unkill"):
-        item = sub.add_parser(
-            command,
-            help={
-                "backtest": "Simulate net portfolio returns",
-                "validate": "Evaluate statistical promotion gates",
-                "certify": "Save a hashed validation certificate",
-                "kill": "Engage the persistent trading stop",
-                "unkill": "Release a stop with operator justification",
-            }[command],
-        )
-        item.add_argument(
-            "--config",
-            type=Path,
-            required=True,
-            help="Trading TOML; relative paths resolve from its directory",
-        )
+        item = sub.add_parser(command, help=COMMAND_HELP[command])
+        item.add_argument("--config", type=Path, required=True, help=CONFIG_HELP)
         item.add_argument(
             "--reason", required=True, help="Nonempty operator justification"
         )
