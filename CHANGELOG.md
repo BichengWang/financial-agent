@@ -5,6 +5,10 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- The RL examples moved from `example/rl/` to `examples/rl/`.
+
 ### Removed
 
 - Unused names from the historical `financial_agent.trading` package, which the

@@ -6,11 +6,6 @@ This example demonstrates how to use the RL framework to train a Q-learning
 agent on a simple grid world environment.
 """
 
-import sys
-import os
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-
 from financial_agent.rl import QLearningAgent, SimpleGridWorld, Trainer
 
 
