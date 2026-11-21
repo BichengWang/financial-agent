@@ -69,14 +69,22 @@ def test_most_recent_trading_day_at_or_before_weekend() -> None:
     )
 
 
-def test_new_years_observance_crossing_a_year_boundary_is_not_a_trading_day() -> None:
-    # Jan 1 2022 is a Saturday, so NYSE observed New Year's Day on the
-    # preceding Friday, 2021-12-31 -- a holiday whose date falls in a
-    # *different* calendar year than the Jan-1 holiday that produced it.
-    assert not sl.is_trading_day(dt.date(2021, 12, 31))
-    assert not sl.is_trading_day(dt.date(2027, 12, 31))  # 2028-01-01 is a Saturday
-    # An ordinary Dec 31 (no adjacent-year Saturday New Year's) is unaffected.
+def test_saturday_new_years_day_is_not_observed_on_the_prior_friday() -> None:
+    # NYSE Rule 7.2: Jan 1 on a Saturday has no observed closure, so
+    # 2021-12-31 and 2027-12-31 are ordinary sessions.
+    assert sl.is_trading_day(dt.date(2021, 12, 31))
+    assert sl.is_trading_day(dt.date(2027, 12, 31))
+    assert sl.is_trading_day(dt.date(2022, 1, 3))
+    assert sl.is_trading_day(dt.date(2028, 1, 3))
     assert sl.is_trading_day(dt.date(2025, 12, 31))
+
+
+def test_sunday_new_years_day_is_observed_on_monday() -> None:
+    assert not sl.is_trading_day(dt.date(2023, 1, 2))
+
+
+def test_saturday_christmas_is_still_observed_on_friday() -> None:
+    assert not sl.is_trading_day(dt.date(2021, 12, 24))
 
 
 # ---------------------------------------------------------------------------

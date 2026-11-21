@@ -13,6 +13,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `fa-quant kill` engages the stop even while a session is running. It used to
   fail with `SessionLocked` and write no `KILL` file. If the session lock is held
   the journal entry is skipped and the command says so.
+- The NYSE calendar no longer closes on the Friday before a Saturday January 1,
+  so 2021-12-31 and 2027-12-31 are trading days; a Sunday January 1 is still
+  observed on Monday.
 - Yahoo downloads retry four times over about 30 seconds (2 s backoff, doubling)
   instead of twice over 1.5 seconds. A scheduled session that starts just after
   the host wakes no longer halts because DNS is not resolving yet. The 2026-10-30
