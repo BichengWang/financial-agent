@@ -39,8 +39,9 @@ requires a live Alpaca or IBKR configuration, `FA_QUANT_ALLOW_LIVE=1`, and:
 - Zero halted sessions and zero reconciliation breaks in the most recent
   20-session evidence window; a successful retry cannot erase that day's halt.
 - Observed same-broker paper fills in that window with valid positive prices and
-  mean absolute slippage no greater than twice modeled spread plus slippage.
-  References are the adjusted opening prices, not the prior close.
+  mean absolute slippage no greater than twice modeled spread plus slippage, each
+  capped at the packaged `CostModel` default (2 and 3 bps), so a config can only
+  tighten it. References are the adjusted opening prices, not the prior close.
 
 The grant expires after 15 minutes. Authorization runs before constructing the
 live broker; its endpoint cannot be selected without a grant. Certificate hashes

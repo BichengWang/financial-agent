@@ -308,6 +308,33 @@ def test_zero_cost_model_and_invalid_fill_fail_closed(
         )
 
 
+def test_config_costs_can_only_tighten_slippage_allowance(
+    config: TradingConfig, tmp_path: Path
+) -> None:
+    from financial_agent.quant.backtest import CostModel
+    from financial_agent.quant.runner import live_readiness
+
+    costs = CostModel(half_spread_bps=300.0, slippage_bps=1.0)
+    inflated = replace(config, backtest=replace(config.backtest, costs=costs))
+    cert = certificate(inflated, tmp_path)
+    paper = paper_evidence(inflated, tmp_path / "paper.jsonl")
+    paper.append(
+        "fill",
+        {
+            "session": "2020-06-20",
+            "price": 110,
+            "reference_price": 100,
+            "broker_kind": "alpaca",
+        },
+    )
+    readiness = live_readiness(
+        inflated, now=datetime.now(timezone.utc), certificate=cert, journal=paper
+    )
+    # Packaged 2 bps half-spread, the config's tighter 1 bps slippage, times two.
+    assert readiness.slippage_allowance == pytest.approx(0.0006)
+    assert readiness.reasons == ("realized paper slippage exceeds modeled allowance",)
+
+
 def test_status_reports_authorize_live_reasons_without_broker_or_grant(
     config: TradingConfig, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

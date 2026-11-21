@@ -11,6 +11,7 @@ import tomllib
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from ..backtest import CostModel
 from ..execution import Journal, LiveAuthorization
 from ..validation import CertificateError, PromotionPolicy, verify_certificate
 from .config import TradingConfig
@@ -189,8 +190,11 @@ def live_readiness(
     breaks = sum(int(p.get("reconciliation_breaks", 0)) for p in recent)
     if breaks > policy.max_reconciliation_breaks:
         reasons.append("reconciliation breaks in the last evidence window")
+    # A run config may only tighten the allowance below packaged default costs.
+    costs, packaged = config.backtest.costs, CostModel()
     modeled = (
-        config.backtest.costs.half_spread_bps + config.backtest.costs.slippage_bps
+        min(costs.half_spread_bps, packaged.half_spread_bps)
+        + min(costs.slippage_bps, packaged.slippage_bps)
     ) / 10000
     allowance = modeled * policy.max_slippage_multiple
     fills = [
