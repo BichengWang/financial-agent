@@ -458,3 +458,146 @@ def test_off_cadence_without_a_plan_has_unknown_targets(
         )
     )
     assert "| SPY | — | 25.00% |" in rendered
+
+
+@pytest.mark.parametrize(
+    "rebalance,decision,today,expected",
+    [
+        ("daily", "2020-06-08", date(2020, 6, 9), True),
+        # Friday's close decides Monday's open: ISO weeks 23 and 24.
+        ("weekly", "2020-06-05", date(2020, 6, 8), True),
+        ("weekly", "2020-06-08", date(2020, 6, 9), False),
+        # Both dates are in ISO week 2020-W01, across the calendar year end.
+        ("weekly", "2019-12-31", date(2020, 1, 2), False),
+        ("weekly", "2020-01-03", date(2020, 1, 6), True),
+        ("monthly", "2020-06-30", date(2020, 7, 1), True),
+        ("monthly", "2020-06-08", date(2020, 6, 9), False),
+        ("monthly", "2019-12-31", date(2020, 1, 2), True),
+    ],
+)
+def test_rebalance_is_due_when_the_decision_close_ends_its_period(
+    rebalance: str, decision: str, today: date, expected: bool
+) -> None:
+    from financial_agent.quant.backtest import BacktestConfig
+    from financial_agent.quant.runner.session import _rebalance_due
+
+    backtest = BacktestConfig(rebalance=rebalance)
+    assert _rebalance_due(backtest, decision, today) is expected
+
+
+def test_rebalance_is_not_due_before_the_backtest_start() -> None:
+    import pandas as pd  # type: ignore[import-untyped]
+
+    from financial_agent.quant.backtest import BacktestConfig
+    from financial_agent.quant.runner.session import _rebalance_due
+
+    start = pd.Timestamp("2020-06-08")
+    weekly = BacktestConfig(rebalance="weekly", start=start)
+    assert _rebalance_due(weekly, "2020-06-05", date(2020, 6, 8)) is False
+    assert _rebalance_due(weekly, "2020-06-12", date(2020, 6, 15)) is True
+    daily = BacktestConfig(rebalance="daily", start=start)
+    assert _rebalance_due(daily, "2020-06-05", date(2020, 6, 8)) is False
+    assert _rebalance_due(daily, "2020-06-08", date(2020, 6, 9)) is True
+
+
+def test_plan_utilization_is_each_planned_fraction_over_its_limit() -> None:
+    from datetime import datetime, timezone
+
+    import pandas as pd  # type: ignore[import-untyped]
+
+    from financial_agent.quant.risk import AccountSnapshot, Order, Position, RiskLimits
+    from financial_agent.quant.runner.session import _plan_utilization
+
+    # 100 SPY at 400 is 40% of 100,000 equity; the plan sells 4% and buys 10% QQQ.
+    held = {"SPY": Position("SPY", 100, 400, 400)}
+    account = AccountSnapshot(60000, 100000, held, datetime.now(timezone.utc))
+    orders = [
+        Order("SPY", "sell", 10, client_order_id="sell-spy"),
+        Order("QQQ", "buy", 50, client_order_id="buy-qqq"),
+    ]
+    prices = pd.Series({"SPY": 400.0, "QQQ": 200.0})
+    limits = RiskLimits(
+        max_weight=0.25,
+        max_gross=0.8,
+        max_order_notional_pct=0.2,
+        max_turnover_pct=0.5,
+        max_orders=4,
+    )
+    used = _plan_utilization(orders, account, prices, limits)
+    assert list(used) == [
+        "turnover_utilization",
+        "max_weight_utilization",
+        "cash_fraction",
+        "gross_utilization",
+        "order_count_utilization",
+        "max_order_notional_utilization",
+    ]
+    assert used == pytest.approx(
+        {
+            "turnover_utilization": 0.28,  # (4,000 + 10,000) / 100,000 / 0.5
+            "max_weight_utilization": 1.44,  # SPY 0.40 - 0.04 = 0.36, over 0.25
+            "cash_fraction": 0.54,  # 1 - (0.36 SPY + 0.10 QQQ)
+            "gross_utilization": 0.575,  # 0.46 / 0.8
+            "order_count_utilization": 0.5,  # 2 / 4
+            "max_order_notional_utilization": 0.5,  # QQQ 0.10 / 0.2
+        }
+    )
+    zero = RiskLimits(
+        max_weight=0,
+        max_gross=0,
+        max_order_notional_pct=0,
+        max_turnover_pct=0,
+        max_orders=0,
+    )
+    assert _plan_utilization(orders, account, prices, zero) == {
+        "turnover_utilization": None,
+        "max_weight_utilization": None,
+        "cash_fraction": pytest.approx(0.54),
+        "gross_utilization": None,
+        "order_count_utilization": None,
+        "max_order_notional_utilization": None,
+    }
+    in_cash = AccountSnapshot(100000, 100000, {}, datetime.now(timezone.utc))
+    assert _plan_utilization([], in_cash, prices, limits) == {
+        "turnover_utilization": 0,
+        "max_weight_utilization": 0,
+        "cash_fraction": 1,
+        "gross_utilization": 0,
+        "order_count_utilization": 0,
+        "max_order_notional_utilization": 0,
+    }
+
+
+def test_session_reports_carry_the_plan_utilization(
+    config: TradingConfig, first_day: date
+) -> None:
+    from financial_agent.quant.runner.report import SessionReport
+    from financial_agent.quant.runner.session import _plan_utilization
+
+    def assert_carried(
+        report: SessionReport, config: TradingConfig, decision: date
+    ) -> None:
+        closes = csv(config).fetch(config.symbols, config.data_start, decision)
+        expected = _plan_utilization(
+            report.orders, report.account, closes.close.iloc[-1], config.risk
+        )
+        assert {key: report.risk[key] for key in expected} == expected
+
+    traded = run_session(config, today=first_day)
+    assert traded.status == "TRADED"
+    assert_carried(traded, config, date(2020, 6, 5))
+    # The next day holds the fills; a weekly cadence makes it an off-cadence preview.
+    weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
+    preview = run_session(weekly, today=first_day + timedelta(days=1), dry_run=True)
+    assert preview.account and preview.account.positions
+    assert preview.orders and not preview.risk["rebalance_due"]
+    assert_carried(preview, weekly, date(2020, 6, 8))
+    # Limits tighter than the defaults, rejecting the plan.
+    tight = replace(
+        config,
+        state_dir=config.state_dir.with_name("tight"),
+        risk=replace(config.risk, max_orders=3),
+    )
+    halted = run_session(tight, today=first_day)
+    assert halted.status == "HALTED" and len(halted.orders) > 3
+    assert_carried(halted, tight, date(2020, 6, 5))
