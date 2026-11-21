@@ -8,6 +8,7 @@ import pandas as pd  # type: ignore[import-untyped]
 from .killswitch import KillSwitch
 from .limits import RiskLimits
 from .orders import AccountSnapshot, Order
+from .state import _over
 
 
 @dataclass(frozen=True)
@@ -18,12 +19,6 @@ class RiskDecision:
     rejected: list[tuple[Order, str]]
     halt: bool
     reasons: list[str]
-
-
-def _over(value: float, threshold: float) -> bool:
-    return value > threshold and not math.isclose(
-        value, threshold, rel_tol=1e-12, abs_tol=1e-12
-    )
 
 
 def check_orders(

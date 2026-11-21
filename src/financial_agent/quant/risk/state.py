@@ -12,15 +12,20 @@ from .limits import RiskLimits
 from .orders import AccountSnapshot
 
 
-def _atomic_json(path: Path, data: dict[str, Any]) -> None:
+def _atomic_json(path: Path, data: dict[str, Any], *, sort_keys: bool = False) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     descriptor, temporary = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
     try:
         with os.fdopen(descriptor, "w") as stream:
-            json.dump(data, stream, allow_nan=False)
+            json.dump(data, stream, sort_keys=sort_keys, allow_nan=False)
             stream.flush()
             os.fsync(stream.fileno())
         os.replace(temporary, path)
+        directory = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
     finally:
         if os.path.exists(temporary):
             os.unlink(temporary)
@@ -54,6 +59,12 @@ class RiskState:
         _atomic_json(Path(path), asdict(self))
 
 
+def _over(value: float, threshold: float) -> bool:
+    return value > threshold and not math.isclose(
+        value, threshold, rel_tol=1e-12, abs_tol=1e-12
+    )
+
+
 def update_risk_state(
     state: RiskState, account: AccountSnapshot, limits: RiskLimits, *, session: str
 ) -> tuple[RiskState, list[str]]:
@@ -79,8 +90,6 @@ def update_risk_state(
             limits.max_daily_loss_pct,
         ),
     ):
-        if value > threshold and not math.isclose(
-            value, threshold, rel_tol=1e-12, abs_tol=1e-12
-        ):
+        if _over(value, threshold):
             reasons.append(f"{name} value={value:.12g} threshold={threshold:.12g}")
     return updated, reasons

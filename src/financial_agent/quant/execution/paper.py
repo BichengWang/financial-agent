@@ -9,12 +9,11 @@ from typing import Any
 import fcntl
 import json
 import math
-import os
-import tempfile
 
 from financial_agent.quant.backtest import CostModel
 from financial_agent.quant.data import MarketData
 from financial_agent.quant.risk.orders import AccountSnapshot, Order, Position
+from financial_agent.quant.risk.state import _atomic_json
 from .broker import BrokerError, Fill, OrderAck, validate_order
 
 
@@ -53,21 +52,7 @@ class PaperBroker:
             yield
 
     def _save(self) -> None:
-        fd, temporary = tempfile.mkstemp(dir=self.state_path.parent)
-        try:
-            with os.fdopen(fd, "w") as handle:
-                json.dump(self._state, handle, sort_keys=True, allow_nan=False)
-                handle.flush()
-                os.fsync(handle.fileno())
-            os.replace(temporary, self.state_path)
-            directory = os.open(self.state_path.parent, os.O_RDONLY)
-            try:
-                os.fsync(directory)
-            finally:
-                os.close(directory)
-        finally:
-            if os.path.exists(temporary):
-                os.unlink(temporary)
+        _atomic_json(self.state_path, self._state, sort_keys=True)
 
     @staticmethod
     def _ack(record: dict[str, Any]) -> OrderAck:
