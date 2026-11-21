@@ -6,6 +6,7 @@ on:
       - "src/**"
       - "tests/**"
       - "example/**"
+      - "deploy/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
       - "README.md"
@@ -19,6 +20,7 @@ on:
       - "src/**"
       - "tests/**"
       - "example/**"
+      - "deploy/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
       - "README.md"
@@ -30,9 +32,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 

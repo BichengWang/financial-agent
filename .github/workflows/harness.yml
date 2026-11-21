@@ -30,6 +30,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 env:
   # Every package dated on or after this passes the current artifact contract.
   # Older packages predate it (pre-ledger numbering, percentile adj_score, leaked
@@ -39,6 +43,7 @@ env:
 jobs:
   harness:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
