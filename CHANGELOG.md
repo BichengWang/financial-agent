@@ -29,6 +29,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   on that session's New York date, so replaying `run --today <old date>` adds no sessions.
 - The paper-slippage allowance caps the config's half-spread and slippage at the packaged
   `CostModel` defaults, so inflating `[backtest.costs]` can no longer loosen it.
+- The market-data cache refetches a last bar retrieved on or before its session's
+  New York date, or with no readable retrieval time. A bar cached while the market
+  was open used to be served for that end date forever, so the next session could
+  decide on an intraday price.
+- The market-data cache fetches a symbol again in full when its cached bars came
+  from another provider. A cache filled by `--provider csv` used to be served for
+  `--provider yahoo` without contacting Yahoo, labelled `csv`.
 
 ## [1.3.0] - 2026-10-28
 

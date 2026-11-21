@@ -1,12 +1,13 @@
 """Incremental CSV cache with overlap-based adjustment revision detection."""
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 import datetime as dt
 import json
 import os
 from pathlib import Path
 import tempfile
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd  # type: ignore[import-untyped]
@@ -20,6 +21,20 @@ from .providers import (
     validate_request,
 )
 
+EXCHANGE_TZ = ZoneInfo("America/New_York")
+
+
+def _retrieved_after(record: dict[str, Any], session: dt.date) -> bool:
+    """Whether the record was retrieved on a New York date after `session`."""
+    try:
+        retrieved = dt.datetime.fromisoformat(record["retrieved_at"])
+    except (KeyError, TypeError, ValueError):
+        return False
+    return (
+        retrieved.tzinfo is not None
+        and retrieved.astimezone(EXCHANGE_TZ).date() > session
+    )
+
 
 class CachedProvider:
     """Cache received session coverage; refresh five sessions of tail overlap."""
@@ -32,7 +47,9 @@ class CachedProvider:
         overlap_sessions: int = 5,
         rtol: float = 1e-9,
         atol: float = 1e-12,
+        now: Callable[[], dt.datetime] | None = None,
     ) -> None:
+        """`now` is the retrieval clock; it must return timezone-aware datetimes."""
         if overlap_sessions < 1 or rtol < 0 or atol < 0:
             raise DataError("overlap must be positive and tolerances nonnegative")
         self.inner = inner
@@ -40,6 +57,7 @@ class CachedProvider:
         self.overlap_sessions = overlap_sessions
         self.rtol = rtol
         self.atol = atol
+        self.now = now or (lambda: dt.datetime.now(dt.timezone.utc))
 
     def _atomic_write(self, path: Path, content: str) -> None:
         descriptor, temporary = tempfile.mkstemp(dir=self.cache_dir, prefix=".tmp-")
@@ -67,8 +85,11 @@ class CachedProvider:
             raise DataError(f"cache: invalid metadata: {exc}") from exc
         frames = {}
         conventions: set[tuple[bool, str]] = set()
+        inner_source = getattr(self.inner, "source", None)
         for symbol in symbols:
             record: dict[str, Any] = metadata.get(symbol, {})
+            if inner_source is not None and record.get("source") != inner_source:
+                record = {}  # bars from another provider are not a cache hit
             cached = None
             if (
                 record.get("first_session") is not None
@@ -86,7 +107,12 @@ class CachedProvider:
                 else None
             )
             needs_full = cached is None or start < covered_start
-            needs_tail = not needs_full and (covered_end is None or end > covered_end)
+            # A last bar retrieved on or before its own session date may be intraday.
+            needs_tail = not needs_full and (
+                covered_end is None
+                or end > covered_end
+                or (end == covered_end and not _retrieved_after(record, covered_end))
+            )
             if needs_full or needs_tail:
                 full_start = min(start, covered_start)
                 full_end = max(end, covered_end) if covered_end is not None else end
@@ -96,6 +122,9 @@ class CachedProvider:
                         full_start,
                         cached.sessions[-self.overlap_sessions :][0].date(),
                     )
+                retrieved_at: str | None = (
+                    self.now().astimezone(dt.timezone.utc).isoformat()
+                )
                 fresh = self.inner.fetch([symbol], fetch_start, full_end)
                 if fresh.symbols != (symbol,):
                     raise DataError(
@@ -105,6 +134,7 @@ class CachedProvider:
                 incoming = symbol_frame(fresh, symbol)
                 if incoming.empty and cached is not None:
                     incoming = symbol_frame(cached, symbol)
+                    retrieved_at = record.get("retrieved_at")  # nothing new arrived
                 elif cached is not None and needs_tail:
                     old = symbol_frame(cached, symbol)
                     overlap = old.index[old.index >= pd.Timestamp(fetch_start)]
@@ -140,7 +170,7 @@ class CachedProvider:
                 record = {
                     "source": fresh.source,
                     "adjusted": fresh.adjusted,
-                    "retrieved_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+                    "retrieved_at": retrieved_at,
                     "first_session": (
                         incoming.index[0].date().isoformat() if len(incoming) else None
                     ),
