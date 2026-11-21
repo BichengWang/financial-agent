@@ -86,14 +86,3 @@ class YahooDownloader:
         data_df = data_df.sort_values(by=['date','tic']).reset_index(drop=True)
 
         return data_df
-
-    def select_equal_rows_stock(self, df):
-        df_check = df.tic.value_counts()
-        df_check = pd.DataFrame(df_check).reset_index()
-        df_check.columns = ["tic", "counts"]
-        mean_df = df_check.counts.mean()
-        equal_list = list(df.tic.value_counts() >= mean_df)
-        names = df.tic.value_counts().index
-        select_stocks_list = list(names[equal_list])
-        df = df[df.tic.isin(select_stocks_list)]
-        return df
