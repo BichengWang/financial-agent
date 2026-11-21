@@ -85,3 +85,4 @@ uv build
 2. **Branch prefixes** describe the change: `feat/`, `fix/`, `docs/`, `ci/`, `chore/`, `refactor/`, `test/`, or `run/` for daily-run packages.
 3. **Scope feature work into a sequence of PRs.** Split a new feature into small, independently reviewable PRs (at most 10 per feature), each with one purpose and passing CI on its own.
 4. **Land them sequentially.** Open each PR from the latest `main`, merge it, then branch the next one from the updated `main`. Don't stack branches on unmerged work or merge out of order.
+5. **Wait for checks before adding `auto-merge`.** `main` has no required status checks, so a labelled PR merges within seconds, before the Python quality job finishes. For code changes, open the PR without the label, wait until `gh pr checks <n>` shows no pending or failed check, then run `gh pr edit <n> --add-label auto-merge`.
