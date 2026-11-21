@@ -16,7 +16,7 @@ from financial_agent.quant.runner import (
     PromotionError,
 )
 from ..execution.test_ibkr import Gateway
-from .conftest import ny_clock
+from .conftest import journal_clock, ny_clock
 from .test_promotion import certificate, paper_evidence
 
 
@@ -134,7 +134,8 @@ def test_live_evidence_is_same_broker(
     source = paper_evidence(live, tmp_path / "source.jsonl")
     journal = Journal(tmp_path / "evidence.jsonl")
     for event in source.events():
-        journal.append(event.type, {**event.payload, "broker_kind": kind})
+        with journal_clock(event.payload["session"]):
+            journal.append(event.type, {**event.payload, "broker_kind": kind})
     if kind == "ibkr":
         assert (
             authorize_live(

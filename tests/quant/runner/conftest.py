@@ -1,7 +1,8 @@
 """Seeded CSV fixtures keep every session test offline."""
 
-from collections.abc import Callable
-from datetime import date, datetime, time
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager
+from datetime import date, datetime, time, tzinfo
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -16,6 +17,21 @@ def ny_clock(day: date, at: time = time(8, 45)) -> Callable[[], datetime]:
     """Fixed New York submission clock for broker-backed sessions."""
     moment = datetime.combine(day, at, ZoneInfo("America/New_York"))
     return lambda: moment
+
+
+@contextmanager
+def journal_clock(day: date | str, at: time = time(8, 45)) -> Iterator[None]:
+    """Stamp journal events as a run at `at` New York time on `day` would."""
+    moment = ny_clock(date.fromisoformat(str(day)), at)()
+
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz: tzinfo | None = None) -> datetime:  # type: ignore[override]
+            return moment.astimezone(tz)
+
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr("financial_agent.quant.execution.journal.datetime", Clock)
+        yield
 
 
 @pytest.fixture

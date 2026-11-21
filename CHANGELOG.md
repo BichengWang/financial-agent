@@ -25,6 +25,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   to keep a laptop host on power.
 - The live gate rejects a certificate whose `policy_sha256` differs from the packaged
   policy file, so `certify --policy` with looser thresholds can no longer authorize live.
+- A paper `session_outcome` counts as live evidence only when its journal timestamp falls
+  on that session's New York date, so replaying `run --today <old date>` adds no sessions.
 
 ## [1.3.0] - 2026-10-28
 

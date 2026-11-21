@@ -1,7 +1,7 @@
 """Live grants require every independent gate, not just explicit opt-in."""
 
 from dataclasses import replace
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -17,6 +17,7 @@ from financial_agent.quant.validation import (
     PromotionReport,
     write_certificate,
 )
+from .conftest import journal_clock
 
 
 @pytest.fixture
@@ -44,19 +45,20 @@ def paper_evidence(config: TradingConfig, path: Path, count: int = 20) -> Journa
     journal = Journal(path)
     for i in range(count):
         day = (date(2020, 6, 1) + timedelta(days=i)).isoformat()
-        journal.append(
-            "session_outcome",
-            {
-                "session": day,
-                "status": "TRADED",
-                "mode": "paper",
-                "broker_kind": "alpaca",
-                "strategy": config.strategy_name,
-                "params": config.strategy_params,
-                "dry_run": False,
-                "reconciliation_breaks": 0,
-            },
-        )
+        with journal_clock(day):
+            journal.append(
+                "session_outcome",
+                {
+                    "session": day,
+                    "status": "TRADED",
+                    "mode": "paper",
+                    "broker_kind": "alpaca",
+                    "strategy": config.strategy_name,
+                    "params": config.strategy_params,
+                    "dry_run": False,
+                    "reconciliation_breaks": 0,
+                },
+            )
         journal.append(
             "fill",
             {
@@ -130,18 +132,19 @@ def test_aggregates_unmet_conditions(config: TradingConfig, tmp_path: Path) -> N
         },
     )
     paper = paper_evidence(config, tmp_path / "paper.jsonl", 1)
-    paper.append(
-        "session_outcome",
-        {
-            "session": "2020-06-02",
-            "status": "HALTED",
-            "mode": "paper",
-            "broker_kind": "alpaca",
-            "strategy": config.strategy_name,
-            "params": config.strategy_params,
-            "reconciliation_breaks": 1,
-        },
-    )
+    with journal_clock("2020-06-02"):
+        paper.append(
+            "session_outcome",
+            {
+                "session": "2020-06-02",
+                "status": "HALTED",
+                "mode": "paper",
+                "broker_kind": "alpaca",
+                "strategy": config.strategy_name,
+                "params": config.strategy_params,
+                "reconciliation_breaks": 1,
+            },
+        )
     paper.append(
         "fill",
         {
@@ -214,7 +217,8 @@ def test_non_evidence_cannot_promote(
         payload.update(session="2020-07-01", dry_run=True)
     elif variation == "other_strategy":
         payload.update(session="2020-07-01", strategy="other")
-    paper.append("session_outcome", payload)
+    with journal_clock(payload["session"]):
+        paper.append("session_outcome", payload)
     if variation == "bad_chain":
         paper.path.write_text(paper.path.read_text() + "{}\n")
     with pytest.raises(PromotionError):
@@ -226,14 +230,42 @@ def test_non_evidence_cannot_promote(
         )
 
 
+def test_backdated_sessions_are_not_paper_evidence(
+    config: TradingConfig, tmp_path: Path
+) -> None:
+    cert = certificate(config, tmp_path)
+    source = paper_evidence(config, tmp_path / "source.jsonl")
+    late = Journal(tmp_path / "late.jsonl")
+    replayed = Journal(tmp_path / "replayed.jsonl")
+    for event in source.events():
+        # 21:00 New York is already the next UTC day, but still that session.
+        with journal_clock(event.payload["session"], time(21)):
+            late.append(event.type, event.payload)
+        # `fa-quant run --today <old date>` repeated in one sitting.
+        with journal_clock("2020-06-25"):
+            replayed.append(event.type, event.payload)
+    environ = {"FA_QUANT_ALLOW_LIVE": "1"}
+    authorize_live(
+        config, certificate_path=cert, paper_journal_path=late.path, environ=environ
+    )
+    with pytest.raises(PromotionError, match="paper sessions 0 < 20"):
+        authorize_live(
+            config,
+            certificate_path=cert,
+            paper_journal_path=replayed.path,
+            environ=environ,
+        )
+
+
 def test_halt_cannot_be_erased_by_successful_retry(
     config: TradingConfig, tmp_path: Path
 ) -> None:
     cert = certificate(config, tmp_path)
     paper = paper_evidence(config, tmp_path / "paper.jsonl", 21)
     last = dict(paper.events(["session_outcome"])[-1].payload)
-    paper.append("session_outcome", {**last, "status": "HALTED"})
-    paper.append("session_outcome", last)
+    with journal_clock(last["session"]):
+        paper.append("session_outcome", {**last, "status": "HALTED"})
+        paper.append("session_outcome", last)
     with pytest.raises(PromotionError, match="HALTED"):
         authorize_live(
             config,
@@ -292,10 +324,11 @@ def test_status_reports_authorize_live_reasons_without_broker_or_grant(
     config.state_dir.mkdir(parents=True)
     paper = paper_evidence(config, config.state_dir / "journal.jsonl", 19)
     outcome = dict(paper.events(["session_outcome"])[-1].payload)
-    paper.append("session_outcome", {**outcome, "session": "2020-06-20"})
-    paper.append(
-        "session_outcome", {**outcome, "session": "2020-06-20", "status": "HALTED"}
-    )
+    with journal_clock("2020-06-20"):
+        paper.append("session_outcome", {**outcome, "session": "2020-06-20"})
+        paper.append(
+            "session_outcome", {**outcome, "session": "2020-06-20", "status": "HALTED"}
+        )
     paper.append(
         "fill",
         {

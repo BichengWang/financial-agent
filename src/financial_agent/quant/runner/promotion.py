@@ -9,10 +9,13 @@ import math
 from pathlib import Path
 import tomllib
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from ..execution import Journal, LiveAuthorization
 from ..validation import CertificateError, PromotionPolicy, verify_certificate
 from .config import TradingConfig
+
+EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 
 class PromotionError(ValueError):
@@ -162,6 +165,10 @@ def live_readiness(
         day = payload.get("session", "")
         try:
             if date.fromisoformat(day) > now.date():
+                continue
+            # A replayed `run --today` is journaled on another New York date.
+            stamped = datetime.fromisoformat(event.ts).astimezone(EXCHANGE_TZ)
+            if stamped.date() != date.fromisoformat(day):
                 continue
         except (ValueError, TypeError):
             continue
