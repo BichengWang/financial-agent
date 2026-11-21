@@ -23,6 +23,12 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - The launchd template runs the session wrapper under `/usr/bin/caffeinate -i`, so
   the Mac doesn't idle-sleep in the middle of a session. The operations guide says
   to keep a laptop host on power.
+- The live gate rejects a certificate whose `policy_sha256` differs from the packaged
+  policy file, so `certify --policy` with looser thresholds can no longer authorize live.
+- A paper `session_outcome` counts as live evidence only when its journal timestamp falls
+  on that session's New York date, so replaying `run --today <old date>` adds no sessions.
+- The paper-slippage allowance caps the config's half-spread and slippage at the packaged
+  `CostModel` defaults, so inflating `[backtest.costs]` can no longer loosen it.
 
 ## [1.3.0] - 2026-10-28
 

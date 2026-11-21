@@ -26,7 +26,8 @@ and reconciliation still run first. A late run on an off-cadence day is still
 current New York date, so a replayed `--today` against a broker halts. Intents
 left unsubmitted when the cutoff passes mid-plan are abandoned at the next
 session, never sent to a later auction. Local paper and `fa-quant demo` are exempt.
-A window halt counts toward the live gate's halted-session limit.
+A window halt counts toward the live gate's halted-session limit when journaled on
+the session's New York date; a replayed `--today` is not paper evidence at all.
 
 Templates under [deploy/quant](../../deploy/quant/) cover cron, launchd and
 systemd. Each calls the wrapper [run-session.py](../../deploy/quant/run-session.py)

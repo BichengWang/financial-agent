@@ -11,7 +11,7 @@ from financial_agent.quant.data import CsvProvider
 from financial_agent.quant.execution import AlpacaBroker, Journal
 from financial_agent.quant.execution.alpaca import LIVE_URL
 from financial_agent.quant.runner import TradingConfig, authorize_live, run_session
-from .conftest import ny_clock
+from .conftest import journal_clock, ny_clock
 from .test_promotion import certificate, paper_evidence
 
 
@@ -249,7 +249,10 @@ def test_live_requires_twenty_broker_backed_paper_sessions(
         if session(day).trading_day:
             if kind == "alpaca" and previous is not None:
                 exchange.fill(config, previous)
-            report = run_session(config, today=day, broker=broker, now=ny_clock(day))
+            with journal_clock(day):
+                report = run_session(
+                    config, today=day, broker=broker, now=ny_clock(day)
+                )
             assert report.status in ("TRADED", "NO_CHANGE"), report.reasons
             previous = day
             completed += 1

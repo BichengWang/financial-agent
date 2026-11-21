@@ -32,19 +32,21 @@ The [authorization implementation](../../src/financial_agent/quant/runner/promot
 requires a live Alpaca or IBKR configuration, `FA_QUANT_ALLOW_LIVE=1`, and:
 
 - A verified, passing certificate no older than 90 days with exactly the same
-  normalized strategy name and parameters. Future timestamps fail verification.
+  normalized strategy name and parameters, whose `policy_sha256` matches the
+  installed packaged policy file. Future timestamps fail verification.
 - At least 20 distinct successful paper sessions from the configured live broker for that identity.
   Local `PaperBroker`, previews and repeated same-day runs do not count.
 - Zero halted sessions and zero reconciliation breaks in the most recent
   20-session evidence window; a successful retry cannot erase that day's halt.
 - Observed same-broker paper fills in that window with valid positive prices and
-  mean absolute slippage no greater than twice modeled spread plus slippage.
-  References are the adjusted opening prices, not the prior close.
+  mean absolute slippage no greater than twice modeled spread plus slippage, each
+  capped at the packaged `CostModel` default (2 and 3 bps), so a config can only
+  tighten it. References are the adjusted opening prices, not the prior close.
 
 The grant expires after 15 minutes. Authorization runs before constructing the
 live broker; its endpoint cannot be selected without a grant. Certificate hashes
 include package version and policy/data identifiers for audit, but the verifier
-does not independently demand equality to today's installed version, policy or
+does not independently demand equality to today's installed version or
 universe. Review those explicitly before promotion; recreate evidence after a
 material change. The paper history is filtered by identity and date, but there
 is no separate maximum paper-history age check.

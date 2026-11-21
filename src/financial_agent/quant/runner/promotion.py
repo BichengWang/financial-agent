@@ -9,10 +9,14 @@ import math
 from pathlib import Path
 import tomllib
 from typing import Any
+from zoneinfo import ZoneInfo
 
+from ..backtest import CostModel
 from ..execution import Journal, LiveAuthorization
-from ..validation import CertificateError, verify_certificate
+from ..validation import CertificateError, PromotionPolicy, verify_certificate
 from .config import TradingConfig
+
+EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 
 class PromotionError(ValueError):
@@ -121,6 +125,10 @@ def live_readiness(
                 reasons.append("certificate is older than live policy permits")
             if not cert.passed:
                 reasons.append("certificate did not pass validation")
+            if cert.policy_sha256 != PromotionPolicy.load().file_sha256():
+                reasons.append(
+                    "certificate was not issued under the packaged promotion policy"
+                )
             strategy_match = cert.strategy == config.strategy_name
             if not strategy_match:
                 reasons.append("certificate strategy mismatch")
@@ -159,6 +167,10 @@ def live_readiness(
         try:
             if date.fromisoformat(day) > now.date():
                 continue
+            # A replayed `run --today` is journaled on another New York date.
+            stamped = datetime.fromisoformat(event.ts).astimezone(EXCHANGE_TZ)
+            if stamped.date() != date.fromisoformat(day):
+                continue
         except (ValueError, TypeError):
             continue
         if payload.get("status") not in ("TRADED", "NO_CHANGE", "HALTED"):
@@ -178,8 +190,11 @@ def live_readiness(
     breaks = sum(int(p.get("reconciliation_breaks", 0)) for p in recent)
     if breaks > policy.max_reconciliation_breaks:
         reasons.append("reconciliation breaks in the last evidence window")
+    # A run config may only tighten the allowance below packaged default costs.
+    costs, packaged = config.backtest.costs, CostModel()
     modeled = (
-        config.backtest.costs.half_spread_bps + config.backtest.costs.slippage_bps
+        min(costs.half_spread_bps, packaged.half_spread_bps)
+        + min(costs.slippage_bps, packaged.slippage_bps)
     ) / 10000
     allowance = modeled * policy.max_slippage_multiple
     fills = [
