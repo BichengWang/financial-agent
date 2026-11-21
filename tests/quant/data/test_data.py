@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 from collections.abc import Sequence
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -22,6 +23,8 @@ from financial_agent.quant.data import (
     write_csv,
 )
 from financial_agent.quant.data.bars import FIELDS
+
+NEW_YORK = ZoneInfo("America/New_York")
 
 
 def market(sessions: int = 20) -> MarketData:
@@ -455,3 +458,61 @@ def test_cache_initial_empty_response_allows_same_day_retry(tmp_path: Path) -> N
     recovered = cache.fetch(["A"], start, start)
     assert recovered.sessions.equals(data.sessions)
     assert len(inner.calls) == 2
+
+
+def test_cache_replaces_a_last_bar_cached_while_its_session_was_open(
+    tmp_path: Path,
+) -> None:
+    final = market(20)
+    day = final.sessions[-1]
+    intraday = replace(final, close=final.close.copy(), low=final.low.copy())
+    for frame in (intraday.close, intraday.low):
+        frame.loc[day, "A"] *= 0.97
+    inner = CountingProvider(intraday)
+    start, end = final.sessions[0].date(), day.date()
+    clock = [dt.datetime.combine(end, dt.time(11), NEW_YORK)]
+    cache = CachedProvider(inner, tmp_path, now=lambda: clock[0])
+    assert cache.fetch(["A"], start, end).close["A"].equals(intraday.close["A"])
+
+    clock[0] = dt.datetime.combine(end + dt.timedelta(days=1), dt.time(8), NEW_YORK)
+    inner.data = final.upto(final.sessions[0] - pd.Timedelta(days=1))
+    cache.fetch(["A"], start, end)  # nothing new arrives; the bar stays provisional
+    inner.data = final
+    served = cache.fetch(["A"], start, end)
+    assert served.close["A"].equals(final.close["A"])
+    assert check_quality(served, expected_last_session=end).ok
+    # The changed bar fails the overlap check, so history is refetched in full.
+    assert inner.calls[-2:] == [
+        (("A",), final.sessions[-5].date(), end),
+        (("A",), start, end),
+    ]
+    cache.fetch(["A"], start, end)
+    assert len(inner.calls) == 4
+
+
+@pytest.mark.parametrize(
+    "retrieved_at, refetched",
+    [
+        ("2005-01-29T04:30:00+00:00", True),  # 23:30 on the session date in New York
+        ("2005-01-29T05:00:00+00:00", False),  # midnight after it in New York
+        (None, True),
+        ("yesterday", True),
+        ("2099-01-01T00:00:00", True),  # no UTC offset
+    ],
+)
+def test_cache_trusts_a_last_bar_retrieved_on_a_later_new_york_date(
+    tmp_path: Path, retrieved_at: str | None, refetched: bool
+) -> None:
+    data = market(20)
+    inner = CountingProvider(data)
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    assert end == dt.date(2005, 1, 28)
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    path = tmp_path / "_meta.json"
+    metadata = json.loads(path.read_text())
+    metadata["A"].pop("retrieved_at")
+    if retrieved_at is not None:
+        metadata["A"]["retrieved_at"] = retrieved_at
+    path.write_text(json.dumps(metadata))
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert len(inner.calls) == (2 if refetched else 1)
