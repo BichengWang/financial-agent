@@ -24,7 +24,7 @@ from .runner import (
     status_summary,
 )
 from .runner.report import json_value
-from .runner.session import EXCHANGE_TZ, session_lock
+from .runner.session import EXCHANGE_TZ, SessionLocked, session_lock
 from .execution import Journal
 from .risk import KillSwitch
 from .strategies import build_strategy
@@ -480,31 +480,41 @@ def main(argv: Sequence[str] | None = None) -> int:
             else:
                 print(render_status(summary))
             return 0 if summary["journal"]["ok"] else 2
-        if args.command in ("kill", "unkill"):
-            with session_lock(config.state_dir):
-                journal = Journal(config.state_dir / "journal.jsonl")
-                kill = KillSwitch(config.state_dir)
-                if args.command == "kill":
-                    kill.engage(args.reason, source="operator")
+        if args.command == "kill":
+            # The emergency stop must engage even while a session holds the lock.
+            kill = KillSwitch(config.state_dir)
+            kill.engage(args.reason, source="operator")
+            try:
+                with session_lock(config.state_dir):
+                    journal = Journal(config.state_dir / "journal.jsonl")
                     if not journal.verify().ok:
                         print(
                             "Stop engaged; journal verification failed", file=sys.stderr
                         )
                         return 2
                     journal.append("kill", {"reason": args.reason})
-                else:
-                    if not journal.verify().ok:
-                        raise ConfigError("journal: verification failed")
-                    # The justification must be durable before the stop is removed.
-                    if not args.reason.strip() or not args.operator.strip():
-                        raise ConfigError("reason and operator: must be nonempty")
-                    journal.append(
-                        "unkill_intent",
-                        {"reason": args.reason, "operator": args.operator},
-                    )
-                    journal.append(
-                        "unkill", kill.release(args.reason, operator=args.operator)
-                    )
+            except SessionLocked:
+                print(
+                    "Stop engaged; journal entry not written because a session "
+                    "is running"
+                )
+            return 0
+        if args.command == "unkill":
+            with session_lock(config.state_dir):
+                journal = Journal(config.state_dir / "journal.jsonl")
+                kill = KillSwitch(config.state_dir)
+                if not journal.verify().ok:
+                    raise ConfigError("journal: verification failed")
+                # The justification must be durable before the stop is removed.
+                if not args.reason.strip() or not args.operator.strip():
+                    raise ConfigError("reason and operator: must be nonempty")
+                journal.append(
+                    "unkill_intent",
+                    {"reason": args.reason, "operator": args.operator},
+                )
+                journal.append(
+                    "unkill", kill.release(args.reason, operator=args.operator)
+                )
             return 0
         raise ConfigError("unknown command")
     except (ValueError, TypeError, KeyError, OSError, RuntimeError) as exc:

@@ -559,6 +559,8 @@ def _run_locked(
                 closed = _submission_closed(broker, today, now)
                 if closed:
                     return finish("HALTED", closed)
+                if kill.engaged():
+                    return finish("HALTED", ["kill switch engaged"])
                 ack = broker.submit(order)
                 journal.append("submitted", json_value(ack))
                 if ack.status == "rejected":
@@ -678,6 +680,8 @@ def _run_locked(
             closed = _submission_closed(broker, today, now)
             if closed:
                 return finish("HALTED", closed)
+            if kill.engaged():
+                return finish("HALTED", ["kill switch engaged"])
             ack = broker.submit(order)
             journal.append("submitted", json_value(ack))
             if ack.status == "rejected":

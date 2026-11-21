@@ -12,6 +12,7 @@ from financial_agent.quant.data import YahooProvider, synthetic_market
 from financial_agent.quant.mcp import QuantServer, serve
 from financial_agent.quant.risk import KillSwitch
 from financial_agent.quant.runner import TradingConfig
+from financial_agent.quant.runner.session import session_lock
 
 # Share real CSV fixtures across CLI and runner tests.
 from .runner import conftest as runner_fixtures
@@ -204,6 +205,17 @@ def test_emergency_stop_survives_broken_journal(config_path: Path) -> None:
         == 1
     )
     assert KillSwitch(config.state_dir).engaged()
+
+
+def test_kill_engages_while_a_session_holds_the_lock(
+    config_path: Path, capsys: Any
+) -> None:
+    config = TradingConfig.load(config_path)
+    with session_lock(config.state_dir):
+        code = main(["kill", "--config", str(config_path), "--reason", "halt now"])
+    assert code == 0
+    assert KillSwitch(config.state_dir).reason() == "halt now"
+    assert "journal entry not written" in capsys.readouterr().out
 
 
 def test_certify_prints_selected_parameters_as_copyable_toml(
