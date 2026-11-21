@@ -84,6 +84,8 @@ catch-up run (for example launchd running a missed job on wake) halts at or afte
 your host. The [paper Actions workflow](../../.github/workflows/quant-paper.yml) is
 manual dispatch, not a precise clock. It restores state from Actions cache and
 uploads reports; cache eviction/loss must halt operations until state is restored.
+The workflow fails when no state is restored; dispatch the first session with
+`first_run` checked.
 A dedicated persistent host is preferable for ongoing execution.
 
 With paper credentials already loaded in the environment:
