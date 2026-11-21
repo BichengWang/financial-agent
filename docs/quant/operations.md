@@ -224,6 +224,6 @@ uv run fa-quant unkill --config examples/quant/paper.toml \
 ```
 
 `kill` engages the stop first. If a session is running, it prints that the
-journal entry was not written and still exits 0. `unkill` first verifies the journal and persists the justification. A broken
-chain prevents release. These commands were smoke-tested with a separate local
+journal entry was not written and still exits 0. `unkill` first verifies the
+journal and persists the justification. A broken chain prevents release. These commands were smoke-tested with a separate local
 paper state; do not release an operational stop merely to test a command.
