@@ -170,6 +170,37 @@ def test_aggregates_unmet_conditions(config: TradingConfig, tmp_path: Path) -> N
         assert any(fragment in r for r in reasons), reasons
 
 
+def test_certificate_from_another_policy_cannot_promote(
+    config: TradingConfig, tmp_path: Path
+) -> None:
+    loose = tmp_path / "loose.toml"
+    loose.write_text("[promotion]\nmin_oos_sharpe = 0.0\nmin_dsr = 0.0\n")
+    report = PromotionReport(
+        config.strategy_name,
+        config.strategy_params,
+        (config.strategy_params,),
+        True,
+        [Check("fixture", 1, 1, True, "passed")],
+        {},
+        "a" * 64,
+        "2019-01-02",
+        "2020-06-05",
+        PromotionPolicy.load(loose),
+    )
+    cert = write_certificate(report, tmp_path / "certificate.json")
+    paper = paper_evidence(config, tmp_path / "paper.jsonl")
+    with pytest.raises(PromotionError) as caught:
+        authorize_live(
+            config,
+            certificate_path=cert,
+            paper_journal_path=paper.path,
+            environ={"FA_QUANT_ALLOW_LIVE": "1"},
+        )
+    assert caught.value.reasons == [
+        "certificate was not issued under the packaged promotion policy"
+    ]
+
+
 @pytest.mark.parametrize(
     "variation", ["reruns", "dry_runs", "other_strategy", "bad_chain"]
 )

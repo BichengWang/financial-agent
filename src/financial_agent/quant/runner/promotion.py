@@ -11,7 +11,7 @@ import tomllib
 from typing import Any
 
 from ..execution import Journal, LiveAuthorization
-from ..validation import CertificateError, verify_certificate
+from ..validation import CertificateError, PromotionPolicy, verify_certificate
 from .config import TradingConfig
 
 
@@ -121,6 +121,10 @@ def live_readiness(
                 reasons.append("certificate is older than live policy permits")
             if not cert.passed:
                 reasons.append("certificate did not pass validation")
+            if cert.policy_sha256 != PromotionPolicy.load().file_sha256():
+                reasons.append(
+                    "certificate was not issued under the packaged promotion policy"
+                )
             strategy_match = cert.strategy == config.strategy_name
             if not strategy_match:
                 reasons.append("certificate strategy mismatch")
