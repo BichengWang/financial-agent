@@ -129,10 +129,15 @@ SERIES = {"type": "array", "items": {"type": "number"}, "minItems": 61}
 
 
 class HarnessServer:
+    instructions = INSTRUCTIONS
+
     def __init__(self, output_dir: Path, policy: Policy | None = None) -> None:
         self.output_dir = output_dir
         self.policy = policy or load_policy()
         self.tools = {tool.name: tool for tool in self._tools()}
+
+    def server_info(self) -> dict[str, str]:
+        return SERVER_INFO
 
     # -- tools -------------------------------------------------------------
 
@@ -393,8 +398,8 @@ class HarnessServer:
                 {
                     "protocolVersion": version,
                     "capabilities": {"tools": {"listChanged": False}},
-                    "serverInfo": SERVER_INFO,
-                    "instructions": INSTRUCTIONS,
+                    "serverInfo": self.server_info(),
+                    "instructions": self.instructions,
                 },
             )
         if method == "ping":
@@ -455,6 +460,19 @@ class HarnessServer:
             request_id = message.get("id") if isinstance(message, dict) else None
             return _error(request_id, INTERNAL_ERROR, f"{type(exc).__name__}: {exc}")
 
+    def serve(
+        self, instream: IO[str], outstream: IO[str], *, allow_nan: bool = True
+    ) -> None:
+        for line in instream:
+            if not line.strip():
+                continue
+            response = self.handle_line(line)
+            if response is not None:
+                outstream.write(
+                    json.dumps(response, allow_nan=allow_nan, default=str) + "\n"
+                )
+                outstream.flush()
+
 
 def _result(request_id: Any, result: dict[str, Any]) -> dict[str, Any]:
     return {"jsonrpc": "2.0", "id": request_id, "result": result}
@@ -470,11 +488,4 @@ def _error(request_id: Any, code: int, message: str) -> dict[str, Any]:
 
 def serve(instream: IO[str], outstream: IO[str], *, output_dir: Path) -> None:
     """Answer newline-delimited JSON-RPC on ``instream`` until it closes."""
-    server = HarnessServer(output_dir)
-    for line in instream:
-        if not line.strip():
-            continue
-        response = server.handle_line(line)
-        if response is not None:
-            outstream.write(json.dumps(response, default=str) + "\n")
-            outstream.flush()
+    HarnessServer(output_dir).serve(instream, outstream)

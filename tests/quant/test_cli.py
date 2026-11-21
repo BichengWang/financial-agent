@@ -184,6 +184,23 @@ def test_mcp_reuses_protocol_and_suppresses_notifications() -> None:
     assert len(responses[2]["result"]["tools"]) == 5
 
 
+def test_mcp_serves_without_package_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
+    from importlib.metadata import PackageNotFoundError
+
+    def missing(name: str) -> str:
+        raise PackageNotFoundError(name)
+
+    # Only the handshake needs the installed version; the server still answers.
+    monkeypatch.setattr("financial_agent.quant.mcp.version", missing)
+    server = QuantServer()
+    hello = server.handle_line(
+        json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize"})
+    )
+    assert hello is not None and hello["error"]["code"] == -32603
+    ping = server.handle_line(json.dumps({"jsonrpc": "2.0", "id": 2, "method": "ping"}))
+    assert ping == {"jsonrpc": "2.0", "id": 2, "result": {}}
+
+
 def test_emergency_stop_survives_broken_journal(config_path: Path) -> None:
     config = TradingConfig.load(config_path)
     config.state_dir.mkdir()
