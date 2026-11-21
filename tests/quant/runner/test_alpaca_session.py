@@ -116,6 +116,53 @@ def test_alpaca_paper_round_trip_and_no_repeat_lookups(
     assert after - before <= len(second.orders)
 
 
+def test_rerun_after_opening_fill_journals_the_fill_next_session(
+    config: TradingConfig, first_day: date
+) -> None:
+    config = replace(config, broker_kind="alpaca")
+    exchange = Exchange()
+    broker = AlpacaBroker("key", "secret", session=exchange)
+    first = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
+    assert first.status == "TRADED", first.reasons
+    exchange.fill(config, first_day)
+    # The auction has filled, but data stops at the decision close before its open.
+    rerun = run_session(
+        config, today=first_day, broker=broker, now=ny_clock(first_day, time(9, 40))
+    )
+    assert rerun.status == "NO_CHANGE", rerun.reasons
+    assert rerun.reasons == ["session already submitted"]
+    journal = Journal(config.state_dir / "journal.jsonl")
+    assert not journal.events(["fill"])
+    assert journal.events(["reconcile"])[-1].payload["breaks"] == []
+    assert sum(method == "POST" for method, _ in exchange.calls) == len(first.orders)
+    day = date(2020, 6, 9)
+    second = run_session(config, today=day, broker=broker, now=ny_clock(day))
+    assert second.status != "HALTED", second.reasons
+    again = run_session(config, today=day, broker=broker, now=ny_clock(day))
+    assert again.status != "HALTED", again.reasons
+    # Each opening fill is journaled once, against its own session's open.
+    assert config.csv_dir is not None
+    opens = (
+        CsvProvider(config.csv_dir)
+        .fetch(config.symbols, config.data_start, first_day)
+        .open.iloc[-1]
+    )
+    fills = [e.payload for e in journal.events(["fill"])]
+    fills = [f for f in fills if f["session"] == "2020-06-08"]
+    assert sorted(f["client_order_id"] for f in fills) == sorted(
+        o.client_order_id for o in first.orders
+    )
+    for fill in fills:
+        assert fill["reference_price"] == pytest.approx(opens[fill["symbol"]])
+        assert abs(fill["price"] / fill["reference_price"] - 1) < 0.000501
+    outcomes = [
+        e.payload["status"]
+        for e in journal.events(["session_outcome"])
+        if e.payload["session"] == "2020-06-08"
+    ]
+    assert outcomes == ["TRADED", "NO_CHANGE"]
+
+
 def test_live_authorization_with_real_gate_and_fake_transport(
     config: TradingConfig,
     first_day: date,
