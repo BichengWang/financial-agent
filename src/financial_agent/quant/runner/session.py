@@ -218,6 +218,10 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
             if ack.filled_avg_price is None:
                 raise BrokerError("filled order has no execution price")
             opening = pd.Timestamp(intent["session"])
+            if opening > data.sessions[-1]:
+                # A same-day rerun sees the fill before its open is in the data;
+                # a later session journals it, and _expected counts it meanwhile.
+                continue
             if opening not in data.sessions:
                 raise BrokerError("execution reference session is unavailable")
             # Compare with the auction reference, not the previous close's gap.
@@ -279,11 +283,30 @@ def _sync(broker: Broker, data: MarketData, journal: Journal) -> list[Fill]:
 
 def _expected(journal: Journal) -> dict[str, float]:
     positions: dict[str, float] = {}
+    filled: dict[str, float] = {}
     for event in journal.events(["fill"]):
         f = event.payload
+        filled[f["client_order_id"]] = filled.get(f["client_order_id"], 0) + f["qty"]
         positions[f["symbol"]] = positions.get(f["symbol"], 0) + (
             f["qty"] if f["side"] == "buy" else -f["qty"]
         )
+    # Broker-reported executions whose fill waits for its session's open (_sync).
+    orders = {
+        e.payload["order"]["client_order_id"]: e.payload["order"]
+        for e in journal.events(["submission_intent"])
+    }
+    final = {e.payload["client_order_id"] for e in journal.events(["order_final"])}
+    reported = {
+        e.payload["client_order_id"]: e.payload["filled_qty"]
+        for e in journal.events(["order_observed"])
+    }
+    for client, qty in reported.items():
+        order = orders[client]
+        pending = min(qty, order["qty"]) - filled.get(client, 0)
+        if client not in final and pending > 0:
+            positions[order["symbol"]] = positions.get(order["symbol"], 0) + (
+                pending if order["side"] == "buy" else -pending
+            )
     return positions
 
 

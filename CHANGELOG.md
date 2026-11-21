@@ -36,6 +36,8 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - The market-data cache fetches a symbol again in full when its cached bars came
   from another provider. A cache filled by `--provider csv` used to be served for
   `--provider yahoo` without contacting Yahoo, labelled `csv`.
+- A same-day rerun of a broker-backed session after the opening auction filled no
+  longer halts. The next session journals those fills against their session's open.
 
 ## [1.3.0] - 2026-10-28
 
