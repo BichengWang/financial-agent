@@ -236,6 +236,30 @@ def test_partial_submission_recovers_without_duplicate_orders(
     assert run_session(config, today=first_day).status == "NO_CHANGE"
 
 
+def test_kill_written_mid_submission_stops_remaining_orders(
+    config: TradingConfig, first_day: date
+) -> None:
+    from financial_agent.quant.execution import OrderAck
+    from financial_agent.quant.risk import Order
+
+    class KillAfterFirst(PaperBroker):
+        def submit(self, order: Order) -> OrderAck:
+            ack = super().submit(order)
+            KillSwitch(config.state_dir).engage("operator stop", source="operator")
+            return ack
+
+    broker = KillAfterFirst(
+        config.state_dir / "paper.json",
+        costs=config.backtest.costs,
+        initial_cash=config.initial_cash,
+    )
+    report = run_session(config, today=first_day, broker=broker)
+    assert len(report.orders) > 1
+    assert report.status == "HALTED"
+    assert "kill switch engaged" in report.reasons
+    assert len(broker.open_orders()) == 1
+
+
 @pytest.mark.parametrize(
     "day,expected",
     [

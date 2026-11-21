@@ -7,6 +7,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- A `KILL` file written mid-session now stops the remaining orders: each
+  submission loop checks the kill switch before every order and halts. Orders
+  already submitted stay submitted and journalled; kill still cancels nothing.
 - `fa-quant kill` engages the stop even while a session is running. It used to
   fail with `SessionLocked` and write no `KILL` file. If the session lock is held
   the journal entry is skipped and the command says so.
