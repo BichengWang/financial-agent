@@ -7,6 +7,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `fa-quant kill` engages the stop even while a session is running. It used to
+  fail with `SessionLocked` and write no `KILL` file. If the session lock is held
+  the journal entry is skipped and the command says so.
 - Yahoo downloads retry four times over about 30 seconds (2 s backoff, doubling)
   instead of twice over 1.5 seconds. A scheduled session that starts just after
   the host wakes no longer halts because DNS is not resolving yet. The 2026-10-30
