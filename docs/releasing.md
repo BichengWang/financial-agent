@@ -62,4 +62,5 @@ stored. Configure it once:
    `PYPI_PUBLISH` to `true`. From then on every `v*` tag uploads to PyPI.
 
 PyPI never accepts the same version twice, even after deletion. Releases up to
-v1.2.0 are tagged already, so the first PyPI upload is the next version tag.
+v1.2.0 were tagged before publishing was enabled and are not on PyPI; v1.2.1
+was the first upload.

@@ -20,7 +20,9 @@ or bump the NumPy `<2` and pandas `<3` pins without discussing it first.
 
 ## Checks
 
-CI runs these on every pull request that touches code; run them before pushing:
+CI runs the first four on pull requests that touch code, and the docs build on
+pull requests that touch published content (README, CHANGELOG, `docs/`,
+`reports/quant/`). Run all five before pushing:
 
 ```sh
 uv run pytest tests agents/equity/daily_investment_system/tests -q
