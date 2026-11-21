@@ -2,6 +2,11 @@ name: Quant paper session
 # Dispatch near 08:45 America/New_York on a trading day: OPG needs pre-open.
 on:
   workflow_dispatch:
+    inputs:
+      first_run:
+        description: Start without restored state (first session only)
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -10,6 +15,7 @@ concurrency:
 jobs:
   paper:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -20,6 +26,15 @@ jobs:
           path: var/quant-paper
           key: quant-paper-${{ github.run_id }}
           restore-keys: quant-paper-
+      # A lost or evicted cache must halt: running without the audit chain and
+      # kill state would start a fresh, unlinked history.
+      - name: Require restored state
+        if: ${{ !inputs.first_run }}
+        run: |
+          if [ -z "$(ls -A var/quant-paper 2>/dev/null)" ]; then
+            echo "::error::No state restored to var/quant-paper. Restore it, or dispatch with first_run for the first session."
+            exit 1
+          fi
       - name: Run Alpaca paper session
         env:
           APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
