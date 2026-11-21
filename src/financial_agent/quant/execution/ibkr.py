@@ -11,7 +11,6 @@ from typing import Any, Literal, cast
 from urllib.parse import quote, urlsplit
 import ipaddress
 import math
-import os
 import re
 import time
 
@@ -23,6 +22,7 @@ from .broker import (
     LiveAuthorization,
     OrderAck,
     OrderStatus,
+    live_permitted,
     validate_order,
 )
 
@@ -154,11 +154,7 @@ class IBKRBroker:
         self._ready()
 
     def _guard_live(self) -> None:
-        if self.is_live and (
-            os.environ.get("FA_QUANT_ALLOW_LIVE") != "1"
-            or not isinstance(self._authorization, LiveAuthorization)
-            or not self._authorization.is_valid(datetime.now(timezone.utc))
-        ):
+        if self.is_live and not live_permitted(self._authorization):
             raise BrokerError(
                 "live IBKR requires valid authorization and explicit opt-in"
             )

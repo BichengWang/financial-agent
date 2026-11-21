@@ -1,9 +1,10 @@
 """Execution contracts: share quantities, currency prices, and UTC timestamps."""
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Literal, Protocol
 import math
+import os
 
 from financial_agent.quant.risk.orders import AccountSnapshot, Order
 
@@ -65,6 +66,14 @@ class LiveAuthorization:
             and self.expires_at.utcoffset() is not None
             and self.granted_at <= now < self.expires_at
         )
+
+
+def live_permitted(authorization: object) -> bool:
+    return (
+        os.environ.get("FA_QUANT_ALLOW_LIVE") == "1"
+        and isinstance(authorization, LiveAuthorization)
+        and authorization.is_valid(datetime.now(timezone.utc))
+    )
 
 
 class Broker(Protocol):

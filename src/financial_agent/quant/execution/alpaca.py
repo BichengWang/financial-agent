@@ -14,6 +14,7 @@ from .broker import (
     LiveAuthorization,
     OrderAck,
     OrderStatus,
+    live_permitted,
     validate_order,
 )
 
@@ -97,11 +98,7 @@ class AlpacaBroker:
         )
 
     def _guard_live(self) -> None:
-        if self.is_live and (
-            os.environ.get("FA_QUANT_ALLOW_LIVE") != "1"
-            or not isinstance(self._authorization, LiveAuthorization)
-            or not self._authorization.is_valid(datetime.now(timezone.utc))
-        ):
+        if self.is_live and not live_permitted(self._authorization):
             raise BrokerError(
                 "live endpoint requires a valid authorization and explicit opt-in"
             )

@@ -69,6 +69,12 @@ class CachedProvider:
             if os.path.exists(temporary):
                 os.unlink(temporary)
 
+    def _fetch_symbol(self, symbol: str, start: dt.date, end: dt.date) -> MarketData:
+        fresh = self.inner.fetch([symbol], start, end)
+        if fresh.symbols != (symbol,):
+            raise DataError(f"cache: provider returned wrong symbols for {symbol}")
+        return fresh.window(pd.Timestamp(start), pd.Timestamp(end))
+
     def fetch(self, symbols: Sequence[str], start: dt.date, end: dt.date) -> MarketData:
         validate_request(symbols, start, end)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -125,12 +131,7 @@ class CachedProvider:
                 retrieved_at: str | None = (
                     self.now().astimezone(dt.timezone.utc).isoformat()
                 )
-                fresh = self.inner.fetch([symbol], fetch_start, full_end)
-                if fresh.symbols != (symbol,):
-                    raise DataError(
-                        f"cache: provider returned wrong symbols for {symbol}"
-                    )
-                fresh = fresh.window(pd.Timestamp(fetch_start), pd.Timestamp(full_end))
+                fresh = self._fetch_symbol(symbol, fetch_start, full_end)
                 incoming = symbol_frame(fresh, symbol)
                 if incoming.empty and cached is not None:
                     incoming = symbol_frame(cached, symbol)
@@ -150,15 +151,8 @@ class CachedProvider:
                         )
                     )
                     if changed:
-                        fresh = self.inner.fetch([symbol], full_start, full_end)
-                        if fresh.symbols != (symbol,):
-                            raise DataError(f"cache: wrong symbols for {symbol}")
-                        incoming = symbol_frame(
-                            fresh.window(
-                                pd.Timestamp(full_start), pd.Timestamp(full_end)
-                            ),
-                            symbol,
-                        )
+                        fresh = self._fetch_symbol(symbol, full_start, full_end)
+                        incoming = symbol_frame(fresh, symbol)
                     else:
                         incoming = pd.concat(
                             [old.loc[old.index < pd.Timestamp(fetch_start)], incoming]
