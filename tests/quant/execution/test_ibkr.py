@@ -163,6 +163,14 @@ class Gateway:
             [{"order_id": self.orders[-1]["orderId"], "order_status": "PreSubmitted"}]
         )
 
+    def order_posts(self) -> list[Any]:
+        return [
+            k["json"] for m, p, k in self.calls if m == "POST" and p.endswith("/orders")
+        ]
+
+    def replies(self) -> list[Any]:
+        return [k["json"] for _, p, k in self.calls if p.startswith("/iserver/reply/")]
+
 
 def order(qty: float = 10) -> Order:
     return Order("SPY", "buy", qty, client_order_id="client-1")
@@ -283,11 +291,7 @@ def test_contract_resolution_body_and_idempotency() -> None:
     broker = IBKRBroker("DU123456", session=transport)
     ack = broker.submit(order())
     assert broker.submit(order()).broker_order_id == ack.broker_order_id
-    posts = [
-        k["json"]
-        for m, p, k in transport.calls
-        if m == "POST" and p.endswith("/orders")
-    ]
+    posts = transport.order_posts()
     assert posts == [
         {
             "orders": [
@@ -331,9 +335,7 @@ def test_ambiguous_post_recovers_without_repeat(duplicate: bool) -> None:
     transport.ambiguous = not duplicate
     broker = IBKRBroker("DU123456", session=transport)
     assert broker.submit(order()).status == "accepted"
-    assert (
-        sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
-    )
+    assert len(transport.order_posts()) == 1
 
 
 def test_reply_chain_and_decline() -> None:
@@ -344,10 +346,7 @@ def test_reply_chain_and_decline() -> None:
         broker.submit(order())
     assert "U999999" not in str(caught.value)
     assert "Order without market data" in str(caught.value)
-    replies = [
-        k["json"] for _, p, k in transport.calls if p.startswith("/iserver/reply/")
-    ]
-    assert replies == [{"confirmed": True}, {"confirmed": False}]
+    assert transport.replies() == [{"confirmed": True}, {"confirmed": False}]
     assert not transport.orders
     transport.questions = [["o354"], ["o163"]]
     allowed = IBKRBroker(
@@ -362,7 +361,7 @@ def test_reply_loop_bound() -> None:
     broker = IBKRBroker("DU123456", session=transport, confirm_message_ids=["o354"])
     with pytest.raises(BrokerError):
         broker.submit(order())
-    assert sum(p.startswith("/iserver/reply/") for _, p, _ in transport.calls) == 10
+    assert len(transport.replies()) == 10
     assert not transport.orders
 
 
@@ -501,9 +500,9 @@ def test_incomplete_observation_never_submits(where: str) -> None:
         transport.orders[0]["status"] = "Unknown" if where == "status" else "Filled"
     with pytest.raises(BrokerError):
         broker.submit(order())
-    assert sum(
-        m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls
-    ) == (1 if where in ("status", "executions") else 0)
+    assert len(transport.order_posts()) == (
+        1 if where in ("status", "executions") else 0
+    )
 
 
 def test_failed_post_is_not_retried_and_body_is_private() -> None:
@@ -519,9 +518,7 @@ def test_failed_post_is_not_retried_and_body_is_private() -> None:
     with pytest.raises(BrokerError) as caught:
         broker.submit(order())
     assert "private-account-data" not in str(caught.value)
-    assert (
-        sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
-    )
+    assert len(transport.order_posts()) == 1
     assert sum(p == "/iserver/account/trades" for _, p, _ in transport.calls) == 2
 
 
@@ -540,9 +537,7 @@ def test_empty_reply_ids_are_declined() -> None:
     with pytest.raises(IBKRQuestion):
         broker.submit(order())
     assert not transport.orders
-    assert [
-        k["json"] for _, p, k in transport.calls if p.startswith("/iserver/reply/")
-    ] == [{"confirmed": False}]
+    assert transport.replies() == [{"confirmed": False}]
 
 
 def test_gateway_pacing(monkeypatch: pytest.MonkeyPatch) -> None:

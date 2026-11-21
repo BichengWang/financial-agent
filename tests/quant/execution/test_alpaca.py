@@ -54,6 +54,10 @@ def order_json(status: str = "new") -> dict[str, Any]:
     )
 
 
+def order(qty: float = 5, **fields: Any) -> Order:
+    return Order("SPY", "buy", qty, client_order_id="client-123", **fields)
+
+
 def authorization(*, expired: bool = False) -> LiveAuthorization:
     now = datetime.now(timezone.utc)
     return LiveAuthorization(
@@ -102,7 +106,7 @@ def test_request_and_duplicate_client_lookup() -> None:
         Response(200, order_json()),
     )
     broker = AlpacaBroker("test-key", "test-secret", session=transport)
-    ack = broker.submit(Order("SPY", "buy", 5, client_order_id="client-123"))
+    ack = broker.submit(order())
     assert ack.broker_order_id == "broker-123"
     assert ack.status == "accepted"
     method, url, kwargs = transport.calls[0]
@@ -134,10 +138,7 @@ def test_post_recovery_checks_client_id_before_retry(
 ) -> None:
     transport = Transport(failure, Response(404, {}), Response(200, order_json()))
     broker = AlpacaBroker("key", "test-secret", session=transport)
-    assert (
-        broker.submit(Order("SPY", "buy", 5, client_order_id="client-123")).status
-        == "accepted"
-    )
+    assert broker.submit(order()).status == "accepted"
     assert [c[0] for c in transport.calls] == ["POST", "GET", "POST"]
     assert transport.calls[0][2]["json"] == transport.calls[2][2]["json"]
 
@@ -147,15 +148,12 @@ def test_ambiguous_post_found_and_failed_lookup() -> None:
         requests.ConnectionError("test-secret"), Response(200, order_json("filled"))
     )
     broker = AlpacaBroker("key", "test-secret", session=transport)
-    assert (
-        broker.submit(Order("SPY", "buy", 5, client_order_id="client-123")).status
-        == "filled"
-    )
+    assert broker.submit(order()).status == "filled"
     assert len(transport.calls) == 2
     transport = Transport(Response(503, {}), Response(401, {"message": "test-secret"}))
     broker = AlpacaBroker("key", "test-secret", session=transport)
     with pytest.raises(BrokerError) as error:
-        broker.submit(Order("SPY", "buy", 5, client_order_id="client-123"))
+        broker.submit(order())
     assert "test-secret" not in str(error.value)
     assert [c[0] for c in transport.calls] == ["POST", "GET"]
 
@@ -219,9 +217,7 @@ def test_account_open_orders_and_multistatus_cancel() -> None:
 )
 def test_status_mapping(raw: str, expected: str) -> None:
     transport = Transport(Response(200, order_json(raw)))
-    ack = AlpacaBroker("key", "secret", session=transport).submit(
-        Order("SPY", "buy", 5, client_order_id="client-123")
-    )
+    ack = AlpacaBroker("key", "secret", session=transport).submit(order())
     assert ack.status == expected
 
 
@@ -236,9 +232,7 @@ def test_from_env_and_nonduplicate_rejection(monkeypatch: pytest.MonkeyPatch) ->
         Response(422, {"message": "test-secret invalid quantity"}), Response(404, {})
     )
     with pytest.raises(BrokerError) as error:
-        AlpacaBroker.from_env(session=transport).submit(
-            Order("SPY", "buy", 5, client_order_id="client-123")
-        )
+        AlpacaBroker.from_env(session=transport).submit(order())
     assert "test-secret" not in str(error.value)
     assert len(transport.calls) == 2
 
@@ -256,7 +250,7 @@ def test_from_env_and_nonduplicate_rejection(monkeypatch: pytest.MonkeyPatch) ->
 def test_canonical_quantity_body(qty: float, tif: str, encoded: str) -> None:
     transport = Transport(Response(200, order_json()))
     AlpacaBroker("key", "secret", session=transport).submit(
-        Order("SPY", "buy", qty, time_in_force=tif, client_order_id="client-123")
+        order(qty, time_in_force=tif)
     )
     assert transport.calls[0][2]["json"]["qty"] == encoded
 
@@ -267,14 +261,7 @@ def test_canonical_quantity_body(qty: float, tif: str, encoded: str) -> None:
 def test_plain_decimal_limit_price(price: float, encoded: str) -> None:
     transport = Transport(Response(200, order_json()))
     AlpacaBroker("key", "secret", session=transport).submit(
-        Order(
-            "SPY",
-            "buy",
-            12.0,
-            order_type="limit",
-            limit_price=price,
-            client_order_id="client-123",
-        )
+        order(12.0, order_type="limit", limit_price=price)
     )
     assert transport.calls[0][2]["json"]["limit_price"] == encoded
 
@@ -294,14 +281,7 @@ def test_fractional_unsupported_orders_rejected_before_http(
     transport = Transport()
     with pytest.raises(BrokerError, match="fractional quantities"):
         AlpacaBroker("key", "secret", session=transport).submit(
-            Order(
-                "SPY",
-                "buy",
-                qty,
-                order_type=kind,
-                time_in_force=tif,
-                client_order_id="client-123",
-            )
+            order(qty, order_type=kind, time_in_force=tif)
         )
     assert transport.calls == []
 
@@ -310,8 +290,6 @@ def test_quantity_below_precision_rejected_before_http() -> None:
     transport = Transport()
     with pytest.raises(BrokerError, match="decimal precision"):
         AlpacaBroker("key", "secret", session=transport).submit(
-            Order(
-                "SPY", "buy", 1e-12, time_in_force="day", client_order_id="client-123"
-            )
+            order(1e-12, time_in_force="day")
         )
     assert transport.calls == []
