@@ -92,7 +92,9 @@ def _easter_sunday(year: int) -> dt.date:
 
 
 def _observed(holiday: dt.date) -> dt.date:
-    """NYSE fixed-date holidays: Sat -> preceding Fri, Sun -> following Mon."""
+    """Fixed-date holidays: Sat -> preceding Fri, Sun -> following Mon.
+
+    Not for New Year's Day, which has no Saturday observance."""
     if holiday.weekday() == 5:
         return holiday - dt.timedelta(days=1)
     if holiday.weekday() == 6:
@@ -101,9 +103,15 @@ def _observed(holiday: dt.date) -> dt.date:
 
 
 def us_market_holidays(year: int) -> set[dt.date]:
-    """Approximate NYSE holiday calendar for `year`."""
+    """Approximate NYSE holiday calendar for `year`.
+
+    NYSE Rule 7.2: a Saturday January 1 has no observed closure (the prior
+    Friday, December 31, trades); a Sunday January 1 is observed Monday.
+    """
+    jan1 = dt.date(year, 1, 1)
+    new_years_day = jan1 + dt.timedelta(days=1) if jan1.weekday() == 6 else jan1
     holidays = {
-        _observed(dt.date(year, 1, 1)),  # New Year's Day
+        new_years_day,  # New Year's Day
         _nth_weekday(year, 1, 0, 3),  # MLK Day
         _nth_weekday(year, 2, 0, 3),  # Washington's Birthday
         _easter_sunday(year) - dt.timedelta(days=2),  # Good Friday
@@ -114,14 +122,6 @@ def us_market_holidays(year: int) -> set[dt.date]:
         _nth_weekday(year, 11, 3, 4),  # Thanksgiving
         _observed(dt.date(year, 12, 25)),  # Christmas
     }
-    # New Year's Day observance is the only holiday whose Sat/Sun shift can
-    # cross a calendar-year boundary (Jan 1 on a Saturday -> observed the
-    # prior Dec 31, e.g. 2022-01-01 -> 2021-12-31). is_trading_day() looks
-    # holidays up by the *queried* date's own year, so that shifted date
-    # must also be included in the set for the year it actually falls in.
-    next_new_year_observed = _observed(dt.date(year + 1, 1, 1))
-    if next_new_year_observed.year == year:
-        holidays.add(next_new_year_observed)
     return holidays
 
 
