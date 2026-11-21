@@ -5,7 +5,7 @@ on:
     paths:
       - "src/**"
       - "tests/**"
-      - "example/**"
+      - "examples/**"
       - "deploy/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
@@ -19,7 +19,7 @@ on:
     paths:
       - "src/**"
       - "tests/**"
-      - "example/**"
+      - "examples/**"
       - "deploy/**"
       - "agents/equity/daily_investment_system/**"
       - "pyproject.toml"
