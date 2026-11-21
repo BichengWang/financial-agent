@@ -5,6 +5,18 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Removed
+
+- Unused names from the historical `financial_agent.trading` package, which the
+  wheel ships. Nothing in the repository or its notebooks referenced them:
+  `DEFAULT_DATA_COLUMNS` and every ticker list in `config.config` except
+  `SP500_100_TICKER`, `SP500_20_TICKER` and `DOW_30_TICKER`;
+  `backtest.convert_daily_return_to_pyfolio_ts` and `backtest.trx_plot`;
+  `preprocessing.data.load_dataset` and `convert_to_datetime`;
+  `YahooDownloader.select_equal_rows_stock`; and `configure_mixed_precision`,
+  `get_optimal_batch_size`, `create_device_aware_model` and `train_on_device` in
+  `utils.gpu_config`.
+
 ### Fixed
 
 - A `KILL` file written mid-session now stops the remaining orders: each
