@@ -1,12 +1,12 @@
 """Incremental CSV cache with overlap-based adjustment revision detection."""
 
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Hashable, Sequence
 import datetime as dt
 import json
 import os
 from pathlib import Path
 import tempfile
-from typing import Any
+from typing import Any, cast
 from zoneinfo import ZoneInfo
 
 import numpy as np
@@ -28,12 +28,29 @@ def _retrieved_after(record: dict[str, Any], session: dt.date) -> bool:
     """Whether the record was retrieved on a New York date after `session`."""
     try:
         retrieved = dt.datetime.fromisoformat(record["retrieved_at"])
-    except (KeyError, TypeError, ValueError):
+        return (
+            retrieved.tzinfo is not None
+            and retrieved.astimezone(EXCHANGE_TZ).date() > session
+        )
+    except (KeyError, TypeError, ValueError, OverflowError):
         return False
-    return (
-        retrieved.tzinfo is not None
-        and retrieved.astimezone(EXCHANGE_TZ).date() > session
-    )
+
+
+def _meta_value(symbol: str, record: dict[str, Any], key: str) -> Any:
+    try:
+        return record[key]
+    except KeyError:
+        raise DataError(f"cache: invalid metadata: {symbol}: missing {key}") from None
+
+
+def _meta_date(symbol: str, record: dict[str, Any], key: str) -> dt.date:
+    value = _meta_value(symbol, record, key)
+    try:
+        return dt.date.fromisoformat(value)
+    except (TypeError, ValueError):
+        raise DataError(
+            f"cache: invalid metadata: {symbol}: {key} is not an ISO date"
+        ) from None
 
 
 class CachedProvider:
@@ -101,14 +118,14 @@ class CachedProvider:
                 record.get("first_session") is not None
                 and (self.cache_dir / f"{symbol}.csv").exists()
             ):
-                cached = CsvProvider(self.cache_dir, adjusted=record["adjusted"]).fetch(
-                    [symbol], dt.date.min, dt.date.max
-                )
+                cached = CsvProvider(
+                    self.cache_dir, adjusted=_meta_value(symbol, record, "adjusted")
+                ).fetch([symbol], dt.date.min, dt.date.max)
             covered_start = (
-                dt.date.fromisoformat(record["covered_start"]) if record else start
+                _meta_date(symbol, record, "covered_start") if record else start
             )
             covered_end = (
-                dt.date.fromisoformat(record["covered_end"])
+                _meta_date(symbol, record, "covered_end")
                 if record.get("covered_end") is not None
                 else None
             )
@@ -140,8 +157,8 @@ class CachedProvider:
                     old = symbol_frame(cached, symbol)
                     overlap = old.index[old.index >= pd.Timestamp(fetch_start)]
                     changed = (
-                        fresh.adjusted != record["adjusted"]
-                        or fresh.source != record["source"]
+                        fresh.adjusted != _meta_value(symbol, record, "adjusted")
+                        or fresh.source != _meta_value(symbol, record, "source")
                         or not np.allclose(
                             old.loc[overlap].to_numpy(dtype=float),
                             incoming.reindex(overlap).to_numpy(dtype=float),
@@ -185,7 +202,14 @@ class CachedProvider:
             else:
                 assert cached is not None
                 incoming = symbol_frame(cached, symbol)
-            conventions.add((record["adjusted"], record["source"]))
+            source = _meta_value(symbol, record, "source")
+            if not isinstance(source, Hashable):
+                raise DataError(
+                    f"cache: invalid metadata: {symbol}: source is not a string"
+                )
+            conventions.add(
+                (_meta_value(symbol, record, "adjusted"), cast(str, source))
+            )
             frames[symbol] = incoming.loc[
                 (incoming.index >= pd.Timestamp(start))
                 & (incoming.index <= pd.Timestamp(end))
