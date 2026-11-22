@@ -15,6 +15,7 @@ from typing import Any
 import pandas as pd  # type: ignore[import-untyped]
 
 from financial_agent.harness.market_calendar import session as calendar_session
+from ..backtest import BacktestConfig
 from ..data import BarProvider, MarketData, check_quality
 from ..data.cache import EXCHANGE_TZ
 from ..execution import (
@@ -33,6 +34,7 @@ from ..risk import (
     AccountSnapshot,
     KillSwitch,
     Order,
+    RiskLimits,
     RiskState,
     check_orders,
     plan_orders,
@@ -331,6 +333,64 @@ def _expected(journal: Journal) -> dict[str, float]:
     return positions
 
 
+def _rebalance_due(backtest: BacktestConfig, decision: str, today: date) -> bool:
+    due = backtest.rebalance == "daily"
+    if backtest.rebalance == "weekly":
+        due = (
+            pd.Timestamp(decision).isocalendar()[:2]
+            != pd.Timestamp(today).isocalendar()[:2]
+        )
+    elif backtest.rebalance == "monthly":
+        due = decision[:7] != today.isoformat()[:7]
+    if backtest.start is not None and pd.Timestamp(decision) < backtest.start:
+        due = False
+    return due
+
+
+def _plan_utilization(
+    orders: list[Order], account: AccountSnapshot, prices: pd.Series, limits: RiskLimits
+) -> dict[str, float | None]:
+    turnover = sum(o.qty * float(prices[o.symbol]) for o in orders)
+    projected = dict(account.weights())
+    for order in orders:
+        projected[order.symbol] = projected.get(order.symbol, 0) + (
+            (1 if order.side == "buy" else -1)
+            * order.qty
+            * float(prices[order.symbol])
+            / account.equity
+        )
+    return dict(
+        turnover_utilization=(
+            turnover / account.equity / limits.max_turnover_pct
+            if limits.max_turnover_pct
+            else None
+        ),
+        max_weight_utilization=(
+            max(projected.values(), default=0) / limits.max_weight
+            if limits.max_weight
+            else None
+        ),
+        cash_fraction=1 - sum(projected.values()),
+        gross_utilization=(
+            sum(abs(w) for w in projected.values()) / limits.max_gross
+            if limits.max_gross
+            else None
+        ),
+        order_count_utilization=(
+            len(orders) / limits.max_orders if limits.max_orders else None
+        ),
+        max_order_notional_utilization=(
+            max(
+                (o.qty * float(prices[o.symbol]) / account.equity for o in orders),
+                default=0,
+            )
+            / limits.max_order_notional_pct
+            if limits.max_order_notional_pct
+            else None
+        ),
+    )
+
+
 def run_session(
     config: TradingConfig,
     *,
@@ -521,19 +581,7 @@ def _run_locked(
             kill.engage("; ".join(reasons), source="runner")
             return finish("HALTED", reasons)
         # Daily account safety runs above; hypothetical off-cadence plans cannot halt.
-        due = config.backtest.rebalance == "daily"
-        if config.backtest.rebalance == "weekly":
-            due = (
-                pd.Timestamp(decision).isocalendar()[:2]
-                != pd.Timestamp(today).isocalendar()[:2]
-            )
-        elif config.backtest.rebalance == "monthly":
-            due = decision[:7] != today.isoformat()[:7]
-        if (
-            config.backtest.start is not None
-            and pd.Timestamp(decision) < config.backtest.start
-        ):
-            due = False
+        due = _rebalance_due(config.backtest, decision, today)
         risk["rebalance_due"] = due
         if not due and not dry_run:
             previous_plans = [
@@ -630,47 +678,8 @@ def _run_locked(
         checked = check_orders(
             orders, account, data.close.iloc[-1], config.risk, kill_switch=kill
         )
-        turnover = sum(o.qty * float(data.close.iloc[-1][o.symbol]) for o in orders)
-        projected = dict(account.weights())
-        for order in orders:
-            projected[order.symbol] = projected.get(order.symbol, 0) + (
-                (1 if order.side == "buy" else -1)
-                * order.qty
-                * float(data.close.iloc[-1][order.symbol])
-                / account.equity
-            )
         risk.update(
-            turnover_utilization=(
-                turnover / account.equity / config.risk.max_turnover_pct
-                if config.risk.max_turnover_pct
-                else None
-            ),
-            max_weight_utilization=(
-                max(projected.values(), default=0) / config.risk.max_weight
-                if config.risk.max_weight
-                else None
-            ),
-            cash_fraction=1 - sum(projected.values()),
-            gross_utilization=(
-                sum(abs(w) for w in projected.values()) / config.risk.max_gross
-                if config.risk.max_gross
-                else None
-            ),
-            order_count_utilization=(
-                len(orders) / config.risk.max_orders if config.risk.max_orders else None
-            ),
-            max_order_notional_utilization=(
-                max(
-                    (
-                        o.qty * float(data.close.iloc[-1][o.symbol]) / account.equity
-                        for o in orders
-                    ),
-                    default=0,
-                )
-                / config.risk.max_order_notional_pct
-                if config.risk.max_order_notional_pct
-                else None
-            ),
+            _plan_utilization(orders, account, data.close.iloc[-1], config.risk)
         )
         journal.append(
             "plan",
