@@ -15,7 +15,7 @@ Python 3.12 risk-managed systematic ETF platform plus financial/RL research. Man
 - `agents/equity/`, `skills/`, `docs/research/` — daily and native sourced research workflows.
 - `src/financial_agent/rl/` — generic RL primitives (`agent.py`, `environment.py`, `trainer.py`).
 - `src/financial_agent/dl/` — deep-learning baselines (LSTM, data windowing).
-- `src/financial_agent/trading/` — trading-specific code (`env/`, `model/`, `preprocessing/`, `marketdata/`, `autotrain/`, `config/`, `backtest.py`, `utils/`).
+- `src/financial_agent/trading/` — trading-specific code (`env/`, `model/`, `preprocessing/`, `marketdata/`, `config/`, `backtest.py`, `utils/`).
 - `src/financial_agent/agents/{claude,gpt,grok}/` — placeholders for LLM-agent variants (currently empty).
 - `notebooks/` — Jupyter notebooks (committed with outputs).
 - `assets/img/` — images referenced by notebooks/READMEs.

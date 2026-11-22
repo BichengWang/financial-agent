@@ -182,8 +182,7 @@ Generic RL supplies tabular Q-learning, GridWorld, Gymnasium wrappers and bounde
 training loops; [examples](examples/rl/) show the APIs and
 [notebooks](notebooks/README.md) keep historical outputs. The FinRL-derived
 `trading/` and TensorFlow `dl/` stacks are experimental: nothing reaches capital
-unless it implements `Strategy` and passes the same gates. The historical
-autotrain entrypoint is not turnkey.
+unless it implements `Strategy` and passes the same gates.
 
 ## Repository map
 

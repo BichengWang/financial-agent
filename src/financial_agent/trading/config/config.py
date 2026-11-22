@@ -149,40 +149,4 @@ SP500_100_TICKER = _computed_top100 if _computed_top100 else _SP500_100_TICKER_F
 # Backward-compatible alias: top 20 from the ranked SP500_100_TICKER
 SP500_20_TICKER = SP500_100_TICKER[:20] if len(SP500_100_TICKER) >= 20 else SP500_100_TICKER
 
-
-# check https://wrds-www.wharton.upenn.edu/ for U.S. index constituents
-# Dow 30 constituents at 2019/01
-DOW_30_TICKER = [
-    "AAPL",
-    "MSFT",
-    "JPM",
-    "V",
-    "RTX",
-    "PG",
-    "GS",
-    "NKE",
-    "DIS",
-    "AXP",
-    "HD",
-    "INTC",
-    "WMT",
-    "IBM",
-    "MRK",
-    "UNH",
-    "KO",
-    "CAT",
-    "TRV",
-    "JNJ",
-    "CVX",
-    "MCD",
-    "VZ",
-    "CSCO",
-    "XOM",
-    "BA",
-    "MMM",
-    "PFE",
-    "WBA",
-    "DD",
-]
-
 ############## Stock Ticker Setup ends ##############
