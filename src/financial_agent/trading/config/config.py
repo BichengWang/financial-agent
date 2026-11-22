@@ -134,17 +134,10 @@ def get_sp500_top_n_by_marketcap(n=100):
     except Exception:
         return []
 
-_SP500_100_TICKER_FALLBACK = [
-        # Minimal fallback seed; final list will be computed below if possible
+# A fixed list; get_sp500_top_n_by_marketcap(100) fetches a live ranking (needs lxml).
+SP500_100_TICKER = [
         "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "META", "LLY", "AVGO", "TSLA", "WMT"
 ]
-
-# Compute dynamic top-100 (best-effort) unless disabled
-_dynamic_enabled = True
-_computed_top100 = get_sp500_top_n_by_marketcap(100) if _dynamic_enabled else []
-
-# Assign once to avoid constant redefinition warnings in static checkers
-SP500_100_TICKER = _computed_top100 if _computed_top100 else _SP500_100_TICKER_FALLBACK
 
 # Backward-compatible alias: top 20 from the ranked SP500_100_TICKER
 SP500_20_TICKER = SP500_100_TICKER[:20] if len(SP500_100_TICKER) >= 20 else SP500_100_TICKER
