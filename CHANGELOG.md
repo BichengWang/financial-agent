@@ -23,6 +23,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `examples/rl/run_all_examples.py` counts only the examples that exit 0, and exits
+  with status 1 when any of them fails or the run is interrupted. It used to report
+  `4/4 examples completed successfully` and exit 0 even when an example failed.
 - `fundamental_diagnostics.py` and `sentiment_diagnostics.py` upper-case, trim and
   comma-split `--tickers` values like `--tickers-file` lines, and drop empty ones.
   `--tickers aapl` used to find no SEC CIK mapping, `--tickers SPY,QQQ` stayed one

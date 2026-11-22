@@ -31,11 +31,13 @@ def run_example(script_name, description):
             print(f"❌ {description} failed with return code {result.returncode}")
             print("STDOUT:", result.stdout)
             print("STDERR:", result.stderr)
+        return result.returncode == 0
 
     except subprocess.TimeoutExpired:
         print(f"⏰ {description} timed out after 5 minutes")
     except Exception as e:
         print(f"💥 Error running {description}: {e}")
+    return False
 
 
 def main():
@@ -54,8 +56,8 @@ def main():
 
     for script, description in examples:
         try:
-            run_example(script, description)
-            successful += 1
+            if run_example(script, description):
+                successful += 1
         except KeyboardInterrupt:
             print("\n🛑 Interrupted by user")
             break
@@ -65,7 +67,8 @@ def main():
     print(f"\n{'='*60}")
     print(f"📊 Summary: {successful}/{total} examples completed successfully")
     print(f"{'='*60}")
+    return 0 if successful == total else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
