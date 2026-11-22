@@ -1,5 +1,6 @@
 """Operator smoke tests and MCP's capability boundary remain network-free."""
 
+from datetime import date, datetime, timedelta, timezone, tzinfo
 from io import StringIO
 import json
 from pathlib import Path
@@ -155,6 +156,33 @@ def test_mcp_tools_cannot_submit_cancel_or_access_live(config_path: Path) -> Non
     result = call(server, "quant_status", {"config": str(config_path)})
     assert result["result"]["isError"]
     assert "paper configurations" in result["result"]["content"][0]["text"]
+
+
+def test_mcp_defaults_today_to_the_new_york_date(
+    config_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # Tuesday 02:00 UTC, 10:00 on this UTC+8 host, is still Monday in New York.
+    moment = datetime(2020, 6, 9, 2, tzinfo=timezone.utc)
+    host = moment.astimezone(timezone(timedelta(hours=8)))
+
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz: tzinfo | None = None) -> datetime:  # type: ignore[override]
+            return host.replace(tzinfo=None) if tz is None else moment.astimezone(tz)
+
+    class HostDate(date):
+        @classmethod
+        def today(cls) -> date:  # type: ignore[override]
+            return host.date()
+
+    monkeypatch.setattr("financial_agent.quant.mcp.datetime", Clock)
+    monkeypatch.setattr("financial_agent.quant.mcp.date", HostDate)
+    server = QuantServer()
+    args = {"config": str(config_path)}
+    preview = call(server, "quant_preview_orders", args)["result"]
+    monday = call(server, "quant_preview_orders", {**args, "today": "2020-06-08"})
+    assert not preview["isError"]
+    assert preview == monday["result"]
 
 
 def test_mcp_reuses_protocol_and_suppresses_notifications() -> None:

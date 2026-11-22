@@ -26,7 +26,7 @@ from .risk import (
 )
 from .runner import TradingConfig, status_summary
 from .runner.report import json_value
-from .runner.session import _expected
+from .runner.session import EXCHANGE_TZ, _expected
 from .strategies import build_strategy
 from .validation import PromotionPolicy, evaluate_promotion
 
@@ -82,7 +82,9 @@ class QuantServer(HarnessServer):
                 raise ToolError("MCP only accepts paper configurations")
             if name == "quant_status":
                 return status_summary(config)
-            today = date.fromisoformat(args.get("today", date.today().isoformat()))
+            today = date.fromisoformat(
+                args.get("today", datetime.now(EXCHANGE_TZ).date().isoformat())
+            )
             decision = date.fromisoformat(session(today - timedelta(days=1)).basis_date)
             data = config.provider().fetch(config.symbols, config.data_start, decision)
             quality = check_quality(data, expected_last_session=decision)
