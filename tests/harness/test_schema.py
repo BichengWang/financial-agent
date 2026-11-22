@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -128,6 +129,100 @@ def test_v1_findings(
 ) -> None:
     findings = validate_payload(mutate(payload, path, value), policy)
     assert any(finding in f for f in findings), findings
+
+
+def test_v1_an_int_too_large_for_a_float_is_not_a_number(
+    payload: dict[str, Any], policy: Policy
+) -> None:
+    huge = validate_payload(mutate(payload, "predictions.0.mu", 10**400), policy)
+    assert f"predictions[0] VLO: mu={10**400} is not number" in huge
+
+
+@pytest.mark.parametrize(
+    ("spy_mu", "beta", "qqq"),
+    [
+        # ints whose product is a float: checked as before
+        (
+            0,
+            1,
+            [
+                "mu_prior 0.034012 != 0.000000",
+                "mu 0.019012 != mu_prior + mu_adjustment",
+            ],
+        ),
+        # two 201-digit ints are each a number; their product is not
+        (10**200, 10**200, ["QQQ beta_vs_spy x SPY mu is too large for a float"]),
+    ],
+    ids=["in-range", "too-large"],
+)
+def test_v1_checks_beta_x_spy_mu_from_int_inputs(
+    payload: dict[str, Any], policy: Policy, spy_mu: int, beta: int, qqq: list[str]
+) -> None:
+    ledger = mutate(payload, "predictions.1.mu", spy_mu)  # SPY
+    ledger = mutate(ledger, "predictions.2.beta_vs_spy", beta)  # QQQ
+    findings = [f for f in validate_payload(ledger, policy) if "QQQ" in f]
+    assert findings == [f"predictions[2] QQQ: {finding}" for finding in qqq]
+
+
+def test_v1_reports_a_beta_scaled_mu_beyond_the_float_range(
+    payload: dict[str, Any], policy: Policy
+) -> None:
+    # The prior 1 x 10**308 is a float; adding mu_adjustment 10**308 is not.
+    ledger = mutate(payload, "predictions.1.mu", 10**308)  # SPY
+    ledger = mutate(ledger, "predictions.2.beta_vs_spy", 1)  # QQQ
+    ledger = mutate(ledger, "predictions.2.mu_adjustment", 10**308)
+    findings = validate_payload(ledger, policy)
+    assert "predictions[2] QQQ: mu 0.019012 != mu_prior + mu_adjustment" in findings
+
+
+@pytest.mark.parametrize("sigma", [1e200, 1e-200])  # sigma**2 overflows; is 0.0
+def test_v1_beta_adjusted_kelly_is_checked_whatever_sigma_squares_to(
+    payload: dict[str, Any], policy: Policy, sigma: float
+) -> None:
+    # The kernel writes BETA_ADJ_TE when it is given kelly_raw.
+    record = equity_record(RUN, MODEL, vlo_inputs(kelly_raw=8.431961), policy)
+    record["sigma"] = sigma
+    record["score_explainability"]["metrics"].update(kelly_fractional=9.0, var95=-7.92)
+    payload["predictions"][0] = record
+    assert validate_payload(payload, policy) == [
+        "predictions[0] VLO: metrics.var95=-7.92 must be a decimal",
+        "predictions[0] VLO: metrics.kelly_fractional 9.0 != 2.107990",
+    ]
+
+
+@pytest.mark.parametrize(
+    ("sigma", "compared"),
+    [
+        (1e-160, True),  # sigma**2 is 1e-320: tiny, but not 0.0
+        (1e-200, False),  # sigma**2 underflows to 0.0
+        (1e200, False),  # sigma**2 overflows
+        (10**200, False),  # sigma**2 is an int too large for a float
+    ],
+    ids=["1e-160", "1e-200", "1e200", "int-10**200"],
+)
+def test_v1_checks_kelly_raw_against_mu_over_sigma2_when_it_is_a_float(
+    payload: dict[str, Any], policy: Policy, sigma: float, compared: bool
+) -> None:
+    # With mu 0, mu/sigma^2 is 0.0 at 1e-160 and the stored kelly_raw 8.43 is
+    # wrong; 0.06 / 1e-320 would be inf, which _close accepts for any kelly_raw.
+    ledger = mutate(payload, "predictions.0.mu", 0.0)
+    ledger = mutate(ledger, "predictions.0.sigma", sigma)
+    findings = validate_payload(ledger, policy)
+    assert any("mu/sigma^2" in f for f in findings) is compared
+
+
+@pytest.mark.parametrize(
+    ("sigma", "fallback"),
+    [(math.nan, "nan"), (math.inf, "0.000000")],
+    ids=["nan", "inf"],
+)
+def test_v1_checks_kelly_raw_for_a_nan_or_inf_sigma(
+    payload: dict[str, Any], policy: Policy, sigma: float, fallback: str
+) -> None:
+    ledger = mutate(payload, "predictions.0.sigma", sigma)
+    assert validate_payload(ledger, policy) == [
+        f"predictions[0] VLO: metrics.kelly_raw 8.43198 != mu/sigma^2 {fallback}"
+    ]
 
 
 def test_earnings_inside_the_window_caps_confidence_low(

@@ -310,7 +310,7 @@ def _as_float(value: Any) -> float | None:
         return None
     try:
         return float(value)
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         return None
 
 
@@ -675,7 +675,14 @@ def validate_timing(
         return ("MALFORMED", False, f"price_date {price_date_s!r} is not a valid date")
 
     if not is_trading_day(target_date):
-        expected = most_recent_trading_day_at_or_before(target_date)
+        try:
+            expected = most_recent_trading_day_at_or_before(target_date)
+        except OverflowError:  # no trading day before 0001-01-02
+            return (
+                "MALFORMED",
+                False,
+                f"target_date {target_date_s} has no prior close",
+            )
         if price_date == expected:
             return ("WEEKEND_TARGET", True, "")
         return (
@@ -687,7 +694,14 @@ def validate_timing(
         )
 
     if settlement_run_date == target_date:
-        expected = prior_trading_day(target_date)
+        try:
+            expected = prior_trading_day(target_date)
+        except OverflowError:  # no trading day before 0001-01-02
+            return (
+                "MALFORMED",
+                False,
+                f"target_date {target_date_s} has no prior close",
+            )
         if price_date == expected:
             return ("TARGET_EQ_RUN_DATE", True, "")
         if price_date == target_date and declared_timing_flag == "TARGET_DATE_CLOSE":
@@ -698,7 +712,7 @@ def validate_timing(
                 if settled_at.tzinfo is None:
                     raise ValueError("settled_at must include a timezone")
                 settled_at_et = settled_at.astimezone(ZoneInfo("America/New_York"))
-            except (TypeError, ValueError):
+            except (TypeError, ValueError, OverflowError):  # year 1 or 9999 near UTC
                 settled_at_et = None
             target_close_et = dt.datetime.combine(
                 target_date, dt.time(16, 0), tzinfo=ZoneInfo("America/New_York")

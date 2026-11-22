@@ -181,6 +181,34 @@ def test_target_date_close_requires_timezone_aware_settled_at() -> None:
         assert "timezone-aware settled_at" in reason
 
 
+@pytest.mark.parametrize(
+    ("target_date", "run_date"),
+    # 0001-01-01 is a holiday; 0001-01-02 trades, but nothing trades before it.
+    [("0001-01-01", "2026-07-10"), ("0001-01-02", "0001-01-02")],
+)
+def test_a_target_date_with_no_prior_close_is_malformed(
+    target_date: str, run_date: str
+) -> None:
+    assert sl.validate_timing(target_date, run_date, "0001-01-01") == (
+        "MALFORMED",
+        False,
+        f"target_date {target_date} has no prior close",
+    )
+
+
+@pytest.mark.parametrize(
+    "settled_at", ["0001-01-01T00:00:00+05:00", "9999-12-31T23:59:59-05:00"]
+)
+def test_target_date_close_rejects_a_settled_at_new_york_cannot_hold(
+    settled_at: str,
+) -> None:
+    convention, valid, reason = sl.validate_timing(
+        "2026-07-22", "2026-07-22", "2026-07-22", "TARGET_DATE_CLOSE", settled_at
+    )
+    assert (convention, valid) == ("TARGET_DATE_CLOSE", False)
+    assert "timezone-aware settled_at" in reason
+
+
 def test_build_manifest_uses_explicit_target_date_close_flag() -> None:
     packages = [
         {

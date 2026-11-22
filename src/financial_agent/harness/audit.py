@@ -83,7 +83,18 @@ class Finding:
 def _num(value: Any) -> float | None:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return None
-    return float(value)
+    try:
+        return float(value)
+    except OverflowError:  # an int beyond the float range
+        return None
+
+
+def _mu_over_sigma2(mu: float, sigma: float) -> float | None:
+    """The mu/sigma^2 Kelly fallback; None when sigma^2 underflows to 0 or overflows."""
+    try:
+        return mu / sigma**2
+    except (ZeroDivisionError, OverflowError):
+        return None
 
 
 def _close(actual: float, expected: float, *, rel: float = REL_TOL) -> bool:
@@ -274,13 +285,15 @@ def audit_record(
         # falls back to mu/sigma^2, but no record says which it used: a value
         # that is not the fallback cannot be verified from the record.
         scale = 100.0 if convention.endswith("_PERCENT") else 1.0
-        check(
-            "lineage.kelly_raw_method",
-            _close(raw / scale, mu / sigma**2, rel=0.01),
-            f"kelly_raw {raw / scale:.4f} is not the mu/sigma^2 fallback "
-            f"{mu / sigma**2:.4f} and the method is unrecorded",
-            "drift",
-        )
+        fallback = _mu_over_sigma2(mu, sigma)
+        if fallback is not None:
+            check(
+                "lineage.kelly_raw_method",
+                _close(raw / scale, fallback, rel=0.01),
+                f"kelly_raw {raw / scale:.4f} is not the mu/sigma^2 fallback "
+                f"{fallback:.4f} and the method is unrecorded",
+                "drift",
+            )
     return result
 
 

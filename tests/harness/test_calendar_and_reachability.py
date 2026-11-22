@@ -12,6 +12,7 @@ from conftest import (
     market_forecast,
     override,
     real_data,
+    stub_package,
 )
 
 from financial_agent.harness.gates import (
@@ -124,6 +125,28 @@ def test_replay_skips_a_malformed_ledger_and_goes_on(
     good = build_package(tmp_path, [market_forecast("SPY", 773.17)])
     assert replay_status(bad, policy) is None
     assert [name for name, _ in replay_history(tmp_path, policy)] == [good.name]
+
+
+def test_a_run_date_the_calendar_cannot_place_is_like_one_that_does_not_parse(
+    tmp_path: Path, policy: Policy
+) -> None:
+    # 0001-01-01 is a holiday with no earlier close, so session() cannot place it.
+    run_dates = {
+        "claude-opus-5-0001-01-01": "0001-01-01",
+        "claude-opus-5-2026-09-03": "0001-01-01",
+        "gpt-5-2026-09-03": "2026-13-01",
+        "gemini-3-2026-09-03": "2026-09-05",
+    }
+    for name, run_date in run_dates.items():
+        payload = {"run_date": run_date, "predictions": [market_forecast("SPY", 1.0)]}
+        stub_package(tmp_path / name, payload)
+    sessions = {name: r.session for name, r in replay_history(tmp_path, policy)}
+    assert sessions == {
+        "claude-opus-5-0001-01-01": None,
+        "claude-opus-5-2026-09-03": session("2026-09-03"),
+        "gpt-5-2026-09-03": session("2026-09-03"),
+        "gemini-3-2026-09-03": session("2026-09-05"),
+    }
 
 
 @real_data

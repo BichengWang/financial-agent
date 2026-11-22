@@ -29,6 +29,8 @@ from financial_agent.harness.audit import (
     PRICE_TAGS,
     SETTLEMENT_LEGACY_KEYS,
     SIGMA_SOURCES,
+    _mu_over_sigma2,
+    _num,
 )
 from financial_agent.harness.gates import (
     CONFIDENCE_ORDER,
@@ -176,7 +178,7 @@ FORBIDDEN: dict[str, dict[str, str]] = {
 
 
 def _is_number(value: Any) -> TypeGuard[float]:
-    return isinstance(value, (int, float)) and not isinstance(value, bool)
+    return _num(value) is not None
 
 
 def _type_ok(spec: Spec, value: Any) -> bool:
@@ -229,7 +231,8 @@ def check_fields(obj: Mapping[str, Any], kind: str, policy: Policy) -> list[str]
 
 
 def _close(a: Any, b: float, rel: float = TOL) -> bool:
-    return _is_number(a) and abs(a - b) <= rel * max(1.0, abs(b))
+    # b can be a sum or product of ints beyond the float range
+    return _is_number(a) and _is_number(b) and abs(a - b) <= rel * max(1.0, abs(b))
 
 
 def _check_mu(record: Mapping[str, Any], prior: float, limit: float) -> list[str]:
@@ -293,10 +296,10 @@ def _check_equity(record: Mapping[str, Any], policy: Policy) -> list[str]:
         value = metrics.get(name)
         if _is_number(value) and abs(value) >= 1:
             findings.append(f"metrics.{name}={value} must be a decimal")
-    if metrics.get("kelly_method") == "MU_OVER_SIGMA2" and not _close(
-        raw, mu / sigma**2, rel=1e-3
-    ):
-        findings.append(f"metrics.kelly_raw {raw} != mu/sigma^2 {mu / sigma**2:.6f}")
+    if metrics.get("kelly_method") == "MU_OVER_SIGMA2":
+        fallback = _mu_over_sigma2(mu, sigma)
+        if fallback is not None and not _close(raw, fallback, rel=1e-3):
+            findings.append(f"metrics.kelly_raw {raw} != mu/sigma^2 {fallback:.6f}")
     sizing = policy.kelly_sizing(raw)
     for name, expected in (
         ("kelly_fractional", sizing.fractional),
@@ -330,7 +333,13 @@ def _check_market(
             findings.append(f"{ticker} needs beta_vs_spy: mu = beta x SPY mu")
         elif _is_number(spy_mu):
             limit = policy.num("market_forecast.beta_scaled_adjustment_max")
-            findings += _check_mu(record, beta * spy_mu, limit)
+            prior = beta * spy_mu
+            if _is_number(prior):
+                findings += _check_mu(record, prior, limit)
+            else:  # two ints whose product leaves the float range
+                findings.append(
+                    f"{ticker} beta_vs_spy x SPY mu is too large for a float"
+                )
     return findings
 
 

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import copy
+import math
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +20,7 @@ from financial_agent.harness.audit import (
     audit_record,
     kelly_convention,
 )
+from financial_agent.harness.gates import investability
 from financial_agent.harness.policy import Policy
 
 
@@ -65,6 +68,80 @@ def test_mu_outside_calibration_band(
     # claude-fable-5-2026-07-01 UNH: pctl 87.3 (prior +4%) published mu +1%
     fails = failed_checks(dict(vlo_record, pctl=87.3, mu=0.01), policy)
     assert "formula.mu_band" in fails
+
+
+def test_an_int_too_large_for_a_float_is_not_a_number(
+    policy: Policy, vlo_record: dict[str, Any]
+) -> None:
+    huge, text = dict(vlo_record, mu=10**400), dict(vlo_record, mu="n/a")
+    assert audit_record(huge, policy) == audit_record(text, policy)
+    assert investability(huge, policy) == investability(text, policy)
+
+
+@pytest.mark.parametrize(
+    ("sigma", "lineage", "kelly_failure"),
+    [
+        # (1e-160) ** 2 is 1e-320, tiny but not 0.0: -0.06 / 1e-320 is -inf.
+        (
+            1e-160,
+            ["lineage.kelly_raw_method"],
+            "fractional Kelly <= 0 blocks investable status",
+        ),
+        # (1e-200) ** 2 underflows to 0.0 and (1e200) ** 2 overflows.
+        (1e-200, [], "mu/sigma missing: unsettleable"),
+        (1e200, [], "mu/sigma missing: unsettleable"),
+    ],
+    ids=["1e-160", "1e-200", "1e200"],
+)
+def test_mu_over_sigma2_needs_sigma_squared_to_be_a_nonzero_float(
+    policy: Policy,
+    vlo_record: dict[str, Any],
+    sigma: float,
+    lineage: list[str],
+    kelly_failure: str,
+) -> None:
+    record = dict(vlo_record, mu=-0.06, sigma=sigma)
+    result = audit_record(record, policy)
+    kelly_checks = [c for c in result.checks if "kelly" in c]
+    assert kelly_checks == ["semantics.kelly_025", "units.kelly_decimal", *lineage]
+    assert result.kelly_convention == "UNCAPPED_DECIMAL"
+    failures = investability(record, policy)
+    assert [f for f in failures if "Kelly" in f or "mu/sigma" in f] == [kelly_failure]
+
+
+@pytest.mark.parametrize(
+    ("sigma", "kelly_checks", "kelly_failures"),
+    [
+        (math.nan, [], []),  # nan > 0 is false, but so is nan <= 0
+        (
+            math.inf,
+            ["semantics.kelly_025", "units.kelly_decimal", "lineage.kelly_raw_method"],
+            ["fractional Kelly <= 0 blocks investable status"],
+        ),
+    ],
+    ids=["nan", "inf"],
+)
+def test_a_nan_or_inf_sigma_keeps_its_kelly_results(
+    policy: Policy,
+    vlo_record: dict[str, Any],
+    sigma: float,
+    kelly_checks: list[str],
+    kelly_failures: list[str],
+) -> None:
+    record = dict(vlo_record, mu=-0.06, sigma=sigma)
+    checks = [c for c in audit_record(record, policy).checks if "kelly" in c]
+    assert checks == kelly_checks
+    failures = investability(record, policy)
+    assert [f for f in failures if "Kelly" in f or "mu/sigma" in f] == kelly_failures
+
+
+@pytest.mark.parametrize("sigma", [1e-200, 1e200])
+def test_a_stored_kelly_gate_needs_no_mu_over_sigma2(
+    policy: Policy, vlo_record: dict[str, Any], sigma: float
+) -> None:
+    record = copy.deepcopy(dict(vlo_record, sigma=sigma))
+    record["score_explainability"]["metrics"]["kelly_gate"] = "PENALTY"
+    assert [f for f in investability(record, policy) if "mu/sigma" in f] == []
 
 
 def test_market_forecast_shape(policy: Policy) -> None:
