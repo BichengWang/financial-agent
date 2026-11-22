@@ -1,5 +1,6 @@
 """Independent formula calculations and selection-bias sanity checks."""
 
+from itertools import combinations
 import math
 from statistics import NormalDist
 
@@ -93,8 +94,6 @@ def test_cscv_noise_edge_partitions_ties_and_leading_remainder() -> None:
 
 
 def test_cscv_matches_independent_rank_calculation() -> None:
-    from itertools import combinations
-
     values = np.random.default_rng(7).normal(size=(24, 4))
     blocks = np.arange(24).reshape(4, 6)
     expected = []
@@ -197,8 +196,6 @@ def test_cscv_zero_sharpe_counts_as_loss_and_constant_is_has_undefined_slope() -
 
 
 def test_single_variant_cscv_loss_matches_independent_partitions() -> None:
-    from itertools import combinations
-
     values = np.random.default_rng(18).normal(0, 0.01, 2000)
     blocks = values.reshape(8, 250)
     for drift in (0.0, 0.006):

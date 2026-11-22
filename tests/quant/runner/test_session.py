@@ -19,8 +19,8 @@ def csv(config: TradingConfig) -> CsvProvider:
     return CsvProvider(config.csv_dir)
 
 
-def paper(config: TradingConfig) -> PaperBroker:
-    return PaperBroker(
+def paper(config: TradingConfig, cls: type[PaperBroker] = PaperBroker) -> PaperBroker:
+    return cls(
         config.state_dir / "paper.json",
         costs=config.backtest.costs,
         initial_cash=config.initial_cash,
@@ -222,11 +222,7 @@ def test_partial_submission_recovers_without_duplicate_orders(
                 raise BrokerError("interrupted")
             return super().submit(order)
 
-    broker = InterruptedPaper(
-        config.state_dir / "paper.json",
-        costs=config.backtest.costs,
-        initial_cash=config.initial_cash,
-    )
+    broker = paper(config, InterruptedPaper)
     report = run_session(config, today=first_day, broker=broker)
     assert report.status == "HALTED"
     assert len(broker.open_orders()) == 1
@@ -248,11 +244,7 @@ def test_kill_written_mid_submission_stops_remaining_orders(
             KillSwitch(config.state_dir).engage("operator stop", source="operator")
             return ack
 
-    broker = KillAfterFirst(
-        config.state_dir / "paper.json",
-        costs=config.backtest.costs,
-        initial_cash=config.initial_cash,
-    )
+    broker = paper(config, KillAfterFirst)
     report = run_session(config, today=first_day, broker=broker)
     assert len(report.orders) > 1
     assert report.status == "HALTED"
@@ -319,11 +311,7 @@ def test_off_cadence_skips_bad_price_band_but_preview_reports_it(
     weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
     first = run_session(weekly, today=first_day)
     assert first.status == "TRADED" and first.orders
-    broker = MismarkedPaper(
-        config.state_dir / "paper.json",
-        costs=config.backtest.costs,
-        initial_cash=config.initial_cash,
-    )
+    broker = paper(config, MismarkedPaper)
     tuesday = date(2020, 6, 9)
     report = run_session(weekly, today=tuesday, broker=broker)
     assert report.status == "NO_CHANGE", report.reasons
@@ -358,11 +346,7 @@ def test_crash_during_submission_recovers_same_day(
                 super().submit(order)
             raise BrokerError("process interrupted before journal acknowledgement")
 
-    broker = CrashedPaper(
-        config.state_dir / "paper.json",
-        costs=config.backtest.costs,
-        initial_cash=config.initial_cash,
-    )
+    broker = paper(config, CrashedPaper)
     original = run_session(config, today=first_day, broker=broker)
     assert original.status == "HALTED" and original.orders
     assert len(broker.open_orders()) == int(broker_observed)

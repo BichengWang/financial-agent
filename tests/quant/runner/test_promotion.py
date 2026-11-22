@@ -9,7 +9,7 @@ from typing import Any
 
 import pytest
 
-from financial_agent.quant.execution import Journal
+from financial_agent.quant.execution import Journal, LiveAuthorization
 from financial_agent.quant.runner import PromotionError, TradingConfig, authorize_live
 from financial_agent.quant.validation import (
     Check,
@@ -25,7 +25,9 @@ def config(config: TradingConfig) -> TradingConfig:
     return replace(config, broker_kind="alpaca")
 
 
-def certificate(config: TradingConfig, tmp_path: Path) -> Path:
+def certificate(
+    config: TradingConfig, tmp_path: Path, policy: PromotionPolicy | None = None
+) -> Path:
     report = PromotionReport(
         config.strategy_name,
         config.strategy_params,
@@ -36,9 +38,18 @@ def certificate(config: TradingConfig, tmp_path: Path) -> Path:
         "a" * 64,
         "2019-01-02",
         "2020-06-05",
-        PromotionPolicy.load(),
+        policy or PromotionPolicy.load(),
     )
     return write_certificate(report, tmp_path / "certificate.json")
+
+
+def authorize(config: TradingConfig, cert: Path, journal: Path) -> LiveAuthorization:
+    return authorize_live(
+        config,
+        certificate_path=cert,
+        paper_journal_path=journal,
+        environ={"FA_QUANT_ALLOW_LIVE": "1"},
+    )
 
 
 def paper_evidence(config: TradingConfig, path: Path, count: int = 20) -> Journal:
@@ -178,27 +189,10 @@ def test_certificate_from_another_policy_cannot_promote(
 ) -> None:
     loose = tmp_path / "loose.toml"
     loose.write_text("[promotion]\nmin_oos_sharpe = 0.0\nmin_dsr = 0.0\n")
-    report = PromotionReport(
-        config.strategy_name,
-        config.strategy_params,
-        (config.strategy_params,),
-        True,
-        [Check("fixture", 1, 1, True, "passed")],
-        {},
-        "a" * 64,
-        "2019-01-02",
-        "2020-06-05",
-        PromotionPolicy.load(loose),
-    )
-    cert = write_certificate(report, tmp_path / "certificate.json")
+    cert = certificate(config, tmp_path, PromotionPolicy.load(loose))
     paper = paper_evidence(config, tmp_path / "paper.jsonl")
     with pytest.raises(PromotionError) as caught:
-        authorize_live(
-            config,
-            certificate_path=cert,
-            paper_journal_path=paper.path,
-            environ={"FA_QUANT_ALLOW_LIVE": "1"},
-        )
+        authorize(config, cert, paper.path)
     assert caught.value.reasons == [
         "certificate was not issued under the packaged promotion policy"
     ]
@@ -222,12 +216,7 @@ def test_non_evidence_cannot_promote(
     if variation == "bad_chain":
         paper.path.write_text(paper.path.read_text() + "{}\n")
     with pytest.raises(PromotionError):
-        authorize_live(
-            config,
-            certificate_path=cert,
-            paper_journal_path=paper.path,
-            environ={"FA_QUANT_ALLOW_LIVE": "1"},
-        )
+        authorize(config, cert, paper.path)
 
 
 def test_backdated_sessions_are_not_paper_evidence(
@@ -244,17 +233,9 @@ def test_backdated_sessions_are_not_paper_evidence(
         # `fa-quant run --today <old date>` repeated in one sitting.
         with journal_clock("2020-06-25"):
             replayed.append(event.type, event.payload)
-    environ = {"FA_QUANT_ALLOW_LIVE": "1"}
-    authorize_live(
-        config, certificate_path=cert, paper_journal_path=late.path, environ=environ
-    )
+    authorize(config, cert, late.path)
     with pytest.raises(PromotionError, match="paper sessions 0 < 20"):
-        authorize_live(
-            config,
-            certificate_path=cert,
-            paper_journal_path=replayed.path,
-            environ=environ,
-        )
+        authorize(config, cert, replayed.path)
 
 
 def test_halt_cannot_be_erased_by_successful_retry(
@@ -267,12 +248,7 @@ def test_halt_cannot_be_erased_by_successful_retry(
         paper.append("session_outcome", {**last, "status": "HALTED"})
         paper.append("session_outcome", last)
     with pytest.raises(PromotionError, match="HALTED"):
-        authorize_live(
-            config,
-            certificate_path=cert,
-            paper_journal_path=paper.path,
-            environ={"FA_QUANT_ALLOW_LIVE": "1"},
-        )
+        authorize(config, cert, paper.path)
 
 
 def test_zero_cost_model_and_invalid_fill_fail_closed(
@@ -284,12 +260,7 @@ def test_zero_cost_model_and_invalid_fill_fail_closed(
     cert = certificate(zero, tmp_path)
     paper = paper_evidence(zero, tmp_path / "paper.jsonl")
     with pytest.raises(PromotionError, match="slippage"):
-        authorize_live(
-            zero,
-            certificate_path=cert,
-            paper_journal_path=paper.path,
-            environ={"FA_QUANT_ALLOW_LIVE": "1"},
-        )
+        authorize(zero, cert, paper.path)
     paper.append(
         "fill",
         {
@@ -300,12 +271,7 @@ def test_zero_cost_model_and_invalid_fill_fail_closed(
         },
     )
     with pytest.raises(PromotionError, match="invalid"):
-        authorize_live(
-            config,
-            certificate_path=cert,
-            paper_journal_path=paper.path,
-            environ={"FA_QUANT_ALLOW_LIVE": "1"},
-        )
+        authorize(config, cert, paper.path)
 
 
 def test_config_costs_can_only_tighten_slippage_allowance(

@@ -29,6 +29,12 @@ def bars() -> MarketData:
     )
 
 
+def flat_bars() -> MarketData:
+    data = bars()
+    constant = data.close * 0 + 10.0
+    return replace(data, open=constant.copy(), close=constant.copy())
+
+
 @dataclass
 class Recording:
     name: str = "recording"
@@ -260,9 +266,7 @@ def test_pending_delayed_exits_cannot_create_shorts() -> None:
 
 @pytest.mark.parametrize("delay", [1, 3])
 def test_pending_fixed_weight_buys_do_not_duplicate(delay: int) -> None:
-    data = bars()
-    constant = data.close * 0 + 10.0
-    data = replace(data, open=constant.copy(), close=constant.copy())
+    data = flat_bars()
     result = run_backtest(
         buy_and_hold({"A": 0.5}),
         data,
@@ -322,11 +326,8 @@ def test_pending_exit_after_underfilled_or_skipped_buy(reference: float) -> None
         def target_weights(self, data: MarketData) -> pd.Series:
             return pd.Series({"A": 1.0 if len(data.sessions) == 1 else 0.0})
 
-    data = bars()
-    constant = data.close * 0 + 10.0
-    opening = constant.copy()
-    opening.iloc[2, 0] = reference
-    data = replace(data, open=opening, close=constant)
+    data = flat_bars()
+    data.open.iloc[2, 0] = reference
     result = run_backtest(
         Exit(warmup=1),
         data,
@@ -349,9 +350,7 @@ def test_pending_exit_after_underfilled_or_skipped_buy(reference: float) -> None
 def test_cash_buffer_caps_decision_price_allocations(
     fractional: bool, delay: int
 ) -> None:
-    data = bars()
-    constant = data.close * 0 + 10.0
-    data = replace(data, open=constant.copy(), close=constant.copy())
+    data = flat_bars()
     config = BacktestConfig(
         initial_cash=1000,
         cash_buffer=0.02,

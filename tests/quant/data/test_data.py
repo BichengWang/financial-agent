@@ -31,6 +31,10 @@ def market(sessions: int = 20) -> MarketData:
     return synthetic_market(["A", "B"], sessions, seed=123)
 
 
+def yahoo_frame(data: MarketData, symbol: str) -> pd.DataFrame:
+    return pd.DataFrame({name.title(): getattr(data, name)[symbol] for name in FIELDS})
+
+
 def test_slicing_has_no_future_and_copies() -> None:
     data = market()
     bound = data.sessions[7] + pd.Timedelta(hours=12)
@@ -312,12 +316,7 @@ def test_synthetic_rejects_invalid_parameters(kwargs: dict[str, Any]) -> None:
 def test_yahoo_batch_retry_and_missing(monkeypatch: pytest.MonkeyPatch) -> None:
     calls: list[dict[str, Any]] = []
     data = market(3)
-    frames = {}
-    for symbol in data.symbols:
-        frames[symbol] = pd.DataFrame(
-            {name.title(): getattr(data, name)[symbol] for name in FIELDS}
-        )
-    raw = pd.concat(frames, axis=1)
+    raw = pd.concat({s: yahoo_frame(data, s) for s in data.symbols}, axis=1)
 
     def download(*args: Any, **kwargs: Any) -> pd.DataFrame:
         calls.append(kwargs)
@@ -357,7 +356,7 @@ def test_yahoo_flat_single_symbol_and_exhausted_exception(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     data = synthetic_market(["A"], 3, seed=1)
-    raw = pd.DataFrame({name.title(): getattr(data, name)["A"] for name in FIELDS})
+    raw = yahoo_frame(data, "A")
     raw.index = raw.index.tz_localize("UTC")
     monkeypatch.setattr(
         "financial_agent.quant.data.providers.yf.download", lambda *a, **kw: raw
@@ -385,7 +384,7 @@ def test_yahoo_default_retries_outlast_a_brief_outage(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     data = synthetic_market(["A"], 3, seed=1)
-    raw = pd.DataFrame({name.title(): getattr(data, name)["A"] for name in FIELDS})
+    raw = yahoo_frame(data, "A")
     raw.index = raw.index.tz_localize("UTC")
     sleeps: list[float] = []
     failures = 4
@@ -524,15 +523,7 @@ def test_cache_refetches_a_symbol_cached_from_another_source(
     fixture = market(20)
     write_csv(fixture, tmp_path / "csv")
     yahoo = synthetic_market(["A", "B"], 20, seed=7)
-    raw = pd.concat(
-        {
-            symbol: pd.DataFrame(
-                {name.title(): getattr(yahoo, name)[symbol] for name in FIELDS}
-            )
-            for symbol in yahoo.symbols
-        },
-        axis=1,
-    )
+    raw = pd.concat({s: yahoo_frame(yahoo, s) for s in yahoo.symbols}, axis=1)
     downloads: list[list[str]] = []
 
     def download(symbols: list[str], **kwargs: Any) -> pd.DataFrame:
