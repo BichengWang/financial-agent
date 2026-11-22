@@ -37,6 +37,10 @@ the two harness helpers the wheel copies from `agents/`, the README, LICENSE and
 CHANGELOG. The PyPI description is the README with the Mermaid diagram removed
 and repository links pointed at the release tag.
 
+`financial_agent.trading` ships in the wheel but is not part of the public API.
+It is historical research code kept for the saved notebooks, and names in it can
+change or be removed in any release.
+
 ## PyPI trusted publishing (one-time owner setup)
 
 The workflow publishes with PyPI trusted publishing (OIDC), so no API token is
