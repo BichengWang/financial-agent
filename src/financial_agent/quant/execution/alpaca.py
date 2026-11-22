@@ -65,7 +65,12 @@ class AlpacaBroker:
         self._guard_live()
         if not key_id or not secret_key:
             raise BrokerError("Alpaca credentials are required")
-        if not math.isfinite(timeout) or timeout <= 0 or max_retries < 0:
+        if (
+            not math.isfinite(timeout)
+            or timeout <= 0
+            or type(max_retries) is not int
+            or max_retries < 0
+        ):
             raise ValueError("timeout must be positive; max_retries nonnegative")
         self._headers = {"APCA-API-KEY-ID": key_id, "APCA-API-SECRET-KEY": secret_key}
         self._session = session if session is not None else requests.Session()

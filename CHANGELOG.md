@@ -23,6 +23,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `AlpacaBroker` rejects a `max_retries` that is not an integer, such as `1.5` or
+  `True`, with `ValueError` at construction, as `IBKRBroker` does. A fractional count
+  used to be accepted and fail the first request with `TypeError`.
 - `fa-quant run --dry-run` still reports a dry run when another session holds the
   lock. The halted report used to say `"dry_run": false` and `Dry run: False`, and
   list its orders under `Orders` instead of `Planned orders`.
