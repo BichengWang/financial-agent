@@ -4,6 +4,7 @@ import copy
 from typing import Any
 
 import pytest
+from conftest import override
 
 from financial_agent.harness.policy import (
     MutationEvidence,
@@ -14,16 +15,9 @@ from financial_agent.harness.policy import (
 
 def bumped(policy: Policy, **changes: Any) -> Policy:
     """A copy of ``policy`` with dotted-key changes and a new version/date."""
-    data = copy.deepcopy(dict(policy.data))
-    data["policy_version"] = "3.4"
-    data["effective_date"] = "2026-10-01"
-    for dotted, value in changes.items():
-        node = data
-        *parents, leaf = dotted.split("__")
-        for part in parents:
-            node = node[part]
-        node[leaf] = value
-    return Policy(data)
+    return override(
+        policy, policy_version="3.4", effective_date="2026-10-01", **changes
+    )
 
 
 def test_policy_mirrors_rules_md_tables(policy: Policy) -> None:

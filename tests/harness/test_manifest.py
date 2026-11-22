@@ -4,8 +4,7 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, market_forecast, real_data
-from test_gates_and_lifecycle import build_package
+from conftest import OUTPUT_DIR, build_package, market_forecast, real_data
 
 from financial_agent.harness.__main__ import main
 from financial_agent.harness.manifest import render_manifest_sections

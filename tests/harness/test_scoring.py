@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-import copy
 import json
 import statistics
 from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, real_data
+from conftest import OUTPUT_DIR, override, real_data
 from test_kernels import MODEL, RUN, vlo_inputs
 
 from financial_agent.harness.__main__ import main
@@ -168,14 +167,12 @@ def test_scoring_refusals(policy: Policy) -> None:
         score_universe(names, policy, data_quality={"T01": 0.8})
     with pytest.raises(KernelError, match="outside"):
         score_universe(names, policy, data_quality=1.2)
-    data = copy.deepcopy(dict(policy.data))
-    data["score"]["slots"]["fund_z"] = ["mom20", "mom60"]
+    shadow = override(policy, score__slots__fund_z=["mom20", "mom60"])
     with pytest.raises(KernelError, match="fund_z is SHADOW"):
-        score_universe(names, Policy(data), data_quality=0.8)
-    data = copy.deepcopy(dict(policy.data))
-    data["score"]["slots"]["tech_z"] = ["mom20", "rsi_vibes"]
+        score_universe(names, shadow, data_quality=0.8)
+    unknown = override(policy, score__slots__tech_z=["mom20", "rsi_vibes"])
     with pytest.raises(KernelError, match="unknown slots"):
-        score_universe(names, Policy(data), data_quality=0.8)
+        score_universe(names, unknown, data_quality=0.8)
 
 
 def published() -> list[dict[str, Any]]:
