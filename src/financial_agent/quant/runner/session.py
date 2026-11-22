@@ -421,6 +421,7 @@ def run_session(
             [],
             None,
             {},
+            dry_run=dry_run,
         )
     except Exception as exc:
         # A filesystem failure may prevent journaling/reporting; still fail closed.

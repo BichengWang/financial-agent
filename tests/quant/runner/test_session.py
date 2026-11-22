@@ -142,6 +142,17 @@ def test_tamper_lock_and_stale_metadata(config: TradingConfig, first_day: date) 
     assert len(paper(config).open_orders()) == count
 
 
+@pytest.mark.parametrize("dry_run", [True, False])
+def test_locked_session_keeps_dry_run_flag(
+    config: TradingConfig, first_day: date, dry_run: bool
+) -> None:
+    with session_lock(config.state_dir):
+        report = run_session(config, today=first_day, dry_run=dry_run)
+    assert report.status == "HALTED"
+    assert report.reasons == ["state_dir: another session is running"]
+    assert report.dry_run is dry_run
+
+
 def test_interrupted_settlement_recovers_authorized_fills(
     config: TradingConfig, first_day: date
 ) -> None:
