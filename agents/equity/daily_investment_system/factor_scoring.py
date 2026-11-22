@@ -45,12 +45,15 @@ def fetch_json(url: str, headers: dict[str, str], timeout: int = 20) -> Any:
 def read_tickers(tickers: list[str], tickers_file: Path | None) -> list[str]:
     """Merge --tickers and --tickers-file into one de-duplicated, order-
     preserving, upper-cased ticker list."""
-    out_tickers = list(tickers)
+    texts = list(tickers)
     if tickers_file:
-        text = tickers_file.read_text()
-        out_tickers.extend(
-            t.strip().upper() for t in text.replace(",", "\n").splitlines() if t.strip()
-        )
+        texts.append(tickers_file.read_text())
+    out_tickers = [
+        t.strip().upper()
+        for text in texts
+        for t in text.replace(",", "\n").splitlines()
+        if t.strip()
+    ]
     seen = set()
     deduped = []
     for t in out_tickers:
