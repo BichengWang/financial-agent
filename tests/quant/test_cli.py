@@ -212,6 +212,29 @@ def test_mcp_reuses_protocol_and_suppresses_notifications() -> None:
     assert len(responses[2]["result"]["tools"]) == 5
 
 
+def test_mcp_answers_nan_with_a_parse_error_and_keeps_serving() -> None:
+    requests = (
+        '{"jsonrpc": "2.0", "id": NaN, "method": "ping"}\n'
+        '{"jsonrpc": "2.0", "id": 1e999, "method": "ping"}\n'
+        + json.dumps({"jsonrpc": "2.0", "id": 2, "method": "ping"})
+    )
+    output = StringIO()
+    serve(StringIO(requests), output)
+    assert [json.loads(line) for line in output.getvalue().splitlines()] == [
+        {
+            "jsonrpc": "2.0",
+            "id": None,
+            "error": {"code": -32700, "message": "parse error: NaN is not valid JSON"},
+        },
+        {
+            "jsonrpc": "2.0",
+            "id": None,
+            "error": {"code": -32700, "message": "parse error: 1e999 is out of range"},
+        },
+        {"jsonrpc": "2.0", "id": 2, "result": {}},
+    ]
+
+
 def test_mcp_serves_without_package_metadata(monkeypatch: pytest.MonkeyPatch) -> None:
     from importlib.metadata import PackageNotFoundError
 
