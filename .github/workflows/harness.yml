@@ -6,7 +6,7 @@ name: Harness
 
 on:
   pull_request:
-    paths:
+    paths: &harness
       - "src/financial_agent/harness/**"
       - "tests/harness/**"
       - "skills/**"
@@ -17,15 +17,7 @@ on:
       - ".github/workflows/harness.yml"
   push:
     branches: [main]
-    paths:
-      - "src/financial_agent/harness/**"
-      - "tests/harness/**"
-      - "skills/**"
-      - "agents/equity/**"
-      - "docs/research/**"
-      - "pyproject.toml"
-      - "uv.lock"
-      - ".github/workflows/harness.yml"
+    paths: *harness
 
 permissions:
   contents: read
