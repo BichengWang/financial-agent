@@ -23,11 +23,22 @@ inputs: the rules give guideposts for them, not a formula.
 from __future__ import annotations
 
 import statistics
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any, Mapping, Sequence
 
+from financial_agent.harness.audit import _num
 from financial_agent.harness.helpers import load_helper
-from financial_agent.harness.kernels import KernelError, PriceRisk, price_risk
+from financial_agent.harness.kernels import (
+    EquityInputs,
+    Holding,
+    KernelError,
+    MarketInputs,
+    PriceRisk,
+    equity_record,
+    market_forecast_records,
+    portfolio_feasibility,
+    price_risk,
+)
 from financial_agent.harness.policy import FAMILIES, Policy
 
 MA_CODES = {"BULLISH": 1.0, "MIXED": 0.0, "BEARISH": -1.0}
@@ -61,12 +72,6 @@ class NameInputs:
     sector: str | None
     indicators: Mapping[str, Any]  # one ``technical_indicators.py`` record
     risk: PriceRisk | None = None
-
-
-def _num(value: Any) -> float | None:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        return None
-    return float(value)
 
 
 def _encoded(
@@ -260,23 +265,12 @@ def score_universe(
             )
         )
     z = scoring.zscore_cross_sectionally(usable, tuple(slot_family), set())
-    stats = [
-        (
-            s
-            if not s.scored
-            else SlotStats(
-                **{
-                    **vars(s),
-                    "min_z": min(v for t in tickers if (v := z[t][s.slot]) is not None),
-                    "median_z": statistics.median(
-                        v for t in tickers if (v := z[t][s.slot]) is not None
-                    ),
-                    "max_z": max(v for t in tickers if (v := z[t][s.slot]) is not None),
-                }
+    for index, s in enumerate(stats):
+        if s.scored:
+            zs = [v for t in tickers if (v := z[t][s.slot]) is not None]
+            stats[index] = replace(
+                s, min_z=min(zs), median_z=statistics.median(zs), max_z=max(zs)
             )
-        )
-        for s in stats
-    ]
 
     min_slots = int(policy.num("score.min_family_slots"))
     unranked = []
@@ -361,3 +355,44 @@ def score_request(request: Mapping[str, Any], policy: Policy) -> dict[str, Any]:
         "names": [vars(n) for n in board.names],
         "slots": [vars(s) for s in board.slots],
     }
+
+
+def run_kernel(kind: str, request: Mapping[str, Any], policy: Any) -> Any:
+    """Shared by the CLI and the MCP server; raises ``KernelError``."""
+    if kind == "equity":
+        return [
+            equity_record(
+                request["run_date"],
+                request["model"],
+                EquityInputs.from_mapping(item),
+                policy,
+            )
+            for item in request["names"]
+        ]
+    if kind == "market":
+        return market_forecast_records(
+            request["run_date"],
+            request["model"],
+            request["regime"],
+            [MarketInputs.from_mapping(item) for item in request["etfs"]],
+            policy,
+        )
+    if kind == "portfolio":
+        return vars(
+            portfolio_feasibility(
+                [Holding.from_mapping(item) for item in request["holdings"]],
+                request["spy_closes"],
+                policy,
+            )
+        )
+    if kind == "score":
+        return score_request(request, policy)
+    if kind == "risk":
+        return vars(
+            price_risk(
+                request["closes"],
+                request["spy_closes"],
+                tlt_closes=request.get("tlt_closes"),
+            )
+        )
+    raise KernelError(f"unknown kernel {kind!r}")

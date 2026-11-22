@@ -42,16 +42,7 @@ from financial_agent.harness.gates import (
     replay_history,
     replay_status,
 )
-from financial_agent.harness.kernels import (
-    EquityInputs,
-    Holding,
-    KernelError,
-    MarketInputs,
-    equity_record,
-    market_forecast_records,
-    portfolio_feasibility,
-    price_risk,
-)
+from financial_agent.harness.kernels import KernelError
 from financial_agent.harness.lifecycle import RunState
 from financial_agent.harness.manifest import (
     gate_report,
@@ -67,7 +58,7 @@ from financial_agent.harness.policy import (
 )
 from financial_agent.harness.runner import RunLocked, default_handlers, run
 from financial_agent.harness.schema import json_schema, validate_payload
-from financial_agent.harness.scoring import score_request
+from financial_agent.harness.scoring import run_kernel
 from financial_agent.harness.skills import CHARS_PER_TOKEN, SkillRegistry
 
 DEFAULT_SKILL_ROOTS = (
@@ -213,47 +204,6 @@ def cmd_reachability(args: argparse.Namespace) -> int:
         print(f"BLOCKER: {blocker}")
     print("GO", "reachable" if reach.reachable else "unreachable")
     return 0 if reach.reachable else 1
-
-
-def run_kernel(kind: str, request: dict[str, Any], policy: Any) -> Any:
-    """Shared by the CLI and the MCP server; raises ``KernelError``."""
-    if kind == "equity":
-        return [
-            equity_record(
-                request["run_date"],
-                request["model"],
-                EquityInputs.from_mapping(item),
-                policy,
-            )
-            for item in request["names"]
-        ]
-    if kind == "market":
-        return market_forecast_records(
-            request["run_date"],
-            request["model"],
-            request["regime"],
-            [MarketInputs.from_mapping(item) for item in request["etfs"]],
-            policy,
-        )
-    if kind == "portfolio":
-        return vars(
-            portfolio_feasibility(
-                [Holding.from_mapping(item) for item in request["holdings"]],
-                request["spy_closes"],
-                policy,
-            )
-        )
-    if kind == "score":
-        return score_request(request, policy)
-    if kind == "risk":
-        return vars(
-            price_risk(
-                request["closes"],
-                request["spy_closes"],
-                tlt_closes=request.get("tlt_closes"),
-            )
-        )
-    raise KernelError(f"unknown kernel {kind!r}")
 
 
 def cmd_kernel(args: argparse.Namespace) -> int:

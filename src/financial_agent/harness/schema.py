@@ -24,7 +24,12 @@ import datetime as dt
 from dataclasses import dataclass
 from typing import Any, Mapping, TypeGuard
 
-from financial_agent.harness.audit import SETTLEMENT_LEGACY_KEYS
+from financial_agent.harness.audit import (
+    CONFIDENCE,
+    PRICE_TAGS,
+    SETTLEMENT_LEGACY_KEYS,
+    SIGMA_SOURCES,
+)
 from financial_agent.harness.gates import (
     CONFIDENCE_ORDER,
     confidence_ceiling,
@@ -32,16 +37,12 @@ from financial_agent.harness.gates import (
     investability,
 )
 from financial_agent.harness.lifecycle import RunStatus
-from financial_agent.harness.policy import FAMILIES, Policy
+from financial_agent.harness.policy import FAMILIES, KELLY_GATES, Policy
 
 SCHEMA_VERSION = 1
 DATA_MODES = ("LIVE", "DELAYED", "DELAYED_PARTIAL", "ILLUSTRATIVE")
-PRICE_TAGS = ("LIVE", "DELAYED", "OFFICIAL_FILING", "HISTORICAL", "ILLUSTRATIVE_REF")
-SIGMA_SOURCES = ("REALIZED_VOL_30D", "IV30", "SECTOR_MEDIAN", "SECTOR_MEDIAN_ILLUS")
-CONFIDENCE = ("HIGH", "MEDIUM", "LOW")
 SLEEVES = ("INVESTABLE", "MONITORING")
 KELLY_METHODS = ("BETA_ADJ_TE", "MU_OVER_SIGMA2")
-KELLY_GATES = ("BLOCKED", "PENALTY", "OK", "CAP_BINDING")
 RATIO_BASES = ("EXCESS_RETURN", "RAW_DIAGNOSTIC")
 TIMING_FLAGS = ("ORDINARY", "WEEKEND_TARGET", "TARGET_EQ_RUN_DATE", "TARGET_DATE_CLOSE")
 DIRECTIONS = ("HIT", "MISS", "N/A - FLAT_CALL")
