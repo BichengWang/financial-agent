@@ -141,6 +141,8 @@ celerybeat.pid
 env/
 venv/
 ENV/
+# ...but not the trading package's environments module, which the wheel ships.
+!/src/financial_agent/trading/env/
 env.bak/
 venv.bak/
 
