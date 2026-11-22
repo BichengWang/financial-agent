@@ -113,14 +113,10 @@ def test_question_halts_without_double_submission(
     )
     assert report.status == "HALTED" and "o354" in str(report.reasons)
     assert not transport.orders
-    assert (
-        sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
-    )
+    assert len(transport.order_posts()) == 1
     again = run_session(config, today=first_day, broker=broker, now=ny_clock(first_day))
     assert again.status == "HALTED" and "o354" in str(again.reasons)
-    assert (
-        sum(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls) == 1
-    )
+    assert len(transport.order_posts()) == 1
 
 
 @pytest.mark.parametrize("kind", ["alpaca", "paper", "ibkr"])
@@ -361,4 +357,4 @@ def test_ibkr_late_run_halts_before_any_intent(
     assert not Journal(config.state_dir / "journal.jsonl").events(
         ["submission_intent", "submitted"]
     )
-    assert not any(m == "POST" and p.endswith("/orders") for m, p, _ in transport.calls)
+    assert not transport.order_posts()
