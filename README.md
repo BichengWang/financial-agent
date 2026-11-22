@@ -181,7 +181,7 @@ uv run python -m financial_agent.harness audit --output-dir agents/equity/output
 Generic RL supplies tabular Q-learning, GridWorld, Gymnasium wrappers and bounded
 training loops; [examples](examples/rl/) show the APIs and
 [notebooks](notebooks/README.md) keep historical outputs. The FinRL-derived
-`trading/` and TensorFlow `dl/` stacks are experimental: nothing reaches capital
+`trading/` stack is experimental: nothing reaches capital
 unless it implements `Strategy` and passes the same gates.
 
 ## Repository map
@@ -197,7 +197,7 @@ unless it implements `Strategy` and passes the same gates.
 | [src/financial_agent/harness](src/financial_agent/harness/) | Equity schemas, gates, kernels and policy |
 | [agents/equity](agents/equity/) / [skills](skills/) | Daily/native equity workflows and agent skills, including quant research and paper operations |
 | [src/financial_agent/rl](src/financial_agent/rl/) / [examples/rl](examples/rl/) | Generic RL APIs and examples |
-| [src/financial_agent/trading](src/financial_agent/trading/) / [src/financial_agent/dl](src/financial_agent/dl/) | Experimental financial RL and prediction research |
+| [src/financial_agent/trading](src/financial_agent/trading/) | Experimental financial RL and prediction research |
 | [notebooks](notebooks/) | Saved research outputs; avoid incidental reruns |
 
 ## Limitations
