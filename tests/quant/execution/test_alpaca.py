@@ -170,6 +170,20 @@ def test_idempotent_retry_budget_and_sanitized_errors() -> None:
     assert error.value.__suppress_context__
 
 
+@pytest.mark.parametrize("retries", [1.5, 2.0, True, -1])
+def test_non_integer_or_negative_retry_count_rejected_at_construction(
+    retries: Any,
+) -> None:
+    with pytest.raises(ValueError, match="max_retries nonnegative"):
+        AlpacaBroker("key", "secret", session=Transport(), max_retries=retries)
+
+
+@pytest.mark.parametrize("retries", [0, 3])
+def test_nonnegative_integer_retry_count_constructs(retries: int) -> None:
+    broker = AlpacaBroker("key", "secret", session=Transport(), max_retries=retries)
+    assert broker.max_retries == retries
+
+
 def test_account_open_orders_and_multistatus_cancel() -> None:
     partial = order_json("partially_filled")
     partial.update(filled_qty="2", filled_avg_price="101.5")
