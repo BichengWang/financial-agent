@@ -10,7 +10,7 @@ from typing import IO, Any
 
 import pandas as pd  # type: ignore[import-untyped]
 
-from financial_agent.harness.mcp import HarnessServer, Tool, ToolError
+from financial_agent.harness.mcp import HarnessServer, Tool, ToolError, _object
 from financial_agent.harness.market_calendar import session
 from .backtest import run_backtest
 from .data import check_quality
@@ -34,26 +34,16 @@ from .validation import PromotionPolicy, evaluate_promotion
 class QuantServer(HarnessServer):
     """Inherit framing and MCP protocol only; every capability is an allowlist."""
 
+    instructions = (
+        "Research and paper previews only. No submission, cancellation, "
+        "kill-switch mutation, or live-mode access exists."
+    )
+
     def __init__(self) -> None:
         self.tools = {tool.name: tool for tool in self._tools()}
 
-    def handle(self, message: Any) -> dict[str, Any] | None:
-        response = super().handle(message)
-        if (
-            isinstance(message, dict)
-            and message.get("method") == "initialize"
-            and response
-            and "result" in response
-        ):
-            response["result"]["serverInfo"] = {
-                "name": "financial-agent-quant",
-                "version": version("fa-quant"),
-            }
-            response["result"]["instructions"] = (
-                "Research and paper previews only. No submission, cancellation, "
-                "kill-switch mutation, or live-mode access exists."
-            )
-        return response
+    def server_info(self) -> dict[str, str]:
+        return {"name": "financial-agent-quant", "version": version("fa-quant")}
 
     def _tools(self) -> list[Tool]:
         tools = []
@@ -72,17 +62,11 @@ class QuantServer(HarnessServer):
                 properties["today"] = {"type": "string", "format": "date"}
             if name == "quant_validate":
                 properties["grid"] = {"type": "array", "items": {"type": "object"}}
-            schema = {
-                "type": "object",
-                "properties": properties,
-                "required": ["config"],
-                "additionalProperties": False,
-            }
             tools.append(
                 Tool(
                     name,
                     description,
-                    schema,
+                    _object(properties, ("config",)),
                     partial(self._execute, name),
                 )
             )
@@ -201,11 +185,4 @@ class QuantServer(HarnessServer):
 
 def serve(instream: IO[str], outstream: IO[str]) -> None:
     """Answer newline-delimited JSON-RPC until stdin closes."""
-    server = QuantServer()
-    for line in instream:
-        if not line.strip():
-            continue
-        response = server.handle_line(line)
-        if response is not None:
-            outstream.write(json.dumps(response, allow_nan=False, default=str) + "\n")
-            outstream.flush()
+    QuantServer().serve(instream, outstream, allow_nan=False)
