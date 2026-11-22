@@ -2,12 +2,10 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
 
 import pytest
-from conftest import market_forecast
+from conftest import market_forecast, stub_package
 
-from financial_agent.harness.gates import ALWAYS_ARTIFACTS
 from financial_agent.harness.lifecycle import RunState, RunStatus
 from financial_agent.harness.runner import (
     PIPELINE,
@@ -27,14 +25,8 @@ def noop(_: RunContext) -> StageResult:
 
 
 def write_package(context: RunContext) -> StageResult:
-    context.package_dir.mkdir(parents=True)
-    for name in ALWAYS_ARTIFACTS:
-        (context.package_dir / name).write_text(f"# {name}\n", encoding="utf-8")
     etfs = [market_forecast(t, 100.0) for t in ("SPY", "QQQ", "SOXX")]
-    payload: dict[str, Any] = {"predictions": etfs, "settlements": []}
-    (context.package_dir / "15_predictions.json").write_text(
-        json.dumps(payload), encoding="utf-8"
-    )
+    stub_package(context.package_dir, {"predictions": etfs, "settlements": []})
     return StageResult("wrote package")
 
 

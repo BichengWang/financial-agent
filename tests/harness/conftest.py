@@ -6,6 +6,7 @@ Run with: uv run pytest tests/harness  (or PYTHONPATH=src python3 -m pytest)
 from __future__ import annotations
 
 import copy
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -15,12 +16,17 @@ import pytest
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "src"))
 
+from financial_agent.harness.gates import (  # noqa: E402
+    ALWAYS_ARTIFACTS,
+    REQUIRED_INPUTS,
+)
 from financial_agent.harness.policy import Policy, load_policy  # noqa: E402
 
 OUTPUT_DIR = REPO / "agents" / "equity" / "output"
 real_data = pytest.mark.skipif(
     not OUTPUT_DIR.exists(), reason="agents/equity/output data not present"
 )
+GROUNDED = {name: True for name in REQUIRED_INPUTS}
 
 
 @pytest.fixture(scope="session")
@@ -28,12 +34,21 @@ def policy() -> Policy:
     return load_policy()
 
 
+def override(policy: Policy, **changes: Any) -> Policy:
+    data = copy.deepcopy(dict(policy.data))
+    for dotted, value in changes.items():
+        node = data
+        *parents, leaf = dotted.split("__")
+        for part in parents:
+            node = node[part]
+        node[leaf] = value
+    return Policy(data)
+
+
 @pytest.fixture(scope="session")
 def promoted_policy(policy: Policy) -> Policy:
     """The policy after Fund_Z and Sent_Z are promoted out of SHADOW."""
-    data = copy.deepcopy(dict(policy.data))
-    data["score"]["shadow_families"] = []
-    return Policy(data)
+    return override(policy, score__shadow_families=[])
 
 
 @pytest.fixture
@@ -102,3 +117,16 @@ def market_forecast(ticker: str, entry: float) -> dict[str, Any]:
         "status": "OPEN",
         "thesis": "regime prior",
     }
+
+
+def stub_package(package: Path, payload: dict[str, Any]) -> Path:
+    package.mkdir(parents=True)
+    for name in ALWAYS_ARTIFACTS:
+        (package / name).write_text(f"# {name}\n", encoding="utf-8")
+    (package / "15_predictions.json").write_text(json.dumps(payload), encoding="utf-8")
+    return package
+
+
+def build_package(root: Path, predictions: list[dict[str, Any]]) -> Path:
+    payload = {"run_status": "NO_TRADE", "predictions": predictions, "settlements": []}
+    return stub_package(root / "claude-opus-5-2026-09-03", payload)

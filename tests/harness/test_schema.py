@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, real_data
+from conftest import OUTPUT_DIR, real_data, stub_package
 from test_kernels import MODEL, RUN, etf_inputs, vlo_inputs
 
 from financial_agent.harness.audit import audit_record
-from financial_agent.harness.gates import ALWAYS_ARTIFACTS, publish_gate
+from financial_agent.harness.gates import publish_gate
 from financial_agent.harness.kernels import (
     equity_record,
     market_forecast_records,
@@ -65,12 +65,8 @@ def test_kernel_output_is_valid_v1_and_audits_clean(
 def test_kernel_output_passes_the_publish_gate(
     tmp_path: Path, payload: dict[str, Any], policy: Policy
 ) -> None:
-    package = tmp_path / f"{MODEL}-{RUN}"
-    package.mkdir()
-    for name in ALWAYS_ARTIFACTS:
-        (package / name).write_text(f"# {name}\n", encoding="utf-8")
+    package = stub_package(tmp_path / f"{MODEL}-{RUN}", payload)
     ledger = package / "15_predictions.json"
-    ledger.write_text(json.dumps(payload), encoding="utf-8")
     assert publish_gate(package, policy) == []
 
     payload["predictions"][0]["confidence"] = "HIGH"

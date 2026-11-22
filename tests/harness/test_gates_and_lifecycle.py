@@ -5,11 +5,9 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, market_forecast, real_data
+from conftest import GROUNDED, OUTPUT_DIR, build_package, market_forecast, real_data
 
 from financial_agent.harness.gates import (
-    ALWAYS_ARTIFACTS,
-    REQUIRED_INPUTS,
     decide_status,
     investability,
     publish_gate,
@@ -21,8 +19,6 @@ from financial_agent.harness.lifecycle import (
     RunStatus,
 )
 from financial_agent.harness.policy import Policy
-
-GROUNDED = {name: True for name in REQUIRED_INPUTS}
 
 
 def test_two_family_composite_is_never_investable(
@@ -146,16 +142,6 @@ def test_lifecycle_refuses_skips_extra_revisions_and_failed_gates() -> None:
     assert (run.state, run.status) == (RunState.HALTED, RunStatus.HALTED)
     with pytest.raises(LifecycleError):
         run.advance(RunState.EVOLUTION_REVIEW)
-
-
-def build_package(root: Path, predictions: list[dict[str, Any]]) -> Path:
-    package = root / "claude-opus-5-2026-09-03"
-    package.mkdir()
-    for name in ALWAYS_ARTIFACTS:
-        (package / name).write_text(f"# {name}\n", encoding="utf-8")
-    payload = {"run_status": "NO_TRADE", "predictions": predictions, "settlements": []}
-    (package / "15_predictions.json").write_text(json.dumps(payload), encoding="utf-8")
-    return package
 
 
 def test_publish_gate_reads_the_directory(

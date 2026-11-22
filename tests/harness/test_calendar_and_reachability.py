@@ -1,12 +1,9 @@
 from __future__ import annotations
 
-import copy
-
 import pytest
-from conftest import OUTPUT_DIR, real_data
+from conftest import GROUNDED, OUTPUT_DIR, override, real_data
 
 from financial_agent.harness.gates import (
-    REQUIRED_INPUTS,
     decide_status,
     go_reachability,
     replay_history,
@@ -15,8 +12,6 @@ from financial_agent.harness.gates import (
 from financial_agent.harness.lifecycle import RunStatus
 from financial_agent.harness.market_calendar import session
 from financial_agent.harness.policy import Policy
-
-GROUNDED = {name: True for name in REQUIRED_INPUTS}
 
 
 @pytest.mark.parametrize(
@@ -66,9 +61,8 @@ def test_weekends_keep_the_computed_status_until_a_rule_is_chosen(
     status, reason = decide(policy, "2026-08-22")
     assert status is RunStatus.NO_TRADE
     assert "no status rule (calendar.weekend_status = COMPUTED)" in reason
-    data = copy.deepcopy(dict(policy.data))
-    data["calendar"]["weekend_status"] = "REVIEW_ONLY"
-    status, _ = decide(Policy(data), "2026-08-22")
+    weekend = override(policy, calendar__weekend_status="REVIEW_ONLY")
+    status, _ = decide(weekend, "2026-08-22")
     assert status is RunStatus.REVIEW_ONLY
 
 
