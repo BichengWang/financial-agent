@@ -20,6 +20,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `YahooDownloader.select_equal_rows_stock`; and `configure_mixed_precision`,
   `get_optimal_batch_size`, `create_device_aware_model` and `train_on_device` in
   `utils.gpu_config`.
+- The unreferenced `pure_prompt_coding/` archive from March 2026. Its two prompt
+  runs are byte-identical copies of the ones kept in `agents/equity/output`; the
+  archive, with its two notes files, remains in git history.
 - The unused environments `env.env_portfolio`, `env.env_stocktrading_cashpenalty`
   and `env.env_stocktrading_stoploss`, `model.models.DRLEnsembleAgent`, the
   `autotrain` package, `utils.main`, `utils.setup_gpu_for_notebooks` and
