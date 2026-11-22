@@ -367,6 +367,22 @@ def test_kill_switch_manual_persistence_and_release(tmp_path: Path) -> None:
     )
 
 
+def test_stop_and_anchor_writes_need_no_read_permission_on_the_directory(
+    tmp_path: Path,
+) -> None:
+    # Once the file is replaced the write has happened; it must not then raise.
+    state = tmp_path / "state"
+    state.mkdir()
+    state.chmod(0o300)
+    try:
+        KillSwitch(state).engage("drill", source="operator")
+        RiskState(1000, 1000, "day1").save(state / "risk_state.json")
+    finally:
+        state.chmod(0o700)
+    assert KillSwitch(state).reason() == "drill"
+    assert RiskState.load(state / "risk_state.json") == RiskState(1000, 1000, "day1")
+
+
 def test_out_of_range_loosening_and_account_weights() -> None:
     with pytest.raises(RiskConfigError):
         RiskLimits().tighten({"max_weight": 2})
