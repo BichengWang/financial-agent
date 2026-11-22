@@ -17,11 +17,12 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import math
 import types
 import typing
 from dataclasses import dataclass
 from pathlib import Path
-from typing import IO, Any, Callable, Mapping
+from typing import IO, Any, Callable, Mapping, NoReturn
 
 from financial_agent.harness.gates import (
     PREDICTIONS_FILE,
@@ -451,8 +452,10 @@ class HarnessServer:
 
     def handle_line(self, line: str) -> dict[str, Any] | None:
         try:
-            message = json.loads(line)
-        except json.JSONDecodeError as exc:
+            message = json.loads(
+                line, parse_constant=_reject_constant, parse_float=_finite_float
+            )
+        except (json.JSONDecodeError, _NonFinite) as exc:
             return _error(None, PARSE_ERROR, f"parse error: {exc}")
         try:
             return self.handle(message)
@@ -484,6 +487,21 @@ def _error(request_id: Any, code: int, message: str) -> dict[str, Any]:
         "id": request_id,
         "error": {"code": code, "message": message},
     }
+
+
+class _NonFinite(ValueError):
+    pass
+
+
+def _reject_constant(name: str) -> NoReturn:
+    raise _NonFinite(f"{name} is not valid JSON")
+
+
+def _finite_float(text: str) -> float:
+    value = float(text)
+    if not math.isfinite(value):
+        raise _NonFinite(f"{text} is out of range")
+    return value
 
 
 def serve(instream: IO[str], outstream: IO[str], *, output_dir: Path) -> None:

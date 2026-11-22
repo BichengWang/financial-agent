@@ -177,6 +177,38 @@ def test_stdio_transport(tmp_path: Path) -> None:
     assert [r["id"] for r in responses] == [1, 2]
 
 
+def test_nan_and_infinity_get_a_parse_error(tmp_path: Path) -> None:
+    lines = [
+        '{"jsonrpc": "2.0", "id": NaN, "method": "ping"}',
+        '{"jsonrpc": "2.0", "id": 1, "method": "ping", "params": {"x": [Infinity]}}',
+        '{"jsonrpc": "2.0", "id": -Infinity, "method": "ping"}',
+        '{"jsonrpc": "2.0", "id": 1e999, "method": "ping"}',
+        '{"jsonrpc": "2.0", "id": 2, "method": "ping", "params": {"x": "NaN 1e999"}}',
+    ]
+    stdout = io.StringIO()
+    serve(io.StringIO("\n".join(lines) + "\n"), stdout, output_dir=tmp_path)
+    parse_errors = [
+        {
+            "jsonrpc": "2.0",
+            "id": None,
+            "error": {
+                "code": -32700,
+                "message": f"parse error: {name} is not valid JSON",
+            },
+        }
+        for name in ("NaN", "Infinity", "-Infinity")
+    ]
+    parse_errors.append(
+        {
+            "jsonrpc": "2.0",
+            "id": None,
+            "error": {"code": -32700, "message": "parse error: 1e999 is out of range"},
+        }
+    )
+    responses = [json.loads(line) for line in stdout.getvalue().splitlines()]
+    assert responses == [*parse_errors, {"jsonrpc": "2.0", "id": 2, "result": {}}]
+
+
 def test_cli_serves_mcp_over_stdio(tmp_path: Path) -> None:
     request = {"jsonrpc": "2.0", "id": 7, "method": "tools/call"}
     request["params"] = {"name": "session", "arguments": {"date": "2026-08-22"}}
