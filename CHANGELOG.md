@@ -7,6 +7,12 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Importing `financial_agent.trading.config.config` no longer scrapes Wikipedia and
+  Yahoo for a live S&P 500 top 100. `SP500_100_TICKER` and `SP500_20_TICKER` are now
+  always the 10-name fallback list that the saved `LSTM_prediction` and
+  `rl_portfolio_trading_phase2` outputs show. Calling
+  `get_sp500_top_n_by_marketcap(100)` still fetches a live ranking; it needs `lxml`,
+  which the `rl` extra installs.
 - The RL examples moved from `example/rl/` to `examples/rl/`.
 
 ### Removed

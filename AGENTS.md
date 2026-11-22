@@ -68,7 +68,7 @@ uv build
 - Python ≥3.12. Type hints required (`disallow_untyped_defs = true` in mypy config).
 - Format with `black` (line length 88, target `py312`). Lint with `flake8`. Type-check with `mypy`.
 - `numpy<2.0` and `pandas>=2.0,<3` are pinned — do not bump without asking.
-- Tests use `pytest` (+ `pytest-cov`, `pytest-custom-exit-code`). Tests live under `tests/` (quant, RL, harness) and the daily equity helper test directory.
+- Tests use `pytest` (+ `pytest-cov`, `pytest-custom-exit-code`). Tests live under `tests/` (quant, RL, harness, trading) and the daily equity helper test directory.
 
 ## Agent rules
 
