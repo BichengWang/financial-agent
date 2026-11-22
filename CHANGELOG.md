@@ -26,6 +26,10 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `config.config.DOW_30_TICKER` left `financial_agent.trading`. The autotrain
   `train_one` was broken; `utils.main` was its only caller, and only those two
   used `DOW_30_TICKER`.
+- The unused `financial_agent.dl` package (the `Baseline` model and
+  `WindowGenerator`) no longer ships in the wheel. Nothing in the repository or
+  its notebooks imported it. The `dl` extra still installs TensorFlow for the
+  LSTM notebook.
 
 ### Fixed
 
