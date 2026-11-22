@@ -232,6 +232,82 @@ def test_cache_rejects_nonobject_metadata(tmp_path: Path, metadata: str) -> None
     assert (tmp_path / "_meta.json").read_text() == metadata
 
 
+def _rewrite_meta(cache_dir: Path, symbol: str, **changes: Any) -> None:
+    path = cache_dir / "_meta.json"
+    metadata = json.loads(path.read_text())
+    record = metadata.setdefault(symbol, {})
+    for key, value in changes.items():
+        if value is None:
+            record.pop(key)
+        else:
+            record[key] = value
+    path.write_text(json.dumps(metadata))
+
+
+@pytest.mark.parametrize(
+    "key, value, error, extend",
+    [
+        ("covered_start", None, "missing covered_start", False),
+        ("covered_start", "2005-13-01", "covered_start is not an ISO date", False),
+        ("covered_end", 20050104, "covered_end is not an ISO date", False),
+        ("adjusted", None, "missing adjusted", False),
+        ("source", None, "missing source", False),
+        ("source", None, "missing source", True),
+        ("source", ["synthetic"], "source is not a string", False),
+    ],
+)
+def test_cache_reports_a_broken_record_of_a_fetched_symbol(
+    tmp_path: Path, key: str, value: Any, error: str, extend: bool
+) -> None:
+    data = market(3)
+    inner = CountingProvider(data)
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    first_end = data.sessions[-2].date() if extend else end
+    CachedProvider(inner, tmp_path).fetch(["A"], start, first_end)
+    _rewrite_meta(tmp_path, "A", **{key: value})
+    with pytest.raises(DataError, match=f"invalid metadata: A: {error}"):
+        CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+
+
+@pytest.mark.parametrize("source", [None, ["csv"]])
+def test_cache_refetches_a_record_without_a_usable_source(
+    tmp_path: Path, source: Any
+) -> None:
+    data = market(3)
+    write_csv(data, tmp_path / "csv")
+    inner = CsvProvider(tmp_path / "csv")
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    first = CachedProvider(inner, tmp_path / "cache").fetch(["A"], start, end)
+    _rewrite_meta(tmp_path / "cache", "A", source=source, covered_start=None)
+    again = CachedProvider(inner, tmp_path / "cache").fetch(["A"], start, end)
+    assert again.fingerprint() == first.fingerprint()
+    assert (
+        json.loads((tmp_path / "cache/_meta.json").read_text())["A"]["source"] == "csv"
+    )
+
+
+def test_cache_ignores_a_broken_record_of_another_symbol(tmp_path: Path) -> None:
+    data = market(2)
+    inner = CountingProvider(data)
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    _rewrite_meta(tmp_path, "B", source="csv", covered_start="garbage")
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert len(inner.calls) == 1
+
+
+def test_cache_refetches_a_last_bar_whose_retrieval_time_cannot_convert(
+    tmp_path: Path,
+) -> None:
+    data = market(3)
+    inner = CountingProvider(data)
+    start, end = data.sessions[0].date(), data.sessions[-1].date()
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    _rewrite_meta(tmp_path, "A", retrieved_at="0001-01-01T00:00:00+00:00")
+    CachedProvider(inner, tmp_path).fetch(["A"], start, end)
+    assert len(inner.calls) == 2
+
+
 @pytest.mark.parametrize(
     "code,severity",
     [

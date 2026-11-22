@@ -23,6 +23,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- The market-data cache raises a data error naming the symbol and field when the
+  metadata record of a symbol it is fetching is missing a field the cache needs for
+  it or holds a coverage date that is not an ISO date. It used to fail with an
+  uncaught `KeyError`, `TypeError` or `ValueError`. Records the cache already
+  refetched, such as one written by another provider, are still refetched. A
+  retrieval time outside the range that converts to New York time now counts as
+  unreadable, so the last bar is fetched again instead of raising `OverflowError`.
 - `examples/rl/run_all_examples.py` counts only the examples that exit 0, and exits
   with status 1 when any of them fails or the run is interrupted. It used to report
   `4/4 examples completed successfully` and exit 0 even when an example failed.
