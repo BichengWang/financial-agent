@@ -11,6 +11,8 @@ from typing import Any, Literal
 from ..backtest import BacktestConfig, CostModel
 from ..data import BarProvider, CachedProvider, CsvProvider, YahooProvider
 from ..data.providers import validate_request
+from ..execution import BrokerError
+from ..execution.ibkr import GATEWAY_URL, validate_gateway
 from ..risk import RiskLimits
 from ..strategies import build_strategy
 
@@ -52,7 +54,7 @@ class TradingConfig:
     disclosed_trials: tuple[dict[str, Any], ...] = ()
 
     account_id: str | None = None
-    base_url: str = "https://localhost:5000/v1/api"
+    base_url: str = GATEWAY_URL
     verify: bool | str = True
     conids: dict[str, int] = field(default_factory=dict)
     confirm_message_ids: tuple[str, ...] = ()
@@ -71,9 +73,6 @@ class TradingConfig:
         if self.mode == "live" and self.broker_kind not in ("alpaca", "ibkr"):
             raise ConfigError("broker.kind: live mode requires alpaca or ibkr")
         if self.broker_kind == "ibkr":
-            from ..execution.ibkr import validate_gateway
-            from ..execution import BrokerError
-
             if not isinstance(self.account_id, str) or not re.fullmatch(
                 r"[A-Z]+\d+", self.account_id
             ):
@@ -245,7 +244,7 @@ class TradingConfig:
             tuple(grid),
             tuple(trials),
             account_id=broker.get("account_id"),
-            base_url=broker.get("base_url", "https://localhost:5000/v1/api"),
+            base_url=broker.get("base_url", GATEWAY_URL),
             verify=(
                 str(resolve(broker["verify"], "broker.verify"))
                 if isinstance(broker.get("verify"), str)

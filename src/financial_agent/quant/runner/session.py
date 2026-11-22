@@ -11,12 +11,12 @@ import os
 from pathlib import Path
 import tomllib
 from typing import Any
-from zoneinfo import ZoneInfo
 
 import pandas as pd  # type: ignore[import-untyped]
 
 from financial_agent.harness.market_calendar import session as calendar_session
 from ..data import BarProvider, MarketData, check_quality
+from ..data.cache import EXCHANGE_TZ
 from ..execution import (
     AlpacaBroker,
     Broker,
@@ -25,8 +25,10 @@ from ..execution import (
     IBKRBroker,
     Journal,
     PaperBroker,
+    reconcile,
 )
 from ..execution.alpaca import LIVE_URL
+from ..execution.ibkr import IBKRQuestion
 from ..risk import (
     AccountSnapshot,
     KillSwitch,
@@ -38,10 +40,8 @@ from ..risk import (
 )
 from ..strategies import build_strategy
 from .config import TradingConfig
-from .promotion import authorize_live
+from .promotion import PromotionError, authorize_live
 from .report import SessionReport, Status, json_value, write_report
-
-EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 
 class SessionLocked(RuntimeError):
@@ -131,6 +131,27 @@ def _submission_closed(
         f"America/New_York; orders for {today} must be submitted that day "
         f"before {cutoff:%H:%M}"
     ]
+
+
+def _submit(
+    orders: list[Order],
+    broker: Broker,
+    journal: Journal,
+    kill: KillSwitch,
+    today: date,
+    now: Callable[[], datetime],
+) -> list[str]:
+    for order in orders:
+        closed = _submission_closed(broker, today, now)
+        if closed:
+            return closed
+        if kill.engaged():
+            return ["kill switch engaged"]
+        ack = broker.submit(order)
+        journal.append("submitted", json_value(ack))
+        if ack.status == "rejected":
+            return ["broker rejected order"]
+    return []
 
 
 def _recover_prior_intents(broker: Broker, journal: Journal, today: date) -> None:
@@ -452,8 +473,6 @@ def _run_locked(
         _recover_prior_intents(broker, journal, today)
         fills.extend(_sync(broker, data, journal))
         account = broker.account()
-        from ..execution import reconcile
-
         breaks = reconcile(_expected(journal), account)
         breaks_count = len(breaks)
         journal.append(
@@ -578,16 +597,9 @@ def _run_locked(
                         *checked.reasons,
                     ],
                 )
-            for order in orders:
-                closed = _submission_closed(broker, today, now)
-                if closed:
-                    return finish("HALTED", closed)
-                if kill.engaged():
-                    return finish("HALTED", ["kill switch engaged"])
-                ack = broker.submit(order)
-                journal.append("submitted", json_value(ack))
-                if ack.status == "rejected":
-                    return finish("HALTED", ["broker rejected order"])
+            halted = _submit(orders, broker, journal, kill, today, now)
+            if halted:
+                return finish("HALTED", halted)
             return finish("TRADED", ["recovered interrupted submission"])
         if same:
             previous_plans = [
@@ -699,34 +711,17 @@ def _run_locked(
                     "reference_price": float(data.close.iloc[-1][order.symbol]),
                 },
             )
-        for order in checked.approved:
-            closed = _submission_closed(broker, today, now)
-            if closed:
-                return finish("HALTED", closed)
-            if kill.engaged():
-                return finish("HALTED", ["kill switch engaged"])
-            ack = broker.submit(order)
-            journal.append("submitted", json_value(ack))
-            if ack.status == "rejected":
-                return finish("HALTED", ["broker rejected order"])
+        halted = _submit(checked.approved, broker, journal, kill, today, now)
+        if halted:
+            return finish("HALTED", halted)
         return finish("TRADED", [])
+    except IBKRQuestion as exc:
+        journal.append(
+            "broker_question", {"session": today.isoformat(), "detail": exc.detail}
+        )
+        return finish("HALTED", [exc.detail])
+    except PromotionError as exc:
+        return finish("HALTED", exc.reasons)
     except Exception as exc:
         # Providers/transports may embed credentials in errors: expose type only.
-        from .promotion import PromotionError
-
-        from ..execution.ibkr import IBKRQuestion
-
-        if isinstance(exc, IBKRQuestion):
-            journal.append(
-                "broker_question", {"session": today.isoformat(), "detail": exc.detail}
-            )
-        reasons = (
-            [exc.detail]
-            if isinstance(exc, IBKRQuestion)
-            else (
-                exc.reasons
-                if isinstance(exc, PromotionError)
-                else [f"session failed ({type(exc).__name__})"]
-            )
-        )
-        return finish("HALTED", reasons)
+        return finish("HALTED", [f"session failed ({type(exc).__name__})"])
