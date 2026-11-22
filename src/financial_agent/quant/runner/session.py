@@ -413,28 +413,13 @@ def run_session(
                 config, today, dry_run, provider, broker, environ, stale, clock
             )
     except SessionLocked:
-        return SessionReport(
-            "HALTED",
-            today.isoformat(),
-            ["state_dir: another session is running"],
-            [],
-            [],
-            None,
-            {},
-            dry_run=dry_run,
-        )
+        reasons = ["state_dir: another session is running"]
     except Exception as exc:
         # A filesystem failure may prevent journaling/reporting; still fail closed.
-        return SessionReport(
-            "HALTED",
-            today.isoformat(),
-            [f"session failed ({type(exc).__name__})"],
-            [],
-            [],
-            None,
-            {},
-            dry_run=dry_run,
-        )
+        reasons = [f"session failed ({type(exc).__name__})"]
+    return SessionReport(
+        "HALTED", today.isoformat(), reasons, [], [], None, {}, dry_run=dry_run
+    )
 
 
 def _run_locked(
