@@ -23,6 +23,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `fa-quant run --dry-run` still reports a dry run when another session holds the
+  lock. The halted report used to say `"dry_run": false` and `Dry run: False`, and
+  list its orders under `Orders` instead of `Planned orders`.
 - A `KILL` file written mid-session now stops the remaining orders: each
   submission loop checks the kill switch before every order and halts. Orders
   already submitted stay submitted and journalled; kill still cancels nothing.
