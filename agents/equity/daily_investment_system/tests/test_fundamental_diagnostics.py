@@ -473,3 +473,29 @@ def test_main_reports_all_tickers_failed_when_cik_map_fetch_fails(
     assert set(output["fetch_failures"]) == {"AAPL", "MSFT"}
     assert output["records"] == {}
     assert output["universe_sourceable_pct"] == 0.0
+
+
+def test_main_upper_cases_command_line_tickers_before_the_cik_lookup(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    monkeypatch.setattr(fd, "fetch_ticker_cik_map", lambda: {"AAPL": 320193})
+    monkeypatch.setattr(fd, "fetch_companyfacts", lambda cik: _companyfacts_fixture())
+    out_path = tmp_path / "out.json"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fundamental_diagnostics.py",
+            "--tickers",
+            "aapl",
+            "--as-of",
+            _AS_OF.isoformat(),
+            "--output",
+            str(out_path),
+        ],
+    )
+    fd.main()
+
+    output = json.loads(out_path.read_text())
+    assert output["fetch_failures"] == {}
+    assert list(output["records"]) == ["AAPL"]

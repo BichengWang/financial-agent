@@ -92,3 +92,17 @@ def test_composite_z_ignores_none_entries_in_the_average() -> None:
     composite, n = fs.composite_z({"a": 2.0, "b": 4.0, "c": None})
     assert composite == pytest.approx(3.0)
     assert n == 2
+
+
+def test_read_tickers_normalizes_command_line_tickers_like_file_tickers(
+    tmp_path: Path,
+) -> None:
+    assert fs.read_tickers(["spy", "SPY"], None) == ["SPY"]
+    assert fs.read_tickers([" SPY,qqq ", "iwm,", ","], None) == ["SPY", "QQQ", "IWM"]
+    tickers_file = tmp_path / "tickers.txt"
+    tickers_file.write_text("QQQ\naapl, spy\n")
+    assert fs.read_tickers(["spy,qqq"], tickers_file) == ["SPY", "QQQ", "AAPL"]
+    messy = "\taapl,\nspy \r\n,qqq\t"
+    tickers_file.write_text(messy)
+    assert fs.read_tickers([messy], None) == fs.read_tickers([], tickers_file)
+    assert fs.read_tickers([messy], None) == ["AAPL", "SPY", "QQQ"]

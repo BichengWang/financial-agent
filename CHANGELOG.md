@@ -23,6 +23,10 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `fundamental_diagnostics.py` and `sentiment_diagnostics.py` upper-case, trim and
+  comma-split `--tickers` values like `--tickers-file` lines, and drop empty ones.
+  `--tickers aapl` used to find no SEC CIK mapping, `--tickers SPY,QQQ` stayed one
+  ticker, and `--tickers ""` ran with an empty ticker instead of reporting none.
 - Both MCP servers answer a request containing `NaN`, `Infinity` or `-Infinity`,
   which are not JSON, or a number too large for a float such as `1e999`, with the
   same parse error as any other malformed line and keep serving. `fa-quant mcp`
