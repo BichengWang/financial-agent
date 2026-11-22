@@ -36,6 +36,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `KILL`, `risk_state.json` and each session report's `.json` file are now also
+  fsynced to their directory where the filesystem allows, and none of these writes,
+  nor `paper.json`'s, fails any more after the file is in place.
 - A malformed `15_predictions.json` no longer crashes the harness. A ledger that is
   not valid JSON, has no `predictions` list, or holds a prediction or settlement row
   that is not an object fails the publish gate with a message in `gate`, `gate --json`,

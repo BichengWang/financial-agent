@@ -1,5 +1,6 @@
 """Atomic equity-risk persistence; the KILL file alone owns killed status."""
 
+from contextlib import suppress
 from dataclasses import asdict, dataclass
 import json
 import math
@@ -12,6 +13,16 @@ from .limits import RiskLimits
 from .orders import AccountSnapshot
 
 
+def _fsync_directory(path: Path) -> None:
+    """Best effort: the file is already in place, so errors must not fail the write."""
+    with suppress(OSError):
+        descriptor = os.open(path, os.O_RDONLY)
+        try:
+            os.fsync(descriptor)
+        finally:
+            os.close(descriptor)
+
+
 def _atomic_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     descriptor, temporary = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
@@ -21,6 +32,7 @@ def _atomic_json(path: Path, data: dict[str, Any]) -> None:
             stream.flush()
             os.fsync(stream.fileno())
         os.replace(temporary, path)
+        _fsync_directory(path.parent)
     finally:
         if os.path.exists(temporary):
             os.unlink(temporary)

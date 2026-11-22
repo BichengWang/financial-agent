@@ -2,6 +2,8 @@
 
 from pathlib import Path
 from dataclasses import replace
+from collections.abc import Callable
+import os
 
 import pytest
 
@@ -104,3 +106,31 @@ def test_batched_data_fills_first_new_open_and_marks_last_close(tmp_path: Path) 
     assert fill.reference_price == data.open.iloc[1, 0]
     assert broker.account().positions["SPY"].market_price == data.close.iloc[-1, 0]
     assert broker.settle(data.upto(data.sessions[2])) == []
+
+
+def test_state_write_fsyncs_its_directory_after_the_replace(
+    tmp_path: Path,
+    fsync_log: list[tuple[str, object]],
+    open_descriptors: Callable[[], int],
+) -> None:
+    before = open_descriptors()
+    PaperBroker(tmp_path / "paper.json", costs=CostModel.zero(), initial_cash=1000)
+    assert open_descriptors() == before
+    directory = os.stat(tmp_path)
+    assert fsync_log == [
+        ("replace", tmp_path / "paper.json"),
+        ("fsync", (directory.st_dev, directory.st_ino)),
+    ]
+
+
+@pytest.mark.usefixtures("directory_fsync_fails")
+def test_state_write_succeeds_when_the_directory_cannot_be_fsynced(
+    tmp_path: Path, open_descriptors: Callable[[], int]
+) -> None:
+    path = tmp_path / "paper.json"
+    before = open_descriptors()
+    broker = PaperBroker(path, costs=CostModel.zero(), initial_cash=1000)
+    broker.submit(Order("SPY", "buy", 1, client_order_id="kept"))
+    assert open_descriptors() == before
+    restarted = PaperBroker(path, costs=CostModel.zero(), initial_cash=0)
+    assert restarted.account().cash == 1000 and restarted.lookup("kept") is not None
