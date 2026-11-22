@@ -2,7 +2,7 @@ name: Python quality
 
 on:
   pull_request:
-    paths:
+    paths: &quality
       - "src/**"
       - "tests/**"
       - "examples/**"
@@ -16,18 +16,7 @@ on:
       - ".github/workflows/python-quality.yml"
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "tests/**"
-      - "examples/**"
-      - "deploy/**"
-      - "agents/equity/daily_investment_system/**"
-      - "pyproject.toml"
-      - "README.md"
-      - "uv.lock"
-      - ".python-version"
-      - ".flake8"
-      - ".github/workflows/python-quality.yml"
+    paths: *quality
 
 permissions:
   contents: read
@@ -53,13 +42,13 @@ jobs:
       - name: Tests
         run: uv run pytest tests agents/equity/daily_investment_system/tests -q
 
-      - name: Check RL formatting
+      - name: Check formatting
         run: uv run black --check src/financial_agent/rl tests/rl src/financial_agent/quant tests/quant
 
-      - name: Lint RL
+      - name: Lint
         run: uv run flake8 src/financial_agent/rl tests/rl src/financial_agent/quant tests/quant
 
-      - name: Type-check RL and harness
+      - name: Type-check
         run: uv run mypy src/financial_agent/rl src/financial_agent/harness src/financial_agent/quant
 
       - name: Build and smoke-test installed wheel outside checkout
