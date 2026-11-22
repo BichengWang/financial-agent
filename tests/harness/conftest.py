@@ -130,3 +130,56 @@ def stub_package(package: Path, payload: dict[str, Any]) -> Path:
 def build_package(root: Path, predictions: list[dict[str, Any]]) -> Path:
     payload = {"run_status": "NO_TRADE", "predictions": predictions, "settlements": []}
     return stub_package(root / "claude-opus-5-2026-09-03", payload)
+
+
+# 15_predictions.json bytes the harness must fail, not crash on, and the
+# publish gate's failure for each.
+MALFORMED_LEDGERS = {
+    "not-json": (
+        b"{not json",
+        "15_predictions.json is not valid JSON: Expecting property name enclosed "
+        "in double quotes: line 1 column 2 (char 1)",
+    ),
+    "utf-16": (
+        b"\xff\xfe" + "{}".encode("utf-16-le"),
+        "15_predictions.json is not valid JSON: 'utf-8' codec can't decode byte "
+        "0xff in position 0: invalid start byte",
+    ),
+    "prediction-not-an-object": (
+        b'{"predictions": ["oops"]}',
+        "15_predictions.json: every prediction must be an object",
+    ),
+    "not-an-object": (b"[1, 2]", "15_predictions.json has no 'predictions' list"),
+    "settlement-not-an-object": (
+        b'{"predictions": [], "settlements": [null]}',
+        "15_predictions.json: settlements must be a list of objects",
+    ),
+}
+
+
+def _unparsable(raw: bytes) -> tuple[bytes, str]:
+    try:
+        json.loads(raw)
+    except (ValueError, RecursionError) as exc:
+        return raw, f"15_predictions.json is not valid JSON: {exc}"
+    raise AssertionError("expected json.loads to fail")
+
+
+MALFORMED_LEDGERS["long-integer"] = _unparsable(
+    b'{"predictions": [], "run_status": ' + b"1" * 5000 + b"}"
+)
+MALFORMED_LEDGERS["deep-nesting"] = _unparsable(
+    b'{"predictions": [], "notes": ' + b"[" * 100000 + b"]" * 100000 + b"}"
+)
+
+
+@pytest.fixture(params=list(MALFORMED_LEDGERS.values()), ids=list(MALFORMED_LEDGERS))
+def malformed_ledger(request: pytest.FixtureRequest) -> tuple[bytes, str]:
+    ledger: tuple[bytes, str] = request.param
+    return ledger
+
+
+def malformed_package(package: Path, ledger: bytes) -> Path:
+    stub_package(package, {})
+    (package / "15_predictions.json").write_bytes(ledger)
+    return package

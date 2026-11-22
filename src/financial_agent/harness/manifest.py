@@ -95,7 +95,9 @@ def render_manifest_sections(
     replay = replay_status(package_dir, policy)
     lines.append("## Status replay")
     lines.append("")
-    if replay is None:
+    if replay is None and (package_dir / PREDICTIONS_FILE).exists():
+        lines.append(f"`{PREDICTIONS_FILE}` cannot be read: nothing to replay.")
+    elif replay is None:
         lines.append(f"No `{PREDICTIONS_FILE}`: nothing to replay.")
     else:
         reasons = "; ".join(replay.decision.reasons)

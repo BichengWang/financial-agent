@@ -1,7 +1,18 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import pytest
-from conftest import GROUNDED, OUTPUT_DIR, override, real_data
+from conftest import (
+    GROUNDED,
+    OUTPUT_DIR,
+    build_package,
+    malformed_package,
+    market_forecast,
+    override,
+    real_data,
+)
 
 from financial_agent.harness.gates import (
     decide_status,
@@ -106,6 +117,15 @@ def test_reachability_reproduces_the_runs_own_finding(policy: Policy) -> None:
     }
 
 
+def test_replay_skips_a_malformed_ledger_and_goes_on(
+    tmp_path: Path, policy: Policy, malformed_ledger: tuple[bytes, str]
+) -> None:
+    bad = malformed_package(tmp_path / "claude-opus-5-2026-09-02", malformed_ledger[0])
+    good = build_package(tmp_path, [market_forecast("SPY", 773.17)])
+    assert replay_status(bad, policy) is None
+    assert [name for name, _ in replay_history(tmp_path, policy)] == [good.name]
+
+
 @real_data
 def test_history_replay_with_the_calendar(policy: Policy) -> None:
     """Pinned like the audit: published packages are immutable."""
@@ -121,3 +141,24 @@ def test_history_replay_with_the_calendar(policy: Policy) -> None:
     weekend = replays["claude-fable-5-2026-07-04"]
     assert weekend.session is not None and weekend.session.kind == "WEEKEND"
     assert not weekend.agrees
+
+
+def test_replay_counts_an_investable_record_without_a_ticker(
+    tmp_path: Path, promoted_policy: Policy
+) -> None:
+    record = {
+        "pctl": 96,
+        "mu": 0.06,
+        "sigma": 0.08,
+        "score_explainability": {
+            "fund_z": 0.5,
+            "tech_z": 0.5,
+            "sent_z": 0.5,
+            "macro_z": 0.5,
+            "data_quality_multiplier": 0.9,
+        },
+    }
+    raw = json.dumps({"predictions": [record]}).encode()
+    package = malformed_package(tmp_path / "claude-opus-5-2026-09-03", raw)
+    replay = replay_status(package, promoted_policy)
+    assert replay is not None and replay.investable == ["?"]

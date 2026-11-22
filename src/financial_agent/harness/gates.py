@@ -8,16 +8,17 @@ answer for the same inputs, and the model's job shrinks to explaining it.
 from __future__ import annotations
 
 import datetime as dt
-import json
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 from financial_agent.harness.audit import (
     PREDICTIONS_FILE,
+    UnreadableLedger,
     _num,
     audit_record,
     missing_core_etfs,
+    read_ledger,
 )
 from financial_agent.harness.fingerprint import dated_packages
 from financial_agent.harness.lifecycle import RunStatus
@@ -70,7 +71,7 @@ def _kelly_gate(record: Mapping[str, Any], policy: Policy) -> str | None:
     otherwise the ``mu / sigma^2`` fallback. ``None`` when unsettleable."""
     explain = record.get("score_explainability")
     metrics = explain.get("metrics") if isinstance(explain, Mapping) else None
-    if isinstance(metrics, Mapping) and metrics.get("kelly_gate") in set(KELLY_GATES):
+    if isinstance(metrics, Mapping) and metrics.get("kelly_gate") in KELLY_GATES:
         return str(metrics["kelly_gate"])
     mu, sigma = _num(record.get("mu")), _num(record.get("sigma"))
     if mu is None or sigma is None or sigma <= 0:
@@ -376,12 +377,10 @@ def publish_gate(package_dir: Path, policy: Policy) -> list[str]:
         failures.append(f"missing {PREDICTIONS_FILE} (publishing gate)")
         return failures
     try:
-        payload = json.loads(predictions_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return failures + [f"{PREDICTIONS_FILE} is not valid JSON: {exc}"]
-    predictions = payload.get("predictions") if isinstance(payload, dict) else None
-    if not isinstance(predictions, list):
-        return failures + [f"{PREDICTIONS_FILE} has no 'predictions' list"]
+        payload = read_ledger(predictions_path)
+    except UnreadableLedger as exc:
+        return failures + [str(exc)]
+    predictions = payload["predictions"]
     if "schema_version" in payload:
         # A ledger that declares a schema is held to all of it.
         from financial_agent.harness.schema import validate_payload
@@ -440,7 +439,7 @@ def _threshold(failure: str) -> str:
 
 
 def replay_status(package_dir: Path, policy: Policy) -> StatusReplay | None:
-    """Recompute the run status from the ledger; ``None`` without a ledger.
+    """Recompute the run status from the ledger; ``None`` without a readable one.
 
     Assumes every Required input was grounded: the ledger cannot show otherwise.
     The run date's session applies the calendar rule, and ``blocking`` counts
@@ -449,7 +448,10 @@ def replay_status(package_dir: Path, policy: Policy) -> StatusReplay | None:
     path = package_dir / PREDICTIONS_FILE
     if not path.exists():
         return None
-    payload = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        payload = read_ledger(path)
+    except UnreadableLedger:
+        return None
     equities = [
         p
         for p in payload.get("predictions", [])
@@ -460,7 +462,7 @@ def replay_status(package_dir: Path, policy: Policy) -> StatusReplay | None:
     for record in equities:
         failures = investability(record, policy)
         if not failures:
-            passing.append(record["ticker"])
+            passing.append(record.get("ticker", "?"))
         for label in sorted({_threshold(f) for f in failures}):
             blocking[label] = blocking.get(label, 0) + 1
     run_date = _run_date(payload, package_dir)
@@ -496,7 +498,7 @@ def replay_history(
     since: str | None = None,
     as_of: str | None = None,
 ) -> list[tuple[str, StatusReplay]]:
-    """``replay_status`` for every dated package with a ledger, oldest first."""
+    """``replay_status`` for each dated package with a readable ledger, oldest first."""
     replays: list[tuple[str, StatusReplay]] = []
     for package_dir, run_date in dated_packages(output_dir):
         if (since and run_date < since) or (as_of and run_date > as_of):

@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
-from conftest import market_forecast, stub_package
+from conftest import malformed_package, market_forecast, stub_package
 
 from financial_agent.harness.lifecycle import RunState, RunStatus
 from financial_agent.harness.runner import (
@@ -84,6 +84,22 @@ def test_failed_publish_gate_halts_and_never_publishes(tmp_path: Path) -> None:
     ]
     assert report.halt_reason is not None
     assert report.halt_reason.startswith("publish gate failed")
+
+
+def test_malformed_ledger_halts_at_the_publish_gate(
+    tmp_path: Path, malformed_ledger: tuple[bytes, str]
+) -> None:
+    ledger, failure = malformed_ledger
+
+    def write_malformed(context: RunContext) -> StageResult:
+        malformed_package(context.package_dir, ledger)
+        return StageResult("wrote package")
+
+    table = handlers()
+    table[RunState.PORTFOLIO_DRAFT] = write_malformed
+    report = run(MODEL, DATE, tmp_path, table)
+    assert not report.published and report.gate_failures == [failure]
+    assert report.halt_reason == f"publish gate failed: {failure}"
 
 
 def test_risk_review_must_return_a_publishable_status(tmp_path: Path) -> None:

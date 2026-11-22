@@ -9,7 +9,14 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, REPO, real_data
+from conftest import (
+    OUTPUT_DIR,
+    REPO,
+    build_package,
+    malformed_package,
+    market_forecast,
+    real_data,
+)
 from test_kernels import RUN
 
 from financial_agent.harness.mcp import HarnessServer, dataclass_schema, serve
@@ -162,6 +169,24 @@ def test_gate_and_replay_over_real_packages() -> None:
     assert (summary["replayed"], summary["agree"]) == (83, 73)
     is_error, text = call(server, "schema_check", package="claude-opus-5-2026-09-03")
     assert not is_error and any("kelly_025" in f for f in json.loads(text))
+
+
+def test_gate_tool_fails_a_malformed_ledger_and_replay_goes_on(
+    tmp_path: Path, server: HarnessServer, malformed_ledger: tuple[bytes, str]
+) -> None:
+    ledger, failure = malformed_ledger
+    bad = malformed_package(tmp_path / "claude-opus-5-2026-09-02", ledger)
+    build_package(tmp_path, [market_forecast("SPY", 773.17)])
+    is_error, text = call(server, "gate", package=bad.name)
+    assert not is_error, text
+    report = json.loads(text)
+    assert (report["pass"], report["failures"], report["replay"]) == (
+        False,
+        [failure],
+        None,
+    )
+    is_error, text = call(server, "replay_history")
+    assert not is_error and json.loads(text)["replayed"] == 1
 
 
 def test_stdio_transport(tmp_path: Path) -> None:
