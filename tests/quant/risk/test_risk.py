@@ -1,8 +1,11 @@
 """Consumer-visible boundaries, persistence and execution parity."""
 
+from collections.abc import Callable
 from dataclasses import replace
 from datetime import datetime
 from hashlib import sha256
+import json
+import os
 from pathlib import Path
 from typing import Any, Literal
 
@@ -22,6 +25,7 @@ from financial_agent.quant.risk import (
     plan_orders,
     update_risk_state,
 )
+from financial_agent.quant.runner.report import SessionReport, write_report
 
 
 def account(cash: float = 1000, **quantities: float) -> AccountSnapshot:
@@ -381,6 +385,44 @@ def test_stop_and_anchor_writes_need_no_read_permission_on_the_directory(
         state.chmod(0o700)
     assert KillSwitch(state).reason() == "drill"
     assert RiskState.load(state / "risk_state.json") == RiskState(1000, 1000, "day1")
+
+
+def write_stop_anchors_and_report(state: Path) -> None:
+    KillSwitch(state).engage("drill", source="operator")
+    RiskState(1000, 1000, "day1").save(state / "risk_state.json")
+    write_report(SessionReport("NO_SESSION", "day1", [], [], [], None, {}), state)
+
+
+def test_stop_anchor_and_report_writes_fsync_their_directory_after_the_replace(
+    tmp_path: Path,
+    fsync_log: list[tuple[str, object]],
+    open_descriptors: Callable[[], int],
+) -> None:
+    before = open_descriptors()
+    write_stop_anchors_and_report(tmp_path)
+    assert open_descriptors() == before
+    state, reports = os.stat(tmp_path), os.stat(tmp_path / "reports")
+    assert fsync_log[:6] == [
+        ("replace", tmp_path / "KILL"),
+        ("fsync", (state.st_dev, state.st_ino)),
+        ("replace", tmp_path / "risk_state.json"),
+        ("fsync", (state.st_dev, state.st_ino)),
+        ("replace", tmp_path / "reports" / "day1.json"),
+        ("fsync", (reports.st_dev, reports.st_ino)),
+    ]
+
+
+@pytest.mark.usefixtures("directory_fsync_fails")
+def test_stop_anchor_and_report_writes_succeed_when_the_directory_cannot_be_fsynced(
+    tmp_path: Path, open_descriptors: Callable[[], int]
+) -> None:
+    before = open_descriptors()
+    write_stop_anchors_and_report(tmp_path)
+    assert open_descriptors() == before
+    assert KillSwitch(tmp_path).reason() == "drill"
+    assert RiskState.load(tmp_path / "risk_state.json") == RiskState(1000, 1000, "day1")
+    report = json.loads((tmp_path / "reports" / "day1.json").read_text())
+    assert report["status"] == "NO_SESSION" and report["session"] == "day1"
 
 
 def test_out_of_range_loosening_and_account_weights() -> None:

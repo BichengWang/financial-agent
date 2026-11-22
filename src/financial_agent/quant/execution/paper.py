@@ -15,6 +15,7 @@ import tempfile
 from financial_agent.quant.backtest import CostModel
 from financial_agent.quant.data import MarketData
 from financial_agent.quant.risk.orders import AccountSnapshot, Order, Position
+from financial_agent.quant.risk.state import _fsync_directory
 from .broker import BrokerError, Fill, OrderAck, validate_order
 
 
@@ -60,11 +61,7 @@ class PaperBroker:
                 handle.flush()
                 os.fsync(handle.fileno())
             os.replace(temporary, self.state_path)
-            directory = os.open(self.state_path.parent, os.O_RDONLY)
-            try:
-                os.fsync(directory)
-            finally:
-                os.close(directory)
+            _fsync_directory(self.state_path.parent)
         finally:
             if os.path.exists(temporary):
                 os.unlink(temporary)
