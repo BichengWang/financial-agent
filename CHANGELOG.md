@@ -23,6 +23,11 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- The quant MCP tools default `today` to the current New York date, as
+  `fa-quant run` does, instead of the host's local date. On a host whose date
+  differs from New York's, `quant_preview_orders` without `today` used to plan the
+  wrong session; ahead of New York it planned off an unfinished close and failed
+  its freshness gate.
 - `AlpacaBroker` rejects a `max_retries` that is not an integer, such as `1.5` or
   `True`, with `ValueError` at construction, as `IBKRBroker` does. A fractional count
   used to be accepted and fail the first request with `TypeError`.
