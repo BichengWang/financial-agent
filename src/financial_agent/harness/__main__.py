@@ -177,7 +177,11 @@ def cmd_schema(args: argparse.Namespace) -> int:
     if not path.exists():
         print(f"{path}: not found")
         return 1
-    payload = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, RecursionError) as exc:
+        print(f"{path}: not valid JSON: {exc}")
+        return 1
     declared = isinstance(payload, dict) and "schema_version" in payload
     findings = validate_payload(payload, policy)
     for finding in findings:

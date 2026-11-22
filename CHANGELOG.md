@@ -23,6 +23,15 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- A malformed `15_predictions.json` no longer crashes the harness. A ledger that is
+  not valid JSON, has no `predictions` list, or holds a prediction or settlement row
+  that is not an object fails the publish gate with a message in `gate`, `gate --json`,
+  the MCP `gate` tool and `run`. `audit` reports it as one `package.ledger` error and
+  `replay` skips it, where both used to stop, and `manifest` and `schema` say it
+  cannot be read. A list or object where a field expects one value is now an ordinary
+  gate failure or audit finding instead of a `TypeError`. An object ledger without a
+  `predictions` list is reported or skipped like any unreadable one, instead of being
+  audited and replayed as empty.
 - The market-data cache raises a data error naming the symbol and field when the
   metadata record of a symbol it is fetching is missing a field the cache needs for
   it or holds a coverage date that is not an ISO date. It used to fail with an

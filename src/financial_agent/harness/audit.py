@@ -19,6 +19,7 @@ import json
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
+from collections.abc import Hashable
 from typing import Any, Iterable, Mapping
 
 from financial_agent.harness.fingerprint import dated_packages
@@ -132,7 +133,10 @@ def audit_record(
     bad_enums = [
         f"{key}={record.get(key)!r}"
         for key, allowed in ENUMS.items()
-        if key in record and record.get(key) not in allowed
+        if key in record
+        and (
+            not isinstance(record.get(key), Hashable) or record.get(key) not in allowed
+        )
     ]
     check("schema.enums", not bad_enums, ", ".join(bad_enums))
 
@@ -340,10 +344,38 @@ def missing_core_etfs(
     predictions: Iterable[Mapping[str, Any]], policy: Policy
 ) -> list[str]:
     """Core ETFs without a ``MARKET_FORECAST`` record, in policy order."""
-    forecast = {
+    tickers = (
         p.get("ticker") for p in predictions if p.get("type") == "MARKET_FORECAST"
-    }
+    )
+    forecast = {t for t in tickers if isinstance(t, Hashable)}
     return [t for t in policy.get("market_forecast.tickers") if t not in forecast]
+
+
+class UnreadableLedger(ValueError):
+    """A ``15_predictions.json`` that is not an object with a list of records."""
+
+
+def read_ledger(path: Path) -> dict[str, Any]:
+    """The parsed ledger; ``UnreadableLedger`` carries the publish gate's failure."""
+    try:
+        ledger = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, RecursionError) as exc:
+        raise UnreadableLedger(f"{PREDICTIONS_FILE} is not valid JSON: {exc}") from exc
+    if not isinstance(ledger, dict) or not isinstance(ledger.get("predictions"), list):
+        raise UnreadableLedger(f"{PREDICTIONS_FILE} has no 'predictions' list")
+    if not all(isinstance(p, dict) for p in ledger["predictions"]):
+        raise UnreadableLedger(
+            f"{PREDICTIONS_FILE}: every prediction must be an object"
+        )
+    settlements = ledger.get("settlements")
+    if settlements is not None and (
+        not isinstance(settlements, list)
+        or not all(isinstance(row, dict) for row in settlements)
+    ):
+        raise UnreadableLedger(
+            f"{PREDICTIONS_FILE}: settlements must be a list of objects"
+        )
+    return ledger
 
 
 def audit_output_dir(
@@ -359,7 +391,14 @@ def audit_output_dir(
         if not path.exists():
             report.packages_without_ledger.append(package_dir.name)
             continue
-        payload = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            payload = read_ledger(path)
+        except UnreadableLedger as exc:
+            report.checked["package.ledger"] += 1
+            report.findings.append(
+                Finding("package.ledger", "error", package_dir.name, "-", str(exc))
+            )
+            continue
         predictions = payload.get("predictions") or []
         model = package_dir.name[: -len(run_date) - 1]
         for record in predictions:

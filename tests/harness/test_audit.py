@@ -1,11 +1,19 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 import pytest
-from conftest import OUTPUT_DIR, market_forecast, real_data
+from conftest import (
+    OUTPUT_DIR,
+    build_package,
+    malformed_package,
+    market_forecast,
+    real_data,
+)
 
 from financial_agent.harness.audit import (
+    Finding,
     audit_output_dir,
     audit_record,
     kelly_convention,
@@ -79,6 +87,21 @@ def test_kelly_conventions_seen_in_history(
     raw: float, stored: float, convention: str
 ) -> None:
     assert kelly_convention(raw, stored, cap=0.05) == convention
+
+
+def test_malformed_ledger_is_one_error_and_the_audit_goes_on(
+    tmp_path: Path, policy: Policy, malformed_ledger: tuple[bytes, str]
+) -> None:
+    ledger, failure = malformed_ledger
+    malformed_package(tmp_path / "claude-opus-5-2026-09-02", ledger)
+    build_package(tmp_path, [market_forecast("SPY", 773.17)])
+    report = audit_output_dir(tmp_path, policy)
+    assert (report.packages, report.records) == (2, 1)
+    assert report.failed("package.ledger") == [
+        Finding("package.ledger", "error", "claude-opus-5-2026-09-02", "-", failure)
+    ]
+    row = "| package.ledger | error | 1 | 1 | 100.0 | 1 | claude-opus-5 |"
+    assert row in report.to_markdown()
 
 
 @real_data
