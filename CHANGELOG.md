@@ -36,6 +36,9 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- The wheel and sdist now include `financial_agent.trading.env`. A virtual-environment
+  rule in `.gitignore` (`env/`) kept it out of every build, so an installed `fa-quant`
+  could not import `trading.env.env_stocktrading`.
 - `KILL`, `risk_state.json` and each session report's `.json` file are now also
   fsynced to their directory where the filesystem allows, and none of these writes,
   nor `paper.json`'s, fails any more after the file is in place.
