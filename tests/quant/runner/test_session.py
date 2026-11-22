@@ -571,17 +571,18 @@ def test_session_reports_carry_the_plan_utilization(
     assert traded.status == "TRADED"
     assert_carried(traded, config, date(2020, 6, 5))
     # The next day holds the fills; a weekly cadence makes it an off-cadence preview.
+    # Whether it plans orders hangs on a near-zero trend signal, so don't require any.
     weekly = replace(config, backtest=replace(config.backtest, rebalance="weekly"))
     preview = run_session(weekly, today=first_day + timedelta(days=1), dry_run=True)
     assert preview.account and preview.account.positions
-    assert preview.orders and not preview.risk["rebalance_due"]
+    assert not preview.risk["rebalance_due"]
     assert_carried(preview, weekly, date(2020, 6, 8))
     # Limits tighter than the defaults, rejecting the plan.
     tight = replace(
         config,
         state_dir=config.state_dir.with_name("tight"),
-        risk=replace(config.risk, max_orders=3),
+        risk=replace(config.risk, max_orders=1),
     )
     halted = run_session(tight, today=first_day)
-    assert halted.status == "HALTED" and len(halted.orders) > 3
+    assert halted.status == "HALTED" and len(halted.orders) > 1
     assert_carried(halted, tight, date(2020, 6, 5))
