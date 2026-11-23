@@ -42,6 +42,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Run by hand, as `rules.md` tells every daily run to, `settlement_ledger.py` leaves
+  out a package whose `run_date` is present but not a string, such as `20260902`,
+  `null` or `NaN`, as REFLECTION does. It used to raise `TypeError` on most such
+  packages and keep the rest in the manifest. Its effective-sample-size projection
+  no longer raises `OverflowError` when the last target date it selected is less
+  than one 28-day horizon before 9999-12-31; it reports no next window
+  (`next_window_opens` and `eff_n_increments_on` are `null`).
 - `kernel equity` and the MCP `build_equity_records` tool refuse a name with no
   `kelly_raw` whose `sigma` squares to 0.0 (`1e-200`) or overflows (`1e200`), with
   a `KernelError` naming the `sigma` (`KERNEL ERROR: KernelError: sigma 1e-200 out
@@ -74,8 +81,6 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   duplicate-book detection, a numeric `settle_price_date` is `MALFORMED` like any
   other price date that is not a date, and the effective-sample-size projection
   skips a prediction `target_date` the calendar has no day for, such as `2026-02-30`.
-  Run by hand, `settlement_ledger.py` still raises on a package `run_date` that is
-  not a string.
 - Schema v1 no longer raises `TypeError: unhashable type` on a `15_predictions.json`
   whose `regime` is a list or an object, such as `["BULL"]`, and that holds a SPY
   `MARKET_FORECAST` record. It reports that regime as not one of the policy's

@@ -6,6 +6,7 @@ Run with: uv run pytest agents/equity/daily_investment_system/tests/
 from __future__ import annotations
 
 import datetime as dt
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -865,6 +866,40 @@ def test_sample_sizes_skip_a_target_date_no_calendar_has() -> None:
     assert sl.project_effective_sample_size(records, [])["eff_n"] == 1
 
 
+@pytest.mark.parametrize(
+    ("target_date", "next_window_opens"),
+    [("9999-12-03", "9999-12-31"), ("9999-12-04", None), ("9999-12-20", None)],
+)
+def test_projection_has_no_next_window_after_the_last_calendar_date(
+    target_date: str, next_window_opens: str | None
+) -> None:
+    pending = sl.Prediction(
+        model="m",
+        vintage="9999-12-03",
+        ticker="YYY",
+        type="EQUITY_ALPHA",
+        target_date="9999-12-31",
+        adj_score=None,
+        mu=None,
+        sigma=None,
+        entry_price=None,
+        source_file="src",
+    )
+    projection = sl.project_effective_sample_size(
+        [_candidate(target_date=target_date)], [pending]
+    )
+    assert projection == {
+        "eff_n": 1,
+        "target_date_span_days": 0,
+        "earliest_target_date": target_date,
+        "latest_target_date": target_date,
+        "selected_windows": [target_date],
+        "next_window_opens": next_window_opens,
+        "eff_n_increments_on": next_window_opens,
+        "pending_predictions_at_that_date": 1 if next_window_opens else 0,
+    }
+
+
 def test_track_a_calibration_proposal_requires_raw_and_effective_n() -> None:
     overlapping_candidates = [
         _candidate(
@@ -1114,6 +1149,70 @@ def test_same_model_copy_never_excludes_the_original_books_keys() -> None:
         for b in manifest["duplicate_books"]
     ] == [("model-a-2026-07-13-rerun", 0)]
     assert manifest["rolling_metrics"]["equity_alpha"]["n"] == 2
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+
+def _cli_manifest(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    output_dir: Path,
+    packages: list[dict[str, Any]],
+    as_of: str | None,
+) -> Any:
+    output_dir.mkdir()
+    for pkg in packages:
+        folder = output_dir / pkg["_source_file"]
+        folder.mkdir()
+        (folder / "15_predictions.json").write_text(json.dumps(pkg))
+    argv = ["settlement_ledger.py", "--output-dir", str(output_dir)]
+    monkeypatch.setattr(sys, "argv", argv + (["--as-of", as_of] if as_of else []))
+    sl.main()
+    return json.loads(capsys.readouterr().out)
+
+
+@pytest.mark.parametrize("as_of", [None, "2026-08-11"], ids=["no-as-of", "as-of"])
+@pytest.mark.parametrize("copy", [False, True], ids=["own-book", "duplicate-book"])
+@pytest.mark.parametrize(
+    "run_date", [20260902, None, float("nan")], ids=["number", "null", "nan"]
+)
+def test_cli_leaves_out_a_package_whose_run_date_is_not_a_string(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    run_date: Any,
+    copy: bool,
+    as_of: str | None,
+) -> None:
+    good = [_book("model-a", "model-a-2026-07-13"), _settler("model-a")]
+    bad = _book("model-b", "model-b-2026-07-20")
+    bad["run_date"] = run_date
+    if not copy:
+        bad["predictions"] = bad["predictions"][:1]
+
+    manifest = _cli_manifest(monkeypatch, capsys, tmp_path / "a", good + [bad], as_of)
+
+    assert manifest == _cli_manifest(monkeypatch, capsys, tmp_path / "b", good, as_of)
+
+
+def test_cli_leaves_out_every_package_when_no_run_date_is_a_string(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    # Nothing compares these run_dates, so the CLI used to keep both, under as_of
+    # 20260903.
+    packages = [
+        {"run_date": run_date, "_source_file": f"m-{run_date}", "predictions": []}
+        for run_date in (20260902, 20260903)
+    ]
+
+    manifest = _cli_manifest(monkeypatch, capsys, tmp_path / "a", packages, None)
+
+    assert manifest == _cli_manifest(monkeypatch, capsys, tmp_path / "b", [], None)
 
 
 # ---------------------------------------------------------------------------
