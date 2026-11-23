@@ -976,8 +976,12 @@ def project_effective_sample_size(
         if day is not None:
             pending[day] += 1
 
-    next_opens = selected[-1] + dt.timedelta(days=horizon_days)
-    qualifying = sorted(d for d in pending if d >= next_opens)
+    next_opens: dt.date | None
+    try:
+        next_opens = selected[-1] + dt.timedelta(days=horizon_days)
+    except OverflowError:  # no calendar date is one horizon after this window
+        next_opens = None
+    qualifying = sorted(d for d in pending if next_opens and d >= next_opens)
     increments_on = qualifying[0] if qualifying else None
     return {
         "eff_n": len(selected),
@@ -985,7 +989,7 @@ def project_effective_sample_size(
         "earliest_target_date": target_dates[0].isoformat(),
         "latest_target_date": target_dates[-1].isoformat(),
         "selected_windows": [d.isoformat() for d in selected],
-        "next_window_opens": next_opens.isoformat(),
+        "next_window_opens": next_opens.isoformat() if next_opens else None,
         "eff_n_increments_on": increments_on.isoformat() if increments_on else None,
         "pending_predictions_at_that_date": (
             pending[increments_on] if increments_on else 0
@@ -1224,6 +1228,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     packages = load_packages(args.output_dir)
+    packages = [p for p in packages if isinstance(p.get("run_date", ""), str)]
     if args.as_of:
         packages = [p for p in packages if p.get("run_date", "") <= args.as_of]
 
