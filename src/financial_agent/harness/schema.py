@@ -324,7 +324,8 @@ def _check_market(
     ticker = record.get("ticker")
     if ticker == "SPY":
         regimes = policy.get("market_forecast.spy_regime_prior")
-        if regime in regimes:
+        # a list or object regime is unhashable; the payload check reports it
+        if isinstance(regime, str) and regime in regimes:
             limit = policy.num("market_forecast.spy_adjustment_max")
             findings += _check_mu(record, policy.spy_mu_prior(regime), limit)
     else:
