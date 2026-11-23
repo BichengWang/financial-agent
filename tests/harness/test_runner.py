@@ -137,6 +137,23 @@ def test_default_cli_run_halts_with_no_side_effects(
     assert precheck["data"]["go_reachable"] is False
 
 
+def test_cli_run_halts_at_precheck_on_a_date_with_no_earlier_close(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from financial_agent.harness.__main__ import main
+
+    code = main(
+        ["run", "--model", MODEL, "--date", "0001-01-01", "--output-dir", str(tmp_path)]
+    )
+    out = capsys.readouterr().out
+    assert code == 1 and "OverflowError" not in out
+    assert out.splitlines() == [
+        "PRECHECK -> HALTED",
+        f"run {MODEL}-0001-01-01: HALTED: PRECHECK handler failed: "
+        "ValueError: no trading day on or before 0001-01-01",
+    ]
+
+
 def test_journal_records_every_stage_and_the_outcome(tmp_path: Path) -> None:
     report = run(MODEL, DATE, tmp_path, handlers())
     journal = json.loads((tmp_path / ".runs" / f"{MODEL}-{DATE}.json").read_text())

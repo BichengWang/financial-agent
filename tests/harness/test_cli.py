@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+import dataclasses
 import json
 from pathlib import Path
 
 import pytest
 from conftest import OUTPUT_DIR, REPO, malformed_package, real_data
-from test_kernels import RUN
+from test_kernels import RUN, vlo_inputs
 
 from financial_agent.harness.__main__ import main, tool_names
+from financial_agent.harness.kernels import equity_record
+from financial_agent.harness.policy import Policy
 from financial_agent.harness.skills import SkillRegistry
 
 LATEST = OUTPUT_DIR / "claude-opus-5-2026-09-03"
@@ -37,6 +40,30 @@ def test_session_and_reachability(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["reachability", *families]) == 1  # fund/sent are still SHADOW
 
 
+@pytest.mark.parametrize(
+    ("day", "code", "out"),
+    [
+        (
+            "2026-06-19",
+            0,
+            "HOLIDAY 2026-06-19 is a market holiday; last close 2026-06-18",
+        ),
+        (
+            "0001-01-01",
+            1,
+            "SESSION ERROR: ValueError: no trading day on or before 0001-01-01",
+        ),
+        ("2026-13-01", 1, "SESSION ERROR: ValueError: month must be in 1..12"),
+    ],
+    ids=["2026-06-19", "0001-01-01", "2026-13-01"],
+)
+def test_session_command_reports_a_date_it_cannot_place(
+    capsys: pytest.CaptureFixture[str], day: str, code: int, out: str
+) -> None:
+    assert main(["session", day]) == code
+    assert capsys.readouterr().out == out + "\n"
+
+
 def test_kernel_command(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     request = {
         "closes": [100 + i + (i % 3) for i in range(61)],
@@ -52,6 +79,34 @@ def test_kernel_command(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> N
     path.write_text(json.dumps({"run_date": RUN, "model": "m"}))
     assert main(["kernel", "market", "--input", str(path)]) == 1
     assert "KeyError" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    ("sigma", "error"),
+    [
+        (0.084355, None),
+        (1e-200, "sigma 1e-200 out of range: sigma^2 underflows to 0 or overflows"),
+        (1e200, "sigma 1e+200 out of range: sigma^2 underflows to 0 or overflows"),
+    ],
+    ids=["0.084355", "1e-200", "1e200"],
+)
+def test_kernel_equity_refuses_a_sigma_with_no_kelly_fallback(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    policy: Policy,
+    sigma: float,
+    error: str | None,
+) -> None:
+    names = [dataclasses.asdict(vlo_inputs(sigma=sigma))]
+    path = tmp_path / "equity.json"
+    path.write_text(json.dumps({"run_date": RUN, "model": "m", "names": names}))
+    code = main(["kernel", "equity", "--input", str(path)])
+    out = capsys.readouterr().out
+    if error is None:
+        record = equity_record(RUN, "m", vlo_inputs(), policy)
+        assert (code, json.loads(out)) == (0, [record])
+    else:
+        assert (code, out) == (1, f"KERNEL ERROR: KernelError: {error}\n")
 
 
 def test_schema_document(capsys: pytest.CaptureFixture[str]) -> None:

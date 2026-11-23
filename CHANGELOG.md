@@ -42,6 +42,19 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- `kernel equity` and the MCP `build_equity_records` tool refuse a name with no
+  `kelly_raw` whose `sigma` squares to 0.0 (`1e-200`) or overflows (`1e200`), with
+  a `KernelError` naming the `sigma` (`KERNEL ERROR: KernelError: sigma 1e-200 out
+  of range: ...`), since it has no `mu / sigma^2` Kelly fallback; the command used
+  to stop with a `ZeroDivisionError` or `OverflowError` traceback and the tool
+  answered with JSON-RPC error -32603. The market calendar reports a date with no
+  trading day on or before it, `0001-01-01`, as a `ValueError` (`no trading day on
+  or before 0001-01-01`) instead of raising `OverflowError`: the MCP `session` tool
+  answers with an error result instead of -32603, and `run --date 0001-01-01` halts
+  at PRECHECK with that reason instead of `PRECHECK handler failed: OverflowError:
+  date value out of range`. `session` prints one `SESSION ERROR: ValueError: ...`
+  line and exits 1 for that date and for one it cannot parse, such as `2026-13-01`,
+  where it used to print a traceback.
 - The MCP `schema_check` tool answers a `15_predictions.json` nested too deeply to
   parse with an error result, `ToolError: 15_predictions.json: not valid JSON:
   maximum recursion depth exceeded ...`, as it answers other ledgers it cannot parse,

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import json
 from pathlib import Path
 
@@ -40,6 +41,13 @@ def test_sessions(day: str, kind: str, basis: str) -> None:
     result = session(day)
     assert (result.kind, result.basis_date) == (kind, basis)
     assert result.trading_day is (kind == "TRADING")
+
+
+@pytest.mark.parametrize("day", ["0001-01-01", dt.date.min])
+def test_a_holiday_with_no_earlier_close_is_a_value_error(day: str | dt.date) -> None:
+    # 0001-01-01, New Year's Day, is the first date the calendar can hold.
+    with pytest.raises(ValueError, match="no trading day on or before 0001-01-01"):
+        session(day)
 
 
 def decide(policy: Policy, day: str, **kwargs: object) -> tuple[RunStatus, str]:
