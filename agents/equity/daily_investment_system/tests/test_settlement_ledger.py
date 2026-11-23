@@ -295,6 +295,14 @@ def test_malformed_date_is_invalid() -> None:
     assert (convention, valid) == ("MALFORMED", False)
 
 
+def test_a_numeric_price_date_is_malformed() -> None:
+    assert sl.validate_timing("2026-08-28", "2026-09-02", 20260828) == (
+        "MALFORMED",
+        False,
+        "price_date 20260828 is not a valid date",
+    )
+
+
 # ---------------------------------------------------------------------------
 # Normalization -- real schema variants captured from the repo
 # ---------------------------------------------------------------------------
@@ -424,6 +432,109 @@ def test_normalize_returns_none_for_unkeyable_row() -> None:
         sl.normalize_settlement_candidate(unresolvable, "2026-07-10", "m", "f", {})
         is None
     )
+
+
+@pytest.mark.parametrize(
+    ("changes", "container_model", "key"),
+    [
+        # Missing, the model comes from the package and the type is EQUITY_ALPHA;
+        (
+            {},
+            "claude-fable-5",
+            ("claude-fable-5", "2026-06-17", "GS", "EQUITY_ALPHA", "2026-07-15"),
+        ),
+        # present but not a string, a key field leaves the row unkeyable.
+        ({"ticker": 5}, "claude-fable-5", None),
+        ({"ticker": ["GS"]}, "claude-fable-5", None),
+        ({"model": 5}, "claude-fable-5", None),
+        ({"model": {"name": "claude-fable-5"}}, "claude-fable-5", None),
+        ({}, 5, None),
+        ({"type": 5}, "claude-fable-5", None),
+        ({"target_date": 20260715}, "claude-fable-5", None),
+        ({"target_date": ["2026-07-15"]}, "claude-fable-5", None),
+    ],
+    ids=[
+        "missing",
+        "ticker-5",
+        "ticker-list",
+        "model-5",
+        "model-object",
+        "package-model-5",
+        "type-5",
+        "target_date-20260715",
+        "target_date-list",
+    ],
+)
+def test_normalize_returns_none_when_a_key_field_is_not_a_string(
+    changes: dict[str, Any], container_model: Any, key: tuple[str, ...] | None
+) -> None:
+    raw = {"ticker": "GS", "vintage": "2026-06-17", "target_date": "2026-07-15"}
+    cand = sl.normalize_settlement_candidate(
+        {**raw, **changes}, "2026-07-15", container_model, "f", {}
+    )
+    assert (cand.key() if cand else None) == key
+
+
+@pytest.mark.parametrize(
+    ("changes", "package_changes", "keys"),
+    [
+        # Missing, the model and run_date come from the package and the type is
+        # EQUITY_ALPHA; present but not a string, a key field skips the prediction.
+        ({}, {}, [("model-p", "2026-07-14", "AAA", "EQUITY_ALPHA", "2026-08-10")]),
+        ({"model": 5}, {}, []),
+        ({"model": {"name": "model-p"}}, {}, []),
+        ({}, {"model": 5}, []),
+        ({"run_date": 20260713}, {}, []),
+        ({}, {"run_date": 20260714}, []),
+        ({"ticker": 5}, {}, []),
+        ({"ticker": ["AAA"]}, {}, []),
+        ({"type": 5}, {}, []),
+        ({"target_date": 20260810}, {}, []),
+    ],
+    ids=[
+        "missing",
+        "model-5",
+        "model-object",
+        "package-model-5",
+        "run_date-20260713",
+        "package-run_date-20260714",
+        "ticker-5",
+        "ticker-list",
+        "type-5",
+        "target_date-20260810",
+    ],
+)
+def test_extract_predictions_skips_a_key_field_that_is_not_a_string(
+    changes: dict[str, Any],
+    package_changes: dict[str, Any],
+    keys: list[tuple[str, ...]],
+) -> None:
+    prediction = {"ticker": "AAA", "target_date": "2026-08-10", **changes}
+    package = dict(run_date="2026-07-14", model="model-p", predictions=[prediction])
+    package.update(package_changes)
+    assert [p.key() for p in sl.extract_predictions([package])] == keys
+
+
+@pytest.mark.parametrize(
+    ("package_model", "prediction_model"),
+    [(["model-p"], None), ("model-p", []), ("model-p", {"name": "model-p"})],
+    ids=[
+        "package-model-list",
+        "prediction-model-empty-list",
+        "prediction-model-object",
+    ],
+)
+def test_a_list_or_object_model_does_not_break_duplicate_book_detection(
+    package_model: Any, prediction_model: Any
+) -> None:
+    prediction = {"ticker": "AAA", "target_date": "2026-08-10"}
+    prediction["model"] = prediction_model
+    book = dict(model=package_model, predictions=[prediction])
+    packages = [
+        dict(book, run_date="2026-07-14", _source_file="a-2026-07-14"),
+        dict(book, run_date="2026-07-15", _source_file="b-2026-07-15"),
+    ]
+    assert list(sl.find_duplicate_books(packages)) == ["b-2026-07-15"]
 
 
 # ---------------------------------------------------------------------------
@@ -726,6 +837,32 @@ def test_eff_n_counts_non_overlapping_28_day_target_windows() -> None:
     ]
 
     assert sl.effective_independent_sample_size(records) == 3
+
+
+@pytest.mark.parametrize(
+    ("value", "date"),
+    [
+        ("2026-09-03", dt.date(2026, 9, 3)),
+        ("not-a-date", None),
+        (20260903, None),
+        # date.fromisoformat accepts these; the regex does not, so neither did main.
+        ("20260903", None),
+        ("2026-W36-4", None),
+        # The date regex accepts these; the calendar has no such day.
+        ("2026-02-30", None),
+        ("0000-01-01", None),
+    ],
+)
+def test_parse_date_is_none_for_anything_but_a_calendar_date(
+    value: Any, date: dt.date | None
+) -> None:
+    assert sl._parse_date(value) == date
+
+
+def test_sample_sizes_skip_a_target_date_no_calendar_has() -> None:
+    records = [_candidate(), _candidate(target_date="2026-02-30")]
+    assert sl.effective_independent_sample_size(records) == 1
+    assert sl.project_effective_sample_size(records, [])["eff_n"] == 1
 
 
 def test_track_a_calibration_proposal_requires_raw_and_effective_n() -> None:

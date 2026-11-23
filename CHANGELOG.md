@@ -42,6 +42,22 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- A wrongly typed field in an earlier package no longer halts `run` at REFLECTION
+  (`REFLECTION handler failed: TypeError: ...` or `ValueError: ...`); until someone
+  fixed that package, every later run halted the same way. REFLECTION leaves out an
+  earlier package whose `run_date` is present but not a string, such as `20260903`,
+  `null` or `NaN`. The settlement ledger skips a prediction or settlement row whose
+  `model`, `ticker`, `type` or `target_date`, or a prediction's `run_date`, is not a
+  string once the package's `model` and `run_date` and the `EQUITY_ALPHA` default
+  apply, as it already skipped a row with no `ticker`. Such a row used to raise, or
+  to be kept under that value; now it counts nowhere: not in the due inventory, the
+  canonical or rejected settlements, or the conflicts, so two such rows that disagree
+  no longer halt REFLECTION as a conflict. A list or object `model` no longer breaks
+  duplicate-book detection, a numeric `settle_price_date` is `MALFORMED` like any
+  other price date that is not a date, and the effective-sample-size projection
+  skips a prediction `target_date` the calendar has no day for, such as `2026-02-30`.
+  Run by hand, `settlement_ledger.py` still raises on a package `run_date` that is
+  not a string.
 - Schema v1 no longer raises `TypeError: unhashable type` on a `15_predictions.json`
   whose `regime` is a list or an object, such as `["BULL"]`, and that holds a SPY
   `MARKET_FORECAST` record. It reports that regime as not one of the policy's
