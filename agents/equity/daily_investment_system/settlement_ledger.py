@@ -305,6 +305,15 @@ def _looks_like_date(value: Any) -> bool:
     return isinstance(value, str) and bool(_DATE_RE.match(value))
 
 
+def _parse_date(value: Any) -> dt.date | None:
+    if not _looks_like_date(value):
+        return None
+    try:
+        return dt.date.fromisoformat(value)
+    except ValueError:  # _DATE_RE also matches days no calendar has, like 2026-02-30
+        return None
+
+
 def _as_float(value: Any) -> float | None:
     if value is None:
         return None
@@ -381,12 +390,16 @@ def extract_predictions(packages: Iterable[dict[str, Any]]) -> list[Prediction]:
             model = p.get("model") or pkg.get("model")
             if not (ticker and target_date and run_date and model):
                 continue
+            ptype = p.get("type") or "EQUITY_ALPHA"
+            key = (model, run_date, ticker, ptype, target_date)
+            if not all(isinstance(v, str) for v in key):
+                continue
             out.append(
                 Prediction(
                     model=model,
                     vintage=run_date,
                     ticker=ticker,
-                    type=p.get("type") or "EQUITY_ALPHA",
+                    type=ptype,
                     target_date=target_date,
                     adj_score=_as_float(p.get("adj_score")),
                     mu=_as_float(p.get("mu")),
@@ -457,10 +470,13 @@ def prediction_book_fingerprint(pkg: dict[str, Any]) -> str | None:
     if not predictions:
         return None
     text = json.dumps(predictions, sort_keys=True)
-    models = {pkg.get("model")} | {p.get("model") for p in predictions}
-    for model in sorted(
-        (m for m in models if isinstance(m, str) and m), key=len, reverse=True
-    ):
+    # Only string names can appear in the dump; a list or object is unhashable.
+    models = {
+        m
+        for m in (pkg.get("model"), *(p.get("model") for p in predictions))
+        if isinstance(m, str) and m
+    }
+    for model in sorted(models, key=len, reverse=True):
         text = text.replace(model, _MODEL_MASK)
     return hashlib.sha256(text.encode()).hexdigest()
 
@@ -527,7 +543,8 @@ def normalize_settlement_candidate(
     """Normalize one raw settlement row from any observed schema variant.
 
     Returns None only when the row is too malformed to key at all (missing
-    ticker/target_date, or no vintage can be determined by any fallback).
+    ticker/target_date, a ticker/model/type/target_date that is not a string,
+    or no vintage can be determined by any fallback).
     """
     ticker = raw.get("ticker")
     target_date = raw.get("target_date")
@@ -536,6 +553,8 @@ def normalize_settlement_candidate(
 
     model = raw.get("model") or container_model
     ptype = raw.get("type") or "EQUITY_ALPHA"
+    if not all(isinstance(v, str) for v in (ticker, model, ptype, target_date)):
+        return None
 
     vintage = _strip_model_prefix(raw.get("vintage"), model)
     if not vintage and _looks_like_date(raw.get("vintage_run_date")):
@@ -671,7 +690,7 @@ def validate_timing(
         return ("UNKNOWN", False, "candidate has no price_date")
     try:
         price_date = dt.date.fromisoformat(price_date_s)
-    except ValueError:
+    except (TypeError, ValueError):
         return ("MALFORMED", False, f"price_date {price_date_s!r} is not a valid date")
 
     if not is_trading_day(target_date):
@@ -909,13 +928,8 @@ def effective_independent_sample_size(
     the interval-scheduling optimum because every window has equal length.
     Dates exactly one horizon apart count as non-overlapping.
     """
-    target_dates = sorted(
-        {
-            dt.date.fromisoformat(c.target_date)
-            for c in records
-            if _looks_like_date(c.target_date)
-        }
-    )
+    parsed = {_parse_date(c.target_date) for c in records}
+    target_dates = sorted(d for d in parsed if d is not None)
     selected = 0
     last_target: dt.date | None = None
     for target_date in target_dates:
@@ -941,13 +955,8 @@ def project_effective_sample_size(
     Reports `null` dates when no outstanding prediction reaches far enough yet;
     later runs create those records at the standard run_date + horizon cadence.
     """
-    target_dates = sorted(
-        {
-            dt.date.fromisoformat(c.target_date)
-            for c in records
-            if _looks_like_date(c.target_date)
-        }
-    )
+    parsed = {_parse_date(c.target_date) for c in records}
+    target_dates = sorted(d for d in parsed if d is not None)
     selected: list[dt.date] = []
     for target_date in target_dates:
         if not selected or (target_date - selected[-1]).days >= horizon_days:
@@ -963,8 +972,9 @@ def project_effective_sample_size(
 
     pending: dict[dt.date, int] = defaultdict(int)
     for p in predictions:
-        if _looks_like_date(p.target_date):
-            pending[dt.date.fromisoformat(p.target_date)] += 1
+        day = _parse_date(p.target_date)
+        if day is not None:
+            pending[day] += 1
 
     next_opens = selected[-1] + dt.timedelta(days=horizon_days)
     qualifying = sorted(d for d in pending if d >= next_opens)

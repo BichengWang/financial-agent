@@ -53,7 +53,9 @@ def settlement_summary(output_dir: Path, run_date: str, run_id: str) -> dict[str
     packages = [
         p
         for p in ledger.load_packages(output_dir)
-        if p["_source_file"] != run_id and p.get("run_date", "") <= run_date
+        if p["_source_file"] != run_id
+        and isinstance(rd := p.get("run_date", ""), str)
+        and rd <= run_date
     ]
     manifest: dict[str, Any] = ledger.build_manifest(packages, as_of=run_date)
     return manifest
