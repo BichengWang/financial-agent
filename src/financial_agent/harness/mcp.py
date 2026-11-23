@@ -337,9 +337,11 @@ class HarnessServer:
         path = self._package(args) / PREDICTIONS_FILE
         if not path.exists():
             raise ToolError(f"{path.name} not found in {path.parent.name}")
-        return validate_payload(
-            json.loads(path.read_text(encoding="utf-8")), self.policy
-        )
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except RecursionError as exc:
+            raise ToolError(f"{path.name}: not valid JSON: {exc}") from None
+        return validate_payload(payload, self.policy)
 
     def _replay_history(self, args: Mapping[str, Any]) -> dict[str, Any]:
         replays = replay_history(

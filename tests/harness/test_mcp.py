@@ -10,6 +10,7 @@ from typing import Any
 
 import pytest
 from conftest import (
+    MALFORMED_LEDGERS,
     OUTPUT_DIR,
     REPO,
     build_package,
@@ -187,6 +188,32 @@ def test_gate_tool_fails_a_malformed_ledger_and_replay_goes_on(
     )
     is_error, text = call(server, "replay_history")
     assert not is_error and json.loads(text)["replayed"] == 1
+
+
+@pytest.mark.parametrize(
+    ("ledger_id", "text"),
+    [
+        ("deep-nesting", "ToolError: 15_predictions.json: not valid JSON: {reason}"),
+        ("not-json", "JSONDecodeError: {reason}"),
+        ("long-integer", "ValueError: {reason}"),
+        ("utf-16", "UnicodeDecodeError: {reason}"),
+    ],
+    ids=["deep-nesting", "not-json", "long-integer", "utf-16"],
+)
+def test_schema_check_answers_an_unparsable_ledger_with_an_error_result(
+    tmp_path: Path, server: HarnessServer, ledger_id: str, text: str
+) -> None:
+    ledger, failure = MALFORMED_LEDGERS[ledger_id]
+    bad = malformed_package(tmp_path / "claude-opus-5-2026-09-02", ledger)
+    request = {"jsonrpc": "2.0", "id": 4, "method": "tools/call"}
+    request["params"] = {"name": "schema_check", "arguments": {"package": bad.name}}
+    reason = failure.removeprefix("15_predictions.json is not valid JSON: ")
+    text = text.format(reason=reason)
+    assert server.handle_line(json.dumps(request)) == {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "result": {"content": [{"type": "text", "text": text}], "isError": True},
+    }
 
 
 def test_stdio_transport(tmp_path: Path) -> None:
