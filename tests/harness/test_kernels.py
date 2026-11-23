@@ -229,6 +229,9 @@ def test_full_evidence_record_is_investable_once_promoted(
         ({"horizon_days": 30}, "horizon 30d"),
         ({"price_tag": "FRESH"}, "price_tag"),
         ({"sigma": 8.4}, "out of range"),
+        # sigma**2 underflows to 0.0 or overflows: no mu/sigma^2 Kelly fallback.
+        ({"sigma": 1e-200}, "sigma 1e-200 out of range"),
+        ({"sigma": 1e200}, r"sigma 1e\+200 out of range"),
         ({"family_z": {"value_z": 1.0}}, "unknown families"),
         ({"extra": {"mu": 0.09}}, "may not override"),
     ],

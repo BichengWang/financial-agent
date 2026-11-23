@@ -32,6 +32,7 @@ from dataclasses import dataclass, field
 from itertools import combinations
 from typing import Any, Mapping, Sequence
 
+from financial_agent.harness.audit import _mu_over_sigma2
 from financial_agent.harness.gates import (
     CONFIDENCE_ORDER,
     confidence_ceiling,
@@ -295,7 +296,14 @@ def equity_record(
     family_z = {f: inputs.family_z.get(f) for f in FAMILIES}
     composite = policy.composite_z(family_z)
     dq = inputs.data_quality_multiplier
-    raw = inputs.kelly_raw if inputs.kelly_raw is not None else mu / inputs.sigma**2
+    raw = inputs.kelly_raw
+    if raw is None:
+        raw = _mu_over_sigma2(mu, inputs.sigma)
+        if raw is None:
+            raise KernelError(
+                f"sigma {inputs.sigma} out of range: sigma^2 underflows to 0 or "
+                "overflows"
+            )
     sizing = policy.kelly_sizing(raw)
     metrics: dict[str, Any] = {
         "kelly_raw": _round(raw),

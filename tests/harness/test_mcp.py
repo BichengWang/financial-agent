@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import dataclasses
 import io
 import json
 import os
@@ -18,10 +19,10 @@ from conftest import (
     market_forecast,
     real_data,
 )
-from test_kernels import RUN
+from test_kernels import RUN, vlo_inputs
 
 from financial_agent.harness.mcp import HarnessServer, dataclass_schema, serve
-from financial_agent.harness.kernels import EquityInputs
+from financial_agent.harness.kernels import EquityInputs, equity_record
 
 
 def rpc(server: HarnessServer, method: str, params: Any = None, id_: int = 1) -> Any:
@@ -104,6 +105,8 @@ def test_equity_input_schema_comes_from_the_dataclass() -> None:
 def test_compute_tools(server: HarnessServer) -> None:
     is_error, text = call(server, "session", date="2026-07-03")
     assert not is_error and json.loads(text)["kind"] == "HOLIDAY"
+    is_error, text = call(server, "session", date="0001-01-01")
+    assert is_error and text == "ValueError: no trading day on or before 0001-01-01"
     is_error, text = call(server, "reachability")
     assert not is_error and json.loads(text)["reachable"] is False
     is_error, text = call(server, "policy", key="evidence.min_pctl")
@@ -147,6 +150,29 @@ def test_kernel_tools_refuse_out_of_policy_inputs(server: HarnessServer) -> None
         server, "build_equity_records", run_date=RUN, model="m", names=[{"x": 1}]
     )
     assert is_error and "unknown equity input" in text
+
+
+@pytest.mark.parametrize(
+    ("sigma", "error"),
+    [
+        (0.084355, None),
+        (1e-200, "sigma 1e-200 out of range: sigma^2 underflows to 0 or overflows"),
+        (1e200, "sigma 1e+200 out of range: sigma^2 underflows to 0 or overflows"),
+    ],
+    ids=["0.084355", "1e-200", "1e200"],
+)
+def test_build_equity_records_refuses_a_sigma_with_no_kelly_fallback(
+    server: HarnessServer, sigma: float, error: str | None
+) -> None:
+    names = [dataclasses.asdict(vlo_inputs(sigma=sigma))]
+    is_error, text = call(
+        server, "build_equity_records", run_date=RUN, model="m", names=names
+    )
+    if error is None:
+        record = equity_record(RUN, "m", vlo_inputs(), server.policy)
+        assert (is_error, json.loads(text)) == (False, [record])
+    else:
+        assert (is_error, text) == (True, f"KernelError: {error}")
 
 
 def test_packages_must_live_directly_under_the_output_dir(tmp_path: Path) -> None:

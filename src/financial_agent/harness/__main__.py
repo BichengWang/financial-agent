@@ -192,7 +192,11 @@ def cmd_schema(args: argparse.Namespace) -> int:
 
 
 def cmd_session(args: argparse.Namespace) -> int:
-    day = session(args.date)
+    try:
+        day = session(args.date)
+    except ValueError as exc:
+        print(f"SESSION ERROR: {type(exc).__name__}: {exc}")
+        return 1
     print(f"{day.kind} {day.describe()}")
     return 0
 

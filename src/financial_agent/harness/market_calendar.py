@@ -46,5 +46,8 @@ def session(day: str | dt.date) -> Session:
         kind = WEEKEND
     else:
         kind = HOLIDAY
-    basis = ledger.most_recent_trading_day_at_or_before(date)
+    try:
+        basis = ledger.most_recent_trading_day_at_or_before(date)
+    except OverflowError:  # the walk stepped below dt.date.min
+        raise ValueError(f"no trading day on or before {date.isoformat()}") from None
     return Session(date.isoformat(), kind, basis.isoformat())
