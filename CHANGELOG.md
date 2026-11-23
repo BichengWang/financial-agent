@@ -42,6 +42,27 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- The harness no longer crashes on these extreme numbers and dates in a
+  `15_predictions.json`. An integer too large for a float, such as a 401-digit `mu`,
+  counts as not a number, like a non-numeric string, in the audit, the publish gate,
+  the status replay and the settlement ledger; schema v1 also reports it (`is not
+  number`) in the number fields it only shape-checked, such as `entry_price` and
+  `settle_price`, so a v1 ledger holding one there now fails the gate. A `sigma`
+  whose square underflows to 0.0 (`1e-200`) or overflows (`1e200`) has no
+  `mu / sigma^2` Kelly fallback: the audit skips only `lineage.kelly_raw_method`,
+  schema v1 only the `kelly_raw` check of a `MU_OVER_SIGMA2` record, and the
+  replay's fallback Kelly gate is unsettleable, as for a `sigma` of 0. A
+  beta-scaled ETF `mu` prior too large for a float, alone or plus `mu_adjustment`,
+  is a v1 finding. A `run_date` the market calendar cannot place (`0001-01-01`)
+  makes the replay fall back to the package name's date; a settlement row whose
+  `target_date` has no earlier close (`0001-01-01`, `0001-01-02`) is `MALFORMED`,
+  and a `TARGET_DATE_CLOSE` row whose `settled_at` cannot be shown in New York time
+  is invalid. `gate`, `gate --json`, `manifest`, `schema`, `audit` and `replay` used
+  to stop with `OverflowError` or `ZeroDivisionError`, and the MCP `gate`,
+  `manifest`, `schema_check` and `replay_history` tools answered with JSON-RPC error
+  -32603. When an earlier package held such an int or settlement row, `run` halted
+  at REFLECTION (`REFLECTION handler failed: OverflowError: ...`), and when its own
+  package held such a number it raised from the publish gate.
 - The wheel and sdist now include `financial_agent.trading.env`. A virtual-environment
   rule in `.gitignore` (`env/`) kept it out of every build, so an installed `fa-quant`
   could not import `trading.env.env_stocktrading`.

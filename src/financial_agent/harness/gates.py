@@ -15,6 +15,7 @@ from typing import Any, Iterable, Mapping, Sequence
 from financial_agent.harness.audit import (
     PREDICTIONS_FILE,
     UnreadableLedger,
+    _mu_over_sigma2,
     _num,
     audit_record,
     missing_core_etfs,
@@ -75,6 +76,8 @@ def _kelly_gate(record: Mapping[str, Any], policy: Policy) -> str | None:
         return str(metrics["kelly_gate"])
     mu, sigma = _num(record.get("mu")), _num(record.get("sigma"))
     if mu is None or sigma is None or sigma <= 0:
+        return None
+    if _mu_over_sigma2(mu, sigma) is None:
         return None
     return policy.kelly(mu, sigma).gate
 
@@ -410,11 +413,11 @@ class StatusReplay:
         return self.decision.status.value == self.published
 
 
-def _run_date(payload: Mapping[str, Any], package_dir: Path) -> str | None:
+def _run_session(payload: Mapping[str, Any], package_dir: Path) -> Session | None:
     for candidate in (payload.get("run_date"), package_dir.name[-10:]):
         try:
-            return dt.date.fromisoformat(str(candidate)).isoformat()
-        except ValueError:
+            return session(dt.date.fromisoformat(str(candidate)))
+        except (ValueError, OverflowError):  # 0001-01-01 has no earlier close
             continue
     return None
 
@@ -465,8 +468,7 @@ def replay_status(package_dir: Path, policy: Policy) -> StatusReplay | None:
             passing.append(record.get("ticker", "?"))
         for label in sorted({_threshold(f) for f in failures}):
             blocking[label] = blocking.get(label, 0) + 1
-    run_date = _run_date(payload, package_dir)
-    day = session(run_date) if run_date else None
+    day = _run_session(payload, package_dir)
     decision = decide_status(
         data_mode=str(payload.get("data_mode") or "DELAYED"),
         required_inputs={name: True for name in REQUIRED_INPUTS},
