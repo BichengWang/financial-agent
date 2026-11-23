@@ -42,6 +42,11 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- The MCP `schema_check` tool answers a `15_predictions.json` nested too deeply to
+  parse with an error result, `ToolError: 15_predictions.json: not valid JSON:
+  maximum recursion depth exceeded ...`, as it answers other ledgers it cannot parse,
+  such as `{not json`, one that is not UTF-8 or one holding a 5000-digit integer.
+  It used to answer with JSON-RPC error -32603 (`RecursionError`).
 - A wrongly typed field in an earlier package no longer halts `run` at REFLECTION
   (`REFLECTION handler failed: TypeError: ...` or `ValueError: ...`); until someone
   fixed that package, every later run halted the same way. REFLECTION leaves out an
