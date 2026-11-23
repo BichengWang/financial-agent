@@ -42,6 +42,13 @@ and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Schema v1 no longer raises `TypeError: unhashable type` on a `15_predictions.json`
+  whose `regime` is a list or an object, such as `["BULL"]`, and that holds a SPY
+  `MARKET_FORECAST` record. It reports that regime as not one of the policy's
+  regimes, as it does a string such as `"SIDEWAYS"`, so a v1 ledger holding one
+  fails the publish gate. `gate`, `gate --json`, `manifest` and `schema` used to
+  stop with that traceback, and the MCP `gate`, `manifest` and `schema_check` tools
+  answered with the error instead of a result.
 - The harness no longer crashes on these extreme numbers and dates in a
   `15_predictions.json`. An integer too large for a float, such as a 401-digit `mu`,
   counts as not a number, like a non-numeric string, in the audit, the publish gate,

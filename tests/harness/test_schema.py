@@ -139,6 +139,35 @@ def test_v1_an_int_too_large_for_a_float_is_not_a_number(
 
 
 @pytest.mark.parametrize(
+    ("regime", "shown"),
+    [(["BULL"], "['BULL']"), ({"BULL": 1}, "{'BULL': 1}")],
+    ids=["list", "object"],
+)
+def test_v1_a_regime_that_is_a_list_or_an_object_fails_the_gate(
+    tmp_path: Path, payload: dict[str, Any], policy: Policy, regime: Any, shown: str
+) -> None:
+    # The one finding a string that is no regime, such as "SIDEWAYS", gives.
+    finding = (
+        f"regime={shown} is not one of "
+        "['BULL', 'NEUTRAL', 'HIGH_VOL', 'RATE_SHOCK', 'BEAR']"
+    )
+    ledger = mutate(payload, "regime", regime)
+    assert validate_payload(ledger, policy) == [finding]
+    package = stub_package(tmp_path / f"{MODEL}-{RUN}", ledger)
+    assert publish_gate(package, policy) == [f"schema v1: {finding}"]
+
+
+def test_v1_a_policy_regime_still_sets_the_spy_prior(
+    payload: dict[str, Any], policy: Policy
+) -> None:
+    # The fixture's SPY mu fits BULL; under BEAR its prior is -0.025.
+    assert validate_payload(mutate(payload, "regime", "BEAR"), policy) == [
+        "predictions[1] SPY: mu_prior 0.02 != -0.025000",
+        "predictions[1] SPY: mu 0.02 != mu_prior + mu_adjustment",
+    ]
+
+
+@pytest.mark.parametrize(
     ("spy_mu", "beta", "qqq"),
     [
         # ints whose product is a float: checked as before
